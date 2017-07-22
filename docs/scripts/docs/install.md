@@ -1,24 +1,21 @@
-# BalmUI
-> Material Design + Vue + Idea
-
 ## Installation & Setup
 
-### 1. Requirement
+### Requirement
 
 - [BalmJS](http://balmjs.com/)
-- [Vue.js](https://vuejs.org/)@2.x
+- [Vue.js](https://vuejs.org/)@2.1.0+
 
-### 2. Install
+### Install
 
 ```sh
 npm install --save balm-ui
 ```
 
-### 3. Setup
+### Setup
 
-#### 1. CSS Config
+### 1. CSS Config
 
-##### 1.1 Use Sass (Recommended)
+#### 1.1 Use Sass (Recommended)
 
 __`/path/to/_vendor.scss`__
 
@@ -26,7 +23,7 @@ __`/path/to/_vendor.scss`__
 @import 'node_modules/balm-ui/src/styles/main.scss';
 ```
 
-##### 1.2 Use JavaScript
+#### 1.2 Use JavaScript
 
 ```sh
 npm install --save-dev sass-loader
@@ -56,7 +53,7 @@ __`/path/to/yours_main.js`__
 import 'balm-css';
 ```
 
-#### 2. JS Config
+### 2. JS Config
 
 __`gulpfile.js`__
 
@@ -72,7 +69,7 @@ balm.config = {
       loader: 'babel'
     }],
     alias: {
-      vue: 'vue/dist/vue.js',
+      'vue': 'vue/dist/vue.js',
       'balm-ui': 'balm-ui/src/index.js'
     }
   },
@@ -89,56 +86,6 @@ import BalmUI from 'balm-ui';
 Vue.use(BalmUI);
 ```
 
-#### 3. Assets Config
+### 3. Assets Config
 
-> BalmUI [images & fonts](http://balmjs.com/ui-vue/assets.zip)
-
-## Components
-
-### Layout
-
-- [x] layout
-- [x] grid
-- [x] tabs
-- [x] footer
-
-### Common
-
-- [x] badge
-- [x] button
-- [x] card
-- [x] chip
-- [x] loading
-- [x] menu
-- [x] tooltip
-- [x] divider
-
-### Form
-
-- [x] textfield
-- [x] checkbox
-- [x] radio
-- [x] icon toggle
-- [x] switch
-- [x] slider
-- [x] select
-- [x] autocomplete
-- [x] datepicker
-- [ ] fileupload
-- [ ] editor
-
-### Data View
-
-- [x] list
-- [x] table
-- [x] pagination
-
-### Popup
-
-- [x] dialog
-- [x] alert
-- [x] confirm
-- [x] snackbar
-
-
-> __thx [BalmJS](http://balmjs.com/) & [Vue.js](https://vuejs.org/)__
+- Copy [BalmUI assets](http://balmjs.com/ui-vue/assets.zip) (images & fonts) to your project

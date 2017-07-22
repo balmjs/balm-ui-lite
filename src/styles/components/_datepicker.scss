@@ -1,0 +1,10 @@
+.mdl-datepicker {
+  display: inline-block;
+  .mdl-textfield__plus {
+    display: flex;
+  }
+  .mdl-datepicker__toggle,
+  .mdl-datepicker__clear {
+    padding: 0 8px;
+  }
+}

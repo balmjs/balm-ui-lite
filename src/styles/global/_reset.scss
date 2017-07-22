@@ -1,0 +1,10 @@
+/// Universal Box Sizing with Inheritance
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
