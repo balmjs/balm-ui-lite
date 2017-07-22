@@ -1,0 +1,18 @@
+{
+  "props": [{
+    "name": "active",
+    "type": "Number",
+    "default": "0",
+    "description": "Defines a tab as the current display tab"
+  }, {
+    "name": "fixedTabs",
+    "type": "Boolean",
+    "default": "false",
+    "description": "Uses fixed tabs instead of the default tabs"
+  }],
+  "slots": [{
+    "name": "(default)",
+    "description": "The default slot holds the tabs text and can contain HTML"
+  }],
+  "events": []
+}

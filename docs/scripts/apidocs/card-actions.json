@@ -1,0 +1,13 @@
+{
+  "props": [{
+    "name": "border",
+    "type": "Boolean",
+    "default": "false",
+    "description": "Adds a border to the card section that it's applied to"
+  }],
+  "slots": [{
+    "name": "(default)",
+    "description": "The footer slot holds the card actions text and can contain HTML"
+  }],
+  "events": []
+}

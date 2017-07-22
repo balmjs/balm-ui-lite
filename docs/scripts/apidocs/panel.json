@@ -1,0 +1,8 @@
+{
+  "props": [],
+  "slots": [{
+    "name": "(default)",
+    "description": "The default slot holds the panel text and can contain HTML"
+  }],
+  "events": []
+}

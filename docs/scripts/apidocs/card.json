@@ -1,0 +1,13 @@
+{
+  "props": [{
+    "name": "dp",
+    "type": "Number, String",
+    "default": "2",
+    "description": "Assigns variable shadow depths (2, 3, 4, 6, 8, or 16) to card"
+  }],
+  "slots": [{
+    "name": "(default)",
+    "description": "The default slot holds the card text and can contain HTML"
+  }],
+  "events": []
+}

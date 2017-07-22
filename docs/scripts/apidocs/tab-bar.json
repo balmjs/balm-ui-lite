@@ -1,0 +1,21 @@
+{
+  "props": [{
+    "name": "effect",
+    "type": "Boolean",
+    "default": "false",
+    "description": "Applies ripple click effect to tab links"
+  }, {
+    "name": "position",
+    "type": "String",
+    "default": "",
+    "description": "Tabs position ('left' or 'right')"
+  }],
+  "slots": [{
+    "name": "(default)",
+    "description": "The default slot holds the tab bar text and can contain HTML"
+  }],
+  "events": [{
+    "name": "change",
+    "description": "Dispatched when the active tab is changed"
+  }]
+}

@@ -1,0 +1,14 @@
+{
+  "props": [{
+    "name": "expand",
+    "type": "Boolean",
+    "default": "false",
+    "description": "Applies expand a card title container effect"
+  }],
+  "slots": [{
+    "name": "(default)",
+    "description": "The header slot holds the card title text and can contain HTML",
+    "props": "className: { title, subtitle }"
+  }],
+  "events": []
+}

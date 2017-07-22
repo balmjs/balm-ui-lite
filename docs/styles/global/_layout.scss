@@ -1,0 +1,66 @@
+.supported-lang {
+  margin: 0;
+  cursor: pointer;
+  a.active {
+    font-weight: bolder;
+    color: white;
+  }
+}
+
+.mdl-layout__drawer {
+  .mdl-navigation {
+    padding: 0;
+    border-top: 1px solid rgba(0,0,0,.12);
+  }
+  h3 {
+    margin: 0;
+    text-indent: 20px;
+  }
+  .mdl-layout__title {
+    padding: 0 10px 0 20px;
+  }
+  .mdl-badge[data-badge]:after {
+    right: -32px;
+    width: 32px;
+  }
+  .mdl-navigation__link {
+    &.active {
+      background-color: #757575;
+      a {
+        color: white;
+      }
+      &:hover {
+        background-color: #757575;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .mdl-layout__header, .mdl-layout__drawer {
+    z-index: 1;
+  }
+}
+
+
+.mdl-layout__content {
+  padding: 20px;
+}
+
+/// 浮动布局
+.clearfix {
+  @include clearfix;
+}
+
+.center-block {
+  @include center-block;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+

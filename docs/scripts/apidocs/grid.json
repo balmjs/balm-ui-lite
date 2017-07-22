@@ -1,0 +1,13 @@
+{
+  "props": [{
+    "name": "noSpacing",
+    "type": "Boolean",
+    "default": "false",
+    "description": "Modifies the grid cells to have no margin between them"
+  }],
+  "slots": [{
+    "name": "(default)",
+    "description": "The default slot holds the grid text and can contain HTML"
+  }],
+  "events": []
+}

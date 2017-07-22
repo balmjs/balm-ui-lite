@@ -1,0 +1,49 @@
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+.snippet-group {
+  display: flex;
+  padding: 20px 0;
+}
+
+.snippet-demo {
+  margin-right: 20px;
+}
+
+.docs-table {
+  th,
+  td {
+    text-align: left;
+  }
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
