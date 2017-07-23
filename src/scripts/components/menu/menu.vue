@@ -24,7 +24,7 @@
 
 <script>
 import '../../../material-design-lite/menu/menu';
-import {isString, generateRandomAlphaNum, observeMutationSupport} from '../../../helpers';
+import {isString, generateRandomAlphaNum, observeMutationSupport} from '../../helpers';
 import UiMenuItem from './menuitem';
 
 const POSITIONS = ['bottom-left', 'top-left', 'top-right', 'bottom-right'];

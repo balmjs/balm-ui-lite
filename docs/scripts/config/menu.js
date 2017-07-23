@@ -8,26 +8,27 @@ const COMPONENTS = {
   common: [
     'badge',
     'button',
-    'card',
     'chip',
     'loading',
     'menu',
     'tooltip',
-    'divider'
+    'divider',
+    'icon'
   ],
   form: [
-    'textfield',
+    'slider',
     'checkbox',
     'radio',
     'icon-toggle',
     'switch',
-    'slider',
+    'textfield',
     'select',
     'autocomplete',
     'datepicker',
     // 'fileupload'
   ],
   data: [
+    'card',
     'list',
     'table',
     'pagination'
