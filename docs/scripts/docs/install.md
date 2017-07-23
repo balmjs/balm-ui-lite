@@ -88,4 +88,4 @@ Vue.use(BalmUI);
 
 ### 3. Assets Config
 
-- Copy [BalmUI assets](http://balmjs.com/ui-vue/assets.zip) (images & fonts) to your project
+- Copy [BalmUI assets](http://balmjs.com/ui-vue-lite/assets.zip) (images & fonts) to your project

@@ -9,7 +9,11 @@ balm.config = {
   },
   styles: {
     ext: 'scss',
-    autoprefixer: ['> 1%', 'last 3 versions', 'not ie <= 8']
+    autoprefixer: [
+      '> 1%',
+      'last 2 versions',
+      'not ie <= 8'
+    ]
   },
   scripts: {
     entry: {
@@ -36,7 +40,7 @@ balm.config = {
 if (buildDocs) {
   balm.config.roots.source = 'docs';
   balm.config.scripts.entry.main = './docs/scripts/main.js';
-  balm.config.assets.subDir = 'ui-vue';
+  balm.config.assets.publicUrl = 'http://balmjs.com/ui-vue-lite/';
 }
 
 var DMI_SOURCE = './node_modules/material-design-icons';
@@ -49,7 +53,7 @@ var DEV_SOURCE = {
 
 balm.go(function(mix) {
   if (buildDocs) {
-    mix.copy('./docs/data/*', './dist/ui-vue/data');
+    mix.copy('./docs/data/*', './dist/data');
   } else {
     if (useDefault) {
       if (balm.config.production) {
