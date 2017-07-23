@@ -6,6 +6,7 @@
 
 <script>
 const DEFAULT_SIZE = 24;
+
 export default {
   name: 'ui-icon',
   props: {

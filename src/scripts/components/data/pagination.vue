@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import {detectIE} from '../utils/helper';
+import {detectIE} from '../../helpers';
 
 const KEY_ENTER = 13;
 const DOUBLE_ARROW_LEFT = '&laquo;';

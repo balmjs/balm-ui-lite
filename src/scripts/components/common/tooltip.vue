@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import '../../material-design-lite/tooltip/tooltip';
-import {isString, generateRandomAlphaNum} from '../utils/helper';
+import '../../../material-design-lite/tooltip/tooltip';
+import {isString, generateRandomAlphaNum} from '../../helpers';
 
 const POSITIONS = ['', 'top', 'right', 'bottom', 'left'];
 const POSITION_TOP = 1; // Positions the tooltip to the top of the target

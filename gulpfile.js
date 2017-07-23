@@ -2,10 +2,11 @@ var balm = require('balm');
 
 var useDefault = !(process.argv[2] === '--mdl');
 var buildDocs = process.argv[3] === '--docs';
+var useDocs = !balm.config.production || buildDocs;
 
 balm.config = {
   roots: {
-    source: balm.config.production ? 'src' : 'docs'
+    source: useDocs ? 'docs' : 'src'
   },
   styles: {
     ext: 'scss',
@@ -13,44 +14,43 @@ balm.config = {
   },
   scripts: {
     entry: {
-      main: balm.config.production ? './src/index' : './docs/scripts/main'
+      main: useDocs ? './docs/scripts/main.js' : './src/index.js'
     },
     loaders: [{
       test: /\.vue$/,
-      loader: 'vue'
+      loader: 'vue',
+      options: {
+        esModule: false
+      }
     }, {
       test: /\.md$/,
       loader: 'html!markdown'
     }],
     alias: {
-      vue: balm.config.production ? 'vue/dist/vue.min.js' : 'vue/dist/vue.esm.js',
+      'vue$': balm.config.production ? 'vue/dist/vue.min.js' : 'vue/dist/vue.esm.js',
       prismCss: 'prismjs/themes/prism-okaidia.css',
       flatpickrCss: 'flatpickr/dist/flatpickr.min.css',
       flatpickrLangZh: 'flatpickr/dist/l10n/zh.js'
     },
     eslint: true
   },
+  assets: {
+    publicUrl: buildDocs ? 'http://balmjs.com/ui-vue-lite/' : ''
+  },
   useDefault: useDefault
 };
-
-if (buildDocs) {
-  balm.config.roots.source = 'docs';
-  balm.config.scripts.entry.main = './docs/scripts/main.js';
-  balm.config.assets.publicUrl = 'http://balmjs.com/ui-vue-lite/';
-  balm.config.assets.subDir = 'ui-vue';
-}
 
 var DMI_SOURCE = './node_modules/material-design-icons';
 var DML_SOURCE = './node_modules/material-design-lite';
 var DEV_SOURCE = {
-  js: './src/scripts/material-design-lite',
+  mdl: './src/material-design-lite',
   img: './src/images',
   font: './src/fonts'
 };
 
 balm.go(function(mix) {
   if (buildDocs) {
-    mix.copy('./docs/data/*', './dist/ui-vue/data');
+    mix.copy('./docs/data/*', './dist/data');
   } else {
     if (useDefault) {
       if (balm.config.production) {
@@ -58,9 +58,10 @@ balm.go(function(mix) {
       }
     } else {
       // clear
-      mix.remove([DEV_SOURCE.js + '/*', DEV_SOURCE.img + '/*', DEV_SOURCE.font + '/*']);
+      mix.remove([DEV_SOURCE.mdl + '/*', DEV_SOURCE.img + '/*', DEV_SOURCE.font + '/*']);
       // get material design lite
-      mix.copy(DML_SOURCE + '/src/**/*.js', DEV_SOURCE.js);
+      mix.copy(DML_SOURCE + '/src/{_*scss,material-design-lite.scss,mdlComponentHandler.js}', DEV_SOURCE.mdl);
+      mix.copy(DML_SOURCE + '/src/**/{_*.scss,*.js}', DEV_SOURCE.mdl);
       // get material design lite images
       mix.copy(DML_SOURCE + '/src/images/*.svg', DEV_SOURCE.img);
       // get material design icons

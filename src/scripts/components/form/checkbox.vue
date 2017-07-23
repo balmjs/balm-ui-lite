@@ -15,9 +15,9 @@
 </template>
 
 <script>
-import '../../material-design-lite/checkbox/checkbox';
-import '../../material-design-lite/ripple/ripple';
-import {isArray} from '../utils/helper';
+import '../../../material-design-lite/checkbox/checkbox';
+import '../../../material-design-lite/ripple/ripple';
+import {isArray} from '../../helpers';
 
 const EVENT_CHANGE = 'change';
 

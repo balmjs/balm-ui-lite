@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import UiMenu from '../common/menu/menu';
+import UiMenu from '../menu/menu';
 
 const EVENT_CHANGE = 'change';
 

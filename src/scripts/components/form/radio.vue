@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import '../../material-design-lite/radio/radio';
-import '../../material-design-lite/ripple/ripple';
+import '../../../material-design-lite/radio/radio';
+import '../../../material-design-lite/ripple/ripple';
 
 const EVENT_CHANGE = 'change';
 

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import '../../material-design-lite/slider/slider';
+import '../../../material-design-lite/slider/slider';
 
 const EVENT_CHANGE = 'change';
 

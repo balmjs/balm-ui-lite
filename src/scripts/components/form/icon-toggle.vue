@@ -17,9 +17,9 @@
 </template>
 
 <script>
-import '../../material-design-lite/icon-toggle/icon-toggle';
-import '../../material-design-lite/ripple/ripple';
-import {isArray} from '../utils/helper';
+import '../../../material-design-lite/icon-toggle/icon-toggle';
+import '../../../material-design-lite/ripple/ripple';
+import {isArray} from '../../helpers';
 
 const CLASSNAME_ICON = 'material-icons';
 const EVENT_CHANGE = 'change';

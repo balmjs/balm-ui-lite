@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import '../../material-design-lite/layout/layout';
-import '../../material-design-lite/ripple/ripple';
+import '../../../material-design-lite/layout/layout';
+import '../../../material-design-lite/ripple/ripple';
 
 export default {
   name: 'ui-layout',

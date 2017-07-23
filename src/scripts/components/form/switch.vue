@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import '../../material-design-lite/switch/switch';
-import '../../material-design-lite/ripple/ripple';
+import '../../../material-design-lite/switch/switch';
+import '../../../material-design-lite/ripple/ripple';
 
 const EVENT_CHANGE = 'change';
 

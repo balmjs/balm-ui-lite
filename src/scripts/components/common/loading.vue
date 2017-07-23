@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import '../../material-design-lite/spinner/spinner';
-import '../../material-design-lite/progress/progress';
-import {isString} from '../utils/helper';
+import '../../../material-design-lite/spinner/spinner';
+import '../../../material-design-lite/progress/progress';
+import {isString} from '../../helpers';
 
 const TYPES = ['spinner', 'progress'];
 const TYPE_SPINNER  = 0; // Spinner

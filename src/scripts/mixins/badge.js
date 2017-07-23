@@ -1,5 +1,11 @@
 export default {
   props: {
+    // state
+    value: {
+      type: [Number, String],
+      default: 0
+    },
+    // ui attributes
     noBackground: {
       type: Boolean,
       default: false
@@ -7,10 +13,6 @@ export default {
     overlap: {
       type: Boolean,
       default: false
-    },
-    value: {
-      type: [Number, String],
-      default: 0
     }
   },
   computed: {

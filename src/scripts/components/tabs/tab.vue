@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import {isString} from '../utils/helper';
+import {isString} from '../../helpers';
 
 export default {
   name: 'ui-tab',

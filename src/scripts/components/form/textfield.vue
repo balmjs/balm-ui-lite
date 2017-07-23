@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import '../../material-design-lite/textfield/textfield';
+import '../../../material-design-lite/textfield/textfield';
 
 const EVENT_INPUT = 'input';
 const EVENT_CHANGE = 'change';
