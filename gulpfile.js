@@ -21,13 +21,16 @@ balm.config = {
     },
     loaders: [{
       test: /\.vue$/,
-      loader: 'vue'
+      loader: 'vue',
+      options: {
+        esModule: false // For `const MyComponent = () => import('./components/my-component');`
+      }
     }, {
       test: /\.md$/,
       loader: 'html!markdown'
     }],
     alias: {
-      vue: balm.config.production ? 'vue/dist/vue.min.js' : 'vue/dist/vue.js',
+      'vue$': balm.config.production ? 'vue/dist/vue.min.js' : 'vue/dist/vue.esm.js',
       prismCss: 'prismjs/themes/prism-okaidia.css',
       flatpickrCss: 'flatpickr/dist/flatpickr.min.css',
       flatpickrLangZh: 'flatpickr/dist/l10n/zh.js'
