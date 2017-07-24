@@ -31,7 +31,7 @@ export default {
     className() {
       return {
         'mdl-tabs': true,
-        'is-upgraded': true, // manual for effect
+        'is-upgraded': true, // manual for MaterialTabs
         'mdl-tabs--fixed-tabs': this.fixedTabs
       };
     }

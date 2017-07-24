@@ -1,11 +1,11 @@
 <template>
-  <footer class="mdl-mega-footer">
+  <ul class="mdl-mega-footer__link-list">
     <slot></slot>
-  </footer>
+  </ul>
 </template>
 
 <script>
 export default {
-  name: 'ui-footer'
+  name: 'ui-footer--link-list'
 };
 </script>

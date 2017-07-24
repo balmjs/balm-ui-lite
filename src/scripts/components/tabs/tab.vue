@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import '../../../material-design-lite/ripple/ripple';
+
 export default {
   name: 'ui-tab',
   mounted() {
