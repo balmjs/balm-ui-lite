@@ -18,16 +18,16 @@ const TYPE_PROGRESS = 1; // Progress bar
 export default {
   name: 'ui-loading',
   props: {
-    type: {
-      type: [Number, String],
-      default: 0
-    },
-    // Makes the spinner visible and animated
+    // state (Makes the spinner visible and animated)
     active: {
       type: Boolean,
       default: false
     },
-    // Uses a single (primary palette) color instead of changing colors
+    // ui attributes
+    type: {
+      type: [Number, String],
+      default: 0
+    },
     singleColor: {
       type: Boolean,
       default: false
@@ -49,7 +49,7 @@ export default {
             'mdl-spinner': true,
             'mdl-js-spinner': true,
             'is-active': this.active,
-            'mdl-spinner--single-color': this.singleColor
+            'mdl-spinner--single-color': this.singleColor // Uses a single (primary palette) color instead of changing colors
           };
           break;
         case TYPE_PROGRESS:

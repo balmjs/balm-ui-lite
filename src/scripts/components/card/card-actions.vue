@@ -8,7 +8,7 @@
 export default {
   name: 'ui-card-actions',
   props: {
-    // Adds a border to the card section that it's applied to
+    // ui attributes
     border: {
       type: Boolean,
       default: false
@@ -18,7 +18,7 @@ export default {
     className() {
       return {
         'mdl-card__actions': true,
-        'mdl-card--border': this.border
+        'mdl-card--border': this.border // Adds a border to the card section that it's applied to
       };
     }
   }

@@ -10,7 +10,7 @@ const SHADOW_DEPTHS = [2, 3, 4, 6, 8, 16];
 export default {
   name: 'ui-card',
   props: {
-    // Assigns variable shadow depths (2, 3, 4, 6, 8, or 16) to card
+    // ui attributes
     dp: {
       type: [Number, String],
       default: 2
@@ -18,6 +18,7 @@ export default {
   },
   computed: {
     shadowClassName() {
+      // Assigns variable shadow depths (2, 3, 4, 6, 8, or 16) to card
       return (SHADOW_DEPTHS.indexOf(+this.dp) > -1) ? `mdl-shadow--${this.dp}dp` : '';
     },
     className() {

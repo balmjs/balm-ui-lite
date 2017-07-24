@@ -11,6 +11,7 @@ const CLASSNAME_SUBTITLE = 'mdl-card__subtitle-text';
 export default {
   name: 'ui-card-title',
   props: {
+    // ui attributes
     expand: {
       type: Boolean,
       default: false
