@@ -15,7 +15,8 @@ import UiLayoutSpacer from './scripts/components/layout/layout-spacer';
 import UiLayoutTabBar from './scripts/components/layout/layout-tab-bar';
 import UiLayoutTab from './scripts/components/layout/layout-tab';
 import UiLayoutTabPanel from './scripts/components/layout/layout-tab-panel';
-import UiNavigation from './scripts/components/layout/navigation';
+import UiNav from './scripts/components/layout/nav';
+import UiNavLink from './scripts/components/layout/nav-link';
 import UiGrid from './scripts/components/grid/grid';
 import UiCell from './scripts/components/grid/cell';
 import UiTabs from './scripts/components/tabs/tabs';
@@ -85,7 +86,8 @@ const BalmUI_Components = {
   UiLayoutTabBar,
   UiLayoutTab,
   UiLayoutTabPanel,
-  UiNavigation,
+  UiNav,
+  UiNavLink,
   UiGrid,
   UiCell,
   UiTabs,

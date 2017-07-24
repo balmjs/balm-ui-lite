@@ -12,22 +12,22 @@
                   <ui-layout-header-row>
                     <ui-layout-title>Title</ui-layout-title>
                     <ui-layout-spacer></ui-layout-spacer>
-                    <ui-navigation>
-                      <a class="mdl-navigation__link" href="">Link</a>
-                      <a class="mdl-navigation__link" href="">Link</a>
-                      <a class="mdl-navigation__link" href="">Link</a>
-                      <a class="mdl-navigation__link" href="">Link</a>
-                    </ui-navigation>
+                    <ui-nav>
+                      <ui-nav-link href="">Link</ui-nav-link>
+                      <ui-nav-link href="">Link</ui-nav-link>
+                      <ui-nav-link href="">Link</ui-nav-link>
+                      <ui-nav-link href="">Link</ui-nav-link>
+                    </ui-nav>
                   </ui-layout-header-row>
                 </ui-layout-header>
                 <ui-layout-drawer>
                   <ui-layout-title>Title</ui-layout-title>
-                  <ui-navigation>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                  </ui-navigation>
+                  <ui-nav>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                  </ui-nav>
                 </ui-layout-drawer>
                 <ui-layout-content><!-- Content --></ui-layout-content>
               </ui-layout>
@@ -50,12 +50,12 @@
               <ui-layout fixedDrawer>
                 <ui-layout-drawer>
                   <ui-layout-title>Title</ui-layout-title>
-                  <ui-navigation>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                  </ui-navigation>
+                  <ui-nav>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                  </ui-nav>
                 </ui-layout-drawer>
                 <ui-layout-content>
                   <div class="page-content"><!-- Your content goes here --></div>
@@ -82,22 +82,22 @@
                   <ui-layout-header-row>
                     <ui-layout-title>Title</ui-layout-title>
                     <ui-layout-spacer></ui-layout-spacer>
-                    <ui-navigation largeScreenOnly>
-                      <a class="mdl-navigation__link" href="">Link</a>
-                      <a class="mdl-navigation__link" href="">Link</a>
-                      <a class="mdl-navigation__link" href="">Link</a>
-                      <a class="mdl-navigation__link" href="">Link</a>
-                    </ui-navigation>
+                    <ui-nav largeScreenOnly>
+                      <ui-nav-link href="">Link</ui-nav-link>
+                      <ui-nav-link href="">Link</ui-nav-link>
+                      <ui-nav-link href="">Link</ui-nav-link>
+                      <ui-nav-link href="">Link</ui-nav-link>
+                    </ui-nav>
                   </ui-layout-header-row>
                 </ui-layout-header>
                 <ui-layout-drawer>
                   <ui-layout-title>Title</ui-layout-title>
-                  <ui-navigation>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                  </ui-navigation>
+                  <ui-nav>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                  </ui-nav>
                 </ui-layout-drawer>
                 <ui-layout-content>
                   <div class="page-content"><!-- Your content goes here --></div>
@@ -139,12 +139,12 @@
                 </ui-layout-header>
                 <ui-layout-drawer>
                   <ui-layout-title>Title</ui-layout-title>
-                  <ui-navigation>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                  </ui-navigation>
+                  <ui-nav>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                  </ui-nav>
                 </ui-layout-drawer>
                 <ui-layout-content>
                   <div class="page-content"><!-- Your content goes here --></div>
@@ -171,22 +171,22 @@
                   <ui-layout-header-row>
                     <ui-layout-title>Title</ui-layout-title>
                     <ui-layout-spacer></ui-layout-spacer>
-                    <ui-navigation>
-                      <a class="mdl-navigation__link" href="">Link</a>
-                      <a class="mdl-navigation__link" href="">Link</a>
-                      <a class="mdl-navigation__link" href="">Link</a>
-                      <a class="mdl-navigation__link" href="">Link</a>
-                    </ui-navigation>
+                    <ui-nav>
+                      <ui-nav-link href="">Link</ui-nav-link>
+                      <ui-nav-link href="">Link</ui-nav-link>
+                      <ui-nav-link href="">Link</ui-nav-link>
+                      <ui-nav-link href="">Link</ui-nav-link>
+                    </ui-nav>
                   </ui-layout-header-row>
                 </ui-layout-header>
                 <ui-layout-drawer>
                   <ui-layout-title>Title</ui-layout-title>
-                  <ui-navigation>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                  </ui-navigation>
+                  <ui-nav>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                  </ui-nav>
                 </ui-layout-drawer>
                 <ui-layout-content>
                   <div class="page-content"><!-- Your content goes here --></div>
@@ -231,22 +231,22 @@
                   <ui-layout-header-row>
                     <ui-layout-spacer></ui-layout-spacer>
                     <!-- Navigation -->
-                    <ui-navigation>
-                      <a class="mdl-navigation__link" href="">Link</a>
-                      <a class="mdl-navigation__link" href="">Link</a>
-                      <a class="mdl-navigation__link" href="">Link</a>
-                      <a class="mdl-navigation__link" href="">Link</a>
-                    </ui-navigation>
+                    <ui-nav>
+                      <ui-nav-link href="">Link</ui-nav-link>
+                      <ui-nav-link href="">Link</ui-nav-link>
+                      <ui-nav-link href="">Link</ui-nav-link>
+                      <ui-nav-link href="">Link</ui-nav-link>
+                    </ui-nav>
                   </ui-layout-header-row>
                 </ui-layout-header>
                 <ui-layout-drawer>
                   <ui-layout-title>Title</ui-layout-title>
-                  <ui-navigation>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                  </ui-navigation>
+                  <ui-nav>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                    <ui-nav-link href="">Link</ui-nav-link>
+                  </ui-nav>
                 </ui-layout-drawer>
                 <ui-layout-content>
                   <div class="page-content"><!-- Your content goes here --></div>

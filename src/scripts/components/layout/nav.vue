@@ -8,7 +8,7 @@
 const CLASSNAME_LINK = 'mdl-navigation__link';
 
 export default {
-  name: 'ui-navigation',
+  name: 'ui-nav',
   data() {
     return {
       CLASSNAME_LINK
