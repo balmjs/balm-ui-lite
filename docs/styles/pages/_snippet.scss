@@ -1,0 +1,180 @@
+.snippet-group {
+  margin-left: -16px;
+  margin-right: -16px;
+  margin-bottom: 84px
+}
+
+.snippet-group .snippet-header {
+  display: table;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%
+}
+
+.snippet-group .snippet-demos,
+.snippet-group .snippet-captions {
+  display: table-row
+}
+
+.snippet-group .snippet-demo .snippet-demo-container {
+  text-align: left;
+  display: inline-block
+}
+
+.snippet-group .snippet-captions {
+  background-color: #fff;
+  height: 48px
+}
+
+.snippet-group .snippet-demo {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0
+}
+
+.snippet-group .snippet-demo-padding {
+  text-align: center;
+  padding: 0
+}
+
+.snippet-group .snippet-demo-padding,
+.snippet-group .snippet-caption,
+.snippet-group .snippet-caption-padding {
+  display: table-cell;
+  vertical-align: middle;
+  margin: 0
+}
+
+.snippet-group .snippet-caption-padding {
+  text-align: center;
+  padding: 0
+}
+
+.snippet-group .snippet-caption {
+  font-size: 13px;
+  padding: 0 40px;
+  white-space: nowrap;
+  text-align: center;
+  position: relative
+}
+
+.snippet-group .snippet-demo {
+  padding: 0 40px 40px
+}
+
+.snippet-group .snippet-demos .snippet-demo-padding {
+  width: 50%
+}
+
+_:-ms-input-placeholder,
+:root .snippet-group .snippet-demo {
+  width: 1px
+}
+
+_:-ms-input-placeholder,
+:root .snippet-group .snippet-demos .snippet-demo-padding {
+  width: auto
+}
+
+.snippet-group .snippet-code {
+  position: relative;
+  overflow: hidden
+}
+
+.snippet-group .snippet-code pre {
+  margin: 0;
+  border-radius: 0;
+  display: block;
+  padding: 0;
+  overflow: hidden
+}
+
+.snippet-group .snippet-code code {
+  padding: 8px 16px;
+  position: relative;
+  max-height: none;
+  width: 100%;
+  box-sizing: border-box
+}
+
+.snippet-group .snippet-code pre[class*=language-]>code[data-language] {
+  max-height: none
+}
+
+.snippet-group .snippet-code code:first-of-type {
+  padding-top: 16px
+}
+
+.snippet-group .snippet-code code:last-of-type {
+  padding-bottom: 16px
+}
+
+.snippet-group .snippet-code code:hover {
+  background-color: rgba(0, 0, 0, .05)
+}
+
+.snippet-group .snippet-code code:hover:only-of-type {
+  background-color: transparent
+}
+
+.snippet-group .snippet-code code::before,
+.snippet-group .snippet-code code::after {
+  display: none
+}
+
+.snippet-group .snippet-code code:hover::before {
+  display: inline-block;
+  content: 'click to copy';
+  color: rgba(0, 0, 0, .5);
+  font-size: 13px;
+  background-color: rgba(0, 0, 0, .1);
+  border-top-left-radius: 5px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 3px 10px
+}
+
+.snippet-group .snippet-code code:active::before {
+  content: ''
+}
+
+.snippet-group .snippet-code code.copied::before {
+  content: 'copied';
+  color: rgba(255, 255, 255, .5);
+  background-color: rgba(0, 0, 0, .6)
+}
+
+.snippet-group .snippet-code code.nosupport::before {
+  content: "browser not supported :'(";
+  color: rgba(255, 255, 255, .5);
+  background-color: rgba(0, 0, 0, .6)
+}
+
+.snippet-group .snippet-code .codepen-extra-css {
+  display: none
+}
+
+@media (max-width:850px) {
+  .snippet-group .snippet-demo {
+    padding-left: 5px;
+    padding-right: 5px
+  }
+}
+
+.snippet-group.is-full-width .snippet-demo-container {
+  width: 100%
+}
+
+.snippet-group.is-full-width .snippet-demos>.snippet-demo {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0
+}
+
+.snippet-group.is-full-width .snippet-demo-padding {
+  width: 0;
+  padding: 8px;
+  margin: 0
+}

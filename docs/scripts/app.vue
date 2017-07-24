@@ -26,8 +26,11 @@
         <template scope="props">
           <h3>{{ $t(item.name) }}</h3>
           <template v-for="(component, index) in item.components">
-            <a v-if="component.name === 'icon'" href="http://balmjs.com/ui-vue/#/icons" target="_blank">
-              {{ $t(component.name) }}
+            <a v-if="component.name === 'components.icon'"
+              href="http://balmjs.com/ui-vue/#/icons"
+              target="_blank"
+              :class="props.className">
+              <span>{{ $t(component.name) }}</span>
             </a>
             <router-link v-else
               :key="index"

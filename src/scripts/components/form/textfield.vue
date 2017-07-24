@@ -75,9 +75,7 @@ export default {
       type: String,
       default: 'text'
     },
-    model: {
-      required: true
-    },
+    model: null,
     id: String,
     name: String,
     label: String,
