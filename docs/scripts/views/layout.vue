@@ -262,6 +262,107 @@
       <div class="snippet-code"></div>
     </div>
 
-    <ui-apidoc name="layout"></ui-apidoc>
+    <div class="snippet-group is-full-width">
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo">
+            <div class="snippet-demo-container demo-layout demo-layout__scrollable-tabs">
+              <!-- Simple header with scrollable tabs. -->
+              <ui-layout fixedHeader :active="tab">
+                <ui-layout-header>
+                  <ui-layout-header-row>
+                    <ui-layout-title>Title</ui-layout-title>
+                  </ui-layout-header-row>
+                  <!-- Tabs -->
+                  <ui-layout-tab-bar effect @change="onChange">
+                    <ui-layout-tab v-for="(item, index) in ['Tab1', 'Tab2', 'Tab3']" :key="index">
+                      {{ item }}
+                    </ui-layout-tab>
+                  </ui-layout-tab-bar>
+                </ui-layout-header>
+                <div class="mdl-layout__drawer">
+                  <span class="mdl-layout-title">Title</span>
+                </div>
+                <ui-layout-content>
+                  <ui-layout-tab-panel id="scroll-tab-1">
+                    <div class="page-content">Content 1</div>
+                  </ui-layout-tab-panel>
+                  <ui-layout-tab-panel id="scroll-tab-2">
+                    <div class="page-content">Content 2</div>
+                  </ui-layout-tab-panel>
+                  <ui-layout-tab-panel id="scroll-tab-3">
+                    <div class="page-content">Content 3</div>
+                  </ui-layout-tab-panel>
+                </ui-layout-content>
+              </ui-layout>
+            </div>
+          </div>
+        </div>
+        <div class="snippet-captions">
+          <div class="snippet-caption">Fixed drawer, no header</div>
+        </div>
+      </div>
+      <div class="snippet-code"></div>
+    </div>
+
+    <div class="snippet-group is-full-width">
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo">
+            <div class="snippet-demo-container demo-layout demo-layout__fixed-tabs">
+              <!-- Simple header with fixed tabs. -->
+              <ui-layout fixedHeader fixedTabs :active="tab">
+                <ui-layout-header>
+                  <ui-layout-header-row>
+                    <ui-layout-title>Title</ui-layout-title>
+                  </ui-layout-header-row>
+                  <!-- Tabs -->
+                  <ui-layout-tab-bar effect @change="onChange">
+                    <ui-layout-tab v-for="(item, index) in ['Tab1', 'Tab2', 'Tab3']" :key="index">
+                      {{ item }}
+                    </ui-layout-tab>
+                  </ui-layout-tab-bar>
+                </ui-layout-header>
+                <div class="mdl-layout__drawer">
+                  <span class="mdl-layout-title">Title</span>
+                </div>
+                <ui-layout-content>
+                  <ui-layout-tab-panel id="scroll-tab-1">
+                    <div class="page-content">Content 1</div>
+                  </ui-layout-tab-panel>
+                  <ui-layout-tab-panel id="scroll-tab-2">
+                    <div class="page-content">Content 2</div>
+                  </ui-layout-tab-panel>
+                  <ui-layout-tab-panel id="scroll-tab-3">
+                    <div class="page-content">Content 3</div>
+                  </ui-layout-tab-panel>
+                </ui-layout-content>
+              </ui-layout>
+            </div>
+          </div>
+        </div>
+        <div class="snippet-captions">
+          <div class="snippet-caption">Fixed drawer, no header</div>
+        </div>
+      </div>
+      <div class="snippet-code"></div>
+    </div>
+
+    <!-- <ui-apidoc name="layout"></ui-apidoc> -->
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      tab: 0
+    };
+  },
+  methods: {
+    onChange(tab) {
+      this.tab = tab;
+    }
+  }
+};
+</script>

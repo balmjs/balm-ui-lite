@@ -10,8 +10,6 @@
 </template>
 
 <script>
-import {isString} from '../../helpers';
-
 export default {
   name: 'ui-tab',
   mounted() {

@@ -9,11 +9,18 @@
 
 <script>
 import '../../../material-design-lite/layout/layout';
-import '../../../material-design-lite/ripple/ripple';
+
+const CLASSNAME_TAB = 'mdl-layout__tab';
+const CLASSNAME_PANEL = 'mdl-layout__tab-panel';
+const CLASSNAME_ACTIVE = 'is-active';
 
 export default {
   name: 'ui-layout',
   props: {
+    active: {
+      type: Number,
+      default: 0
+    },
     fixedDrawer: {
       type: Boolean,
       default: false
@@ -58,11 +65,35 @@ export default {
       };
     }
   },
+  methods: {
+    handleChange(index) {
+      this.$emit(EVENT_CHANGE, index);
+    },
+    activeItem(currentIndex, items = []) {
+      items.length && items.forEach((item, index) => {
+        if (index === +currentIndex && !item.classList.contains(CLASSNAME_ACTIVE)) {
+          item.classList.add(CLASSNAME_ACTIVE);
+        } else {
+          item.classList.remove(CLASSNAME_ACTIVE);
+        }
+      });
+    },
+    activeTab(currentIndex = this.active) {
+      this.activeItem(currentIndex, this.tabs);
+      this.activeItem(currentIndex, this.panels);
+    }
+  },
+  watch: {
+    active(val) {
+      this.activeTab(val);
+    }
+  },
   mounted() {
     this.$mdl.upgradeElement(this.$el, 'MaterialLayout');
-    if (this.tabs) {
-      // this.$mdl.upgradeElement(this.$refs.tabs, 'MaterialRipple');
-    }
+
+    this.tabs = this.$el.querySelectorAll(`.${CLASSNAME_TAB}`);
+    this.panels = this.$el.querySelectorAll(`.${CLASSNAME_PANEL}`);
+    this.activeTab();
   }
 };
 </script>
