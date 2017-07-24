@@ -23,8 +23,23 @@ import UiTabs from './scripts/components/tabs/tabs';
 import UiTabBar from './scripts/components/tabs/tab-bar';
 import UiTab from './scripts/components/tabs/tab';
 import UiPanel from './scripts/components/tabs/panel';
-import UiFooter from './scripts/components/footer/footer';
-import UiMiniFooter from './scripts/components/footer/mini-footer';
+// Deprecated: <ui-footer-X>
+// import UiFooter from './scripts/components/footer/footer';
+// import UiFooterTop from './scripts/components/footer/footer-top';
+// import UiFooterLeft from './scripts/components/footer/footer-left';
+// import UiFooterSocialBtn from './scripts/components/footer/footer-social-btn';
+// import UiFooterRight from './scripts/components/footer/footer-right';
+// import UiFooterMiddle from './scripts/components/footer/footer-middle';
+// import UiFooterDropDown from './scripts/components/footer/footer-drop-down';
+// import UiFooterHeading from './scripts/components/footer/footer-heading';
+// import UiFooterLinkList from './scripts/components/footer/footer-link-list';
+// import UiFooterBottom from './scripts/components/footer/footer-bottom';
+// import UiLogo from './scripts/components/footer/logo';
+// import UiMiniFooter from './scripts/components/footer/mini-footer';
+// import UiMiniFooterLeft from './scripts/components/footer/mini-footer-left';
+// import UiMiniFooterLinkList from './scripts/components/footer/mini-footer-link-list';
+// import UiMiniFooterRight from './scripts/components/footer/mini-footer-right';
+// import UiMiniFooterSocialBtn from './scripts/components/footer/min-footer-social-btn';
 /**
  * Common
  */
@@ -94,8 +109,6 @@ const BalmUI_Components = {
   UiTabBar,
   UiTab,
   UiPanel,
-  UiFooter,
-  UiMiniFooter,
   // Common
   UiBadge,
   UiButton,
