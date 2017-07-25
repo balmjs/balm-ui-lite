@@ -1,46 +1,54 @@
 <template>
   <div :class="className.outer">
-    <label v-if="expandable" class="mdl-button mdl-js-button mdl-button--icon" :for="id">
+    <!-- An expandable -->
+    <label v-if="expandable"
+      class="mdl-button mdl-js-button mdl-button--icon"
+      :for="id">
       <slot name="icon">
         <i class="material-icons">icon</i>
       </slot>
     </label>
     <div :class="[className.inner, {'is-expand': isExpand}]">
-      <label class="mdl-textfield__label">
+      <label class="mdl-textfield__label" :for="id">
         <slot name="label">{{ label }}</slot>
       </label>
+      <!-- A multi-line -->
       <template v-if="isTextarea">
         <textarea class="mdl-textfield__input"
-          v-model="currentValue"
           :id="id"
-          :name="name"
-          :rows="rows"
-          :placeholder="labelFloating ? null : placeholder"
-          :maxlength="maxlength"
+          :autocomplete="autocomplete"
           :disabled="disabled"
+          :maxlength="maxlength"
+          :name="name"
+          :placeholder="labelFloating ? null : placeholder"
           :readonly="readonly"
-          @input="handleInput($event.target.value)"
-          @change="handleChange"
+          :required="required"
+          :rows="rows"
+          :cols="cols"
+          v-model="currentValue"
           @focus="handleFocus"
           @blur="handleBlur"
+          @input="handleInput"
           @keydown="handleKeydown"
           @keydown.enter="handleKeydownEnter"></textarea>
       </template>
+      <!-- A single-line -->
       <template v-else>
         <input class="mdl-textfield__input"
           :type="type"
-          :value="currentValue"
           :id="id"
-          :name="name"
-          :placeholder="labelFloating ? null : placeholder"
-          :pattern="pattern"
-          :maxlength="maxlength"
+          :autocomplete="autocomplete"
           :disabled="disabled"
+          :maxlength="maxlength"
+          :name="name"
+          :pattern="pattern"
+          :placeholder="labelFloating ? null : placeholder"
           :readonly="readonly"
-          @input="handleInput($event.target.value)"
-          @change="handleChange"
+          :required="required"
+          :value="currentValue"
           @focus="handleFocus"
           @blur="handleBlur"
+          @input="handleInput"
           @keydown="handleKeydown"
           @keydown.enter="handleKeydownEnter"
           data-input>
@@ -71,39 +79,53 @@ const EVENT_KEYDOWN_ENTER = 'enter';
 export default {
   name: 'ui-textfield',
   props: {
+    // state
+    model: null,
+    // element attributes
+    id: String,
+    name: String,
+    autocomplete: String,
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    maxlength: [Number, String],
+    placeholder: String,
+    readonly: {
+      type: Boolean,
+      default: false
+    },
+    required: {
+      type: Boolean,
+      default: false
+    },
+    // input attributes
     type: {
       type: String,
       default: 'text'
     },
-    model: null,
-    id: String,
-    name: String,
+    pattern: String,
+    // textarea attributes
+    rows: {
+      type: [Number, String],
+      default: 1
+    },
+    cols: {
+      type: [Number, String],
+      default: 20
+    },
+    // ui attributes
     label: String,
     labelFloating: {
       type: Boolean,
       default: false
     },
-    placeholder: String,
-    pattern: String,
     error: String,
-    maxlength: Number,
-    rows: {
-      type: Number,
-      default: 2
-    },
     expandable: {
       type: Boolean,
       default: false
     },
     plus: {
-      type: Boolean,
-      default: false
-    },
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    readonly: {
       type: Boolean,
       default: false
     },
@@ -157,12 +179,6 @@ export default {
         this.className.outer['is-dirty'] = this.currentValue.length;
       }
     },
-    handleInput(value) {
-      this.$emit(EVENT_INPUT, value);
-    },
-    handleChange(event) {
-      this.$emit(EVENT_CHANGE, event);
-    },
     handleFocus(event) {
       this.checkDirty();
       this.$emit(EVENT_FOCUS, event);
@@ -171,11 +187,14 @@ export default {
       this.checkDirty(false);
       this.$emit(EVENT_BLUR, event);
     },
+    handleInput(event) {
+      this.$emit(EVENT_INPUT, event.target.value);
+    },
     handleKeydown(event) {
       this.$emit(EVENT_KEYDOWN, event);
     },
     handleKeydownEnter(event) {
-      this.$emit(EVENT_KEYDOWN_ENTER, event);
+      this.$emit(EVENT_KEYDOWN_ENTER, event.target.value);
     }
   },
   created() {

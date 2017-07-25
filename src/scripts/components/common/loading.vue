@@ -19,6 +19,11 @@ export default {
       type: Boolean,
       default: false
     },
+    // TODO
+    // progress: {
+    //   type: [Number, String],
+    //   default: 0
+    // },
     // ui attributes
     type: {
       type: [Number, String],

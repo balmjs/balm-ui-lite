@@ -32,7 +32,7 @@ export default {
       required: true
     },
     // Applies ripple click effect
-    effect: {
+    noRipple: {
       type: Boolean,
       default: false
     },
@@ -51,7 +51,7 @@ export default {
       return {
         'mdl-switch': true,
         'mdl-js-switch': true,
-        'mdl-js-ripple-effect': this.effect,
+        'mdl-js-ripple-effect': !this.noRipple,
         'mdl-switch--disabled': this.disabled,
         'is-upgraded': true,
         'is-checked': this.isChecked
@@ -73,7 +73,7 @@ export default {
   },
   mounted() {
     this.$mdl.upgradeElement(this.$el, 'MaterialSwitch');
-    if (this.effect) {
+    if (!this.noRipple) {
       this.$mdl.upgradeElement(this.$el, 'MaterialRipple');
     }
   }

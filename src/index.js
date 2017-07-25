@@ -88,6 +88,11 @@ import UiDialog from './scripts/components/dialog/dialog';
 import UiAlert from './scripts/components/dialog/alert';
 import UiConfirm from './scripts/components/dialog/confirm';
 import UiSnackbar from './scripts/components/snackbar';
+/**
+ * Plugins
+ */
+// import helper from './scripts/plugins/helper';
+import event from './scripts/plugins/event';
 
 const BalmUI_Components = {
   // Layout
@@ -151,6 +156,12 @@ const BalmUI_Components = {
   UiSnackbar
 };
 
+const BalmUI_Plugins = {
+  plugins: {
+    event
+  }
+};
+
 const BalmUI_Register = {
   install(Vue) {
     Vue.prototype.$mdl = window.componentHandler;
@@ -164,11 +175,14 @@ const BalmUI_Register = {
   }
 };
 
-const BalmUI = Object.assign({}, BalmUI_Components, BalmUI_Register);
+const BalmUI = Object.assign({}, BalmUI_Components, BalmUI_Plugins, BalmUI_Register);
 
 // Auto install in dist mode
 if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.use(BalmUI);
+  for (let key in BalmUI.plugins) {
+    window.Vue.use(BalmUI.plugins[key]);
+  }
 }
 
 export default BalmUI;

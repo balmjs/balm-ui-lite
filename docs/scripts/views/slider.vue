@@ -5,25 +5,41 @@
       <p>Selecting a value out of a range.</p>
     </div>
 
-    <!-- <h4>{{ $t('slider.basic') }}</h4> -->
-    <ui-slider :min="-5" :max="5" :model="slider1" @change="onChange"></ui-slider>
-
-    <!-- <h4>{{ $t('slider.advanced') }}</h4> -->
-    // TODO
+    <div class="snippet-group">
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <div class="snippet-demo-container demo-slider demo-slider__slider-default">
+              <ui-slider min="0" max="100" :model="slider1" @change="onChange('slider1', $event)"></ui-slider>
+            </div>
+          </div>
+          <div class="snippet-demo">
+            <div class="snippet-demo-container demo-slider demo-slider__slider-starting-value">
+              <ui-slider min="0" max="100" :model="slider2" @change="onChange('slider2', $event)"></ui-slider>
+            </div>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
+      </div>
+      <ui-markdown :text="code[0]"></ui-markdown>
+    </div>
   </div>
 </template>
 
 <script>
+import snippets from '../mixins/snippets';
+
 export default {
+  mixins: [snippets],
   data() {
     return {
-      slider1: 0
+      slider1: 0,
+      slider2: 25
     };
   },
-  methods: {
-    onChange(data) {
-      this.slider1 = data;
-    }
+  created() {
+    this.showCode('slider', 1);
   }
 };
 </script>

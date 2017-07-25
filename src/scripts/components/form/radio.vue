@@ -8,7 +8,7 @@
       :disabled="disabled"
       v-model="currentValue"
       @change="handleChange">
-    <span v-if="!hideLabel" class="mdl-radio__label">
+    <span lass="mdl-radio__label">
       <slot>{{ label }}</slot>
     </span>
   </label>
@@ -23,25 +23,22 @@ const EVENT_CHANGE = 'change';
 export default {
   name: 'ui-radio',
   props: {
+    // state
+    model: {
+      type: [String, Number, Boolean],
+      default: false
+    },
+    // element attributes
     id: String,
     name: String,
-    label: String,
-    hideLabel: {
+    disabled: {
       type: Boolean,
       default: false
     },
     value: [String, Number, Boolean],
-    model: {
-      type: [String, Number, Boolean],
-      required: true,
-      default: false
-    },
-    // Applies ripple click effect
-    effect: {
-      type: Boolean,
-      default: false
-    },
-    disabled: {
+    // ui attributes
+    label: String,
+    noRipple: {
       type: Boolean,
       default: false
     }
@@ -56,7 +53,7 @@ export default {
       return {
         'mdl-radio': true,
         'mdl-js-radio': true,
-        'mdl-js-ripple-effect': this.effect,
+        'mdl-js-ripple-effect': !this.noRipple,
         'mdl-radio--disabled': this.disabled,
         'is-upgraded': true,
         'is-checked': this.isChecked
@@ -78,8 +75,12 @@ export default {
   },
   mounted() {
     this.$mdl.upgradeElement(this.$el, 'MaterialRadio');
-    if (this.effect) {
-      this.$mdl.upgradeElement(this.$el, 'MaterialRipple');
+    if (!this.noRipple) {
+      window.setTimeout(() => {
+        this.$nextTick(() => {
+          this.$mdl.upgradeElement(this.$el, 'MaterialRipple');
+        });
+      }, 100);
     }
   }
 };

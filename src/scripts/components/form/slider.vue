@@ -17,20 +17,22 @@ const EVENT_CHANGE = 'change';
 export default {
   name: 'ui-slider',
   props: {
-    min: {
-      type: Number,
-      default: 0
-    },
-    max: {
-      type: Number,
-      default: 1
-    },
+    // state
     model: {
       type: [Number, String],
       default: 0
     },
+    // element attributes
+    min: {
+      type: [Number, String],
+      default: 0
+    },
+    max: {
+      type: [Number, String],
+      default: 1
+    },
     step: {
-      type: Number,
+      type: [Number, String],
       default: 1
     },
     disabled: {

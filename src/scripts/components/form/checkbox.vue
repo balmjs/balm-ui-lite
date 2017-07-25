@@ -11,6 +11,7 @@
     <span v-if="!hideLabel" class="mdl-checkbox__label">
       <slot>{{ label }}</slot>
     </span>
+    </span>
   </label>
 </template>
 
@@ -24,25 +25,26 @@ const EVENT_CHANGE = 'change';
 export default {
   name: 'ui-checkbox',
   props: {
+    // state
+    model: {
+      type: [Array, String, Number, Boolean],
+      default: false
+    },
+    // element attributes
     id: String,
     name: String,
-    label: String,
-    hideLabel: {
+    disabled: {
       type: Boolean,
       default: false
     },
     value: [String, Number, Boolean],
-    model: {
-      type: [Array, String, Number, Boolean],
-      required: true,
-      default: false
-    },
-    // Applies ripple click effect
-    effect: {
+    // ui attributes
+    label: String,
+    noRipple: {
       type: Boolean,
       default: false
     },
-    disabled: {
+    hideLabel: {
       type: Boolean,
       default: false
     },
@@ -61,8 +63,9 @@ export default {
       return {
         'mdl-checkbox': true,
         'mdl-js-checkbox': true,
-        'mdl-js-ripple-effect': this.effect,
+        'mdl-js-ripple-effect': !this.noRipple,
         'mdl-checkbox--disabled': this.disabled,
+        'mdl-js-ripple-effect--ignore-events': true,
         'is-upgraded': true,
         'is-checked': this.isChecked,
         'is-filled': this.filled
@@ -86,7 +89,7 @@ export default {
   },
   mounted() {
     this.$mdl.upgradeElement(this.$el, 'MaterialCheckbox');
-    if (this.effect) {
+    if (!this.noRipple) {
       this.$mdl.upgradeElement(this.$el, 'MaterialRipple');
     }
   }

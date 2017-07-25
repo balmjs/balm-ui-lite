@@ -14,10 +14,12 @@ const CLASSNAME_ACTIVE = 'is-active';
 export default {
   name: 'ui-layout',
   props: {
+    // state
     active: {
       type: Number,
       default: 0
     },
+    // ui attributes
     fixedDrawer: {
       type: Boolean,
       default: false

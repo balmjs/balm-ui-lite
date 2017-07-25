@@ -7,14 +7,14 @@
 
     <h4>{{ $t('textfield.simple') }}</h4>
     <div class="snippet-demo">
-      <ui-textfield :model="text1" @input.native="onInputChange('text1', $event)"
+      <ui-textfield id="sample1" :model="text1" @input="onChange('text1', $event)"
         label="Text..."></ui-textfield>
     </div>
     <ui-markdown :text="code[0]"></ui-markdown>
 
     <h4>{{ $t('textfield.pattern') }}</h4>
     <div class="snippet-demo">
-      <ui-textfield :model="text2" @input.native="onInputChange('text2', $event)"
+      <ui-textfield id="sample2" :model="text2" @input="onChange('text2', $event)"
         label="Number..."
         pattern="-?[0-9]*(\.[0-9]+)?"
         error="Input is not a number!"></ui-textfield>
@@ -23,7 +23,7 @@
 
     <h4>{{ $t('textfield.floating') }}</h4>
     <div class="snippet-demo">
-      <ui-textfield :model="text3" @input.native="onInputChange('text3', $event)"
+      <ui-textfield id="sample3" :model="text3" @input="onChange('text3', $event)"
         labelFloating
         label="Floating Text..."></ui-textfield>
     </div>
@@ -31,7 +31,7 @@
 
     <h4>{{ $t('textfield.textarea') }}</h4>
     <div class="snippet-demo">
-      <ui-textfield type="textarea" :model="text4" @input.native="onInputChange('text4', $event)"
+      <ui-textfield type="textarea" id="sample4" :model="text4" @input="onChange('text4', $event)"
         label="Text lines..."
         :rows="3"></ui-textfield>
     </div>
@@ -39,10 +39,9 @@
 
     <h4>{{ $t('textfield.expandable') }}</h4>
     <div class="snippet-demo">
-      <ui-textfield :model="text5" @input.native="onInputChange('text5', $event)"
+      <ui-textfield id="sample5" :model="text5" @input="onChange('text5', $event)"
         label="Expandable Text..."
-        expandable
-        id="search">
+        expandable>
         <i slot="icon" class="material-icons">search</i>
       </ui-textfield>
     </div>
@@ -50,7 +49,7 @@
 
     <h4>{{ $t('textfield.plus') }}</h4>
     <div class="snippet-demo">
-      <ui-textfield :model="text6" @input.native="onInputChange('text6', $event)"
+      <ui-textfield id="sample6" :model="text6" @input="onChange('text6', $event)"
         label="Plus Text..."
         plus>
         <template slot="plus">
@@ -77,11 +76,6 @@ export default {
       text4: '',
       text5: '',
       text6: ''
-    }
-  },
-  methods: {
-    onInputChange(field, event) {
-      this[field] = event.target.value;
     }
   },
   created() {
