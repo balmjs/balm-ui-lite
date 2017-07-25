@@ -1,5 +1,10 @@
 {
   "props": [{
+    "name": "value",
+    "type": "Number, String",
+    "default": "0",
+    "description": "Assigns string value to badge"
+  }, {
     "name": "noBackground",
     "type": "Boolean",
     "default": "false",
@@ -9,11 +14,6 @@
     "type": "Boolean",
     "default": "false",
     "description": "Make the badge overlap with its container"
-  }, {
-    "name": "value",
-    "type": "Number, String",
-    "default": "0",
-    "description": "Assigns string value to badge"
   }],
   "slots": [{
     "name": "(default)",

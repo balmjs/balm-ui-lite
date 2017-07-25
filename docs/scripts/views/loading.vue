@@ -6,18 +6,33 @@
     </div>
 
     <div class="snippet-group">
-      <div class="snippet-demo">
-        <ui-loading active></ui-loading>
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <ui-loading active></ui-loading>
+          </div>
+          <div class="snippet-demo">
+            <ui-loading singleColor active></ui-loading>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
       </div>
+      <ui-markdown :text="code[0]"></ui-markdown>
     </div>
-    <ui-markdown :text="code[0]"></ui-markdown>
 
     <div class="snippet-group">
-      <div class="snippet-demo">
-        <ui-loading :type="1" active></ui-loading>
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <ui-loading :type="1" active></ui-loading>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
       </div>
+      <ui-markdown :text="code[1]"></ui-markdown>
     </div>
-    <ui-markdown :text="code[1]"></ui-markdown>
 
     <ui-apidoc name="loading"></ui-apidoc>
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <div v-html="text"></div>
+  <div class="snippet-code" v-html="text"></div>
 </template>
 
 <script>

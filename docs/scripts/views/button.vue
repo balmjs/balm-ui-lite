@@ -6,117 +6,169 @@
     </div>
 
     <div class="snippet-group">
-      <div class="snippet-demo">
-        <ui-button fab colored>
-          <i class="material-icons">add</i>
-        </ui-button>
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <ui-button fab colored noRipple>
+              <i class="material-icons">add</i>
+            </ui-button>
+          </div>
+          <div class="snippet-demo">
+            <ui-button fab colored>
+              <i class="material-icons">add</i>
+            </ui-button>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
       </div>
-      <div class="snippet-demo">
-        <ui-button fab colored effect>
-          <i class="material-icons">add</i>
-        </ui-button>
-      </div>
+      <ui-markdown :text="code[0]"></ui-markdown>
     </div>
-    <ui-markdown :text="code[0]"></ui-markdown>
 
     <div class="snippet-group">
-      <div class="snippet-demo">
-        <ui-button fab>
-          <i class="material-icons">add</i>
-        </ui-button>
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <ui-button fab noRipple>
+              <i class="material-icons">add</i>
+            </ui-button>
+          </div>
+          <div class="snippet-demo">
+            <ui-button fab>
+              <i class="material-icons">add</i>
+            </ui-button>
+          </div>
+          <div class="snippet-demo">
+            <ui-button fab disabled>
+              <i class="material-icons">add</i>
+            </ui-button>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
       </div>
-      <div class="snippet-demo">
-        <ui-button fab effect>
-          <i class="material-icons">add</i>
-        </ui-button>
-      </div>
-      <div class="snippet-demo">
-        <ui-button fab disabled>
-          <i class="material-icons">add</i>
-        </ui-button>
-      </div>
+      <ui-markdown :text="code[1]"></ui-markdown>
     </div>
-    <ui-markdown :text="code[1]"></ui-markdown>
 
     <div class="snippet-group">
-      <div class="snippet-demo">
-        <ui-button raised>Button</ui-button>
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <ui-button raised noRipple>Button</ui-button>
+          </div>
+          <div class="snippet-demo">
+            <ui-button raised>Button</ui-button>
+          </div>
+          <div class="snippet-demo">
+            <ui-button raised disabled>Button</ui-button>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
       </div>
-      <div class="snippet-demo">
-        <ui-button raised effect>Button</ui-button>
-      </div>
-      <div class="snippet-demo">
-        <ui-button raised disabled>Button</ui-button>
-      </div>
+      <ui-markdown :text="code[2]"></ui-markdown>
     </div>
-    <ui-markdown :text="code[2]"></ui-markdown>
 
     <div class="snippet-group">
-      <div class="snippet-demo">
-        <ui-button raised colored>Button</ui-button>
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <ui-button raised colored noRipple>Button</ui-button>
+          </div>
+          <div class="snippet-demo">
+            <ui-button raised accent noRipple>Button</ui-button>
+          </div>
+          <div class="snippet-demo">
+            <ui-button raised accent>Button</ui-button>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
       </div>
-      <div class="snippet-demo">
-        <ui-button raised accent>Button</ui-button>
-      </div>
-      <div class="snippet-demo">
-        <ui-button raised accent effect>Button</ui-button>
-      </div>
+      <ui-markdown :text="code[3]"></ui-markdown>
     </div>
-    <ui-markdown :text="code[3]"></ui-markdown>
 
     <div class="snippet-group">
-      <div class="snippet-demo">
-        <ui-button>Button</ui-button>
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <ui-button noRipple>Button</ui-button>
+          </div>
+          <div class="snippet-demo">
+            <ui-button>Button</ui-button>
+          </div>
+          <div class="snippet-demo">
+            <ui-button disabled>Button</ui-button>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
       </div>
-      <div class="snippet-demo">
-        <ui-button effect>Button</ui-button>
-      </div>
-      <div class="snippet-demo">
-        <ui-button disabled>Button</ui-button>
-      </div>
+      <ui-markdown :text="code[4]"></ui-markdown>
     </div>
-    <ui-markdown :text="code[4]"></ui-markdown>
 
     <div class="snippet-group">
-      <div class="snippet-demo">
-        <ui-button primary>Button</ui-button>
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <ui-button primary noRipple>Button</ui-button>
+          </div>
+          <div class="snippet-demo">
+            <ui-button accent noRipple>Button</ui-button>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
       </div>
-      <div class="snippet-demo">
-        <ui-button accent>Button</ui-button>
-      </div>
+      <ui-markdown :text="code[5]"></ui-markdown>
     </div>
-    <ui-markdown :text="code[5]"></ui-markdown>
 
     <div class="snippet-group">
-      <div class="snippet-demo">
-        <ui-button icon="mood"></ui-button>
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <ui-button icon="mood"></ui-button>
+          </div>
+          <div class="snippet-demo">
+            <ui-button icon="mood" colored></ui-button>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
       </div>
-      <div class="snippet-demo">
-        <ui-button icon="mood" colored></ui-button>
-      </div>
+      <ui-markdown :text="code[6]"></ui-markdown>
     </div>
-    <ui-markdown :text="code[6]"></ui-markdown>
 
     <div class="snippet-group">
-      <div class="snippet-demo">
-        <ui-button fab mini-fab>
-          <i class="material-icons">add</i>
-        </ui-button>
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <ui-button fab mini-fab noRipple>
+              <i class="material-icons">add</i>
+            </ui-button>
+          </div>
+          <div class="snippet-demo">
+            <ui-button fab mini-fab colored noRipple>
+              <i class="material-icons">add</i>
+            </ui-button>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
       </div>
-      <div class="snippet-demo">
-        <ui-button fab mini-fab colored>
-          <i class="material-icons">add</i>
-        </ui-button>
-      </div>
+      <ui-markdown :text="code[7]"></ui-markdown>
     </div>
-    <ui-markdown :text="code[7]"></ui-markdown>
 
     <div class="snippet-group">
-      <div class="snippet-demo">
-        <ui-button link>Link</ui-button>
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo">
+            <ui-button link>Link</ui-button>
+          </div>
+        </div>
       </div>
+      <ui-markdown :text="code[8]"></ui-markdown>
     </div>
-    <ui-markdown :text="code[8]"></ui-markdown>
 
     <ui-apidoc name="button"></ui-apidoc>
   </div>

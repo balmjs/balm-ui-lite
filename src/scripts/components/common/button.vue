@@ -47,7 +47,7 @@ export default {
       type: Boolean,
       default: false
     },
-    effect: {
+    noRipple: {
       type: Boolean,
       default: false
     },
@@ -58,6 +58,9 @@ export default {
     }
   },
   computed: {
+    hasRippleEffect() {
+      return !this.noRipple && !this.link;
+    },
     className() {
       return {
         'mdl-button': true,
@@ -69,14 +72,14 @@ export default {
         'mdl-button--colored': this.colored, // Applies colored display effect (primary or accent color, depending on the type of button)
         'mdl-button--primary': this.primary, // Applies primary color display effect
         'mdl-button--accent': this.accent, // Applies accent color display effect
-        'mdl-js-ripple-effect': this.effect, // Applies ripple click effect
+        'mdl-js-ripple-effect': this.hasRippleEffect, // Applies ripple click effect
         'mdl-button--link': this.link
       };
     }
   },
   mounted() {
     this.$mdl.upgradeElement(this.$el, 'MaterialButton');
-    if (this.effect) {
+    if (this.hasRippleEffect) {
       this.$mdl.upgradeElement(this.$el, 'MaterialRipple');
     }
   }
