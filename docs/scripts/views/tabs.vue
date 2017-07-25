@@ -7,7 +7,7 @@
     <h4>{{ $t('tabs.basic') }}</h4>
     <div class="snippet-demo">
       <ui-tabs :active="tab">
-        <ui-tab-bar effect @change="onChange">
+        <ui-tab-bar @change="onChange">
           <ui-tab v-for="(item, index) in ['Tab1', 'Tab2', 'Tab3']" :key="index">
             {{ item }}
           </ui-tab>
@@ -28,7 +28,7 @@
     <h4>{{ $t('tabs.materialIcon') }}</h4>
     <div class="snippet-demo">
       <ui-tabs :active="tab2">
-        <ui-tab-bar effect @change="onChange2">
+        <ui-tab-bar @change="onChange2">
           <ui-tab v-for="(item, index) in ['edit', 'delete']" :key="index">
             <ui-icon>{{ item }}</ui-icon>
           </ui-tab>
@@ -46,7 +46,7 @@
     <h4>{{ $t('tabs.customIcon') }}</h4>
     <div class="snippet-demo">
       <ui-tabs :active="tab3">
-        <ui-tab-bar effect @change="onChange3">
+        <ui-tab-bar @change="onChange3">
           <ui-tab v-for="(item, index) in ['qrcode', 'tv']" :key="index">
             <i :class="['fa', `fa-${item}`]"></i>
           </ui-tab>

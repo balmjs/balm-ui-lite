@@ -274,8 +274,8 @@
                     <ui-layout-title>Title</ui-layout-title>
                   </ui-layout-header-row>
                   <!-- Tabs -->
-                  <ui-layout-tab-bar effect @change="onChange">
-                    <ui-layout-tab v-for="(item, index) in ['Tab1', 'Tab2', 'Tab3']" :key="index">
+                  <ui-layout-tab-bar @change="onChange">
+                    <ui-layout-tab v-for="(item, index) in menu" :key="index">
                       {{ item }}
                     </ui-layout-tab>
                   </ui-layout-tab-bar>
@@ -317,8 +317,8 @@
                     <ui-layout-title>Title</ui-layout-title>
                   </ui-layout-header-row>
                   <!-- Tabs -->
-                  <ui-layout-tab-bar effect @change="onChange">
-                    <ui-layout-tab v-for="(item, index) in ['Tab1', 'Tab2', 'Tab3']" :key="index">
+                  <ui-layout-tab-bar @change="onChange">
+                    <ui-layout-tab v-for="(item, index) in menu" :key="index">
                       {{ item }}
                     </ui-layout-tab>
                   </ui-layout-tab-bar>
@@ -356,6 +356,7 @@
 export default {
   data() {
     return {
+      menu: ['Tab1', 'Tab2', 'Tab3'],
       tab: 0
     };
   },

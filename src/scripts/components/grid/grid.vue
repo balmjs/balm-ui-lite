@@ -18,7 +18,7 @@ export default {
     className() {
       return {
         'mdl-grid': true,
-        'mdl-grid--no-spacing': this.noSpacing
+        'mdl-grid--no-spacing': this.noSpacing // Modifies the grid cells to have no margin between them.
       };
     }
   }

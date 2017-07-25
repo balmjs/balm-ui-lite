@@ -1,6 +1,6 @@
 <template>
   <div class="mdl-layout__content">
-    <slot></slot>
+    <slot><!-- page content --></slot>
   </div>
 </template>
 

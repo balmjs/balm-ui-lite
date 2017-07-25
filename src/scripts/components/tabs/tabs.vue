@@ -12,10 +12,12 @@ const CLASSNAME_ACTIVE = 'is-active';
 export default {
   name: 'ui-tabs',
   props: {
+    // state
     active: {
       type: Number,
       default: 0
     },
+    // ui attributes
     fixedTabs: {
       type: Boolean,
       default: false

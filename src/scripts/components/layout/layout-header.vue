@@ -11,6 +11,7 @@
 export default {
   name: 'ui-layout-header',
   props: {
+    // ui attributes
     scroll: {
       type: Boolean,
       default: false

@@ -1,6 +1,6 @@
 <template>
   <div class="mdl-layout__drawer">
-    <slot></slot>
+    <slot><!-- nav content --></slot>
   </div>
 </template>
 

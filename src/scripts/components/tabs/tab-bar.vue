@@ -12,7 +12,8 @@ const EVENT_CHANGE = 'change';
 export default {
   name: 'ui-tab-bar',
   props: {
-    effect: {
+    // ui attributes
+    noRipple: {
       type: Boolean,
       default: false
     },
@@ -20,11 +21,13 @@ export default {
   },
   computed: {
     className() {
-      return {
-        'mdl-tabs__tab-bar': true,
-        'mdl-tabs--tab-left': this.position && this.position.toLowerCase() === POSITION_LEFT,
-        'mdl-tabs--tab-right': this.position && this.position.toLowerCase() === POSITION_RIGHT
-      };
+      let result = ['mdl-tabs__tab-bar'];
+
+      if ([POSITION_LEFT, POSITION_RIGHT].indexOf(this.position) > -1) {
+        result.push(`mdl-tabs--tab-${this.position}`);
+      }
+
+      return result;
     }
   },
   methods: {

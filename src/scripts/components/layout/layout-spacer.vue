@@ -1,7 +1,5 @@
 <template>
-  <div class="mdl-layout-spacer">
-    <slot></slot>
-  </div>
+  <div class="mdl-layout-spacer"></div>
 </template>
 
 <script>

@@ -12,11 +12,12 @@ const EVENT_CHANGE = 'change';
 export default {
   name: 'ui-layout-tab-bar',
   props: {
-    manualSwitch: {
+    // ui attributes
+    noRipple: {
       type: Boolean,
       default: false
     },
-    effect: {
+    manualSwitch: {
       type: Boolean,
       default: false
     }
@@ -31,7 +32,7 @@ export default {
     className() {
       return {
         'mdl-layout__tab-bar': true,
-        'mdl-js-ripple-effect': this.effect,
+        'mdl-js-ripple-effect': !this.noRipple,
         'mdl-layout__tab-manual-switch': this.manualSwitch // Disables tab switching when clicking on tab separators. Useful for disabling default behavior and setting up your own event listeners.
       };
     }
@@ -42,7 +43,7 @@ export default {
     }
   },
   mounted() {
-    if (this.effect) {
+    if (!this.noRipple) {
       window.setTimeout(() => {
         this.$nextTick(() => {
           this.$mdl.upgradeElement(this.$el, 'MaterialRipple');

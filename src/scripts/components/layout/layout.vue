@@ -1,9 +1,6 @@
 <template>
   <div :class="className">
-    <slot name="header"></slot>
-    <slot name="drawer"></slot>
-    <slot></slot>
-    <slot name="footer"></slot>
+    <slot><!-- header & drawer & content --></slot>
   </div>
 </template>
 
