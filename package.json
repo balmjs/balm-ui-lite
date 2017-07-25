@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/balmjs/ui-vue.git"
+    "url": "git+https://github.com/balmjs/ui-vue-lite.git"
   },
   "author": [
     {
@@ -28,9 +28,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/balmjs/ui-vue/issues"
+    "url": "https://github.com/balmjs/ui-vue-lite/issues"
   },
-  "homepage": "https://github.com/balmjs/ui-vue#readme",
+  "homepage": "http://balmjs.com/ui-vue-lite/",
   "devDependencies": {
     "axios": "^0.16.2",
     "babel-eslint": "^7.2.3",
