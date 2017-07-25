@@ -1,5 +1,5 @@
 {
-  "name": "balm-ui",
+  "name": "balm-ui-lite",
   "version": "0.1.25",
   "description": "Material Design + Vue + Idea",
   "main": "dist/js/main.js",

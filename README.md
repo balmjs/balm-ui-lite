@@ -1,6 +1,8 @@
 # BalmUI
 > Material Design + Vue + Idea
 
+⚠ Migrated from balm-ui@0.1.x !important
+
 ## Installation & Setup
 
 ### 1. Requirement
@@ -23,7 +25,7 @@ npm install --save balm-ui
 __`/path/to/_vendor.scss`__
 
 ```css
-@import 'node_modules/balm-ui/src/styles/main.scss';
+@import 'node_modules/balm-ui-lite/src/styles/main.scss';
 ```
 
 ##### 1.2 Use JavaScript
@@ -43,7 +45,7 @@ balm.config = {
       loader: 'sass'
     }],
     alias: {
-      'balm-css': 'balm-ui/balm-ui/src/styles/main.scss'
+      'balm-css': 'balm-ui-lite/src/styles/main.scss'
     }
   },
   ...
@@ -91,7 +93,7 @@ Vue.use(BalmUI);
 
 #### 3. Assets Config
 
-> BalmUI [images & fonts](http://balmjs.com/ui-vue/assets.zip)
+> BalmUI [images & fonts](http://balmjs.com/ui-vue-lite/assets.zip)
 
 ## Components
 
@@ -124,8 +126,6 @@ Vue.use(BalmUI);
 - [x] select
 - [x] autocomplete
 - [x] datepicker
-- [ ] fileupload
-- [ ] editor
 
 ### Data View
 

@@ -2,10 +2,11 @@ var balm = require('balm');
 
 var useDefault = !(process.argv[2] === '--mdl');
 var buildDocs = process.argv[3] === '--docs';
+var useDocs = !balm.config.production || buildDocs;
 
 balm.config = {
   roots: {
-    source: balm.config.production ? 'src' : 'docs'
+    source: useDocs ? 'docs' : 'src'
   },
   styles: {
     ext: 'scss',
@@ -17,7 +18,7 @@ balm.config = {
   },
   scripts: {
     entry: {
-      main: balm.config.production ? './src/index' : './docs/scripts/main'
+      main: useDocs ? './docs/scripts/main.js' : './src/index.js'
     },
     loaders: [{
       test: /\.vue$/,
@@ -37,14 +38,14 @@ balm.config = {
     },
     eslint: true
   },
+  extras: {
+    excludes: ['index.js']
+  },
+  assets: {
+    publicUrl: buildDocs ? 'http://balmjs.com/ui-vue-lite/' : ''
+  },
   useDefault: useDefault
 };
-
-if (buildDocs) {
-  balm.config.roots.source = 'docs';
-  balm.config.scripts.entry.main = './docs/scripts/main.js';
-  balm.config.assets.publicUrl = 'http://balmjs.com/ui-vue-lite/';
-}
 
 var DMI_SOURCE = './node_modules/material-design-icons';
 var DML_SOURCE = './node_modules/material-design-lite';

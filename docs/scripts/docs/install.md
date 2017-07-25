@@ -8,7 +8,7 @@
 ### Install
 
 ```sh
-npm install --save balm-ui
+npm install --save balm-ui-lite
 ```
 
 ### Setup
@@ -20,7 +20,7 @@ npm install --save balm-ui
 __`/path/to/_vendor.scss`__
 
 ```css
-@import 'node_modules/balm-ui/src/styles/main.scss';
+@import 'node_modules/balm-ui-lite/src/styles/main.scss';
 ```
 
 #### 1.2 Use JavaScript
@@ -40,7 +40,7 @@ balm.config = {
       loader: 'sass'
     }],
     alias: {
-      'balm-css': 'balm-ui/balm-ui/src/styles/main.scss'
+      'balm-css': 'balm-ui-lite/src/styles/main.scss'
     }
   },
   ...
@@ -65,12 +65,12 @@ balm.config = {
       test: /\.vue$/,
       loader: 'vue'
     }, {
-      test: /balm-ui.src.*?js$/,
+      test: /balm-ui-lite.src.*?js$/,
       loader: 'babel'
     }],
     alias: {
       'vue': 'vue/dist/vue.js',
-      'balm-ui': 'balm-ui/src/index.js'
+      'balm-ui': 'balm-ui-lite/src/index.js'
     }
   },
   ...
