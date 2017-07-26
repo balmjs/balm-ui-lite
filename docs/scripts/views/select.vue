@@ -7,42 +7,30 @@
     <div class="snippet-group">
       <div class="snippet-demo">
         <ui-select :options="options" :model="formData.selected"
+          optionValue="value" optionKey="key"
           defaultValue="All items" defaultKey="0"
-          @change="onSelectChange('selected', $event)"></ui-select>
+          @change="onChange('formData.selected', $event)"></ui-select>
         selected: {{ formData.selected }}
       </div>
     </div>
-    <ui-markdown :text="code[0]"></ui-markdown>
+    <!-- <ui-markdown :text="code[0]"></ui-markdown> -->
 
     <div class="snippet-group">
       <div class="snippet-demo">
         <ui-select :options="provinces" :model="formData.province"
-          placeholder="Select province..."
+          optionValue="value" optionKey="key"
+          defaultValue="Select province..." defaultKey="0"
           @change="onSelectChange('province', $event, changeCity)"></ui-select>
       </div>
       <div class="snippet-demo">
         <ui-select :options="cities" :model="formData.city"
-          placeholder="Select city..."
+          optionValue="value" optionKey="key"
+          defaultValue="Select city..." defaultKey="0"
           @change="onSelectChange('city', $event)"></ui-select>
         Province: {{ formData.province }} - City: {{ formData.city }}
       </div>
     </div>
-    <ui-markdown :text="code[1]"></ui-markdown>
-
-    <div class="snippet-group">
-      <div class="snippet-demo">
-        <p v-if="!edit">
-          {{ formData.selected }}
-          <ui-button effect @click.native="onEdit">Edit</ui-button>
-        </p>
-        <p v-if="edit">
-          <ui-select :options="options" :model="formData.selected"
-            placeholder="Select..."
-            @change="onSelectChange('selected', $event)"></ui-select>
-          <ui-button effect @click.native="onCancel">Cancel</ui-button>
-        </p>
-      </div>
-    </div>
+    <!-- <ui-markdown :text="code[1]"></ui-markdown> -->
 
     <ui-apidoc name="select"></ui-apidoc>
   </div>
@@ -50,6 +38,38 @@
 
 <script>
 import snippets from '../mixins/snippets';
+
+const OPTIONS = [{
+  key: 1,
+  value: 'item 1'
+}, {
+  key: 2,
+  value: 'item 2'
+}, {
+  key: 3,
+  value: 'item 3'
+}, {
+  key: 4,
+  value: 'item 4'
+}, {
+  key: 5,
+  value: 'item 5'
+}, {
+  key: 6,
+  value: 'item 6'
+}, {
+  key: 7,
+  value: 'item 7'
+}, {
+  key: 8,
+  value: 'item 8'
+}, {
+  key: 9,
+  value: 'item 9'
+}, {
+  key: 10,
+  value: 'item 10'
+}];
 
 const PROVINCES = [{
   key: 1,
@@ -91,60 +111,21 @@ export default {
         province: 0,
         city: 0
       },
-      options: [{
-        key: 1,
-        value: 'item 1'
-      }, {
-        key: 2,
-        value: 'item 2'
-      }, {
-        key: 3,
-        value: 'item 3'
-      }, {
-        key: 4,
-        value: 'item 4'
-      }, {
-        key: 5,
-        value: 'item 5'
-      }, {
-        key: 6,
-        value: 'item 6'
-      }, {
-        key: 7,
-        value: 'item 7'
-      }, {
-        key: 8,
-        value: 'item 8'
-      }, {
-        key: 9,
-        value: 'item 9'
-      }, {
-        key: 10,
-        value: 'item 10'
-      }],
+      options: OPTIONS,
       provinces: PROVINCES,
       cities: []
     };
   },
   methods: {
-    onSelectChange(field, option, fn) {
-      let key = option.key || -1;
-
-      this.formData[field] = key;
-      fn && fn(key);
-
-      if (field === 'province') {
-        this.formData.city = (key > -1 && CITIES[key].length) ? CITIES[key][0].key : 0;
+    onSelectChange(field, value, fn) {
+      this.formData[field] = value;
+      if (value) {
+        fn && fn(value);
       }
     },
     changeCity(key) {
       this.cities = key > -1 ? CITIES[key] : [];
-    },
-    onEdit() {
-      this.edit = true;
-    },
-    onCancel() {
-      this.edit = false;
+      this.formData.city = this.cities.length ? this.cities[0].key : 0;
     }
   },
   created() {

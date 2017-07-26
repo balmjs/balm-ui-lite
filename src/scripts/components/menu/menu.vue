@@ -49,12 +49,7 @@ export default {
     position: {
       type: [Number, String],
       default: 0
-    },
-    // just for '<ui-select>'
-    isSelect: {
-      type: Boolean,
-      default: false
-    },
+    }
   },
   data() {
     return {

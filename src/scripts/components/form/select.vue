@@ -1,144 +1,81 @@
 <template>
-  <div :class="className">
-    <ui-menu isSelect
-      :menu="currentOptions"
-      :disabled="disabled"
-      @clicked="handleChange">
-      <template slot="icon">
-        <span :class="{'placeholder': !currentValue}">{{ currentValue || placeholder }}</span>
-        <i class="material-icons">{{ expand }}</i>
-      </template>
-    </ui-menu>
-  </div>
+  <select class="mdl-select"
+    v-model="currentValue"
+    @change="handleChange">
+    <!-- Default value -->
+    <option v-if="defaultValue"
+      :value="defaultKey"
+      selected>{{ defaultValue }}</option>
+    <!-- Option list -->
+    <option v-for="option in currentOptions"
+      :value="option[optionKey]">{{ option[optionValue] }}</option>
+  </select>
 </template>
 
 <script>
-import UiMenu from '../menu/menu';
+import {isObject} from '../../helpers';
 
 const EVENT_CHANGE = 'change';
 
 export default {
   name: 'ui-select',
-  components: {
-    UiMenu
-  },
   props: {
+    // state
+    model: null,
+    // ui attributes
     options: {
+      required: true,
       type: Array,
       default() {
         return [];
       }
     },
-    defaultValue: String,
+    optionKey: {
+      type: String,
+      default: 'value'
+    },
+    optionValue: {
+      type: String,
+      default: 'label'
+    },
     defaultKey: {
       type: String,
       default: ''
     },
-    model: {
-      required: true
-    },
-    placeholder: String,
-    disabled: {
-      type: Boolean,
-      default: false
-    }
+    defaultValue: String
   },
   data() {
     return {
-      currentKey: this.model,
-      currentValue: '',
-      isExpand: false
+      currentValue: this.model,
+      currentOptions: this.options
     };
-  },
-  computed: {
-    className() {
-      return {
-        'mdl-select': true,
-        'mdl-select--disabled': this.disabled,
-        'is-expand': this.isExpand
-      };
-    },
-    currentOptions() {
-      return this.init();
-    },
-    expand() {
-      return this.isExpand ? 'expand_less' : 'expand_more';
-    }
   },
   watch: {
     model(val) {
-      this.currentKey = val;
+      this.currentValue = val;
     },
     options(val) {
-      this.currentOptions = this.init(val);
-      this.currentValue = '';
-
-      let currentOptions = this.currentOptions;
-      if (currentOptions.length) {
-        this.initSelected(currentOptions, currentOptions[0].label, 'label');
-      }
+      this.currentOptions = val;
     }
   },
   methods: {
-    initSelected(options, defaults = '', keyField = 'value') {
-      let selected = defaults;
-
-      for (let i = 0, len = options.length; i < len; i++) {
-        if (options[i].key == this.currentKey) {
-          selected = options[i][keyField];
-          break;
-        }
-      }
-
-      this.currentValue = selected;
+    handleChange() {
+      this.$emit(EVENT_CHANGE, this.currentValue);
     },
-    init(_options = this.options) {
-      let options = [];
+    init() {
+      if (!this.defaultValue && this.currentOptions.length) {
+        let defaultOption = {};
 
-      // default value
-      if (this.defaultValue) {
-        options.unshift({
-          key: this.defaultKey,
-          value: this.defaultValue
-        });
-        this.currentValue = options[0].value;
-      }
+        defaultOption = this.currentValue
+          ? this.currentOptions.find(option => option[this.optionKey] == this.currentValue)
+          : this.currentOptions[0];
 
-      options = options.concat(_options);
-
-      // init selected
-      if (!this.placeholder && options.length) {
-        this.initSelected(options, options[0].value);
-      }
-
-      // menu data
-      let result = options.map((option, index) => {
-        return {
-          index: index,
-          value: option.key,
-          label: option.value,
-          selected: option.value === this.currentValue
-        };
-      });
-
-      return result;
-    },
-    handleChange(option) {
-      if (option.label !== this.currentValue) {
-        this.currentValue = option.label;
-        this.$emit(EVENT_CHANGE, {
-          index: option.index,
-          key: option.value,
-          value: option.label
-        });
+        this.$emit(EVENT_CHANGE, defaultOption[this.optionKey]);
       }
     }
   },
   mounted() {
-    let options = this.options;
-    if (options.length) {
-      this.initSelected(options);
-    }
+    this.init();
   }
 };
 </script>
