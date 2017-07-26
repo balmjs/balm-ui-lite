@@ -5,13 +5,23 @@
     </div>
 
     <div class="snippet-group">
-      <div class="snippet-demo">
-        <ui-icon-toggle value="X" :model="icons" @change="onIconsChange">X</ui-icon-toggle>
-        <ui-icon-toggle value="Y" :model="icons" @change="onIconsChange">Y</ui-icon-toggle>
-        <ui-icon-toggle value="Z" :model="icons" @change="onIconsChange">Z</ui-icon-toggle>
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <ui-icon-toggle value="X" :model="icons" @change="onIconsChange">X</ui-icon-toggle>
+          </div>
+          <div class="snippet-demo">
+            <ui-icon-toggle value="Y" :model="icons" @change="onIconsChange">Y</ui-icon-toggle>
+          </div>
+          <div class="snippet-demo">
+            <ui-icon-toggle value="Z" :model="icons" @change="onIconsChange">Z</ui-icon-toggle>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
       </div>
+      <ui-markdown :text="code[0]"></ui-markdown>
     </div>
-    <ui-markdown :text="code[0]"></ui-markdown>
 
     <ui-apidoc name="icon-toggle"></ui-apidoc>
   </div>

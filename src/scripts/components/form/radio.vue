@@ -54,9 +54,10 @@ export default {
         'mdl-radio': true,
         'mdl-js-radio': true,
         'mdl-js-ripple-effect': !this.noRipple,
-        'mdl-radio--disabled': this.disabled,
-        'is-upgraded': true,
-        'is-checked': this.isChecked
+        'mdl-js-ripple-effect--ignore-events': !this.noRipple, // bugfix for ripple
+        'is-upgraded': true, // bugfix for css
+        'is-checked': this.isChecked,
+        'mdl-radio--disabled': this.disabled
       };
     },
     isChecked() {
@@ -74,14 +75,7 @@ export default {
     }
   },
   mounted() {
-    this.$mdl.upgradeElement(this.$el, 'MaterialRadio');
-    if (!this.noRipple) {
-      window.setTimeout(() => {
-        this.$nextTick(() => {
-          this.$mdl.upgradeElement(this.$el, 'MaterialRipple');
-        });
-      }, 100);
-    }
+    this.$mdl.upgradeElements(this.$el);
   }
 };
 </script>

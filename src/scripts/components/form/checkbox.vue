@@ -64,10 +64,10 @@ export default {
         'mdl-checkbox': true,
         'mdl-js-checkbox': true,
         'mdl-js-ripple-effect': !this.noRipple,
-        'mdl-checkbox--disabled': this.disabled,
-        'mdl-js-ripple-effect--ignore-events': true,
-        'is-upgraded': true,
+        'mdl-js-ripple-effect--ignore-events': !this.noRipple, // bugfix for ripple
+        'is-upgraded': true, // bugfix for css
         'is-checked': this.isChecked,
+        'mdl-checkbox--disabled': this.disabled,
         'is-filled': this.filled
       };
     },
@@ -88,10 +88,7 @@ export default {
     }
   },
   mounted() {
-    this.$mdl.upgradeElement(this.$el, 'MaterialCheckbox');
-    if (!this.noRipple) {
-      this.$mdl.upgradeElement(this.$el, 'MaterialRipple');
-    }
+    this.$mdl.upgradeElements(this.$el);
   }
 };
 </script>

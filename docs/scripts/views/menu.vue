@@ -8,29 +8,24 @@
     <h4>{{ $t('menu.basic') }}</h4>
     <div class="snippet-group">
       <div class="snippet-demo">
-        <ui-menu effect :menu="data" @clicked="onMenu">
-          <template slot="icon">
-            <i class="material-icons">person</i>
-          </template>
-        </ui-menu>
+        <ui-button id="demo-menu-lower-left" icon="more_vert"></ui-button>
+        <ui-menu btnId="demo-menu-lower-left" :menu="data" @selected="onMenu"></ui-menu>
       </div>
     </div>
-    <ui-markdown :text="code[0]"></ui-markdown>
+    <!-- <ui-markdown :text="code[0]"></ui-markdown> -->
 
     <h4>{{ $t('menu.custom') }}</h4>
     <div class="snippet-group">
       <div class="snippet-demo">
-        <ui-menu effect>
-          <template slot="icon">
-            <i class="material-icons">settings</i>
-          </template>
-          <ui-menuitem v-for="(item, index) in data" :key="index" :item="item" @clicked="onMenu">
+        <ui-button id="demo-menu-lower-right" icon="settings"></ui-button>
+        <ui-menu btnId="demo-menu-lower-right" :menu="data" @selected="onMenu">
+          <ui-menuitem v-for="(item, index) in data" :key="index" :item="item">
             <a :href="item.url">{{ item.label }}</a>
           </ui-menuitem>
         </ui-menu>
       </div>
     </div>
-    <ui-markdown :text="code[1]"></ui-markdown>
+    <!-- <ui-markdown :text="code[1]"></ui-markdown> -->
 
     <ui-apidoc name="menu"></ui-apidoc>
     <ui-apidoc name="menuitem"></ui-apidoc>

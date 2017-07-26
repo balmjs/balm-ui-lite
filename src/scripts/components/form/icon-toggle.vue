@@ -57,9 +57,10 @@ export default {
         'mdl-icon-toggle': true,
         'mdl-js-icon-toggle': true,
         'mdl-js-ripple-effect': !this.noRipple,
-        'mdl-icon-toggle--disabled': this.disabled,
-        'is-upgraded': true,
-        'is-checked': this.isChecked
+        'mdl-js-ripple-effect--ignore-events': !this.noRipple, // bugfix for ripple
+        'is-upgraded': true, // bugfix for css
+        'is-checked': this.isChecked,
+        'mdl-icon-toggle--disabled': this.disabled
       };
     },
     isChecked() {
@@ -79,10 +80,7 @@ export default {
     }
   },
   mounted() {
-    this.$mdl.upgradeElement(this.$el, 'MaterialIconToggle');
-    if (!this.noRipple) {
-      this.$mdl.upgradeElement(this.$el, 'MaterialRipple');
-    }
+    this.$mdl.upgradeElements(this.$el);
   }
 };
 </script>
