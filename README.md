@@ -1,4 +1,4 @@
-# BalmUI Lite
+# [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 > Material Design Lite + Vue
 
 ## Installation & Setup

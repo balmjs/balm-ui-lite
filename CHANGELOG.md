@@ -1,4 +1,4 @@
-# BalmUI Lite
+# [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
 ## 0.5.0-beta
 
