@@ -10,7 +10,11 @@ balm.config = {
   },
   styles: {
     ext: 'scss',
-    autoprefixer: ['> 1%', 'last 3 versions', 'not ie <= 8']
+    autoprefixer: [
+      '> 1%',
+      'last 2 versions',
+      'not ie <= 8'
+    ]
   },
   scripts: {
     entry: {
@@ -33,6 +37,9 @@ balm.config = {
       flatpickrLangZh: 'flatpickr/dist/l10n/zh.js'
     },
     eslint: true
+  },
+  extras: {
+    excludes: ['index.js']
   },
   assets: {
     publicUrl: buildDocs ? 'http://balmjs.com/ui-vue-lite/' : ''
