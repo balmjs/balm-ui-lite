@@ -1,8 +1,12 @@
-## BalmUI lite version
+# BalmUI Lite
+
+## 0.5.0-beta
+
+### Refactor most of the components
 
 ### Update dependencies
 
-- use balm@lastest
+- use balm@0.8.3
 - update flatpickr@2.6.3
 
 ### Update components
@@ -15,23 +19,6 @@ __`<ui-button>`__
 
 - fix css bug for link style
 
-__`<ui-card>`__
+---
 
-- refactoring
-
-### Refactor components
-
-- __`<ui-card>`__
-- __`<ui-card-title>`__
-- __`<ui-card-actions>`__
-- __`<ui-card-text>`__
-- __`<ui-card-media>`__
-- __`<ui-card-menu>`__
-
-- __`<ui-chip>`__
-- __`<ui-chip-text>`__
-- __`<ui-chip-action>`__
-- __`<ui-chip-contact>`__
-
-- __`<ui-grid>`__
-- __`<ui-cell>`__
+## [0.1.x](https://github.com/balmjs/ui-vue-lite/blob/0.1.x/CHANGELOG.md)

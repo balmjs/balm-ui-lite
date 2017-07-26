@@ -1,30 +1,30 @@
-# BalmUI lite
+# BalmUI Lite
 > Material Design Lite + Vue
 
 ## Installation & Setup
 
-### 1. Requirement
+### 0. Requirement
 
 - [BalmJS](http://balmjs.com/)
 - [Vue.js](https://vuejs.org/)@2.1.0+
 
-### 2. Install
+### 1. Install
 
 ```sh
-npm install --save balm-ui
+npm install --save balm-ui-lite
 ```
 
-### 3. Setup
+### 2. Setup
 
-#### 1. CSS Config
+#### 2.1 CSS Config
 
 __`/path/to/_vendor.scss`__
 
 ```css
-@import 'node_modules/balm-ui/src/styles/main.scss';
+@import 'node_modules/balm-ui-lite/src/styles/main.scss';
 ```
 
-#### 2. JS Config
+#### 2.2 JS Config
 
 __`gulpfile.js`__
 
@@ -36,12 +36,12 @@ balm.config = {
       test: /\.vue$/,
       loader: 'vue'
     }, {
-      test: /balm-ui.src.*?js$/,
+      test: /balm-ui-lite.src.*?js$/,
       loader: 'babel'
     }],
     alias: {
       'vue$': balm.config.production ? 'vue/dist/vue.min.js' : 'vue/dist/vue.esm.js',
-      'balm-ui': 'balm-ui/src/index.js'
+      'balm-ui': 'balm-ui-lite/src/index.js'
     }
   },
   ...

@@ -53,7 +53,7 @@ Vue.prototype.$docs = {
     tbody: ['name', 'description']
   }
 };
-Vue.prototype.$domain = DEBUG ? '' : '/ui-vue';
+Vue.prototype.$domain = DEBUG ? '' : '/ui-vue-lite';
 
 const router = new VueRouter({
   routes

@@ -29,7 +29,7 @@
   "bugs": {
     "url": "https://github.com/balmjs/ui-vue-lite/issues"
   },
-  "homepage": "https://github.com/balmjs/ui-vue-lite#readme",
+  "homepage": "http://balmjs.com/ui-vue-lite/",
   "devDependencies": {
     "axios": "^0.16.2",
     "babel-preset-stage-2": "^6.24.1",
