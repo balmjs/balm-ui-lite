@@ -79,6 +79,12 @@ import UiCardMedia from './scripts/components/card/card-media';
 import UiCardText from './scripts/components/card/card-text';
 import UiList from './scripts/components/list/list';
 import UiItem from './scripts/components/list/item';
+import UiItemAvatar from './scripts/components/list/item-avatar';
+import UiItemIcon from './scripts/components/list/item-icon';
+import UiItemSubtitle from './scripts/components/list/item-subtitle';
+import UiItemInfo from './scripts/components/list/item-info';
+import UiItemAction from './scripts/components/list/item-action';
+import UiItemTextbody from './scripts/components/list/item-textbody';
 import UiTable from './scripts/components/data/table';
 import UiPagination from './scripts/components/data/pagination';
 /**
@@ -147,6 +153,12 @@ const BalmUI_Components = {
   UiCardText,
   UiList,
   UiItem,
+  UiItemAvatar,
+  UiItemIcon,
+  UiItemSubtitle,
+  UiItemInfo,
+  UiItemAction,
+  UiItemTextbody,
   UiTable,
   UiPagination,
   // Popup

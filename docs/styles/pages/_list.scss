@@ -1,15 +1,8 @@
-// Simple & Icon List
-.demo-list-item {
-  width: 300px;
-}
-
-// List items with avatar and action
-.demo-list-action {
-  width: 300px;
-}
-
-// List with avatar and controls
-.demo-list-control {
+.demo-list-item,
+.demo-list-icon,
+.demo-list-action,
+.demo-list-control,
+.demo-list-two {
   width: 300px;
 }
 
@@ -17,12 +10,6 @@
   display: inline;
 }
 
-// Two Line List with secondary info and action
-.demo-list-two {
-  width: 300px;
-}
-
-// Three Line List with secondary info and action
 .demo-list-three {
   width: 650px;
 }

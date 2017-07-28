@@ -7,121 +7,165 @@
 
     <h4>Simple list</h4>
     <div class="snippet-group">
-      <div class="snippet-demo">
-        <!-- Simple list -->
-        <ui-list class="demo-list-item">
-          <ui-item v-for="(item, index) in items" :key="index">
-            {{ item }}
-          </ui-item>
-        </ui-list>
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <div class="snippet-demo-container demo-list demo-list__list-item">
+              <!-- Simple list -->
+              <ui-list class="demo-list-item">
+                <ui-item v-for="(item, index) in items" :key="index">
+                  {{ item }}
+                </ui-item>
+              </ui-list>
+            </div>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
       </div>
+      <ui-markdown :text="code[0]"></ui-markdown>
     </div>
-    <ui-markdown :text="code[0]"></ui-markdown>
 
     <h4>Icons</h4>
     <div class="snippet-group">
-      <div class="snippet-demo">
-        <!-- Icon List -->
-        <ui-list class="demo-list-icon">
-          <ui-item v-for="(item, index) in items" :key="index">
-            <template scope="props">
-              <i :class="props.className.icon">person</i>
-              {{ item }}
-            </template>
-          </ui-item>
-        </ui-list>
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <div class="snippet-demo-container demo-list demo-list__icon">
+              <!-- Icon List -->
+              <ui-list class="demo-list-icon">
+                <ui-item v-for="(item, index) in items" :key="index">
+                  <ui-item-icon>person</ui-item-icon>
+                  {{ item }}
+                </ui-item>
+              </ui-list>
+            </div>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
       </div>
+      <ui-markdown :text="code[1]"></ui-markdown>
     </div>
-    <ui-markdown :text="code[1]"></ui-markdown>
 
     <h4>Avatars and actions</h4>
     <div class="snippet-group">
-      <div class="snippet-demo">
-        <!-- List items with avatar and action -->
-        <ui-list class="demo-list-action">
-          <ui-item v-for="(item, index) in items" :key="index">
-            <template scope="props">
-              <i :class="props.className.avatar">person</i>
-              {{ item }}
-            </template>
-            <template slot="action" scope="props">
-              <a :class="props.className.action" href="#">
-                <i class="material-icons">star</i>
-              </a>
-            </template>
-          </ui-item>
-        </ui-list>
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <div class="snippet-demo-container demo-list demo-list__action">
+              <!-- List items with avatar and action -->
+              <ui-list class="demo-list-action">
+                <ui-item v-for="(item, index) in items" :key="index">
+                  <ui-item-avatar>person</ui-item-avatar>
+                  {{ item }}
+                  <template slot="action">
+                    <ui-item-action>
+                      <a href="#">
+                        <ui-icon>star</ui-icon>
+                      </a>
+                    </ui-item-action>
+                  </template>
+                </ui-item>
+              </ui-list>
+            </div>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
       </div>
+      <ui-markdown :text="code[2]"></ui-markdown>
     </div>
-    <ui-markdown :text="code[2]"></ui-markdown>
 
     <h4>Avatars and controls</h4>
     <div class="snippet-group">
-      <div class="snippet-demo">
-        <!-- List with avatar and controls -->
-        <ui-list class="demo-list-control">
-          <ui-item v-for="(item, index) in items2" :key="index">
-            <template scope="props">
-              <i :class="props.className.avatar">{{ item.avatar }}</i>
-              {{ item.name }}
-            </template>
-            <template slot="action" scope="props">
-              <span :class="props.className.action">
-                <ui-checkbox v-if="index === 0" :value="item.id" :model="item.value" effect></ui-checkbox>
-                <ui-radio v-if="index === 1" :value="item.id" :model="item.value" effect></ui-radio>
-                <ui-switch v-if="index === 2" :value="true" :model="item.value" effect></ui-switch>
-              </span>
-            </template>
-          </ui-item>
-        </ui-list>
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <div class="snippet-demo-container demo-list demo-list__list-control">
+              <!-- List with avatar and controls -->
+              <ui-list class="demo-list-control">
+                <ui-item v-for="(item, index) in items2" :key="index">
+                  <ui-item-avatar>{{ item.avatar }}</ui-item-avatar>
+                  {{ item.name }}
+                  <template slot="action">
+                    <ui-item-action>
+                      <ui-checkbox v-if="index === 0" :value="item.id" :model="item.value" effect></ui-checkbox>
+                      <ui-radio v-if="index === 1" :value="item.id" :model="item.value" effect></ui-radio>
+                      <ui-switch v-if="index === 2" :value="true" :model="item.value" effect></ui-switch>
+                    </ui-item-action>
+                  </template>
+                </ui-item>
+              </ui-list>
+            </div>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
       </div>
+      <ui-markdown :text="code[3]"></ui-markdown>
     </div>
-    <ui-markdown :text="code[3]"></ui-markdown>
 
     <h4>Two line</h4>
     <div class="snippet-group">
-      <div class="snippet-demo">
-        <!-- Two Line List with secondary info and action -->
-        <ui-list class="demo-list-two" twoLine>
-          <ui-item v-for="(item, index) in items2" :key="index">
-            <template scope="props">
-              <i :class="props.className.avatar">{{ item.avatar }}</i>
-              <span>{{ item.name }}</span>
-              <span :class="props.className.subtitle">62 Episodes</span>
-            </template>
-            <template slot="action" scope="props">
-              <span v-if="item.info" :class="props.className.info">{{ item.info }}</span>
-              <a :class="props.className.action" href="#">
-                <i class="material-icons">star</i>
-              </a>
-            </template>
-          </ui-item>
-        </ui-list>
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <div class="snippet-demo-container demo-list demo-list__two-line">
+              <!-- Two Line List with secondary info and action -->
+              <ui-list class="demo-list-two" twoLine>
+                <ui-item v-for="(item, index) in items2" :key="index">
+                  <ui-item-avatar>{{ item.avatar }}</ui-item-avatar>
+                  <span>{{ item.name }}</span>
+                  <ui-item-subtitle>62 Episodes</ui-item-subtitle>
+                  <template slot="action">
+                    <ui-item-info>{{ item.info }}</ui-item-info>
+                    <ui-item-action>
+                      <a href="#">
+                        <ui-icon>star</ui-icon>
+                      </a>
+                    </ui-item-action>
+                  </template>
+                </ui-item>
+              </ui-list>
+            </div>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
       </div>
+      <ui-markdown :text="code[4]"></ui-markdown>
     </div>
-    <ui-markdown :text="code[4]"></ui-markdown>
 
     <h4>Three line</h4>
     <div class="snippet-group">
-      <div class="snippet-demo">
-        <!-- Three Line List with secondary info and action -->
-        <ui-list class="demo-list-three" threeLine>
-          <ui-item v-for="(item, index) in items2" :key="index">
-            <template scope="props">
-              <i :class="props.className.avatar">{{ item.avatar }}</i>
-              <span>{{ item.name }}</span>
-              <span :class="props.className.text">{{ item.text }}</span>
-            </template>
-            <template slot="action" scope="props">
-              <a :class="props.className.action" href="#">
-                <i class="material-icons">star</i>
-              </a>
-            </template>
-          </ui-item>
-        </ui-list>
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <div class="snippet-demo-container demo-list demo-list__three-line">
+              <!-- Three Line List with secondary info and action -->
+              <ui-list class="demo-list-three" threeLine>
+                <ui-item v-for="(item, index) in items2" :key="index">
+                  <ui-item-avatar>{{ item.avatar }}</ui-item-avatar>
+                  <span>{{ item.name }}</span>
+                  <ui-item-textbody>{{ item.text }}</ui-item-textbody>
+                  <template slot="action">
+                    <ui-item-action>
+                      <a href="#">
+                        <ui-icon>star</ui-icon>
+                      </a>
+                    </ui-item-action>
+                  </template>
+                </ui-item>
+              </ui-list>
+            </div>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
       </div>
+      <ui-markdown :text="code[5]"></ui-markdown>
     </div>
-    <ui-markdown :text="code[5]"></ui-markdown>
 
     <ui-apidoc name="list"></ui-apidoc>
     <ui-apidoc name="item"></ui-apidoc>
