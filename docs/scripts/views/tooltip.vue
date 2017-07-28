@@ -8,10 +8,10 @@
     <h4>{{ $t('tooltip.basic') }}</h4>
     <div class="snippet-group">
       <div class="snippet-demo">
-        <ui-tooltip target="text-1" tips="tips-1"></ui-tooltip>
+        <ui-tooltip title="text-1">tips-1</ui-tooltip>
       </div>
       <div class="snippet-demo">
-        <ui-tooltip target="text-2" tips="tips-2"></ui-tooltip>
+        <ui-tooltip title="text-2">tips-2</ui-tooltip>
       </div>
     </div>
     <ui-markdown :text="code[0]"></ui-markdown>
@@ -20,8 +20,8 @@
     <div class="snippet-group">
       <div class="snippet-demo">
         <ui-tooltip>
-          <template slot="target">
-            <ui-badge class="material-icons" overlap value="5">email</ui-badge>
+          <template slot="title">
+            <ui-icon>cloud_upload</ui-icon>
           </template>
           <span>new message</span>
         </ui-tooltip>

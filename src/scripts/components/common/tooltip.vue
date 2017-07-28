@@ -1,10 +1,12 @@
 <template>
   <div>
     <span :id="`tt-${name}`">
-      <slot name="target">{{ target }}</slot>
+      <slot name="title">{{ title }}</slot>
     </span>
-    <div ref="tooltip" :class="[className, positionClassName]" :for="`tt-${name}`">
-      <slot>{{ tips }}</slot>
+    <div ref="tooltip"
+      :class="[className, positionClassName]"
+      :data-mdl-for="`tt-${name}`">
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -22,14 +24,14 @@ const POSITION_LEFT = 4; // Positions the tooltip to the left of the target
 export default {
   name: 'ui-tooltip',
   props: {
+    // ui attributes
     name: {
       type: String,
       default: function() {
         return generateRandomAlphaNum(7);
       }
     },
-    target: String,
-    tips: String,
+    title: String,
     large: {
       type: Boolean,
       default: false
