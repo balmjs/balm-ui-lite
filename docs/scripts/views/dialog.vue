@@ -5,7 +5,26 @@
       <p>Modal windows for dedicated user input.</p>
     </div>
 
-    <h4>Basic Dialog</h4>
+    <ui-button @click.native="showDialog('show')">Show Dialog</ui-button>
+    <ui-dialog :open="show" @confirm="onConfirm" @close="closeDialog('show')">
+      <ui-dialog-title>
+        <h4>Allow data collection?</h4>
+      </ui-dialog-title>
+      <ui-dialog-content>
+        <p>Allowing us to collect data will let us get you the information you want faster.</p>
+      </ui-dialog-content>
+      <ui-dialog-actions></ui-dialog-actions>
+    </ui-dialog>
+
+    <ui-button @click.native="showDialog('showTest')">Show Dialog with full width actions</ui-button>
+    <ui-dialog :open="showTest" @confirm="onConfirm" @close="closeDialog('showTest')">
+      <ui-dialog-content>
+        <p>Allow this site to collect usage data to improve your experience?</p>
+      </ui-dialog-content>
+      <ui-dialog-actions fullWidth acceptText="Agree" cancelText="Disagree"></ui-dialog-actions>
+    </ui-dialog>
+
+    <!-- <h4>Basic Dialog</h4>
     <div class="btn-group">
       <ui-button primary effect raised @click.native="showDialog('show')">basic dialog</ui-button>
       <ui-button primary effect raised @click.native="showDialog('showForce')">cannot close dialog by clicking on the mask.</ui-button>
@@ -28,7 +47,6 @@
     <div class="btn-group">
       <ui-button primary effect raised @click.native="showDialog('showAnimation')">animate.css</ui-button>
       <ui-button primary effect raised @click.native="showDialog('showAnimation2')">another cooler animate</ui-button>
-      <!--<ui-button primary effect raised @click.native="showTest=!showTest">test</ui-button>-->
     </div>
     <ui-markdown :text="code[3]"></ui-markdown>
 
@@ -151,7 +169,7 @@
         @on-close="closeDialog('showSlot')">
         <div slot="title" class="title">The title bar that has been changed <i class="close" @click="closeDialog('showSlot')"></i></div>
         <h4>Notice the title bar, especially the closing button in the upper right corner.</h4>
-        <br>:use  << slot="title" >> to change the structure of the title bar.
+        <br>:use `slot="title"` to change the structure of the title bar.
         <br>:note  If you just want to change the text, use { title } prop.
       </ui-dialog>
 
@@ -169,7 +187,7 @@
         </div>
         <h4>Notice button area, while viewing the browser console output.</h4>
         <p v-show="contentText">{{contentText}}</p>
-        <br>:use << slot="actions" >> to change structure of the button area.
+        <br>:use `slot="actions"` to change structure of the button area.
       </ui-dialog>
 
       <ui-dialog
@@ -182,7 +200,7 @@
         <h4 style="height: 1200px;">I am a particularly high dialog!</h4>
       </ui-dialog>
 
-    </div>
+    </div> -->
 
     <ui-apidoc name="dialog"></ui-apidoc>
   </div>
@@ -321,8 +339,8 @@
       onCancel(){
         console.log('clicked the Cancel button!');
       },
-      onConfirm(){
-        console.log('clicked the OK button!');
+      onConfirm(result){
+        console.log('clicked the OK button!', result);
       },
       resetContentText(){
         this.contentText = '';

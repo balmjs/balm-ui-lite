@@ -91,6 +91,9 @@ import UiPagination from './scripts/components/data/pagination';
  * Popup
  */
 import UiDialog from './scripts/components/dialog/dialog';
+import UiDialogTitle from './scripts/components/dialog/dialog-title';
+import UiDialogContent from './scripts/components/dialog/dialog-content';
+import UiDialogActions from './scripts/components/dialog/dialog-actions';
 import UiAlert from './scripts/components/dialog/alert';
 import UiConfirm from './scripts/components/dialog/confirm';
 import UiSnackbar from './scripts/components/snackbar';
@@ -163,6 +166,9 @@ const BalmUI_Components = {
   UiPagination,
   // Popup
   UiDialog,
+  UiDialogTitle,
+  UiDialogContent,
+  UiDialogActions,
   UiAlert,
   UiConfirm,
   UiSnackbar

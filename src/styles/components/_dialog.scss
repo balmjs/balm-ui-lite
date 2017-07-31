@@ -1,69 +1,90 @@
-@import 'mask';
 .mdl-dialog {
-  &.confirm-enter-active,
-  &.confirm-leave-active {
-    transition: opacity .25s ease, transform .25s ease;
+  z-index: 2;
+
+  display: flex;
+  visibility: hidden;
+}
+
+.mdl-dialog,
+.mdl-dialog__backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.mdl-dialog__backdrop {
+  z-index: -1;
+
+  opacity: 0;
+  background-color: rgba(0, 0, 0, .87);
+}
+
+.mdl-dialog__surface {
+  display: inline-flex;
+  flex-direction: column;
+
+  width: calc(100% - 30px);
+  min-width: 640px;
+  max-width: 865px;
+
+  transform: translateY(0) scale(1);
+
+  opacity: 1;
+  border-radius: 2px;
+  background-color: #fff;
+  box-shadow: 0 11px 15px -7px rgba(0, 0, 0, .2), 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12);
+}
+
+@media (max-width:640px) {
+  .mdl-dialog,
+  .mdl-dialog__surface {
+    min-width: 280px;
   }
-  &.confirm-enter,
-  &.confirm-leave-active {
-    transform: translate3d(0, -50%, 0);
-    opacity: 0;
+
+  .mdl-dialog__body {
+    line-height: 24px;
   }
-  &.alert-enter-active,
-  &.alert-leave-active {
-    transition: opacity .25s ease, transform .25s ease;
+}
+
+.default-enter-active,
+.default-leave-active {
+  visibility: visible;
+
+  transition: all .12s;
+  .mdl-dialog__backdrop {
+    transition: opacity .12s cubic-bezier(0, 0, .2, 1);
   }
-  &.alert-enter,
-  &.alert-leave-active {
-    transform: translate3d(0, -50%, 0);
+  .mdl-dialog__surface {
+    transition: opacity .12s cubic-bezier(0, 0, .2, 1), transform .12s cubic-bezier(0, 0, .2, 1);
+  }
+}
+
+.default-enter,
+.default-leave-to {
+  .mdl-dialog__surface {
+    transform: translateY(150px) scale(.8);
+
     opacity: 0;
   }
 }
 
-// TODO: namespace!!!
-.ui.alert {
-  .title {
-    font-size: 24px;
-    display: flex;
-    justify-content: space-between;
-    .close {
-      position: relative;
-      display: flex;
-      width: 24px;
-      height: 24px;
-      cursor: pointer;
-      transition: transform 1s ease;
-      transform: rotate(0deg);
-      border: 1px solid #ccc;
-      border-radius: 50%;
-      justify-content: center;
-      align-items: center;
-      &::before,
-      &::after {
-        position: absolute;
-        top: 11px;
-        left: 4px;
-        display: block;
-        width: 16px;
-        height: 2px;
-        content: '';
-        background-color: #ccc;
-      }
-      &::before {
-        transform: rotate(45deg);
-      }
-      &::after {
-        transform: rotate(135deg);
-      }
-      &:hover {
-        transform: rotate(360deg);
-      }
-      &:active {
-        box-shadow: 1px 1px 5px rgba(0, 0, 0, .5) inset;
-      }
-    }
+.mdl-dialog--open {
+  visibility: visible;
+  .mdl-dialog__backdrop {
+    opacity: .3;
   }
-  .mdl-dialog__actions {
-    justify-content: center;
+}
+
+.mdl-dialog-scroll-lock {
+  overflow: hidden; // fix z-index
+  height: 100vh;
+  .mdl-layout__content {
+    z-index: 5;
   }
 }
