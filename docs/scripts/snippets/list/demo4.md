@@ -1,16 +1,14 @@
 ```html
 <ui-list class="demo-list-control">
-  <ui-item v-for="(item, index) in items">
-    <template scope="props">
-      <i :class="props.className.avatar">{{ item.avatar }}</i>
-      {{ item.name }}
-    </template>
-    <template slot="action" scope="props">
-      <span :class="props.className.action">
+  <ui-item v-for="(item, index) in items" :key="index">
+    <ui-item-avatar>{{ item.avatar }}</ui-item-avatar>
+    {{ item.name }}
+    <template slot="action">
+      <ui-item-action>
         <ui-checkbox v-if="index === 0" :value="item.id" :model="item.value" effect></ui-checkbox>
         <ui-radio v-if="index === 1" :value="item.id" :model="item.value" effect></ui-radio>
         <ui-switch v-if="index === 2" :value="true" :model="item.value" effect></ui-switch>
-      </span>
+      </ui-item-action>
     </template>
   </ui-item>
 </ui-list>

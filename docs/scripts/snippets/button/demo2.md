@@ -1,16 +1,16 @@
 ```html
 <!-- FAB button -->
-<ui-button fab>
-  <i class="material-icons">add</i>
+<ui-button fab noRipple>
+  <ui-icon>add</ui-icon>
 </ui-button>
 
 <!-- FAB button with ripple -->
-<ui-button fab effect>
-  <i class="material-icons">add</i>
+<ui-button fab>
+  <ui-icon>add</ui-icon>
 </ui-button>
 
 <!-- Disabled FAB button -->
 <ui-button fab disabled>
-  <i class="material-icons">add</i>
+  <ui-icon>add</ui-icon>
 </ui-button>
 ```

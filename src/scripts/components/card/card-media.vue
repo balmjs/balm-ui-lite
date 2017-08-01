@@ -1,7 +1,7 @@
 <template>
-  <div class="mdl-card__media">
+  <figure class="mdl-card__media">
     <slot></slot>
-  </div>
+  </figure>
 </template>
 
 <script>

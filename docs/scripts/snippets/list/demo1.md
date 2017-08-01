@@ -1,6 +1,6 @@
 ```html
 <ui-list class="demo-list-item">
-  <ui-item v-for="item in items">
+  <ui-item v-for="(item, index) in items" :key="index">
     {{ item }}
   </ui-item>
 </ui-list>

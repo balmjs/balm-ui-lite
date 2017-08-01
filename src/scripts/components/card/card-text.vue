@@ -1,7 +1,7 @@
 <template>
-  <div class="mdl-card__supporting-text">
+  <section class="mdl-card__supporting-text">
     <slot></slot>
-  </div>
+  </section>
 </template>
 
 <script>

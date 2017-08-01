@@ -1,7 +1,7 @@
 <template>
-  <div :class="className">
+  <footer :class="className">
     <slot></slot>
-  </div>
+  </footer>
 </template>
 
 <script>

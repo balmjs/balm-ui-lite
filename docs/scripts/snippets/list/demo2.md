@@ -1,10 +1,8 @@
 ```html
 <ui-list class="demo-list-icon">
-  <ui-item v-for="item in items">
-    <template scope="props">
-      <i :class="props.className.icon">person</i>
-      {{ item }}
-    </template>
+  <ui-item v-for="(item, index) in items" :key="index">
+    <ui-item-icon>person</ui-item-icon>
+    {{ item }}
   </ui-item>
 </ui-list>
 ```

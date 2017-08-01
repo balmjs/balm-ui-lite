@@ -1,14 +1,14 @@
 ```html
 <ui-list class="demo-list-action">
-  <ui-item v-for="item in items">
-    <template scope="props">
-      <i :class="props.className.avatar">person</i>
-      {{ item }}
-    </template>
-    <template slot="action" scope="props">
-      <a :class="props.className.action" href="#">
-        <i class="material-icons">star</i>
-      </a>
+  <ui-item v-for="(item, index) in items" :key="index">
+    <ui-item-avatar>person</ui-item-avatar>
+    {{ item }}
+    <template slot="action">
+      <ui-item-action>
+        <a href="#">
+          <ui-icon>star</ui-icon>
+        </a>
+      </ui-item-action>
     </template>
   </ui-item>
 </ui-list>

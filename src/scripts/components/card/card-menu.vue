@@ -1,7 +1,7 @@
 <template>
-  <div class="mdl-card__menu">
+  <aside class="mdl-card__menu">
     <slot></slot>
-  </div>
+  </aside>
 </template>
 
 <script>

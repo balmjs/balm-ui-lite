@@ -1,16 +1,16 @@
 ```html
 <ui-list class="demo-list-two" twoLine>
-  <ui-item v-for="(item, index) in items2">
-    <template scope="props">
-      <i :class="props.className.avatar">{{ item.avatar }}</i>
-      <span>{{ item.name }}</span>
-      <span :class="props.className.subtitle">62 Episodes</span>
-    </template>
-    <template slot="action" scope="props">
-      <span v-if="item.info" :class="props.className.info">{{ item.info }}</span>
-      <a :class="props.className.action" href="#">
-        <i class="material-icons">star</i>
-      </a>
+  <ui-item v-for="(item, index) in items" :key="index">
+    <ui-item-avatar>{{ item.avatar }}</ui-item-avatar>
+    <span>{{ item.name }}</span>
+    <ui-item-subtitle>62 Episodes</ui-item-subtitle>
+    <template slot="action">
+      <ui-item-info>{{ item.info }}</ui-item-info>
+      <ui-item-action>
+        <a href="#">
+          <ui-icon>star</ui-icon>
+        </a>
+      </ui-item-action>
     </template>
   </ui-item>
 </ui-list>

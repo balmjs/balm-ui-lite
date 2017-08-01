@@ -1,7 +1,7 @@
 <template>
-  <div :class="className">
+  <header :class="className">
     <slot :className="titleClassName"></slot>
-  </div>
+  </header>
 </template>
 
 <script>

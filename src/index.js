@@ -44,6 +44,7 @@ import UiPanel from './scripts/components/tabs/panel';
  * Common
  */
 import UiBadge from './scripts/components/common/badge';
+import UiBadgeLink from './scripts/components/common/badge-link';
 import UiButton from './scripts/components/common/button';
 import UiChip from './scripts/components/chip/chip';
 import UiChipText from './scripts/components/chip/chip-text';
@@ -94,8 +95,6 @@ import UiDialog from './scripts/components/dialog/dialog';
 import UiDialogTitle from './scripts/components/dialog/dialog-title';
 import UiDialogContent from './scripts/components/dialog/dialog-content';
 import UiDialogActions from './scripts/components/dialog/dialog-actions';
-import UiAlert from './scripts/components/dialog/alert';
-import UiConfirm from './scripts/components/dialog/confirm';
 import UiSnackbar from './scripts/components/snackbar';
 /**
  * Plugins
@@ -125,6 +124,7 @@ const BalmUI_Components = {
   UiPanel,
   // Common
   UiBadge,
+  UiBadgeLink,
   UiButton,
   UiChip,
   UiChipText,
@@ -169,8 +169,6 @@ const BalmUI_Components = {
   UiDialogTitle,
   UiDialogContent,
   UiDialogActions,
-  UiAlert,
-  UiConfirm,
   UiSnackbar
 };
 

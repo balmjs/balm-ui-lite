@@ -11,12 +11,12 @@
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
             <ui-button fab colored noRipple>
-              <i class="material-icons">add</i>
+              <ui-icon>add</ui-icon>
             </ui-button>
           </div>
           <div class="snippet-demo">
             <ui-button fab colored>
-              <i class="material-icons">add</i>
+              <ui-icon>add</ui-icon>
             </ui-button>
           </div>
           <div class="snippet-demo-padding"></div>
@@ -31,17 +31,17 @@
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
             <ui-button fab noRipple>
-              <i class="material-icons">add</i>
+              <ui-icon>add</ui-icon>
             </ui-button>
           </div>
           <div class="snippet-demo">
             <ui-button fab>
-              <i class="material-icons">add</i>
+              <ui-icon>add</ui-icon>
             </ui-button>
           </div>
           <div class="snippet-demo">
             <ui-button fab disabled>
-              <i class="material-icons">add</i>
+              <ui-icon>add</ui-icon>
             </ui-button>
           </div>
           <div class="snippet-demo-padding"></div>
@@ -144,13 +144,13 @@
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
-            <ui-button fab mini-fab noRipple>
-              <i class="material-icons">add</i>
+            <ui-button fab mini-fab>
+              <ui-icon>add</ui-icon>
             </ui-button>
           </div>
           <div class="snippet-demo">
-            <ui-button fab mini-fab colored noRipple>
-              <i class="material-icons">add</i>
+            <ui-button fab mini-fab colored>
+              <ui-icon>add</ui-icon>
             </ui-button>
           </div>
           <div class="snippet-demo-padding"></div>

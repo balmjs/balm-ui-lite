@@ -1,11 +1,11 @@
 ```html
 <!-- Mini FAB button -->
 <ui-button fab mini-fab>
-  <i class="material-icons">add</i>
+  <ui-icon>add</ui-icon>
 </ui-button>
 
 <!-- Colored mini FAB button -->
 <ui-button fab mini-fab colored>
-  <i class="material-icons">add</i>
+  <ui-icon>add</ui-icon>
 </ui-button>
 ```
