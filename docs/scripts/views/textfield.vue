@@ -42,18 +42,24 @@
       <ui-textfield id="sample5" :model="text5" @input="onChange('text5', $event)"
         label="Expandable Text..."
         expandable>
-        <i slot="icon" class="material-icons">search</i>
       </ui-textfield>
     </div>
     <ui-markdown :text="code[4]"></ui-markdown>
 
     <h4>{{ $t('textfield.plus') }}</h4>
     <div class="snippet-demo">
-      <ui-textfield id="sample6" :model="text6" @input="onChange('text6', $event)"
+      <ui-textfield id="sample6"
         label="Plus Text..."
         plus>
         <template slot="plus">
-          <a href="javascript:void(0)">Button</a>
+          <a href="javascript:void(0)">Link</a>
+        </template>
+      </ui-textfield>
+      <ui-textfield id="sample7"
+        label="Plus Text..."
+        plus>
+        <template slot="plus">
+          <ui-button link>Button</ui-button>
         </template>
       </ui-textfield>
     </div>

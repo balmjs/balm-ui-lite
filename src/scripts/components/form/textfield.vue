@@ -136,8 +136,7 @@ export default {
   },
   data() {
     return {
-      currentValue: this.model,
-      isFocus: false,
+      currentValue: this.model
     };
   },
   computed: {
@@ -152,8 +151,7 @@ export default {
           'mdl-textfield--floating-label': this.labelFloating,
           'mdl-textfield--expandable': this.expandable,
           'mdl-textfield--plus': this.plus,
-          'is-textarea': this.isTextarea,
-          'is-focused': this.isFocus
+          'is-textarea': this.isTextarea
         },
         inner: {
           'mdl-textfield__expandable-holder': this.expandable,
@@ -168,23 +166,13 @@ export default {
   watch: {
     model(val) {
       this.currentValue = val;
-      this.checkDirty();
     }
   },
   methods: {
-    checkDirty(isFocus = true) {
-      if (this.label) {
-        this.isFocus = isFocus;
-        // for dynamic assignment
-        this.className.outer['is-dirty'] = this.currentValue.length;
-      }
-    },
     handleFocus(event) {
-      this.checkDirty();
       this.$emit(EVENT_FOCUS, event);
     },
     handleBlur(event) {
-      this.checkDirty(false);
       this.$emit(EVENT_BLUR, event);
     },
     handleInput(event) {

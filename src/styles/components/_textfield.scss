@@ -3,11 +3,18 @@
    * Textfield with plus
    */
   .mdl-textfield__plus {
+    line-height: 27px;
+
     position: absolute;
-    top: 24px;
+    top: 20px;
     right: 0;
-    bottom: 0;
+    bottom: 20px;
+
     overflow: hidden;
+    .mdl-button {
+      position: static;
+      bottom: auto;
+    }
   }
   /**
    * Textfield with expand
@@ -15,8 +22,11 @@
   .mdl-textfield__expand {
     position: absolute;
     z-index: 999;
+
     display: none;
+
     width: 100%;
+
     border: 1px solid $input-text-bottom-border-color;
     background: white;
   }
