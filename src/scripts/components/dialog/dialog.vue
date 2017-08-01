@@ -7,12 +7,12 @@
     :leave-class="leaveClass"
     :leave-active-class="leaveActiveClass"
     :leave-to-class="leaveToClass">
-    <div v-if="open" :class="className">
+    <aside v-if="open" :class="className">
       <div class="mdl-dialog__surface">
         <slot></slot>
       </div>
       <div class="mdl-dialog__backdrop" @click="handleClose"></div>
-    </div>
+    </aside>
   </transition>
 </template>
 

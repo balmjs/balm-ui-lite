@@ -1,5 +1,5 @@
 <template>
-  <div :class="className">
+  <footer :class="className">
     <slot>
       <ui-button primary @click.native="$parent.handleAccept">
         {{ acceptText }}
@@ -8,7 +8,7 @@
         {{ cancelText }}
       </ui-button>
     </slot>
-  </div>
+  </footer>
 </template>
 
 <script>
@@ -20,6 +20,7 @@ export default {
     UiButton
   },
   props: {
+    // ui attributes
     fullWidth: {
       type: Boolean,
       default: false

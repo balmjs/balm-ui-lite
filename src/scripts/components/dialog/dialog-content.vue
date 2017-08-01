@@ -1,7 +1,7 @@
 <template>
-  <div class="mdl-dialog__content">
+  <section class="mdl-dialog__content">
     <slot></slot>
-  </div>
+  </section>
 </template>
 
 <script>

@@ -1,36 +1,30 @@
-````html
-<ui-button primary effect raised @click.native="showDialog('show')">basic dialog</ui-button>
-<ui-button primary effect raised @click.native="showDialog('showForce')">cannot close dialog by clicking on the mask.</ui-button>
-````
-````html
-<!-- Basic Dialog -->
-<ui-dialog :show="show" @on-close="closeDialog('show')">
-  <h4>I am a basic dialog.</h4>
-  <br>:use [ @on-close ] to close the dialog. 
-</ui-dialog>
+```html
+<ui-button @click.native="showDialog('show')">Show Dialog</ui-button>
+```
 
-<ui-dialog :show="showForce" @on-close="closeDialog('showForce')" force>
-  <h4>You cannot close me by clicking on my mask。</h4>
-  <br>:use { force } prop.
+```html
+<ui-dialog :open="show" @close="closeDialog('show')" @confirm="onConfirm">
+  <ui-dialog-title>
+    <h4>Allow data collection?</h4>
+  </ui-dialog-title>
+  <ui-dialog-content>
+    <p>Allowing us to collect data will let us get you the information you want faster.</p>
+  </ui-dialog-content>
+  <ui-dialog-actions></ui-dialog-actions>
 </ui-dialog>
-````
+```
 
-````javascript
+```js
 export default {
-  data(){
+  data() {
     return {
-      showForce: false,
       show: false
-    }
+    };
   },
   methods: {
-    showDialog(name){
-      this[name] = true;
-    },
-    closeDialog(name, fn){
-      this[name] = false;
-      typeof fn === 'function' && fn();
-    } 
+    onConfirm(result) {
+      console.log(`confirm result: ${result}`);
+    }
   }
-}
-````
+};
+```

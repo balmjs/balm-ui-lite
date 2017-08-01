@@ -1,7 +1,7 @@
 <template>
-  <div class="mdl-dialog__title">
+  <header class="mdl-dialog__title">
     <slot></slot>
-  </div>
+  </header>
 </template>
 
 <script>
