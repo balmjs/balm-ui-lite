@@ -17,7 +17,14 @@
         @change="onPage">
         <template scope="props">
           Showing {{ props.recordCount }} records,
-          <ui-select :options="pageSizeList" :model="pageSize" @change="onChangePageSize">{{ props.pageSize }}</ui-select> records / page, {{ props.pageCount }} total pages
+          <ui-select
+            :options="pageSizeList"
+            optionValue="value"
+            optionKey="key"
+            :model="pageSize"
+            @change="onChange('pageSize', $event)">
+            {{ props.pageSize }}
+          </ui-select> records / page, {{ props.pageCount }} total pages
         </template>
       </ui-pagination>
     </div>
@@ -68,9 +75,6 @@ export default {
   methods: {
     onPage(page) {
       this.page = page;
-    },
-    onChangePageSize(option) {
-      this.pageSize = option.key;
     }
   },
   created() {
