@@ -92,7 +92,7 @@
                 <ui-card-actions border>
                   <ui-button colored effect>Add to Calendar</ui-button>
                   <div class="mdl-layout-spacer"></div>
-                  <i class="material-icons">event</i>
+                  <ui-icon>event</ui-icon>
                 </ui-card-actions>
               </ui-card>
             </div>

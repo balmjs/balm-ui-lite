@@ -97,24 +97,6 @@ export default {
   },
   mounted() {
     this.$mdl.upgradeElements(this.$el);
-
-    // if (this.isSelect && observeMutationSupport) {
-    //   const callback = records => {
-    //     if (this.currentMenu.length) {
-    //       this.$parent.isExpand = !(records[0].oldValue.indexOf('is-visible') > -1);
-    //     }
-    //   };
-
-    //   let mo = new MutationObserver(callback);
-    //   let element = this.$el.querySelector('.mdl-menu__container');
-    //   let options = {
-    //     attributes: true,
-    //     attributeOldValue: true,
-    //     attributeFilter: ['class']
-    //   };
-
-    //   mo.observe(element, options);
-    // }
   }
 };
 </script>

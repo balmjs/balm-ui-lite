@@ -5,16 +5,30 @@
     </div>
 
     <div class="snippet-group">
-      <div class="snippet-demo">
-        <ui-radio name="sex" value="M" :model="gender" @change="chooseSex">Male</ui-radio>
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <ui-radio name="sex" value="M" :model="gender" @change="chooseSex">Male</ui-radio>
+          </div>
+          <div class="snippet-demo">
+            <ui-radio name="sex" value="F" :model="gender" @change="chooseSex">Female</ui-radio>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
+        <div class="snippet-captions">
+          <div class="snippet-captions-padding"></div>
+          <div class="snippet-caption">
+            <ui-button @click.native="onWatchSex('M')">choose Male</ui-button>
+          </div>
+          <div class="snippet-caption">
+            <ui-button @click.native="onWatchSex('F')">choose Female</ui-button>
+          </div>
+          <div class="snippet-captions-padding"></div>
+        </div>
       </div>
-      <div class="snippet-demo">
-        <ui-radio name="sex" value="F" :model="gender" @change="chooseSex">Female</ui-radio>
-      </div>
+      <ui-markdown :text="code[0]"></ui-markdown>
     </div>
-    <ui-button @click.native="onWatchSex('M')">choose Male</ui-button>
-    <ui-button @click.native="onWatchSex('F')">choose Female</ui-button>
-    <ui-markdown :text="code[0]"></ui-markdown>
 
     <ui-apidoc name="radio"></ui-apidoc>
   </div>

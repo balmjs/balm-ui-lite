@@ -8,10 +8,11 @@
       :disabled="disabled"
       v-model="currentValue"
       @change="handleChange">
-    <span class="mdl-icon-toggle__label">
-      <slot :className="iconClassName">
-        <i :class="iconClassName">icon</i>
-      </slot>
+    <span v-if="icon" class="mdl-icon-toggle__label material-icons">
+      <slot>{{ icon }}</slot>
+    </span>
+    <span v-else class="mdl-icon-toggle__label custom-icons">
+      <slot><!-- Custom Icon --></slot>
     </span>
   </label>
 </template>
@@ -21,7 +22,6 @@ import '../../../material-design-lite/icon-toggle/icon-toggle';
 import '../../../material-design-lite/ripple/ripple';
 import {isArray} from '../../helpers';
 
-const CLASSNAME_ICON = 'material-icons';
 const EVENT_CHANGE = 'change';
 
 export default {
@@ -43,12 +43,15 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    icon: {
+      type: [Boolean, String],
+      default: false
     }
   },
   data() {
     return {
-      currentValue: isArray(this.model) ? this.model : [this.model],
-      iconClassName: CLASSNAME_ICON
+      currentValue: isArray(this.model) ? this.model : [this.model]
     };
   },
   computed: {

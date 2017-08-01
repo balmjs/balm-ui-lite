@@ -5,7 +5,7 @@
       class="mdl-button mdl-js-button mdl-button--icon"
       :for="id">
       <slot name="icon">
-        <i class="material-icons">icon</i>
+        <i class="material-icons">search</i>
       </slot>
     </label>
     <div :class="[className.inner, {'is-expand': isExpand}]">

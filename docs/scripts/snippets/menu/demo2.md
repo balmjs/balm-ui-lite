@@ -1,7 +1,7 @@
 ```html
 <ui-menu effect>
   <template slot="icon">
-    <i class="material-icons">settings</i>
+    <ui-icon>settings</ui-icon>
   </template>
   <ui-menuitem v-for="item in menu" :item="item" @clicked="onMenu">
     <a :href="item.url">{{ item.name }}</a>
