@@ -88,3 +88,18 @@
     z-index: 5;
   }
 }
+
+.mdl-alert,
+.mdl-confirm {
+  z-index: 5;
+  .mdl-dialog__surface {
+    width: 500px;
+    min-width: 500px;
+  }
+  .mdl-dialog__actions {
+    justify-content: center;
+    .mdl-button {
+      margin: 0 5px;
+    }
+  }
+}

@@ -25,13 +25,6 @@
     </div>
     <ui-markdown :text="code[1]"></ui-markdown>
 
-    <h4>Toast</h4>
-    <div class="snippet-demo">
-      <ui-button raised effect @click.native="show('minitoast')">Show Mini Toast</ui-button>
-      <ui-snackbar mini :active="minitoast.active" :message="minitoast.message" @done="hide('minitoast')"></ui-snackbar>
-    </div>
-    <ui-markdown :text="code[2]"></ui-markdown>
-
     <ui-apidoc name="snackbar"></ui-apidoc>
   </div>
 </template>
@@ -50,10 +43,6 @@ export default {
       snackbar: {
         active: false,
         message: 'Hello Snackbar'
-      },
-      minitoast: {
-        active: false,
-        message: 'Hello Mini Toast'
       }
     };
   },
@@ -70,7 +59,7 @@ export default {
     }
   },
   created() {
-    this.showCode('snackbar', 3);
+    this.showCode('snackbar', 2);
   }
 };
 </script>

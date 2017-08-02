@@ -4,7 +4,7 @@
       <ui-button primary @click.native="$parent.handleAccept">
         {{ acceptText }}
       </ui-button>
-      <ui-button accent class="close" @click.native="$parent.handleCancel">
+      <ui-button accent @click.native="$parent.handleCancel">
         {{ cancelText }}
       </ui-button>
     </slot>

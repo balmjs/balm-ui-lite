@@ -44,11 +44,7 @@ export default {
     // The function to execute when the action is clicked.
     actionHandler: Function,
     // The text to display for the action button.
-    actionText: String,
-    mini: {
-      type: Boolean,
-      default: false
-    }
+    actionText: String
   },
   data() {
     return {
@@ -61,8 +57,7 @@ export default {
       return {
         'mdl-snackbar': true,
         'mdl-js-snackbar': true,
-        'mdl-snackbar--active': this.active,
-        'mdl-snackbar--mini': this.mini
+        'mdl-snackbar--active': this.active
       }
     },
     isSnackbar() {

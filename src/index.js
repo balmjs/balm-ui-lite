@@ -101,6 +101,9 @@ import UiSnackbar from './scripts/components/dialog/snackbar';
  */
 // import helper from './scripts/plugins/helper';
 import event from './scripts/plugins/event';
+import alert from './scripts/plugins/alert';
+import confirm from './scripts/plugins/confirm';
+import toast from './scripts/plugins/toast';
 
 const BalmUI_Components = {
   // Layout
@@ -174,7 +177,10 @@ const BalmUI_Components = {
 
 const BalmUI_Plugins = {
   plugins: {
-    event
+    event,
+    alert,
+    confirm,
+    toast
   }
 };
 

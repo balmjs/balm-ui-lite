@@ -7,7 +7,7 @@
     :leave-class="leaveClass"
     :leave-active-class="leaveActiveClass"
     :leave-to-class="leaveToClass">
-    <aside v-if="open" :class="className">
+    <aside v-show="open" :class="className">
       <div class="mdl-dialog__surface">
         <slot></slot>
       </div>

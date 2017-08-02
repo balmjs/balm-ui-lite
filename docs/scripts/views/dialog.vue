@@ -36,6 +36,16 @@
       <ui-dialog-actions fullWidth acceptText="Agree" cancelText="Disagree"></ui-dialog-actions>
     </ui-dialog>
 
+    <h4>Alert &amp; Confirm</h4>
+    <div class="snippet-group">
+      <div class="snippet-demo">
+        <ui-button @click.native="showAlert">show alert</ui-button>
+        <ui-button @click.native="showConfirm">show confirm</ui-button>
+        <ui-button @click.native="showToast">show toast</ui-button>
+      </div>
+      <ui-markdown :text="code[2]"></ui-markdown>
+    </div>
+
     <ui-apidoc name="dialog"></ui-apidoc>
     <ui-apidoc name="dialog-title"></ui-apidoc>
     <ui-apidoc name="dialog-content"></ui-apidoc>
@@ -57,10 +67,24 @@ export default {
   methods: {
     onConfirm(result) {
       console.log(`confirm result: ${result}`);
+    },
+    showAlert() {
+      this.$alert('Hello World');
+    },
+    showConfirm() {
+      this.$confirm({
+        message: 'Are you sure?',
+        callback: result => {
+          console.log(result);
+        }
+      });
+    },
+    showToast() {
+      this.$toast('gg');
     }
   },
   created() {
-    this.showCode('dialog', 2);
+    this.showCode('dialog', 3);
   }
 };
 </script>

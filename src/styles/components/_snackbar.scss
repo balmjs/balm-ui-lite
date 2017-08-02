@@ -1,14 +1,22 @@
-.mdl-snackbar {
-  &.mdl-snackbar--mini {
-    top: 50%;
-    bottom: auto;
-    min-width: 0;
-    transition: opacity .25s;
-    transform: none;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    &.mdl-snackbar--active {
-      opacity: 1;
-    }
+.mdl-toast {
+  top: 50%;
+  bottom: auto;
+
+  min-width: 0;
+
+  transition: opacity .25s;
+  transform: none;
+  transform: translate(-50%, -50%);
+
+  opacity: 0;
+  &.mdl-snackbar--active {
+    opacity: 1;
+  }
+  .mdl-snackbar__text {
+    padding: 8px 24px;
+  }
+  .mdl-snackbar__action {
+    display: none;
+    visibility: hidden;
   }
 }
