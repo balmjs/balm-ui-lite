@@ -101,7 +101,7 @@ import alert from './scripts/plugins/alert';
 import confirm from './scripts/plugins/confirm';
 import toast from './scripts/plugins/toast';
 
-const BalmUI_Components = {
+const components = {
   // Layout
   UiLayout,
   UiLayoutHeader,
@@ -171,19 +171,17 @@ const BalmUI_Components = {
   UiSnackbar
 };
 
-const BalmUI_Plugins = {
-  plugins: {
-    event,
-    alert,
-    confirm,
-    toast
-  }
+const plugins = {
+  event,
+  alert,
+  confirm,
+  toast
 };
 
-const BalmUI_Register = {
+const registers = {
   install(Vue) {
-    for (let key in BalmUI) {
-      let component = BalmUI[key];
+    for (let key in BalmUI.components) {
+      let component = BalmUI.components[key];
       if (component && component !== 'install' && component.name) {
         Vue.component(component.name, component);
       }
@@ -191,7 +189,7 @@ const BalmUI_Register = {
   }
 };
 
-const BalmUI = Object.assign({}, BalmUI_Components, BalmUI_Plugins, BalmUI_Register);
+const BalmUI = Object.assign({}, { components }, { plugins }, registers);
 
 // Auto install in dist mode
 if (typeof window !== 'undefined' && window.Vue) {
@@ -204,71 +202,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default BalmUI;
 
 export {
-  // Layout
-  UiLayout,
-  UiLayoutHeader,
-  UiLayoutHeaderRow,
-  UiLayoutTitle,
-  UiLayoutDrawer,
-  UiLayoutContent,
-  UiLayoutSpacer,
-  UiLayoutTabBar,
-  UiLayoutTab,
-  UiLayoutTabPanel,
-  UiNav,
-  UiNavLink,
-  UiGrid,
-  UiCell,
-  UiTabs,
-  UiTabBar,
-  UiTab,
-  UiPanel,
-  // Common
-  UiBadge,
-  UiBadgeLink,
-  UiButton,
-  UiChip,
-  UiChipText,
-  UiChipAction,
-  UiChipContact,
-  UiLoading,
-  UiMenu,
-  UiMenuItem,
-  UiTooltip,
-  UiDivider,
-  UiIcon,
-  // Form
-  UiSlider,
-  UiCheckbox,
-  UiRadio,
-  UiIconToggle,
-  UiSwitch,
-  UiTextfield,
-  UiSelect,
-  UiAutocomplete,
-  UiDatepicker,
-  UiFileupload,
-  // Data
-  UiCard,
-  UiCardTitle,
-  UiCardActions,
-  UiCardMenu,
-  UiCardMedia,
-  UiCardText,
-  UiList,
-  UiItem,
-  UiItemAvatar,
-  UiItemIcon,
-  UiItemSubtitle,
-  UiItemInfo,
-  UiItemAction,
-  UiItemTextbody,
-  UiTable,
-  UiPagination,
-  // Popup
-  UiDialog,
-  UiDialogTitle,
-  UiDialogContent,
-  UiDialogActions,
-  UiSnackbar
+  components,
+  plugins
 };

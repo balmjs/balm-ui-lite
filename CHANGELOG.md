@@ -1,23 +1,10 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
-## 0.5.0-beta
+## 0.5.0
 
-### Refactor most of the components
-
-### Update dependencies
-
-- use balm@0.8.3
-- update flatpickr@2.6.3
-
-### Update components
-
-__`<ui-dialog>`__
-
-- update viewport on window resizing
-
-__`<ui-button>`__
-
-- fix css bug for link style
+- update balm@0.8.4
+- update dependencies
+- refactor most of the components
 
 ---
 

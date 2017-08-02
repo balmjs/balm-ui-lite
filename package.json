@@ -1,6 +1,6 @@
 {
   "name": "balm-ui-lite",
-  "version": "0.5.0-beta",
+  "version": "0.5.0",
   "description": "Material Design Lite + Vue",
   "main": "dist/js/main.js",
   "scripts": {
