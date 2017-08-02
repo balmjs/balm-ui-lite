@@ -121,6 +121,14 @@ export default {
       default: false
     },
     error: String,
+    alignRight: {
+      type: Boolean,
+      default: false
+    },
+    fullWidth: {
+      type: Boolean,
+      default: false
+    },
     expandable: {
       type: Boolean,
       default: false
@@ -149,6 +157,8 @@ export default {
           'mdl-textfield': true,
           'mdl-js-textfield': true,
           'mdl-textfield--floating-label': this.labelFloating,
+          'mdl-textfield--align-right': this.alignRight,
+          'mdl-textfield--full-width': this.fullWidth,
           'mdl-textfield--expandable': this.expandable,
           'mdl-textfield--plus': this.plus,
           'is-textarea': this.isTextarea

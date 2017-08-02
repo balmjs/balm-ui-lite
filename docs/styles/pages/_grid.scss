@@ -1,0 +1,14 @@
+.page--grid {
+  .mdl-cell {
+    box-sizing: border-box;
+    height: 200px;
+    padding-top: 4px;
+    padding-left: 8px;
+
+    color: white;
+    background-color: #bdbdbd;
+  }
+  .mdl-grid:first-of-type .mdl-cell {
+    height: 50px;
+  }
+}

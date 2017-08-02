@@ -20,6 +20,8 @@ balm.config = {
     entry: {
       main: useDocs ? './docs/scripts/main.js' : './src/index.js'
     },
+    library: 'BalmUI',
+    libraryTarget: 'umd',
     loaders: [{
       test: /\.vue$/,
       loader: 'vue',

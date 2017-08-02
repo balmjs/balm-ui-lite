@@ -1,9 +1,9 @@
 {
   "props": [{
-    "name": "effect",
+    "name": "noRipple",
     "type": "Boolean",
     "default": "false",
-    "description": "Applies ripple click effect to tab links"
+    "description": "Don't apply ripple click effect to tab links"
   }, {
     "name": "position",
     "type": "String",

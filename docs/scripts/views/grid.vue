@@ -39,18 +39,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.demo-grid .mdl-cell {
-  box-sizing: border-box;
-  background-color: #BDBDBD;
-  height: 200px;
-  padding-left: 8px;
-  padding-top: 4px;
-  color: white;
-}
-
-.snippet-demo .mdl-grid:first-of-type .mdl-cell {
-  height: 50px;
-}
-</style>

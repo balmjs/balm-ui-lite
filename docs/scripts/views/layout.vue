@@ -38,7 +38,7 @@
           <div class="snippet-caption">Transparent header</div>
         </div>
       </div>
-      <div class="snippet-code"></div>
+      <ui-markdown :text="code[0]"></ui-markdown>
     </div>
 
     <div class="snippet-group is-full-width">
@@ -68,7 +68,7 @@
           <div class="snippet-caption">Fixed drawer, no header</div>
         </div>
       </div>
-      <div class="snippet-code"></div>
+      <ui-markdown :text="code[1]"></ui-markdown>
     </div>
 
     <div class="snippet-group is-full-width">
@@ -110,7 +110,7 @@
           <div class="snippet-caption">Fixed header</div>
         </div>
       </div>
-      <div class="snippet-code"></div>
+      <ui-markdown :text="code[2]"></ui-markdown>
     </div>
 
     <div class="snippet-group is-full-width">
@@ -123,18 +123,11 @@
                 <ui-layout-header>
                   <ui-layout-header-row>
                     <ui-layout-spacer></ui-layout-spacer>
-                    <!-- TODO -->
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
-                                mdl-textfield--floating-label mdl-textfield--align-right">
-                      <label class="mdl-button mdl-js-button mdl-button--icon"
-                             for="fixed-header-drawer-exp">
-                        <i class="material-icons">search</i>
-                      </label>
-                      <div class="mdl-textfield__expandable-holder">
-                        <input class="mdl-textfield__input" type="text" name="sample"
-                               id="fixed-header-drawer-exp">
-                      </div>
-                    </div>
+                    <ui-textfield
+                      expandable
+                      floatingLabel
+                      alignRight
+                      id="fixed-header-drawer-exp"></ui-textfield>
                   </ui-layout-header-row>
                 </ui-layout-header>
                 <ui-layout-drawer>
@@ -157,7 +150,7 @@
           <div class="snippet-caption">Fixed header and drawer</div>
         </div>
       </div>
-      <div class="snippet-code"></div>
+      <ui-markdown :text="code[3]"></ui-markdown>
     </div>
 
     <div class="snippet-group is-full-width">
@@ -199,7 +192,7 @@
           <div class="snippet-caption">Scrolling header</div>
         </div>
       </div>
-      <div class="snippet-code"></div>
+      <ui-markdown :text="code[4]"></ui-markdown>
     </div>
 
     <div class="snippet-group is-full-width">
@@ -214,18 +207,11 @@
                   <ui-layout-header-row>
                     <ui-layout-title>Title</ui-layout-title>
                     <ui-layout-spacer></ui-layout-spacer>
-                    <!-- TODO -->
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
-                                mdl-textfield--floating-label mdl-textfield--align-right">
-                      <label class="mdl-button mdl-js-button mdl-button--icon"
-                             for="waterfall-exp">
-                        <i class="material-icons">search</i>
-                      </label>
-                      <div class="mdl-textfield__expandable-holder">
-                        <input class="mdl-textfield__input" type="text" name="sample"
-                               id="waterfall-exp">
-                      </div>
-                    </div>
+                    <ui-textfield
+                      expandable
+                      floatingLabel
+                      alignRight
+                      id="waterfall-exp"></ui-textfield>
                   </ui-layout-header-row>
                   <!-- Bottom row, not visible on scroll -->
                   <ui-layout-header-row>
@@ -259,7 +245,7 @@
           <div class="snippet-caption">Waterfall header</div>
         </div>
       </div>
-      <div class="snippet-code"></div>
+      <ui-markdown :text="code[5]"></ui-markdown>
     </div>
 
     <div class="snippet-group is-full-width">
@@ -302,7 +288,7 @@
           <div class="snippet-caption">Fixed drawer, no header</div>
         </div>
       </div>
-      <div class="snippet-code"></div>
+      <ui-markdown :text="code[6]"></ui-markdown>
     </div>
 
     <div class="snippet-group is-full-width">
@@ -345,7 +331,7 @@
           <div class="snippet-caption">Fixed drawer, no header</div>
         </div>
       </div>
-      <div class="snippet-code"></div>
+      <ui-markdown :text="code[7]"></ui-markdown>
     </div>
 
     <!-- <ui-apidoc name="layout"></ui-apidoc> -->
@@ -353,7 +339,10 @@
 </template>
 
 <script>
+import snippets from '../mixins/snippets';
+
 export default {
+  mixins: [snippets],
   data() {
     return {
       menu: ['Tab1', 'Tab2', 'Tab3'],
@@ -364,6 +353,9 @@ export default {
     onChange(tab) {
       this.tab = tab;
     }
+  },
+  created() {
+    this.showCode('layout', 8);
   }
 };
 </script>
