@@ -1,15 +1,29 @@
 {
-  "props": [{
+  "props": [
+  {
     "name": "item",
     "type": "Object",
     "default": "{}",
     "description": "Assigns data to item (default support item: { label, disabled })"
+  },
+  {
+    "name": "label",
+    "type": "String",
+    "default": "'label'"
+  },
+  {
+    "name": "divider",
+    "type": "Boolean",
+    "default": "false",
+    "description": "Modifies an item to have a full bleed divider between it and the next list item"
   }],
-  "slots": [{
+  "slots": [
+  {
     "name": "(default)",
     "description": "The default slot holds the menuitem text and can contain HTML"
   }],
-  "events": [{
+  "events": [
+  {
     "name": "clicked",
     "description": "Dispatched when the item is clicked"
   }]
