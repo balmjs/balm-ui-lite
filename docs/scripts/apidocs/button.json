@@ -40,15 +40,10 @@
     "default": "false",
     "description": "Applies accent color display effect"
   }, {
-    "name": "effect",
+    "name": "noRipple",
     "type": "Boolean",
     "default": "false",
-    "description": "Applies ripple click effect"
-  }, {
-    "name": "disabled",
-    "type": "Boolean",
-    "default": "false",
-    "description": "Applies disabled display effect"
+    "description": "Don't apply ripple click effect"
   }, {
     "name": "link",
     "type": "Boolean",

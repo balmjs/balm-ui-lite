@@ -1,0 +1,25 @@
+{
+  "props": [
+  {
+    "name": "fullWidth",
+    "type": "Boolean",
+    "default": "false",
+    "description": "Modifies the actions to each take the full width of the container. This makes each take their own line."
+  },
+  {
+    "name": "acceptText",
+    "type": "String",
+    "default": "'OK'"
+  },
+  {
+    "name": "cancelText",
+    "type": "String",
+    "default": "'Cancel'"
+  }],
+  "slots": [
+  {
+    "name": "(default)",
+    "description": "The default slot holds the dialog actions text and can contain HTML"
+  }],
+  "events": []
+}

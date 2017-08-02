@@ -36,7 +36,10 @@
       <ui-dialog-actions fullWidth acceptText="Agree" cancelText="Disagree"></ui-dialog-actions>
     </ui-dialog>
 
-    <!-- <ui-apidoc name="dialog"></ui-apidoc> -->
+    <ui-apidoc name="dialog"></ui-apidoc>
+    <ui-apidoc name="dialog-title"></ui-apidoc>
+    <ui-apidoc name="dialog-content"></ui-apidoc>
+    <ui-apidoc name="dialog-actions"></ui-apidoc>
   </div>
 </template>
 

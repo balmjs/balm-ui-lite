@@ -1,35 +1,37 @@
 .page--layout {
-  &.demo-layout__transparent,
-  &.demo-layout__fixed-drawer,
-  &.demo-layout__fixed-header,
-  &.demo-layout__fixed-header-drawer,
-  &.demo-layout__scrolling-header,
-  &.demo-layout__waterfall-header,
-  &.demo-layout__scrollable-tabs,
-  &.demo-layout__fixed-tabs {
-    position: relative;
+  .demo-layout {
+    &.demo-layout__transparent,
+    &.demo-layout__fixed-drawer,
+    &.demo-layout__fixed-header,
+    &.demo-layout__fixed-header-drawer,
+    &.demo-layout__scrolling-header,
+    &.demo-layout__waterfall-header,
+    &.demo-layout__scrollable-tabs,
+    &.demo-layout__fixed-tabs {
+      position: relative;
 
-    width: 100%;
-    height: 300px;
+      width: 100%;
+      height: 300px;
 
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),
-    0 3px 1px -2px rgba(0, 0, 0, .2),
-    0 1px 5px 0 rgba(0, 0, 0, .12);
-  }
-  &.demo-layout__fixed-drawer,
-  &.demo-layout__fixed-header,
-  &.demo-layout__fixed-header-drawer,
-  &.demo-layout__scrollable-tabs,
-  &.demo-layout__fixed-tabs {
-    .mdl-layout__content {
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),
+      0 3px 1px -2px rgba(0, 0, 0, .2),
+      0 1px 5px 0 rgba(0, 0, 0, .12);
+    }
+    &.demo-layout__fixed-drawer,
+    &.demo-layout__fixed-header,
+    &.demo-layout__fixed-header-drawer,
+    &.demo-layout__scrollable-tabs,
+    &.demo-layout__fixed-tabs {
+      .mdl-layout__content {
+        background: white;
+      }
+    }
+    &.demo-layout__scrolling-header .page-content,
+    &.demo-layout__waterfall-header .page-content {
+      height: 600px;
+
       background: white;
     }
-  }
-  &.demo-layout__scrolling-header .page-content,
-  &.demo-layout__waterfall-header .page-content {
-    height: 600px;
-
-    background: white;
   }
   .demo-layout-transparent {
     background: url('../images/assets/demos/transparent.jpg') center / cover;

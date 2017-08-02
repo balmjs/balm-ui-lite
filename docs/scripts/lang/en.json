@@ -45,6 +45,9 @@
     "pagination": "Pagination",
     "popup": "Modal Components",
     "dialog": "Dialog",
+    "dialog-title": "Dialog Title",
+    "dialog-content": "Dialog Content",
+    "dialog-actions": "Dialog Actions",
     "alert": "Alert",
     "confirm": "Confirm",
     "snackbar": "Snackbar"

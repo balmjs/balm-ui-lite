@@ -45,6 +45,9 @@
     "pagination": "分页",
     "popup": "弹出框",
     "dialog": "对话框",
+    "dialog-title": "对话框头部",
+    "dialog-content": "对话框内容",
+    "dialog-actions": "对话框底部",
     "alert": "提示框",
     "confirm": "确认框",
     "snackbar": "弹出框"

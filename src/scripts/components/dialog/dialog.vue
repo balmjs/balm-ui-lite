@@ -61,10 +61,6 @@ export default {
     leaveToClass: {
       type: String,
       default: 'default-leave-to'
-    },
-    duration: {
-      type: [Number, String],
-      default: 10000
     }
   },
   data() {

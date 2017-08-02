@@ -5,9 +5,9 @@
       <h2 :class="props.className.title">Update</h2>
     </template>
   </ui-card-title>
-  <ui-card-body>
+  <ui-card-text>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
-  </ui-card-body>
+  </ui-card-text>
   <ui-card-actions border>
     <ui-button colored effect>View Updates</ui-button>
   </ui-card-actions>
