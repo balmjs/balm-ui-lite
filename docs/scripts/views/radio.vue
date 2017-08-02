@@ -1,5 +1,5 @@
 <template>
-  <div class="docs-radio">
+  <div class="page--radio">
     <div class="component-title">
       <h3>Radio button</h3>
     </div>

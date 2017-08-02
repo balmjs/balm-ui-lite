@@ -1,5 +1,5 @@
 <template>
-  <div class="docs-upload">
+  <div class="page--upload">
     <div class="component-title">
       <h3>FileUpload</h3>
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-loading">
+  <div class="page--loading">
     <div class="component-title">
       <h3>Loading</h3>
       <p>Indicate loading and progress states.</p>

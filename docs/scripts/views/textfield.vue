@@ -1,5 +1,5 @@
 <template>
-  <div class="docs-textfield">
+  <div class="page--textfield">
     <div class="component-title">
       <h3>Text Field</h3>
       <p>Textual input components.</p>

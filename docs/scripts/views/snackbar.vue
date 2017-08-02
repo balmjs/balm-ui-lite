@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-snackbar">
+  <div class="page--snackbar">
     <div class="component-title">
       <h3>Snackbar</h3>
       <p>Transient popup notifications.</p>

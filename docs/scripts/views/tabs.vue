@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-tabs">
+  <div class="page--tabs">
     <div class="component-title">
       <h3>Tabs</h3>
     </div>

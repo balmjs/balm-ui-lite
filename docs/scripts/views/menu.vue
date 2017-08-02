@@ -1,5 +1,5 @@
 <template>
-  <div class="docs-menu">
+  <div class="page--menu">
     <div class="component-title">
       <h3>Menu</h3>
       <p>Lists of clickable actions.</p>

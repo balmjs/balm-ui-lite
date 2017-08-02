@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-tooltip">
+  <div class="page--tooltip">
     <div class="component-title">
       <h3>Tooltip</h3>
       <p>Useful information on hover.</p>

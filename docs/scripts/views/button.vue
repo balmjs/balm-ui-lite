@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-button">
+  <div class="page--button">
     <div class="component-title">
       <h3>Button</h3>
       <p>Variations on Material Design buttons.</p>

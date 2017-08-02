@@ -1,15 +1,15 @@
-.demo-list-item,
-.demo-list-icon,
-.demo-list-action,
-.demo-list-control,
-.demo-list-two {
-  width: 300px;
-}
-
-.demo-list-radio {
-  display: inline;
-}
-
-.demo-list-three {
-  width: 650px;
+.page--list {
+  .demo-list-item,
+  .demo-list-icon,
+  .demo-list-action,
+  .demo-list-control,
+  .demo-list-two {
+    width: 300px;
+  }
+  .demo-list-radio {
+    display: inline;
+  }
+  .demo-list-three {
+    width: 650px;
+  }
 }

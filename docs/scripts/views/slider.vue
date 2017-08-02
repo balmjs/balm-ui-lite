@@ -1,5 +1,5 @@
 <template>
-  <div class="docs-slider">
+  <div class="page--slider">
     <div class="component-title">
       <h3>Slider</h3>
       <p>Selecting a value out of a range.</p>

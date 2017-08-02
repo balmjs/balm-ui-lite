@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-divider">
+  <div class="page--divider">
     <div class="component-title">
       <h3>Divider</h3>
       <p>Some guys like to use dividers， so we made this component.</p>

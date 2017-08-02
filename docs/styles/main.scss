@@ -1,8 +1,10 @@
 @import '../../src/styles/main.scss';
+
 @import 'global/vendor';
 @import 'global/mixins';
 @import 'global/base';
 @import 'global/layout';
+
 @import 'pages/snippet';
 @import 'pages/layout';
 @import 'pages/slider';

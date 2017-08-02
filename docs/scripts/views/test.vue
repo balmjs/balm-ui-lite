@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-test">
+  <div class="page--test">
     <ui-chip>Chip</ui-chip>
     <hr>
     <ui-button primary effect raised @click.native="showDialog('show')">有色遮罩无动画对话框</ui-button>

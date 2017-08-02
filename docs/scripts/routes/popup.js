@@ -1,6 +1,6 @@
 const Dialog = () => import('../views/dialog');
-const Alert = () => import('../views/Alert');
-const Confirm = () => import('../views/Confirm');
+// const Alert = () => import('../views/Alert');
+// const Confirm = () => import('../views/Confirm');
 const Snackbar = () => import('../views/snackbar');
 
 const popupRoutes = [{
@@ -9,24 +9,6 @@ const popupRoutes = [{
   component: Dialog,
   meta: {
     title: 'BalmUI - Dialog',
-    keywords: '',
-    description: ''
-  }
-}, {
-  path: '/alert',
-  name: 'alert',
-  component: Alert,
-  meta: {
-    title: 'BalmUI - Alert',
-    keywords: '',
-    description: ''
-  }
-}, {
-  path: '/confirm',
-  name: 'confirm',
-  component: Confirm,
-  meta: {
-    title: 'BalmUI - Confirm',
     keywords: '',
     description: ''
   }

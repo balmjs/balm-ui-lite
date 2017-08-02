@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-badge">
+  <div class="page--badge">
     <div class="component-title">
       <h3>Badges</h3>
       <p>Small status descriptors for UI elements.</p>

@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-grid">
+  <div class="page--grid">
     <div class="component-title">
       <h3>Grid</h3>
     </div>

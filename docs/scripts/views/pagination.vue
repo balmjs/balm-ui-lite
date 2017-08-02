@@ -1,5 +1,5 @@
 <template>
-  <div class="docs-pagination">
+  <div class="page--pagination">
     <div class="component-title">
       <h3>Pagination</h3>
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-icon-toggle">
+  <div class="page--icon-toggle">
     <div class="component-title">
       <h3>Icon Toggle</h3>
     </div>

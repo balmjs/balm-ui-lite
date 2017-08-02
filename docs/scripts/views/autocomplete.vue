@@ -1,5 +1,5 @@
 <template>
-  <div class="docs-autocomplete">
+  <div class="page--autocomplete">
     <div class="component-title">
       <h3>AutoComplete</h3>
     </div>

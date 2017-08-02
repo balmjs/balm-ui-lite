@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-dialog">
+  <div class="page--dialog">
     <div class="component-title">
       <h3>Dialog</h3>
       <p>Modal windows for dedicated user input.</p>

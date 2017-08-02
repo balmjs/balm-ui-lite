@@ -1,5 +1,5 @@
 <template>
-  <div class="page page--layout">
+  <div class="page--layout">
 
     <div class="snippet-group is-full-width">
       <div class="snippet-header">

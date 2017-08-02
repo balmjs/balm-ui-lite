@@ -1,5 +1,5 @@
 <template>
-  <div class="docs-table">
+  <div class="page--table">
     <div class="component-title">
       <h3>Table</h3>
       <p>Organize data.</p>

@@ -1,5 +1,5 @@
 <template>
-  <div class="docs-checkbox">
+  <div class="page--checkbox">
     <div class="component-title">
       <h3>Checkbox button</h3>
     </div>

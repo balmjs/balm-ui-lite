@@ -1,5 +1,5 @@
 <template>
-  <div class="docs-datepicker">
+  <div class="page--datepicker">
     <div class="component-title">
       <h3>DatePicker</h3>
     </div>

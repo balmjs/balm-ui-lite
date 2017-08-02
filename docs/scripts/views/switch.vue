@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-switch">
+  <div class="page--switch">
     <div class="component-title">
       <h3>Switch</h3>
     </div>

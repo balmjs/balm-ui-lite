@@ -1,5 +1,5 @@
 <template>
-  <div class="docs-home">
+  <div class="page--home">
     <ui-markdown :text="docs"></ui-markdown>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-footer">
+  <div class="page--footer">
     // TODO
   </div>
 </template>

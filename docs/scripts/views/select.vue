@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-select">
+  <div class="page--select">
     <div class="component-title">
       <h3>Select</h3>
     </div>

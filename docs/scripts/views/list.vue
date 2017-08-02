@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-list">
+  <div class="page--list">
     <div class="component-title">
       <h3>List</h3>
       <p>Customizable scrollable lists.</p>
