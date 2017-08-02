@@ -77,6 +77,10 @@ export default {
         callback: result => {
           console.log(result);
         }
+      }).then(() => {
+        console.log('ok');
+      }).catch(() => {
+        console.log('cancel');
       });
     },
     showToast() {

@@ -27,43 +27,49 @@ export default {
     let vm;
 
     const confirm = (options = {}) => {
-      vm = new Vue({
-        components: {
-          UiDialog,
-          UiButton
-        },
-        el: document.createElement('div'),
-        template,
-        data: {
-          open: false,
-          options: DEFAULT_OPTIONS
-        },
-        methods: {
-          handleClose() {
-            this.open = false;
-            document.body.removeChild(this.$el);
-            document.body.classList.remove('mdl-dialog-scroll-lock');
-            vm = null;
+      return new Promise((resolve, reject) => {
+        vm = new Vue({
+          components: {
+            UiDialog,
+            UiButton
           },
-          handleConfirm(result) {
-            if (isFunction(this.options.callback)) {
-              this.options.callback(result);
-            } else {
-              console.warn('`callback` must be a function.');
+          el: document.createElement('div'),
+          template,
+          data: {
+            open: false,
+            options: DEFAULT_OPTIONS
+          },
+          methods: {
+            handleClose() {
+              this.open = false;
+              document.body.removeChild(this.$el);
+              document.body.classList.remove('mdl-dialog-scroll-lock');
+              vm = null;
+            },
+            handleConfirm(result) {
+              if (isFunction(this.options.callback)) {
+                this.options.callback(result);
+              } else {
+                if (result) {
+                  resolve();
+                } else {
+                  reject();
+                }
+              }
+            }
+          },
+          created() {
+            if (isString(options)) {
+              this.options.message = options;
+            } else if (isObject(options)) {
+              this.options = Object.assign(DEFAULT_OPTIONS, options);
             }
           }
-        },
-        created() {
-          if (isString(options)) {
-            this.options.message = options;
-          } else if (isObject(options)) {
-            this.options = Object.assign(DEFAULT_OPTIONS, options);
-          }
-        }
-      });
+        });
 
-      document.body.appendChild(vm.$el);
-      vm.open = true;
+        document.body.appendChild(vm.$el);
+        vm.open = true;
+      });
     };
 
     Vue.prototype.$confirm = confirm;
