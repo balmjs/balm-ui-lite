@@ -17,9 +17,6 @@ balm.config = {
     ]
   },
   scripts: {
-    entry: {
-      main: useDocs ? './docs/scripts/main.js' : './src/index.js'
-    },
     library: 'BalmUI',
     libraryTarget: 'umd',
     loaders: [{
@@ -48,6 +45,16 @@ balm.config = {
   },
   useDefault: useDefault
 };
+
+if (useDocs) {
+  balm.config.scripts.entry = {
+    main: './docs/scripts/main.js'
+  };
+} else {
+  balm.config.scripts.entry = {
+    'balm-ui-lite': './src/index.js'
+  }
+}
 
 var DMI_SOURCE = './node_modules/material-design-icons';
 var DML_SOURCE = './node_modules/material-design-lite';

@@ -1,14 +1,14 @@
 {
   "name": "balm-ui-lite",
-  "version": "0.5.0-beta",
+  "version": "0.5.1",
   "description": "Material Design Lite + Vue",
-  "main": "dist/js/main.js",
+  "homepage": "http://balmjs.com/ui-vue-lite/",
   "authors": [
     "Elf-mousE <ifmouz@gmail.com>",
     "74sharlock <sharlock7788@gmail.com>"
   ],
+  "main": "dist/js/balm-ui-lite.js",
   "license": "MIT",
-  "homepage": "http://balmjs.com/ui-vue-lite/",
   "ignore": [
     "src",
     "**/.*",
