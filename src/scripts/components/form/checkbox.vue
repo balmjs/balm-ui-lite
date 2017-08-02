@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import mdlMixin from '../../mixins/mdl';
 import '../../../material-design-lite/checkbox/checkbox';
 import '../../../material-design-lite/ripple/ripple';
 import {isArray} from '../../helpers';
@@ -24,6 +25,7 @@ const EVENT_CHANGE = 'change';
 
 export default {
   name: 'ui-checkbox',
+  mixins: [mdlMixin],
   props: {
     // state
     model: {

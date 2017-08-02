@@ -10,10 +10,12 @@
 </template>
 
 <script>
+import mdlMixin from '../../mixins/mdl';
 import '../../../material-design-lite/ripple/ripple';
 
 export default {
   name: 'ui-tab',
+  mixins: [mdlMixin],
   mounted() {
     if (!this.$parent.noRipple) {
       this.$mdl.upgradeElement(this.$refs.ripple, 'MaterialRipple');

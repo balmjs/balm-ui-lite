@@ -67,6 +67,7 @@
 </template>
 
 <script>
+import mdlMixin from '../../mixins/mdl';
 import '../../../material-design-lite/textfield/textfield';
 
 const EVENT_INPUT = 'input';
@@ -78,6 +79,7 @@ const EVENT_KEYDOWN_ENTER = 'enter';
 
 export default {
   name: 'ui-textfield',
+  mixins: [mdlMixin],
   props: {
     // state
     model: null,

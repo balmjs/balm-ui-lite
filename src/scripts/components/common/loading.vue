@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import mdlMixin from '../../mixins/mdl';
 import '../../../material-design-lite/spinner/spinner';
 import '../../../material-design-lite/progress/progress';
 import {isString} from '../../helpers';
@@ -13,6 +14,7 @@ const TYPE_PROGRESS = 1; // Progress bar
 
 export default {
   name: 'ui-loading',
+  mixins: [mdlMixin],
   props: {
     // state (Makes the spinner visible and animated)
     active: {

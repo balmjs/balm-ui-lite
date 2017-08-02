@@ -5,7 +5,9 @@
 </template>
 
 <script>
+import mdlMixin from '../../mixins/mdl';
 import '../../../material-design-lite/layout/layout';
+import '../../../material-design-lite/ripple/ripple';
 
 const CLASSNAME_TAB = 'mdl-layout__tab';
 const CLASSNAME_PANEL = 'mdl-layout__tab-panel';
@@ -13,6 +15,7 @@ const CLASSNAME_ACTIVE = 'is-active';
 
 export default {
   name: 'ui-layout',
+  mixins: [mdlMixin],
   props: {
     // state
     active: {
@@ -88,7 +91,7 @@ export default {
     }
   },
   mounted() {
-    this.$mdl.upgradeElement(this.$el, 'MaterialLayout');
+    this.$mdl.upgradeElements(this.$el);
 
     this.tabs = this.$el.querySelectorAll(`.${CLASSNAME_TAB}`);
     this.panels = this.$el.querySelectorAll(`.${CLASSNAME_PANEL}`);

@@ -10,12 +10,14 @@
 </template>
 
 <script>
+import mdlMixin from '../../mixins/mdl';
 import '../../../material-design-lite/slider/slider';
 
 const EVENT_CHANGE = 'change';
 
 export default {
   name: 'ui-slider',
+  mixins: [mdlMixin],
   props: {
     // state
     model: {

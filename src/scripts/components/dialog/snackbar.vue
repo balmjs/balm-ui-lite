@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import mdlMixin from '../../mixins/mdl';
 import '../../../material-design-lite/snackbar/snackbar';
 import {isString} from '../../helpers';
 
@@ -20,6 +21,7 @@ const EVENT_DONE = 'done';
 
 export default {
   name: 'ui-snackbar',
+  mixins: [mdlMixin],
   props: {
     // ui attributes
     type: {

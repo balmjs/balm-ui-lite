@@ -5,8 +5,6 @@
 </template>
 
 <script>
-import '../../../material-design-lite/ripple/ripple';
-
 const EVENT_CHANGE = 'change';
 
 export default {
@@ -40,15 +38,6 @@ export default {
   methods: {
     handleChange(index) {
       this.$emit(EVENT_CHANGE, index);
-    }
-  },
-  mounted() {
-    if (!this.noRipple) {
-      window.setTimeout(() => {
-        this.$nextTick(() => {
-          this.$mdl.upgradeElement(this.$el, 'MaterialRipple');
-        });
-      }, 1);
     }
   }
 };

@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import mdlMixin from '../../mixins/mdl';
 import '../../../material-design-lite/tooltip/tooltip';
 import {isString, generateRandomAlphaNum} from '../../helpers';
 
@@ -23,6 +24,7 @@ const POSITION_LEFT = 4; // Positions the tooltip to the left of the target
 
 export default {
   name: 'ui-tooltip',
+  mixins: [mdlMixin],
   props: {
     // ui attributes
     name: {

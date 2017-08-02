@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import mdlMixin from '../../mixins/mdl';
 import '../../../material-design-lite/radio/radio';
 import '../../../material-design-lite/ripple/ripple';
 
@@ -22,6 +23,7 @@ const EVENT_CHANGE = 'change';
 
 export default {
   name: 'ui-radio',
+  mixins: [mdlMixin],
   props: {
     // state
     model: {

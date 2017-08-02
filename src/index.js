@@ -1,8 +1,4 @@
 /**
- * Core
- */
-import './material-design-lite/mdlComponentHandler';
-/**
  * Layout
  */
 import UiLayout from './scripts/components/layout/layout';
@@ -186,8 +182,6 @@ const BalmUI_Plugins = {
 
 const BalmUI_Register = {
   install(Vue) {
-    Vue.prototype.$mdl = window.componentHandler;
-
     for (let key in BalmUI) {
       let component = BalmUI[key];
       if (component && component !== 'install' && component.name) {
@@ -208,3 +202,73 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default BalmUI;
+
+export {
+  // Layout
+  UiLayout,
+  UiLayoutHeader,
+  UiLayoutHeaderRow,
+  UiLayoutTitle,
+  UiLayoutDrawer,
+  UiLayoutContent,
+  UiLayoutSpacer,
+  UiLayoutTabBar,
+  UiLayoutTab,
+  UiLayoutTabPanel,
+  UiNav,
+  UiNavLink,
+  UiGrid,
+  UiCell,
+  UiTabs,
+  UiTabBar,
+  UiTab,
+  UiPanel,
+  // Common
+  UiBadge,
+  UiBadgeLink,
+  UiButton,
+  UiChip,
+  UiChipText,
+  UiChipAction,
+  UiChipContact,
+  UiLoading,
+  UiMenu,
+  UiMenuItem,
+  UiTooltip,
+  UiDivider,
+  UiIcon,
+  // Form
+  UiSlider,
+  UiCheckbox,
+  UiRadio,
+  UiIconToggle,
+  UiSwitch,
+  UiTextfield,
+  UiSelect,
+  UiAutocomplete,
+  UiDatepicker,
+  UiFileupload,
+  // Data
+  UiCard,
+  UiCardTitle,
+  UiCardActions,
+  UiCardMenu,
+  UiCardMedia,
+  UiCardText,
+  UiList,
+  UiItem,
+  UiItemAvatar,
+  UiItemIcon,
+  UiItemSubtitle,
+  UiItemInfo,
+  UiItemAction,
+  UiItemTextbody,
+  UiTable,
+  UiPagination,
+  // Popup
+  UiDialog,
+  UiDialogTitle,
+  UiDialogContent,
+  UiDialogActions,
+  UiSnackbar
+};

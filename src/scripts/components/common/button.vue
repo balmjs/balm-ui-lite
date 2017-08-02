@@ -7,11 +7,13 @@
 </template>
 
 <script>
+import mdlMixin from '../../mixins/mdl';
 import '../../../material-design-lite/button/button';
 import '../../../material-design-lite/ripple/ripple';
 
 export default {
   name: 'ui-button',
+  mixins: [mdlMixin],
   props: {
     // element attributes
     type: {

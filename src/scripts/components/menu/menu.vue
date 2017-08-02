@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import mdlMixin from '../../mixins/mdl';
 import '../../../material-design-lite/menu/menu';
 import '../../../material-design-lite/ripple/ripple';
 import {isString, isObject} from '../../helpers';
@@ -26,6 +27,7 @@ const EVENT_SELECTED = 'selected';
 
 export default {
   name: 'ui-menu',
+  mixins: [mdlMixin],
   components: {
     UiMenuItem
   },

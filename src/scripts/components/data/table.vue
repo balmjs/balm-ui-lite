@@ -125,6 +125,7 @@
 </template>
 
 <script>
+import mdlMixin from '../../mixins/mdl';
 import '../../../material-design-lite/data-table/data-table';
 import {isString, isObject, isArray, isFunction} from '../../helpers';
 import UiButton from '../common/button';
@@ -177,6 +178,7 @@ const EVENT_VIEW_DETAIL = 'view-detail';
  */
 export default {
   name: 'ui-table',
+  mixins: [mdlMixin],
   components: {
     UiButton,
     UiCheckbox
