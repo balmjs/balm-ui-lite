@@ -1,46 +1,55 @@
 {
-  "props": [{
-    "name": "id",
-    "type": "String",
-    "default": "",
-    "description": "A unique identifier for the switch"
-  }, {
-    "name": "name",
-    "type": "String",
-    "default": "",
-    "description": "The name attribute of the switch"
-  }, {
-    "name": "label",
-    "type": "String",
-    "default": "",
-    "description": "The label shown above the switch"
-  }, {
-    "name": "value",
-    "type": "Boolean",
-    "default": "",
-    "description": "The value attribute of the switch"
-  }, {
+  "props": [
+  {
     "name": "model",
     "type": "Boolean",
     "default": "(required)",
     "description": "The model that the switch value syncs to",
     "required": true
-  }, {
-    "name": "effect",
-    "type": "Boolean",
-    "default": "false",
-    "description": "Applies ripple click effect"
-  }, {
+  },
+  {
+    "name": "id",
+    "type": "String",
+    "default": "",
+    "description": "A unique identifier for the switch"
+  },
+  {
+    "name": "name",
+    "type": "String",
+    "default": "",
+    "description": "The name attribute of the switch"
+  },
+  {
     "name": "disabled",
     "type": "Boolean",
     "default": "false",
     "description": "Applies disabled display effect"
+  },
+  {
+    "name": "value",
+    "type": "Boolean",
+    "default": "",
+    "description": "The value attribute of the switch"
+  },
+  {
+    "name": "label",
+    "type": "String",
+    "default": "",
+    "description": "The label shown above the switch"
+  },
+  {
+    "name": "noRipple",
+    "type": "Boolean",
+    "default": "false",
+    "description": "Don't apply ripple click effect"
   }],
-  "slots": [{
+  "slots": [
+  {
     "name": "(default)",
     "description": "The default slot holds the switch label and can contain HTML"
   }],
-  "events": [{
+  "events": [
+  {
     "name": "change",
     "description": "Dispatched when the switch is changed"
   }]

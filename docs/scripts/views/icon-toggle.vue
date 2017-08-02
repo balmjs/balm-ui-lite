@@ -22,46 +22,6 @@
       <ui-markdown :text="code[0]"></ui-markdown>
     </div>
 
-    <div class="snippet-group">
-      <div class="snippet-header">
-        <div class="snippet-demos">
-          <div class="snippet-demo-padding"></div>
-          <div class="snippet-demo">
-            <ui-icon-toggle value="X" :model="icons" @change="onIconsChange">
-              X
-            </ui-icon-toggle>
-          </div>
-          <div class="snippet-demo">
-            <ui-icon-toggle value="Y" :model="icons" @change="onIconsChange">
-              Y
-            </ui-icon-toggle>
-          </div>
-          <div class="snippet-demo-padding"></div>
-        </div>
-      </div>
-      <!-- <ui-markdown :text="code[1]"></ui-markdown> -->
-    </div>
-
-    <div class="snippet-group">
-      <div class="snippet-header">
-        <div class="snippet-demos">
-          <div class="snippet-demo-padding"></div>
-          <div class="snippet-demo">
-            <ui-icon-toggle value="qr" :model="icons" @change="onIconsChange">
-              <i class="fa fa-qrcode"></i>
-            </ui-icon-toggle>
-          </div>
-          <div class="snippet-demo">
-            <ui-icon-toggle value="tv" :model="icons" @change="onIconsChange">
-              <i class="fa fa-tv"></i>
-            </ui-icon-toggle>
-          </div>
-          <div class="snippet-demo-padding"></div>
-        </div>
-      </div>
-      <!-- <ui-markdown :text="code[1]"></ui-markdown> -->
-    </div>
-
     <ui-apidoc name="icon-toggle"></ui-apidoc>
   </div>
 </template>

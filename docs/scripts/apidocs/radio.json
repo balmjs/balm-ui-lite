@@ -1,51 +1,55 @@
 {
-  "props": [{
-    "name": "id",
-    "type": "String",
-    "default": "",
-    "description": "A unique identifier for the radio button"
-  }, {
-    "name": "name",
-    "type": "String",
-    "default": "",
-    "description": "The name attribute of the radio button"
-  }, {
-    "name": "label",
-    "type": "String",
-    "default": "",
-    "description": "The label shown above the radio button"
-  }, {
-    "name": "hideLabel",
-    "type": "Boolean",
-    "default": "false",
-    "description": "Applies no label effect"
-  }, {
-    "name": "value",
-    "type": "String, Number, Boolean",
-    "default": "",
-    "description": "The value attribute of the radio button"
-  }, {
+  "props": [
+  {
     "name": "model",
     "type": "String, Number, Boolean",
     "default": "false (required)",
     "description": "The model that the radio button value syncs to",
     "required": true
-  }, {
-    "name": "effect",
-    "type": "Boolean",
-    "default": "false",
-    "description": "Applies ripple click effect"
-  }, {
+  },
+  {
+    "name": "id",
+    "type": "String",
+    "default": "",
+    "description": "A unique identifier for the radio button"
+  },
+  {
+    "name": "name",
+    "type": "String",
+    "default": "",
+    "description": "The name attribute of the radio button"
+  },
+  {
     "name": "disabled",
     "type": "Boolean",
     "default": "false",
     "description": "Applies disabled display effect"
+  },
+  {
+    "name": "value",
+    "type": "String, Number, Boolean",
+    "default": "",
+    "description": "The value attribute of the radio button"
+  },
+  {
+    "name": "label",
+    "type": "String",
+    "default": "",
+    "description": "The label shown above the radio button"
+  },
+  {
+    "name": "noRipple",
+    "type": "Boolean",
+    "default": "false",
+    "description": "Don't apply ripple click effect"
   }],
-  "slots": [{
+  "slots": [
+  {
     "name": "(default)",
     "description": "The default slot holds the radio box label and can contain HTML"
   }],
-  "events": [{
+  "events": [
+  {
     "name": "change",
     "description": "Dispatched when the radio box is changed"
   }]

@@ -1,7 +1,6 @@
 ```html
-<ui-icon-toggle value="X" :model="icons" @change="onIconsChange">X</ui-icon-toggle>
-<ui-icon-toggle value="Y" :model="icons" @change="onIconsChange">Y</ui-icon-toggle>
-<ui-icon-toggle value="Z" :model="icons" @change="onIconsChange">Z</ui-icon-toggle>
+<ui-icon-toggle value="b" icon="format_bold" :model="icons" @change="onChange"></ui-icon-toggle>
+<ui-icon-toggle value="i" icon="format_italic" :model="icons" @change="onChange"></ui-icon-toggle>
 ```
 
 ```js
@@ -12,7 +11,7 @@ export default {
     };
   },
   methods: {
-    onIconsChange(val) {
+    onChange(val) {
       this.icons = val;
     }
   }

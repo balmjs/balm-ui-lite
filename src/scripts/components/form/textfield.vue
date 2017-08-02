@@ -4,13 +4,13 @@
     <label v-if="expandable"
       class="mdl-button mdl-js-button mdl-button--icon"
       :for="id">
-      <slot name="icon">
+      <slot>
         <i class="material-icons">search</i>
       </slot>
     </label>
     <div :class="[className.inner, {'is-expand': isExpand}]">
-      <label class="mdl-textfield__label" :for="id">
-        <slot name="label">{{ label }}</slot>
+      <label class="mdl-textfield__label" :for="expandable ? null : id">
+        <slot>{{ label }}</slot>
       </label>
       <!-- A multi-line -->
       <template v-if="isTextarea">

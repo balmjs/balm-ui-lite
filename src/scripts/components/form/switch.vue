@@ -23,20 +23,19 @@ const EVENT_CHANGE = 'change';
 export default {
   name: 'ui-switch',
   props: {
+    // state
+    model: Boolean,
+    // element attributes
     id: String,
     name: String,
-    label: String,
-    value: Boolean,
-    model: {
-      type: Boolean,
-      required: true
-    },
-    // Applies ripple click effect
-    noRipple: {
+    disabled: {
       type: Boolean,
       default: false
     },
-    disabled: {
+    value: Boolean,
+    // ui attributes
+    label: String,
+    noRipple: {
       type: Boolean,
       default: false
     }
