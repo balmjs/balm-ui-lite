@@ -95,7 +95,7 @@ import UiDialog from './scripts/components/dialog/dialog';
 import UiDialogTitle from './scripts/components/dialog/dialog-title';
 import UiDialogContent from './scripts/components/dialog/dialog-content';
 import UiDialogActions from './scripts/components/dialog/dialog-actions';
-import UiSnackbar from './scripts/components/snackbar';
+import UiSnackbar from './scripts/components/dialog/snackbar';
 /**
  * Plugins
  */

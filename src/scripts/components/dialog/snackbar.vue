@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import '../../material-design-lite/snackbar/snackbar';
-import {isString} from '../helpers';
+import '../../../material-design-lite/snackbar/snackbar';
+import {isString} from '../../helpers';
 
 const TYPES = ['toast', 'snackbar'];
 const TYPE_TOAST = 0;

@@ -1,25 +1,22 @@
 ```html
-<ui-menu effect :menu="menu" @clicked="onMenu">
-  <template slot="icon">
-    <ui-icon>person</ui-icon>
-  </template>
-</ui-menu>
+<ui-button id="demo-menu-lower-left" icon="more_vert"></ui-button>
+<ui-menu btnId="demo-menu-lower-left" :menu="data" @selected="onMenu"></ui-menu>
 ```
 
 ```js
 export default {
   data() {
     return {
-      menu: [{
+      data: [{
         url:'/a',
-        name: 'Item A'
+        label: 'Item A'
       }, {
         url:'/b',
-        name: 'Item B',
+        label: 'Item B',
         disabled: true
       }, {
         url:'/c',
-        name: 'Item C'
+        label: 'Item C'
       }]
     };
   },

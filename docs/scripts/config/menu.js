@@ -35,8 +35,6 @@ const COMPONENTS = {
   ],
   popup: [
     'dialog',
-    'alert',
-    'confirm',
     'snackbar'
   ]
 };

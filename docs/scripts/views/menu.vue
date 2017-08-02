@@ -11,8 +11,8 @@
         <ui-button id="demo-menu-lower-left" icon="more_vert"></ui-button>
         <ui-menu btnId="demo-menu-lower-left" :menu="data" @selected="onMenu"></ui-menu>
       </div>
+      <ui-markdown :text="code[0]"></ui-markdown>
     </div>
-    <!-- <ui-markdown :text="code[0]"></ui-markdown> -->
 
     <h4>{{ $t('menu.custom') }}</h4>
     <div class="snippet-group">
@@ -24,8 +24,8 @@
           </ui-menuitem>
         </ui-menu>
       </div>
+      <ui-markdown :text="code[1]"></ui-markdown>
     </div>
-    <!-- <ui-markdown :text="code[1]"></ui-markdown> -->
 
     <ui-apidoc name="menu"></ui-apidoc>
     <ui-apidoc name="menuitem"></ui-apidoc>

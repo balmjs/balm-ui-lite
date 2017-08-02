@@ -5,15 +5,10 @@
     "default": "(auto)",
     "description": "A unique identifier for the tooltip"
   }, {
-    "name": "target",
+    "name": "title",
     "type": "String",
     "default": "",
     "description": "A target text"
-  }, {
-    "name": "tips",
-    "type": "String",
-    "default": "",
-    "description": "A tips text"
   }, {
     "name": "large",
     "type": "Boolean",

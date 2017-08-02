@@ -1,10 +1,8 @@
 ```html
-<ui-menu effect>
-  <template slot="icon">
-    <ui-icon>settings</ui-icon>
-  </template>
-  <ui-menuitem v-for="item in menu" :item="item" @clicked="onMenu">
-    <a :href="item.url">{{ item.name }}</a>
+<ui-button id="demo-menu-lower-right" icon="settings"></ui-button>
+<ui-menu btnId="demo-menu-lower-right" :menu="data" @selected="onMenu">
+  <ui-menuitem v-for="(item, index) in data" :key="index" :item="item">
+    <a :href="item.url">{{ item.label }}</a>
   </ui-menuitem>
 </ui-menu>
 ```
