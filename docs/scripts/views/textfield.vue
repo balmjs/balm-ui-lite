@@ -15,6 +15,7 @@
               label="Text..."
               :model="text1"
               @input="onChange('text1', $event)"></ui-textfield>
+            {{ text1 }}
           </div>
           <div class="snippet-demo-padding"></div>
         </div>

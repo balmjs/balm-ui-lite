@@ -57,13 +57,13 @@
   {
     "name": "rows",
     "type": "Number",
-    "default": "2",
+    "default": "1",
     "description": "The rows attribute of the &lt;textarea&gt;"
   },
   {
     "name": "cols",
     "type": "Number",
-    "default": "2",
+    "default": "20",
     "description": "The cols attribute of the &lt;textarea&gt;"
   },
   {

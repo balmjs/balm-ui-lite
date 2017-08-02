@@ -1,34 +1,32 @@
 {
   "props": [{
+    "name": "model",
+    "type": "null",
+    "default": "(required)",
+    "description": "The model that the select value syncs to"
+  }, {
     "name": "options",
     "type": "Array",
     "default": "",
     "description": "The option data of the select"
   }, {
-    "name": "defaultValue",
+    "name": "optionKey",
     "type": "String",
-    "default": "",
-    "description": "The label attribute of the default option"
+    "default": "'value'"
+  }, {
+    "name": "optionValue",
+    "type": "String",
+    "default": "'label'"
   }, {
     "name": "defaultKey",
     "type": "String",
     "default": "''",
     "description": "The value attribute of the default option"
   }, {
-    "name": "model",
-    "type": "null",
-    "default": "(required)",
-    "description": "The model that the select value syncs to"
-  }, {
-    "name": "placeholder",
+    "name": "defaultValue",
     "type": "String",
     "default": "",
-    "description": "Provides a hint to the user of what can be entered in the field"
-  }, {
-    "name": "disabled",
-    "type": "Boolean",
-    "default": "false",
-    "description": "Applies disabled display effect"
+    "description": "The label attribute of the default option"
   }],
   "slots": [],
   "events": [{
