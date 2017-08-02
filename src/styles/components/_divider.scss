@@ -1,0 +1,43 @@
+.mdl-divider {
+  display: flex;
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+  }
+  span {
+    display: inline-block;
+    flex-shrink: 0;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+  &.horizontal {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    &::before,
+    &::after {
+      height: 1px;
+      width: 50%;
+      border-bottom: 1px solid currentColor;
+    }
+    span {
+      padding: .5em 1em;
+    }
+  }
+  &.vertical {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 2em;
+    &::before,
+    &::after {
+      height: 50%;
+      width: 1px;
+      border-left: 1px solid currentColor;
+    }
+    span {
+      padding: .5em;
+    }
+  }
+}
