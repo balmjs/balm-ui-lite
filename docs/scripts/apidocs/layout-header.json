@@ -1,0 +1,39 @@
+{
+  "props": [
+  {
+    "name": "scroll",
+    "type": "Boolean",
+    "default": "false",
+    "description": "Makes the header scroll with the content"
+  },
+  {
+    "name": "waterfall",
+    "type": "Boolean",
+    "default": "false",
+    "description": "Allows a \"waterfall\" effect with multiple header lines"
+  },
+  {
+    "name": "waterfallHideTop",
+    "type": "Boolean",
+    "default": "false",
+    "description": "Hides the top rather than the bottom rows on a waterfall header"
+  },
+  {
+    "name": "transparent",
+    "type": "Boolean",
+    "default": "false",
+    "description": "Makes header transparent (draws on top of layout background)"
+  },
+  {
+    "name": "seamed",
+    "type": "Boolean",
+    "default": "false",
+    "description": "Uses a header without a shadow"
+  }],
+  "slots": [
+  {
+    "name": "(default)",
+    "description": "The default slot holds the layout header content and can contain HTML"
+  }],
+  "events": []
+}

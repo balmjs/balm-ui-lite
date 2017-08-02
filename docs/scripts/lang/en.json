@@ -1,6 +1,13 @@
 {
   "components": {
     "layout": "Layout",
+    "layout-header": "Layout Header",
+    "layout-header-row": "Layout Header Row",
+    "layout-title": "Layout Title",
+    "nav": "Navigation",
+    "nav-link": "Navigation Link",
+    "layout-drawer": "Layout Drawer",
+    "layout-content": "Layout Content",
     "grid": "Grid",
     "cell": "Cell",
     "tabs": "Tabs",

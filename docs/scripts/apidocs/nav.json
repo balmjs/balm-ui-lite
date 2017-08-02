@@ -1,0 +1,10 @@
+{
+  "props": [],
+  "slots": [
+  {
+    "name": "(default)",
+    "description": "The default slot holds the navigation content and can contain HTML",
+    "props": "className"
+  }],
+  "events": []
+}

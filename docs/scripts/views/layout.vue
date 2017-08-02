@@ -334,7 +334,14 @@
       <ui-markdown :text="code[7]"></ui-markdown>
     </div>
 
-    <!-- <ui-apidoc name="layout"></ui-apidoc> -->
+    <ui-apidoc name="layout"></ui-apidoc>
+    <ui-apidoc name="layout-header"></ui-apidoc>
+    <ui-apidoc name="layout-header-row"></ui-apidoc>
+    <ui-apidoc name="layout-title"></ui-apidoc>
+    <ui-apidoc name="nav"></ui-apidoc>
+    <ui-apidoc name="nav-link"></ui-apidoc>
+    <ui-apidoc name="layout-drawer"></ui-apidoc>
+    <ui-apidoc name="layout-content"></ui-apidoc>
   </div>
 </template>
 

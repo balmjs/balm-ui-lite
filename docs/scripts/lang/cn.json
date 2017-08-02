@@ -1,6 +1,13 @@
 {
   "components": {
     "layout": "布局",
+    "layout-header": "Layout Header",
+    "layout-header-row": "Layout Header Row",
+    "layout-title": "Layout Title",
+    "nav": "Navigation",
+    "nav-link": "Navigation Link",
+    "layout-drawer": "Layout Drawer",
+    "layout-content": "Layout Content",
     "grid": "栅格化",
     "cell": "栅格单元",
     "tabs": "选项卡容器",

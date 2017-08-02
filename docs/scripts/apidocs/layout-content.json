@@ -1,0 +1,9 @@
+{
+  "props": [],
+  "slots": [
+  {
+    "name": "(default)",
+    "description": "The default slot holds the layout body content and can contain HTML"
+  }],
+  "events": []
+}
