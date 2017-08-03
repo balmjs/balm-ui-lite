@@ -93,13 +93,23 @@ import UiDialogContent from './scripts/components/dialog/dialog-content';
 import UiDialogActions from './scripts/components/dialog/dialog-actions';
 import UiSnackbar from './scripts/components/dialog/snackbar';
 /**
+ * Helpers
+ */
+import * as BalmUI_Helpers from './scripts/helpers';
+/**
  * Plugins
  */
-// import helper from './scripts/plugins/helper';
 import event from './scripts/plugins/event';
 import alert from './scripts/plugins/alert';
 import confirm from './scripts/plugins/confirm';
 import toast from './scripts/plugins/toast';
+/**
+ * Mixins
+ */
+import * as BalmUI_Mixins from './scripts/mixins';
+
+const helpers = Object.assign({}, BalmUI_Helpers);
+const mixins = Object.assign({}, BalmUI_Mixins);
 
 const components = {
   // Layout
@@ -189,7 +199,7 @@ const registers = {
   }
 };
 
-const BalmUI = Object.assign({}, { components }, { plugins }, registers);
+const BalmUI = Object.assign({}, { components }, { helpers }, { plugins }, { mixins }, registers);
 
 // Auto install in dist mode
 if (typeof window !== 'undefined' && window.Vue) {
@@ -269,5 +279,7 @@ export {
   UiDialogContent,
   UiDialogActions,
   UiSnackbar,
-  plugins
+  helpers,
+  plugins,
+  mixins
 };

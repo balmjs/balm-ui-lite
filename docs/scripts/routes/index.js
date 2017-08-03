@@ -5,7 +5,7 @@ import dataRoutes from './data';
 import popupRoutes from './popup';
 
 import Home from '../views/home';
-// import Test from '../views/test';
+import Test from '../views/test';
 
 const baseRoutes = [{
     path: '/',
@@ -16,12 +16,11 @@ const baseRoutes = [{
       keywords: '',
       description: ''
     }
-  },
-  // {
-  //   path: '/test',
-  //   name: 'test',
-  //   component: Test,
-  // }
+  }, {
+    path: '/test',
+    name: 'test',
+    component: Test,
+  }
 ];
 
 const routes = baseRoutes.concat(layoutRoutes, commonRoutes, formRoutes, dataRoutes, popupRoutes);

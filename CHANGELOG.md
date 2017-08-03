@@ -1,5 +1,18 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
+## 0.5.2
+
+- add `helpers`
+- add `mixins`
+
+---
+
+## 0.5.1
+
+- update build
+
+---
+
 ## 0.5.0
 
 - update balm@0.8.4

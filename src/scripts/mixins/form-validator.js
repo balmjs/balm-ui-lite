@@ -1,19 +1,32 @@
-import RULES from './form-validator-rules';
-
 /**
  * Form Validator
  *
  * @author Elf-mousE
- * @updated 2017.08.03
+ * @updated 2017.08.04
  *
  * @usage
  *
  * ```js
- * import formValidator from '/path/to/mixins/form-validator';
+ * // `/path/to/mixins/form-validator-rules.js`
+ * export default {
+ *   required: {
+ *     validate(value) {
+ *       return value.length;
+ *     },
+ *     message: '%s is required'
+ *   },
+ *   ...
+ * };
+ * ```
+ *
+ * ```js
+ * import { mixins } from 'balm-ui-lite';
+ * import formValidatorRules from '/path/to/mixins/form-validator-rules';
  *
  * export default {
  *   ...
- *   mixins: [formValidator],
+ *   mixins: [mixins.formValidator],
+ *   validationRules: formValidatorRules,
  *   validation: {
  *     fieldname1: {
  *       label: 'Some Label',
@@ -26,6 +39,15 @@ import RULES from './form-validator-rules';
  *       }
  *     },
  *     ...
+ *   },
+ *   data() {
+ *     return {
+ *       formData: {
+ *         username: '',
+ *         password: '',
+ *         ...
+ *       }
+ *     };
  *   },
  *   methods: {
  *     submit() {
@@ -55,11 +77,12 @@ export default {
         messages: [] // 所有无效字段的提示语
       };
 
-      let validationOptions = this.$options.validation || {};
+      const VALIDATION = this.$options.validation || {};
+      const RULES = this.$options.validationRules || {};
 
-      for (let key in validationOptions) {
+      for (let key in VALIDATION) {
         let value = formData[key];
-        let field = validationOptions[key];
+        let field = VALIDATION[key];
 
         let validators = field.validator.split(',').map(validator => validator.trim());
         let label = field.label || '';
