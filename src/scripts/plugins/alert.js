@@ -14,7 +14,7 @@ const template =
   :class="['mdl-alert', options.className]"
   :open="open"
   @close="handleClose">
-  <ui-dialog-title>{{ options.title }}</ui-dialog-title>
+  <ui-dialog-title v-if="options.title">{{ options.title }}</ui-dialog-title>
   <ui-dialog-content>{{ options.message }}</ui-dialog-content>
   <ui-dialog-actions>
     <ui-button

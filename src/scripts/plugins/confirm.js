@@ -17,7 +17,7 @@ const template =
   :open="open"
   @close="handleClose"
   @confirm="handleConfirm">
-  <ui-dialog-title>{{ options.title }}</ui-dialog-title>
+  <ui-dialog-title v-if="options.title">{{ options.title }}</ui-dialog-title>
   <ui-dialog-content>{{ options.message }}</ui-dialog-content>
   <ui-dialog-actions :acceptText="options.acceptText" :cancelText="options.cancelText"></ui-dialog-actions>
 </ui-dialog>`;
