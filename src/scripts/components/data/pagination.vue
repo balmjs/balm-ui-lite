@@ -1,11 +1,14 @@
 <template>
   <div v-if="recordCount" :class="['mdl-pagination', {'mdl-pagination--mini': mini}]">
     <div v-if="showRecord" class="mdl-pagination--record">
-      <slot :recordCount="recordCount" :pageSize="pageSize" :pageCount="pageCount"></slot>
+      <slot :recordCount="recordCount"
+            :pageSize="pageSize"
+            :pageCount="pageCount"></slot>
     </div>
     <div class="mdl-pagination--paging">
       <a class="mdl-pagination--paging-previous">
-        <span v-html="currentPrev" @click="handleClick(currentPage === 1 ? 1 : currentPage - 1)"></span>
+        <span v-html="currentPrev"
+              @click="handleClick(currentPage === 1 ? 1 : currentPage - 1)"></span>
       </a>
       <a v-for="(page, index) in pageCount"
         v-if="!mini && isShow(page)"
@@ -15,11 +18,14 @@
         <span v-else class="ellipsis">...</span>
       </a>
       <a class="mdl-pagination--paging-next">
-        <span v-html="currentNext" @click="handleClick(currentPage === pageCount ? pageCount : currentPage + 1)"></span>
+        <span v-html="currentNext"
+              @click="handleClick(currentPage === pageCount ? pageCount : currentPage + 1)"></span>
       </a>
       <div v-if="!mini && showJumper" class="mdl-pagination--jumper">
         <span>{{ jumperBefore }}</span>
-        <input type="text" ref="input" v-model="pager" @keydown="handleClick(pager, $event)">
+        <input type="number"
+               v-model="pager"
+               @keydown.prevent.enter="handleClick($event.target.value)">
         <span>{{ jumperAfter }}</span>
       </div>
     </div>
@@ -27,9 +33,6 @@
 </template>
 
 <script>
-import {detectIE} from '../../helpers';
-
-const KEY_ENTER = 13;
 const DOUBLE_ARROW_LEFT = '&laquo;';
 const DOUBLE_ARROW_RIGHT = '&raquo;';
 const SINGLE_ARROW_LEFT = '&lsaquo;';
@@ -48,7 +51,7 @@ export default {
       required: true
     },
     page: {
-      type: Number,
+      type: [Number, String],
       default: 1
     },
     prev: String,
@@ -80,8 +83,8 @@ export default {
   },
   data() {
     return {
-      currentPage: this.page,
-      pager: this.page
+      currentPage: +this.page,
+      pager: +this.page
     };
   },
   computed: {
@@ -99,7 +102,7 @@ export default {
   },
   watch: {
     page(val) {
-      this.currentPage = val;
+      this.currentPage = +val;
     }
   },
   methods: {
@@ -120,7 +123,7 @@ export default {
       let noFirstOrLast = (page !== 1 && page !== this.pageCount);
       return !(isExisted && noFirstOrLast);
     },
-    handleClick(page, event) {
+    handleClick(page) {
       if (!isNaN(page)) {
         switch (true) {
           case (page > this.pageCount):
@@ -130,15 +133,10 @@ export default {
             page = 1;
             break;
         }
-        this.$emit(EVENT_CHANGE, +page);
+        this.$emit(EVENT_CHANGE, page);
         this.pager = page;
       } else {
         this.pager = this.currentPage;
-      }
-      // fix IE10- bug
-      let version = detectIE();
-      if (version && version < 11 && event.keyCode === KEY_ENTER) {
-        event.preventDefault();
       }
     }
   }

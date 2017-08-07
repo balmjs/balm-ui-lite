@@ -1,5 +1,13 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
+## 0.5.4
+
+### Bugfix
+
+- fix `<ui-pagination>` jumper
+
+---
+
 ## 0.5.3 (2017.08.07)
 
 ### Bugfix
