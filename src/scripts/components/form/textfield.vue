@@ -178,9 +178,16 @@ export default {
   watch: {
     model(val) {
       this.currentValue = val;
+      this.checkDirty();
     }
   },
   methods: {
+    checkDirty() {
+      if (this.label) {
+        // Bugfix for dynamic assignment
+        this.className.outer['is-dirty'] = this.currentValue.length;
+      }
+    },
     handleFocus(event) {
       this.$emit(EVENT_FOCUS, event);
     },

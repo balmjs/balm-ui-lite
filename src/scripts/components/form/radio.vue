@@ -63,7 +63,7 @@ export default {
       };
     },
     isChecked() {
-      return this.currentValue === this.value;
+      return this.currentValue == this.value;
     }
   },
   watch: {
