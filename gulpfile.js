@@ -17,6 +17,17 @@ balm.config = {
     ]
   },
   scripts: {
+    entry: useDocs ? {
+      mylib: [
+        'vue',
+        'vue-router',
+        'axios',
+        'vue-i18n'
+      ],
+      main: './docs/scripts/main.js'
+    } : {
+      'balm-ui-lite': './src/index.js'
+    },
     library: 'BalmUI',
     libraryTarget: 'umd',
     loaders: [{
@@ -45,16 +56,6 @@ balm.config = {
   },
   useDefault: useDefault
 };
-
-if (useDocs) {
-  balm.config.scripts.entry = {
-    main: './docs/scripts/main.js'
-  };
-} else {
-  balm.config.scripts.entry = {
-    'balm-ui-lite': './src/index.js'
-  }
-}
 
 var DMI_SOURCE = './node_modules/material-design-icons';
 var DML_SOURCE = './node_modules/material-design-lite';
