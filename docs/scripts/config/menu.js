@@ -1,3 +1,9 @@
+const FOUNDATION = [
+  'helpers',
+  'mixins',
+  'plugins'
+];
+
 const COMPONENTS = {
   layout: [
     'layout',
@@ -39,7 +45,15 @@ const COMPONENTS = {
   ]
 };
 
-let menu = [];
+let menu = [{
+  name: 'components.foundation',
+  components: FOUNDATION.map(item => {
+    return {
+      url: item,
+      name: `foundation.${item}`
+    };
+  })
+}];
 for (let groupName in COMPONENTS) {
   let components = COMPONENTS[groupName];
   let items = {
@@ -53,5 +67,7 @@ for (let groupName in COMPONENTS) {
   };
   menu.push(items);
 }
+
+console.log(menu);
 
 export default menu;

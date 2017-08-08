@@ -26,33 +26,11 @@ __`/path/to/_vendor.scss`__
 
 #### 2.2 JS Config
 
-__`gulpfile.js`__
-
-```js
-balm.config = {
-  ...
-  scripts: {
-    loaders: [{
-      test: /\.vue$/,
-      loader: 'vue'
-    }, {
-      test: /balm-ui-lite.src.*?js$/,
-      loader: 'babel'
-    }],
-    alias: {
-      'vue$': balm.config.production ? 'vue/dist/vue.min.js' : 'vue/dist/vue.esm.js',
-      'balm-ui': 'balm-ui-lite/src/index.js'
-    }
-  },
-  ...
-};
-```
-
 __`/path/to/main.js`__
 
 ```js
 import Vue from 'vue';
-import BalmUI from 'balm-ui';
+import BalmUI from 'balm-ui-lite';
 
 Vue.use(BalmUI);
 ```
@@ -61,51 +39,41 @@ Vue.use(BalmUI);
 
 > [images & fonts](http://balmjs.com/ui-vue-lite/assets.zip)
 
-## Components
+## UI components
 
-### Layout
-
-- layout
-- navigation
-- grid
-- tabs
-- footer
-
-### Common
-
-- badge
-- button
-- chip
-- loading
-- menu
-- tooltip
-- divider (new)
-
-### Form
-
-- slider
-- checkbox
-- radio
-- icon toggle
-- switch
-- textfield
-- select (new)
-- autocomplete (new)
-- datepicker (new)
-
-### Data View
-
-- card
-- list
-- table
-- pagination (new)
-
-### Popup
-
-- dialog
-- alert
-- confirm
-- snackbar
+- Layout
+    - layout
+    - navigation
+    - grid
+    - tabs
+- Common
+    - badge
+    - button
+    - chip
+    - loading
+    - menu
+    - tooltip
+    - divider (new)
+- Form
+    - slider
+    - checkbox
+    - radio
+    - icon toggle
+    - switch
+    - textfield
+    - select (new)
+    - autocomplete (new)
+    - datepicker (new)
+- Data View
+    - card
+    - list
+    - table
+    - pagination (new)
+- Popup
+    - dialog
+    - alert
+    - confirm
+    - snackbar
 
 
 > __thx [BalmJS](http://balmjs.com/) & [Vue.js](https://vuejs.org/)__

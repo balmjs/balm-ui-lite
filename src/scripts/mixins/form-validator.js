@@ -4,7 +4,7 @@ import { isUndefined } from '../helpers';
  * Form Validator
  *
  * @author Elf-mousE
- * @updated 2017.08.04
+ * @updated 2017.08.08
  *
  * @usage
  *

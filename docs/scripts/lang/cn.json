@@ -1,5 +1,13 @@
 {
-  "components": {
+  "foundation":
+  {
+    "helpers": "辅助方法",
+    "mixins": "混合",
+    "plugins": "插件"
+  },
+  "components":
+  {
+    "foundation": "基础服务",
     "layout": "布局",
     "layout-header": "Layout Header",
     "layout-header-row": "Layout Header Row",
@@ -59,20 +67,24 @@
     "confirm": "确认框",
     "snackbar": "弹出框"
   },
-  "tabs": {
+  "tabs":
+  {
     "basic": "基本用法",
     "materialIcon": "Material图标",
     "customIcon": "自定义图标"
   },
-  "menu": {
+  "menu":
+  {
     "basic": "基本用法",
     "custom": "自定义用法"
   },
-  "table": {
+  "table":
+  {
     "basic": "基本用法",
     "advanced": "高级用法"
   },
-  "textfield": {
+  "textfield":
+  {
     "simple": "简单的本文框",
     "pattern": "正则验证和错误信息的文本框",
     "floating": "浮动标签的文本框",
@@ -82,7 +94,8 @@
     "plus": "可扩展的文本框",
     "leftplus": "标签左置的可扩展的文本框"
   },
-  "tooltip": {
+  "tooltip":
+  {
     "basic": "基本用法",
     "custom": "自定义用法"
   }

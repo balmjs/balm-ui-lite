@@ -1,69 +1,28 @@
-const getType = anything => ({}).toString.call(anything).replace(/\[object\s(.*)\]/, '$1').toLowerCase();
+// BalmUI helpers
 
-const isString = string => getType(string) === 'string';
+const getType = any => Object.prototype.toString.call(any).replace(/\[object\s(.*)\]/, '$1').toLowerCase();
 
-const isNumber = number => getType(number) === 'number';
+// Boolean, null, undefined, Number, String, and Symbol
 
 const isBoolean = bool => getType(bool) === 'boolean';
 
-const isFunction = fn => getType(fn) === 'function';
-
-const isObject = object => getType(object) === 'object';
-
-const isArray = array => getType(array) === 'array';
+const isNull = _var => getType(_var) === 'null';
 
 const isUndefined = _var => getType(_var) === 'undefined';
 
-const isNull = _var => getType(_var) === 'null';
+const isNumber = num => getType(num) === 'number';
 
-const isJSON = string => {
-  let result = false;
+const isString = str => getType(str) === 'string';
 
-  try {
-    let object = JSON.parse(string);
-    result = !!object && typeof object === 'object';
-  } catch (e) {}
+const isSymbol = sym => getType(sym) === 'symbol';
 
-  return result;
-};
+// Object
 
-const isEmpty = anything => {
-  let rules = {
-    string: () => {
-      return anything === '';
-    },
-    object: () => {
-      return Object.keys(anything).length === 0;
-    },
-    array: () => {
-      return anything.length === 0;
-    },
-    null: () => {
-      return true;
-    },
-    'default': () => {
-      return false;
-    }
-  };
+const isObject = obj => getType(obj) === 'object';
 
-  let type = rules[getType(anything)] ? getType(anything) : 'default';
+const isArray = arr => getType(arr) === 'array';
 
-  return rules[type]();
-};
-
-const toJSON = object => {
-  return (isObject(object) || isArray(object)) ? JSON.parse(JSON.stringify(object)) : object;
-};
-
-const generateRandomAlphaNum = len => {
-  let rdmString = '';
-  for (; rdmString.length < len; rdmString += Math.random().toString(36).substr(2));
-  return rdmString.substr(0, len);
-};
-
-let MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
-
-let observeMutationSupport = !!MutationObserver;
+const isFunction = arr => getType(arr) === 'function';
 
 /**
  * detect IE
@@ -110,18 +69,15 @@ const detectIE = () => {
 };
 
 export {
-  isString,
-  isNumber,
+  getType,
   isBoolean,
-  isFunction,
+  isNull,
+  isUndefined,
+  isNumber,
+  isString,
+  isSymbol,
   isObject,
   isArray,
-  isUndefined,
-  isNull,
-  isJSON,
-  isEmpty,
-  toJSON,
-  generateRandomAlphaNum,
-  observeMutationSupport,
+  isFunction,
   detectIE
 };

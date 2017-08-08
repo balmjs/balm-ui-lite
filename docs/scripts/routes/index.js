@@ -1,3 +1,4 @@
+import foundationRoutes from './foundation';
 import layoutRoutes from './layout';
 import commonRoutes from './common';
 import formRoutes from './form';
@@ -23,6 +24,6 @@ const baseRoutes = [{
   }
 ];
 
-const routes = baseRoutes.concat(layoutRoutes, commonRoutes, formRoutes, dataRoutes, popupRoutes);
+const routes = baseRoutes.concat(foundationRoutes, layoutRoutes, commonRoutes, formRoutes, dataRoutes, popupRoutes);
 
 export default routes;

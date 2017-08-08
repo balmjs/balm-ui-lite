@@ -1,5 +1,13 @@
 {
-  "components": {
+  "foundation":
+  {
+    "helpers": "Helpers",
+    "mixins": "Mixins",
+    "plugins": "Plugins"
+  },
+  "components":
+  {
+    "foundation": "Foundation",
     "layout": "Layout",
     "layout-header": "Layout Header",
     "layout-header-row": "Layout Header Row",
@@ -59,20 +67,24 @@
     "confirm": "Confirm",
     "snackbar": "Snackbar"
   },
-  "tabs": {
+  "tabs":
+  {
     "basic": "Basic",
     "materialIcon": "Material icons",
     "customIcon": "Custom icons"
   },
-  "menu": {
+  "menu":
+  {
     "basic": "Basic usage",
     "custom": "Custom usage"
   },
-  "table": {
+  "table":
+  {
     "basic": "Basic",
     "advanced": "Advanced"
   },
-  "textfield": {
+  "textfield":
+  {
     "simple": "Simple Textfield",
     "pattern": "Pattern Textfield with Error Info",
     "floating": "Textfield with Floating Label",
@@ -82,7 +94,8 @@
     "plus": "Textfield with Plus",
     "leftplus": "Textfield with left Label and Plus"
   },
-  "tooltip": {
+  "tooltip":
+  {
     "basic": "Basic usage",
     "custom": "Custom usage"
   }

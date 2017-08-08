@@ -1,10 +1,18 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
-## 0.5.4
+## 0.5.4 (2017.08.08)
+
+### Docs
+
+- helpers (new)
+- mixins (new)
+- plugins (new)
+- update menu demo2
 
 ### Bugfix
 
 - fix `<ui-pagination>` jumper
+- update form validator: `validate(formData, extraRules = {})`
 
 ---
 
