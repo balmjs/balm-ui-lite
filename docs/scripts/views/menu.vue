@@ -18,7 +18,7 @@
     <div class="snippet-group">
       <div class="snippet-demo">
         <ui-button id="demo-menu-lower-right" icon="settings"></ui-button>
-        <ui-menu btnId="demo-menu-lower-right" :menu="data" @selected="onMenu">
+        <ui-menu btnId="demo-menu-lower-right">
           <ui-menuitem v-for="(item, index) in data" :key="index" :item="item">
             <a :href="item.url">{{ item.label }}</a>
           </ui-menuitem>

@@ -70,7 +70,7 @@ const LABEL_PLACEHOLDER = '%s';
 
 export default {
   methods: {
-    validate(formData) {
+    validate(formData, extraRules = {}) {
       let result = {
         isValid: true, // 是否验证通过
         valid: [], // 有效字段
@@ -79,7 +79,7 @@ export default {
         messages: [] // 所有无效字段的提示语
       };
 
-      const VALIDATION = this.$options.validation || {};
+      const VALIDATION = Object.assign({}, this.$options.validation, extraRules) || {};
       const RULES = this.$options.validationRules || {};
 
       for (let key in VALIDATION) {
