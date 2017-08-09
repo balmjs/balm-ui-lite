@@ -68,6 +68,4 @@ for (let groupName in COMPONENTS) {
   menu.push(items);
 }
 
-console.log(menu);
-
 export default menu;

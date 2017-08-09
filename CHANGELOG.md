@@ -1,5 +1,13 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
+## 0.5.5 (2017.08.09)
+
+### Bugfix
+
+- restore `helpers.generateRandomAlphaNum(len)` for `<ui-tooltip>`
+
+---
+
 ## 0.5.4 (2017.08.08)
 
 ### Docs
