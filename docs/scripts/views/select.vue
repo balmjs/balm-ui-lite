@@ -10,10 +10,10 @@
           optionValue="value" optionKey="key"
           defaultValue="All items" defaultKey="0"
           @change="onChange('formData.selected', $event)"></ui-select>
-        selected: {{ formData.selected }}
+        <span>selected: {{ formData.selected }}</span>
       </div>
+      <ui-markdown :text="code[0]"></ui-markdown>
     </div>
-    <!-- <ui-markdown :text="code[0]"></ui-markdown> -->
 
     <div class="snippet-group">
       <div class="snippet-demo">
@@ -27,10 +27,10 @@
           optionValue="value" optionKey="key"
           defaultValue="Select city..." defaultKey="0"
           @change="onSelectChange('city', $event)"></ui-select>
-        Province: {{ formData.province }} - City: {{ formData.city }}
+        <span>Province: {{ formData.province }} - City: {{ formData.city }}</span>
       </div>
+      <ui-markdown :text="code[1]"></ui-markdown>
     </div>
-    <!-- <ui-markdown :text="code[1]"></ui-markdown> -->
 
     <ui-apidoc name="select"></ui-apidoc>
   </div>

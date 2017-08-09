@@ -1,11 +1,13 @@
 ```html
-<ui-select :options="provinces" :model="province"
-  placeholder="Select province..."
-  @change="onSelectChange('province', $event, changeCity)"></ui-select>
+<ui-select :options="provinces" :model="formData.province"
+           optionKey="key" optionValue="value"
+           defaultKey="0" defaultValue="Select province..."
+           @change="onSelectChange('province', $event, changeCity)"></ui-select>
 
-<ui-select :options="cities" :model="city"
-  placeholder="Select city..."
-  @change="onSelectChange('city', $event)"></ui-select>
+<ui-select :options="cities" :model="formData.city"
+           optionKey="key" optionValue="value"
+           defaultKey="0" defaultValue="Select city..."
+           @change="onSelectChange('city', $event)"></ui-select>
 ```
 
 ```js
@@ -49,18 +51,15 @@ export default {
     };
   },
   methods: {
-    onSelectChange(field, option, fn) {
-      let key = option.key || -1;
-
-      this[field] = key;
-      fn && fn(key);
-
-      if (field === 'province') {
-        this.city = (key > -1 && CITIES[key].length) ? CITIES[key][0].key : 0;
+    onSelectChange(field, value, fn) {
+      this.formData[field] = value;
+      if (value) {
+        fn && fn(value);
       }
     },
     changeCity(key) {
       this.cities = key > -1 ? CITIES[key] : [];
+      this.formData.city = this.cities.length ? this.cities[0].key : 0;
     }
   }
 };

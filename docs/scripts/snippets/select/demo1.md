@@ -1,7 +1,8 @@
 ```html
 <ui-select :options="options" :model="selected"
-  defaultValue="All items" defaultKey="0"
-  @change="onSelectChange('selected', $event)"></ui-select>
+           optionKey="key" optionValue="value"
+           defaultKey="0" defaultValue="All items"
+           @change="onChange('selected', $event)"></ui-select>
 ```
 
 ```js
@@ -20,11 +21,6 @@ export default {
         value: 'item 3'
       }]
     };
-  },
-  methods: {
-    onSelectChange(field, option) {
-      this[field] = option.key;
-    }
   }
 };
 ```
