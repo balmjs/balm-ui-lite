@@ -1,3 +1,3 @@
 ```html
-<ui-tooltip target="text" tips="tips"></ui-tooltip>
+<ui-tooltip title="text" tips="tips"></ui-tooltip>
 ```

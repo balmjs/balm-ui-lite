@@ -5,16 +5,17 @@
       <ui-tab-bar effect position="left" @change="onChange">
         <ui-tab
           v-for="(item, index) in ['props', 'slots', 'events']"
-          v-if="docs[item]"
+          v-show="docs[item]"
           :key="index">
           {{ item }}
         </ui-tab>
       </ui-tab-bar>
       <ui-panel
         v-for="(item, index) in ['props', 'slots', 'events']"
-        v-if="docs[item]"
+        v-show="docs[item]"
         :key="index">
         <ui-table
+          v-if="docs[item]"
           class="docs-table"
           :data="docs[item].data"
           :thead="docs[item].thead"

@@ -32,6 +32,6 @@
   "events": [
   {
     "name": "selected",
-    "description": "Dispatched when the menu is selected"
+    "description": "Dispatched when the menu is selected (return menuitem)"
   }]
 }

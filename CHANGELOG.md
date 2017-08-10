@@ -1,5 +1,18 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
+## 0.5.6 (2017.08.10)
+
+### Components
+
+- `<ui-select>` add new event `selected`
+
+### Docs
+
+- fix `<ui-tooltip>` demo
+- update `<ui-select>` docs & demo
+
+---
+
 ## 0.5.5 (2017.08.09)
 
 ### Bugfix

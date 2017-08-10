@@ -15,7 +15,8 @@
 <script>
 import {isObject} from '../../helpers';
 
-const EVENT_CHANGE = 'change';
+const EVENT_CHANGE = 'change'; // return option[optionKey]
+const EVENT_SELECTED = 'selected'; // return option
 
 export default {
   name: 'ui-select',
@@ -24,7 +25,6 @@ export default {
     model: null,
     // ui attributes
     options: {
-      required: true,
       type: Array,
       default() {
         return [];
@@ -58,16 +58,22 @@ export default {
       this.currentOptions = val;
     }
   },
+  computed: {
+    currentOption() {
+      return this.currentOptions.find(option => option[this.optionKey] == this.currentValue);
+    }
+  },
   methods: {
     handleChange() {
       this.$emit(EVENT_CHANGE, this.currentValue);
+      this.$emit(EVENT_SELECTED, Object.assign({}, this.currentOption));
     },
     init() {
       if (!this.defaultValue && this.currentOptions.length) {
         let defaultOption = {};
 
         defaultOption = this.currentValue
-          ? this.currentOptions.find(option => option[this.optionKey] == this.currentValue)
+          ? this.currentOption
           : this.currentOptions[0];
 
         this.$emit(EVENT_CHANGE, defaultOption[this.optionKey]);

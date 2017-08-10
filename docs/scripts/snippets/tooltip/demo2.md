@@ -1,6 +1,6 @@
 ```html
 <ui-tooltip>
-  <template slot="target">
+  <template slot="title">
     <ui-badge class="material-icons" overlap value="5">email</ui-badge>
   </template>
   <span>new message</span>

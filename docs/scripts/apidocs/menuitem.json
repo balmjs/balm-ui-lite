@@ -22,9 +22,5 @@
     "name": "(default)",
     "description": "The default slot holds the menuitem text and can contain HTML"
   }],
-  "events": [
-  {
-    "name": "clicked",
-    "description": "Dispatched when the item is clicked"
-  }]
+  "events": []
 }

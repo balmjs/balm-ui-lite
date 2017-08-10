@@ -1,36 +1,46 @@
 {
-  "props": [{
+  "props": [
+  {
     "name": "model",
     "type": "null",
-    "default": "(required)",
     "description": "The model that the select value syncs to"
-  }, {
+  },
+  {
     "name": "options",
     "type": "Array",
     "default": "",
     "description": "The option data of the select"
-  }, {
+  },
+  {
     "name": "optionKey",
     "type": "String",
     "default": "'value'"
-  }, {
+  },
+  {
     "name": "optionValue",
     "type": "String",
     "default": "'label'"
-  }, {
+  },
+  {
     "name": "defaultKey",
     "type": "String",
     "default": "''",
     "description": "The value attribute of the default option"
-  }, {
+  },
+  {
     "name": "defaultValue",
     "type": "String",
     "default": "",
     "description": "The label attribute of the default option"
   }],
   "slots": [],
-  "events": [{
+  "events": [
+  {
     "name": "change",
-    "description": "Dispatched when the select is changed"
+    "description": "Dispatched when the select is changed (return option[optionKey])"
+  },
+  {
+    "name": "selected",
+    "description": "Dispatched when the select is selected (return option)"
   }]
 }

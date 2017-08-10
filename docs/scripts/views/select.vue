@@ -7,10 +7,11 @@
     <div class="snippet-group">
       <div class="snippet-demo">
         <ui-select :options="options" :model="formData.selected"
-          optionValue="value" optionKey="key"
-          defaultValue="All items" defaultKey="0"
-          @change="onChange('formData.selected', $event)"></ui-select>
-        <span>selected: {{ formData.selected }}</span>
+          optionKey="key" optionValue="value"
+          defaultKey="0" defaultValue="All items"
+          @change="onChange('formData.selected', $event)"
+          @selected="onOptionSelected"></ui-select>
+        <span>selected key: {{ formData.selected }}</span>
       </div>
       <ui-markdown :text="code[0]"></ui-markdown>
     </div>
@@ -18,14 +19,14 @@
     <div class="snippet-group">
       <div class="snippet-demo">
         <ui-select :options="provinces" :model="formData.province"
-          optionValue="value" optionKey="key"
-          defaultValue="Select province..." defaultKey="0"
+          optionKey="key" optionValue="value"
+          defaultKey="0" defaultValue="Select province..."
           @change="onSelectChange('province', $event, changeCity)"></ui-select>
       </div>
       <div class="snippet-demo">
         <ui-select :options="cities" :model="formData.city"
-          optionValue="value" optionKey="key"
-          defaultValue="Select city..." defaultKey="0"
+          optionKey="key" optionValue="value"
+          defaultKey="0" defaultValue="Select city..."
           @change="onSelectChange('city', $event)"></ui-select>
         <span>Province: {{ formData.province }} - City: {{ formData.city }}</span>
       </div>
@@ -117,6 +118,9 @@ export default {
     };
   },
   methods: {
+    onOptionSelected(option) {
+      console.log(option);
+    },
     onSelectChange(field, value, fn) {
       this.formData[field] = value;
       if (value) {
