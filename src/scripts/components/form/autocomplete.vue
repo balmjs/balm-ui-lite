@@ -6,8 +6,7 @@
     :expand="isExpand"
     @input.native="handleInput($event)"
     @blur="handleBlur"
-    @keydown="handleKeydown"
-    @keyup="handleKeyup">
+    @keydown="handleKeydown">
     <template slot="expand">
       <ul ref="autocomplete">
         <li v-for="suggestion in currentSuggestion"
@@ -25,7 +24,7 @@
 
 <script>
 import UiTextfield from './textfield';
-import {isString, isObject} from '../../helpers';
+import {isString, isObject, jsonEqual} from '../../helpers';
 
 const KEY_UP = 38;
 const KEY_DOWN = 40;
@@ -95,9 +94,10 @@ export default {
     },
     hide() {
       this.isExpand = false;
+      this.currentSuggestion = [];
       this.currentSuggestionIndex = 0;
     },
-    async search(data) {
+    async search() {
       let config = {
         method: this.method.toLowerCase(),
         url: this.url
@@ -105,10 +105,10 @@ export default {
 
       switch (this.method.toUpperCase()) {
         case METHOD_GET:
-          config.params = data;
+          config.params = this.currentParams;
           break;
         case METHOD_POST:
-          config.data = data;
+          config.data = this.currentParams;
           break;
       }
 
@@ -121,7 +121,6 @@ export default {
 
       if (!this.currentValue) {
         this.hide();
-        this.currentSuggestion = [];
       }
     },
     handleBlur(event) {
@@ -169,7 +168,7 @@ export default {
         return result;
       });
     },
-    handleKeydown() {
+    handleKeydown(event) {
       if (this.currentSuggestion.length) {
         let count = this.currentSuggestion.length - 1;
 
@@ -197,25 +196,28 @@ export default {
 
         this.setSuggestionIndex();
       }
-    },
-    handleKeyup() {
-      if (this.timer) {
-        clearTimeout(this.timer);
-      }
-
-      if (this.currentValue.trim()) {
-        this.timer = setTimeout(() => {
-          this.search(this.currentParams);
-        }, this.delay);
-      }
     }
   },
   watch: {
     model(val) {
-      this.currentValue = val;
+      if (val !== this.currentValue) {
+        this.currentValue = val;
+      }
     },
     params(val) {
-      this.currentParams = val;
+      if (!jsonEqual(val, this.currentParams)) {
+        this.currentParams = val;
+
+        if (this.timer) {
+          clearTimeout(this.timer);
+        }
+
+        if (this.currentValue && this.currentValue.trim()) {
+          this.timer = setTimeout(() => {
+            this.search();
+          }, this.delay);
+        }
+      }
     },
     suggestion(data) {
       this.setSuggestionIndex(data);

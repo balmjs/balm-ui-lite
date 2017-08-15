@@ -1,5 +1,21 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
+## 0.5.8 (2017.08.15)
+
+### Feature
+
+- `helpers` add `jsonEqual(a, b)`
+
+### Bugfix
+
+- fix `<ui-autocomplete>`
+
+### Components
+
+- `<ui-textfield>` remove `keyup` event
+
+---
+
 ## 0.5.7 (2017.08.15)
 
 ### Bugfix
@@ -63,7 +79,7 @@
 
 ## 0.5.2 (2017.08.04)
 
-## Feature
+### Feature
 
 - add `helpers`
 - add `mixins`
