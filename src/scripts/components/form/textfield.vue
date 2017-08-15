@@ -30,7 +30,8 @@
           @blur="handleBlur"
           @input="handleInput"
           @keydown="handleKeydown"
-          @keydown.enter="handleKeydownEnter"></textarea>
+          @keydown.enter="handleKeydownEnter"
+          @keyup="handleKeyup"></textarea>
       </template>
       <!-- A single-line -->
       <template v-else>
@@ -51,6 +52,7 @@
           @input="handleInput"
           @keydown="handleKeydown"
           @keydown.enter="handleKeydownEnter"
+          @keyup="handleKeyup"
           data-input>
       </template>
       <span v-if="error" class="mdl-textfield__error">
@@ -76,6 +78,7 @@ const EVENT_FOCUS = 'focus';
 const EVENT_BLUR = 'blur';
 const EVENT_KEYDOWN = 'keydown';
 const EVENT_KEYDOWN_ENTER = 'enter';
+const EVENT_KEYUP = 'keyup';
 
 export default {
   name: 'ui-textfield',
@@ -202,6 +205,9 @@ export default {
     },
     handleKeydownEnter(event) {
       this.$emit(EVENT_KEYDOWN_ENTER, event.target.value);
+    },
+    handleKeyup(event) {
+      this.$emit(EVENT_KEYUP, event);
     }
   },
   created() {

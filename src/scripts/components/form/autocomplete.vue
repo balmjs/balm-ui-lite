@@ -2,17 +2,19 @@
   <ui-textfield class="mdl-autocomplete"
     :model="currentValue"
     :placeholder="placeholder"
-    :expand="isExpand"
     :plus="plus"
+    :expand="isExpand"
     @input.native="handleInput($event)"
     @blur="handleBlur"
-    @keydown="handleKeydown">
+    @keydown="handleKeydown"
+    @keyup="handleKeyup">
     <template slot="expand">
       <ul ref="autocomplete">
-        <li v-for="(suggestion, index) in currentSuggestion"
-          :key="index"
+        <li v-for="suggestion in currentSuggestion"
           :class="{'active': suggestion[ITEM_ACTIVE]}"
-          @click="fillText(suggestion)">{{ suggestion[ITEM_VALUE] }}</li>
+          @click="fillText(suggestion)">
+          {{ suggestion[ITEM_VALUE] }}
+        </li>
       </ul>
     </template>
     <template slot="plus">
@@ -23,6 +25,7 @@
 
 <script>
 import UiTextfield from './textfield';
+import {isString, isObject} from '../../helpers';
 
 const KEY_UP = 38;
 const KEY_DOWN = 40;
@@ -43,10 +46,11 @@ export default {
     UiTextfield
   },
   props: {
-    model: {
-      required: true
-    },
+    // state
+    model: null,
+    // element attributes
     placeholder: String,
+    // ajax attributes
     method: {
       type: String,
       default: METHOD_GET
@@ -62,6 +66,11 @@ export default {
       }
     },
     suggestion: Array,
+    delay: {
+      type: Number,
+      default: 300
+    },
+    // ui attributes
     plus: {
       type: Boolean,
       default: false
@@ -74,8 +83,10 @@ export default {
       _callback: null,
       isExpand: false,
       currentValue: this.model,
+      currentParams: this.params,
       currentSuggestion: [],
-      currentSuggestionIndex: 0
+      currentSuggestionIndex: 0,
+      timer: null
     }
   },
   methods: {
@@ -86,7 +97,7 @@ export default {
       this.isExpand = false;
       this.currentSuggestionIndex = 0;
     },
-    async request(data) {
+    async search(data) {
       let config = {
         method: this.method.toLowerCase(),
         url: this.url
@@ -140,20 +151,35 @@ export default {
       delete data[ITEM_ACTIVE];
       this.$emit(EVENT_ENTER, data);
     },
-    handleKeydown(event) {
+    setSuggestionIndex(data = this.currentSuggestion) {
+      this.currentSuggestion = data.map((item, index) => {
+        let result = {};
+
+        if (isObject(item)) {
+          result[ITEM_KEY] = item[ITEM_KEY];
+          result[ITEM_VALUE] = item[ITEM_VALUE];
+        } else if (isString(item)) {
+          result[ITEM_KEY] = index;
+          result[ITEM_VALUE] = item;
+        } else {
+          console.warn('Suggestion item must be a string or object.');
+        }
+        result[ITEM_ACTIVE] = index === this.currentSuggestionIndex;
+
+        return result;
+      });
+    },
+    handleKeydown() {
       if (this.currentSuggestion.length) {
         let count = this.currentSuggestion.length - 1;
-        let choosing = false;
 
         if (event.keyCode === KEY_UP) {
-          choosing = true;
           if (this.currentSuggestionIndex === 0) {
             this.currentSuggestionIndex = count;
           } else {
             this.currentSuggestionIndex--;
           }
         } else if (event.keyCode === KEY_DOWN) {
-          choosing = true;
           if (this.currentSuggestionIndex === count) {
             this.currentSuggestionIndex = 0;
           } else {
@@ -169,15 +195,18 @@ export default {
           event.preventDefault();
         }
 
-        if (choosing) {
-          this.currentSuggestion = this.currentSuggestion.map((item, index) => {
-            let result = {};
-            result[ITEM_ACTIVE] = index === this.currentSuggestionIndex;
-            result[ITEM_KEY] = item[ITEM_KEY];
-            result[ITEM_VALUE] = item[ITEM_VALUE];
-            return result;
-          });
-        }
+        this.setSuggestionIndex();
+      }
+    },
+    handleKeyup() {
+      if (this.timer) {
+        clearTimeout(this.timer);
+      }
+
+      if (this.currentValue.trim()) {
+        this.timer = setTimeout(() => {
+          this.search(this.currentParams);
+        }, this.delay);
       }
     }
   },
@@ -186,17 +215,20 @@ export default {
       this.currentValue = val;
     },
     params(val) {
-      if (this.currentValue) {
-        this.request(val);
-      }
+      this.currentParams = val;
     },
-    suggestion(val) {
-      this.currentSuggestion = val;
+    suggestion(data) {
+      this.setSuggestionIndex(data);
       if (this.currentSuggestion.length) {
         this.show();
       } else {
         this.hide();
       }
+    }
+  },
+  created() {
+    if (!this.$http) {
+      console.warn('You need to install `axios`.');
     }
   },
   beforeDestroy() {

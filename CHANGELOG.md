@@ -1,5 +1,18 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
+## 0.5.7 (2017.08.15)
+
+### Bugfix
+
+- fix `<ui-textfield>` checkDirty bug
+
+### Components
+
+- update `<ui-autocomplete>`
+- `<ui-textfield>` add `keyup` event
+
+---
+
 ## 0.5.6 (2017.08.10)
 
 ### Components

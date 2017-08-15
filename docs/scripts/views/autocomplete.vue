@@ -5,18 +5,16 @@
     </div>
 
     <div class="snippet-demo">
-      <ui-autocomplete placeholder="Expand Text... (type 'a' and 'b')"
+      <ui-autocomplete
+        placeholder="Expand Text... (type 'a' and 'b')"
         :model="text"
         :url="url"
         :params="params"
         :suggestion="suggestion"
-        @input.native="onInputChange('text', $event)"
+        :delay="500"
+        @input="onInputChange"
         @response="onSuggest"
-        @enter="onInputEnter"
-        plus>
-        <template slot="plus">
-          <a href="javascript:void(0)">Button</a>
-        </template>
+        @enter="onInputEnter">
       </ui-autocomplete>
     </div>
     <ui-markdown :text="code[0]"></ui-markdown>
@@ -39,20 +37,14 @@ export default {
     }
   },
   methods: {
-    onInputChange(field, event) {
-      this[field] = event.target.value;
+    onInputChange(value) {
+      this.text = value;
       this.params = {
-        text: this[field]
+        text: value
       };
     },
     onSuggest(data) {
-      this.suggestion = data[this.text] ? data[this.text].map((item, index) => {
-        return {
-          active: index === 0,
-          key: index,
-          value: item
-        };
-      }) : [];
+      this.suggestion = data[this.text] ? data[this.text] : [];
     },
     onInputEnter(data) {
       this.text = data.value;
