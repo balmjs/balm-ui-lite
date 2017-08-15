@@ -60,7 +60,7 @@
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
-          <div class="snippet-demo" v-for="(str, index) in ['A', 'B', 'C']">
+          <div class="snippet-demo" v-for="(str, index) in ['1', '2', '3']">
             <ui-checkbox
               :key="index"
               :value="str"
@@ -72,18 +72,18 @@
         <div class="snippet-captions">
           <div class="snippet-captions-padding"></div>
           <div class="snippet-caption">
-            <ui-button @click.native="onWatchString(['A', 'B'])">choose A,B</ui-button>
+            <ui-button @click.native="onWatchString(['1', '2'])">choose '1','2'</ui-button>
           </div>
           <div class="snippet-caption">
-            <ui-button @click.native="onWatchString(['A', 'C'])">choose A,C</ui-button>
+            <ui-button @click.native="onWatchString(['1', '3'])">choose '1','3'</ui-button>
           </div>
           <div class="snippet-caption">
-            <ui-button @click.native="onWatchString(['B', 'C'])">choose B,C</ui-button>
+            <ui-button @click.native="onWatchString(['2', '3'])">choose '2','3'</ui-button>
           </div>
           <div class="snippet-captions-padding"></div>
         </div>
       </div>
-      <ui-markdown :text="code[0]"></ui-markdown>
+      <ui-markdown :text="code[1]"></ui-markdown>
     </div>
 
     <ui-apidoc name="checkbox"></ui-apidoc>
@@ -117,7 +117,7 @@ export default {
     }
   },
   created() {
-    this.showCode('checkbox');
+    this.showCode('checkbox', 2);
   }
 };
 </script>

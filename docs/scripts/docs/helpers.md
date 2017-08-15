@@ -11,6 +11,7 @@
 - `isArray(any)`
 - `isFunction(any)`
 - `detectIE()`
+- `jsonEqual(a, b)`
 
 ---
 

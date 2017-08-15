@@ -13,6 +13,8 @@
 ### Components
 
 - `<ui-textfield>` remove `keyup` event
+- `<ui-pagination>` add `jumperButton` props, and update css
+- update `<ui-checkbox>` demo
 
 ---
 
