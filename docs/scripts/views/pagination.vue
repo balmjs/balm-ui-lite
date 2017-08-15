@@ -14,6 +14,7 @@
         showJumper
         jumperBefore="Goto"
         jumperAfter="page"
+        jumperButton="Go"
         @change="onPage">
         <template scope="props">
           Showing {{ props.recordCount }} records,

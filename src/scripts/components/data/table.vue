@@ -18,6 +18,7 @@
               :rowspan="cell.row"
               :class="cell.class">
                 <ui-checkbox
+                  noRipple
                   name="checkAll"
                   :value="cell.value"
                   :model="isCheckAll"
@@ -73,6 +74,7 @@
                 @click="viewDetail(rowKey, cell)">{{ cell.show ? 'remove' : 'add' }}</i>
               <!-- Checkbox -->
               <ui-checkbox v-if="cell.isCheckbox"
+                noRipple
                 name="checkOne[]"
                 :value="selectKeyField ? cell.value : getSelectIndex(rowKey)"
                 :model="currentCheckboxList"

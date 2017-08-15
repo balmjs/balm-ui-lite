@@ -27,12 +27,16 @@
                v-model="pager"
                @keydown.prevent.enter="handleClick($event.target.value)">
         <span>{{ jumperAfter }}</span>
+        <ui-button v-if="jumperButton"
+                   @click.native="handleClick(pager)">{{ jumperButton }}</ui-button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import UiButton from '../common/button';
+
 const DOUBLE_ARROW_LEFT = '&laquo;';
 const DOUBLE_ARROW_RIGHT = '&raquo;';
 const SINGLE_ARROW_LEFT = '&lsaquo;';
@@ -41,6 +45,9 @@ const EVENT_CHANGE = 'change';
 
 export default {
   name: 'ui-pagination',
+  components: {
+    UiButton
+  },
   props: {
     recordCount: {
       type: Number,
@@ -73,6 +80,10 @@ export default {
       default: 'Goto'
     },
     jumperAfter: {
+      type: String,
+      default: ''
+    },
+    jumperButton: {
       type: String,
       default: ''
     },
