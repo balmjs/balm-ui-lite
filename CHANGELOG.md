@@ -1,5 +1,13 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
+## 0.5.10 (2017.08.16)
+
+### Components
+
+- `<ui-fileupload>` add `autoReset` props
+
+---
+
 ## 0.5.9 (2017.08.16)
 
 ### Feature

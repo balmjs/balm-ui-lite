@@ -29,6 +29,12 @@
     "type": "String",
     "default": "",
     "description": "placeholder"
+  },
+  {
+    "name": "autoReset",
+    "type": "Boolean",
+    "default": "true",
+    "description": "Reset input after the file changed"
   }],
   "slots": [
   {

@@ -37,7 +37,11 @@ export default {
       default: false
     },
     // ui attributes
-    label: String
+    label: String,
+    autoReset: {
+      type: Boolean,
+      default: true
+    }
   },
   data() {
     return {
@@ -54,6 +58,14 @@ export default {
     }
   },
   methods: {
+    reset(input) {
+      input.value = ''; // All browsers
+
+      if (!/safari/i.test(navigator.userAgent)) { // IE8+
+        input.type = '';
+        input.type = 'file';
+      }
+    },
     handleFocus(event) {
       this.$emit('focus', event);
     },
@@ -77,6 +89,10 @@ export default {
       }
 
       this.$emit(EVENT_CHANGE, input.files, event);
+
+      if (this.autoReset) {
+        this.reset(input);
+      }
     }
   }
 };
