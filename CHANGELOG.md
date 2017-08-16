@@ -1,5 +1,13 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
+## 0.5.9 (2017.08.16)
+
+### Feature
+
+- add `<ui-fileupload>` component
+
+---
+
 ## 0.5.8 (2017.08.15)
 
 ### Feature

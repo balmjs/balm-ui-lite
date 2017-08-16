@@ -1,11 +1,31 @@
 .mdl-fileupload {
   position: relative;
-  .mdl-fileupload__input {
-    position: absolute;
-    z-index: -1;
-    overflow: hidden;
-    width: .1px;
-    height: .1px;
-    opacity: 0;
+  @extend .mdl-button;
+}
+
+.mdl-fileupload__input {
+  position: absolute;
+  z-index: -1;
+
+  overflow: hidden;
+
+  width: .1px;
+  height: .1px;
+
+  opacity: 0;
+}
+
+.mdl-fileupload__content {
+  z-index: 1;
+
+  display: flex;
+
+  transition: opacity .3s ease;
+
+  align-items: center;
+  justify-content: center;
+  >i,
+  >span {
+    vertical-align: middle;
   }
 }

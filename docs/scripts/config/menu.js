@@ -31,7 +31,7 @@ const COMPONENTS = {
     'select',
     'autocomplete',
     'datepicker',
-    // 'fileupload'
+    'fileupload'
   ],
   data: [
     'card',

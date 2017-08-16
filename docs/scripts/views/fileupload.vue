@@ -5,7 +5,9 @@
     </div>
 
     <div class="snippet-demo">
-      <ui-fileupload @change="onChange"></ui-fileupload>
+      <ui-fileupload @change="onChange">
+        Upload
+      </ui-fileupload>
     </div>
   </div>
 </template>
