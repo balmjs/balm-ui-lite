@@ -1,9 +1,4 @@
-// fuck IE
-// import 'core-js/shim'; // for IE
-// import 'classlist.js'; // for IE9-
-// import 'selectivizr';
-// import './polyfill/rAF'; // for IE9-
-// gg
+import './polyfill';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueI18n from 'vue-i18n';
