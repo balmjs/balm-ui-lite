@@ -1,18 +1,19 @@
 <template>
-  <ui-textfield class="mdl-autocomplete"
+  <ui-textfield :class="['mdl-autocomplete', {'is-expand': isExpand}]"
     :model="currentValue"
     :placeholder="placeholder"
     :plus="plus"
-    :expand="isExpand"
+    expand
     @input.native="handleInput($event)"
     @blur="handleBlur"
     @keydown="handleKeydown">
     <template slot="expand">
       <ul ref="autocomplete">
-        <li v-for="suggestion in currentSuggestion"
-          :class="{'active': suggestion[ITEM_ACTIVE]}"
-          @click="fillText(suggestion)">
-          {{ suggestion[ITEM_VALUE] }}
+        <li v-for="(suggestion, index) in currentSuggestion"
+            v-html="suggestion[ITEM_VALUE]"
+            :class="{'active': suggestion[ITEM_ACTIVE]}"
+            @click="fillText(suggestion)"
+            :data-index="index">
         </li>
       </ul>
     </template>
@@ -35,6 +36,7 @@ const ITEM_ACTIVE = 'active';
 const ITEM_KEY = 'key';
 const ITEM_VALUE = 'value';
 const _EVENT_CLICK = 'click';
+const _EVENT_MOUSEOVER = 'mouseover';
 const EVENT_INPUT = 'input';
 const EVENT_RESPONSE = 'response';
 const EVENT_ENTER = 'enter';
@@ -85,7 +87,8 @@ export default {
       currentParams: this.params,
       currentSuggestion: [],
       currentSuggestionIndex: 0,
-      timer: null
+      timer: null,
+      $autocomplete: null
     }
   },
   methods: {
@@ -196,6 +199,14 @@ export default {
 
         this.setSuggestionIndex();
       }
+    },
+    handleMouseover(event) {
+      let el = event.target;
+      if (!el.classList.contains(ITEM_ACTIVE)) {
+        this.$autocomplete.querySelector('li.active').classList.remove(ITEM_ACTIVE);
+        el.classList.add(ITEM_ACTIVE);
+        this.currentSuggestionIndex = el.dataset.index;
+      }
     }
   },
   watch: {
@@ -233,10 +244,15 @@ export default {
       console.warn('You need to install `axios`.');
     }
   },
+  mounted() {
+    this.$autocomplete = this.$refs.autocomplete;
+    this.$autocomplete.addEventListener(_EVENT_MOUSEOVER, this.handleMouseover);
+  },
   beforeDestroy() {
     if (this._callback) {
       document.removeEventListener(_EVENT_CLICK, this._callback);
     }
+    this.$autocomplete.removeEventListener(_EVENT_MOUSEOVER, this.handleMouseover);
   }
 };
 </script>

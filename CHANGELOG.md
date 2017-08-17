@@ -1,5 +1,14 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
+## 0.5.11 (2017.08.17)
+
+### Components
+
+- update `<ui-autocomplete>`
+- update `<ui-textfield>` css for textarea
+
+---
+
 ## 0.5.10 (2017.08.17)
 
 ### Components

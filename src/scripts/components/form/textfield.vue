@@ -8,7 +8,7 @@
         <i class="material-icons">search</i>
       </slot>
     </label>
-    <div :class="[className.inner, {'is-expand': isExpand}]">
+    <div :class="className.inner">
       <label class="mdl-textfield__label" :for="expandable ? null : id">
         <slot>{{ label }}</slot>
       </label>
@@ -59,7 +59,7 @@
       <span v-if="plus" class="mdl-textfield__plus">
         <slot name="plus"><!-- counter --></slot>
       </span>
-      <div v-if="isExpand" class="mdl-textfield__expand">
+      <div v-if="expand" class="mdl-textfield__expand">
         <slot name="expand"><!-- autocomplete --></slot>
       </div>
     </div>
@@ -170,9 +170,6 @@ export default {
           'mdl-input__expandable-holder': this.plus
         }
       };
-    },
-    isExpand() {
-      return this.expand;
     }
   },
   watch: {

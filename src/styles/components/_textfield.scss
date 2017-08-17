@@ -9,6 +9,7 @@
     top: 20px;
     right: 0;
     bottom: 20px;
+    left: auto;
 
     overflow: hidden;
     .mdl-button {
@@ -16,23 +17,9 @@
       bottom: auto;
     }
   }
-  /**
-   * Textfield with expand
-   */
-  .mdl-textfield__expand {
-    position: absolute;
-    z-index: 999;
-
-    display: none;
-
-    width: 100%;
-
-    border: 1px solid $input-text-bottom-border-color;
-    background: white;
-  }
-  .is-expand {
-    .mdl-textfield__expand {
-      display: block;
+  &.is-textarea {
+    .mdl-textfield__plus {
+      top: auto;
     }
   }
 }

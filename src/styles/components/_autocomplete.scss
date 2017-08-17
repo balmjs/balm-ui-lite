@@ -1,14 +1,38 @@
-.mdl-textfield__expand {
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.mdl-autocomplete {
+  .mdl-textfield__expand {
+    position: absolute;
+    z-index: 999;
+
+    display: none;
+
+    width: 100%;
+
+    border: 1px solid $input-text-bottom-border-color;
+    background: white;
+    ul {
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      max-height: 240px;
+      margin: 0;
+      padding: 0;
+
+      list-style: none;
+    }
+    li {
+      b {
+        font-weight: bold;
+      }
+      &:hover,
+      &.active {
+        color: white;
+        background: black;
+      }
+    }
   }
-  li {
-    &:hover,
-    &.active {
-      color: white;
-      background: black;
+  &.is-expand {
+    .mdl-textfield__expand {
+      display: block;
     }
   }
 }
