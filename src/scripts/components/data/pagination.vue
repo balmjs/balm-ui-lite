@@ -49,6 +49,12 @@ export default {
     UiButton
   },
   props: {
+    // state
+    page: {
+      type: [Number, String],
+      default: 1
+    },
+    // ui attributes
     recordCount: {
       type: Number,
       required: true
@@ -56,10 +62,6 @@ export default {
     pageSize: {
       type: Number,
       required: true
-    },
-    page: {
-      type: [Number, String],
-      default: 1
     },
     prev: String,
     next: String,

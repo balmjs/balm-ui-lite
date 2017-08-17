@@ -16,7 +16,7 @@ export default {
   name: 'ui-loading',
   mixins: [mdlMixin],
   props: {
-    // state (Makes the spinner visible and animated)
+    // state
     active: {
       type: Boolean,
       default: false

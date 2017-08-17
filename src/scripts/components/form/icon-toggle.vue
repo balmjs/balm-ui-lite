@@ -29,20 +29,22 @@ export default {
   name: 'ui-icon-toggle',
   mixins: [mdlMixin],
   props: {
-    id: String,
-    name: String,
-    value: [String, Number, Boolean],
+    // state
     model: {
       type: [Array, String, Number, Boolean],
       required: true,
       default: false
     },
-    // Applies ripple click effect
-    noRipple: {
+    // element attributes
+    id: String,
+    name: String,
+    disabled: {
       type: Boolean,
       default: false
     },
-    disabled: {
+    value: [String, Number, Boolean],
+    // ui attributes
+    noRipple: {
       type: Boolean,
       default: false
     },

@@ -186,10 +186,18 @@ export default {
     UiCheckbox
   },
   props: {
+    // state
     data: {
       type: Array,
       required: true
     },
+    checkboxList: {
+      type: Array,
+      default() {
+        return [];
+      }
+    },
+    // ui attributes
     caption: String,
     thead: {
       type: Array,
@@ -224,12 +232,6 @@ export default {
     keyField: {
       type: String,
       default: 'id'
-    },
-    checkboxList: {
-      type: Array,
-      default() {
-        return [];
-      }
     },
     noData: {
       type: String,

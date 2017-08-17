@@ -23,29 +23,25 @@ export default {
   name: 'ui-snackbar',
   mixins: [mdlMixin],
   props: {
+    // state
+    active: {
+      type: Boolean,
+      default: false
+    },
+    message: {
+      type: String,
+      required: true
+    },
     // ui attributes
     type: {
       type: [Number, String],
       default: 0
     },
-    // Marks the snackbar as active which causes it to display.
-    active: {
-      type: Boolean,
-      default: false
-    },
-    // The text message to display.
-    message: {
-      type: String,
-      required: true
-    },
-    // The amount of time in milliseconds to show the snackbar.
     timeout: {
       type: Number,
       default: 2750
     },
-    // The function to execute when the action is clicked.
     actionHandler: Function,
-    // The text to display for the action button.
     actionText: String
   },
   data() {

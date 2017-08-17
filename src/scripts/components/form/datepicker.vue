@@ -34,14 +34,14 @@ export default {
     UiTextfield
   },
   props: {
+    // state
+    model: null,
+    // ui attributes
     config: {
       type: Object,
       default: function() {
         return {};
       }
-    },
-    model: {
-      required: true
     },
     placeholder: String,
     toggle: {
