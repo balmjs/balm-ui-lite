@@ -7,10 +7,16 @@
     "description": "Marks the dialog as active which causes it to display"
   },
   {
-    "name": "autoClose",
+    "name": "closable",
+    "type": "Boolean",
+    "default": "true",
+    "description": "Triggers to cause close the dialog when the 'OK' button is clicked"
+  },
+  {
+    "name": "maskClosable",
     "type": "Boolean",
     "default": "false",
-    "description": "Triggers to cause close the dialog when the OK or Cancel button is clicked"
+    "description": "Triggers to cause close the dialog when the backdrop is clicked"
   },
   {
     "name": "transitionName",

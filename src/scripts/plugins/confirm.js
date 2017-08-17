@@ -26,7 +26,7 @@ export default {
   install(Vue) {
     let vm;
 
-    const confirm = (options = {}) => {
+    const UiConfirm = (options = {}) => {
       return new Promise((resolve, reject) => {
         vm = new Vue({
           components: {
@@ -72,6 +72,6 @@ export default {
       });
     };
 
-    Vue.prototype.$confirm = confirm;
+    Vue.prototype.$confirm = UiConfirm;
   }
 };

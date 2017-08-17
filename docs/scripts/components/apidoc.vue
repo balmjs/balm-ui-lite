@@ -45,14 +45,20 @@ export default {
     docs() {
       let result = {};
       let types = ['props', 'slots', 'events'];
+      let flag = false;
 
-      for (let value of types) {
+      for (let key in types) {
+        let value = types[key];
         if (this.api[value].length) {
           result[value] = {
             data: this.api[value],
             thead: this.$docs[value].thead,
             tbody: this.$docs[value].tbody
           };
+          if (!flag) {
+            flag = true;
+            this.tab = +key;
+          }
         }
       }
 

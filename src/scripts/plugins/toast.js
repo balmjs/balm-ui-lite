@@ -20,7 +20,7 @@ export default {
   install(Vue) {
     let vm;
 
-    const toast = (options = '') => {
+    const UiToast = (options = '') => {
       if (!document.querySelector('.mdl-toast')) {
         vm = new Vue({
           components: {
@@ -56,6 +56,6 @@ export default {
       }
     };
 
-    Vue.prototype.$toast = toast;
+    Vue.prototype.$toast = UiToast;
   }
 };

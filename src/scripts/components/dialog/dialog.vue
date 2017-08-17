@@ -11,7 +11,7 @@
       <div class="mdl-dialog__surface">
         <slot></slot>
       </div>
-      <div class="mdl-dialog__backdrop" @click="handleClose"></div>
+      <div class="mdl-dialog__backdrop" @click="handleBackdrop"></div>
     </aside>
   </transition>
 </template>
@@ -30,9 +30,13 @@ export default {
       default: false
     },
     // ui attributes
-    autoClose: {
+    closable: {
       type: Boolean,
       default: true
+    },
+    maskClosable: {
+      type: Boolean,
+      default: false
     },
     transitionName: {
       type: String,
@@ -91,17 +95,20 @@ export default {
     handleClose() {
       this.$emit(EVENT_CLOSE);
     },
-    handleAccept() {
-      if (this.autoClose) {
+    handleBackdrop() {
+      if (this.maskClosable) {
         this.handleClose();
       }
+    },
+    handleAccept() {
       this.$emit(EVENT_CONFIRM, true);
+      if (this.closable) {
+        this.handleClose();
+      }
     },
     handleCancel() {
-      if (this.autoClose) {
-        this.handleClose();
-      }
       this.$emit(EVENT_CONFIRM, false);
+      this.handleClose();
     }
   },
   mounted() {

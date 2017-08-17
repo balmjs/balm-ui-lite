@@ -69,18 +69,29 @@ export default {
       console.log(`confirm result: ${result}`);
     },
     showAlert() {
-      this.$alert('Hello World');
+      this.$alert('Hello').then(() => {
+        console.log('World');
+      });
+
+      // this.$alert({
+      //   message: 'Hello',
+      //   callback: () => {
+      //     console.log('World');
+      //   }
+      // });
     },
     showConfirm() {
+      // this.$confirm('Are you sure?').then(() => {
+      //   console.log('ok');
+      // }).catch(() => {
+      //   console.log('cancel');
+      // });
+
       this.$confirm({
         message: 'Are you sure?',
         callback: result => {
           console.log(result);
         }
-      }).then(() => {
-        console.log('ok');
-      }).catch(() => {
-        console.log('cancel');
       });
     },
     showToast() {

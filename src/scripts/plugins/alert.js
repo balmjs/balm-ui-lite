@@ -1,12 +1,13 @@
 import UiDialog from '../components/dialog/dialog';
 import UiButton from '../components/common/button';
-import {isString, isObject} from '../helpers';
+import {isString, isObject, isFunction} from '../helpers';
 
 const DEFAULT_OPTIONS = {
   className: '',
   title: '',
   message: '',
-  buttonText: 'OK'
+  buttonText: 'OK',
+  callback: false
 };
 
 const template =
@@ -20,7 +21,7 @@ const template =
     <ui-button
       raised
       primary
-      @click.native="handleClose">
+      @click.native="handleClick">
       {{ options.buttonText }}
     </ui-button>
   </ui-dialog-actions>
@@ -30,39 +31,49 @@ export default {
   install(Vue) {
     let vm;
 
-    const alert = (options = {}) => {
-      vm = new Vue({
-        components: {
-          UiDialog,
-          UiButton
-        },
-        el: document.createElement('div'),
-        template,
-        data: {
-          open: false,
-          options: DEFAULT_OPTIONS
-        },
-        methods: {
-          handleClose() {
-            this.open = false;
-            document.body.removeChild(this.$el);
-            document.body.classList.remove('mdl-dialog-scroll-lock');
-            vm = null;
+    const UiAlert = (options = {}) => {
+      return new Promise((resolve, reject) => {
+        vm = new Vue({
+          components: {
+            UiDialog,
+            UiButton
+          },
+          el: document.createElement('div'),
+          template,
+          data: {
+            open: false,
+            options: DEFAULT_OPTIONS
+          },
+          methods: {
+            handleClose() {
+              this.open = false;
+              document.body.removeChild(this.$el);
+              document.body.classList.remove('mdl-dialog-scroll-lock');
+              vm = null;
+            },
+            handleClick() {
+              this.handleClose();
+              if (isFunction(this.options.callback)) {
+                this.options.callback();
+              } else {
+                resolve();
+              }
+            }
+          },
+          created() {
+            if (isString(options)) {
+              this.options.message = options;
+            } else if (isObject(options)) {
+              this.options = Object.assign(DEFAULT_OPTIONS, options);
+            }
           }
-        },
-        created() {
-          if (isString(options)) {
-            this.options.message = options;
-          } else if (isObject(options)) {
-            this.options = Object.assign(DEFAULT_OPTIONS, options);
-          }
-        }
-      });
+        });
 
-      document.body.appendChild(vm.$el);
-      vm.open = true;
+        document.body.appendChild(vm.$el);
+        vm.open = true;
+      });
     };
 
-    Vue.prototype.$alert = alert;
+    Vue.prototype.$alert = UiAlert;
   }
 };

@@ -42,22 +42,31 @@ export default {
   },
   methods: {
     showAlert() {
-      this.$alert('Hello World');
-      // or
+      // usage 1
+      this.$alert('Hello').then(() => {
+        console.log('World');
+      });
+
+      // usage 2
       this.$alert({
         className: 'my-alert',
         title: 'my-title',
         message: 'some message',
-        buttonText: 'OK'
+        buttonText: 'OK',
+        callback: () => {
+          // do something
+        }
       });
     },
     showConfirm() {
+      // usage 1
       this.$confirm('Are you sure?').then(() => {
         // ok
       }).catch(() => {
         // cancel
       });
-      // or
+
+      // usage 2
       this.$confirm({
         className: 'my-confirm',
         title: 'my-title',

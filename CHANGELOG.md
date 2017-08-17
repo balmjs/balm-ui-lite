@@ -1,10 +1,20 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
-## 0.5.10 (2017.08.16)
+## 0.5.10 (2017.08.17)
 
 ### Components
 
 - `<ui-fileupload>` add `autoReset` props
+- `<ui-dialog>` remove `autoClose` props, add `closable` and `maskClosable` props
+
+### Docs
+
+- the apidoc component bugfix
+- update plugins docs
+
+### Plugins
+
+- update `$alert`
 
 ---
 
