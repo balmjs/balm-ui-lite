@@ -40,6 +40,7 @@ const _EVENT_MOUSEOVER = 'mouseover';
 const EVENT_INPUT = 'input';
 const EVENT_RESPONSE = 'response';
 const EVENT_ENTER = 'enter';
+const REMOVE_HTML_TAG_REGEX = /<[^>]+>/g;
 
 export default {
   name: 'ui-autocomplete',
@@ -147,11 +148,13 @@ export default {
       document.addEventListener(_EVENT_CLICK, this._callback);
     },
     fillText(data) {
-      this.currentValue = data[ITEM_VALUE];
       this.hide();
 
       delete data[ITEM_ACTIVE];
-      this.$emit(EVENT_ENTER, data);
+      let result = Object.assign({}, data);
+      result[ITEM_VALUE] = result[ITEM_VALUE].replace(REMOVE_HTML_TAG_REGEX, '');
+      this.currentValue = result[ITEM_VALUE];
+      this.$emit(EVENT_ENTER, result);
     },
     setSuggestionIndex(data = this.currentSuggestion) {
       this.currentSuggestion = data.map((item, index) => {
@@ -172,7 +175,7 @@ export default {
       });
     },
     handleKeydown(event) {
-      if (this.currentSuggestion.length) {
+      if (this.currentSuggestion.length) { // TODO: overflow-y
         let count = this.currentSuggestion.length - 1;
 
         if (event.keyCode === KEY_UP) {
@@ -181,7 +184,7 @@ export default {
           } else {
             this.currentSuggestionIndex--;
           }
-        } else if (event.keyCode === KEY_DOWN) {
+        } else if (event.keyCode === KEY_DOWN) { // TODO: overflow-y
           if (this.currentSuggestionIndex === count) {
             this.currentSuggestionIndex = 0;
           } else {
@@ -189,11 +192,13 @@ export default {
           }
         } else if (event.keyCode === KEY_ENTER) {
           let data = this.currentSuggestion[this.currentSuggestionIndex];
-          this.currentValue = data[ITEM_VALUE];
           this.hide();
 
           delete data[ITEM_ACTIVE];
-          this.$emit(EVENT_ENTER, data);
+          let result = Object.assign({}, data);
+          result[ITEM_VALUE] = result[ITEM_VALUE].replace(REMOVE_HTML_TAG_REGEX, '');
+          this.currentValue = result[ITEM_VALUE];
+          this.$emit(EVENT_ENTER, result);
           event.preventDefault();
         }
 
@@ -202,8 +207,12 @@ export default {
     },
     handleMouseover(event) {
       let el = event.target;
-      if (!el.classList.contains(ITEM_ACTIVE)) {
-        this.$autocomplete.querySelector('li.active').classList.remove(ITEM_ACTIVE);
+      if (el.tagName === 'LI' && !el.classList.contains(ITEM_ACTIVE)) {
+        let activeItem = this.$autocomplete.querySelector('li.active');
+        if (activeItem) {
+          activeItem.classList.remove(ITEM_ACTIVE);
+        }
+
         el.classList.add(ITEM_ACTIVE);
         this.currentSuggestionIndex = el.dataset.index;
       }
