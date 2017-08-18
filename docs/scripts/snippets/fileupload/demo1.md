@@ -9,7 +9,9 @@
 export default {
   methods: {
     onFileChange(files, event) {
-      console.log(files, event);
+      let formData = new FormData();
+      formData.append('file', files[0]);
+      // your code
     }
   }
 };

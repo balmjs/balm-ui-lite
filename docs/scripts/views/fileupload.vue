@@ -32,6 +32,10 @@ export default {
   methods: {
     onChange(files, event) {
       console.log(files, event);
+
+      let formData = new FormData();
+      formData.append('file', files[0]);
+      // some code
     }
   },
   created() {
