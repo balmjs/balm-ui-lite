@@ -1,11 +1,11 @@
 <template>
-  <div class="page--home">
+  <div class="page--helpers">
     <ui-markdown :text="docs"></ui-markdown>
   </div>
 </template>
 
 <script>
-import docs from '../docs/intro.md';
+import docs from '../../docs/helpers.md';
 
 export default {
   data() {

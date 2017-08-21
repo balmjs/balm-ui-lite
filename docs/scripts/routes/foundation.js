@@ -1,6 +1,6 @@
-const Helpers = () => import('../views/helpers');
-const Mixins = () => import('../views/mixins');
-const Plugins = () => import('../views/plugins');
+const Helpers = () => import('../views/foundation/helpers');
+const Mixins = () => import('../views/foundation/mixins');
+const Plugins = () => import('../views/foundation/plugins');
 
 const foundationRoutes = [{
   path: '/helpers',

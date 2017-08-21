@@ -1,4 +1,10 @@
 {
+  "quickstart":
+  {
+    "requirement": "开发环境",
+    "installation": "安装配置",
+    "advanced": "进阶"
+  },
   "foundation":
   {
     "helpers": "辅助方法",
@@ -7,6 +13,7 @@
   },
   "components":
   {
+    "quickstart": "入门指南",
     "foundation": "基础服务",
     "layout": "布局",
     "layout-header": "Layout Header",

@@ -1,4 +1,10 @@
 {
+  "quickstart":
+  {
+    "requirement": "Requirement",
+    "installation": "Installation",
+    "advanced": "Advanced"
+  },
   "foundation":
   {
     "helpers": "Helpers",
@@ -7,6 +13,7 @@
   },
   "components":
   {
+    "quickstart": "Getting Started",
     "foundation": "Foundation",
     "layout": "Layout",
     "layout-header": "Layout Header",

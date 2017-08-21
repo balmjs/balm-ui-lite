@@ -1,3 +1,9 @@
+const QUICKSTART = [
+  'requirement',
+  'installation',
+  'advanced'
+];
+
 const FOUNDATION = [
   'helpers',
   'mixins',
@@ -46,6 +52,14 @@ const COMPONENTS = {
 };
 
 let menu = [{
+  name: 'components.quickstart',
+  components: QUICKSTART.map(item => {
+    return {
+      url: item,
+      name: `quickstart.${item}`
+    };
+  })
+}, {
   name: 'components.foundation',
   components: FOUNDATION.map(item => {
     return {
