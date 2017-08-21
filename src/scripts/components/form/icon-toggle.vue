@@ -73,7 +73,7 @@ export default {
     isChecked() {
       return isArray(this.currentValue)
         ? this.currentValue.indexOf(this.value) > -1
-        : (this.currentValue === this.value || this.currentValue === true);
+        : (this.currentValue == this.value || this.currentValue === true);
     }
   },
   watch: {

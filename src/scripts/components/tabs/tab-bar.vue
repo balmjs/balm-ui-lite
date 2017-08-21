@@ -31,8 +31,8 @@ export default {
     }
   },
   methods: {
-    handleChange(index) {
-      this.$emit(EVENT_CHANGE, index);
+    handleChange(index) { // index: number
+      this.$emit(EVENT_CHANGE, +index);
     }
   }
 };

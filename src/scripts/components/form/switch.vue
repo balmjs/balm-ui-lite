@@ -70,7 +70,7 @@ export default {
   },
   methods: {
     handleChange() {
-      this.$emit(EVENT_CHANGE, this.currentValue);
+      this.$emit(EVENT_CHANGE, this.currentValue); // currentValue: boolean
     }
   },
   mounted() {

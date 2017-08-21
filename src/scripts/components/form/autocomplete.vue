@@ -121,7 +121,7 @@ export default {
     },
     handleInput(event) {
       this.currentValue = event.target.value;
-      this.$emit(EVENT_INPUT, this.currentValue);
+      this.$emit(EVENT_INPUT, this.currentValue); // currentValue: string
 
       if (!this.currentValue) {
         this.hide();
@@ -154,7 +154,7 @@ export default {
       let result = Object.assign({}, data);
       result[ITEM_VALUE] = result[ITEM_VALUE].replace(REMOVE_HTML_TAG_REGEX, '');
       this.currentValue = result[ITEM_VALUE];
-      this.$emit(EVENT_ENTER, result);
+      this.$emit(EVENT_ENTER, result); // result: any
     },
     setSuggestionIndex(data = this.currentSuggestion) {
       this.currentSuggestion = data.map((item, index) => {
@@ -198,7 +198,7 @@ export default {
           let result = Object.assign({}, data);
           result[ITEM_VALUE] = result[ITEM_VALUE].replace(REMOVE_HTML_TAG_REGEX, '');
           this.currentValue = result[ITEM_VALUE];
-          this.$emit(EVENT_ENTER, result);
+          this.$emit(EVENT_ENTER, result); // result: any
           event.preventDefault();
         }
 

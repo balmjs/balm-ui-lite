@@ -68,9 +68,6 @@ export default {
     }
   },
   methods: {
-    handleChange(index) {
-      this.$emit(EVENT_CHANGE, index);
-    },
     activeItem(currentIndex, items = []) {
       items.length && items.forEach((item, index) => {
         if (index === +currentIndex && !item.classList.contains(CLASSNAME_ACTIVE)) {

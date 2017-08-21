@@ -91,9 +91,10 @@ export default {
     }
   },
   methods: {
-    handleItem(data) {
+    handleItem(data) { // data: any
       if (!data.disabled) {
-        this.$emit(EVENT_SELECTED, Object.assign({}, data));
+        let result = Object.assign({}, data);
+        this.$emit(EVENT_SELECTED, result);
       }
     }
   },

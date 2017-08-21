@@ -51,7 +51,7 @@ export default {
   props: {
     // state
     page: {
-      type: [Number, String],
+      type: Number,
       default: 1
     },
     // ui attributes
@@ -96,8 +96,8 @@ export default {
   },
   data() {
     return {
-      currentPage: +this.page,
-      pager: +this.page
+      currentPage: this.page,
+      pager: this.page
     };
   },
   computed: {
@@ -115,7 +115,7 @@ export default {
   },
   watch: {
     page(val) {
-      this.currentPage = +val;
+      this.currentPage = val;
     }
   },
   methods: {
@@ -136,7 +136,7 @@ export default {
       let noFirstOrLast = (page !== 1 && page !== this.pageCount);
       return !(isExisted && noFirstOrLast);
     },
-    handleClick(page) {
+    handleClick(page) { // page: number
       if (!isNaN(page)) {
         switch (true) {
           case (page > this.pageCount):
@@ -146,7 +146,7 @@ export default {
             page = 1;
             break;
         }
-        this.$emit(EVENT_CHANGE, page);
+        this.$emit(EVENT_CHANGE, +page);
         this.pager = page;
       } else {
         this.pager = this.currentPage;

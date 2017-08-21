@@ -65,8 +65,8 @@ export default {
   },
   methods: {
     handleChange() {
-      this.$emit(EVENT_CHANGE, this.currentValue);
-      this.$emit(EVENT_SELECTED, Object.assign({}, this.currentOption));
+      this.$emit(EVENT_CHANGE, this.currentValue); // value: number|string
+      this.$emit(EVENT_SELECTED, Object.assign({}, this.currentOption)); // result: any
     },
     init() {
       if (!this.defaultValue && this.currentOptions.length) {
@@ -76,7 +76,7 @@ export default {
           ? this.currentOption
           : this.currentOptions[0];
 
-        this.$emit(EVENT_CHANGE, defaultOption[this.optionKey]);
+        this.$emit(EVENT_CHANGE, defaultOption[this.optionKey]); // value: number|string
       }
     }
   },

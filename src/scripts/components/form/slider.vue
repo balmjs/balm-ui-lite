@@ -21,7 +21,7 @@ export default {
   props: {
     // state
     model: {
-      type: [Number, String],
+      type: Number,
       default: 0
     },
     // element attributes
@@ -44,7 +44,7 @@ export default {
   },
   data() {
     return {
-      currentValue: +this.model
+      currentValue: this.model
     };
   },
   computed: {
@@ -58,12 +58,12 @@ export default {
   },
   watch: {
     model(val) {
-      this.currentValue = +val;
+      this.currentValue = val;
     }
   },
   methods: {
     handleChange() {
-      this.$emit(EVENT_CHANGE, this.currentValue);
+      this.$emit(EVENT_CHANGE, +this.currentValue); // currentValue: number
     }
   },
   mounted() {

@@ -192,7 +192,7 @@ export default {
       this.$emit(EVENT_BLUR, event);
     },
     handleInput(event) {
-      this.$emit(EVENT_INPUT, event.target.value);
+      this.$emit(EVENT_INPUT, event.target.value); // value: string
     },
     handleKeydown(event) {
       this.$emit(EVENT_KEYDOWN, event);

@@ -62,7 +62,7 @@ export default {
   methods: {
     handleInput(event) {
       this.currentValue = event.target.value;
-      this.$emit(EVENT_CHANGE, this.currentValue);
+      this.$emit(EVENT_CHANGE, this.currentValue); // currentValue: string
     }
   },
   watch: {
