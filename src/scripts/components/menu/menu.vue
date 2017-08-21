@@ -91,10 +91,9 @@ export default {
     }
   },
   methods: {
-    handleItem(data) { // data: any
+    handleItem(data) {
       if (!data.disabled) {
-        let result = Object.assign({}, data);
-        this.$emit(EVENT_SELECTED, result);
+        this.$emit(EVENT_SELECTED, Object.assign({}, data)); // result: any
       }
     }
   },

@@ -1,5 +1,21 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
+## 0.5.12 (2017.08.21)
+
+### Components
+
+- filter `<ui-autocomplete>` html in value
+- check form components callback value's type
+- optimize `<ui-table>`
+
+### Docs
+
+- add `<ui-slider>` apidocs
+- add `<ui-autocomplete>` apidocs
+- add `<ui-datepicker>` apidocs
+
+---
+
 ## 0.5.11 (2017.08.17)
 
 ### Components
