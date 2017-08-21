@@ -1,5 +1,5 @@
 ```html
-<ui-table :data="data">
+<ui-table>
   <template slot="thead">
     <tr>
       <th>ID</th>
@@ -8,8 +8,8 @@
       <th>Price</th>
     </tr>
   </template>
-  <template slot="tbody" scope="props">
-    <tr v-for="item in props.data">
+  <template slot="tbody">
+    <tr v-for="item in data">
       <td>{{ item.id }}</td>
       <td><a :href="`#${item.id}`">{{ item.name }}</a></td>
       <td>{{ item.quantity }}</td>

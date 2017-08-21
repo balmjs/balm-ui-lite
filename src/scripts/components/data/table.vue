@@ -189,7 +189,9 @@ export default {
     // state
     data: {
       type: Array,
-      required: true
+      default() {
+        return [];
+      }
     },
     checkboxList: {
       type: Array,
@@ -657,11 +659,17 @@ export default {
     doAction(name, data) {
       this.$emit(name, data);
     },
-    onCheckOne(data) {
-      this.currentCheckboxList = data;
-    },
-    onCheckAll(checked) {
-      this.isCheckAll = checked;
+    onSelected() {
+      let beEqual = this.currentCheckboxList.length === this.currentDataCount;
+      let lastCheckList = beEqual
+        ? []
+        : this.currentCheckboxList;
+
+      this.currentCheckboxList = this.isCheckAll
+        ? this.currentData.filter(value => !value[CELL_DETAIL_VIEW]).map((value, index) => this.selectKeyField ? value[this.keyField] : index)
+        : lastCheckList;
+
+      this.$emit(EVENT_SELECTED, Object.assign([], this.currentCheckboxList)); // result: array
     },
     checkAll() {
       let notEmpty = this.currentDataCount;
@@ -670,6 +678,15 @@ export default {
       let exists = this.currentCheckboxList.every(id => ids.indexOf(id) > -1);
 
       this.isCheckAll = notEmpty && beEqual && exists;
+      this.onSelected();
+    },
+    onCheckOne(data) {
+      this.currentCheckboxList = data;
+      this.checkAll();
+    },
+    onCheckAll(checked) {
+      this.isCheckAll = checked;
+      this.onSelected();
     },
     isSelected(rowData, index) {
       let cell = rowData.find(cell => cell.isCheckbox);
@@ -728,7 +745,7 @@ export default {
 
       if (!this.selectKeyField) {
         this.currentCheckboxList = [];
-        this.$emit(EVENT_SELECTED, []);
+        this.$emit(EVENT_SELECTED, []); // result: array
       }
     },
     viewDetail(currentIndex, cell) {
@@ -770,7 +787,7 @@ export default {
         this.currentData = result;
         this.currentDetailViewIndex = currentIndex;
 
-        this.$emit(EVENT_VIEW_DETAIL, cell[CELL_DATA]);
+        this.$emit(EVENT_VIEW_DETAIL, Object.assign({}, cell[CELL_DATA])); // result: any
       }
     },
     isDetailView(index) {
@@ -797,20 +814,6 @@ export default {
     },
     checkboxList(val) {
       this.currentCheckboxList = val;
-    },
-    currentCheckboxList(val) {
-      this.checkAll();
-      this.$emit(EVENT_SELECTED, val);
-    },
-    isCheckAll(val) {
-      let beEqual = this.currentCheckboxList.length === this.currentDataCount;
-      let lastCheckList = beEqual
-        ? []
-        : this.currentCheckboxList;
-
-      this.currentCheckboxList = val
-        ? this.currentData.filter(value => !value[CELL_DETAIL_VIEW]).map((value, index) => this.selectKeyField ? value[this.keyField] : index)
-        : lastCheckList;
     },
     thead(val) {
       this.currentThead = val;

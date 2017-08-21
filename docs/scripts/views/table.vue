@@ -40,8 +40,7 @@
     <ui-markdown :text="code[1]"></ui-markdown>
 
     <h4>Custom</h4>
-    <ui-table :data="table3.data"
-      :tfoot="table3.tfoot">
+    <ui-table>
       <template slot="thead">
         <tr>
           <th>ID</th>
@@ -50,8 +49,8 @@
           <th>Price</th>
         </tr>
       </template>
-      <template slot="tbody" scope="props">
-        <tr v-for="item in props.data">
+      <template slot="tbody">
+        <tr v-for="item in table3.data">
           <td>{{ item.id }}</td>
           <td><a :href="`#${item.id}`">{{ item.name }}</a></td>
           <td>{{ item.quantity }}</td>
@@ -203,6 +202,7 @@ export default {
       console.log('delete', data);
     },
     onSelected(data) {
+      // console.log(data);
       this.table2.checkboxList = data;
     },
     onViewDetail(data) {
