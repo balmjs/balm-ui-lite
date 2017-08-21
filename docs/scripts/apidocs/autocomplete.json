@@ -1,5 +1,64 @@
 {
-  "props": [],
-  "slots": [],
-  "events": []
+  "props": [
+  {
+    "name": "model",
+    "type": "null",
+    "description": "The model that the input value syncs to"
+  },
+  {
+    "name": "placeholder",
+    "type": "String",
+    "default": "",
+    "description": "Provides a hint to the user of what can be entered in the field"
+  },
+  {
+    "name": "method",
+    "type": "String",
+    "default": "'GET'",
+    "description": ""
+  },
+  {
+    "name": "url",
+    "type": "String",
+    "default": "(required)",
+    "description": ""
+  },
+  {
+    "name": "params",
+    "type": "Object",
+    "default": "{}",
+    "description": ""
+  },
+  {
+    "name": "suggestion",
+    "type": "Array",
+    "description": ""
+  },
+  {
+    "name": "delay",
+    "type": "Number",
+    "default": "300"
+  },
+  {
+    "name": "plus",
+    "type": "Boolean",
+    "default": "false",
+    "description": "Defines a extra span as an expandable text field container"
+  }],
+  "slots": [
+  {
+    "name": "plus",
+    "description": "The plus slot holds the plus text and can contain HTML"
+  }],
+  "events": [
+  {
+    "name": "input",
+    "description": "Emitted when the select value is changed. The handler is called with the new value. (IE10+)"
+  },{
+    "name": "response",
+    "description": "AJAX callback"
+  },{
+    "name": "enter",
+    "description": "Emitted when the select value is selected and clicked."
+  }]
 }

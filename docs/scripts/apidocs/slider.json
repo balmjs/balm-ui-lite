@@ -1,0 +1,28 @@
+{
+  "props": [{
+    "name": "model",
+    "type": "Number",
+    "default": "0"
+  }, {
+    "name": "min",
+    "type": "Number, String",
+    "default": "0"
+  }, {
+    "name": "max",
+    "type": "Number, String",
+    "default": "1"
+  }, {
+    "name": "step",
+    "type": "Number, String",
+    "default": "1"
+  }, {
+    "name": "disabled",
+    "type": "Boolean",
+    "default": "false"
+  }],
+  "slots": [],
+  "events": [{
+    "name": "change",
+    "description": "Dispatched when the silder is changed"
+  }]
+}

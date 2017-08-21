@@ -1,5 +1,46 @@
 {
-  "props": [],
-  "slots": [],
-  "events": []
+  "props": [
+  {
+    "name": "model",
+    "type": "null",
+    "description": "The model that the input value syncs to"
+  },
+  {
+    "name": "config",
+    "type": "Object",
+    "default": "{}",
+    "description": "see [<a href='https://chmln.github.io/flatpickr/options/' target='_blank'>flatpickr</a>]"
+  },
+  {
+    "name": "placeholder",
+    "type": "String",
+    "default": "",
+    "description": "Provides a hint to the user of what can be entered in the field"
+  },
+  {
+    "name": "toggle",
+    "type": "Boolean",
+    "default": "false",
+    "description": ""
+  },
+  {
+    "name": "clear",
+    "type": "Boolean",
+    "default": "false",
+    "description": ""
+  }],
+  "slots": [
+  {
+    "name": "toggle",
+    "description": "The toggle slot holds the toggle icon and can contain HTML"
+  },
+  {
+    "name": "clear",
+    "description": "The clear slot holds the clear icon and can contain HTML"
+  }],
+  "events": [
+  {
+    "name": "change",
+    "description": "Dispatched when the datepickr is changed"
+  }]
 }

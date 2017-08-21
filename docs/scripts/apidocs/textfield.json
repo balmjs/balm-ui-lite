@@ -3,9 +3,7 @@
   {
     "name": "model",
     "type": "null",
-    "default": "(required)",
-    "description": "The model that the input value syncs to",
-    "required": true
+    "description": "The model that the input value syncs to"
   },
   {
     "name": "id",

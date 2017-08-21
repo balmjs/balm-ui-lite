@@ -24,6 +24,8 @@
       </div>
       <ui-markdown :text="code[0]"></ui-markdown>
     </div>
+
+    <ui-apidoc name="slider"></ui-apidoc>
   </div>
 </template>
 
