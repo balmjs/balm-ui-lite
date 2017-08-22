@@ -5,5 +5,5 @@ if (typeof(NodeList.prototype.forEach) !== typeof(alert)) {
 
 import 'core-js/shim'; // for IE
 // import 'classlist.js'; // for IE9-
-// import 'selectivizr';
+// import 'selectivizr'; // for IE9-
 // import './rAF'; // for IE9-
