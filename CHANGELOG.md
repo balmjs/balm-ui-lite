@@ -1,5 +1,17 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
+## 0.5.13 (2017.08.22)
+
+### Bugfix
+
+- `<ui-autocomplete>` IE10 bugfix
+
+### Docs
+
+- IE9 unsupported
+
+---
+
 ## 0.5.12 (2017.08.21)
 
 ### Components
