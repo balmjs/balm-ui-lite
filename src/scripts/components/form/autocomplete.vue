@@ -25,7 +25,7 @@
 
 <script>
 import UiTextfield from './textfield';
-import {isString, isObject, jsonEqual} from '../../helpers';
+import {isString, isObject, jsonEqual, detectIE} from '../../helpers';
 
 const KEY_UP = 38;
 const KEY_DOWN = 40;
@@ -89,7 +89,8 @@ export default {
       currentSuggestion: [],
       currentSuggestionIndex: 0,
       timer: null,
-      $autocomplete: null
+      $autocomplete: null,
+      lteIE10: false
     }
   },
   methods: {
@@ -214,7 +215,9 @@ export default {
         }
 
         el.classList.add(ITEM_ACTIVE);
-        this.currentSuggestionIndex = el.dataset.index;
+        this.currentSuggestionIndex = this.lteIE10
+          ? el.getAttribute('data-index')
+          : el.dataset.index;
       }
     }
   },
@@ -249,6 +252,8 @@ export default {
     }
   },
   created() {
+    let ie = detectIE();
+    this.lteIE10 = ie && ie < 11;
     if (!this.$http) {
       console.warn('You need to install `axios`.');
     }
