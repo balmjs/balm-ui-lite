@@ -8,7 +8,7 @@
     :leave-active-class="leaveActiveClass"
     :leave-to-class="leaveToClass">
     <aside v-show="open" :class="className">
-      <div class="mdl-dialog__surface">
+      <div class="mdl-dialog__surface" ref="dialog">
         <slot></slot>
       </div>
       <div class="mdl-dialog__backdrop" @click="handleBackdrop"></div>
@@ -69,7 +69,8 @@ export default {
   },
   data() {
     return {
-      $body: null
+      $body: null,
+      $content: null
     };
   },
   computed: {
@@ -83,10 +84,15 @@ export default {
   watch: {
     open(val) {
       if (this.$body) {
+        if (!this.$content) {
+          this.$content = this.$refs.dialog.querySelector('.mdl-dialog__content');
+        }
+
         if (val) {
           this.$body.classList.add(CLASSNAME_LOCK);
         } else {
           this.$body.classList.remove(CLASSNAME_LOCK);
+          this.$content.scrollTop = 0;
         }
       }
     }
