@@ -1,4 +1,7 @@
 import UiDialog from '../components/dialog/dialog';
+import UiDialogTitle from '../components/dialog/dialog-title';
+import UiDialogContent from '../components/dialog/dialog-content';
+import UiDialogActions from '../components/dialog/dialog-actions';
 import UiButton from '../components/common/button';
 import {isString, isObject, isFunction} from '../helpers';
 
@@ -31,6 +34,9 @@ export default {
         vm = new Vue({
           components: {
             UiDialog,
+            UiDialogTitle,
+            UiDialogContent,
+            UiDialogActions,
             UiButton
           },
           el: document.createElement('div'),
