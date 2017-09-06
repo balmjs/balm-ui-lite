@@ -338,7 +338,7 @@ autoprefixer@^6.3.1:
     postcss "^5.2.16"
     postcss-value-parser "^3.2.3"
 
-autoprefixer@^7.1.1, autoprefixer@^7.1.2:
+autoprefixer@^7.1.1:
   version "7.1.2"
   resolved "http://registry.npm.taobao.org/autoprefixer/download/autoprefixer-7.1.2.tgz#fbeaf07d48fd878e0682bf7cbeeade728adb2b18"
   dependencies:
@@ -347,6 +347,17 @@ autoprefixer@^7.1.1, autoprefixer@^7.1.2:
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
     postcss "^6.0.6"
+    postcss-value-parser "^3.2.3"
+
+autoprefixer@^7.1.3:
+  version "7.1.3"
+  resolved "http://registry.npm.taobao.org/autoprefixer/download/autoprefixer-7.1.3.tgz#0e8d337976d6f13644db9f8813b4c42f3d1ccc34"
+  dependencies:
+    browserslist "^2.4.0"
+    caniuse-lite "^1.0.30000718"
+    normalize-range "^0.1.2"
+    num2fraction "^1.2.2"
+    postcss "^6.0.10"
     postcss-value-parser "^3.2.3"
 
 aws-sign2@~0.6.0:
@@ -372,7 +383,7 @@ babel-code-frame@^6.11.0, babel-code-frame@^6.22.0, babel-code-frame@^6.26.0:
     esutils "^2.0.2"
     js-tokens "^3.0.2"
 
-babel-core@^6.25.0, babel-core@^6.26.0:
+babel-core@^6.26.0:
   version "6.26.0"
   resolved "http://registry.npm.taobao.org/babel-core/download/babel-core-6.26.0.tgz#af32f78b31a6fcef119c87b0fd8d9753f03a0bb8"
   dependencies:
@@ -536,7 +547,7 @@ babel-helpers@^6.24.1:
     babel-runtime "^6.22.0"
     babel-template "^6.24.1"
 
-babel-loader@^7.1.1:
+babel-loader@^7.1.2:
   version "7.1.2"
   resolved "http://registry.npm.taobao.org/babel-loader/download/babel-loader-7.1.2.tgz#f6cbe122710f1aa2af4d881c6d5b54358ca24126"
   dependencies:
@@ -908,7 +919,7 @@ babel-preset-stage-3@^6.24.1:
     babel-plugin-transform-exponentiation-operator "^6.24.1"
     babel-plugin-transform-object-rest-spread "^6.22.0"
 
-babel-register@^6.24.1, babel-register@^6.26.0:
+babel-register@^6.26.0:
   version "6.26.0"
   resolved "http://registry.npm.taobao.org/babel-register/download/babel-register-6.26.0.tgz#6ed021173e2fcb486d7acb45c6009a856f647071"
   dependencies:
@@ -980,19 +991,19 @@ balanced-match@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/balanced-match/download/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
 
-balm@^0.8.6:
-  version "0.8.6"
-  resolved "http://registry.npm.taobao.org/balm/download/balm-0.8.6.tgz#4326bd4a7fbca78879db466f6984bfe267d3d5fd"
+balm@^0.9.0:
+  version "0.9.0"
+  resolved "http://registry.npm.taobao.org/balm/download/balm-0.9.0.tgz#5d2cf9f40a33962d39df686c66b5d0275a1694c5"
   dependencies:
-    autoprefixer "^7.1.2"
-    babel-core "^6.25.0"
-    babel-loader "^7.1.1"
+    autoprefixer "^7.1.3"
+    babel-core "^6.26.0"
+    babel-loader "^7.1.2"
     babel-plugin-transform-runtime "^6.23.0"
     babel-preset-env "^1.6.0"
-    babel-register "^6.24.1"
+    babel-register "^6.26.0"
     browser-sync "^2.18.13"
     connect-history-api-fallback "^1.3.0"
-    css-loader "^0.28.4"
+    css-loader "^0.28.7"
     del "^3.0.0"
     file-loader "^0.11.2"
     gulp-cache "^0.4.6"
@@ -1012,7 +1023,7 @@ balm@^0.8.6:
     gulp-sass "^3.1.0"
     gulp-sftp "^0.1.5"
     gulp-size "^2.1.0"
-    gulp-sourcemaps "^2.6.0"
+    gulp-sourcemaps "^2.6.1"
     gulp-svg-sprite "^1.3.7"
     gulp-uglify "^3.0.0"
     gulp-useref "^3.1.2"
@@ -1030,7 +1041,7 @@ balm@^0.8.6:
     run-sequence "^2.1.0"
     style-loader "^0.18.2"
     url-loader "^0.5.9"
-    webpack "^3.5.3"
+    webpack "^3.5.5"
     webpack-dev-middleware "^1.12.0"
     webpack-hot-middleware "^2.18.2"
     wiredep "^4.0.0"
@@ -1198,6 +1209,10 @@ brorand@^1.0.1:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/brorand/download/brorand-1.1.0.tgz#12c25efe40a45e3c323eb8675a0a0ce57b22371f"
 
+browser-fingerprint@0.0.1:
+  version "0.0.1"
+  resolved "http://registry.npm.taobao.org/browser-fingerprint/download/browser-fingerprint-0.0.1.tgz#8df3cdca25bf7d5b3542d61545d730053fce604a"
+
 browser-sync-client@2.5.1:
   version "2.5.1"
   resolved "http://registry.npm.taobao.org/browser-sync-client/download/browser-sync-client-2.5.1.tgz#ec1ad69a49c2e2d4b645b18b1c06c29b3d9af8eb"
@@ -1310,6 +1325,13 @@ browserslist@^2.0.0, browserslist@^2.1.2, browserslist@^2.1.5:
   resolved "http://registry.npm.taobao.org/browserslist/download/browserslist-2.3.3.tgz#2b0cabc4d28489f682598605858a0782f14b154c"
   dependencies:
     caniuse-lite "^1.0.30000715"
+    electron-to-chromium "^1.3.18"
+
+browserslist@^2.4.0:
+  version "2.4.0"
+  resolved "http://registry.npm.taobao.org/browserslist/download/browserslist-2.4.0.tgz#693ee93d01e66468a6348da5498e011f578f87f8"
+  dependencies:
+    caniuse-lite "^1.0.30000718"
     electron-to-chromium "^1.3.18"
 
 bs-recipes@1.3.4:
@@ -1433,6 +1455,10 @@ caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000697, caniuse-lite@^1.0.30000715:
   version "1.0.30000717"
   resolved "http://registry.npm.taobao.org/caniuse-lite/download/caniuse-lite-1.0.30000717.tgz#4539b126af787c1d4851944de22b2bd8780d3612"
+
+caniuse-lite@^1.0.30000718:
+  version "1.0.30000725"
+  resolved "http://registry.npm.taobao.org/caniuse-lite/download/caniuse-lite-1.0.30000725.tgz#4fa66372323c6ff46c8a1ba03f9dcd73d7a1cb39"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -1798,9 +1824,17 @@ cookie@0.3.1:
   version "0.3.1"
   resolved "http://registry.npm.taobao.org/cookie/download/cookie-0.3.1.tgz#e7e0a1f9ef43b4c8ba925c5c5a96e806d16873bb"
 
+core-js@^1.1.1:
+  version "1.2.7"
+  resolved "http://registry.npm.taobao.org/core-js/download/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
+
 core-js@^2.4.0, core-js@^2.5.0:
   version "2.5.0"
   resolved "http://registry.npm.taobao.org/core-js/download/core-js-2.5.0.tgz#569c050918be6486b3837552028ae0466b717086"
+
+core-js@^2.5.1:
+  version "2.5.1"
+  resolved "http://registry.npm.taobao.org/core-js/download/core-js-2.5.1.tgz#ae6874dc66937789b80754ff5428df66819ca50b"
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -1900,9 +1934,9 @@ css-color-names@0.0.4:
   version "0.0.4"
   resolved "http://registry.npm.taobao.org/css-color-names/download/css-color-names-0.0.4.tgz#808adc2e79cf84738069b646cb20ec27beb629e0"
 
-css-loader@^0.28.4:
-  version "0.28.5"
-  resolved "http://registry.npm.taobao.org/css-loader/download/css-loader-0.28.5.tgz#dd02bb91b94545710212ef7f6aaa66663113d754"
+css-loader@^0.28.7:
+  version "0.28.7"
+  resolved "http://registry.npm.taobao.org/css-loader/download/css-loader-0.28.7.tgz#5f2ee989dd32edd907717f953317656160999c1b"
   dependencies:
     babel-code-frame "^6.11.0"
     css-selector-tokenizer "^0.7.0"
@@ -1999,6 +2033,14 @@ csso@~2.3.1:
 cssom@^0.3.2:
   version "0.3.2"
   resolved "http://registry.npm.taobao.org/cssom/download/cssom-0.3.2.tgz#b8036170c79f07a90ff2f16e22284027a243848b"
+
+cuid@^1.3.8:
+  version "1.3.8"
+  resolved "http://registry.npm.taobao.org/cuid/download/cuid-1.3.8.tgz#4b875e0969bad764f7ec0706cf44f5fb0831f6b7"
+  dependencies:
+    browser-fingerprint "0.0.1"
+    core-js "^1.1.1"
+    node-fingerprint "0.0.2"
 
 currently-unhandled@^0.4.1:
   version "0.4.1"
@@ -3668,7 +3710,7 @@ gulp-sourcemaps@1.6.0:
     through2 "^2.0.0"
     vinyl "^1.0.0"
 
-gulp-sourcemaps@^2.6.0:
+gulp-sourcemaps@^2.6.1:
   version "2.6.1"
   resolved "http://registry.npm.taobao.org/gulp-sourcemaps/download/gulp-sourcemaps-2.6.1.tgz#833a4e28f0b8f4661075032cd782417f7cd8fb0b"
   dependencies:
@@ -5485,9 +5527,9 @@ mute-stream@0.0.7:
   version "0.0.7"
   resolved "http://registry.npm.taobao.org/mute-stream/download/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
 
-namespace-emitter@1.0.0:
-  version "1.0.0"
-  resolved "http://registry.npm.taobao.org/namespace-emitter/download/namespace-emitter-1.0.0.tgz#1bf3a7b8a40c77507025f3309a043abebf5c3d8f"
+namespace-emitter@^2.0.0:
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/namespace-emitter/download/namespace-emitter-2.0.0.tgz#9d06e88c03eb7118cb1bc776a2416fc949f63fd3"
 
 nan@^2.3.0, nan@^2.3.2:
   version "2.6.2"
@@ -5554,6 +5596,10 @@ no-case@^2.2.0:
 node-bitmap@0.0.1:
   version "0.0.1"
   resolved "http://registry.npm.taobao.org/node-bitmap/download/node-bitmap-0.0.1.tgz#180eac7003e0c707618ef31368f62f84b2a69091"
+
+node-fingerprint@0.0.2:
+  version "0.0.2"
+  resolved "http://registry.npm.taobao.org/node-fingerprint/download/node-fingerprint-0.0.2.tgz#31cbabeb71a67ae7dd5a7dc042e51c3c75868501"
 
 node-gyp@^3.3.1:
   version "3.6.2"
@@ -6710,6 +6756,14 @@ postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.2, postcss@^6.0.3, postcss@^6.0.5, 
     source-map "^0.5.6"
     supports-color "^4.2.1"
 
+postcss@^6.0.10:
+  version "6.0.10"
+  resolved "http://registry.npm.taobao.org/postcss/download/postcss-6.0.10.tgz#c311b89734483d87a91a56dc9e53f15f4e6e84e4"
+  dependencies:
+    chalk "^2.1.0"
+    source-map "^0.5.7"
+    supports-color "^4.2.1"
+
 prelude-ls@~1.1.2:
   version "1.1.2"
   resolved "http://registry.npm.taobao.org/prelude-ls/download/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
@@ -7567,7 +7621,7 @@ source-map-url@~0.3.0:
   version "0.3.0"
   resolved "http://registry.npm.taobao.org/source-map-url/download/source-map-url-0.3.0.tgz#7ecaf13b57bcd09da8a40c5d269db33799d4aaf9"
 
-source-map@0.5.x, source-map@0.X, "source-map@>= 0.1.2", source-map@^0.5.1, source-map@^0.5.3, source-map@^0.5.6, source-map@~0.5.0, source-map@~0.5.1, source-map@~0.5.3:
+source-map@0.5.x, source-map@0.X, "source-map@>= 0.1.2", source-map@^0.5.1, source-map@^0.5.3, source-map@^0.5.6, source-map@^0.5.7, source-map@~0.5.0, source-map@~0.5.1, source-map@~0.5.3:
   version "0.5.7"
   resolved "http://registry.npm.taobao.org/source-map/download/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
 
@@ -8317,16 +8371,17 @@ upper-case@^1.1.1:
   version "1.1.3"
   resolved "http://registry.npm.taobao.org/upper-case/download/upper-case-1.1.3.tgz#f6b4501c2ec4cdd26ba78be7222961de77621598"
 
-uppy@^0.17.0:
-  version "0.17.0"
-  resolved "http://registry.npm.taobao.org/uppy/download/uppy-0.17.0.tgz#cbcb4130e1e848d3ea71b9bd62fc4e1f7eccb700"
+uppy@^0.18.0:
+  version "0.18.1"
+  resolved "http://registry.npm.taobao.org/uppy/download/uppy-0.18.1.tgz#064ea919a985bc663c4faca2719ce2eb23d2e88f"
   dependencies:
+    cuid "^1.3.8"
     drag-drop "2.13.2"
     es6-promise "3.2.1"
     get-form-data "^1.2.5"
     lodash.throttle "4.1.1"
     mime-match "^1.0.2"
-    namespace-emitter "1.0.0"
+    namespace-emitter "^2.0.0"
     nanoraf "3.0.1"
     on-load "3.2.0"
     prettier-bytes "1.0.4"
@@ -8556,9 +8611,9 @@ vue-hot-reload-api@^2.1.0:
   version "2.1.0"
   resolved "http://registry.npm.taobao.org/vue-hot-reload-api/download/vue-hot-reload-api-2.1.0.tgz#9ca58a6e0df9078554ce1708688b6578754d86de"
 
-vue-i18n@^7.1.1:
-  version "7.1.1"
-  resolved "http://registry.npm.taobao.org/vue-i18n/download/vue-i18n-7.1.1.tgz#c37259c9088bf821144b393146d342686e9554ea"
+vue-i18n@^7.2.0:
+  version "7.2.0"
+  resolved "http://registry.npm.taobao.org/vue-i18n/download/vue-i18n-7.2.0.tgz#849d496affc3dbdfb5f6ad675b79e86448bce14e"
 
 vue-loader@^13.0.4:
   version "13.0.4"
@@ -8644,7 +8699,7 @@ webpack-sources@^1.0.1:
     source-list-map "^2.0.0"
     source-map "~0.5.3"
 
-webpack@^3.5.3:
+webpack@^3.5.5:
   version "3.5.5"
   resolved "http://registry.npm.taobao.org/webpack/download/webpack-3.5.5.tgz#3226f09fc8b3e435ff781e7af34f82b68b26996c"
   dependencies:
