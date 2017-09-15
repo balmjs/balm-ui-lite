@@ -10,7 +10,7 @@ __`/path/to/config/balmrc.js`__
     ...
     alias: {
       'vue$': balm.config.production ? 'vue/dist/vue.min.js' : 'vue/dist/vue.esm.js',
-      'balm-ui': 'balm-ui-lite/src/components',
+      'balm-ui-components': 'balm-ui-lite/src/components',
       ...
     }
   },
@@ -29,7 +29,7 @@ __`/path/to/app/scripts/views/home.vue`__
 
 ```js
 <script>
-import UiButton from 'balm-ui/common/button';
+import UiButton from 'balm-ui-components/common/button';
 
 export default {
   components: {

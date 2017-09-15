@@ -3,7 +3,8 @@
   {
     "requirement": "Requirement",
     "installation": "Installation",
-    "advanced": "Advanced"
+    "advanced": "Advanced",
+    "kill-ie": "Kill IE"
   },
   "foundation":
   {

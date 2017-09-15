@@ -3,7 +3,8 @@
   {
     "requirement": "开发环境",
     "installation": "安装配置",
-    "advanced": "进阶"
+    "advanced": "进阶",
+    "kill-ie": "Kill IE"
   },
   "foundation":
   {

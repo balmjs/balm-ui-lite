@@ -43,6 +43,7 @@ import Vue from 'vue';
 import BalmUI from 'balm-ui-lite';
 
 Vue.use(BalmUI);
+Vue.use(BalmUI.plugins.event);
 ```
 
 ### 3. Assets Config

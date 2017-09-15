@@ -21,10 +21,10 @@
     "description": "The model that the icon toggle value syncs to",
     "required": true
   }, {
-    "name": "effect",
+    "name": "noRipple",
     "type": "Boolean",
     "default": "false",
-    "description": "Applies ripple click effect"
+    "description": "Don't apply ripple click effect"
   }, {
     "name": "disabled",
     "type": "Boolean",

@@ -1,7 +1,8 @@
 const QUICKSTART = [
   'requirement',
   'installation',
-  'advanced'
+  'advanced',
+  'kill-ie'
 ];
 
 const FOUNDATION = [
