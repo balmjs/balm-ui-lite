@@ -1,5 +1,22 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
+## 0.5.14 (2017.09.15)
+
+### Bugfix
+
+- fix `alert` & `confirm` plugins' dependencies
+
+### Components
+
+- `<ui-dialog>` add `unlocked` props
+- update `<ui-select>` & `<ui-pagination>` css
+
+### Docs
+
+- add Kill IE docs
+
+---
+
 ## 0.5.13 (2017.08.22)
 
 ### Bugfix
