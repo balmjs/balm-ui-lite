@@ -1,7 +1,11 @@
+$pagination-color: #49a9ee !default;
+$pagination-active-color: #108ee9 !default;
+
 .mdl-pagination {
   line-height: 28px;
 
   display: flex;
+
   justify-content: center;
   .mdl-pagination--record {
     flex: 1;
@@ -10,7 +14,7 @@
     a {
       display: inline-block;
 
-      width: 28px;
+      min-width: 28px;
       height: 28px;
       margin-right: 8px;
 
@@ -26,21 +30,17 @@
         display: block;
       }
       &:hover {
-        color: #49a9ee;
-        border-color: #49a9ee;
+        color: $pagination-color;
+        border-color: $pagination-color;
       }
       &.active {
         cursor: default;
 
         color: white;
-        border-color: #108ee9;
-        background-color: #108ee9;
+        border-color: $pagination-active-color;
+        background-color: $pagination-active-color;
       }
     }
-  }
-  .mdl-pagination--paging-previous,
-  .mdl-pagination--paging-next {
-    font-size: 14px;
   }
   .mdl-pagination--jumper {
     display: inline-block;
@@ -52,10 +52,10 @@
       color: rgba(0, 0, 0, .65);
       border: 1px solid #d9d9d9;
       &:hover {
-        border-color: #49a9ee;
+        border-color: $pagination-color;
       }
       &:focus {
-        border-color: #49a9ee;
+        border-color: $pagination-color;
         outline: 0;
         box-shadow: 0 0 0 2px rgba(16, 142, 233, .2);
       }
@@ -69,8 +69,8 @@
       color: rgba(0, 0, 0, .65);
       border: 1px solid #d9d9d9;
       &:hover {
-        color: #49a9ee;
-        border-color: #49a9ee;
+        color: $pagination-color;
+        border-color: $pagination-color;
         background: none;
       }
     }
