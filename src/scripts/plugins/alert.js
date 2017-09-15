@@ -10,13 +10,15 @@ const DEFAULT_OPTIONS = {
   title: '',
   message: '',
   buttonText: 'OK',
-  callback: false
+  callback: false,
+  unlocked: false
 };
 
 const template =
 `<ui-dialog
   :class="['mdl-alert', options.className]"
   :open="open"
+  :unlocked="options.unlocked"
   @close="handleClose">
   <ui-dialog-title v-if="options.title">{{ options.title }}</ui-dialog-title>
   <ui-dialog-content>{{ options.message }}</ui-dialog-content>

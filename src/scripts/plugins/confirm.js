@@ -11,13 +11,15 @@ const DEFAULT_OPTIONS = {
   message: '',
   acceptText: 'OK',
   cancelText: 'Cancel',
-  callback: false
+  callback: false,
+  unlocked: false
 };
 
 const template =
 `<ui-dialog
   :class="['mdl-confirm', options.className]"
   :open="open"
+  :unlocked="options.unlocked"
   @close="handleClose"
   @confirm="handleConfirm">
   <ui-dialog-title v-if="options.title">{{ options.title }}</ui-dialog-title>

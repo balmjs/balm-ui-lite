@@ -65,6 +65,10 @@ export default {
     leaveToClass: {
       type: String,
       default: 'default-leave-to'
+    },
+    unlocked: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -83,7 +87,7 @@ export default {
   },
   watch: {
     open(val) {
-      if (this.$body) {
+      if (this.$body && !this.unlocked) {
         if (!this.$content) {
           this.$content = this.$refs.dialog.querySelector('.mdl-dialog__content');
         }
@@ -92,7 +96,9 @@ export default {
           this.$body.classList.add(CLASSNAME_LOCK);
         } else {
           this.$body.classList.remove(CLASSNAME_LOCK);
-          this.$content.scrollTop = 0;
+          if (this.$content) {
+            this.$content.scrollTop = 0;
+          }
         }
       }
     }
