@@ -19,4 +19,14 @@
     display: none;
     visibility: hidden;
   }
+  @media(max-width: $snackbar-tablet-breakpoint - 1) {
+    top: auto;
+    bottom: 0;
+    left: 50%;
+
+    width: auto;
+    .mdl-snackbar__text {
+      padding: 14px;
+    }
+  }
 }
