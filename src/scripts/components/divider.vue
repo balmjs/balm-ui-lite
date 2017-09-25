@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import {isNumber, isString} from '../../helpers';
+import {isNumber, isString} from '../helpers';
 
 const typeArr = ['horizontal', 'vertical'];
 const typeObj = {

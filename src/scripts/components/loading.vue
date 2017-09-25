@@ -3,10 +3,10 @@
 </template>
 
 <script>
-import mdlMixin from '../../mixins/mdl';
-import '../../../material-design-lite/spinner/spinner';
-import '../../../material-design-lite/progress/progress';
-import {isString} from '../../helpers';
+import mdlMixin from '../mixins/mdl';
+import '../../material-design-lite/spinner/spinner';
+import '../../material-design-lite/progress/progress';
+import {isString} from '../helpers';
 
 const TYPES = ['spinner', 'progress'];
 const TYPE_SPINNER  = 0; // Spinner

@@ -15,7 +15,7 @@ __For 🌰__
 ```html
 <template>
   <div>
-    <ui-textfield :model="formData.name" @input="onChnage('formData.name', $event)"></ui-textfield>
+    <ui-textfield :model="formData.name" @input="onChange('formData.name', $event)"></ui-textfield>
     <ui-button @click.native="showAlert">show alert</ui-button>
     <ui-button @click.native="showConfirm">show confirm</ui-button>
     <ui-button @click.native="showToast">show toast</ui-button>

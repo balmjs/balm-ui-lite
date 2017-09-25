@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import mdlMixin from '../../mixins/mdl';
-import '../../../material-design-lite/snackbar/snackbar';
-import {isString} from '../../helpers';
+import mdlMixin from '../mixins/mdl';
+import '../../material-design-lite/snackbar/snackbar';
+import {isString} from '../helpers';
 
 const TYPES = ['toast', 'snackbar'];
 const TYPE_TOAST = 0;
@@ -35,7 +35,7 @@ export default {
     // ui attributes
     type: {
       type: [Number, String],
-      default: 0
+      default: 1
     },
     timeout: {
       type: Number,
@@ -64,14 +64,14 @@ export default {
     }
   },
   watch: {
-    message(val) {
-      this.currentMessage = val;
-    },
     active(val) {
       if (!this.currentActive && val) {
         this.currentActive = val;
         this.show();
       }
+    },
+    message(val) {
+      this.currentMessage = val;
     }
   },
   methods: {

@@ -1,4 +1,4 @@
-import UiSnackbar from '../components/dialog/snackbar';
+import UiSnackbar from '../components/snackbar';
 import {isString, isObject} from '../helpers';
 
 const DEFAULT_OPTIONS = {

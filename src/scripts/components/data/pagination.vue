@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import UiButton from '../common/button';
+import UiButton from '../button';
 
 const DOUBLE_ARROW_LEFT = '&laquo;';
 const DOUBLE_ARROW_RIGHT = '&raquo;';

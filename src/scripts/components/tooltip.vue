@@ -12,9 +12,9 @@
 </template>
 
 <script>
-import mdlMixin from '../../mixins/mdl';
-import '../../../material-design-lite/tooltip/tooltip';
-import {isString, generateRandomAlphaNum} from '../../helpers';
+import mdlMixin from '../mixins/mdl';
+import '../../material-design-lite/tooltip/tooltip';
+import {isString, generateRandomAlphaNum} from '../helpers';
 
 const POSITIONS = ['', 'top', 'right', 'bottom', 'left'];
 const POSITION_TOP = 1; // Positions the tooltip to the top of the target

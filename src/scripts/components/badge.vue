@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import badgeMixin from '../../mixins/badge';
+import badgeMixin from '../mixins/badge';
 
 export default {
   name: 'ui-badge',

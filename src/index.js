@@ -47,18 +47,18 @@ import UiPanel from './scripts/components/tabs/panel';
 /**
  * Common
  */
-import UiBadge from './scripts/components/common/badge';
-import UiBadgeLink from './scripts/components/common/badge-link';
-import UiButton from './scripts/components/common/button';
+import UiBadge from './scripts/components/badge';
+import UiBadgeLink from './scripts/components/badge-link';
+import UiButton from './scripts/components/button';
 import UiChip from './scripts/components/chip/chip';
 import UiChipText from './scripts/components/chip/chip-text';
 import UiChipAction from './scripts/components/chip/chip-action';
 import UiChipContact from './scripts/components/chip/chip-contact';
-import UiLoading from './scripts/components/common/loading';
+import UiLoading from './scripts/components/loading';
 import UiMenu from './scripts/components/menu/menu';
 import UiMenuItem from './scripts/components/menu/menuitem';
-import UiTooltip from './scripts/components/common/tooltip';
-import UiDivider from './scripts/components/common/divider';
+import UiTooltip from './scripts/components/tooltip';
+import UiDivider from './scripts/components/divider';
 import UiIcon from './scripts/components/icon';
 /**
  * Form
@@ -99,7 +99,7 @@ import UiDialog from './scripts/components/dialog/dialog';
 import UiDialogTitle from './scripts/components/dialog/dialog-title';
 import UiDialogContent from './scripts/components/dialog/dialog-content';
 import UiDialogActions from './scripts/components/dialog/dialog-actions';
-import UiSnackbar from './scripts/components/dialog/snackbar';
+import UiSnackbar from './scripts/components/snackbar';
 /**
  * Plugins
  */
