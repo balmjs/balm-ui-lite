@@ -1,15 +1,34 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
-## 0.5.14 (2017.09.15)
+## 0.5.15 (2017.09.25)
+
+### Optimize components architecture
+
+### Components
+
+- `<ui-dialog>` add `maxHeight` props
 
 ### Bugfix
 
-- fix `alert` & `confirm` plugins' dependencies
+- fix `toast` css in mobile mode
+
+### Docs
+
+- update `advanced` docs
+- update `dialog` docs
+
+---
+
+## 0.5.14 (2017.09.15)
 
 ### Components
 
 - `<ui-dialog>` add `unlocked` props
 - update `<ui-select>` & `<ui-pagination>` css
+
+### Bugfix
+
+- fix `alert` & `confirm` plugins' dependencies
 
 ### Docs
 
@@ -86,28 +105,28 @@
 
 - `helpers` add `jsonEqual(a, b)`
 
-### Bugfix
-
-- fix `<ui-autocomplete>`
-
 ### Components
 
 - `<ui-textfield>` remove `keyup` event
 - `<ui-pagination>` add `jumperButton` props, and update css
 - update `<ui-checkbox>` demo
 
+### Bugfix
+
+- fix `<ui-autocomplete>`
+
 ---
 
 ## 0.5.7 (2017.08.15)
-
-### Bugfix
-
-- fix `<ui-textfield>` checkDirty bug
 
 ### Components
 
 - update `<ui-autocomplete>`
 - `<ui-textfield>` add `keyup` event
+
+### Bugfix
+
+- fix `<ui-textfield>` checkDirty bug
 
 ---
 
@@ -134,17 +153,17 @@
 
 ## 0.5.4 (2017.08.08)
 
+### Bugfix
+
+- fix `<ui-pagination>` jumper
+- update form validator: `validate(formData, extraRules = {})`
+
 ### Docs
 
 - helpers (new)
 - mixins (new)
 - plugins (new)
 - update menu demo2
-
-### Bugfix
-
-- fix `<ui-pagination>` jumper
-- update form validator: `validate(formData, extraRules = {})`
 
 ---
 
