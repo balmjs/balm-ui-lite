@@ -36,6 +36,19 @@
       <ui-dialog-actions fullWidth acceptText="Agree" cancelText="Disagree"></ui-dialog-actions>
     </ui-dialog>
 
+    <h4>Dialog with scrolling</h4>
+    <div class="snippet-group">
+      <div class="snippet-demo">
+        <ui-button @click.native="showDialog('show3')">Show Scrolling Dialog</ui-button>
+      </div>
+      <!-- <ui-markdown :text="code[2]"></ui-markdown> -->
+    </div>
+    <ui-dialog maskClosable :open="show3" @close="closeDialog('show3')">
+      <ui-dialog-content>
+        <p v-for="i in 20">Some content</p>
+      </ui-dialog-content>
+    </ui-dialog>
+
     <h4>Alert &amp; Confirm</h4>
     <div class="snippet-group">
       <div class="snippet-demo">
@@ -61,7 +74,8 @@ export default {
   data() {
     return {
       show1: false,
-      show2: false
+      show2: false,
+      show3: false
     };
   },
   methods: {

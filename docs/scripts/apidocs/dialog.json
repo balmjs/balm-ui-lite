@@ -55,6 +55,16 @@
     "type": "String",
     "default": "'default-leave-to'",
     "description": "vue@2.1.8+"
+  },
+  {
+    "name": "unlocked",
+    "type": "Boolean",
+    "default": "false"
+  },
+  {
+    "name": "maxHeight",
+    "type": "Number",
+    "default": "0"
   }],
   "slots": [
   {

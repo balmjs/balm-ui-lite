@@ -8,7 +8,7 @@
     :leave-active-class="leaveActiveClass"
     :leave-to-class="leaveToClass">
     <aside v-show="open" :class="className">
-      <div class="mdl-dialog__surface" ref="dialog">
+      <div class="mdl-dialog__surface" ref="dialog" :style="style">
         <slot></slot>
       </div>
       <div class="mdl-dialog__backdrop" @click="handleBackdrop"></div>
@@ -69,12 +69,17 @@ export default {
     unlocked: {
       type: Boolean,
       default: false
+    },
+    maxHeight: {
+      type: Number,
+      default: 0
     }
   },
   data() {
     return {
       $body: null,
-      $content: null
+      $content: null,
+      currentWindowHeight: 0
     };
   },
   computed: {
@@ -83,22 +88,24 @@ export default {
         'mdl-dialog': true,
         'mdl-dialog--open': this.open
       };
+    },
+    style() {
+      let height = this.maxHeight && (this.maxHeight < this.currentWindowHeight)
+        ? this.maxHeight + 'px'
+        : Math.round(this.currentWindowHeight * 0.618) + 'px';
+      return {
+        'max-height': height
+      };
     }
   },
   watch: {
     open(val) {
       if (this.$body && !this.unlocked) {
-        if (!this.$content) {
-          this.$content = this.$refs.dialog.querySelector('.mdl-dialog__content');
-        }
-
         if (val) {
           this.$body.classList.add(CLASSNAME_LOCK);
         } else {
           this.$body.classList.remove(CLASSNAME_LOCK);
-          if (this.$content) {
-            this.$content.scrollTop = 0;
-          }
+          this.$content.scrollTop = 0;
         }
       }
     }
@@ -121,12 +128,26 @@ export default {
     handleCancel() {
       this.$emit(EVENT_CONFIRM, false);
       this.handleClose();
+    },
+    handleResize() {
+      this.currentWindowHeight = window.innerHeight
+        || document.documentElement.clientHeight
+        || document.body.clientHeight;
     }
   },
   mounted() {
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize, false);
+
     this.$body = document.querySelector('body');
+    this.$nextTick(() => {
+      if (!this.$content) {
+        this.$content = this.$refs.dialog.querySelector('.mdl-dialog__content');
+      }
+    });
   },
   beforeDestroy() {
+    window.removeEventListener('resize', this.handleResize, false);
     this.$body.classList.remove(CLASSNAME_LOCK);
   }
 };
