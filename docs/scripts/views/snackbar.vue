@@ -8,7 +8,7 @@
     <h4>Toast</h4>
     <div class="snippet-demo">
       <ui-button raised effect @click.native="show('toast')">Show Toast</ui-button>
-      <ui-snackbar :type="0" :active="toast.active" :message="toast.message" @done="hide('toast')"></ui-snackbar>
+      <ui-snackbar :active="toast.active" :message="toast.message" @done="hide('toast')"></ui-snackbar>
     </div>
     <ui-markdown :text="code[0]"></ui-markdown>
 

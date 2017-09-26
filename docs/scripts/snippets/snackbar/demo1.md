@@ -1,5 +1,5 @@
 ```html
-<ui-snackbar :type="0" :active="active" :message="message" @done="hide"></ui-snackbar>
+<ui-snackbar :active="active" :message="message" @done="hide"></ui-snackbar>
 ```
 
 ```js

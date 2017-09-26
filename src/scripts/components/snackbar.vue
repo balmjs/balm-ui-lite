@@ -35,7 +35,7 @@ export default {
     // ui attributes
     type: {
       type: [Number, String],
-      default: 1
+      default: 0
     },
     timeout: {
       type: Number,

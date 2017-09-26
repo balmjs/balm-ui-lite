@@ -24,6 +24,8 @@
       <div v-if="!mini && showJumper" class="mdl-pagination--jumper">
         <span>{{ jumperBefore }}</span>
         <input type="number"
+               min="1"
+               :max="pageCount"
                v-model="pager"
                @keydown.prevent.enter="handleClick($event.target.value)">
         <span>{{ jumperAfter }}</span>

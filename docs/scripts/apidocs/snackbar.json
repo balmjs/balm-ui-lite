@@ -2,7 +2,7 @@
   "props": [{
     "name": "type",
     "type": "Number, String",
-    "default": "1",
+    "default": "0",
     "description": "The snackbar type { 0: 'toast', 1: 'snackbar' }"
   }, {
     "name": "active",
