@@ -1,5 +1,14 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
+## 0.5.16 (2017.09.26)
+
+### Components
+
+- restore `<ui-snackbar>` _type_ props default value to _0_
+- add min & max attributes for `<ui-pagination>` input
+
+---
+
 ## 0.5.15 (2017.09.25)
 
 ### Optimize components architecture
