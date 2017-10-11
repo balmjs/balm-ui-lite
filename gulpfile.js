@@ -1,7 +1,7 @@
 var balm = require('balm');
 
-var useDefault = !(process.argv[2] === '--mdl');
-var buildDocs = process.argv[3] === '--docs';
+var useDefault = !process.argv.includes('--mdl');
+var buildDocs = process.argv.includes('--docs');
 var useDocs = !balm.config.production || buildDocs;
 
 balm.config = {
