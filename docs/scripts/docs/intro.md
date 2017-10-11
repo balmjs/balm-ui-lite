@@ -19,7 +19,7 @@
     - loading
     - menu
     - tooltip
-    - divider (new)
+    - divider
     - icon
 - Form
     - slider
@@ -28,15 +28,15 @@
     - icon toggle
     - switch
     - textfield
-    - select (new)
-    - autocomplete (new)
-    - datepicker (new)
-    - fileupload (new)
+    - select
+    - autocomplete
+    - datepicker
+    - fileupload
 - Data View
     - card
     - list
     - table
-    - pagination (new)
+    - pagination
 - Modal
     - dialog
     - snackbar
