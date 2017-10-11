@@ -20,11 +20,23 @@ const template =
   :class="['mdl-confirm', options.className]"
   :open="open"
   :unlocked="options.unlocked"
-  @close="handleClose"
-  @confirm="handleConfirm">
+  @close="handleClose">
   <ui-dialog-title v-if="options.title">{{ options.title }}</ui-dialog-title>
   <ui-dialog-content>{{ options.message }}</ui-dialog-content>
-  <ui-dialog-actions :acceptText="options.acceptText" :cancelText="options.cancelText"></ui-dialog-actions>
+  <ui-dialog-actions>
+    <ui-button
+      raised
+      primary
+      @click.native="handleConfirm(true)">
+      {{ options.acceptText }}
+    </ui-button>
+    <ui-button
+      raised
+      accent
+      @click.native="handleConfirm(false)">
+      {{ options.cancelText }}
+    </ui-button>
+  </ui-dialog-actions>
 </ui-dialog>`;
 
 export default {
@@ -55,6 +67,7 @@ export default {
               vm = null;
             },
             handleConfirm(result) {
+              this.handleClose();
               if (isFunction(this.options.callback)) {
                 this.options.callback(result);
               } else {
