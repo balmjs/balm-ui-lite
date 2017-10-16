@@ -33,8 +33,8 @@ import UiLayoutHeader from 'balm-ui-layout/layout-header';
 import UiLayoutHeaderRow from 'balm-ui-layout/layout-header-row';
 import UiLayoutContent from 'balm-ui-layout/layout-content';
 import UiTextfield from 'balm-ui-form/textfield';
-import event from 'balm-ui-plugins/event';
-import toast from 'balm-ui-plugins/toast';
+import $event from 'balm-ui-plugins/event';
+import $toast from 'balm-ui-plugins/toast';
 ...
 
 Vue.use({
@@ -48,8 +48,8 @@ Vue.use({
     vue.component(UiTextfield.name, UiTextfield);
   }
 });
-Vue.use(event);
-Vue.use(toast);
+Vue.use($event);
+Vue.use($toast);
 
 ...
 ```
