@@ -3,7 +3,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueI18n from 'vue-i18n';
 import axios from 'axios';
-import BalmUI from '../../src/index'; // 'balm-ui-lite'
+import BalmUI from '../../src/scripts/index'; // 'balm-ui-lite'
 import App from './app';
 import routes from './routes/index';
 import UiMarkdown from './components/markdown';

@@ -21,7 +21,7 @@
         </a>
       </ui-layout-title>
       <ui-nav v-for="(item, index) in menu" :key="index">
-        <template scope="props">
+        <template slot-scope="props">
           <h3>{{ $t(item.name) }}</h3>
           <template v-for="(component, index) in item.components">
             <a v-if="component.name === 'components.icon'"

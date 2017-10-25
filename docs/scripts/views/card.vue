@@ -14,7 +14,7 @@
             <div class="snippet-demo-container demo-card demo-card__wide">
               <ui-card class="demo-card-wide">
                 <ui-card-title>
-                  <template scope="props">
+                  <template slot-scope="props">
                     <h2 :class="props.className.title">Welcome</h2>
                   </template>
                 </ui-card-title>
@@ -45,7 +45,7 @@
             <div class="snippet-demo-container demo-card demo-card__square">
               <ui-card class="demo-card-square">
                 <ui-card-title expand>
-                  <template scope="props">
+                  <template slot-scope="props">
                     <h2 :class="props.className.title">Update</h2>
                   </template>
                 </ui-card-title>

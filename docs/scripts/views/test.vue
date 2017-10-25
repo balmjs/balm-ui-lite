@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { mixins } from '../../../src/index'; // 'balm-ui-lite'
+import { mixins } from '../../../src/scripts/index'; // 'balm-ui-lite'
 import formValidatorRules from '../mixins/form-validator-rules';
 
 export default {

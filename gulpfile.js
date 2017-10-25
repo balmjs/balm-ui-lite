@@ -26,7 +26,7 @@ balm.config = {
       ],
       main: './docs/scripts/main.js'
     } : {
-      'balm-ui-lite': './src/index.js'
+      'balm-ui-lite': './src/scripts/index.js'
     },
     library: 'BalmUI',
     libraryTarget: 'umd',

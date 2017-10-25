@@ -16,7 +16,7 @@
         jumperAfter="page"
         jumperButton="Go"
         @change="onPage">
-        <template scope="props">
+        <template scope-scope="props">
           Showing {{ props.recordCount }} records,
           <ui-select
             :options="pageSizeList"
