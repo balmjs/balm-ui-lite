@@ -29,6 +29,7 @@
           @focus="handleFocus"
           @blur="handleBlur"
           @input="handleInput"
+          @change="handleChange"
           @keydown="handleKeydown"
           @keydown.enter="handleKeydownEnter"></textarea>
       </template>
@@ -49,6 +50,7 @@
           @focus="handleFocus"
           @blur="handleBlur"
           @input="handleInput"
+          @change="handleChange"
           @keydown="handleKeydown"
           @keydown.enter="handleKeydownEnter"
           data-input>
@@ -193,6 +195,9 @@ export default {
     },
     handleInput(event) {
       this.$emit(EVENT_INPUT, event.target.value); // value: string
+    },
+    handleChange(event) {
+      this.$emit(EVENT_CHANGE, event);
     },
     handleKeydown(event) {
       this.$emit(EVENT_KEYDOWN, event);

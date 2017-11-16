@@ -141,7 +141,7 @@
     "description": "Emitted when the select value is changed. The handler is called with the new value. (IE10+)"
   },
   {
-    "name": "change (Deprecated)",
+    "name": "change",
     "description": "Emitted when a change in the textbox value is committed. The handler is called with the new value. (IE9+)"
   },
   {

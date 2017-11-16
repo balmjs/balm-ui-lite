@@ -1,5 +1,14 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
+## 0.5.17 (2017.11.16)
+
+### Components
+
+- `<ui-textfield>` restore `change` event
+- update `<ui-datepicker>` for `multiple` & `range` mode
+
+---
+
 ## 0.5.16 (2017.09.26)
 
 ### Components

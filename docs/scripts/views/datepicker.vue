@@ -8,8 +8,12 @@
 
     <h4>Basic example</h4>
     <div class="snippet-demo">
-      <ui-datepicker :config="config1" :model="date1" placeholder="Select Date.."
-        toggle @change="onChange('date1', $event)">
+      <ui-datepicker
+        :config="config1"
+        :model="date1"
+        placeholder="Select Date.."
+        toggle
+        @change="onChange('date1', $event)">
         <i slot="toggle" class="fa fa-calendar"></i>
       </ui-datepicker>
     </div>
@@ -17,8 +21,13 @@
 
     <h4>Make it a datetime picker</h4>
     <div class="snippet-demo">
-      <ui-datepicker :config="config2" :model="date2" placeholder="Select Datetime.."
-        toggle clear @change="onChange('date2', $event)">
+      <ui-datepicker
+        :config="config2"
+        :model="date2"
+        placeholder="Select Datetime.."
+        toggle
+        clear
+        @change="onChange('date2', $event)">
         <template slot="toggle">
           <i class="fa fa-calendar"></i>
         </template>
@@ -31,14 +40,20 @@
 
     <h4>Selecting a Range of Dates</h4>
     <div class="snippet-demo">
-      <ui-datepicker :config="config3" :model="date3" placeholder="Select Date Range.."
+      <ui-datepicker
+        :config="config3"
+        :model="date3"
+        placeholder="Select Date Range.."
         @change="onChange('date3', $event)"></ui-datepicker>
     </div>
     <ui-markdown :text="code[3]"></ui-markdown>
 
     <h4>Selecting Multiple Dates</h4>
     <div class="snippet-demo">
-      <ui-datepicker :config="config4" :model="date4" placeholder="Select Multi Date.."
+      <ui-datepicker
+        :config="config4"
+        :model="date4"
+        placeholder="Select Multi Date.."
         @change="onChange('date4', $event)" ></ui-datepicker>
     </div>
     <ui-markdown :text="code[4]"></ui-markdown>
@@ -64,13 +79,14 @@ export default {
       },
       date2: '',
       config3: {
-        mode: 'range'
+        mode: 'range',
+        allowInput: true
       },
-      date3: '',
+      date3: ['2017-11-10', '2017-11-20'],
       config4: {
         mode: 'multiple'
       },
-      date4: ''
+      date4: ['2017-11-07', '2017-11-09', '2017-11-11']
     };
   },
   methods: {
