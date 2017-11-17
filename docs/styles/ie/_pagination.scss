@@ -1,5 +1,5 @@
 .mdl-pagination {
-  @include clearfix;
+  @include clearfix();
   .mdl-pagination--record {
     float: left;
   }

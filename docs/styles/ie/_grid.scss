@@ -1,7 +1,7 @@
 // parent
 .mdl-grid {
   display: block;
-  @include clearfix;
+  @include clearfix();
 }
 
 // children

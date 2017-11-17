@@ -9,7 +9,7 @@
   }
   .mdl-list__item--three-line {
     display: block;
-    @include clearfix;
+    @include clearfix();
     .mdl-list__item-primary-content {
       float: left;
       width: 550px;
