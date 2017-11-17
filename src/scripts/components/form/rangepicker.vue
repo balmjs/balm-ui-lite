@@ -1,6 +1,7 @@
 <template>
   <div class="mdl-rangepicker">
     <ui-datepicker
+      :config="config"
       :model="startDate"
       :placeholder="startPlaceholder"
       @change="handleChange('startDate', $event)"></ui-datepicker>
@@ -8,6 +9,7 @@
       <span class="mdl-rangepicker__separator">~</span>
     </slot>
     <ui-datepicker
+      :config="config"
       :model="endDate"
       :placeholder="endPlaceholder"
       @change="handleChange('endDate', $event)"></ui-datepicker>
@@ -28,6 +30,13 @@ export default {
   props: {
     // state
     model: null,
+    // ui attributes
+    config: {
+      type: Object,
+      default: function() {
+        return {};
+      }
+    },
     startPlaceholder: String,
     endPlaceholder: String
   },

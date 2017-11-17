@@ -76,6 +76,7 @@ export default {
       } else {
         this.currentValue = val;
       }
+      this.syncSelectedDates(this.currentValue);
     }
   },
   mounted() {
@@ -116,6 +117,11 @@ export default {
     this.flatpickr = null;
   },
   methods: {
+    syncSelectedDates(value) {
+      if (this.flatpickr) {
+        this.flatpickr.setDate(value);
+      }
+    },
     handleChange(event) {
       this.currentValue = event.target.value;
 
@@ -136,7 +142,7 @@ export default {
               ? startDate // string
               : [startDate, endDate]; // array
 
-            this.flatpickr.setDate(result);
+            this.syncSelectedDates(result);
           }
           break;
         default:

@@ -69,6 +69,7 @@ export default {
   mixins: [snippets],
   data() {
     return {
+      date: [],
       config1: {
         defaultDate: 'today',
         // locale: this.flatpickrLang.cn
