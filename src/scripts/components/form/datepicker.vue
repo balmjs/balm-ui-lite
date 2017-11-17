@@ -4,10 +4,10 @@
       ref="text"
       :model="currentValue"
       :placeholder="placeholder"
-      :plus="toggle || clear"
+      :plus="(toggle || allowInput) || clear"
       @change="handleChange">
       <template slot="plus">
-        <div v-if="toggle" class="mdl-datepicker__toggle" data-toggle>
+        <div v-if="toggle || allowInput" class="mdl-datepicker__toggle" data-toggle>
           <slot name="toggle">
             <i class="fa fa-calendar"></i>
           </slot>
@@ -64,9 +64,18 @@ export default {
       mode: this.config.mode || MODE_SINGLE
     }
   },
+  computed: {
+    allowInput() {
+      return this.config.allowInput;
+    }
+  },
   watch: {
     model(val) {
-      this.setRangeDate(val);
+      if (this.mode === MODE_RANGE) {
+        this.setRangeDate(val);
+      } else {
+        this.currentValue = val;
+      }
     }
   },
   mounted() {
@@ -74,22 +83,29 @@ export default {
       // default config for ui
       this.config.time_24hr = true;
       this.config.wrap = true;
+      this.config.clickOpens = !this.config.allowInput; // NOTE: fix flatpickr bug
       // custom event
       this.config.onClose = () => {
         this.$refs.text.$el.querySelector('input').blur();
       };
       // set default value
-      if (this.mode === MODE_SINGLE) {
-        this.config.onReady = (selectedDates, dateStr, instance) => {
-          // defaultDate: 'today'
-          if (dateStr) {
-            this.currentValue = dateStr;
-            this.$emit(EVENT_CHANGE, dateStr);
-          }
-        };
-      } else {
-        this.setRangeDate(this.model);
-        this.config.defaultDate = this.currentValue;
+      switch (this.mode) {
+        case MODE_MULTIPLE:
+          this.config.defaultDate = this.currentValue;
+          break;
+        case MODE_RANGE:
+          this.setRangeDate(this.model);
+          this.config.defaultDate = this.currentValue;
+          break;
+        default:
+          this.config.onReady = (selectedDates, dateStr, instance) => {
+            // defaultDate: 'today'
+            if (dateStr) {
+              this.currentValue = dateStr;
+              this.$emit(EVENT_CHANGE, dateStr);
+            }
+          };
+          break;
       }
       // init
       this.flatpickr = new Flatpickr(this.$el, this.config);
@@ -120,7 +136,7 @@ export default {
               ? startDate // string
               : [startDate, endDate]; // array
 
-            this.flatpickr.setDate(result); // TODO 暂时不做实时同步显示(flatpickr bug)
+            this.flatpickr.setDate(result);
           }
           break;
         default:
@@ -132,10 +148,10 @@ export default {
         this.$emit(EVENT_CHANGE, result);
       }
     },
-    setRangeDate(value) {
-      if (this.config.mode === MODE_RANGE && isArray(this.value) && this.value.length === 2) {
-        let startDate = this.value[0];
-        let endDate = this.value[1];
+    setRangeDate(selectedDates) {
+      if (isArray(selectedDates) && selectedDates.length === 2) {
+        let startDate = selectedDates[0];
+        let endDate = selectedDates[1];
         this.currentValue = (startDate === endDate)
           ? startDate
           : `${startDate} to ${endDate}`;

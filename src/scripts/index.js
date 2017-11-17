@@ -73,6 +73,7 @@ import UiSelect from './components/form/select';
 import UiAutocomplete from './components/form/autocomplete';
 import UiDatepicker from './components/form/datepicker';
 import UiFileupload from './components/form/fileupload';
+import UiRangepicker from './components/form/rangepicker';
 /**
  * Data
  */
@@ -156,6 +157,7 @@ const components = {
   UiAutocomplete,
   UiDatepicker,
   UiFileupload,
+  UiRangepicker,
   // Data
   UiCard,
   UiCardTitle,
@@ -256,6 +258,7 @@ export {
   UiAutocomplete,
   UiDatepicker,
   UiFileupload,
+  UiRangepicker,
   // Data
   UiCard,
   UiCardTitle,

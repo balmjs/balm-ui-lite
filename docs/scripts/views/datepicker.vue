@@ -77,7 +77,7 @@ export default {
       config2: {
         enableTime: true
       },
-      date2: '',
+      date2: '2017-11-11 11:11',
       config3: {
         mode: 'range',
         allowInput: true
@@ -86,7 +86,7 @@ export default {
       config4: {
         mode: 'multiple'
       },
-      date4: ['2017-11-07', '2017-11-09', '2017-11-11']
+      date4: ['2017-11-05', '2017-11-15', '2017-11-25']
     };
   },
   methods: {
