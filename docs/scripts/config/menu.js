@@ -8,7 +8,8 @@ const QUICKSTART = [
 const FOUNDATION = [
   'helpers',
   'mixins',
-  'plugins'
+  'plugins',
+  'notify'
 ];
 
 const COMPONENTS = {

@@ -7,6 +7,7 @@
 - alert
 - confirm
 - toast
+- notify [(click here)](#/notify)
 
 ---
 

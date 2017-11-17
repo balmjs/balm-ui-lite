@@ -10,7 +10,8 @@
   {
     "helpers": "Helpers",
     "mixins": "Mixins",
-    "plugins": "Plugins"
+    "plugins": "Plugins",
+    "notify": "Notify"
   },
   "components":
   {

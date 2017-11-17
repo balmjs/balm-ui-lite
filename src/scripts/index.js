@@ -108,6 +108,7 @@ import event from './plugins/event';
 import alert from './plugins/alert';
 import confirm from './plugins/confirm';
 import toast from './plugins/toast';
+import notify from './plugins/notify';
 
 const helpers = Object.assign({}, BalmUI_Helpers);
 const mixins = Object.assign({}, BalmUI_Mixins);
@@ -187,7 +188,8 @@ const plugins = {
   event,
   alert,
   confirm,
-  toast
+  toast,
+  notify
 };
 
 const registers = {

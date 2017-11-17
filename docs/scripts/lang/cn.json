@@ -10,7 +10,8 @@
   {
     "helpers": "辅助方法",
     "mixins": "混合",
-    "plugins": "插件"
+    "plugins": "插件",
+    "notify": "通知"
   },
   "components":
   {
