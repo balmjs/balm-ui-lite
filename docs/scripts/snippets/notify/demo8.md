@@ -27,7 +27,7 @@ export default {
     }
   },
   created () {
-    this.$notify.addBtnHandler('like', this.like);
+    this.$notify.addButtonHandler('like', this.like);
   }
 }
 ```

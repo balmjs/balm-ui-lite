@@ -1,12 +1,12 @@
-const yes = true;
-const no = false;
+const YES = true;
+const NO = false;
 
 const getType = (o) => ({}).toString.call(o).replace(/\[object\s(.*)]/, '$1').toLowerCase();
 
 const template = `<div class="mdl-notify" v-if="open">
   <transition-group class="mdl-notify__list" :name="transitionName" tag="div">
-    <div :class="['mdl-notify__item', notify.className, notify.type + '-type']" 
-    v-for="(notify, index) in notifies" 
+    <div :class="['mdl-notify__item', notify.className, notify.type + '-type']"
+    v-for="(notify, index) in notifies"
     :key="notify.id">
       <div class="mdl-notify__container">
         <div class="avatar" v-if="notify.avatar"><span :style="$_setBackgroundImage(notify.avatar)"></span></div>
@@ -14,11 +14,11 @@ const template = `<div class="mdl-notify" v-if="open">
           <div class="title" v-if="notify.title">{{ notify.title }}</div>
           <div class="content">{{ notify.content }}</div>
         </div>
-        <div class="mdl-notify__buttons" 
+        <div class="mdl-notify__buttons"
              v-if="notify.buttons && notify.buttons.length">
-          <div :class="['btn-item', btn.className]" 
-               v-for="(btn, index) in notify.buttons" 
-               :key="index" 
+          <div :class="['btn-item', btn.className]"
+               v-for="(btn, index) in notify.buttons"
+               :key="index"
                @click="$_buttonHandler(btn, notify)">{{ btn.text }}</div>
         </div>
       </div>
@@ -34,7 +34,6 @@ const template = `<div class="mdl-notify" v-if="open">
 const itemProps = {
   type: 'info',   // 消息类型
   timeout: 5000,  // 自动关闭时间，设置为0则不会关闭
-  hoverStop: yes, // 鼠标移入停止自动关闭计时
   avatar: null,   // 头像
   className: '',  // 自定义css class
   color: null,    // 字体颜色
@@ -45,7 +44,7 @@ const itemProps = {
     className: '',      // 自定义按钮css class
     text: 'Close',      // 按钮文本
     handler: 'close',   // 按钮点击处理方法
-    autoClose: yes       // 点击按钮是否自动关闭 默认: 关闭
+    autoClose: YES       // 点击按钮是否自动关闭 默认: 关闭
   }],
 };
 
@@ -60,9 +59,8 @@ export default {
       el: notifyContainer,
       template,
       data () {
-        const self = this;
         return {
-          open: yes,
+          open: YES,
           progressColor: '#3f51b5',
           transitionName: 'notify-list',
           notifies: [],
@@ -91,7 +89,7 @@ export default {
 
           this.notifies.push(newNotify);
         },
-        addBtnHandler (handlerName = '', func) {
+        addButtonHandler (handlerName = '', fn) {
           let type = getType(handlerName);
 
           let method = ({
@@ -100,10 +98,10 @@ export default {
               this.btnHandlers[name] = method;
             },
             string: () => {
-              if(getType(func) === 'function') {
-                this.btnHandlers[handlerName] = func;
+              if(getType(fn) === 'function') {
+                this.btnHandlers[handlerName] = fn;
               } else {
-                console.error(`[BalmUI]:Plugin $notify added method '${handlerName}' failed. The 2nd argument of method 'addBtnHandler' should be a 'function' type, but received is '${getType(func)}'.`);
+                console.error(`[BalmUI]:Plugin $notify added method '${handlerName}' failed. The 2nd argument of method 'addButtonHandler' should be a 'function' type, but received is '${getType(fn)}'.`);
               }
             },
             array: () => {
@@ -136,7 +134,7 @@ export default {
               handler(notify);
               break;
           }
-          (autoClose !== no) && this.close(notify);
+          (autoClose !== NO) && this.close(notify);
         },
         $_setBackgroundImage (src) {
           return {backgroundImage: `url(${src})`};

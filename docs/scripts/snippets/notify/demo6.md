@@ -27,7 +27,7 @@ export default {
     }
   },
   created () {
-    this.$notify.addBtnHandler('sayHello', this.sayHello);
+    this.$notify.addButtonHandler('sayHello', this.sayHello);
   }
 }
 ```

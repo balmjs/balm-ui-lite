@@ -62,8 +62,8 @@
 
     <div class="divider"></div>
 
-    <h3>$notify.addBtnHandler(handlerName | Object | Array, funcName)</h3>
-    <p>addBtnHandler是一个灵活的方法，它允许你事先将各种函数预设进Notify的btnHandlers集合中，从而使得在添加按钮handler的时候可以使用字符串来映射对应的处理方法。</p>
+    <h3>$notify.addButtonHandler(handlerName | Object | Array, funcName)</h3>
+    <p>addButtonHandler是一个灵活的方法，它允许你事先将各种函数预设进Notify的btnHandlers集合中，从而使得在添加按钮handler的时候可以使用字符串来映射对应的处理方法。</p>
     <h4>提示：当按钮被点击触发处理函数时，不会改变当前函数执行的作用域，同时会把当前的notify对象作为参数传入该函数中。</h4>
     <ui-button colored raised @click.native="$notify.add(options5)">使用字符串映射预设的处理方法</ui-button>
     <ui-markdown :text="code[5]"></ui-markdown>
@@ -156,8 +156,8 @@
     },
     created() {
       this.showCode('notify', 8);
-      this.$notify.addBtnHandler('sayHello', this.sayHello);
-      this.$notify.addBtnHandler('like', this.like);
+      this.$notify.addButtonHandler('sayHello', this.sayHello);
+      this.$notify.addButtonHandler('like', this.like);
     }
 	}
 </script>

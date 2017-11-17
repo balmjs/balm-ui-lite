@@ -2,28 +2,28 @@
 const foo = () => alert('hello');
 const bar = () => alert('BalmUI');
 
-Vue.prototype.$notify.addBtnHandler('foo', foo);
-Vue.prototype.$notify.addBtnHandler('bar', bar);
+Vue.prototype.$notify.addButtonHandler('foo', foo);
+Vue.prototype.$notify.addButtonHandler('bar', bar);
 
 // or
 
-Vue.prototype.$notify.addBtnHandler({
+Vue.prototype.$notify.addButtonHandler({
   name: 'foo',
-  methos: foo
+  method: foo
 });
-Vue.prototype.$notify.addBtnHandler({
+Vue.prototype.$notify.addButtonHandler({
   name: 'bar',
-  methos: bar
+  method: bar
 });
 
 // or
 
-Vue.prototype.$notify.addBtnHandler([{
+Vue.prototype.$notify.addButtonHandler([{
   name: 'foo',
-  methos: foo
+  method: foo
 }, {
   name: 'bar',
-  methos: bar
+  method: bar
 }]);
 
 ```
