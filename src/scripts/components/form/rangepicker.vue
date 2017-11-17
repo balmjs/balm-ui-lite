@@ -37,6 +37,11 @@ export default {
       endDate: ''
     }
   },
+  watch: {
+    model(val) {
+      this.init(val);
+    }
+  },
   mounted() {
     this.init(this.model);
   },
