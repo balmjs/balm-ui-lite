@@ -1,5 +1,17 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
+## 0.5.18 (2017.11.17)
+
+### Components
+
+- add `<ui-rangepicker>`
+
+### Bugfix
+
+- fix `<ui-datepicker>` bug for `range` mode
+
+---
+
 ## 0.5.17 (2017.11.16)
 
 ### Components
