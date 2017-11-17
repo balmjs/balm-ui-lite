@@ -1,10 +1,22 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
+## 0.5.19 (2017.11.17)
+
+### New Plugins
+
+- notify
+
+### Bugfix
+
+- fix `<ui-datepicker>` sync data bug
+
+---
+
 ## 0.5.18 (2017.11.17)
 
-### Components
+### New Components
 
-- add `<ui-rangepicker>`
+- `<ui-rangepicker>`
 
 ### Bugfix
 
