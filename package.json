@@ -39,18 +39,18 @@
     "babel-eslint": "^8.0.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
-    "balm": "^0.10.4",
+    "balm": "^0.10.5",
     "core-js": "^2.5.1",
     "gulp": "^3.9.1",
     "markdown-loader": "^2.0.1",
     "material-design-icons": "^3.0.1",
     "material-design-lite": "^1.3.0",
     "prismjs": "^1.8.4",
-    "vue": "^2.5.3",
+    "vue": "^2.5.6",
     "vue-i18n": "^7.3.2",
     "vue-loader": "^13.5.0",
     "vue-router": "^3.0.1",
-    "vue-template-compiler": "^2.5.3"
+    "vue-template-compiler": "^2.5.6"
   },
   "dependencies": {
     "flatpickr": "^4.1.2"
