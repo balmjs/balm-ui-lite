@@ -1,5 +1,13 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
+## 0.5.20 (2017.11.22)
+
+### Bugfix
+
+- fix `<ui-rangepicker>` reset bug
+
+---
+
 ## 0.5.19 (2017.11.17)
 
 ### New Plugins
