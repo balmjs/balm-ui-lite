@@ -1,0 +1,29 @@
+.mdl-rangepicker-container {
+  display: flex;
+  .mdl-tabs {
+    width: auto;
+    margin-right: 10px;
+    .mdl-tabs__tab.is-active {
+      color: white;
+      background: black;
+      &::after {
+        background: none;
+      }
+    }
+  }
+  .mdl-tabs__tab-bar {
+    height: 40px;
+
+    border: 1px solid;
+  }
+  .mdl-tabs__tab {
+    line-height: 40px;
+
+    height: 40px;
+
+    border-right: 1px solid;
+    &:last-child {
+      border-right: 0;
+    }
+  }
+}

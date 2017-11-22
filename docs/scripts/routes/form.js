@@ -8,6 +8,7 @@ const Select = () => import('../views/select');
 const Autocomplete = () => import('../views/autocomplete');
 const Datepicker = () => import('../views/datepicker');
 const Fileupload = () => import('../views/fileupload');
+const Rangepicker = () => import('../views/rangepicker');
 
 const formRoutes = [{
   path: '/slider',
@@ -96,6 +97,15 @@ const formRoutes = [{
   component: Fileupload,
   meta: {
     title: 'BalmUI - Fileupload',
+    keywords: '',
+    description: ''
+  }
+}, {
+  path: '/rangepicker',
+  name: 'rangepicker',
+  component: Rangepicker,
+  meta: {
+    title: 'BalmUI - Rangepicker',
     keywords: '',
     description: ''
   }

@@ -56,9 +56,14 @@ export default {
   },
   methods: {
     init(selectedDates) {
-      if (isArray(selectedDates) && selectedDates.length === 2) {
-        this.startDate = selectedDates[0];
-        this.endDate = selectedDates[1];
+      if (isArray(selectedDates)) {
+        if (selectedDates.length === 2) {
+          this.startDate = selectedDates[0];
+          this.endDate = selectedDates[1];
+        } else {
+          this.startDate = '';
+          this.endDate = '';
+        }
       }
     },
     handleChange(field, value) {
