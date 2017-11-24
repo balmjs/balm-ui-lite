@@ -6,7 +6,6 @@ const options = {
   timeout: 5000,  // 自动关闭时间，设置为0则不会关闭
   avatar: null,   // 头像
   className: '',  // 自定义css class
-  color: null,    // 字体颜色
   title: '',      // 标题
   content: '',    // 内容
   progressColor: '',    // 单独设置当前的进度条颜色
