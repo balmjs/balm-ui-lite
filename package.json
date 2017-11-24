@@ -1,6 +1,6 @@
 {
   "name": "balm-ui-lite",
-  "version": "0.5.20",
+  "version": "0.5.21",
   "description": "Material Design Lite + Vue",
   "homepage": "http://balmjs.com/ui-vue-lite/",
   "author": [
@@ -39,18 +39,19 @@
     "babel-eslint": "^8.0.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
-    "balm": "^0.10.5",
+    "balm": "^0.11.0",
     "core-js": "^2.5.1",
     "gulp": "^3.9.1",
     "markdown-loader": "^2.0.1",
     "material-design-icons": "^3.0.1",
     "material-design-lite": "^1.3.0",
     "prismjs": "^1.8.4",
-    "vue": "^2.5.6",
+    "vue": "^2.5.8",
     "vue-i18n": "^7.3.2",
     "vue-loader": "^13.5.0",
+    "vue-meta": "^1.3.1",
     "vue-router": "^3.0.1",
-    "vue-template-compiler": "^2.5.6"
+    "vue-template-compiler": "^2.5.8"
   },
   "dependencies": {
     "flatpickr": "^4.1.2"

@@ -1,5 +1,24 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
+## 0.5.21 (2017.11.24)
+
+### Components
+
+- `<ui-pagination>` add `position` props
+- update `<ui-pagination>` css
+- update `<ui-dialog-title>`: add close button
+
+### Plugins
+
+- remove `raised` props for default buttons in `alert` & `confirm`
+
+### Docs
+
+- notify
+- pagination
+
+---
+
 ## 0.5.20 (2017.11.22)
 
 ### Bugfix

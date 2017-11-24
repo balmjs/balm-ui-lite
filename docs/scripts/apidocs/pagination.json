@@ -52,6 +52,11 @@
     "default": "",
     "description": ""
   }, {
+    "name": "position",
+    "type": "String",
+    "default": "",
+    "description": "Paging position ('left' or 'right')"
+  }, {
     "name": "mini",
     "type": "Boolean",
     "default": false,

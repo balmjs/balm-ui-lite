@@ -1,5 +1,5 @@
 <template>
-  <div v-if="recordCount" :class="['mdl-pagination', {'mdl-pagination--mini': mini}]">
+  <div v-if="recordCount" :class="className">
     <div v-if="showRecord" class="mdl-pagination--record">
       <slot :recordCount="recordCount"
             :pageSize="pageSize"
@@ -11,11 +11,11 @@
               @click="handleClick(currentPage === 1 ? 1 : currentPage - 1)"></span>
       </a>
       <a v-for="(page, index) in pageCount"
-        v-if="!mini && isShow(page)"
-        :key="index"
-        :class="{active: page === currentPage}">
-        <span v-if="showPage(page)" @click="handleClick(page)">{{ page }}</span>
-        <span v-else class="ellipsis">...</span>
+         v-if="!mini && isShow(page)"
+         :key="index"
+         :class="{active: page === currentPage}">
+         <span v-if="showPage(page)" @click="handleClick(page)">{{ page }}</span>
+         <span v-else class="ellipsis">...</span>
       </a>
       <a class="mdl-pagination--paging-next">
         <span v-html="currentNext"
@@ -43,6 +43,8 @@ const DOUBLE_ARROW_LEFT = '&laquo;';
 const DOUBLE_ARROW_RIGHT = '&raquo;';
 const SINGLE_ARROW_LEFT = '&lsaquo;';
 const SINGLE_ARROW_RIGHT = '&rsaquo;';
+const POSITION_LEFT = 'left';
+const POSITION_RIGHT = 'right';
 const EVENT_CHANGE = 'change';
 
 export default {
@@ -91,6 +93,7 @@ export default {
       type: String,
       default: ''
     },
+    position: String,
     mini: {
       type: Boolean,
       default: false
@@ -103,6 +106,21 @@ export default {
     };
   },
   computed: {
+    className() {
+      let result = ['mdl-pagination'];
+
+      if (this.mini) {
+        result.push('mdl-pagination--mini');
+      } else {
+        if (this.showRecord) {
+          result.push(`mdl-pagination--between`);
+        } else if ([POSITION_LEFT, POSITION_RIGHT].indexOf(this.position) > -1) {
+          result.push(`mdl-pagination--${this.position}`);
+        }
+      }
+
+      return result;
+    },
     pageCount() {
       return Math.ceil(this.recordCount / this.pageSize);
     },

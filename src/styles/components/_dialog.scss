@@ -5,6 +5,21 @@
   visibility: hidden;
 }
 
+.mdl-dialog__title {
+  position: relative;
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    cursor: pointer;
+    transition: all .5s;
+    &:hover {
+      transform: rotate(360deg);
+    }
+  }
+}
+
 .mdl-dialog,
 .mdl-dialog__backdrop {
   position: fixed;

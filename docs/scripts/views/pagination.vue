@@ -7,16 +7,16 @@
     <h4>Full paging</h4>
     <div class="snippet-demo">
       <ui-pagination
-        :recordCount="recordCount"
-        :pageSize="pageSize"
+        :record-count="recordCount"
+        :page-size="pageSize"
         :page="page"
-        showRecord
-        showJumper
-        jumperBefore="Goto"
-        jumperAfter="page"
-        jumperButton="Go"
+        show-record
+        show-jumper
+        jumper-before="Goto"
+        jumper-after="page"
+        jumper-button="Go"
         @change="onPage">
-        <template scope-scope="props">
+        <template slot-scope="props">
           Showing {{ props.recordCount }} records,
           <ui-select
             :options="pageSizeList"
@@ -25,7 +25,8 @@
             :model="pageSize"
             @change="onChange('pageSize', $event)">
             {{ props.pageSize }}
-          </ui-select> records / page, {{ props.pageCount }} total pages
+          </ui-select> records / page,
+          {{ props.pageCount }} total pages
         </template>
       </ui-pagination>
     </div>
@@ -34,8 +35,8 @@
     <h4>Mini paging</h4>
     <div class="snippet-demo">
       <ui-pagination
-        :recordCount="recordCount"
-        :pageSize="pageSize"
+        :record-count="recordCount"
+        :page-size="pageSize"
         :page="page"
         mini
         prev="Prev"
@@ -53,6 +54,9 @@ import snippets from '../mixins/snippets';
 
 export default {
   mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - Pagination'
+  },
   data() {
     return {
       recordCount: 100,

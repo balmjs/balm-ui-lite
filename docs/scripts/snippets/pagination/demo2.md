@@ -1,7 +1,7 @@
 ```html
 <ui-pagination
-  :recordCount="recordCount"
-  :pageSize="pageSize"
+  :record-count="recordCount"
+  :page-size="pageSize"
   :page="page"
   mini
   prev="Prev"

@@ -24,16 +24,10 @@ const template =
   <ui-dialog-title v-if="options.title">{{ options.title }}</ui-dialog-title>
   <ui-dialog-content>{{ options.message }}</ui-dialog-content>
   <ui-dialog-actions>
-    <ui-button
-      raised
-      primary
-      @click.native="handleConfirm(true)">
+    <ui-button primary @click.native="handleConfirm(true)">
       {{ options.acceptText }}
     </ui-button>
-    <ui-button
-      raised
-      accent
-      @click.native="handleConfirm(false)">
+    <ui-button accent @click.native="handleConfirm(false)">
       {{ options.cancelText }}
     </ui-button>
   </ui-dialog-actions>

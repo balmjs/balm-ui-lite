@@ -1,14 +1,14 @@
 ```html
 <ui-pagination
-  :recordCount="recordCount"
-  :pageSize="pageSize"
+  :record-count="recordCount"
+  :page-size="pageSize"
   :page="page"
-  showRecord
-  showJumper
-  jumperBefore="Goto"
-  jumperAfter="page"
+  show-record
+  show-jumper
+  jumper-before="Goto"
+  jumper-after="page"
   @change="onPage">
-  <template scope="props">
+  <template slot-scope="props">
     Showing {{ props.recordCount }} records,
     <ui-select
       :value="pageSizeList"
