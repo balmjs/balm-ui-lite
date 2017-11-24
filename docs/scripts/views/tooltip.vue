@@ -50,6 +50,9 @@ import snippets from '../mixins/snippets';
 
 export default {
   mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - Tooltip'
+  },
   created() {
     this.showCode('tooltip', 2);
   }

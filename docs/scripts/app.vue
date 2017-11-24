@@ -52,6 +52,9 @@ import {lang} from './config/lang';
 import menu from './config/menu';
 
 export default {
+  metaInfo: {
+    title: 'BalmUI Lite'
+  },
   data() {
     return {
       lang,

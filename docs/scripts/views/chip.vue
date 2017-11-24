@@ -65,6 +65,9 @@ import snippets from '../mixins/snippets';
 
 export default {
   mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - Chip'
+  },
   data() {
     return {
       avatar: require('../../images/assets/demos/user.jpg')

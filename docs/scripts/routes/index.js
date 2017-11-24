@@ -12,12 +12,7 @@ import Test from '../views/test';
 const baseRoutes = [{
     path: '/',
     name: 'home',
-    component: Home,
-    meta: {
-      title: 'BalmUI - Home',
-      keywords: '',
-      description: ''
-    }
+    component: Home
   }, {
     path: '/test',
     name: 'test',

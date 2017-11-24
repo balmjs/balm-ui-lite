@@ -137,6 +137,9 @@ import snippets from '../mixins/snippets';
 
 export default {
   mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - Textfield'
+  },
   data() {
     return {
       text1: '',

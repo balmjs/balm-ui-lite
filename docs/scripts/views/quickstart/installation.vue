@@ -8,6 +8,9 @@
 import docs from '../../docs/installation.md';
 
 export default {
+  metaInfo: {
+    titleTemplate: '%s - Installation'
+  },
   data() {
     return {
       docs: docs

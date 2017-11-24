@@ -68,6 +68,9 @@ import snippets from '../mixins/snippets';
 
 export default {
   mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - Divider'
+  },
   created() {
     this.showCode('divider', 3);
   }

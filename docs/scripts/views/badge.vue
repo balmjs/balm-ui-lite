@@ -54,6 +54,9 @@ import snippets from '../mixins/snippets';
 
 export default {
   mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - Badge'
+  },
   created() {
     this.showCode('badge', 2);
   }

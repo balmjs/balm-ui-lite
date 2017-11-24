@@ -13,102 +13,47 @@ const Rangepicker = () => import('../views/rangepicker');
 const formRoutes = [{
   path: '/slider',
   name: 'slider',
-  component: Slider,
-  meta: {
-    title: 'BalmUI - Slider',
-    keywords: '',
-    description: ''
-  }
+  component: Slider
 }, {
   path: '/checkbox',
   name: 'checkbox',
-  component: Checkbox,
-  meta: {
-    title: 'BalmUI - Checkbox',
-    keywords: '',
-    description: ''
-  }
+  component: Checkbox
 }, {
   path: '/radio',
   name: 'radio',
-  component: Radio,
-  meta: {
-    title: 'BalmUI - Radio button',
-    keywords: '',
-    description: ''
-  }
+  component: Radio
 }, {
   path: '/icon-toggle',
   name: 'icon-toggle',
-  component: IconToggle,
-  meta: {
-    title: 'BalmUI - Icon toggle',
-    keywords: '',
-    description: ''
-  }
+  component: IconToggle
 }, {
   path: '/switch',
   name: 'switch',
-  component: Switch,
-  meta: {
-    title: 'BalmUI - Switch',
-    keywords: '',
-    description: ''
-  }
+  component: Switch
 }, {
   path: '/textfield',
   name: 'textfield',
-  component: Textfield,
-  meta: {
-    title: 'BalmUI - Textfield',
-    keywords: '',
-    description: ''
-  }
+  component: Textfield
 }, {
   path: '/select',
   name: 'select',
-  component: Select,
-  meta: {
-    title: 'BalmUI - Select',
-    keywords: '',
-    description: ''
-  }
+  component: Select
 }, {
   path: '/autocomplete',
   name: 'autocomplete',
-  component: Autocomplete,
-  meta: {
-    title: 'BalmUI - Autocomplete',
-    keywords: '',
-    description: ''
-  }
+  component: Autocomplete
 }, {
   path: '/datepicker',
   name: 'datepicker',
-  component: Datepicker,
-  meta: {
-    title: 'BalmUI - Datepicker',
-    keywords: '',
-    description: ''
-  }
+  component: Datepicker
 }, {
   path: '/fileupload',
   name: 'fileupload',
-  component: Fileupload,
-  meta: {
-    title: 'BalmUI - Fileupload',
-    keywords: '',
-    description: ''
-  }
+  component: Fileupload
 }, {
   path: '/rangepicker',
   name: 'rangepicker',
-  component: Rangepicker,
-  meta: {
-    title: 'BalmUI - Rangepicker',
-    keywords: '',
-    description: ''
-  }
+  component: Rangepicker
 }];
 
 export default formRoutes;

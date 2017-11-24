@@ -29,6 +29,9 @@ import snippets from '../mixins/snippets';
 
 export default {
   mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - FileUpload'
+  },
   methods: {
     onChange(files, event) {
       console.log(files, event);

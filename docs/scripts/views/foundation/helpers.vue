@@ -8,6 +8,9 @@
 import docs from '../../docs/helpers.md';
 
 export default {
+  metaInfo: {
+    titleTemplate: '%s - Helpers'
+  },
   data() {
     return {
       docs: docs

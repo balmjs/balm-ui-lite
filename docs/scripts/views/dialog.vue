@@ -71,6 +71,9 @@ import snippets from '../mixins/snippets';
 
 export default {
   mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - Dialog'
+  },
   data() {
     return {
       show1: false,

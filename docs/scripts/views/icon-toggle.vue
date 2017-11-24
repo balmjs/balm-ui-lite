@@ -31,6 +31,9 @@ import snippets from '../mixins/snippets';
 
 export default {
   mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - IconToggle'
+  },
   data() {
     return {
       icons: []

@@ -350,6 +350,9 @@ import snippets from '../mixins/snippets';
 
 export default {
   mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - Layout'
+  },
   data() {
     return {
       menu: ['Tab1', 'Tab2', 'Tab3'],

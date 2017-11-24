@@ -8,6 +8,9 @@
 import docs from '../docs/intro.md';
 
 export default {
+  metaInfo: {
+    titleTemplate: '%s - Home'
+  },
   data() {
     return {
       docs: docs

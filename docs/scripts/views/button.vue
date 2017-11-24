@@ -179,6 +179,9 @@ import snippets from '../mixins/snippets';
 
 export default {
   mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - Button'
+  },
   created() {
     this.showCode('button', 9);
   }

@@ -6,39 +6,19 @@ const Notify = () => import('../views/foundation/notify');
 const foundationRoutes = [{
   path: '/helpers',
   name: 'helpers',
-  component: Helpers,
-  meta: {
-    title: 'BalmUI - Helpers',
-    keywords: '',
-    description: ''
-  }
+  component: Helpers
 }, {
   path: '/mixins',
   name: 'mixins',
-  component: Mixins,
-  meta: {
-    title: 'BalmUI - Mixins',
-    keywords: '',
-    description: ''
-  }
+  component: Mixins
 }, {
   path: '/plugins',
   name: 'plugins',
-  component: Plugins,
-  meta: {
-    title: 'BalmUI - Plugins',
-    keywords: '',
-    description: ''
-  }
+  component: Plugins
 }, {
   path: '/notify',
   name: 'notify',
-  component: Notify,
-  meta: {
-    title: 'BalmUI - notify',
-    keywords: '',
-    description: ''
-  }
+  component: Notify
 }];
 
 export default foundationRoutes;

@@ -8,6 +8,9 @@
 import docs from '../../docs/requirement.md';
 
 export default {
+  metaInfo: {
+    titleTemplate: '%s - Requirement'
+  },
   data() {
     return {
       docs: docs

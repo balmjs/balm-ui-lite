@@ -43,6 +43,9 @@ import snippets from '../mixins/snippets';
 
 export default {
   mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - Loading'
+  },
   created() {
     this.showCode('loading', 2);
   }

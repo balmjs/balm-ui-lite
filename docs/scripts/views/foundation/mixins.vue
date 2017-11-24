@@ -8,6 +8,9 @@
 import docs from '../../docs/mixins.md';
 
 export default {
+  metaInfo: {
+    titleTemplate: '%s - Mixins'
+  },
   data() {
     return {
       docs: docs

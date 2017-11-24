@@ -37,6 +37,9 @@ import snippets from '../mixins/snippets';
 
 export default {
   mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - Menu'
+  },
   data() {
     return {
       data: [{

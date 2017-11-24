@@ -1,6 +1,7 @@
 import './polyfill';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import VueMeta from 'vue-meta';
 import VueI18n from 'vue-i18n';
 import axios from 'axios';
 import BalmUI from '../../src/scripts/index'; // 'balm-ui-lite'
@@ -20,6 +21,7 @@ const DEBUG = process.env.NODE_ENV !== 'production';
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
+Vue.use(VueMeta);
 Vue.use(VueI18n);
 Vue.use(BalmUI);
 Vue.use(BalmUI.plugins.event);
@@ -56,10 +58,6 @@ Vue.prototype.$domain = DEBUG ? '' : '/ui-vue-lite';
 
 const router = new VueRouter({
   routes
-});
-
-router.afterEach((to, from) => {
-  document.querySelector('title').innerHTML = to.meta.title;
 });
 
 // Create VueI18n instance with options

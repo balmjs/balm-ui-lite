@@ -6,39 +6,19 @@ const KillIE = () => import('../views/quickstart/kill-ie');
 const foundationRoutes = [{
   path: '/requirement',
   name: 'requirement',
-  component: Requirement,
-  meta: {
-    title: 'BalmUI - Requirement',
-    keywords: '',
-    description: ''
-  }
+  component: Requirement
 }, {
   path: '/installation',
   name: 'installation',
-  component: Installation,
-  meta: {
-    title: 'BalmUI - Installation',
-    keywords: '',
-    description: ''
-  }
+  component: Installation
 }, {
   path: '/advanced',
   name: 'advanced',
-  component: Advanced,
-  meta: {
-    title: 'BalmUI - Advanced',
-    keywords: '',
-    description: ''
-  }
+  component: Advanced
 }, {
   path: '/kill-ie',
   name: 'kill-ie',
-  component: KillIE,
-  meta: {
-    title: 'BalmUI - Kill IE',
-    keywords: '',
-    description: ''
-  }
+  component: KillIE
 }];
 
 export default foundationRoutes;

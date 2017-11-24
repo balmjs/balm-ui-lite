@@ -105,6 +105,7 @@
     <div class="divider"></div>
   </div>
 </template>
+
 <script>
   import snippets from '../../mixins/snippets';
 
@@ -133,6 +134,9 @@
 
 	export default {
 		mixins: [snippets],
+    metaInfo: {
+      titleTemplate: '%s - Notify'
+    },
 		data () {
 			return {
 				options1,
@@ -161,6 +165,7 @@
     }
 	}
 </script>
+
 <style scoped>
   h2.line {
     border-bottom: 1px solid #ddd;

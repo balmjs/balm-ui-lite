@@ -117,6 +117,9 @@ import snippets from '../mixins/snippets';
 
 export default {
   mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - Card'
+  },
   created() {
     this.showCode('card', 3);
   }

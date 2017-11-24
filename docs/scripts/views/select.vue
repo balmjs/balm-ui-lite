@@ -104,6 +104,9 @@ const CITIES = [
 
 export default {
   mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - Select'
+  },
   data() {
     return {
       edit: false,

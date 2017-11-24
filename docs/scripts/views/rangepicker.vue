@@ -49,6 +49,9 @@ const TODAY = date('Y-m-d', time());
 
 export default {
   mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - RangePicker'
+  },
   data() {
     return {
       DIFF_TABS,

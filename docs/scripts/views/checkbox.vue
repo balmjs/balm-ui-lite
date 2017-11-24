@@ -95,6 +95,9 @@ import snippets from '../mixins/snippets';
 
 export default {
   mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - Checkbox'
+  },
   data() {
     return {
       option: false,

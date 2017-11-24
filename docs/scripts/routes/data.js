@@ -5,30 +5,15 @@ const Pagination = () => import('../views/pagination');
 const dataRoutes = [{
   path: '/list',
   name: 'list',
-  component: List,
-  meta: {
-    title: 'BalmUI - List',
-    keywords: '',
-    description: ''
-  }
+  component: List
 }, {
   path: '/table',
   name: 'table',
-  component: Table,
-  meta: {
-    title: 'BalmUI - Table',
-    keywords: '',
-    description: ''
-  }
+  component: Table
 }, {
   path: '/pagination',
   name: 'pagination',
-  component: Pagination,
-  meta: {
-    title: 'BalmUI - Pagination',
-    keywords: '',
-    description: ''
-  }
+  component: Pagination
 }];
 
 export default dataRoutes;

@@ -8,6 +8,9 @@
 import docs from '../../docs/plugins.md';
 
 export default {
+  metaInfo: {
+    titleTemplate: '%s - Plugins'
+  },
   data() {
     return {
       docs: docs

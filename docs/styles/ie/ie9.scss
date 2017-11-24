@@ -1,6 +1,6 @@
 @import '../global/mixins';
-@import './grid';
-@import './pagination';
+@import 'grid';
+@import 'pagination';
 // fix layout
 .mdl-layout__drawer {
   height: auto;

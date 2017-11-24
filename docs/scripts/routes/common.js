@@ -10,75 +10,35 @@ const Divider = () => import('../views/divider');
 const commonRoutes = [{
   path: '/badge',
   name: 'badge',
-  component: Badge,
-  meta: {
-    title: 'BalmUI - Badge',
-    keywords: '',
-    description: ''
-  }
+  component: Badge
 }, {
   path: '/button',
   name: 'button',
-  component: Button,
-  meta: {
-    title: 'BalmUI - Button',
-    keywords: '',
-    description: ''
-  }
+  component: Button
 }, {
   path: '/card',
   name: 'card',
-  component: Card,
-  meta: {
-    title: 'BalmUI - Card',
-    keywords: '',
-    description: ''
-  }
+  component: Card
 }, {
   path: '/chip',
   name: 'chip',
-  component: Chip,
-  meta: {
-    title: 'BalmUI - Chip',
-    keywords: '',
-    description: ''
-  }
+  component: Chip
 }, {
   path: '/loading',
   name: 'loading',
-  component: Loading,
-  meta: {
-    title: 'BalmUI - Loading',
-    keywords: '',
-    description: ''
-  }
+  component: Loading
 }, {
   path: '/menu',
   name: 'menu',
-  component: Menu,
-  meta: {
-    title: 'BalmUI - Menu',
-    keywords: '',
-    description: ''
-  }
+  component: Menu
 }, {
   path: '/tooltip',
   name: 'tooltip',
-  component: Tooltip,
-  meta: {
-    title: 'BalmUI - Tooltip',
-    keywords: '',
-    description: ''
-  }
+  component: Tooltip
 }, {
   path: '/divider',
   name: 'divider',
-  component: Divider,
-  meta: {
-    title: 'BalmUI - Divider',
-    keywords: '',
-    description: ''
-  }
+  component: Divider
 }];
 
 export default commonRoutes;
