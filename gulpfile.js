@@ -1,4 +1,5 @@
 var balm = require('balm');
+var path = require('path');
 
 var useDefault = !process.argv.includes('--mdl');
 var buildDocs = process.argv.includes('--docs');
@@ -46,7 +47,10 @@ balm.config = {
       flatpickrCss: 'flatpickr/dist/flatpickr.min.css',
       flatpickrLangZh: 'flatpickr/dist/l10n/zh.js'
     },
-    eslint: true
+    eslint: true,
+    include: useDocs ? [
+      path.resolve('./src/scripts')
+    ] : []
   },
   extras: {
     excludes: ['index.js']

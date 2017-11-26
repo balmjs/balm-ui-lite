@@ -16,8 +16,7 @@ const COMPONENTS = {
   layout: [
     'layout',
     'grid',
-    'tabs',
-    // 'footer'
+    'tabs'
   ],
   common: [
     'badge',
