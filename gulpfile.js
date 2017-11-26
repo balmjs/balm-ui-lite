@@ -48,7 +48,12 @@ balm.config = {
       flatpickrLangZh: 'flatpickr/dist/l10n/zh.js'
     },
     eslint: true,
-    include: useDocs ? [
+    options: {
+      compress: {
+        drop_console: false
+      }
+    },
+    include: buildDocs ? [
       path.resolve('./src/scripts')
     ] : []
   },
