@@ -20,7 +20,7 @@ export default {
     // state
     active: {
       type: Number,
-      default: 0
+      default: -1
     },
     // ui attributes
     fixedDrawer: {
@@ -51,6 +51,12 @@ export default {
       type: Boolean,
       default: false
     }
+  },
+  data() {
+    return {
+      tabs: null,
+      panels: null
+    };
   },
   computed: {
     className() {
@@ -84,15 +90,19 @@ export default {
   },
   watch: {
     active(val) {
-      this.activeTab(val);
+      if (this.tabs && this.panels) {
+        this.activeTab(val);
+      }
     }
   },
   mounted() {
     this.$mdl.upgradeElements(this.$el);
 
-    this.tabs = this.$el.querySelectorAll(`.${CLASSNAME_TAB}`);
-    this.panels = this.$el.querySelectorAll(`.${CLASSNAME_PANEL}`);
-    this.activeTab();
+    if (this.active > -1) {
+      this.tabs = this.$el.querySelectorAll(`.${CLASSNAME_TAB}`);
+      this.panels = this.$el.querySelectorAll(`.${CLASSNAME_PANEL}`);
+      this.activeTab();
+    }
   }
 };
 </script>
