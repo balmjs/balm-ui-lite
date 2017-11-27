@@ -98,6 +98,16 @@
         overflow: hidden;
       }
     }
+
+    &.with-avatar, &.with-buttons {
+      .body {
+        width: calc(100% - 64px);
+      }
+    }
+
+    &.with-avatar.with-buttons .body {
+      width: calc(100% - 128px);
+    }
   }
 
   &__buttons {

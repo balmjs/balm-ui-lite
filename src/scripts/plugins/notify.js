@@ -5,7 +5,14 @@ const getType = (o) => ({}).toString.call(o).replace(/\[object\s(.*)]/, '$1').to
 
 const template = `<div class="mdl-notify" v-if="open">
   <transition-group class="mdl-notify__list" :name="transitionName" tag="div">
-    <div :class="['mdl-notify__item', notify.className, notify.type + '-type']"
+    <div :class="[
+    'mdl-notify__item', 
+    notify.className, 
+    notify.type + '-type', 
+    {
+      'with-avatar': notify.avatar,
+      'with-buttons': notify.buttons && notify.buttons.length
+    }]"
     v-for="(notify, index) in notifies"
     :key="notify.id">
       <div class="mdl-notify__container">
