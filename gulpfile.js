@@ -53,7 +53,7 @@ balm.config = {
         drop_console: false
       }
     },
-    include: buildDocs ? [
+    include: useDocs ? [
       path.resolve('./src/scripts')
     ] : []
   },
