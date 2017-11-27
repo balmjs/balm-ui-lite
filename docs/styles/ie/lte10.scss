@@ -1,5 +1,6 @@
 @import '../global/mixins';
 @import 'list';
+@import 'checkbox';
 
 /**
  * IE9 and IE10 rule sets go here
@@ -7,4 +8,5 @@
 
 @media screen and (min-width:0\0) {
   @include fix-list;
+  @include fix-checkbox;
 }

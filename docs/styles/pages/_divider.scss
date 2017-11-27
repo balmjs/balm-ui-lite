@@ -1,0 +1,33 @@
+.page--divider {
+  .w320 {
+    width: 320px;
+  }
+
+  .w320.colored {
+    color: rgb(255, 64, 129);
+  }
+
+  .demo-divider-container {
+    display: flex;
+
+    width: 280px;
+    height: 100px;
+    padding: 10px;
+
+    border: 1px solid currentColor;
+
+    justify-content: space-between;
+  }
+
+  .demo-divider-container .a,
+  .demo-divider-container .b {
+    width: 80px;
+    height: 80px;
+
+    background-color: rgb(63, 81, 181);
+  }
+
+  .demo-divider-container .b {
+    background-color: rgb(255, 64, 129);
+  }
+}

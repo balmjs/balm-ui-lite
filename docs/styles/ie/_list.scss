@@ -1,4 +1,5 @@
 @mixin fix-list {
+  // Fix Two line
   .mdl-list__item {
     .mdl-list__item-secondary-content {
       height: 100%;
@@ -7,6 +8,7 @@
       }
     }
   }
+  // Fix Three line
   .mdl-list__item--three-line {
     display: block;
     @include clearfix();

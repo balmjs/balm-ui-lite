@@ -76,32 +76,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.w320 {
-  width: 320px;
-}
-
-.w320.colored {
-  color: rgb(255,64,129);
-}
-
-.demo-divider-container {
-  height: 100px;
-  width: 280px;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid currentColor;
-}
-
-.demo-divider-container .a, .demo-divider-container .b {
-  height: 80px;
-  width: 80px;
-  background-color: rgb(63,81,181);
-}
-
-.demo-divider-container .b {
-  background-color: rgb(255,64,129);
-}
-</style>
