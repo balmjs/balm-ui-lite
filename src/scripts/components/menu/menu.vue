@@ -3,7 +3,7 @@
     <slot>
       <ui-menuitem v-for="(item, index) in currentMenu"
         :key="index"
-        :item="isObject(item) ? item : {}"
+        :item="(getType(item) === 'object') ? item : {}"
         @click.native="handleItem(item)">
       </ui-menuitem>
     </slot>
@@ -14,7 +14,7 @@
 import mdlMixin from '../../mixins/mdl';
 import '../../../material-design-lite/menu/menu';
 import '../../../material-design-lite/ripple/ripple';
-import {isString, isObject} from '../../helpers';
+import getType from '../../helpers/typeof';
 import UiMenuItem from './menuitem';
 
 const POSITIONS = ['top-left', 'top-right', 'bottom-left', 'bottom-right'];
@@ -55,8 +55,7 @@ export default {
   },
   data() {
     return {
-      isString,
-      isObject,
+      getType,
       currentMenu: this.menu
     };
   },
@@ -70,7 +69,7 @@ export default {
       };
     },
     positionClassName() {
-      let currentPositon = isString(this.position)
+      let currentPositon = (getType(this.position) === 'string')
         ? POSITIONS.indexOf(this.position) + 1
         : this.position;
 

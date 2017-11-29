@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import {isArray} from '../../helpers';
+import getType from '../../helpers/typeof';
 import UiDatepicker from './datepicker';
 
 const EVENT_CHANGE = 'change';
@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     init(selectedDates) {
-      if (isArray(selectedDates)) {
+      if (getType(selectedDates) === 'array') {
         if (selectedDates.length === 2) {
           this.startDate = selectedDates[0];
           this.endDate = selectedDates[1];

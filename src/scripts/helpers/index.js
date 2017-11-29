@@ -1,6 +1,5 @@
 // BalmUI helpers
-
-const getType = any => Object.prototype.toString.call(any).replace(/\[object\s(.*)\]/, '$1').toLowerCase();
+import getType from './typeof';
 
 // Boolean, null, undefined, Number, String, and Symbol
 
@@ -70,12 +69,6 @@ const detectIE = () => {
   return false;
 };
 
-const generateRandomAlphaNum = len => {
-  let rdmString = '';
-  for (; rdmString.length < len; rdmString += Math.random().toString(36).substr(2));
-  return rdmString.substr(0, len);
-};
-
 export {
   getType,
   isBoolean,
@@ -88,6 +81,5 @@ export {
   isArray,
   isFunction,
   jsonEqual,
-  detectIE,
-  generateRandomAlphaNum
+  detectIE
 };

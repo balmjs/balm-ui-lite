@@ -3,10 +3,10 @@
 </template>
 
 <script>
-import mdlMixin from '../mixins/mdl';
-import '../../material-design-lite/spinner/spinner';
-import '../../material-design-lite/progress/progress';
-import {isString} from '../helpers';
+import mdlMixin from '../../mixins/mdl';
+import '../../../material-design-lite/spinner/spinner';
+import '../../../material-design-lite/progress/progress';
+import getType from '../../helpers/typeof';
 
 const TYPES = ['spinner', 'progress'];
 const TYPE_SPINNER  = 0; // Spinner
@@ -44,7 +44,9 @@ export default {
     className() {
       let className = {};
 
-      let type = isString(this.type) ? TYPES.indexOf(this.type) : this.type;
+      let type = (getType(this.type) === 'string')
+        ? TYPES.indexOf(this.type)
+        : this.type;
 
       switch (type) {
         case TYPE_SPINNER:
@@ -68,7 +70,9 @@ export default {
       return className;
     },
     isSpinner() {
-      let type = isString(this.type) ? TYPES[TYPE_SPINNER] : TYPE_SPINNER;
+      let type = (getType(this.type) === 'string')
+        ? TYPES[TYPE_SPINNER]
+        : TYPE_SPINNER;
       return this.type === type;
     }
   },

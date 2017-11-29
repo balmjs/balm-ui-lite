@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import UiIcon from '../icon';
+import UiIcon from '../common/icon';
 
 export default {
   name: 'ui-dialog-title',

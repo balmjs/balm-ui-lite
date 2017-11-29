@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import mdlMixin from '../mixins/mdl';
-import '../../material-design-lite/snackbar/snackbar';
-import {isString} from '../helpers';
+import mdlMixin from '../../mixins/mdl';
+import '../../../material-design-lite/snackbar/snackbar';
+import getType from '../../helpers/typeof';
 
 const TYPES = ['toast', 'snackbar'];
 const TYPE_TOAST = 0;
@@ -59,7 +59,9 @@ export default {
       }
     },
     isSnackbar() {
-      let type = isString(this.type) ? TYPES[TYPE_SNACKBAR] : TYPE_SNACKBAR;
+      let type = (getType(this.type) === 'string')
+        ? TYPES[TYPE_SNACKBAR]
+        : TYPE_SNACKBAR;
       return this.type === type;
     }
   },

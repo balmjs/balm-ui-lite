@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import UiButton from '../button';
+import UiButton from '../common/button';
 
 export default {
   name: 'ui-dialog-actions',

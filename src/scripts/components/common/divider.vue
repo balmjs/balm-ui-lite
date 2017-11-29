@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import {isNumber, isString} from '../helpers';
+import getType from '../../helpers/typeof';
 
 const typeArr = ['horizontal', 'vertical'];
 const typeObj = {
@@ -27,11 +27,11 @@ export default {
     className() {
       let type = this.type;
 
-      if(isNumber(type)){
+      if(getType(type) === 'number'){
         return typeArr[type] || 'horizontal';
       }
 
-      if (isString(type)) {
+      if (getType(type) === 'string') {
         if (type.length === 1) {
           return typeObj[type.toLowerCase()] || '';
         }

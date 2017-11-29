@@ -1,9 +1,9 @@
+import getType from '../helpers/typeof';
 import UiDialog from '../components/dialog/dialog';
 import UiDialogTitle from '../components/dialog/dialog-title';
 import UiDialogContent from '../components/dialog/dialog-content';
 import UiDialogActions from '../components/dialog/dialog-actions';
-import UiButton from '../components/button';
-import {isString, isObject, isFunction} from '../helpers';
+import UiButton from '../components/common/button';
 
 const DEFAULT_OPTIONS = {
   className: '',
@@ -58,7 +58,7 @@ export default {
             },
             handleClick() {
               this.handleClose();
-              if (isFunction(this.options.callback)) {
+              if (getType(this.options.callback) === 'function') {
                 this.options.callback();
               } else {
                 resolve();
@@ -66,9 +66,9 @@ export default {
             }
           },
           created() {
-            if (isString(options)) {
+            if (getType(options) === 'string') {
               this.options.message = options;
-            } else if (isObject(options)) {
+            } else if (getType(options) === 'object') {
               this.options = Object.assign(DEFAULT_OPTIONS, options);
             }
           }

@@ -25,7 +25,7 @@
 <script>
 import Flatpickr from 'flatpickr';
 import UiTextfield from './textfield';
-import {isArray} from '../../helpers';
+import getType from '../../helpers/typeof';
 
 const MODE_SINGLE = 'single';
 const MODE_MULTIPLE = 'multiple';
@@ -155,7 +155,7 @@ export default {
       }
     },
     setRangeDate(selectedDates) {
-      if (isArray(selectedDates) && selectedDates.length === 2) {
+      if (getType(selectedDates) === 'array' && selectedDates.length === 2) {
         let startDate = selectedDates[0];
         let endDate = selectedDates[1];
         this.currentValue = (startDate === endDate)

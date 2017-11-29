@@ -21,7 +21,7 @@
 import mdlMixin from '../../mixins/mdl';
 import '../../../material-design-lite/icon-toggle/icon-toggle';
 import '../../../material-design-lite/ripple/ripple';
-import {isArray} from '../../helpers';
+import getType from '../../helpers/typeof';
 
 const EVENT_CHANGE = 'change';
 
@@ -55,7 +55,7 @@ export default {
   },
   data() {
     return {
-      currentValue: isArray(this.model) ? this.model : [this.model]
+      currentValue: (getType(this.model) === 'array') ? this.model : [this.model]
     };
   },
   computed: {
@@ -71,7 +71,7 @@ export default {
       };
     },
     isChecked() {
-      return isArray(this.currentValue)
+      return (getType(this.currentValue) === 'array')
         ? this.currentValue.indexOf(this.value) > -1
         : (this.currentValue == this.value || this.currentValue === true);
     }

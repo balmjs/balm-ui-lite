@@ -19,7 +19,7 @@
 import mdlMixin from '../../mixins/mdl';
 import '../../../material-design-lite/checkbox/checkbox';
 import '../../../material-design-lite/ripple/ripple';
-import {isArray} from '../../helpers';
+import getType from '../../helpers/typeof';
 
 const EVENT_CHANGE = 'change';
 
@@ -74,7 +74,7 @@ export default {
       };
     },
     isChecked() {
-      return isArray(this.currentValue)
+      return (getType(this.currentValue) === 'array')
         ? this.currentValue.indexOf(this.value) > -1
         : (this.currentValue == this.value || this.currentValue === true);
     }

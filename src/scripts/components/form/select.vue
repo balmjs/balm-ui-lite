@@ -13,8 +13,6 @@
 </template>
 
 <script>
-import {isObject} from '../../helpers';
-
 const EVENT_CHANGE = 'change'; // return option[optionKey]
 const EVENT_SELECTED = 'selected'; // return option
 

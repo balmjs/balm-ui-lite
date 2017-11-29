@@ -12,15 +12,21 @@
 </template>
 
 <script>
-import mdlMixin from '../mixins/mdl';
-import '../../material-design-lite/tooltip/tooltip';
-import {isString, generateRandomAlphaNum} from '../helpers';
+import mdlMixin from '../../mixins/mdl';
+import '../../../material-design-lite/tooltip/tooltip';
+import getType from '../../helpers/typeof';
 
 const POSITIONS = ['', 'top', 'right', 'bottom', 'left'];
 const POSITION_TOP = 1; // Positions the tooltip to the top of the target
 const POSITION_RIGHT = 2; // Positions the tooltip to the right of the target
 const POSITION_BOTTOM = 3; // Positions the tooltip to the bottom of the target
 const POSITION_LEFT = 4; // Positions the tooltip to the left of the target
+
+const generateRandomAlphaNum = len => {
+  let rdmString = '';
+  for (; rdmString.length < len; rdmString += Math.random().toString(36).substr(2));
+  return rdmString.substr(0, len);
+};
 
 export default {
   name: 'ui-tooltip',
@@ -53,7 +59,7 @@ export default {
     positionClassName() {
       let currentPositon = this.position;
 
-      if (isString(currentPositon)) {
+      if (getType(currentPositon) === 'string') {
         currentPositon = POSITIONS.indexOf(currentPositon);
       }
 

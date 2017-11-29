@@ -255,7 +255,7 @@ export default {
     let ie = detectIE();
     this.lteIE10 = ie && ie < 11;
     if (!this.$http) {
-      console.warn('You need to install `axios`.');
+      console.warn('You need to install a http plugin for `Vue.prototype.$http`.');
     }
   },
   mounted() {

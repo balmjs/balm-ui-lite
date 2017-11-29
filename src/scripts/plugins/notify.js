@@ -1,14 +1,14 @@
+import getType from '../helpers/typeof';
+
 const YES = true;
 const NO = false;
-
-const getType = (o) => ({}).toString.call(o).replace(/\[object\s(.*)]/, '$1').toLowerCase();
 
 const template = `<div class="mdl-notify" v-if="open">
   <transition-group class="mdl-notify__list" :name="transitionName" tag="div">
     <div :class="[
-    'mdl-notify__item', 
-    notify.className, 
-    notify.type + '-type', 
+    'mdl-notify__item',
+    notify.className,
+    notify.type + '-type',
     {
       'with-avatar': notify.avatar,
       'with-buttons': notify.buttons && notify.buttons.length
@@ -39,32 +39,32 @@ const template = `<div class="mdl-notify" v-if="open">
 </div>`;
 
 const itemProps = {
-  type: 'info',   // 消息类型
-  timeout: 5000,  // 自动关闭时间，设置为0则不会关闭
-  avatar: null,   // 头像
-  className: '',  // 自定义css class
-  title: '',      // 标题
-  content: '',    // 内容
-  progressColor: '',    // 单独设置当前的进度条颜色
-  buttons: [{     // 自定义按钮 {className: String, text: String, handler: Function|String, autoClose: Boolean}
-    className: '',      // 自定义按钮css class
-    text: 'Close',      // 按钮文本
-    handler: 'close',   // 按钮点击处理方法
-    autoClose: YES       // 点击按钮是否自动关闭 默认: 关闭
+  type: 'info', // 消息类型
+  timeout: 5000, // 自动关闭时间，设置为0则不会关闭
+  avatar: null, // 头像
+  className: '', // 自定义css class
+  title: '', // 标题
+  content: '', // 内容
+  progressColor: '', // 单独设置当前的进度条颜色
+  buttons: [{ // 自定义按钮 {className: String, text: String, handler: Function|String, autoClose: Boolean}
+    className: '', // 自定义按钮css class
+    text: 'Close', // 按钮文本
+    handler: 'close', // 按钮点击处理方法
+    autoClose: YES // 点击按钮是否自动关闭 默认: 关闭
   }],
 };
 
 const s4 = () => Math.floor((1 + Math.random()) * 0x10000).toString(16);
 
 export default {
-  install (Vue) {
+  install(Vue) {
 
     const notifyContainer = document.createElement('div');
 
     Vue.prototype.$notify = new Vue({
       el: notifyContainer,
       template,
-      data () {
+      data() {
         return {
           open: YES,
           progressColor: '#3f51b5',
@@ -74,20 +74,20 @@ export default {
         }
       },
       methods: {
-        setProgressColor (color) {
+        setProgressColor(color) {
           this.progressColor = color;
         },
-        setTransitionName (name) {
+        setTransitionName(name) {
           this.transitionName = name;
         },
-        resetTransitionName () {
+        resetTransitionName() {
           this.transitionName = 'notify-list';
         },
-        resetProgressColor () {
+        resetProgressColor() {
           this.progressColor = '#3f51b5';
         },
-        add (newNotify = {}) {
-          !this.open && console.warn(`[BalmUI]:Plugin $notify has not open yet. use 'this.$notify.open = true' to open the notify plugin in Vue instance.` );
+        add(newNotify = {}) {
+          !this.open && console.warn(`[BalmUI]:Plugin $notify has not open yet. use 'this.$notify.open = true' to open the notify plugin in Vue instance.`);
 
           newNotify = Object.assign({
             id: `${s4()}-${Date.now()}`
@@ -95,23 +95,23 @@ export default {
 
           this.notifies.push(newNotify);
         },
-        addButtonHandler (handlerName = '', fn) {
+        addButtonHandler(handlerName = '', fn) {
           let type = getType(handlerName);
 
           let method = ({
             object: () => {
-              let {name, method} = handlerName;
+              let { name, method } = handlerName;
               this.btnHandlers[name] = method;
             },
             string: () => {
-              if(getType(fn) === 'function') {
+              if (getType(fn) === 'function') {
                 this.btnHandlers[handlerName] = fn;
               } else {
                 console.error(`[BalmUI]:Plugin $notify added method '${handlerName}' failed. The 2nd argument of method 'addButtonHandler' should be a 'function' type, but received is '${getType(fn)}'.`);
               }
             },
             array: () => {
-              handlerName.forEach( (item) => {
+              handlerName.forEach((item) => {
                 this.btnHandlers[item.name] = item.method;
               });
             }
@@ -119,19 +119,19 @@ export default {
 
           method && method();
         },
-        findNotifyIndex (notify) {
-          return this.notifies.findIndex(function (item) {
+        findNotifyIndex(notify) {
+          return this.notifies.findIndex(function(item) {
             return notify.id === item.id;
           });
         },
-        close (notify) {
+        close(notify) {
           let index = this.findNotifyIndex(notify);
-          (getType(index)  === 'number') && this.notifies.splice(index, 1);
+          (getType(index) === 'number') && this.notifies.splice(index, 1);
         },
-        $_hasProgress ({timeout}) {
+        $_hasProgress({ timeout }) {
           return timeout && (getType(timeout) === 'number');
         },
-        $_buttonHandler ({handler, autoClose}, notify) {
+        $_buttonHandler({ handler, autoClose }, notify) {
           switch (typeof handler) {
             case 'string':
               this.btnHandlers[handler] && this.btnHandlers[handler](notify);
@@ -142,10 +142,10 @@ export default {
           }
           (autoClose !== NO) && this.close(notify);
         },
-        $_setBackgroundImage (src) {
-          return {backgroundImage: `url(${src})`};
+        $_setBackgroundImage(src) {
+          return { backgroundImage: `url(${src})` };
         },
-        $_setProgressStyle ({timeout, progressColor}) {
+        $_setProgressStyle({ timeout, progressColor }) {
           let duration = `${timeout}ms`;
           return {
             backgroundColor: progressColor || this.progressColor,
@@ -153,8 +153,8 @@ export default {
             webkitAnimationDuration: duration,
           }
         },
-        $_autoClose (notify) {
-          if(this.$_hasProgress(notify)){
+        $_autoClose(notify) {
+          if (this.$_hasProgress(notify)) {
             this.close(notify);
           }
         },
@@ -163,7 +163,5 @@ export default {
         document.body.appendChild(notifyContainer);
       }
     });
-
-
   }
-}
+};

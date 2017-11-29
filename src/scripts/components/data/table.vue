@@ -130,7 +130,7 @@
 import mdlMixin from '../../mixins/mdl';
 import '../../../material-design-lite/data-table/data-table';
 import {isString, isObject, isArray, isFunction} from '../../helpers';
-import UiButton from '../button';
+import UiButton from '../common/button';
 import UiCheckbox from '../form/checkbox';
 
 const DEFAULTS = {

@@ -1,97 +1,52 @@
 var balm = require('balm');
-var path = require('path');
+var balmConfig = require('./config/balmrc');
+var env = require('./config/env');
+var constants = require('./config/constants');
+var individual = require('./config/individual');
 
-var useDefault = !process.argv.includes('--mdl');
-var buildDocs = process.argv.includes('--docs');
-var useDocs = !balm.config.production || buildDocs;
-
-balm.config = {
-  roots: {
-    source: useDocs ? 'docs' : 'src'
-  },
-  styles: {
-    ext: 'scss',
-    autoprefixer: [
-      '> 1%',
-      'last 2 versions',
-      'not ie <= 8'
-    ]
-  },
-  scripts: {
-    entry: useDocs ? {
-      mylib: [
-        'vue',
-        'vue-router',
-        'axios',
-        'vue-i18n'
-      ],
-      main: './docs/scripts/main.js'
-    } : {
-      'balm-ui-lite': './src/scripts/index.js'
-    },
-    library: 'BalmUI',
-    libraryTarget: 'umd',
-    loaders: [{
-      test: /\.vue$/,
-      loader: 'vue',
-      options: {
-        esModule: false
-      }
-    }, {
-      test: /\.md$/,
-      loader: 'html!markdown'
-    }],
-    alias: {
-      'vue$': balm.config.production ? 'vue/dist/vue.min.js' : 'vue/dist/vue.esm.js',
-      prismCss: 'prismjs/themes/prism-okaidia.css',
-      flatpickrCss: 'flatpickr/dist/flatpickr.min.css',
-      flatpickrLangZh: 'flatpickr/dist/l10n/zh.js'
-    },
-    eslint: true,
-    options: {
-      compress: {
-        drop_console: false
-      }
-    },
-    include: useDocs ? [
-      path.resolve('./src/scripts')
-    ] : []
-  },
-  extras: {
-    excludes: ['index.js']
-  },
-  assets: {
-    publicUrl: buildDocs ? 'http://balmjs.com/ui-vue-lite/' : ''
-  },
-  useDefault: useDefault
-};
-
-var DMI_SOURCE = './node_modules/material-design-icons';
-var DML_SOURCE = './node_modules/material-design-lite';
-var DEV_SOURCE = {
-  mdl: './src/material-design-lite',
-  img: './src/images',
-  font: './src/fonts'
-};
+balm.config = balmConfig;
 
 balm.go(function(mix) {
-  if (buildDocs) {
+  if (env.buildDocs) {
     mix.copy('./docs/data/*', './dist/data');
   } else {
-    if (useDefault) {
+    if (env.updateMDL) {
+      // clear
+      mix.remove([
+        constants.DEV_SOURCE.mdl + '/*',
+        constants.DEV_SOURCE.img + '/*',
+        constants.DEV_SOURCE.font + '/*'
+      ]);
+      // get material design lite
+      mix.copy(constants.DML_SOURCE + '/src/{_*scss,material-design-lite.scss,mdlComponentHandler.js}', constants.DEV_SOURCE.mdl);
+      mix.copy(constants.DML_SOURCE + '/src/**/{_*.scss,*.js}', constants.DEV_SOURCE.mdl);
+      // get material design lite images
+      mix.copy(constants.DML_SOURCE + '/src/images/*.svg', constants.DEV_SOURCE.img);
+      // get material design icons
+      mix.copy(constants.DMI_SOURCE + '/iconfont/*.{css,eot,svg,ttf,woff,woff2}', constants.DEV_SOURCE.font);
+    } else {
       if (balm.config.production) {
         mix.remove('./dist/font/*.css');
+        // clear individual
+        mix.remove([
+          individual.output.components,
+          individual.output.helpers,
+          individual.output.mixins,
+          individual.output.plugins
+        ]);
+        // build individual
+        // individual.components.forEach(function(component) {
+        //   // mix.js(individual.input.components + '/' + component, individual.output.components);
+        //   // mix.jsmin(individual.input.components + '/' + component, individual.output.components);
+        // });
+        // mix.js(individual.input.helpers + '/' + individual.helpers, individual.output.helpers);
+        // mix.js(individual.input.mixins + '/' + individual.mixins, individual.output.mixins);
+        // mix.jsmin(individual.input.mixins + '/' + individual.mixins, individual.output.mixins);
+        // individual.plugins.forEach(function(plugin) {
+        //   mix.js(individual.input.plugins + '/' + plugin, individual.output.plugins);
+        //   mix.jsmin(individual.input.plugins + '/' + plugin, individual.output.plugins);
+        // });
       }
-    } else {
-      // clear
-      mix.remove([DEV_SOURCE.mdl + '/*', DEV_SOURCE.img + '/*', DEV_SOURCE.font + '/*']);
-      // get material design lite
-      mix.copy(DML_SOURCE + '/src/{_*scss,material-design-lite.scss,mdlComponentHandler.js}', DEV_SOURCE.mdl);
-      mix.copy(DML_SOURCE + '/src/**/{_*.scss,*.js}', DEV_SOURCE.mdl);
-      // get material design lite images
-      mix.copy(DML_SOURCE + '/src/images/*.svg', DEV_SOURCE.img);
-      // get material design icons
-      mix.copy(DMI_SOURCE + '/iconfont/*.{css,eot,svg,ttf,woff,woff2}', DEV_SOURCE.font);
     }
   }
 });

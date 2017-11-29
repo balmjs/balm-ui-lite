@@ -1,5 +1,5 @@
-import UiSnackbar from '../components/snackbar';
-import {isString, isObject} from '../helpers';
+import getType from '../helpers/typeof';
+import UiSnackbar from '../components/dialog/snackbar';
 
 const DEFAULT_OPTIONS = {
   className: '',
@@ -33,9 +33,9 @@ export default {
             options: DEFAULT_OPTIONS
           },
           created() {
-            if (isString(options)) {
+            if (getType(options) === 'string') {
               this.options.message = options;
-            } else if (isObject(options)) {
+            } else if (getType(options) === 'object') {
               this.options = Object.assign(DEFAULT_OPTIONS, options);
             }
           }

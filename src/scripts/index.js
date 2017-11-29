@@ -47,19 +47,19 @@ import UiPanel from './components/tabs/panel';
 /**
  * Common
  */
-import UiBadge from './components/badge';
-import UiBadgeLink from './components/badge-link';
-import UiButton from './components/button';
+import UiBadge from './components/common/badge';
+import UiBadgeLink from './components/common/badge-link';
+import UiButton from './components/common/button';
 import UiChip from './components/chip/chip';
 import UiChipText from './components/chip/chip-text';
 import UiChipAction from './components/chip/chip-action';
 import UiChipContact from './components/chip/chip-contact';
-import UiLoading from './components/loading';
+import UiLoading from './components/common/loading';
 import UiMenu from './components/menu/menu';
 import UiMenuItem from './components/menu/menuitem';
-import UiTooltip from './components/tooltip';
-import UiDivider from './components/divider';
-import UiIcon from './components/icon';
+import UiTooltip from './components/common/tooltip';
+import UiDivider from './components/common/divider';
+import UiIcon from './components/common/icon';
 /**
  * Form
  */
@@ -100,7 +100,7 @@ import UiDialog from './components/dialog/dialog';
 import UiDialogTitle from './components/dialog/dialog-title';
 import UiDialogContent from './components/dialog/dialog-content';
 import UiDialogActions from './components/dialog/dialog-actions';
-import UiSnackbar from './components/snackbar';
+import UiSnackbar from './components/dialog/snackbar';
 /**
  * Plugins
  */
@@ -110,6 +110,7 @@ import confirm from './plugins/confirm';
 import toast from './plugins/toast';
 import notify from './plugins/notify';
 
+const version = require('../../package.json').version;
 const helpers = Object.assign({}, BalmUI_Helpers);
 const mixins = Object.assign({}, BalmUI_Mixins);
 
@@ -203,7 +204,7 @@ const registers = {
   }
 };
 
-const BalmUI = Object.assign({}, { helpers }, { mixins }, { components }, { plugins }, registers);
+const BalmUI = Object.assign({}, { version }, { helpers }, { mixins }, { components }, { plugins }, registers);
 
 // Auto install in dist mode
 if (typeof window !== 'undefined' && window.Vue) {
@@ -216,76 +217,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default BalmUI;
 
 export {
-  // Layout
-  UiLayout,
-  UiLayoutHeader,
-  UiLayoutHeaderRow,
-  UiLayoutTitle,
-  UiLayoutDrawer,
-  UiLayoutContent,
-  UiLayoutSpacer,
-  UiLayoutTabBar,
-  UiLayoutTab,
-  UiLayoutTabPanel,
-  UiNav,
-  UiNavLink,
-  UiGrid,
-  UiCell,
-  UiTabs,
-  UiTabBar,
-  UiTab,
-  UiPanel,
-  // Common
-  UiBadge,
-  UiBadgeLink,
-  UiButton,
-  UiChip,
-  UiChipText,
-  UiChipAction,
-  UiChipContact,
-  UiLoading,
-  UiMenu,
-  UiMenuItem,
-  UiTooltip,
-  UiDivider,
-  UiIcon,
-  // Form
-  UiSlider,
-  UiCheckbox,
-  UiRadio,
-  UiIconToggle,
-  UiSwitch,
-  UiTextfield,
-  UiSelect,
-  UiAutocomplete,
-  UiDatepicker,
-  UiFileupload,
-  UiRangepicker,
-  // Data
-  UiCard,
-  UiCardTitle,
-  UiCardActions,
-  UiCardMenu,
-  UiCardMedia,
-  UiCardText,
-  UiList,
-  UiItem,
-  UiItemAvatar,
-  UiItemIcon,
-  UiItemSubtitle,
-  UiItemInfo,
-  UiItemAction,
-  UiItemTextbody,
-  UiTable,
-  UiPagination,
-  // Popup
-  UiDialog,
-  UiDialogTitle,
-  UiDialogContent,
-  UiDialogActions,
-  UiSnackbar,
-  // Others
   helpers,
-  mixins,
-  plugins
+  mixins
 };
