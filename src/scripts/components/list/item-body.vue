@@ -5,7 +5,10 @@
 </template>
 
 <script>
+import itemSecondaryMixin from '../../mixins/item-secondary';
+
 export default {
-  name: 'ui-item-textbody'
+  name: 'ui-item-body',
+  mixins: [itemSecondaryMixin]
 };
 </script>

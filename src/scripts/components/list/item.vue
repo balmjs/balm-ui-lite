@@ -1,16 +1,6 @@
 <template>
   <li :class="className">
-    <slot name="before"></slot>
-    <div class="mdl-list__item-primary-content">
-      <slot></slot>
-    </div>
-    <div v-if="hasMultiLine" class="mdl-list__item-secondary-content">
-      <slot name="action"></slot>
-    </div>
-    <template v-else>
-      <slot name="action"></slot>
-    </template>
-    <slot name="after"></slot>
+    <slot></slot>
   </li>
 </template>
 

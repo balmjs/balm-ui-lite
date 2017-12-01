@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: 'ui-card-text'
+  name: 'ui-card-body'
 };
 </script>

@@ -5,7 +5,29 @@ const input = {
   plugins: './src/scripts/plugins'
 };
 
-const components = ['button.js'];
+const components = [
+  'badge.js',
+  'button.js',
+  'card.js',
+  'checkbox.js',
+  'chip.js',
+  'dialog.js',
+  'icon-toggle.js',
+  'icon.js',
+  'layout.js',
+  'list.js',
+  'menu.js',
+  'pagination.js',
+  'progress.js',
+  'radio.js',
+  'slider.js',
+  'snackbar.js',
+  'spinner.js',
+  'switch.js',
+  'table.js',
+  'textfield.js',
+  'tooltip.js'
+];
 const helpers = ['index.js'];
 const mixins = ['index.js'];
 const plugins = ['event.js', 'alert.js', 'confirm.js', 'toast.js', 'notify.js'];

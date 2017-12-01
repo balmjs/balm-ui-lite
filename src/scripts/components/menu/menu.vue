@@ -15,7 +15,7 @@ import mdlMixin from '../../mixins/mdl';
 import '../../../material-design-lite/menu/menu';
 import '../../../material-design-lite/ripple/ripple';
 import getType from '../../helpers/typeof';
-import UiMenuItem from './menuitem';
+import UiMenuitem from './menuitem';
 
 const POSITIONS = ['top-left', 'top-right', 'bottom-left', 'bottom-right'];
 const POSITION_NONE = 0; // Default
@@ -29,7 +29,7 @@ export default {
   name: 'ui-menu',
   mixins: [mdlMixin],
   components: {
-    UiMenuItem
+    UiMenuitem
   },
   props: {
     // state

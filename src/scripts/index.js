@@ -54,7 +54,6 @@ import UiChip from './components/chip/chip';
 import UiChipText from './components/chip/chip-text';
 import UiChipAction from './components/chip/chip-action';
 import UiChipContact from './components/chip/chip-contact';
-import UiLoading from './components/common/loading';
 import UiMenu from './components/menu/menu';
 import UiMenuItem from './components/menu/menuitem';
 import UiTooltip from './components/common/tooltip';
@@ -75,14 +74,19 @@ import UiDatepicker from './components/form/datepicker';
 import UiFileupload from './components/form/fileupload';
 import UiRangepicker from './components/form/rangepicker';
 /**
+ * Loading
+ */
+import UiProgress from './components/loading/progress';
+import UiSpinner from './components/loading/spinner';
+/**
  * Data
  */
 import UiCard from './components/card/card';
 import UiCardTitle from './components/card/card-title';
+import UiCardMedia from './components/card/card-media';
+import UiCardBody from './components/card/card-body';
 import UiCardActions from './components/card/card-actions';
 import UiCardMenu from './components/card/card-menu';
-import UiCardMedia from './components/card/card-media';
-import UiCardText from './components/card/card-text';
 import UiList from './components/list/list';
 import UiItem from './components/list/item';
 import UiItemAvatar from './components/list/item-avatar';
@@ -90,7 +94,7 @@ import UiItemIcon from './components/list/item-icon';
 import UiItemSubtitle from './components/list/item-subtitle';
 import UiItemInfo from './components/list/item-info';
 import UiItemAction from './components/list/item-action';
-import UiItemTextbody from './components/list/item-textbody';
+import UiItemBody from './components/list/item-body';
 import UiTable from './components/data/table';
 import UiPagination from './components/data/pagination';
 /**
@@ -100,7 +104,7 @@ import UiDialog from './components/dialog/dialog';
 import UiDialogTitle from './components/dialog/dialog-title';
 import UiDialogContent from './components/dialog/dialog-content';
 import UiDialogActions from './components/dialog/dialog-actions';
-import UiSnackbar from './components/dialog/snackbar';
+import UiSnackbar from './components/common/snackbar';
 /**
  * Plugins
  */
@@ -142,7 +146,6 @@ const components = {
   UiChipText,
   UiChipAction,
   UiChipContact,
-  UiLoading,
   UiMenu,
   UiMenuItem,
   UiTooltip,
@@ -160,13 +163,16 @@ const components = {
   UiDatepicker,
   UiFileupload,
   UiRangepicker,
+  // Loading
+  UiProgress,
+  UiSpinner,
   // Data
   UiCard,
   UiCardTitle,
   UiCardActions,
   UiCardMenu,
   UiCardMedia,
-  UiCardText,
+  UiCardBody,
   UiList,
   UiItem,
   UiItemAvatar,
@@ -174,7 +180,7 @@ const components = {
   UiItemSubtitle,
   UiItemInfo,
   UiItemAction,
-  UiItemTextbody,
+  UiItemBody,
   UiTable,
   UiPagination,
   // Popup

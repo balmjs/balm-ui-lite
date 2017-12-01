@@ -1,5 +1,5 @@
 import getType from '../helpers/typeof';
-import UiSnackbar from '../components/dialog/snackbar';
+import UiSnackbar from '../components/common/snackbar';
 
 const DEFAULT_OPTIONS = {
   className: '',

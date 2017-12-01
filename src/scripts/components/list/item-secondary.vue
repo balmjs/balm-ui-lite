@@ -1,14 +1,14 @@
 <template>
-  <span class="mdl-list__item-secondary-info">
+  <div class="mdl-list__item-secondary-content">
     <slot></slot>
-  </span>
+  </div>
 </template>
 
 <script>
 import itemSecondaryMixin from '../../mixins/item-secondary';
 
 export default {
-  name: 'ui-item-info',
+  name: 'ui-item-secondary',
   mixins: [itemSecondaryMixin]
 };
 </script>

@@ -1,5 +1,17 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
+## 0.6.0
+
+### Components
+
+- `<ui-card-text>` rename to `<ui-card-body>`
+- `<ui-item-textbody>` rename to `<ui-item-body>`
+- add `<ui-item-primary>` & `<ui-item-secondary>`
+- remove `<ui-loading>`
+- add `<ui-progress>` & `<ui-spinner>`
+
+---
+
 ## 0.5.21 (2017.11.24)
 
 ### Components
