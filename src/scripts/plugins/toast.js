@@ -8,8 +8,7 @@ const DEFAULT_OPTIONS = {
 };
 const DELAY = 200;
 
-const template =
-`<ui-snackbar
+const template = `<ui-snackbar
   :class="['mdl-toast', options.className]"
   :active="active"
   :message="options.message"

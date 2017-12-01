@@ -17,16 +17,33 @@ balm.go(function(mix) {
         constants.DEV_SOURCE.img + '/*',
         constants.DEV_SOURCE.font + '/*'
       ]);
+
       // get material design lite
-      mix.copy(constants.DML_SOURCE + '/src/{_*scss,material-design-lite.scss,mdlComponentHandler.js}', constants.DEV_SOURCE.mdl);
-      mix.copy(constants.DML_SOURCE + '/src/**/{_*.scss,*.js}', constants.DEV_SOURCE.mdl);
+      mix.copy(
+        constants.DML_SOURCE +
+          '/src/{_*scss,material-design-lite.scss,mdlComponentHandler.js}',
+        constants.DEV_SOURCE.mdl
+      );
+      mix.copy(
+        constants.DML_SOURCE + '/src/**/{_*.scss,*.js}',
+        constants.DEV_SOURCE.mdl
+      );
+
       // get material design lite images
-      mix.copy(constants.DML_SOURCE + '/src/images/*.svg', constants.DEV_SOURCE.img);
+      mix.copy(
+        constants.DML_SOURCE + '/src/images/*.svg',
+        constants.DEV_SOURCE.img
+      );
+
       // get material design icons
-      mix.copy(constants.DMI_SOURCE + '/iconfont/*.{css,eot,svg,ttf,woff,woff2}', constants.DEV_SOURCE.font);
+      mix.copy(
+        constants.DMI_SOURCE + '/iconfont/*.{css,eot,svg,ttf,woff,woff2}',
+        constants.DEV_SOURCE.font
+      );
     } else {
       if (balm.config.production) {
         mix.remove('./dist/font/*.css');
+
         // clear individual
         mix.remove([
           individual.output.components,
@@ -34,18 +51,27 @@ balm.go(function(mix) {
           individual.output.mixins,
           individual.output.plugins
         ]);
+
         // build individual
-        // individual.components.forEach(function(component) {
-        //   // mix.js(individual.input.components + '/' + component, individual.output.components);
-        //   // mix.jsmin(individual.input.components + '/' + component, individual.output.components);
-        // });
-        // mix.js(individual.input.helpers + '/' + individual.helpers, individual.output.helpers);
-        // mix.js(individual.input.mixins + '/' + individual.mixins, individual.output.mixins);
-        // mix.jsmin(individual.input.mixins + '/' + individual.mixins, individual.output.mixins);
-        // individual.plugins.forEach(function(plugin) {
-        //   mix.js(individual.input.plugins + '/' + plugin, individual.output.plugins);
-        //   mix.jsmin(individual.input.plugins + '/' + plugin, individual.output.plugins);
-        // });
+        let components = individual.components.map(item => {
+          return individual.input.components + '/' + item;
+        });
+        mix.js(components, individual.output.components);
+
+        let helpers = individual.helpers.map(item => {
+          return individual.input.helpers + '/' + item;
+        });
+        mix.js(helpers, individual.output.helpers);
+
+        let mixins = individual.mixins.map(item => {
+          return individual.input.mixins + '/' + item;
+        });
+        mix.js(mixins, individual.output.mixins);
+
+        let plugins = individual.plugins.map(item => {
+          return individual.input.plugins + '/' + item;
+        });
+        mix.js(plugins, individual.output.plugins);
       }
     }
   }

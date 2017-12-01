@@ -15,8 +15,7 @@ const DEFAULT_OPTIONS = {
   unlocked: false
 };
 
-const template =
-`<ui-dialog
+const template = `<ui-dialog
   :class="['mdl-confirm', options.className]"
   :open="open"
   :unlocked="options.unlocked"

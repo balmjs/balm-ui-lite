@@ -46,19 +46,21 @@ const itemProps = {
   title: '', // 标题
   content: '', // 内容
   progressColor: '', // 单独设置当前的进度条颜色
-  buttons: [{ // 自定义按钮 {className: String, text: String, handler: Function|String, autoClose: Boolean}
-    className: '', // 自定义按钮css class
-    text: 'Close', // 按钮文本
-    handler: 'close', // 按钮点击处理方法
-    autoClose: YES // 点击按钮是否自动关闭 默认: 关闭
-  }],
+  buttons: [
+    {
+      // 自定义按钮 {className: String, text: String, handler: Function|String, autoClose: Boolean}
+      className: '', // 自定义按钮css class
+      text: 'Close', // 按钮文本
+      handler: 'close', // 按钮点击处理方法
+      autoClose: YES // 点击按钮是否自动关闭 默认: 关闭
+    }
+  ]
 };
 
 const s4 = () => Math.floor((1 + Math.random()) * 0x10000).toString(16);
 
 export default {
   install(Vue) {
-
     const notifyContainer = document.createElement('div');
 
     Vue.prototype.$notify = new Vue({
@@ -71,7 +73,7 @@ export default {
           transitionName: 'notify-list',
           notifies: [],
           btnHandlers: {}
-        }
+        };
       },
       methods: {
         setProgressColor(color) {
@@ -87,18 +89,25 @@ export default {
           this.progressColor = '#3f51b5';
         },
         add(newNotify = {}) {
-          !this.open && console.warn(`[BalmUI]:Plugin $notify has not open yet. use 'this.$notify.open = true' to open the notify plugin in Vue instance.`);
+          !this.open &&
+            console.warn(
+              `[BalmUI]:Plugin $notify has not open yet. use 'this.$notify.open = true' to open the notify plugin in Vue instance.`
+            );
 
-          newNotify = Object.assign({
-            id: `${s4()}-${Date.now()}`
-          }, itemProps, newNotify);
+          newNotify = Object.assign(
+            {
+              id: `${s4()}-${Date.now()}`
+            },
+            itemProps,
+            newNotify
+          );
 
           this.notifies.push(newNotify);
         },
         addButtonHandler(handlerName = '', fn) {
           let type = getType(handlerName);
 
-          let method = ({
+          let method = {
             object: () => {
               let { name, method } = handlerName;
               this.btnHandlers[name] = method;
@@ -107,15 +116,19 @@ export default {
               if (getType(fn) === 'function') {
                 this.btnHandlers[handlerName] = fn;
               } else {
-                console.error(`[BalmUI]:Plugin $notify added method '${handlerName}' failed. The 2nd argument of method 'addButtonHandler' should be a 'function' type, but received is '${getType(fn)}'.`);
+                console.error(
+                  `[BalmUI]:Plugin $notify added method '${handlerName}' failed. The 2nd argument of method 'addButtonHandler' should be a 'function' type, but received is '${getType(
+                    fn
+                  )}'.`
+                );
               }
             },
             array: () => {
-              handlerName.forEach((item) => {
+              handlerName.forEach(item => {
                 this.btnHandlers[item.name] = item.method;
               });
             }
-          })[type];
+          }[type];
 
           method && method();
         },
@@ -126,10 +139,10 @@ export default {
         },
         close(notify) {
           let index = this.findNotifyIndex(notify);
-          (getType(index) === 'number') && this.notifies.splice(index, 1);
+          getType(index) === 'number' && this.notifies.splice(index, 1);
         },
         $_hasProgress({ timeout }) {
-          return timeout && (getType(timeout) === 'number');
+          return timeout && getType(timeout) === 'number';
         },
         $_buttonHandler({ handler, autoClose }, notify) {
           switch (typeof handler) {
@@ -140,7 +153,7 @@ export default {
               handler(notify);
               break;
           }
-          (autoClose !== NO) && this.close(notify);
+          autoClose !== NO && this.close(notify);
         },
         $_setBackgroundImage(src) {
           return { backgroundImage: `url(${src})` };
@@ -150,14 +163,14 @@ export default {
           return {
             backgroundColor: progressColor || this.progressColor,
             animationDuration: duration,
-            webkitAnimationDuration: duration,
-          }
+            webkitAnimationDuration: duration
+          };
         },
         $_autoClose(notify) {
           if (this.$_hasProgress(notify)) {
             this.close(notify);
           }
-        },
+        }
       },
       created() {
         document.body.appendChild(notifyContainer);

@@ -5,18 +5,10 @@ const input = {
   plugins: './src/scripts/plugins'
 };
 
-const components = [
-  'button.js'
-];
-const helpers = 'index.js';
-const mixins = 'index.js';
-const plugins = [
-  'event.js',
-  'alert.js',
-  'confirm.js',
-  'toast.js',
-  'notify.js'
-];
+const components = ['button.js'];
+const helpers = ['index.js'];
+const mixins = ['index.js'];
+const plugins = ['event.js', 'alert.js', 'confirm.js', 'toast.js', 'notify.js'];
 
 const output = {
   components: './components',
