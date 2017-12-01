@@ -1,6 +1,8 @@
 # [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
 
-## 0.6.0
+## 0.6.0 (Coming Up)
+
+🎉 __New feature: Individual Components__
 
 ### Components
 

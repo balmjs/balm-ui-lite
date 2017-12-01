@@ -72,6 +72,10 @@ balm.go(function(mix) {
           return individual.input.plugins + '/' + item;
         });
         mix.js(plugins, individual.output.plugins);
+
+        mix.copy('./dist/css/components/*', './components');
+        mix.copy('./dist/css/plugins/*', './plugins');
+        mix.remove(['./dist/css/components', './dist/css/plugins']);
       }
     }
   }
