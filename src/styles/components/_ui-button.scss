@@ -11,3 +11,7 @@
     background-color: transparent;
   }
 }
+
+.mdl-fileupload {
+  @extend .mdl-button;
+}
