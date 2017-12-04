@@ -46,7 +46,7 @@ Vue.prototype.$docs = {
     }]
   },
   slots: {
-    thead: ['Name', 'Description', '<template scope="props">'],
+    thead: ['Name', 'Description', '<template slot-scope="props">'],
     tbody: ['name', 'description', 'props']
   },
   events: {
@@ -62,7 +62,7 @@ const router = new VueRouter({
 
 // Create VueI18n instance with options
 const i18n = new VueI18n({
-  locale: 'en', // set locale
+  locale: 'cn', // set locale
   messages: locales, // set locale messages
 });
 Vue.prototype.flatpickrLang = flatpickrLang;

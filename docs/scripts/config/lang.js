@@ -1,5 +1,5 @@
-import en from '../lang/en.json';
-import cn from '../lang/cn.json';
+import en from '../lang/en';
+import cn from '../lang/cn';
 import flatpickrLangZh from 'flatpickrLangZh';
 
 // for link

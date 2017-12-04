@@ -1,0 +1,15 @@
+.page--home {
+  display: flex;
+
+  max-width: 1500px;
+  padding-top: 64px;
+
+  justify-content: space-around;
+  align-items: center;
+  p {
+    font-size: 16px;
+  }
+  .banner {
+    width: 800px;
+  }
+}

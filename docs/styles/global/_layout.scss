@@ -1,8 +1,10 @@
 .supported-lang {
   margin: 0;
+
   cursor: pointer;
   a.active {
     font-weight: bolder;
+
     color: white;
   }
 }
@@ -10,27 +12,44 @@
 .mdl-layout__drawer {
   .mdl-navigation {
     padding: 0;
+
     border-top: 1px solid rgba(0, 0, 0, .12);
   }
   h3 {
     margin: 0;
+
     text-indent: 20px;
   }
-  .mdl-layout__title {
+  label {
+    font-size: 12px;
+
+    padding: 8px 16px 8px 24px;
+
+    color: rgba(0, 0, 0, .43);
+  }
+  &>.mdl-layout__title {
+    display: flex;
+
     padding: 0 10px 0 20px;
+
+    justify-content: space-between;
   }
   .mdl-badge[data-badge]:after {
     right: -32px;
+
     width: 32px;
   }
-  .mdl-navigation__link {
-    &.active {
-      background-color: #757575;
-      span {
-        color: white;
-      }
-      &:hover {
+  .mdl-navigation {
+    .mdl-navigation__link {
+      color: rgba(0, 0, 0, .65);
+      &.active {
         background-color: #757575;
+        span {
+          color: white;
+        }
+        &:hover {
+          background-color: #757575;
+        }
       }
     }
   }

@@ -1,3 +1,8 @@
+## Requirement
+
+- [BalmJS](http://balmjs.com/)
+- [Vue.js](https://vuejs.org/)@2.1.0+
+
 ## Create a vue project
 
 Open a terminal window.

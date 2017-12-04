@@ -1,4 +1,4 @@
-import { helpers } from '../../../src/scripts/index'; // 'balm-ui-lite'
+import helpers from '../helpers';
 
 export default {
   required: {

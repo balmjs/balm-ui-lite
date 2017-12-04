@@ -1,20 +1,20 @@
 <template>
-  <div class="page--home">
-    <ui-markdown :text="docs"></ui-markdown>
-  </div>
+  <figure class="page--home">
+    <figcaption>
+      <h1>BalmUI Lite</h1>
+      <p>基于 Material Design Lite 组件库 和 Vue.js 框架 的 UI 解决方案</p>
+      <ui-button raised primary>开始使用</ui-button>
+    </figcaption>
+    <div class="banner">
+      <img :src="require('../../images/assets/compindex.png')" alt="MDL">
+    </div>
+  </figure>
 </template>
 
 <script>
-import docs from '../docs/intro.md';
-
 export default {
   metaInfo: {
     titleTemplate: '%s - Home'
-  },
-  data() {
-    return {
-      docs: docs
-    };
   }
 };
 </script>

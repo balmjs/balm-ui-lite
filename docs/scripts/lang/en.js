@@ -1,20 +1,17 @@
-{
-  "quickstart":
-  {
+const data = {
+  "quickstart": {
     "requirement": "Requirement",
     "installation": "Installation",
     "advanced": "Advanced",
     "kill-ie": "Kill IE"
   },
-  "foundation":
-  {
+  "foundation": {
     "helpers": "Helpers",
     "mixins": "Mixins",
     "plugins": "Plugins",
     "notify": "Notify"
   },
-  "components":
-  {
+  "components": {
     "quickstart": "Getting Started",
     "foundation": "Foundation",
     "layout": "Layout",
@@ -76,24 +73,20 @@
     "confirm": "Confirm",
     "snackbar": "Snackbar"
   },
-  "tabs":
-  {
+  "tabs": {
     "basic": "Basic",
     "materialIcon": "Material icons",
     "customIcon": "Custom icons"
   },
-  "menu":
-  {
+  "menu": {
     "basic": "Basic usage",
     "custom": "Custom usage"
   },
-  "table":
-  {
+  "table": {
     "basic": "Basic",
     "advanced": "Advanced"
   },
-  "textfield":
-  {
+  "textfield": {
     "simple": "Simple Textfield",
     "pattern": "Pattern Textfield with Error Info",
     "floating": "Textfield with Floating Label",
@@ -103,9 +96,10 @@
     "plus": "Textfield with Plus",
     "leftplus": "Textfield with left Label and Plus"
   },
-  "tooltip":
-  {
+  "tooltip": {
     "basic": "Basic usage",
     "custom": "Custom usage"
   }
-}
+};
+
+export default data;

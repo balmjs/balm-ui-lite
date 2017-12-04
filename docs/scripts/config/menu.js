@@ -1,18 +1,6 @@
-const QUICKSTART = [
-  'requirement',
-  'installation',
-  'advanced',
-  'kill-ie'
-];
+import helpers from '../helpers';
 
-const FOUNDATION = [
-  'helpers',
-  'mixins',
-  'plugins',
-  'notify'
-];
-
-const COMPONENTS = {
+const components = {
   layout: [
     'layout',
     'grid',
@@ -22,7 +10,6 @@ const COMPONENTS = {
     'badge',
     'button',
     'chip',
-    'loading',
     'menu',
     'tooltip',
     'divider',
@@ -40,47 +27,88 @@ const COMPONENTS = {
     'datepicker',
     'fileupload'
   ],
-  data: [
+  dataview: [
     'card',
     'list',
     'table',
     'pagination'
   ],
-  popup: [
+  feedback: [
     'dialog',
     'snackbar'
+  ],
+  'loading': [
+    'progress',
+    'spinner'
   ]
 };
 
-let menu = [{
-  name: 'components.quickstart',
-  components: QUICKSTART.map(item => {
-    return {
-      url: item,
-      name: `quickstart.${item}`
+const MENU = {
+  guide: [
+    'intro',
+    'quickstart',
+    'advanced',
+    'kill-ie'
+  ],
+  components,
+  plugins: [
+    'event',
+    'alert',
+    'confirm',
+    'toast',
+    'notify'
+  ],
+  mixins: [
+    'form-validator'
+  ],
+  helpers: [
+    'typeof',
+    'detect-ie',
+    'other-fn'
+  ]
+};
+
+let data = [];
+for (let key in MENU) {
+  let menuitems = MENU[key];
+  let items = {};
+
+  if (helpers.isObject(menuitems)) { // components
+    items = {
+      name: `menu.${key}`
     };
-  })
-}, {
-  name: 'components.foundation',
-  components: FOUNDATION.map(item => {
-    return {
-      url: item,
-      name: `foundation.${item}`
+
+    let subitems = [];
+    Object.keys(menuitems).forEach(componentGroupName => {
+      // label
+      subitems.push({
+        name: componentGroupName.toUpperCase(),
+        label: true
+      });
+      // submenu
+      let components = menuitems[componentGroupName];
+      components.forEach(component => {
+        subitems.push({
+          url: `/${key}/${component}`,
+          name: `menuitem.${component}`
+        });
+      });
+    });
+
+    items.subitems = subitems;
+  } else { // others
+    items = {
+      name: `menu.${key}`,
+      subitems: menuitems.map(subitem => {
+        return {
+          url: `/${key}/${subitem}`,
+          name: `menuitem.${subitem}`
+        };
+      })
     };
-  })
-}];
-for (let groupName in COMPONENTS) {
-  let components = COMPONENTS[groupName];
-  let items = {
-    name: `components.${groupName}`,
-    components: components.map(component => {
-      return {
-        url: component,
-        name: `components.${component}` // component.substring(0, 1).toUpperCase() + component.substring(1) // capitalize
-      };
-    })
-  };
-  menu.push(items);
+  }
+
+  data.push(items);
 }
 
-export default menu;
+export default data;

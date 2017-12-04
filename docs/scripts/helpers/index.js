@@ -1,3 +1,5 @@
+import { helpers } from '../../../src/scripts/index'; // 'balm-ui-lite'
+
 const date = (format, timestamp) => {
   //   example 1: date('H:m:s \\m \\i\\s \\m\\o\\n\\t\\h', 1062402400)
   //   returns 1: '07:09:40 m is month'
@@ -536,6 +538,8 @@ const time = () => {
   //   returns 1: true
   return Math.floor(new Date().getTime() / 1000)
 };
+
+export default helpers;
 
 export {
   date,
