@@ -10,10 +10,10 @@
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
-            <ui-loading active></ui-loading>
+            <ui-spinner active></ui-spinner>
           </div>
           <div class="snippet-demo">
-            <ui-loading singleColor active></ui-loading>
+            <ui-spinner singleColor active></ui-spinner>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
@@ -21,12 +21,14 @@
       <ui-markdown :text="code[0]"></ui-markdown>
     </div>
 
+    <!-- <ui-apidoc name="spinner"></ui-apidoc> -->
+
     <div class="snippet-group">
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
-            <ui-loading :type="1" active></ui-loading>
+            <ui-progress active></ui-progress>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
@@ -34,7 +36,7 @@
       <ui-markdown :text="code[1]"></ui-markdown>
     </div>
 
-    <ui-apidoc name="loading"></ui-apidoc>
+    <!-- <ui-apidoc name="progress"></ui-apidoc> -->
   </div>
 </template>
 

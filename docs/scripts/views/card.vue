@@ -18,9 +18,9 @@
                     <h2 :class="props.className.title">Welcome</h2>
                   </template>
                 </ui-card-title>
-                <ui-card-text>
+                <ui-card-body>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-                </ui-card-text>
+                </ui-card-body>
                 <ui-card-actions border>
                   <ui-button colored effect>Get Started</ui-button>
                 </ui-card-actions>
@@ -49,9 +49,9 @@
                     <h2 :class="props.className.title">Update</h2>
                   </template>
                 </ui-card-title>
-                <ui-card-text>
+                <ui-card-body>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
-                </ui-card-text>
+                </ui-card-body>
                 <ui-card-actions border>
                   <ui-button colored effect>View Updates</ui-button>
                 </ui-card-actions>

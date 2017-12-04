@@ -149,7 +149,7 @@
                 <ui-item v-for="(item, index) in items2" :key="index">
                   <ui-item-avatar>{{ item.avatar }}</ui-item-avatar>
                   <span>{{ item.name }}</span>
-                  <ui-item-textbody>{{ item.text }}</ui-item-textbody>
+                  <ui-item-body>{{ item.text }}</ui-item-body>
                   <template slot="action">
                     <ui-item-action>
                       <a href="#">
