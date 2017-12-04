@@ -1,15 +1,12 @@
 @import '../global/reset';
-@import '../global/material-icons';
-
+// Variables and mixins
 @import '../../material-design-lite/variables';
 @import '../../material-design-lite/mixins';
-
+// Resets and dependencies
 @import '../../material-design-lite/resets/resets';
 @import '../../material-design-lite/typography/typography';
-
+// Components
 @import '../../material-design-lite/palette/palette';
 @import '../../material-design-lite/ripple/ripple';
 @import '../../material-design-lite/animation/animation';
 @import '../../material-design-lite/shadow/shadow';
-
-@import 'ui-icon';

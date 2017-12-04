@@ -4,6 +4,36 @@
 
 🎉 __New feature: Individual Components__
 
+### ⚠️ Breaking Changes
+
+__event plugin__
+
+- rename `openDialog` to `onOpen`
+- rename `closeDialog` to `onClose`
+- rename `showDialog` to `onShow`
+- rename `hideDialog` to `onHide`
+
+```html
+<template>
+  <ui-button @click.native="onOpen('show')"></ui-button>
+  <ui-dialog :open="show" @close="onClose('show')">
+    ...
+  </ui-dialog>
+</template>
+```
+
+```js
+<script>
+export default {
+  data() {
+    return {
+      show: false
+    };
+  }
+};
+</script>
+```
+
 ### Components
 
 - `<ui-card-text>` rename to `<ui-card-body>`

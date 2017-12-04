@@ -6,27 +6,35 @@ const input = {
 };
 
 const components = [
+  'icon.js',
+  // MDL Components
   'badge.js',
   'button.js',
   'card.js',
-  'checkbox.js',
   'chip.js',
   'dialog.js',
-  'icon-toggle.js',
-  'icon.js',
   'layout.js',
   'list.js',
-  'menu.js',
-  'pagination.js',
   'progress.js',
-  'radio.js',
+  'spinner.js',
+  'menu.js',
   'slider.js',
   'snackbar.js',
-  'spinner.js',
+  'checkbox.js',
+  'radio.js',
+  'icon-toggle.js',
   'switch.js',
   'table.js',
   'textfield.js',
-  'tooltip.js'
+  'tooltip.js',
+  // Plus Components
+  'divider.js',
+  'pagination.js',
+  'select.js',
+  'fileupload.js',
+  'autocomplete.js',
+  'datepicker.js',
+  'rangepicker.js'
 ];
 const helpers = ['index.js'];
 const mixins = ['index.js'];

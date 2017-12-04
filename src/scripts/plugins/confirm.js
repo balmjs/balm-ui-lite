@@ -32,7 +32,7 @@ const template = `<ui-dialog
   </ui-dialog-actions>
 </ui-dialog>`;
 
-export default {
+const BalmUIConfirmPlugin = {
   install(Vue) {
     let vm;
 
@@ -89,3 +89,9 @@ export default {
     Vue.prototype.$confirm = UiConfirm;
   }
 };
+
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(BalmUIConfirmPlugin);
+}
+
+export default BalmUIConfirmPlugin;

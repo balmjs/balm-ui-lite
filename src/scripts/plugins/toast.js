@@ -15,7 +15,7 @@ const template = `<ui-snackbar
   :timeout="options.timeout">
 </ui-snackbar>`;
 
-export default {
+const BalmUIToastPlugin = {
   install(Vue) {
     let vm;
 
@@ -58,3 +58,9 @@ export default {
     Vue.prototype.$toast = UiToast;
   }
 };
+
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(BalmUIToastPlugin);
+}
+
+export default BalmUIToastPlugin;

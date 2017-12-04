@@ -28,7 +28,7 @@ const template = `<ui-dialog
   </ui-dialog-actions>
 </ui-dialog>`;
 
-export default {
+const BalmUIAlertPlugin = {
   install(Vue) {
     let vm;
 
@@ -81,3 +81,9 @@ export default {
     Vue.prototype.$alert = UiAlert;
   }
 };
+
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(BalmUIAlertPlugin);
+}
+
+export default BalmUIAlertPlugin;

@@ -59,11 +59,11 @@ const itemProps = {
 
 const s4 = () => Math.floor((1 + Math.random()) * 0x10000).toString(16);
 
-export default {
+const BalmUINotifyPlugin = {
   install(Vue) {
     const notifyContainer = document.createElement('div');
 
-    Vue.prototype.$notify = new Vue({
+    const UiNotify = new Vue({
       el: notifyContainer,
       template,
       data() {
@@ -176,5 +176,13 @@ export default {
         document.body.appendChild(notifyContainer);
       }
     });
+
+    Vue.prototype.$notify = UiNotify;
   }
 };
+
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(BalmUINotifyPlugin);
+}
+
+export default BalmUINotifyPlugin;

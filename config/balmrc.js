@@ -30,7 +30,7 @@ module.exports = {
     } : {
       'balm-ui-lite': './src/scripts/index.js'
     },
-    library: 'BalmUI',
+    library: 'BalmUILite',
     libraryTarget: 'umd',
     loaders: [{
       test: /\.vue$/,
