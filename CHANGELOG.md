@@ -2,7 +2,7 @@
 
 ## 0.6.0 (Coming Up)
 
-🎉 __New feature: Individual Components__
+🎉 __New feature: Individual Components & New Document for Chinese__
 
 ### ⚠️ Breaking Changes
 
