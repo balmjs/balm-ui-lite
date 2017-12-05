@@ -1,5 +1,5 @@
 <template>
-  <div class="snippet-code" v-html="text"></div>
+  <div :class="className" v-html="text"></div>
 </template>
 
 <script>
@@ -9,6 +9,15 @@ export default {
     text: {
       type: String,
       required: true
+    },
+    code: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    className() {
+      return this.code ? 'snippet-code' : 'markdown-body';
     }
   },
   mounted() {

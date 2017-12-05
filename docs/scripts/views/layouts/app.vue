@@ -49,9 +49,9 @@
 </template>
 
 <script>
-import BalmUI from '../../src/scripts/index';
-import {lang} from './config/lang';
-import menu from './config/menu';
+import BalmUI from '../../../../src/scripts/index';
+import {lang} from '../../config/lang';
+import menu from '../../config/menu';
 
 export default {
   metaInfo: {

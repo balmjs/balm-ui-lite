@@ -68,7 +68,7 @@ import getType from '../helpers/typeof';
 
 const LABEL_PLACEHOLDER = '%s';
 
-export default {
+const FormValidatorMixin = {
   methods: {
     validate(formData, extraRules = {}) {
       let result = {
@@ -135,3 +135,5 @@ export default {
     }
   }
 };
+
+export default FormValidatorMixin;

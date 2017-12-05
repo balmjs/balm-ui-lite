@@ -37,7 +37,7 @@ const components = [
   'rangepicker.js'
 ];
 const helpers = ['index.js'];
-const mixins = ['index.js'];
+const mixins = ['form-validator.js'];
 const plugins = ['event.js', 'alert.js', 'confirm.js', 'toast.js', 'notify.js'];
 
 const output = {

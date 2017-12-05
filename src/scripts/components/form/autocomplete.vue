@@ -40,7 +40,7 @@ const _EVENT_MOUSEOVER = 'mouseover';
 const EVENT_INPUT = 'input';
 const EVENT_RESPONSE = 'response';
 const EVENT_ENTER = 'enter';
-const REMOVE_HTML_TAG_REGEX = /<[^>]+>/g;
+const REMOVE_HTML_TAG_REGEX = new RegExp('<[^>]+>', 'g');
 
 export default {
   name: 'ui-autocomplete',

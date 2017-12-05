@@ -5,7 +5,7 @@ import VueMeta from 'vue-meta';
 import VueI18n from 'vue-i18n';
 import axios from 'axios';
 import BalmUI from '../../src/scripts/index'; // 'balm-ui-lite'
-import App from './app';
+import App from './views/layouts/app';
 import routes from './routes/index';
 import UiMarkdown from './components/markdown';
 import UiApidoc from './components/apidoc';
