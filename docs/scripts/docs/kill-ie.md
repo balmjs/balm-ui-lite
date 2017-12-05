@@ -1,36 +1,53 @@
-## Kill IE
-
-__/path/to/app/scripts/config/kill-ie.js__
+## 抵制IE方案
+> 直接 `Copy` +`Paste` 套路即可
 
 ```js
+// 文件：/path/to/app/scripts/kill-ie.js
 import { helpers } from 'balm-ui-lite';
 
 const IE = helpers.detectIE();
 
-export const isIE = IE && IE < 10;
+const isIE = IE && IE < 10; // 项目兼容到IE10+
 
-export const killIE = () => {
-  const template =
+const killIE = () => {
+  let body = document.getElementsByTagName('body')[0];
+  let template =
     `<div class="kill-ie">
       <div class="container">
         <div class="content">
-          <h1>您的浏览器版本过低，请点击<a href="http://browsehappy.com/">链接</a>升级您的浏览器</h1>
+          <h1>您的浏览器版本过低，请点击<a href="https://browsehappy.com/">链接</a>升级您的浏览器</h1>
           <p>
             PS：推荐使用<a href="http://www.google.cn/intl/zh-CN/chrome/browser/desktop/">谷歌浏览器</a>；如果是双核浏览器，请切换至<b>急速模式</b>
           </p>
         </div>
       </div>
     </div>`;
+
   document.getElementsByTagName('html')[0].style.height = '100%';
-  const body = document.getElementsByTagName('body')[0];
   body.style.height = '100%';
+
   body.innerHTML = template;
+};
+
+export {
+  isIE,
+  killIE
 };
 ```
 
-__/path/to/app/styles/global/kill-ie.scss__
+```js
+// 文件：/path/to/app/scripts/main.js
+import { isIE, killIE } from './kill-ie';
+
+if (isIE) {
+  killIE();
+} else {
+  // your code
+}
+```
 
 ```css
+/* 文件：/path/to/app/styles/global/kill-ie.scss */
 .kill-ie {
   display: table;
   width: 100%;
@@ -51,17 +68,5 @@ __/path/to/app/styles/global/kill-ie.scss__
     display: inline-block;
     text-align: center;
   }
-}
-```
-
-__/path/to/main.js__
-
-```js
-import { isIE, killIE } from './config/kill-ie';
-
-if (isIE) {
-  killIE();
-} else {
-  // your code
 }
 ```

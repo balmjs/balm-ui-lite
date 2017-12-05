@@ -1,19 +1,19 @@
 <template>
-  <div class="page--kill-ie">
+  <div class="page--guide guide-advanced">
     <ui-markdown :text="docs"></ui-markdown>
   </div>
 </template>
 
 <script>
-import docs from '../../docs/kill-ie.md';
+import docs from '../../docs/advanced.md';
 
 export default {
   metaInfo: {
-    titleTemplate: '%s - Kill IE'
+    titleTemplate: '%s - 进阶用法'
   },
   data() {
     return {
-      docs: docs
+      docs
     };
   }
 };

@@ -2,7 +2,7 @@
 
 好的工具能让开发更加简单快捷。
 
-[Balm CLI](https://github.com/balmjs/balm-cli) 是一个命令行界面工具，它可以快速创建基于 [Balm](http://balmjs.com/) 的项目脚手架。
+[Balm CLI](https://github.com/balmjs/balm-cli) 是一个命令行界面工具，它可以快速创建基于 [BalmJS](http://balmjs.com/) 的项目脚手架。
 
 ### 1. 设置开发环境
 
@@ -55,16 +55,16 @@ npm i --save balm-ui-lite
 
 ### 4. 配置 Vue 项目
 
-#### 配置 CSS
+#### 4.1 配置样式
 
 推荐使用Sass引入 `/path/to/balm-ui-lite.scss` ，可以使用Sass变量快速重写全局或组件的样式
 
 ```css
-// 样式文件：my-project/app/styles/global/_vendor.scss
+/* 样式文件：my-project/app/styles/global/_vendor.scss */
 @import '../../../node_modules/balm-ui-lite/src/styles/balm-ui-lite.scss';
 ```
 
-#### 配置 JS
+#### 4.2 配置脚本
 
 ```js
 // 脚本文件：my-project/app/scripts/main.js
@@ -79,6 +79,12 @@ Vue.use(BalmUI.plugins.event);
 Vue.use(BalmUI.plugins.alert);
 ...
 ```
+
+#### 4.3 UI库所需的图片和字体
+
+下载 [BalmUI Lite assets](http://balmjs.com/ui-vue-lite/assets.zip) 并解压，将其中的 _images_ 和 _fonts_ 文件夹复制到项目中（__`/path/to/my-project/app`__）
+
+> 更多使用方式和免下载资源的方法请参照 [进阶用法](http://balmjs.com/ui-vue-lite/#/guide/advanced)
 
 ### 5. 开发调试
 

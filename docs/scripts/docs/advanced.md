@@ -1,4 +1,6 @@
-## Advanced
+## 进阶用法
+
+
 
 ### Use individual components (mobile dev recommended)
 
@@ -64,9 +66,9 @@ __`/path/to/app/scripts/views/home.vue`__
 </template>
 ```
 
-### Auto copy assets
+### 自动复制UI所需的图片和字体资源
 
-__`/path/to/gulpfile.js`__
+编辑 `/path/to/my-project/gulpfile.js`
 
 ```js
 ...
@@ -75,8 +77,8 @@ balm.go(function(mix) {
   if (balm.config.production) {
     ...
   } else {
-    mix.copy('./node_modules/balm-ui-lite/src/images/*', './app/images');
-    mix.copy('./node_modules/balm-ui-lite/src/fonts/*', './app/fonts');
+    mix.copy('./node_modules/balm-ui-lite/dist/img/*', './app/images');
+    mix.copy('./node_modules/balm-ui-lite/dist/font/*', './app/fonts');
   }
 });
 ```
