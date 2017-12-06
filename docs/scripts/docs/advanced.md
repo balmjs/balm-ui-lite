@@ -15,7 +15,7 @@
 <head>
   ...
   <!-- build:css css/vendor.css -->
-  <link rel="stylesheet" href="/node_modules/balm-ui-lite/dist/css/balm-ui-lite.css">
+  <link rel="stylesheet" href="/node_modules/balm-ui-lite/dist/balm-ui-lite.css">
   <!-- endbuild -->
 </head>
 
@@ -25,7 +25,7 @@
   </div>
   <script src="https://unpkg.com/vue"></script>
   <!-- build:js js/vendor.js -->
-  <script src="/node_modules/balm-ui-lite/dist/js/balm-ui-lite.js"></script>
+  <script src="/node_modules/balm-ui-lite/dist/balm-ui-lite.js"></script>
   <!-- endbuild -->
   <script>
   var app = new Vue({
@@ -159,8 +159,8 @@ balm.go(function(mix) {
   if (balm.config.production) {
     ...
   } else {
-    mix.copy('./node_modules/balm-ui-lite/dist/img/*', './app/images');
-    mix.copy('./node_modules/balm-ui-lite/dist/font/*', './app/fonts');
+    mix.copy('./node_modules/balm-ui-lite/img/*', './app/images');
+    mix.copy('./node_modules/balm-ui-lite/font/*', './app/fonts');
   }
 });
 ```
