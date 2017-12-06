@@ -1,33 +1,29 @@
-```html
-<ui-button colored raised @click.native="$notify.add(options)">使用字符串映射预设的处理方法</ui-button>
-```
-
 ```js
-const options = {
-  avatar: `path/to/avatar`,
-  content: `Hey! It's you!`,
-  progressColor: '#ff4081',
-  buttons: [{
-    text: 'Close'
-  }, {
-    text: 'Hello',
-    handler: 'sayHello'
-  }]
-};
+const foo = () => alert('hello');
+const bar = () => alert('BalmUI');
 
-export default {
-  data () {
-    return {
-      options
-    }
-  },
-  methods: {
-    sayHello () {
-      alert(`Yes, it's me.\n Hello!`);
-    }
-  },
-  created () {
-    this.$notify.addButtonHandler('sayHello', this.sayHello);
-  }
-}
+Vue.prototype.$notify.addButtonHandler('foo', foo);
+Vue.prototype.$notify.addButtonHandler('bar', bar);
+
+// or
+
+Vue.prototype.$notify.addButtonHandler({
+  name: 'foo',
+  method: foo
+});
+Vue.prototype.$notify.addButtonHandler({
+  name: 'bar',
+  method: bar
+});
+
+// or
+
+Vue.prototype.$notify.addButtonHandler([{
+  name: 'foo',
+  method: foo
+}, {
+  name: 'bar',
+  method: bar
+}]);
+
 ```

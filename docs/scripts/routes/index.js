@@ -6,6 +6,9 @@ import BlankLayout from '../views/layouts/blank';
 // sub pages
 import guideRoutes from './guide';
 import componentsRoutes from './components';
+// plugins
+import pluginsRoutes from './plugins';
+import f from './foundation';
 
 const routes = [{
   path: '/',
@@ -24,9 +27,16 @@ const routes = [{
   component: BlankLayout,
   children: componentsRoutes
 }, {
+  path: '/plugins',
+  name: 'plugins',
+  redirect: '/plugins/event',
+  component: BlankLayout,
+  children: pluginsRoutes
+},{
   path: '/test',
   name: 'test',
   component: Test,
 }];
 
-export default routes;
+
+export default routes.concat(f);

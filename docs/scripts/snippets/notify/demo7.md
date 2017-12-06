@@ -1,29 +1,34 @@
-```js
-const foo = () => alert('hello');
-const bar = () => alert('BalmUI');
-
-Vue.prototype.$notify.addButtonHandler('foo', foo);
-Vue.prototype.$notify.addButtonHandler('bar', bar);
-
-// or
-
-Vue.prototype.$notify.addButtonHandler({
-  name: 'foo',
-  method: foo
-});
-Vue.prototype.$notify.addButtonHandler({
-  name: 'bar',
-  method: bar
-});
-
-// or
-
-Vue.prototype.$notify.addButtonHandler([{
-  name: 'foo',
-  method: foo
-}, {
-  name: 'bar',
-  method: bar
-}]);
-
+```html
+<ui-button colored raised @click.native="$notify.add(options)">输入like关闭</ui-button>
 ```
+
+```js
+const options = {
+  timeout: 0,
+  content: 'Do you like BalmUI?',
+  buttons: [{
+    text: 'like',
+    handler: 'like'
+  }]
+};
+
+export default {
+  data () {
+    return {
+      options
+    }
+  },
+  methods: {
+    like (notify) {
+      let result = prompt('say like!');
+      if(result.toLowerCase() === 'like') {
+        this.$notify.close(notify);
+      }
+    }
+  },
+  created () {
+    this.$notify.addButtonHandler('like', this.like);
+  }
+}
+```
+
