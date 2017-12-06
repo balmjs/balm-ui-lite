@@ -8,7 +8,7 @@
     <h4>0. 使用方式</h4>
     <ui-markdown :text="code[0]"></ui-markdown>
 
-    <h4>1. 非链接</h4>
+    <h4>1. 非链接 &lt;ui-badge&gt;</h4>
 
     <!-- Demo 1 -->
     <div class="snippet-group">
@@ -64,7 +64,7 @@
       <ui-markdown :text="code[2]"></ui-markdown>
     </div>
 
-    <h4>2. 超链接</h4>
+    <h4>2. 超链接 &lt;ui-badge-link&gt;</h4>
 
     <!-- Demo 3 -->
     <div class="snippet-group">

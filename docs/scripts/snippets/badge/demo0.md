@@ -11,10 +11,11 @@ Vue.use(BalmUI);
 
 ```js
 import Vue from 'vue';
-import UiBadge from 'balm-ui-lite/components/badge';
+import { UiBadge, UiBadgeLink } from 'balm-ui-lite/components/badge';
 
 import 'balm-ui-lite/components/core.css';
 import 'balm-ui-lite/components/badge.css';
 
 Vue.component(UiBadge.name, UiBadge);
+Vue.component(UiBadgeLink.name, UiBadgeLink);
 ```

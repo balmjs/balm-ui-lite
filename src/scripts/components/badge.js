@@ -14,3 +14,8 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default components;
+
+export {
+  UiBadge,
+  UiBadgeLink
+};
