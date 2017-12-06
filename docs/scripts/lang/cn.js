@@ -60,6 +60,9 @@ const data = {
     "confirm": "确认框",
     "toast": "提示框",
     "notify": "通知框"
+  },
+  "components": {
+    "button": "<ui-button>"
   }
 };
 
