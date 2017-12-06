@@ -1,5 +1,5 @@
 <template>
-  <a :class="className" :data-badge="value">
+  <a :class="[className, 'mdl-badge--link']" :data-badge="value">
     <slot></slot>
   </a>
 </template>

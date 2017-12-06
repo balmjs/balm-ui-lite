@@ -62,6 +62,7 @@ const data = {
     "notify": "通知框"
   },
   "components": {
+    "badge": "<ui-badge>",
     "button": "<ui-button>"
   }
 };

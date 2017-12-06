@@ -22,7 +22,7 @@
   }, {
     "name": "icon",
     "type": "String",
-    "description": "Material图标，请参考<a href='http://balmjs.com/ui-vue/#/icons' target='_blank'>图标文档</a>"
+    "description": "Material图标，请参考<a href='http://balmjs.com/ui-vue/#/icons' target='_blank'>图标库</a>"
   }, {
     "name": "colored",
     "type": "Boolean",

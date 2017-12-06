@@ -3,21 +3,26 @@
     "name": "value",
     "type": "Number, String",
     "default": "0",
-    "description": "Assigns string value to badge"
+    "description": "状态值"
   }, {
-    "name": "noBackground",
+    "name": "icon",
     "type": "Boolean",
     "default": "false",
-    "description": "Applies open-circle effect to badge"
+    "description": "启用Material图标识别"
+  }, {
+    "name": "no-background",
+    "type": "Boolean",
+    "default": "false",
+    "description": "开环效果"
   }, {
     "name": "overlap",
     "type": "Boolean",
     "default": "false",
-    "description": "Make the badge overlap with its container"
+    "description": "使状态值与它的容器重叠"
   }],
   "slots": [{
     "name": "(default)",
-    "description": "The default slot holds the badge text and can contain HTML"
+    "description": "默认插槽可以插入子组件内容"
   }],
   "events": []
 }
