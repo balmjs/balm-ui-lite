@@ -18,3 +18,10 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default components;
+
+export {
+  UiChip,
+  UiChipText,
+  UiChipAction,
+  UiChipContact
+};

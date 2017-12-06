@@ -34,7 +34,7 @@
           <div class="snippet-caption-padding"></div>
         </div>
       </div>
-      <ui-markdown :text="code[1]"></ui-markdown>
+      <ui-markdown :code="code[1]"></ui-markdown>
     </div>
 
     <!-- Demo 2 -->
@@ -61,7 +61,7 @@
           <div class="snippet-caption-padding"></div>
         </div>
       </div>
-      <ui-markdown :text="code[2]"></ui-markdown>
+      <ui-markdown :code="code[2]"></ui-markdown>
     </div>
 
     <h4>2. 超链接 &lt;ui-badge-link&gt;</h4>
@@ -84,7 +84,7 @@
           <div class="snippet-caption-padding"></div>
         </div>
       </div>
-      <ui-markdown :text="code[3]"></ui-markdown>
+      <ui-markdown :code="code[3]"></ui-markdown>
     </div>
 
     <ui-apidoc name="badge"></ui-apidoc>

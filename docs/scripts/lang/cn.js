@@ -62,8 +62,12 @@ const data = {
     "notify": "通知框"
   },
   "components": {
-    "badge": "<ui-badge>",
-    "button": "<ui-button>"
+    "badge": "<ui-badge> & <ui-badge-link>",
+    "button": "<ui-button>",
+    "chip": "<ui-chip>",
+    "chip-text": "<ui-chip-text>",
+    "chip-action": "<ui-chip-action>",
+    "chip-contact": "<ui-chip-contact>"
   }
 };
 

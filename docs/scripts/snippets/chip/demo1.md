@@ -7,8 +7,8 @@
 
 ```html
 <!-- Deletable Chip -->
-<ui-chip action>
+<ui-chip v-if="show" action>
   <ui-chip-text>Deletable Chip</ui-chip-text>
-  <ui-chip-action></ui-chip-action>
+  <ui-chip-action @click.native="onHide('show')"></ui-chip-action>
 </ui-chip>
 ```

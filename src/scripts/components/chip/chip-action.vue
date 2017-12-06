@@ -1,5 +1,5 @@
 <template>
-  <a class="mdl-chip__action">
+  <a href="javascript:void(0);" class="mdl-chip__action">
     <slot>
       <i class="material-icons">cancel</i>
     </slot>

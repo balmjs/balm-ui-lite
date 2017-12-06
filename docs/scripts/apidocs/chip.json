@@ -3,16 +3,16 @@
     "name": "contact",
     "type": "Boolean",
     "default": "false",
-    "description": "Defines an MDL chip as a contact style chip"
+    "description": "启用联系人头像样式"
   }, {
     "name": "action",
     "type": "Boolean",
     "default": "false",
-    "description": "Defines an MDL chip as a deletable style chip"
+    "description": "启用删除操作样式"
   }],
   "slots": [{
     "name": "(default)",
-    "description": "The default slot holds the chip and can contain HTML"
+    "description": "默认插槽可以插入子组件内容"
   }],
   "events": []
 }

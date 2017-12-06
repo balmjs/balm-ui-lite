@@ -39,18 +39,18 @@ Vue.prototype.$http = axios;
 Vue.prototype.$prism = prismjs;
 Vue.prototype.$docs = {
   props: {
-    thead: ['Name', 'Type', 'Default', 'Description'],
+    thead: ['参数', '类型', '默认值', '说明'],
     tbody: ['name', 'type', 'default', {
       field: 'description',
       raw: true
     }]
   },
   slots: {
-    thead: ['Name', 'Description', '<template slot-scope="props">'],
+    thead: ['名称', '说明', '作用域'],
     tbody: ['name', 'description', 'props']
   },
   events: {
-    thead: ['Name', 'Description'],
+    thead: ['名称', '说明'],
     tbody: ['name', 'description']
   }
 };
