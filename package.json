@@ -20,9 +20,8 @@
     "dist",
     "img",
     "font",
-    "components",
     "helpers",
-    "mixins",
+    "components",
     "plugins"
   ],
   "main": "dist/js/balm-ui-lite.js",
