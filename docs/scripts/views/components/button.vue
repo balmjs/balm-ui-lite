@@ -1,16 +1,18 @@
 <template>
   <div class="page--button">
     <div class="component-title">
-      <h3>Button</h3>
-      <p>Variations on Material Design buttons.</p>
+      <h3>按钮</h3>
     </div>
 
+    <h4>1. 圆形按钮 &lt;ui-button fab&gt;</h4>
+
+    <!-- Demo 1 -->
     <div class="snippet-group">
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
-            <ui-button fab colored noRipple>
+            <ui-button fab colored no-ripple>
               <ui-icon>add</ui-icon>
             </ui-button>
           </div>
@@ -21,16 +23,23 @@
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
+        <div class="snippet-captions">
+          <div class="snippet-caption-padding"></div>
+          <div class="snippet-caption">着色</div>
+          <div class="snippet-caption">波纹</div>
+          <div class="snippet-caption-padding"></div>
+        </div>
       </div>
-      <ui-markdown :text="code[0]"></ui-markdown>
+      <ui-markdown :code="code[0]"></ui-markdown>
     </div>
 
+    <!-- Demo 2 -->
     <div class="snippet-group">
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
-            <ui-button fab noRipple>
+            <ui-button fab no-ripple>
               <ui-icon>add</ui-icon>
             </ui-button>
           </div>
@@ -46,16 +55,26 @@
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
+        <div class="snippet-captions">
+          <div class="snippet-caption-padding"></div>
+          <div class="snippet-caption">非着色</div>
+          <div class="snippet-caption">波纹</div>
+          <div class="snippet-caption">禁用</div>
+          <div class="snippet-caption-padding"></div>
+        </div>
       </div>
       <ui-markdown :text="code[1]"></ui-markdown>
     </div>
 
+    <h4>2. 矩形按钮 &lt;ui-button raised&gt;</h4>
+
+    <!-- Demo 3 -->
     <div class="snippet-group">
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
-            <ui-button raised noRipple>Button</ui-button>
+            <ui-button raised no-ripple>Button</ui-button>
           </div>
           <div class="snippet-demo">
             <ui-button raised>Button</ui-button>
@@ -65,35 +84,53 @@
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
+        <div class="snippet-captions">
+          <div class="snippet-caption-padding"></div>
+          <div class="snippet-caption">普通</div>
+          <div class="snippet-caption">波纹</div>
+          <div class="snippet-caption">禁用</div>
+          <div class="snippet-caption-padding"></div>
+        </div>
       </div>
       <ui-markdown :text="code[2]"></ui-markdown>
     </div>
 
+    <!-- Demo 4 -->
     <div class="snippet-group">
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
-            <ui-button raised colored noRipple>Button</ui-button>
+            <ui-button raised colored no-ripple>Button</ui-button>
           </div>
           <div class="snippet-demo">
-            <ui-button raised accent noRipple>Button</ui-button>
+            <ui-button raised accent no-ripple>Button</ui-button>
           </div>
           <div class="snippet-demo">
             <ui-button raised accent>Button</ui-button>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
+        <div class="snippet-captions">
+          <div class="snippet-caption-padding"></div>
+          <div class="snippet-caption">主色</div>
+          <div class="snippet-caption">辅色</div>
+          <div class="snippet-caption">辅色+波纹</div>
+          <div class="snippet-caption-padding"></div>
+        </div>
       </div>
       <ui-markdown :text="code[3]"></ui-markdown>
     </div>
 
+    <h4>3. 扁平化按钮 &lt;ui-button&gt;</h4>
+
+    <!-- Demo 5 -->
     <div class="snippet-group">
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
-            <ui-button noRipple>Button</ui-button>
+            <ui-button no-ripple>Button</ui-button>
           </div>
           <div class="snippet-demo">
             <ui-button>Button</ui-button>
@@ -103,26 +140,43 @@
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
+        <div class="snippet-captions">
+          <div class="snippet-caption-padding"></div>
+          <div class="snippet-caption">普通</div>
+          <div class="snippet-caption">波纹</div>
+          <div class="snippet-caption">禁用</div>
+          <div class="snippet-caption-padding"></div>
+        </div>
       </div>
       <ui-markdown :text="code[4]"></ui-markdown>
     </div>
 
+    <!-- Demo 6 -->
     <div class="snippet-group">
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
-            <ui-button primary noRipple>Button</ui-button>
+            <ui-button primary no-ripple>Button</ui-button>
           </div>
           <div class="snippet-demo">
-            <ui-button accent noRipple>Button</ui-button>
+            <ui-button accent no-ripple>Button</ui-button>
           </div>
           <div class="snippet-demo-padding"></div>
+        </div>
+        <div class="snippet-captions">
+          <div class="snippet-caption-padding"></div>
+          <div class="snippet-caption">主色</div>
+          <div class="snippet-caption">辅色</div>
+          <div class="snippet-caption-padding"></div>
         </div>
       </div>
       <ui-markdown :text="code[5]"></ui-markdown>
     </div>
 
+    <h4>4. 其他按钮</h4>
+
+    <!-- Demo 7 -->
     <div class="snippet-group">
       <div class="snippet-header">
         <div class="snippet-demos">
@@ -135,10 +189,17 @@
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
+        <div class="snippet-captions">
+          <div class="snippet-caption-padding"></div>
+          <div class="snippet-caption">普通</div>
+          <div class="snippet-caption">着色</div>
+          <div class="snippet-caption-padding"></div>
+        </div>
       </div>
       <ui-markdown :text="code[6]"></ui-markdown>
     </div>
 
+    <!-- Demo 8 -->
     <div class="snippet-group">
       <div class="snippet-header">
         <div class="snippet-demos">
@@ -155,10 +216,17 @@
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
+        <div class="snippet-captions">
+          <div class="snippet-caption-padding"></div>
+          <div class="snippet-caption">小圆形</div>
+          <div class="snippet-caption">小圆形+着色</div>
+          <div class="snippet-caption-padding"></div>
+        </div>
       </div>
       <ui-markdown :text="code[7]"></ui-markdown>
     </div>
 
+    <!-- Demo 9 -->
     <div class="snippet-group">
       <div class="snippet-header">
         <div class="snippet-demos">
@@ -175,12 +243,12 @@
 </template>
 
 <script>
-import snippets from '../mixins/snippets';
+import snippets from '../../mixins/snippets';
 
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - Button'
+    titleTemplate: '%s - 按钮 <ui-button>'
   },
   created() {
     this.showCode('button', 9);

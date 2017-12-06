@@ -3,56 +3,55 @@
     "name": "type",
     "type": "String",
     "default": "'button'",
-    "description": "The type attribute of the &lt;button&gt;"
+    "description": "原生&lt;button&gt;的type属性"
   }, {
     "name": "raised",
     "type": "Boolean",
     "default": "false",
-    "description": "Applies raised display effect"
+    "description": "矩形效果"
   }, {
     "name": "fab",
     "type": "Boolean",
     "default": "false",
-    "description": "Applies fab (circular) display effect"
+    "description": "圆形效果"
   }, {
-    "name": "miniFab",
+    "name": "mini-fab",
     "type": "Boolean",
     "default": "false",
-    "description": "Applies mini-fab (small fab circular) display effect"
+    "description": "mini圆形效果"
   }, {
     "name": "icon",
-    "type": "Boolean, String",
-    "default": "false",
-    "description": "Applies icon (small plain circular) display effect"
+    "type": "String",
+    "description": "Material图标，请参考<a href='http://balmjs.com/ui-vue/#/icons' target='_blank'>图标文档</a>"
   }, {
     "name": "colored",
     "type": "Boolean",
     "default": "false",
-    "description": "Applies colored display effect (primary or accent color, depending on the type of button)"
+    "description": "着色效果（主色或辅色取决于按钮效果类型）"
   }, {
     "name": "primary",
     "type": "Boolean",
     "default": "false",
-    "description": "Applies primary color display effect"
+    "description": "主色效果"
   }, {
     "name": "accent",
     "type": "Boolean",
     "default": "false",
-    "description": "Applies accent color display effect"
+    "description": "辅色效果"
   }, {
-    "name": "noRipple",
+    "name": "no-ripple",
     "type": "Boolean",
     "default": "false",
-    "description": "Don't apply ripple click effect"
+    "description": "无波纹效果"
   }, {
     "name": "link",
     "type": "Boolean",
     "default": "false",
-    "description": "Applies link display effect"
+    "description": "链接效果"
   }],
   "slots": [{
     "name": "(default)",
-    "description": "The default slot holds the button text and can contain HTML"
+    "description": "默认插槽可以插入子组件内容"
   }],
   "events": []
 }

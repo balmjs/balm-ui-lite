@@ -1,6 +1,6 @@
 ```html
 <!-- Flat button -->
-<ui-button noRipple>Button</ui-button>
+<ui-button no-ripple>Button</ui-button>
 
 <!-- Flat button with ripple -->
 <ui-button>Button</ui-button>

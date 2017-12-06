@@ -1,19 +1,18 @@
 <template>
-  <div :class="className" v-html="text"></div>
+  <div :class="className" v-html="html"></div>
 </template>
 
 <script>
 export default {
   name: 'ui-markdown',
   props: {
-    text: {
-      type: String,
-      required: true
-    },
-    code: {
-      type: Boolean,
-      default: false
-    }
+    text: String, // 文档内容
+    code: String // 代码片段
+  },
+  data() {
+    return {
+      html: this.text || this.code
+    };
   },
   computed: {
     className() {

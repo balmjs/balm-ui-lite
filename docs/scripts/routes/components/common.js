@@ -1,10 +1,9 @@
-const Badge = () => import('../../views/badge');
-const Button = () => import('../../views/button');
-const Card = () => import('../../views/card');
-const Chip = () => import('../../views/chip');
-const Menu = () => import('../../views/menu');
-const Tooltip = () => import('../../views/tooltip');
-const Divider = () => import('../../views/divider');
+const Badge = () => import('../../views/components/badge');
+const Button = () => import('../../views/components/button');
+const Chip = () => import('../../views/components/chip');
+const Menu = () => import('../../views/components/menu');
+const Tooltip = () => import('../../views/components/tooltip');
+const Divider = () => import('../../views/components/divider');
 
 const commonRoutes = [{
   path: 'badge',
@@ -14,10 +13,6 @@ const commonRoutes = [{
   path: 'button',
   name: 'components.button',
   component: Button
-}, {
-  path: 'card',
-  name: 'components.card',
-  component: Card
 }, {
   path: 'chip',
   name: 'components.chip',

@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import snippets from '../mixins/snippets';
+import snippets from '../../mixins/snippets';
 
 export default {
   mixins: [snippets],
@@ -70,7 +70,7 @@ export default {
   },
   data() {
     return {
-      avatar: require('../../images/assets/demos/user.jpg')
+      avatar: require('../../../images/assets/demos/user.jpg')
     };
   },
   created() {
