@@ -8,11 +8,11 @@
     <h4>Simple Dialog</h4>
     <div class="snippet-group">
       <div class="snippet-demo">
-        <ui-button @click.native="onShow('show1')">Show Dialog</ui-button>
+        <ui-button @click.native="balmUI.onShow('show1')">Show Dialog</ui-button>
       </div>
       <ui-markdown :text="code[0]"></ui-markdown>
     </div>
-    <ui-dialog :open="show1" @close="onClose('show1')" @confirm="onConfirm">
+    <ui-dialog :open="show1" @close="balmUI.onClose('show1')" @confirm="onConfirm">
       <ui-dialog-title>
         <h4>Allow data collection?</h4>
       </ui-dialog-title>
@@ -25,11 +25,11 @@
     <h4>Dialog with full width actions</h4>
     <div class="snippet-group">
       <div class="snippet-demo">
-        <ui-button @click.native="onShow('show2')">Show Modal</ui-button>
+        <ui-button @click.native="balmUI.onShow('show2')">Show Modal</ui-button>
       </div>
       <ui-markdown :text="code[1]"></ui-markdown>
     </div>
-    <ui-dialog :open="show2" @close="onClose('show2')" @confirm="onConfirm">
+    <ui-dialog :open="show2" @close="balmUI.onClose('show2')" @confirm="onConfirm">
       <ui-dialog-content>
         <p>Allow this site to collect usage data to improve your experience?</p>
       </ui-dialog-content>
@@ -39,11 +39,11 @@
     <h4>Dialog with scrolling</h4>
     <div class="snippet-group">
       <div class="snippet-demo">
-        <ui-button @click.native="onShow('show3')">Show Scrolling Dialog</ui-button>
+        <ui-button @click.native="balmUI.onShow('show3')">Show Scrolling Dialog</ui-button>
       </div>
       <!-- <ui-markdown :text="code[2]"></ui-markdown> -->
     </div>
-    <ui-dialog maskClosable :open="show3" @close="onClose('show3')">
+    <ui-dialog maskClosable :open="show3" @close="balmUI.onClose('show3')">
       <ui-dialog-content>
         <p v-for="i in 20">Some content</p>
       </ui-dialog-content>

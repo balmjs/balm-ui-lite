@@ -13,7 +13,7 @@
     <img :src="avatar" alt="">
   </ui-chip-contact>
   <ui-chip-text>Deletable Contact Chip</ui-chip-text>
-  <ui-chip-action @click.native="onHide('show')">
+  <ui-chip-action @click.native="balmUI.onHide('show')">
     <i class="fa fa-close"></i>
   </ui-chip-action>
 </ui-chip>

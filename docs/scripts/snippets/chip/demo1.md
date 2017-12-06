@@ -9,6 +9,6 @@
 <!-- Deletable Chip -->
 <ui-chip v-if="show" action>
   <ui-chip-text>Deletable Chip</ui-chip-text>
-  <ui-chip-action @click.native="onHide('show')"></ui-chip-action>
+  <ui-chip-action @click.native="balmUI.onHide('show')"></ui-chip-action>
 </ui-chip>
 ```

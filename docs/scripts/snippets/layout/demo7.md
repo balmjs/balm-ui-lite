@@ -6,7 +6,7 @@
       <ui-layout-title>Title</ui-layout-title>
     </ui-layout-header-row>
     <!-- Tabs -->
-    <ui-layout-tab-bar @change="onChange">
+    <ui-layout-tab-bar @change="balmUI.onChange('tab', $event)">
       <ui-layout-tab v-for="(item, index) in menu" :key="index">
         {{ item }}
       </ui-layout-tab>
@@ -36,11 +36,6 @@ export default {
       menu: ['Tab1', 'Tab2', 'Tab3'],
       tab: 0
     };
-  },
-  methods: {
-    onChange(tab) {
-      this.tab = tab;
-    }
   }
 };
 ```

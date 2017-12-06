@@ -1,6 +1,6 @@
 ```html
-<ui-radio name="sex" value="M" :model="gender" @change="onChange">Male</ui-radio>
-<ui-radio name="sex" value="F" :model="gender" @change="onChange">Female</ui-radio>
+<ui-radio name="sex" value="M" :model="gender" @change="balmUI.onChange('gender', $event)">Male</ui-radio>
+<ui-radio name="sex" value="F" :model="gender" @change="balmUI.onChange('gender', $event)">Female</ui-radio>
 ```
 
 ```js
@@ -9,11 +9,6 @@ export default {
     return {
       gender: ''
     };
-  },
-  methods: {
-    onChange(val) {
-      this.gender = val;
-    }
   }
 };
 ```

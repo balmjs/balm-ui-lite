@@ -9,7 +9,7 @@
         <ui-select :options="options" :model="formData.selected"
           optionKey="key" optionValue="value"
           defaultKey="0" defaultValue="All items"
-          @change="onChange('formData.selected', $event)"
+          @change="balmUI.onChange('formData.selected', $event)"
           @selected="onOptionSelected"></ui-select>
         <span>selected key: {{ formData.selected }}</span>
       </div>

@@ -23,7 +23,7 @@
             optionValue="value"
             optionKey="key"
             :model="pageSize"
-            @change="onChange('pageSize', $event)">
+            @change="balmUI.onChange('pageSize', $event)">
             {{ props.pageSize }}
           </ui-select> records / page,
           {{ props.pageCount }} total pages
