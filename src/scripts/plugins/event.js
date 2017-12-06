@@ -1,35 +1,54 @@
-const methods = {
-  onChange(_property, value, fn = () => {}) {
+import getType from '../helpers/typeof';
+
+const namespace = 'balmUI';
+
+const noop = () => {};
+
+const EventMethods = {
+  onChange(_property, value, fn = noop) {
     new Function('value', `this.${_property} = value;`).call(this, value);
-    fn(value);
-    return this;
+    fn();
   },
-  onOpen(_property, fn = () => {}) {
+  onOpen(_property, fn = noop) {
     new Function(`this.${_property} = true;`).call(this);
     fn();
-    return this;
   },
-  onClose(_property, fn = () => {}) {
+  onClose(_property, fn = noop) {
     new Function(`this.${_property} = false;`).call(this);
     fn();
-    return this;
   },
-  onShow(_property, fn = () => {}) {
+  onShow(_property, fn = noop) {
     new Function(`this.${_property} = true;`).call(this);
     fn();
-    return this;
   },
-  onHide(_property, fn = () => {}) {
+  onHide(_property, fn = noop) {
     new Function(`this.${_property} = false;`).call(this);
     fn();
-    return this;
   }
 };
 
-export default {
-  install(Vue) {
-    Object.keys(methods).forEach(key => {
-      Vue.prototype[key] = methods[key];
+let balmUI = null;
+
+const BalmUI_EventPlugin = {
+  install(Vue, options = { namespace }) {
+    Object.defineProperty(Vue.prototype, options.namespace, {
+      get() {
+        if (getType(balmUI) !== 'object') {
+          balmUI = {};
+
+          Object.keys(EventMethods).forEach(key => {
+            balmUI[key] = EventMethods[key].bind(this);
+          });
+        }
+
+        return balmUI;
+      }
     });
   }
 };
+
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(BalmUI_EventPlugin);
+}
+
+export default BalmUI_EventPlugin;
