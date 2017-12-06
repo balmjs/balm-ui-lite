@@ -18,6 +18,8 @@
   "files": [
     "src",
     "dist",
+    "img",
+    "font",
     "components",
     "helpers",
     "mixins",
