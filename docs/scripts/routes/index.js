@@ -5,8 +5,9 @@ import Test from '../views/test';
 import BlankLayout from '../views/layouts/blank';
 // sub pages
 import guideRoutes from './guide';
+import componentsRoutes from './components';
 
-const baseRoutes = [{
+const routes = [{
   path: '/',
   name: 'home',
   component: Home
@@ -17,11 +18,15 @@ const baseRoutes = [{
   component: BlankLayout,
   children: guideRoutes
 }, {
+  path: '/components',
+  name: 'components',
+  redirect: '/components/button',
+  component: BlankLayout,
+  children: componentsRoutes
+}, {
   path: '/test',
   name: 'test',
   component: Test,
 }];
-
-const routes = baseRoutes.concat(guideRoutes);
 
 export default routes;
