@@ -13,7 +13,7 @@
         :model="date1"
         placeholder="Select Date.."
         toggle
-        @change="onChange('date1', $event)">
+        @change="balmUI.onChange('date1', $event)">
         <i slot="toggle" class="fa fa-calendar"></i>
       </ui-datepicker>
     </div>
@@ -27,7 +27,7 @@
         placeholder="Select Datetime.."
         toggle
         clear
-        @change="onChange('date2', $event)">
+        @change="balmUI.onChange('date2', $event)">
         <template slot="toggle">
           <i class="fa fa-calendar"></i>
         </template>
@@ -44,7 +44,7 @@
         :config="config3"
         :model="date3"
         placeholder="Select Date Range.."
-        @change="onChange('date3', $event)"></ui-datepicker>
+        @change="balmUI.onChange('date3', $event)"></ui-datepicker>
     </div>
     <ui-markdown :text="code[3]"></ui-markdown>
 
@@ -54,7 +54,7 @@
         :config="config4"
         :model="date4"
         placeholder="Select Multi Date.."
-        @change="onChange('date4', $event)" ></ui-datepicker>
+        @change="balmUI.onChange('date4', $event)" ></ui-datepicker>
     </div>
     <ui-markdown :text="code[4]"></ui-markdown>
 
@@ -92,11 +92,6 @@ export default {
       },
       date4: ['2017-11-05', '2017-11-15', '2017-11-25']
     };
-  },
-  methods: {
-    onChange(field, value) {
-      this[field] = value;
-    }
   },
   created() {
     this.showCode('datepicker', 5);

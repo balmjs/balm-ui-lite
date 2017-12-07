@@ -12,13 +12,13 @@
             <ui-checkbox
               :value="true"
               :model="option"
-              @change="onChange('option', $event)">Checkbox ({{ option }})</ui-checkbox>
+              @change="balmUI.onChange('option', $event)">Checkbox ({{ option }})</ui-checkbox>
           </div>
           <div class="snippet-demo">
             <ui-checkbox filled
               :value="true"
               :model="option"
-              @change="onChange('option', $event)">Checkbox2 ({{ option }})</ui-checkbox>
+              @change="balmUI.onChange('option', $event)">Checkbox2 ({{ option }})</ui-checkbox>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
@@ -35,7 +35,7 @@
               :key="index"
               :value="num"
               :model="numberOptions"
-              @change="onChangeNumber">Option {{ num }}</ui-checkbox>
+              @change="balmUI.onChangeNumber">Option {{ num }}</ui-checkbox>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
@@ -65,7 +65,7 @@
               :key="index"
               :value="str"
               :model="stringOptions"
-              @change="onChangeString">Option {{ str }}</ui-checkbox>
+              @change="balmUI.onChangeString">Option {{ str }}</ui-checkbox>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>

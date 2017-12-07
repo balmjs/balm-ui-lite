@@ -3,7 +3,7 @@
   :model="date"
   placeholder="Select Date.."
   toggle
-  @change="onChange('date', $event)">
+  @change="balmUI.onChange('date', $event)">
   <i slot="toggle" class="fa fa-calendar"></i>
 </ui-datepicker>
 ```
@@ -17,11 +17,6 @@ export default {
         defaultDate: 'today'
       }
     };
-  },
-  methods: {
-    onChange(field, value) {
-      this[field] = value;
-    }
   }
 };
 ```

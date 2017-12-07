@@ -2,7 +2,7 @@
 <ui-datepicker :config="config"
   :model="date"
   placeholder="Select Multi Date.."
-  @change="onChange('date', $event)"></ui-datepicker>
+  @change="balmUI.onChange('date', $event)"></ui-datepicker>
 ```
 
 ```js
@@ -14,11 +14,6 @@ export default {
         mode: 'multiple'
       }
     };
-  },
-  methods: {
-    onChange(field, value) {
-      this[field] = value;
-    }
   }
 };
 ```

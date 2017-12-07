@@ -21,7 +21,7 @@ balm.go(function(mix) {
       // get material design lite
       mix.copy(
         constants.DML_SOURCE +
-          '/src/{_*scss,material-design-lite.scss,mdlComponentHandler.js}',
+        '/src/{_*scss,material-design-lite.scss,mdlComponentHandler.js}',
         constants.DEV_SOURCE.mdl
       );
       mix.copy(
@@ -48,7 +48,6 @@ balm.go(function(mix) {
         mix.remove([
           individual.output.components,
           individual.output.helpers,
-          individual.output.mixins,
           individual.output.plugins
         ]);
 
@@ -63,19 +62,22 @@ balm.go(function(mix) {
         });
         mix.js(helpers, individual.output.helpers);
 
-        let mixins = individual.mixins.map(item => {
-          return individual.input.mixins + '/' + item;
-        });
-        mix.js(mixins, individual.output.mixins);
-
         let plugins = individual.plugins.map(item => {
           return individual.input.plugins + '/' + item;
         });
         mix.js(plugins, individual.output.plugins);
 
+        mix.copy(['./dist/css/*.css', './dist/js/*.js'], './dist');
         mix.copy('./dist/css/components/*', './components');
         mix.copy('./dist/css/plugins/*', './plugins');
-        mix.remove(['./dist/css/components', './dist/css/plugins']);
+        mix.copy('./dist/font/*', './font');
+        mix.copy('./dist/img/*', './img');
+        mix.remove([
+          './dist/css',
+          './dist/js',
+          './dist/img',
+          './dist/font'
+        ]);
       }
     }
   }

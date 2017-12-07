@@ -22,7 +22,7 @@
           <div class="snippet-demo">
             <ui-chip v-if="show1" action>
               <ui-chip-text>Deletable Chip</ui-chip-text>
-              <ui-chip-action @click.native="onHide('show1')"></ui-chip-action>
+              <ui-chip-action @click.native="balmUI.onHide('show1')"></ui-chip-action>
             </ui-chip>
           </div>
           <div class="snippet-demo-padding"></div>
@@ -50,7 +50,7 @@
                 <img :src="avatar" alt="">
               </ui-chip-contact>
               <ui-chip-text>Deletable Contact Chip</ui-chip-text>
-              <ui-chip-action @click.native="onHide('show2')">
+              <ui-chip-action @click.native="balmUI.onHide('show2')">
                 <i class="fa fa-close"></i>
               </ui-chip-action>
             </ui-chip>

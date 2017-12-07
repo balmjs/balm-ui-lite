@@ -4,7 +4,7 @@
   placeholder="Select Datetime.."
   toggle
   clear
-  @change="onChange('date', $event)">
+  @change="balmUI.onChange('date', $event)">
   <template slot="toggle">
     <i class="fa fa-calendar"></i>
   </template>
@@ -23,11 +23,6 @@ export default {
         enableTime: true
       }
     };
-  },
-  methods: {
-    onChange(field, value) {
-      this[field] = value;
-    }
   }
 };
 ```
