@@ -6,7 +6,7 @@
         <ui-textfield
           label="Input..."
           :model="formData.name"
-          @input="onChange('formData.name', $event)"></ui-textfield>
+          @input="balmUI.onChange('formData.name', $event)"></ui-textfield>
       </div>
       <div class="form-action">
         <ui-button @click.native="submit">Submit</ui-button>
@@ -16,22 +16,27 @@
 </template>
 
 <script>
-import { mixins } from '../../../src/scripts/index'; // 'balm-ui-lite'
-import formValidatorRules from '../mixins/form-validator-rules';
 
 export default {
-  mixins: [mixins.formValidator],
-  validationRules: formValidatorRules,
+  /*mixins: [mixins.formValidator],
+  validationRules: formValidatorRules,*/
   validation: {
     name: {
       label: 'Username',
-      validator: 'required,customRule1',
+      validator: 'required,customRule1,customRule2,customRule3',
       customRule1: {
-        validate(value, formData) {
-          console.log(formData);
+        validate(value) {
           return value.length > 6;
         },
         message: 'min length < 6'
+      },
+      customRule2: {
+      	validate (value) {
+      		return /\d+/g.test(value);
+        },
+        message(){
+      		return this.msg;
+        }
       }
     }
   },
@@ -39,13 +44,14 @@ export default {
     return {
       formData: {
         name: ''
-      }
+      },
+      msg: 'must be numbers'
     };
   },
   methods: {
     submit() {
       let formData = Object.assign({}, this.formData);
-      let result = this.validate(formData);
+      let result = this.$validate(formData);
       console.log(formData, result);
     }
   }

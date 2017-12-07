@@ -113,6 +113,7 @@ import alert from './plugins/alert';
 import confirm from './plugins/confirm';
 import toast from './plugins/toast';
 import notify from './plugins/notify';
+import validator from './plugins/validator';
 
 const version = require('../../package.json').version;
 const helpers = Object.assign({}, BalmUI_Helpers);
@@ -196,7 +197,8 @@ const plugins = {
   alert,
   confirm,
   toast,
-  notify
+  notify,
+  validator
 };
 
 const registers = {
