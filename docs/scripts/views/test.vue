@@ -32,7 +32,7 @@ export default {
       },
       customRule2: {
       	validate (value) {
-      		return /\d+/g.test(value);
+      		return /^\d+$/g.test(value);
         },
         message(){
       		return this.msg;
