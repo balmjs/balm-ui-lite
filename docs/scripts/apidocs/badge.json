@@ -22,7 +22,7 @@
   }],
   "slots": [{
     "name": "(default)",
-    "description": "默认插槽可以插入子组件内容"
+    "description": "默认插槽可以插入徽章内容"
   }],
   "events": []
 }

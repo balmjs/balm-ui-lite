@@ -2,7 +2,7 @@
   "props": [],
   "slots": [{
     "name": "(default)",
-    "description": "The default slot holds the chip text and can contain HTML"
+    "description": "默认插槽可以插入Chip文本内容"
   }],
   "events": []
 }
