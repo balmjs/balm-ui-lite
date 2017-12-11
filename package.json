@@ -26,10 +26,10 @@
   ],
   "main": "dist/js/balm-ui-lite.js",
   "scripts": {
-    "mdl": "gulp --mdl",
-    "dev": "gulp",
-    "prod": "gulp --production",
-    "docs": "gulp --production --docs"
+    "mdl": "gulp --silent --mdl",
+    "dev": "gulp --silent",
+    "prod": "gulp --silent --production",
+    "docs": "gulp --silent --production --docs"
   },
   "repository": {
     "type": "git",
