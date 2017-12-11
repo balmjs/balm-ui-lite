@@ -1,5 +1,5 @@
 ```html
-<ui-button @click="showDialog('show')">Show Dialog</ui-button>
+<ui-button raised colored @click="showDialog('show')">Show Dialog</ui-button>
 ```
 
 ```html

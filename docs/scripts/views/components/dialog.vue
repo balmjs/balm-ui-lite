@@ -1,16 +1,20 @@
 <template>
   <div class="page--dialog">
     <div class="component-title">
-      <h3>Dialog</h3>
-      <p>Modal windows for dedicated user input.</p>
+      <h3>Dialog 对话框</h3>
+      <p>可包含用户操作内容的模拟弹窗。</p>
     </div>
 
-    <h4>Simple Dialog</h4>
+    <h4>0. 使用方式</h4>
+    <ui-markdown :text="code[0]"></ui-markdown>
+
+    <h4>1. 普通对话框</h4>
+
     <div class="snippet-group">
       <div class="snippet-demo">
-        <ui-button @click="balmUI.onShow('show1')">Show Dialog</ui-button>
+        <ui-button raised colored @click="balmUI.onShow('show1')">Simple Dialog</ui-button>
       </div>
-      <ui-markdown :text="code[0]"></ui-markdown>
+      <ui-markdown :code="code[1]"></ui-markdown>
     </div>
     <ui-dialog :open="show1" @close="balmUI.onClose('show1')" @confirm="onConfirm">
       <ui-dialog-title>
@@ -22,12 +26,11 @@
       <ui-dialog-actions></ui-dialog-actions>
     </ui-dialog>
 
-    <h4>Dialog with full width actions</h4>
     <div class="snippet-group">
       <div class="snippet-demo">
-        <ui-button @click="balmUI.onShow('show2')">Show Modal</ui-button>
+        <ui-button raised colored @click="balmUI.onShow('show2')">Dialog with full width actions</ui-button>
       </div>
-      <ui-markdown :text="code[1]"></ui-markdown>
+      <ui-markdown :code="code[2]"></ui-markdown>
     </div>
     <ui-dialog :open="show2" @close="balmUI.onClose('show2')" @confirm="onConfirm">
       <ui-dialog-content>
@@ -36,28 +39,19 @@
       <ui-dialog-actions fullWidth acceptText="Agree" cancelText="Disagree"></ui-dialog-actions>
     </ui-dialog>
 
-    <h4>Dialog with scrolling</h4>
+    <h4>2. 内容带滚轴的对话框</h4>
+
     <div class="snippet-group">
       <div class="snippet-demo">
-        <ui-button @click="balmUI.onShow('show3')">Show Scrolling Dialog</ui-button>
+        <ui-button raised colored @click="balmUI.onShow('show3')">Scrolling Dialog</ui-button>
       </div>
-      <!-- <ui-markdown :text="code[2]"></ui-markdown> -->
+      <ui-markdown :code="code[3]"></ui-markdown>
     </div>
     <ui-dialog maskClosable :open="show3" @close="balmUI.onClose('show3')">
       <ui-dialog-content>
-        <p v-for="i in 20">Some content</p>
+        <p v-for="i in 20">Some content {{ i }}</p>
       </ui-dialog-content>
     </ui-dialog>
-
-    <h4>Alert &amp; Confirm</h4>
-    <div class="snippet-group">
-      <div class="snippet-demo">
-        <ui-button @click="showAlert">show alert</ui-button>
-        <ui-button @click="showConfirm">show confirm</ui-button>
-        <ui-button @click="showToast">show toast</ui-button>
-      </div>
-      <ui-markdown :text="code[2]"></ui-markdown>
-    </div>
 
     <ui-apidoc name="dialog"></ui-apidoc>
     <ui-apidoc name="dialog-title"></ui-apidoc>
@@ -72,7 +66,7 @@ import snippets from '../../mixins/snippets';
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - Dialog'
+    titleTemplate: '%s - 对话框 <ui-dialog>'
   },
   data() {
     return {
@@ -81,42 +75,13 @@ export default {
       show3: false
     };
   },
+  created() {
+    this.showCode('dialog', 3);
+  },
   methods: {
     onConfirm(result) {
       console.log(`confirm result: ${result}`);
-    },
-    showAlert() {
-      this.$alert('Hello').then(() => {
-        console.log('World');
-      });
-
-      // this.$alert({
-      //   message: 'Hello',
-      //   callback: () => {
-      //     console.log('World');
-      //   }
-      // });
-    },
-    showConfirm() {
-      // this.$confirm('Are you sure?').then(() => {
-      //   console.log('ok');
-      // }).catch(() => {
-      //   console.log('cancel');
-      // });
-
-      this.$confirm({
-        message: 'Are you sure?',
-        callback: result => {
-          console.log(result);
-        }
-      });
-    },
-    showToast() {
-      this.$toast('gg');
     }
-  },
-  created() {
-    this.showCode('dialog', 3);
   }
 };
 </script>

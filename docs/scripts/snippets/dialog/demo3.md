@@ -1,26 +1,21 @@
 ```html
-<ui-button @click="showAlert">show alert</ui-button>
-<ui-button @click="showConfirm">show confirm</ui-button>
-<ui-button @click="showToast">show toast</ui-button>
+<ui-button raised colored @click="balmUI.onShow('show')">Scrolling Dialog</ui-button>
+```
+
+```html
+<ui-dialog maskClosable :open="show" @close="balmUI.onClose('show')">
+  <ui-dialog-content>
+    <p v-for="i in 20">Some content</p>
+  </ui-dialog-content>
+</ui-dialog>
 ```
 
 ```js
 export default {
-  methods: {
-    showAlert() {
-      this.$alert('Hello World');
-    },
-    showConfirm() {
-      this.$confirm({
-        message: 'Are you sure?',
-        callback: result => {
-          console.log(result);
-        }
-      });
-    },
-    showToast() {
-      this.$toast('gg');
-    }
+  data() {
+    return {
+      show: false
+    };
   }
 };
 ```
