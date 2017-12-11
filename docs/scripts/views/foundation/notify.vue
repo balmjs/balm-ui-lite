@@ -22,7 +22,7 @@
     <p>
       <ui-button colored
                  raised
-                 @click.native="$notify.add(options1)">Hello BalmUI</ui-button>
+                 @click="$notify.add(options1)">Hello BalmUI</ui-button>
     </p>
     <p>点击上面的按钮，会在浏览器右上角出现一个Notify。默认包含一段文字，一个进度条，和一个Close按钮。</p>
     <p>如果你把鼠标移动到上面的话，进度条则会暂停，鼠标移出时进度条会继续。当进度条达到100%时，当前这条Notify就会自动关闭。</p>
@@ -54,12 +54,12 @@
     <p>add是Notify的主要方法，通过将配置属性传入add方法，我们可以改变消息通知框的结构和表现形式。</p>
     <ui-markdown :text="code[3]"></ui-markdown>
     <h4>下面是一个示例</h4>
-    <p><ui-button colored raised @click.native="$notify.add(options2)">带有头像和多个按钮的</ui-button></p>
+    <p><ui-button colored raised @click="$notify.add(options2)">带有头像和多个按钮的</ui-button></p>
     <ui-markdown :text="code[4]"></ui-markdown>
     <h4>另一些示例</h4>
     <p>
-      <ui-button colored raised @click.native="$notify.add(options3)">移除进度条的（不会再自动关闭）</ui-button>
-      <ui-button raised @click.native="$notify.add(options4)">改变了进度条颜色的</ui-button>
+      <ui-button colored raised @click="$notify.add(options3)">移除进度条的（不会再自动关闭）</ui-button>
+      <ui-button raised @click="$notify.add(options4)">改变了进度条颜色的</ui-button>
     </p>
 
     <div class="divider"></div>
@@ -67,7 +67,7 @@
     <h3>$notify.addButtonHandler(handlerName | Object | Array, funcName)</h3>
     <p>addButtonHandler是一个灵活的方法，它允许你事先将各种函数预设进Notify的btnHandlers集合中，从而使得在添加按钮handler的时候可以使用字符串来映射对应的处理方法。</p>
     <h4>提示：当按钮被点击触发处理函数时，不会改变当前函数执行的作用域，同时会把当前的notify对象作为参数传入该函数中。</h4>
-    <p><ui-button colored raised @click.native="$notify.add(options5)">使用字符串映射预设的处理方法</ui-button></p>
+    <p><ui-button colored raised @click="$notify.add(options5)">使用字符串映射预设的处理方法</ui-button></p>
     <ui-markdown :text="code[5]"></ui-markdown>
     <h4>提示：你可以比较这个例子和上面调用相同方法的例子之间的区别。</h4>
     <h4>扩展：通过这个方法，我们可以全局预设好Notify需要处理的事件，而调用的时候只需要把自定义按钮的handler属性设置为对应字符串。</h4>
@@ -78,7 +78,7 @@
 
     <h3>$notify.close(notify)</h3>
     <p>这个方法用于手动关闭指定Notify。通常用于按钮设置为点击不自动关闭，然后自行处理的逻辑。</p>
-    <p><ui-button colored raised @click.native="$notify.add(options6)">输入like关闭</ui-button></p>
+    <p><ui-button colored raised @click="$notify.add(options6)">输入like关闭</ui-button></p>
     <ui-markdown :text="code[7]"></ui-markdown>
 
     <div class="divider"></div>

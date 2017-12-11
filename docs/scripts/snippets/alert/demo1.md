@@ -1,5 +1,5 @@
 ```html
-<ui-button primary effect raised @click.native="showDialog('showAlert')">open alert</ui-button>
+<ui-button primary effect raised @click="showDialog('showAlert')">open alert</ui-button>
 ```
 
 ```html

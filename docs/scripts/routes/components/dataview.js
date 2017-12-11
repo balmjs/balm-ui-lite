@@ -1,19 +1,19 @@
-const List = () => import('../views/list');
-const Table = () => import('../views/table');
-const Pagination = () => import('../views/pagination');
+const List = () => import('../../views/components/list');
+const Table = () => import('../../views/components/table');
+const Pagination = () => import('../../views/components/pagination');
 
-const dataRoutes = [{
-  path: '/list',
-  name: 'list',
+const dataviewRoutes = [{
+  path: 'list',
+  name: 'components.list',
   component: List
 }, {
-  path: '/table',
-  name: 'table',
+  path: 'table',
+  name: 'components.table',
   component: Table
 }, {
-  path: '/pagination',
-  name: 'pagination',
+  path: 'pagination',
+  name: 'components.pagination',
   component: Pagination
 }];
 
-export default dataRoutes;
+export default dataviewRoutes;

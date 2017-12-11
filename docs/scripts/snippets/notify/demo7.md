@@ -1,5 +1,5 @@
 ```html
-<ui-button colored raised @click.native="$notify.add(options)">输入like关闭</ui-button>
+<ui-button colored raised @click="$notify.add(options)">输入like关闭</ui-button>
 ```
 
 ```js

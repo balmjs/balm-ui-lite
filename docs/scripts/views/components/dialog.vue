@@ -8,7 +8,7 @@
     <h4>Simple Dialog</h4>
     <div class="snippet-group">
       <div class="snippet-demo">
-        <ui-button @click.native="balmUI.onShow('show1')">Show Dialog</ui-button>
+        <ui-button @click="balmUI.onShow('show1')">Show Dialog</ui-button>
       </div>
       <ui-markdown :text="code[0]"></ui-markdown>
     </div>
@@ -25,7 +25,7 @@
     <h4>Dialog with full width actions</h4>
     <div class="snippet-group">
       <div class="snippet-demo">
-        <ui-button @click.native="balmUI.onShow('show2')">Show Modal</ui-button>
+        <ui-button @click="balmUI.onShow('show2')">Show Modal</ui-button>
       </div>
       <ui-markdown :text="code[1]"></ui-markdown>
     </div>
@@ -39,7 +39,7 @@
     <h4>Dialog with scrolling</h4>
     <div class="snippet-group">
       <div class="snippet-demo">
-        <ui-button @click.native="balmUI.onShow('show3')">Show Scrolling Dialog</ui-button>
+        <ui-button @click="balmUI.onShow('show3')">Show Scrolling Dialog</ui-button>
       </div>
       <!-- <ui-markdown :text="code[2]"></ui-markdown> -->
     </div>
@@ -52,9 +52,9 @@
     <h4>Alert &amp; Confirm</h4>
     <div class="snippet-group">
       <div class="snippet-demo">
-        <ui-button @click.native="showAlert">show alert</ui-button>
-        <ui-button @click.native="showConfirm">show confirm</ui-button>
-        <ui-button @click.native="showToast">show toast</ui-button>
+        <ui-button @click="showAlert">show alert</ui-button>
+        <ui-button @click="showConfirm">show confirm</ui-button>
+        <ui-button @click="showToast">show toast</ui-button>
       </div>
       <ui-markdown :text="code[2]"></ui-markdown>
     </div>
@@ -67,7 +67,7 @@
 </template>
 
 <script>
-import snippets from '../mixins/snippets';
+import snippets from '../../mixins/snippets';
 
 export default {
   mixins: [snippets],

@@ -100,7 +100,7 @@ npm run dev
   <div class="hello">
     ...
     <!-- 添加一个测试按钮 -->
-    <ui-button @click.native="$alert('gg')">点我</ui-button>
+    <ui-button @click="$alert('gg')">点我</ui-button>
   </div>
 </template>
 ```

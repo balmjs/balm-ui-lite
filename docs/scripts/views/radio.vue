@@ -19,10 +19,10 @@
         <div class="snippet-captions">
           <div class="snippet-captions-padding"></div>
           <div class="snippet-caption">
-            <ui-button @click.native="onWatchSex('M')">choose Male</ui-button>
+            <ui-button @click="onWatchSex('M')">choose Male</ui-button>
           </div>
           <div class="snippet-caption">
-            <ui-button @click.native="onWatchSex('F')">choose Female</ui-button>
+            <ui-button @click="onWatchSex('F')">choose Female</ui-button>
           </div>
           <div class="snippet-captions-padding"></div>
         </div>

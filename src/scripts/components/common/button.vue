@@ -1,5 +1,5 @@
 <template>
-  <button :class="className" :type="type">
+  <button :class="className" :type="type" @click="handleClick">
     <slot>
       <i v-if="icon" class="material-icons">{{ icon }}</i>
     </slot>
@@ -10,6 +10,8 @@
 import mdlMixin from '../../mixins/mdl';
 import '../../../material-design-lite/button/button';
 import '../../../material-design-lite/ripple/ripple';
+
+const EVENT_CLICK = 'click';
 
 export default {
   name: 'ui-button',
@@ -83,6 +85,11 @@ export default {
     this.$mdl.upgradeElement(this.$el, 'MaterialButton');
     if (this.hasRippleEffect) {
       this.$mdl.upgradeElement(this.$el, 'MaterialRipple');
+    }
+  },
+  methods: {
+    handleClick(event) {
+      this.$emit(EVENT_CLICK, event);
     }
   }
 };

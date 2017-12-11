@@ -1,10 +1,14 @@
 <template>
-  <li :class="className" :disabled="item.disabled || null">
+  <li :class="className"
+      :disabled="item.disabled || null"
+      @click="handleClick">
     <slot>{{ item[label] }}</slot>
   </li>
 </template>
 
 <script>
+const EVENT_CLICK = 'click';
+
 export default {
   name: 'ui-menuitem',
   props: {
@@ -33,6 +37,11 @@ export default {
         'mdl-menu__item': true,
         'mdl-menu__item--full-bleed-divider': this.hasDivider || false,
       };
+    }
+  },
+  methods: {
+    handleClick(event) {
+      this.$emit(EVENT_CLICK, event);
     }
   }
 };

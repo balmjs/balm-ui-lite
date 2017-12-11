@@ -1,11 +1,12 @@
 <template>
-  <i :class="className" aria-hidden="true">
+  <i :class="className" aria-hidden="true" @click="handleClick">
     <slot></slot>
   </i>
 </template>
 
 <script>
 const DEFAULT_SIZE = 24;
+const EVENT_CLICK = 'click';
 
 export default {
   name: 'ui-icon',
@@ -25,6 +26,11 @@ export default {
         result[`md-${this.size}`] = true;
       }
       return result;
+    }
+  },
+  methods: {
+    handleClick(event) {
+      this.$emit(EVENT_CLICK, event);
     }
   }
 };

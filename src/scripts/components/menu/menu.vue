@@ -4,7 +4,7 @@
       <ui-menuitem v-for="(item, index) in currentMenu"
         :key="index"
         :item="(getType(item) === 'object') ? item : {}"
-        @click.native="handleItem(item)">
+        @click="handleItem(item)">
       </ui-menuitem>
     </slot>
   </ul>

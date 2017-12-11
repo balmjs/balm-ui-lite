@@ -22,7 +22,7 @@ const template = `<ui-dialog
   <ui-dialog-title v-if="options.title">{{ options.title }}</ui-dialog-title>
   <ui-dialog-content>{{ options.message }}</ui-dialog-content>
   <ui-dialog-actions>
-    <ui-button primary @click.native="handleClick">
+    <ui-button primary @click="handleClick">
       {{ options.buttonText }}
     </ui-button>
   </ui-dialog-actions>

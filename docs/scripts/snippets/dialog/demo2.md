@@ -1,5 +1,5 @@
 ```html
-<ui-button @click.native="showDialog('show')">Show Modal</ui-button>
+<ui-button @click="showDialog('show')">Show Modal</ui-button>
 ```
 
 ```html

@@ -21,7 +21,7 @@
 
 <body>
   <div id="app">
-    <ui-button @click.native="$alert(message)">测试按钮</ui-button>
+    <ui-button @click="$alert(message)">测试按钮</ui-button>
   </div>
   <script src="https://unpkg.com/vue"></script>
   <!-- build:js js/vendor.js -->
@@ -85,7 +85,7 @@ Vue.use(BalmUI.plugins.notify);
 
 <body>
   <div id="app">
-    <ui-button @click.native="$alert(message)">测试按钮</ui-button>
+    <ui-button @click="$alert(message)">测试按钮</ui-button>
   </div>
   <script src="https://unpkg.com/vue"></script>
   <!-- build:js js/vendor.js -->

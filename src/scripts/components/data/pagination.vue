@@ -30,7 +30,7 @@
                @keydown.prevent.enter="handleClick($event.target.value)">
         <span>{{ jumperAfter }}</span>
         <ui-button v-if="jumperButton"
-                   @click.native="handleClick(pager)">{{ jumperButton }}</ui-button>
+                   @click="handleClick(pager)">{{ jumperButton }}</ui-button>
       </div>
     </div>
   </div>

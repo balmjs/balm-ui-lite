@@ -1,10 +1,10 @@
 <template>
   <footer :class="className">
     <slot>
-      <ui-button primary @click.native="$parent.handleAccept">
+      <ui-button primary @click="$parent.handleAccept">
         {{ acceptText }}
       </ui-button>
-      <ui-button accent @click.native="$parent.handleCancel">
+      <ui-button accent @click="$parent.handleCancel">
         {{ cancelText }}
       </ui-button>
     </slot>

@@ -85,7 +85,7 @@
                   :key="actionKey"
                   :icon="actionValue.icon || actionValue.isIcon"
                   :link="actionValue.isLink"
-                  @click.native="doAction(actionValue.name, actionValue.data)">
+                  @click="doAction(actionValue.name, actionValue.data)">
                   <span v-if="!actionValue.icon" v-html="actionValue.value"></span>
                 </ui-button>
               </div>

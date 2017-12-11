@@ -9,7 +9,7 @@
           @input="balmUI.onChange('formData.name', $event)"></ui-textfield>
       </div>
       <div class="form-action">
-        <ui-button @click.native="submit">Submit</ui-button>
+        <ui-button @click="submit">Submit</ui-button>
       </div>
     </fieldset>
   </div>

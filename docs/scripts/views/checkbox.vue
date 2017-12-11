@@ -42,13 +42,13 @@
         <div class="snippet-captions">
           <div class="snippet-captions-padding"></div>
           <div class="snippet-caption">
-            <ui-button @click.native="onWatchNumber([1, 2])">choose 1,2</ui-button>
+            <ui-button @click="onWatchNumber([1, 2])">choose 1,2</ui-button>
           </div>
           <div class="snippet-caption">
-            <ui-button @click.native="onWatchNumber([1, 3])">choose 1,3</ui-button>
+            <ui-button @click="onWatchNumber([1, 3])">choose 1,3</ui-button>
           </div>
           <div class="snippet-caption">
-            <ui-button @click.native="onWatchNumber([2, 3])">choose 2,3</ui-button>
+            <ui-button @click="onWatchNumber([2, 3])">choose 2,3</ui-button>
           </div>
           <div class="snippet-captions-padding"></div>
         </div>
@@ -72,13 +72,13 @@
         <div class="snippet-captions">
           <div class="snippet-captions-padding"></div>
           <div class="snippet-caption">
-            <ui-button @click.native="onWatchString(['1', '2'])">choose '1','2'</ui-button>
+            <ui-button @click="onWatchString(['1', '2'])">choose '1','2'</ui-button>
           </div>
           <div class="snippet-caption">
-            <ui-button @click.native="onWatchString(['1', '3'])">choose '1','3'</ui-button>
+            <ui-button @click="onWatchString(['1', '3'])">choose '1','3'</ui-button>
           </div>
           <div class="snippet-caption">
-            <ui-button @click.native="onWatchString(['2', '3'])">choose '2','3'</ui-button>
+            <ui-button @click="onWatchString(['2', '3'])">choose '2','3'</ui-button>
           </div>
           <div class="snippet-captions-padding"></div>
         </div>

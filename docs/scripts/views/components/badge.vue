@@ -1,8 +1,8 @@
 <template>
   <div class="page--badge">
     <div class="component-title">
-      <h3>徽章</h3>
-      <p>一个小的状态描述组件。</p>
+      <h3>Badge 徽章</h3>
+      <p>小型的状态描述符组件。</p>
     </div>
 
     <h4>0. 使用方式</h4>

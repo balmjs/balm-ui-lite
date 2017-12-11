@@ -8,7 +8,6 @@ import guideRoutes from './guide';
 import componentsRoutes from './components';
 // plugins
 import pluginsRoutes from './plugins';
-import f from './foundation';
 
 const routes = [{
   path: '/',
@@ -38,5 +37,4 @@ const routes = [{
   component: Test,
 }];
 
-
-export default routes.concat(f);
+export default routes;

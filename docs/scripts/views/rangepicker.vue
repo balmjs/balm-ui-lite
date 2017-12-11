@@ -20,7 +20,7 @@
     </div>
     <p>
       {{ searchFormData.date }}
-      <ui-button @click.native="onReset">Reset</ui-button>
+      <ui-button @click="onReset">Reset</ui-button>
     </p>
     <!-- <ui-markdown :text="code[0]"></ui-markdown> -->
 

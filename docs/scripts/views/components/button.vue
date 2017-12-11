@@ -1,7 +1,8 @@
 <template>
   <div class="page--button">
     <div class="component-title">
-      <h3>按钮</h3>
+      <h3>Button 按钮</h3>
+      <p>可点击的按钮组件。</p>
     </div>
 
     <h4>0. 使用方式</h4>

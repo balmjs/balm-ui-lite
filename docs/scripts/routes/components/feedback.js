@@ -1,16 +1,14 @@
-const Dialog = () => import('../views/dialog');
-// const Alert = () => import('../views/Alert');
-// const Confirm = () => import('../views/Confirm');
-const Snackbar = () => import('../views/snackbar');
+const Dialog = () => import('../../views/components/dialog');
+const Snackbar = () => import('../../views/components/snackbar');
 
-const popupRoutes = [{
-  path: '/dialog',
-  name: 'dialog',
+const feedbackRoutes = [{
+  path: 'dialog',
+  name: 'components.dialog',
   component: Dialog
 }, {
-  path: '/snackbar',
-  name: 'snackbar',
+  path: 'snackbar',
+  name: 'components.snackbar',
   component: Snackbar
 }];
 
-export default popupRoutes;
+export default feedbackRoutes;
