@@ -41,6 +41,8 @@ export default {
 - add `<ui-item-primary>` & `<ui-item-secondary>`
 - remove `<ui-loading>`
 - add `<ui-progress>` & `<ui-spinner>`
+- `<ui-card-title>` rename to `<ui-item-head>`
+- add `<ui-card-title>` & `<ui-item-subtitle>`
 
 ---
 

@@ -1,13 +1,13 @@
 {
   "props": [{
-    "name": "dp",
+    "name": "shadow",
     "type": "Number, String",
     "default": "2",
-    "description": "Assigns variable shadow depths (2, 3, 4, 6, 8, or 16) to card"
+    "description": "卡片阴影深度：2，3，4，6，8或16"
   }],
   "slots": [{
     "name": "(default)",
-    "description": "The default slot holds the card text and can contain HTML"
+    "description": "默认插槽可以插入卡片子组件"
   }],
   "events": []
 }

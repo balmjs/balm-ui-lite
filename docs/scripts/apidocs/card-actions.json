@@ -3,11 +3,11 @@
     "name": "border",
     "type": "Boolean",
     "default": "false",
-    "description": "Adds a border to the card section that it's applied to"
+    "description": "分割卡片动作容器和主体内容部分"
   }],
   "slots": [{
     "name": "(default)",
-    "description": "The footer slot holds the card actions text and can contain HTML"
+    "description": "默认插槽可以插入卡片动作内容"
   }],
   "events": []
 }

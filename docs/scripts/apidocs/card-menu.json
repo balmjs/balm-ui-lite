@@ -2,7 +2,7 @@
   "props": [],
   "slots": [{
     "name": "(default)",
-    "description": "The default slot holds the card menu text and can contain HTML"
+    "description": "默认插槽可以插入卡片（右上角）菜单内容"
   }],
   "events": []
 }

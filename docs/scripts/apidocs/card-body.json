@@ -2,7 +2,7 @@
   "props": [],
   "slots": [{
     "name": "(default)",
-    "description": "默认插槽可以插入卡片标题"
+    "description": "默认插槽可以插入卡片主体内容"
   }],
   "events": []
 }

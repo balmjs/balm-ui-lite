@@ -2,7 +2,7 @@
   "props": [],
   "slots": [{
     "name": "(default)",
-    "description": "The default slot holds the card media text and can contain HTML"
+    "description": "默认插槽可以插入卡片媒体内容"
   }],
   "events": []
 }

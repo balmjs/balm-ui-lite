@@ -82,7 +82,9 @@ import UiSpinner from './components/loading/spinner';
  * Data
  */
 import UiCard from './components/card/card';
+import UiCardHead from './components/card/card-head';
 import UiCardTitle from './components/card/card-title';
+import UiCardSubtitle from './components/card/card-subtitle';
 import UiCardMedia from './components/card/card-media';
 import UiCardBody from './components/card/card-body';
 import UiCardActions from './components/card/card-actions';
@@ -169,7 +171,9 @@ const components = {
   UiSpinner,
   // Data
   UiCard,
+  UiCardHead,
   UiCardTitle,
+  UiCardSubtitle,
   UiCardActions,
   UiCardMenu,
   UiCardMedia,

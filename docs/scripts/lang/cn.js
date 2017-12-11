@@ -67,7 +67,15 @@ const data = {
     "chip": "<ui-chip>",
     "chip-text": "<ui-chip-text>",
     "chip-action": "<ui-chip-action>",
-    "chip-contact": "<ui-chip-contact>"
+    "chip-contact": "<ui-chip-contact>",
+    "card": "<ui-card>",
+    "card-head": "<ui-card-head>",
+    "card-title": "<ui-card-title>",
+    "card-subtitle": "<ui-card-subtitle>",
+    "card-media": "<ui-card-media>",
+    "card-body": "<ui-card-body>",
+    "card-actions": "<ui-card-actions>",
+    "card-menu": "<ui-card-menu>"
   }
 };
 
