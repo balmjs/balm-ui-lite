@@ -1,5 +1,8 @@
 ```html
-<ui-textfield :model="formData.name" @change="onChange($event)"></ui-textfield>
+<ui-textfield 
+  :model="formData.name" 
+  @change="onChange($event)" 
+  placeholder="请输入"></ui-textfield>
 <br>
 你的输入：{{formData.name}}
 ```

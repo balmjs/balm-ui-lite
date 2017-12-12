@@ -5,7 +5,7 @@
     <h2 class="line">概述</h2>
     <p>我们注意到，当你触发一些表单事件（例如：input的change事件）或者触发一些组件的事件（例如弹框组件的打开和关闭）时，你需要在当前Vue实例下面注册事件的处理方法。就像下面：</p>
     <p>
-      <ui-textfield :model="formData.name" @change="onChange($event)"></ui-textfield>
+      <ui-textfield :model="formData.name" @change="onChange($event)" placeholder="请输入"></ui-textfield>
       <br>
       你的输入：{{formData.name}}
     </p>
@@ -20,7 +20,7 @@
     <h2 class="line">示例</h2>
     <p>还是最开始的例子：</p>
     <p>
-      <ui-textfield :model="formData.name" @change="balmUI.onChange('formData.name', $event.target.value.trim())"></ui-textfield>
+      <ui-textfield :model="formData.name" @change="balmUI.onChange('formData.name', $event.target.value.trim())" placeholder="请输入"></ui-textfield>
       <br>
       你的输入：{{formData.name}}
     </p>

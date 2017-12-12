@@ -22,12 +22,12 @@
   }, {
     "name": "progressColor",
     "type": "String",
-    "default": "继承全局设置或'#3f51b5'",
+    "default": "继承全局设置",
     "description": "设置进度条的颜色；当timeout设置为0时，进度条将不可见"
   }, {
     "name": "timeout",
     "type": "Number",
-    "default": "继承全局设置或5000",
+    "default": "继承全局设置",
     "description": "设置当前Notify的自动关闭时间；单位：毫秒；<br>设置为0时，Notify将不会自动关闭，进度条将不可见"
   }, {
     "name": "title",

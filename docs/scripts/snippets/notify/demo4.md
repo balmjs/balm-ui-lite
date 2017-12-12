@@ -14,6 +14,7 @@ export default {
         timeout: 0
       },
       item2: {
+        content: 'Hello BalmUI!',
         progressColor: '#ff4081'
       }
     };
