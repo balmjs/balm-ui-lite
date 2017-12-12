@@ -1,3 +1,4 @@
+import { isIE, killIE } from './kill-ie';
 import './polyfill';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
@@ -17,61 +18,65 @@ import 'flatpickrCss';
 // ready translated locales
 import { locales, flatpickrLang } from './config/lang';
 
-const DEBUG = process.env.NODE_ENV !== 'production';
+if (isIE) {
+  killIE();
+} else {
+  const DEBUG = process.env.NODE_ENV !== 'production';
 
-Vue.config.productionTip = false;
-Vue.use(VueRouter);
-Vue.use(VueMeta);
-Vue.use(VueI18n);
-Vue.use(BalmUI);
-Vue.use(BalmUI.plugins.event);
-Vue.use(BalmUI.plugins.alert);
-Vue.use(BalmUI.plugins.confirm);
-Vue.use(BalmUI.plugins.toast);
-Vue.use(BalmUI.plugins.notify);
-Vue.use(BalmUI.plugins.validator);
-Vue.use({
-  install(vue) {
-    vue.component(UiMarkdown.name, UiMarkdown);
-    vue.component(UiApidoc.name, UiApidoc);
-  }
-});
-Vue.prototype.$http = axios;
-Vue.prototype.$prism = prismjs;
-Vue.prototype.$docs = {
-  props: {
-    thead: ['参数', '类型', '默认值', '说明'],
-    tbody: ['name', 'type', 'default', {
-      field: 'description',
-      raw: true
-    }]
-  },
-  slots: {
-    thead: ['名称', '说明', '作用域'],
-    tbody: ['name', 'description', 'props']
-  },
-  events: {
-    thead: ['名称', '说明'],
-    tbody: ['name', 'description']
-  }
-};
-Vue.prototype.$domain = DEBUG ? '' : '/ui-vue-lite';
+  Vue.config.productionTip = false;
+  Vue.use(VueRouter);
+  Vue.use(VueMeta);
+  Vue.use(VueI18n);
+  Vue.use(BalmUI);
+  Vue.use(BalmUI.plugins.event);
+  Vue.use(BalmUI.plugins.alert);
+  Vue.use(BalmUI.plugins.confirm);
+  Vue.use(BalmUI.plugins.toast);
+  Vue.use(BalmUI.plugins.notify);
+  Vue.use(BalmUI.plugins.validator);
+  Vue.use({
+    install(vue) {
+      vue.component(UiMarkdown.name, UiMarkdown);
+      vue.component(UiApidoc.name, UiApidoc);
+    }
+  });
+  Vue.prototype.$http = axios;
+  Vue.prototype.$prism = prismjs;
+  Vue.prototype.$docs = {
+    props: {
+      thead: ['参数', '类型', '默认值', '说明'],
+      tbody: ['name', 'type', 'default', {
+        field: 'description',
+        raw: true
+      }]
+    },
+    slots: {
+      thead: ['名称', '说明', '作用域'],
+      tbody: ['name', 'description', 'props']
+    },
+    events: {
+      thead: ['名称', '说明'],
+      tbody: ['name', 'description']
+    }
+  };
+  Vue.prototype.$domain = DEBUG ? '' : '/ui-vue-lite';
 
-const router = new VueRouter({
-  routes
-});
+  const router = new VueRouter({
+    routes
+  });
 
-// Create VueI18n instance with options
-const i18n = new VueI18n({
-  locale: 'cn', // set locale
-  messages: locales, // set locale messages
-});
-Vue.prototype.flatpickrLang = flatpickrLang;
+  // Create VueI18n instance with options
+  const i18n = new VueI18n({
+    locale: 'cn', // set locale
+    messages: locales, // set locale messages
+  });
+  Vue.prototype.flatpickrLang = flatpickrLang;
 
-new Vue({
-  el: '#app',
-  router,
-  template: '<App/>',
-  components: { App },
-  i18n
-});
+  new Vue({
+    el: '#app',
+    router,
+    template: '<App/>',
+    components: { App },
+    i18n
+  });
+}
