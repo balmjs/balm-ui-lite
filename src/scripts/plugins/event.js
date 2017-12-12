@@ -1,5 +1,3 @@
-import getType from '../helpers/typeof';
-
 const namespace = 'balmUI';
 
 const noop = () => {};
