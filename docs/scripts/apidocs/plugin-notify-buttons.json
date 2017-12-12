@@ -1,0 +1,25 @@
+{
+  "props": [{
+    "name": "autoClose",
+    "type": "Boolean",
+    "default": "true",
+    "description": "是否自动关闭"
+  },{
+    "name": "className",
+    "type": "String",
+    "default": "",
+    "description": "自定义按钮的className"
+  }, {
+    "name": "handler",
+    "type": "String|Function",
+    "default": "",
+    "description": "按钮点击时的处理方法"
+  }, {
+    "name": "text",
+    "type": "String",
+    "default": "",
+    "description": "按钮文字"
+  }],
+  "slots": [],
+  "events": []
+}

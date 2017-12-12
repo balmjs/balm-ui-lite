@@ -1,6 +1,6 @@
 <template>
   <div class="apidoc">
-    <h4>{{ $t(`components.${name}`) }} API</h4>
+    <h4 v-if="showTitle">{{ $t(`components.${name}`) }} API</h4>
     <ui-tabs :active="tab">
       <ui-tab-bar effect position="left" @change="balmUI.onChange('tab', $event)">
         <ui-tab
@@ -33,6 +33,10 @@ export default {
     name: {
       type: String,
       required: true
+    },
+    showTitle: {
+    	type: Boolean,
+      default: true
     }
   },
   data() {

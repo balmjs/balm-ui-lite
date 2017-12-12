@@ -12,9 +12,11 @@
 
     <h2 class="line">引入</h2>
     <ui-markdown :text="code[0]"></ui-markdown>
-    <p>接下来就可以在任意位置调用Notify插件了。</p>
+    <p>示例代码中的<strong>options</strong>参数包含以下属性：</p>
+    <ui-apidoc name="plugin-notify-useage" :show-title="false"></ui-apidoc>
 
-    <h2 class="line">调用方法</h2>
+    <h2 class="line">示例</h2>
+    <h3>基本用法</h3>
     <p>全局调用，用于Vue实例外部</p>
     <ui-markdown :text="code[1]"></ui-markdown>
     <p>实例内部调用</p>
@@ -28,45 +30,34 @@
     <p>如果你把鼠标移动到上面的话，进度条则会暂停，鼠标移出时进度条会继续。当进度条达到100%时，当前这条Notify就会自动关闭。</p>
     <p>你也可以点击 <strong>Close</strong> 按钮提前关闭Notify。</p>
 
-    <h2 class="line">属性</h2>
-    <p>Notify本身是一个Vue实例，它包含以下属性：(默认值)</p>
-    <ul>
-      <li>
-        <span>open: true // 关闭和隐藏Notify的开关</span>
-      </li>
-      <li>
-        <span>progressColor: '#3f51b5' // 全局的进度条颜色（每条Notify还可以单独设置）</span>
-      </li>
-      <li>
-        <span>transitionName: 'notify-list' // Notify入场动画，设置为空字符串则移除动画效果</span>
-      </li>
-      <li>
-        <span>notifies: [] // Notify队列</span>
-      </li>
-      <li>
-        <span>btnHandlers: {} // 按钮被点击时可以用字符串来映射的处理方法集合</span>
-      </li>
-    </ul>
-
-    <h2 class="line">方法</h2>
-
-    <h3>$notify.add(options)</h3>
-    <p>add是Notify的主要方法，通过将配置属性传入add方法，我们可以改变消息通知框的结构和表现形式。</p>
-    <ui-markdown :text="code[3]"></ui-markdown>
-    <h4>下面是一个示例</h4>
+    <h3>更改布局</h3>
     <p><ui-button colored raised @click="$notify.add(options2)">带有头像和多个按钮的</ui-button></p>
-    <ui-markdown :text="code[4]"></ui-markdown>
-    <h4>另一些示例</h4>
+    <ui-markdown :text="code[3]"></ui-markdown>
+
+    <h3>更改进度条</h3>
     <p>
       <ui-button colored raised @click="$notify.add(options3)">移除进度条的（不会再自动关闭）</ui-button>
       <ui-button raised @click="$notify.add(options4)">改变了进度条颜色的</ui-button>
     </p>
+    <ui-markdown :text="code[4]"></ui-markdown>
+
+    <p><strong>使用$notify.add方法，通过传入不同的参数，可以随意定义每个Notify的样式。</strong></p>
+
+    <h2 class="line">方法</h2>
+
+    <h3>$notify.add(options)</h3>
+    <p>add是Notify的主要方法，通过将配置属性传入add方法，我们可以改变消息通知框的结构和表现形式。<strong>options</strong>参数的具体属性如下：</p>
+    <ui-apidoc name="plugin-notify-add" :show-title="false"></ui-apidoc>
+    <h4>上面的buttons属性是一个数组，数组的每项是一个对象（Object），每个对象的相关属性为：</h4>
+    <ui-apidoc name="plugin-notify-buttons" :show-title="false"></ui-apidoc>
+    <h4>这个方法会返回一个对象：{id: NotifyId}，这个id可以用于Notify的查找方法。</h4>
 
     <div class="divider"></div>
 
-    <h3>$notify.addButtonHandler(handlerName | Object | Array, funcName)</h3>
+    <h3>$notify.addButtonHandler(handlerName | Object | Array, handler)</h3>
     <p>addButtonHandler是一个灵活的方法，它允许你事先将各种函数预设进Notify的btnHandlers集合中，从而使得在添加按钮handler的时候可以使用字符串来映射对应的处理方法。</p>
     <h4>提示：当按钮被点击触发处理函数时，不会改变当前函数执行的作用域，同时会把当前的notify对象作为参数传入该函数中。</h4>
+    <p>通过这个方法，可以把上面多个按钮的例子改写一下：</p>
     <p><ui-button colored raised @click="$notify.add(options5)">使用字符串映射预设的处理方法</ui-button></p>
     <ui-markdown :text="code[5]"></ui-markdown>
     <h4>提示：你可以比较这个例子和上面调用相同方法的例子之间的区别。</h4>
@@ -76,32 +67,36 @@
 
     <div class="divider"></div>
 
-    <h3>$notify.close(notify)</h3>
+    <h3>$notify.close(notify: Object)</h3>
     <p>这个方法用于手动关闭指定Notify。通常用于按钮设置为点击不自动关闭，然后自行处理的逻辑。</p>
     <p><ui-button colored raised @click="$notify.add(options6)">输入like关闭</ui-button></p>
     <ui-markdown :text="code[7]"></ui-markdown>
+    <h4>notify参数是一个对象，只需要包含指定notify的id即可：{id: targetNotifyId}；这个对象一般会作为参数传入按钮的处理方法中，另外Notify的add方法也会返回这个对象。</h4>
 
     <div class="divider"></div>
 
-    <h3>$notify.findNotifyIndex(notify)</h3>
+    <h3>$notify.findNotifyIndex(notify: Object)</h3>
     <p>这个方法用于返回指定Notify的索引。可能会在某些场景下有用。</p>
+
+    <h3>$notify.findNotify(notify: Object)</h3>
+    <p>这个方法用于返回指定的Notify。可能会在某些场景下有用。</p>
 
     <div class="divider"></div>
 
     <h3>$notify.resetProgressColor()</h3>
-    <p>将所有的Notify进度条颜色还原为默认值: '#3f51b5'。</p>
+    <p>将所有的Notify进度条颜色还原为预设值。</p>
 
     <div class="divider"></div>
 
     <h3>$notify.resetTransitionName()</h3>
-    <p>将所有的Notify的过渡动画名称还原为默认值: 'notify-list'。</p>
+    <p>将所有的Notify的过渡动画名称还原为预设值。</p>
 
     <div class="divider"></div>
 
-    <h3>$notify.setProgressColor()</h3>
+    <h3>$notify.setProgressColor(color: String)</h3>
     <p>设置所有进度条颜色。优先级低于每个Notify自定义的进度条颜色。</p>
 
-    <h3>$notify.setTransitionName()</h3>
+    <h3>$notify.setTransitionName(name: String)</h3>
     <p>设置所有Notify的过渡动画名称以更改过渡动画。</p>
 
     <div class="divider"></div>

@@ -4,7 +4,7 @@
 import Vue from 'vue';
 import BalmUI from 'balm-ui-lite';
 
-Vue.use(BalmUI.plugins.notify);
+Vue.use(BalmUI.plugins.notify, options);
 ```
 
 独立使用
@@ -15,5 +15,5 @@ import notify from 'balm-ui-lite/plugins/notify';
 
 import 'balm-ui-lite/plugins/notify.css';
 
-Vue.use(notify);
+Vue.use(notify, options);
 ```

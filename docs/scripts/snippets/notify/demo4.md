@@ -1,27 +1,22 @@
 ```html
-<ui-button colored raised @click="$notify.add(options)">带有头像和多个按钮的方法</ui-button>
+<p>
+  <ui-button colored raised @click="$notify.add(item1)">移除进度条的（不会再自动关闭）</ui-button>
+  <ui-button raised @click="$notify.add(item2)">改变了进度条颜色的</ui-button>
+</p>
 ```
 
 ```js
 export default {
   data () {
     return {
-      options: {
-        avatar: `path/to/avatar`,
-        content: `Hey! It's you!`,
-        buttons: [{
-          text: 'Close'
-        }, {
-          text: 'Hello',
-          handler: this.sayHello
-        }]
+      item1: {
+        content: 'Hello BalmUI!',
+        timeout: 0
+      },
+      item2: {
+        progressColor: '#ff4081'
       }
-    }
-  },
-  methods: {
-    sayHello () {
-      alert(`Yes, it's me.\n Hello!`);
-    }
+    };
   }
 }
 ```

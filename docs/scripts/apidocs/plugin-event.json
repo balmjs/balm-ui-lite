@@ -1,0 +1,20 @@
+{
+  "props": [{
+    "name": "property",
+    "type": "String",
+    "default": "",
+    "description": "需要改变状态的字段，如：show，dialog.show"
+  }, {
+    "name": "value",
+    "type": "any",
+    "default": "",
+    "description": "仅用于onChange方法，表示字段将要更改的值/状态"
+  }, {
+    "name": "fn",
+    "type": "Function",
+    "default": "noop",
+    "description": "（可选）数据状态更改后的额外处理函数"
+  }],
+  "slots": [],
+  "events": []
+}

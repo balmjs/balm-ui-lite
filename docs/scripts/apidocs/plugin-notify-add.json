@@ -1,0 +1,45 @@
+{
+  "props": [{
+    "name": "avatar",
+    "type": "String",
+    "default": "",
+    "description": "头像/封面的src"
+  }, {
+    "name": "buttons",
+    "type": "Array",
+    "default": "将在下面的表格具体介绍",
+    "description": "定义Notify的按钮"
+  }, {
+    "name": "className",
+    "type": "String",
+    "default": "",
+    "description": "自定义的className"
+  }, {
+    "name": "content",
+    "type": "String",
+    "default": "",
+    "description": "设置Notify的内容"
+  }, {
+    "name": "progressColor",
+    "type": "String",
+    "default": "继承全局设置或'#3f51b5'",
+    "description": "设置进度条的颜色；当timeout设置为0时，进度条将不可见"
+  }, {
+    "name": "timeout",
+    "type": "Number",
+    "default": "继承全局设置或5000",
+    "description": "设置当前Notify的自动关闭时间；单位：毫秒；<br>设置为0时，Notify将不会自动关闭，进度条将不可见"
+  }, {
+    "name": "title",
+    "type": "String",
+    "default": "",
+    "description": "设置Notify的标题"
+  }, {
+    "name": "type",
+    "type": "String",
+    "default": "info",
+    "description": "定义Notify类型的className;<br>会为Notify节点增加'type-${className}'的类名，通过该类名为不同类型的Notify扩展不同的样式"
+  }],
+  "slots": [],
+  "events": []
+}

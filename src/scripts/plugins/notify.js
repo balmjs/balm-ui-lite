@@ -41,7 +41,7 @@ const template = `<div class="mdl-notify" v-if="open">
 const itemProps = {
   type: 'info', // 消息类型
   timeout: 5000, // 自动关闭时间，设置为0则不会关闭
-  avatar: null, // 头像
+  avatar:'', // 头像
   className: '', // 自定义css class
   title: '', // 标题
   content: '', // 内容
@@ -51,133 +51,150 @@ const itemProps = {
       // 自定义按钮 {className: String, text: String, handler: Function|String, autoClose: Boolean}
       className: '', // 自定义按钮css class
       text: 'Close', // 按钮文本
-      handler: 'close', // 按钮点击处理方法
       autoClose: YES // 点击按钮是否自动关闭 默认: 关闭
     }
   ]
 };
 
-const s4 = () => Math.floor((1 + Math.random()) * 0x10000).toString(16);
+const defaultGlobalOptions = {};
+
+const createNotifyId = () => Math.floor((1 + Math.random()) * 0x10000).toString(16);
+
+const btnHandlers = {};
 
 const BalmUINotifyPlugin = {
-  install(Vue) {
+  install(Vue, options = {}) {
     const notifyContainer = document.createElement('div');
 
-    const UiNotify = new Vue({
-      el: notifyContainer,
-      template,
-      data() {
+    let config = Object.assign({}, defaultGlobalOptions, options);
+
+    const data = function () {
+      return {
+        open: YES,
+        progressColor: config.progressColor || '#3f51b5',
+        transitionName: getType(config.transitionName) === 'string' ? config.transitionName : 'notify-list',
+        notifies: []
+      };
+    };
+
+    const methods = {
+      setProgressColor(color) {
+        this.progressColor = color;
+      },
+      setTransitionName(name) {
+        this.transitionName = name;
+      },
+      resetTransitionName() {
+        this.transitionName = config.transitionName;
+      },
+      resetProgressColor() {
+        this.progressColor = config.progressColor;
+      },
+      add(newNotify = {}) {
+        !this.open &&
+        console.warn(
+          `[BalmUI]:Plugin $notify has not open yet. use 'this.$notify.open = true' to open the notify plugin in Vue instance.`
+        );
+
+        getType(config.timeout) === 'number' && (itemProps.timeout = config.timeout);
+        config.cancelText && (itemProps.buttons[0].text = config.cancelText);
+
+        newNotify = Object.assign(
+          {
+            id: `${createNotifyId()}-${Date.now()}`
+          },
+          itemProps,
+          newNotify
+        );
+
+        this.notifies.push(newNotify);
+        return {id: newNotify.id};
+      },
+      addButtonHandler(handlerName = '', fn) {
+        let type = getType(handlerName);
+
+        let method = {
+          object: () => {
+            let { name, method } = handlerName;
+            btnHandlers[name] = method;
+          },
+          string: () => {
+            if (getType(fn) === 'function') {
+              btnHandlers[handlerName] = fn;
+            } else {
+              console.error(
+                `[BalmUI]:Plugin $notify added method '${handlerName}' failed. The 2nd argument of method 'addButtonHandler' should be a 'function' type, but received is '${getType(
+                  fn
+                )}'.`
+              );
+            }
+          },
+          array: () => {
+            handlerName.forEach(item => {
+              btnHandlers[item.name] = item.method;
+            });
+          }
+        }[type];
+
+        method && method();
+      },
+      findNotifyIndex(notify) {
+        return this.notifies.findIndex(function(item) {
+          return notify.id === item.id;
+        });
+      },
+      findNotify (notify) {
+        return this.notifies.find(function(item) {
+          return notify.id === item.id;
+        });
+      },
+      close(notify) {
+        let index = this.findNotifyIndex(notify);
+        getType(index) === 'number' && this.notifies.splice(index, 1);
+      },
+      $_hasProgress({ timeout }) {
+        return timeout && getType(timeout) === 'number';
+      },
+      $_buttonHandler({ handler, autoClose }, notify) {
+        switch (typeof handler) {
+          case 'string':
+            btnHandlers[handler] && btnHandlers[handler](notify);
+            break;
+          case 'function':
+            handler(notify);
+            break;
+        }
+        autoClose !== NO && this.close(notify);
+      },
+      $_setBackgroundImage(src) {
+        return { backgroundImage: `url(${src})` };
+      },
+      $_setProgressStyle({ timeout, progressColor }) {
+        let duration = `${timeout}ms`;
         return {
-          open: YES,
-          progressColor: '#3f51b5',
-          transitionName: 'notify-list',
-          notifies: [],
-          btnHandlers: {}
+          backgroundColor: progressColor || this.progressColor,
+          animationDuration: duration,
+          webkitAnimationDuration: duration
         };
       },
-      methods: {
-        setProgressColor(color) {
-          this.progressColor = color;
-        },
-        setTransitionName(name) {
-          this.transitionName = name;
-        },
-        resetTransitionName() {
-          this.transitionName = 'notify-list';
-        },
-        resetProgressColor() {
-          this.progressColor = '#3f51b5';
-        },
-        add(newNotify = {}) {
-          !this.open &&
-            console.warn(
-              `[BalmUI]:Plugin $notify has not open yet. use 'this.$notify.open = true' to open the notify plugin in Vue instance.`
-            );
-
-          newNotify = Object.assign(
-            {
-              id: `${s4()}-${Date.now()}`
-            },
-            itemProps,
-            newNotify
-          );
-
-          this.notifies.push(newNotify);
-        },
-        addButtonHandler(handlerName = '', fn) {
-          let type = getType(handlerName);
-
-          let method = {
-            object: () => {
-              let { name, method } = handlerName;
-              this.btnHandlers[name] = method;
-            },
-            string: () => {
-              if (getType(fn) === 'function') {
-                this.btnHandlers[handlerName] = fn;
-              } else {
-                console.error(
-                  `[BalmUI]:Plugin $notify added method '${handlerName}' failed. The 2nd argument of method 'addButtonHandler' should be a 'function' type, but received is '${getType(
-                    fn
-                  )}'.`
-                );
-              }
-            },
-            array: () => {
-              handlerName.forEach(item => {
-                this.btnHandlers[item.name] = item.method;
-              });
-            }
-          }[type];
-
-          method && method();
-        },
-        findNotifyIndex(notify) {
-          return this.notifies.findIndex(function(item) {
-            return notify.id === item.id;
-          });
-        },
-        close(notify) {
-          let index = this.findNotifyIndex(notify);
-          getType(index) === 'number' && this.notifies.splice(index, 1);
-        },
-        $_hasProgress({ timeout }) {
-          return timeout && getType(timeout) === 'number';
-        },
-        $_buttonHandler({ handler, autoClose }, notify) {
-          switch (typeof handler) {
-            case 'string':
-              this.btnHandlers[handler] && this.btnHandlers[handler](notify);
-              break;
-            case 'function':
-              handler(notify);
-              break;
-          }
-          autoClose !== NO && this.close(notify);
-        },
-        $_setBackgroundImage(src) {
-          return { backgroundImage: `url(${src})` };
-        },
-        $_setProgressStyle({ timeout, progressColor }) {
-          let duration = `${timeout}ms`;
-          return {
-            backgroundColor: progressColor || this.progressColor,
-            animationDuration: duration,
-            webkitAnimationDuration: duration
-          };
-        },
-        $_autoClose(notify) {
-          if (this.$_hasProgress(notify)) {
-            this.close(notify);
-          }
+      $_autoClose(notify) {
+        if (this.$_hasProgress(notify)) {
+          this.close(notify);
         }
-      },
-      created() {
-        document.body.appendChild(notifyContainer);
       }
-    });
+    };
 
-    Vue.prototype.$notify = UiNotify;
+    const created = function () {
+      document.body.appendChild(notifyContainer);
+    };
+
+    Vue.prototype.$notify = new Vue({
+      el: notifyContainer,
+      template,
+      data,
+      methods,
+      created
+    });
   }
 };
 
