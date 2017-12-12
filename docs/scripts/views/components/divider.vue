@@ -17,7 +17,7 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :text="code[0]"></ui-markdown>
+      <ui-markdown :text="code[1]"></ui-markdown>
     </div>
 
     <ui-divider>diiiiiiiiiiivider!</ui-divider>
@@ -37,7 +37,7 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :text="code[1]"></ui-markdown>
+      <ui-markdown :text="code[2]"></ui-markdown>
     </div>
 
     <ui-divider>diiiiiiiiiiivider!</ui-divider>
@@ -56,7 +56,7 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :text="code[2]"></ui-markdown>
+      <ui-markdown :text="code[3]"></ui-markdown>
     </div>
 
     <ui-apidoc name="divider"></ui-apidoc>
