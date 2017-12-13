@@ -3,7 +3,7 @@
   "slots": [
   {
     "name": "(default)",
-    "description": "The default slot holds the dialog content text and can contain HTML"
+    "description": "默认插槽可以插入对话框内容"
   }],
   "events": []
 }

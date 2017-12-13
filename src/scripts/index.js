@@ -1,3 +1,4 @@
+import configure from './configure';
 /**
  * Helpers
  */
@@ -206,12 +207,23 @@ const plugins = {
 };
 
 const registers = {
-  install(Vue) {
-    for (let key in BalmUI.components) {
-      let component = BalmUI.components[key];
-      if (component && component !== 'install' && component.name) {
-        Vue.component(component.name, component);
+  install(Vue, options = {}) {
+    // Configure the component props
+    Object.keys(options).forEach(key => {
+      if (BalmUI.components[key] === undefined) {
+        return;
       }
+
+      const Component = BalmUI.components[key];
+      const props = options[key];
+
+      configure(Component, props);
+    });
+
+    // Install the components
+    for (let key in BalmUI.components) {
+      let Component = BalmUI.components[key];
+      Vue.component(Component.name, Component);
     }
   }
 };

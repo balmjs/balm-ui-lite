@@ -14,3 +14,17 @@
   </ui-card-menu>
 </ui-card>
 ```
+
+```css
+.demo-card-wide.mdl-card {
+  width: 512px;
+}
+.demo-card-wide>.mdl-card__title {
+  height: 176px;
+  color: #fff;
+  background: url('../images/assets/demos/welcome_card.jpg') center / cover;
+}
+.demo-card-wide>.mdl-card__menu {
+  color: #fff;
+}
+```

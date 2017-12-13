@@ -4,7 +4,12 @@
 import Vue from 'vue';
 import BalmUI from 'balm-ui-lite';
 
-Vue.use(BalmUI);
+Vue.use(BalmUI, {
+  UiDialogActions: {
+    acceptText: '确定',
+    cancelText: '取消'
+  }
+});
 ```
 
 独立使用

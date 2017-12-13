@@ -46,6 +46,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "balm": "^0.11.1",
     "core-js": "^2.5.1",
+    "deepmerge": "^2.0.1",
     "gulp": "^3.9.1",
     "markdown-loader": "^2.0.1",
     "material-design-icons": "^3.0.1",

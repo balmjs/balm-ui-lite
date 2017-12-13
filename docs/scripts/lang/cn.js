@@ -75,7 +75,11 @@ const data = {
     "card-media": "<ui-card-media>",
     "card-body": "<ui-card-body>",
     "card-actions": "<ui-card-actions>",
-    "card-menu": "<ui-card-menu>"
+    "card-menu": "<ui-card-menu>",
+    "dialog": "<ui-dialog>",
+    "dialog-title": "<ui-dialog-title>",
+    "dialog-content": "<ui-dialog-content>",
+    "dialog-actions": "<ui-dialog-actions>"
   }
 };
 

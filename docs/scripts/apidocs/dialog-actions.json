@@ -4,22 +4,24 @@
     "name": "fullWidth",
     "type": "Boolean",
     "default": "false",
-    "description": "Modifies the actions to each take the full width of the container. This makes each take their own line."
+    "description": "使操作按钮呈现100%宽度"
   },
   {
     "name": "acceptText",
     "type": "String",
-    "default": "'OK'"
+    "default": "'OK'",
+    "description": "确定按钮文字"
   },
   {
     "name": "cancelText",
     "type": "String",
-    "default": "'Cancel'"
+    "default": "'Cancel'",
+    "description": "取消按钮文字"
   }],
   "slots": [
   {
     "name": "(default)",
-    "description": "The default slot holds the dialog actions text and can contain HTML"
+    "description": "默认插槽可以插入对话框动作"
   }],
   "events": []
 }

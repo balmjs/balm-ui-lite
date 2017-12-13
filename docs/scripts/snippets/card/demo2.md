@@ -11,3 +11,14 @@
   </ui-card-actions>
 </ui-card>
 ```
+
+```css
+.demo-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+}
+.demo-card-square>.mdl-card__title {
+  color: #fff;
+  background: url('../images/assets/demos/dog.png') bottom right 15% no-repeat #46b6ac;
+}
+```
