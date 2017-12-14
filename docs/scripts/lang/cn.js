@@ -56,7 +56,8 @@ const data = {
     "alert": "警告框",
     "confirm": "确认框",
     "toast": "提示框",
-    "notify": "通知框"
+    "notify": "通知框",
+    "form-validator": "表单验证"
   },
   "components": {
     "badge": "<ui-badge> & <ui-badge-link>",

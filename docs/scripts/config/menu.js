@@ -56,7 +56,8 @@ const MENU = {
     'alert',
     'confirm',
     'toast',
-    'notify'
+    'notify',
+    'form-validator'
   ],
   helpers: [
     'typeof',
