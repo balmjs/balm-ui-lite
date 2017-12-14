@@ -95,7 +95,17 @@ const data = {
     "tabs": "<ui-tabs>",
     "tab-bar": "<ui-tab-bar>",
     "tab": "<ui-tab>",
-    "panel": "<ui-panel>"
+    "panel": "<ui-panel>",
+    "list": "<ui-list>",
+    "item": "<ui-item>",
+    "item-primary": "<ui-item-primary>",
+    "item-avatar": "<ui-item-avatar>",
+    "item-icon": "<ui-item-icon>",
+    "item-secondary": "<ui-item-secondary>",
+    "item-info": "<ui-item-info>",
+    "item-action": "<ui-item-action>",
+    "item-body": "<ui-item-body>",
+    "item-subtitle": "<ui-item-subtitle>"
   }
 };
 

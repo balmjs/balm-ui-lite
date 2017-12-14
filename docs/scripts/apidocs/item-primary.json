@@ -2,7 +2,7 @@
   "props": [],
   "slots": [{
     "name": "(default)",
-    "description": "默认插槽可以插入列表项子组件"
+    "description": "默认插槽可以插入列表项主要内容"
   }],
   "events": []
 }

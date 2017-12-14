@@ -1,15 +1,15 @@
 ```html
 <ui-list class="demo-list-action">
   <ui-item v-for="(item, index) in items" :key="index">
-    <ui-item-avatar>person</ui-item-avatar>
-    {{ item }}
-    <template slot="action">
-      <ui-item-action>
-        <a href="#">
-          <ui-icon>star</ui-icon>
-        </a>
-      </ui-item-action>
-    </template>
+    <ui-item-primary>
+      <ui-item-avatar>person</ui-item-avatar>
+      <span>{{ item }}</span>
+    </ui-item-primary>
+    <ui-item-action>
+      <a href="#">
+        <ui-icon>star</ui-icon>
+      </a>
+    </ui-item-action>
   </ui-item>
 </ui-list>
 ```
@@ -26,4 +26,10 @@ export default {
     };
   }
 };
+```
+
+```css
+.demo-list-action {
+  width: 300px;
+}
 ```

@@ -1,8 +1,10 @@
 ```html
 <ui-list class="demo-list-icon">
   <ui-item v-for="(item, index) in items" :key="index">
-    <ui-item-icon>person</ui-item-icon>
-    {{ item }}
+    <ui-item-primary>
+      <ui-item-icon>person</ui-item-icon>
+      {{ item }}
+    </ui-item-primary>
   </ui-item>
 </ui-list>
 ```
@@ -19,4 +21,10 @@ export default {
     };
   }
 };
+```
+
+```css
+.demo-list-icon {
+  width: 300px;
+}
 ```

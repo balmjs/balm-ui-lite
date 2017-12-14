@@ -1,15 +1,15 @@
 ```html
 <ui-list class="demo-list-control">
   <ui-item v-for="(item, index) in items" :key="index">
-    <ui-item-avatar>{{ item.avatar }}</ui-item-avatar>
-    {{ item.name }}
-    <template slot="action">
-      <ui-item-action>
-        <ui-checkbox v-if="index === 0" :value="item.id" :model="item.value" effect></ui-checkbox>
-        <ui-radio v-if="index === 1" :value="item.id" :model="item.value" effect></ui-radio>
-        <ui-switch v-if="index === 2" :value="true" :model="item.value" effect></ui-switch>
-      </ui-item-action>
-    </template>
+    <ui-item-primary>
+      <ui-item-avatar>{{ item.avatar }}</ui-item-avatar>
+      {{ item.name }}
+    </ui-item-primary>
+    <ui-item-action>
+      <ui-checkbox v-if="index === 0" :value="item.id" :model="item.value"></ui-checkbox>
+      <ui-radio v-if="index === 1" :value="item.id" :model="item.value"></ui-radio>
+      <ui-switch v-if="index === 2" :value="true" :model="item.value"></ui-switch>
+    </ui-item-action>
   </ui-item>
 </ui-list>
 ```
@@ -37,4 +37,13 @@ export default {
     };
   }
 };
+```
+
+```css
+.demo-list-control {
+  width: 300px;
+}
+.demo-list-radio {
+  display: inline;
+}
 ```

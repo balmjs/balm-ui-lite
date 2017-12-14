@@ -1,7 +1,9 @@
 ```html
 <ui-list class="demo-list-item">
   <ui-item v-for="(item, index) in items" :key="index">
-    {{ item }}
+    <ui-item-primary>
+      {{ item }}
+    </ui-item-primary>
   </ui-item>
 </ui-list>
 ```
@@ -18,4 +20,10 @@ export default {
     };
   }
 };
+```
+
+```css
+.demo-list-item {
+  width: 300px;
+}
 ```

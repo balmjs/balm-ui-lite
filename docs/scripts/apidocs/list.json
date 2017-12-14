@@ -1,18 +1,18 @@
 {
   "props": [{
-    "name": "twoLine",
+    "name": "two-line",
     "type": "Boolean",
     "default": "false",
-    "description": "Defines the List's Items as Two Line"
+    "description": "支持两行样式"
   }, {
-    "name": "threeLine",
+    "name": "three-line",
     "type": "Boolean",
     "default": "false",
-    "description": "Defines the List's Items as a Three Line"
+    "description": "支持三行样式"
   }],
   "slots": [{
     "name": "(default)",
-    "description": "The default slot holds the list text and can contain HTML"
+    "description": "默认插槽可以插入列表子组件"
   }],
   "events": []
 }

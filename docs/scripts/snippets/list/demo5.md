@@ -1,17 +1,19 @@
 ```html
-<ui-list class="demo-list-two" twoLine>
+<ui-list class="demo-list-two" two-line>
   <ui-item v-for="(item, index) in items" :key="index">
-    <ui-item-avatar>{{ item.avatar }}</ui-item-avatar>
-    <span>{{ item.name }}</span>
-    <ui-item-subtitle>62 Episodes</ui-item-subtitle>
-    <template slot="action">
+    <ui-item-primary>
+      <ui-item-avatar>{{ item.avatar }}</ui-item-avatar>
+      <span>{{ item.name }}</span>
+      <ui-item-subtitle>62 Episodes</ui-item-subtitle>
+    </ui-item-primary>
+    <ui-item-secondary>
       <ui-item-info>{{ item.info }}</ui-item-info>
       <ui-item-action>
         <a href="#">
           <ui-icon>star</ui-icon>
         </a>
       </ui-item-action>
-    </template>
+    </ui-item-secondary>
   </ui-item>
 </ui-list>
 ```
@@ -37,4 +39,10 @@ export default {
     };
   }
 };
+```
+
+```css
+.demo-list-two {
+  width: 300px;
+}
 ```

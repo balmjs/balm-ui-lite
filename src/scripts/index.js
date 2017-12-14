@@ -92,12 +92,14 @@ import UiCardActions from './components/card/card-actions';
 import UiCardMenu from './components/card/card-menu';
 import UiList from './components/list/list';
 import UiItem from './components/list/item';
+import UiItemPrimary from './components/list/item-primary';
 import UiItemAvatar from './components/list/item-avatar';
 import UiItemIcon from './components/list/item-icon';
-import UiItemSubtitle from './components/list/item-subtitle';
+import UiItemSecondary from './components/list/item-secondary';
 import UiItemInfo from './components/list/item-info';
 import UiItemAction from './components/list/item-action';
 import UiItemBody from './components/list/item-body';
+import UiItemSubtitle from './components/list/item-subtitle';
 import UiTable from './components/data/table';
 import UiPagination from './components/data/pagination';
 /**
@@ -181,12 +183,14 @@ const components = {
   UiCardBody,
   UiList,
   UiItem,
+  UiItemPrimary,
   UiItemAvatar,
   UiItemIcon,
-  UiItemSubtitle,
+  UiItemSecondary,
   UiItemInfo,
   UiItemAction,
   UiItemBody,
+  UiItemSubtitle,
   UiTable,
   UiPagination,
   // Popup
