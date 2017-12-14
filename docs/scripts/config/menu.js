@@ -58,9 +58,6 @@ const MENU = {
     'toast',
     'notify'
   ],
-  mixins: [
-    'form-validator'
-  ],
   helpers: [
     'typeof',
     'detect-ie',

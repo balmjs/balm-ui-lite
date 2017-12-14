@@ -3,7 +3,6 @@ const data = {
     "guide": "开发指南",
     "components": "组件",
     "helpers": "常用辅助方法",
-    "mixins": "混合方法",
     "plugins": "通用插件"
   },
   "menuitem": {
@@ -52,8 +51,6 @@ const data = {
     "typeof": "检测变量类型",
     "detect-ie": "检测IE版本",
     "other-fn": "其他",
-    // mixins
-    "form-validator": "表单验证",
     // plugins
     "event": "事件处理",
     "alert": "警告框",
