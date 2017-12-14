@@ -1,8 +1,14 @@
 <template>
   <div class="page--grid">
     <div class="component-title">
-      <h3>Grid</h3>
+      <h3>Grid 栅格</h3>
+      <p>12 栅格系统。</p>
     </div>
+
+    <h4>0. 使用方式</h4>
+    <ui-markdown :text="code[0]"></ui-markdown>
+
+    <h4>1. 代码演示</h4>
 
     <div class="snippet-group is-full-width">
       <div class="snippet-header">
@@ -22,9 +28,9 @@
                   :col="i">{{ i }}</ui-cell>
               </ui-grid>
               <ui-grid>
-                <ui-cell :col="6">6</ui-cell>
-                <ui-cell :col="4">4</ui-cell>
-                <ui-cell :col="2">2</ui-cell>
+                <ui-cell col="6">6</ui-cell>
+                <ui-cell col="4">4</ui-cell>
+                <ui-cell col="2">2</ui-cell>
               </ui-grid>
               <ui-grid>
                 <ui-cell :col="{col:6, tablet:8}">6 (8 tablet)</ui-cell>
@@ -35,7 +41,7 @@
           </div>
         </div>
       </div>
-      <ui-markdown :text="code[0]"></ui-markdown>
+      <ui-markdown :code="code[1]"></ui-markdown>
     </div>
 
     <ui-apidoc name="grid"></ui-apidoc>
@@ -49,7 +55,7 @@ import snippets from '../../mixins/snippets';
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - Grid'
+    titleTemplate: '%s - 栅格 <ui-grid>'
   },
   created() {
     this.showCode('grid');

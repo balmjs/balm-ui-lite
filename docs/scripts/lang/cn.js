@@ -91,7 +91,9 @@ const data = {
     "layout-tab": "<ui-layout-tab>",
     "layout-tab-panel": "<ui-layout-tab-panel>",
     "nav": "<ui-nav>",
-    "nav-link": "<ui-nav-link>"
+    "nav-link": "<ui-nav-link>",
+    "grid": "<ui-grid>",
+    "cell": "<ui-cell>"
   }
 };
 

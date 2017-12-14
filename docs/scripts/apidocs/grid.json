@@ -3,11 +3,11 @@
     "name": "noSpacing",
     "type": "Boolean",
     "default": "false",
-    "description": "Modifies the grid cells to have no margin between them"
+    "description": "无间距栅格化"
   }],
   "slots": [{
     "name": "(default)",
-    "description": "The default slot holds the grid text and can contain HTML"
+    "description": "默认插槽可以插入栅格子组件"
   }],
   "events": []
 }

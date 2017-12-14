@@ -1,29 +1,22 @@
 ```html
 <ui-grid>
-  <ui-cell :col="1">1</ui-cell>
-  <ui-cell :col="1">1</ui-cell>
-  <ui-cell :col="1">1</ui-cell>
-  <ui-cell :col="1">1</ui-cell>
-  <ui-cell :col="1">1</ui-cell>
-  <ui-cell :col="1">1</ui-cell>
-  <ui-cell :col="1">1</ui-cell>
-  <ui-cell :col="1">1</ui-cell>
-  <ui-cell :col="1">1</ui-cell>
-  <ui-cell :col="1">1</ui-cell>
-  <ui-cell :col="1">1</ui-cell>
-  <ui-cell :col="1">1</ui-cell>
+  <ui-cell
+    v-for="(i, index) in [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+    :key="index"
+    :col="i">{{ i }}</ui-cell>
 </ui-grid>
 
 <ui-grid>
-  <ui-cell :col="4">4</ui-cell>
-  <ui-cell :col="4">4</ui-cell>
-  <ui-cell :col="4">4</ui-cell>
+  <ui-cell
+    v-for="(i, index) in [4, 4, 4]"
+    :key="index"
+    :col="i">{{ i }}</ui-cell>
 </ui-grid>
 
 <ui-grid>
-  <ui-cell :col="6">6</ui-cell>
-  <ui-cell :col="4">4</ui-cell>
-  <ui-cell :col="2">2</ui-cell>
+  <ui-cell col="6">6</ui-cell>
+  <ui-cell col="4">4</ui-cell>
+  <ui-cell col="2">2</ui-cell>
 </ui-grid>
 
 <ui-grid>
