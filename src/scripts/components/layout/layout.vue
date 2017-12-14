@@ -39,14 +39,6 @@ export default {
       type: Boolean,
       default: false
     },
-    largeScreenOnly: {
-      type: Boolean,
-      default: false
-    },
-    smallScreenOnly: {
-      type: Boolean,
-      default: false
-    },
     fixedTabs: {
       type: Boolean,
       default: false
@@ -67,8 +59,6 @@ export default {
         'mdl-layout--fixed-header': this.fixedHeader, // Makes the header always visible, even in small screens
         'mdl-layout--no-drawer-button': this.noDrawerButton, // Does not display a drawer button
         'mdl-layout--no-desktop-drawer-button': this.noDesktopDrawerButton, // Does not display a drawer button in desktop mode
-        'mdl-layout--large-screen-only': this.largeScreenOnly, // Hides an element on smaller screens
-        'mdl-layout--small-screen-only': this.smallScreenOnly, // Hides an element on larger screens
         'mdl-layout--fixed-tabs': this.fixedTabs // Uses fixed tabs instead of the default scrollable tabs
       };
     }

@@ -3,7 +3,7 @@
   "slots": [
   {
     "name": "(default)",
-    "description": "The default slot holds the layout drawer content and can contain HTML"
+    "description": "默认插槽可以插入布局侧边菜单内容"
   }],
   "events": []
 }

@@ -4,36 +4,36 @@
     "name": "scroll",
     "type": "Boolean",
     "default": "false",
-    "description": "Makes the header scroll with the content"
+    "description": "可滚动头部（使得头部和内容可一起滚动）"
   },
   {
     "name": "waterfall",
     "type": "Boolean",
     "default": "false",
-    "description": "Allows a \"waterfall\" effect with multiple header lines"
+    "description": "开启瀑布流效果（头部多行内容）"
   },
   {
     "name": "waterfallHideTop",
     "type": "Boolean",
     "default": "false",
-    "description": "Hides the top rather than the bottom rows on a waterfall header"
+    "description": "隐藏瀑布流头部的顶部行内容（默认隐藏的是底部行内容）"
   },
   {
     "name": "transparent",
     "type": "Boolean",
     "default": "false",
-    "description": "Makes header transparent (draws on top of layout background)"
+    "description": "头部背景透明（可利用外层布局的背景图）"
   },
   {
     "name": "seamed",
     "type": "Boolean",
     "default": "false",
-    "description": "Uses a header without a shadow"
+    "description": "去头部阴影"
   }],
   "slots": [
   {
     "name": "(default)",
-    "description": "The default slot holds the layout header content and can contain HTML"
+    "description": "默认插槽可以插入布局头部子组件"
   }],
   "events": []
 }

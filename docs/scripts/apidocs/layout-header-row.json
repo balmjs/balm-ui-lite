@@ -3,7 +3,7 @@
   "slots": [
   {
     "name": "(default)",
-    "description": "The default slot holds the layout header row content and can contain HTML"
+    "description": "默认插槽可以插入布局头部行内容"
   }],
   "events": []
 }

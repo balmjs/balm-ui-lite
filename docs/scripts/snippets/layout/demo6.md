@@ -38,3 +38,9 @@
   </ui-layout-content>
 </ui-layout>
 ```
+
+```css
+.demo-layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type  {
+  padding-right: 0;
+}
+```

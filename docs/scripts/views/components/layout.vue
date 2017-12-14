@@ -1,5 +1,14 @@
 <template>
   <div class="page--layout">
+    <div class="component-title">
+      <h3>Layout 布局</h3>
+      <p>构建一个页面布局。</p>
+    </div>
+
+    <h4>0. 使用方式</h4>
+    <ui-markdown :text="code[0]"></ui-markdown>
+
+    <h4>1. 普通布局</h4>
 
     <div class="snippet-group is-full-width">
       <div class="snippet-header">
@@ -35,10 +44,10 @@
           </div>
         </div>
         <div class="snippet-captions">
-          <div class="snippet-caption">Transparent header</div>
+          <div class="snippet-caption">透明头部</div>
         </div>
       </div>
-      <ui-markdown :text="code[0]"></ui-markdown>
+      <ui-markdown :code="code[1]"></ui-markdown>
     </div>
 
     <div class="snippet-group is-full-width">
@@ -65,10 +74,10 @@
           </div>
         </div>
         <div class="snippet-captions">
-          <div class="snippet-caption">Fixed drawer, no header</div>
+          <div class="snippet-caption">无头部 + 固定侧边菜单</div>
         </div>
       </div>
-      <ui-markdown :text="code[1]"></ui-markdown>
+      <ui-markdown :code="code[2]"></ui-markdown>
     </div>
 
     <div class="snippet-group is-full-width">
@@ -107,10 +116,10 @@
           </div>
         </div>
         <div class="snippet-captions">
-          <div class="snippet-caption">Fixed header</div>
+          <div class="snippet-caption">固定头部</div>
         </div>
       </div>
-      <ui-markdown :text="code[2]"></ui-markdown>
+      <ui-markdown :code="code[3]"></ui-markdown>
     </div>
 
     <div class="snippet-group is-full-width">
@@ -147,11 +156,13 @@
           </div>
         </div>
         <div class="snippet-captions">
-          <div class="snippet-caption">Fixed header and drawer</div>
+          <div class="snippet-caption">固定头部和侧边菜单</div>
         </div>
       </div>
-      <ui-markdown :text="code[3]"></ui-markdown>
+      <ui-markdown :code="code[4]"></ui-markdown>
     </div>
+
+    <h4>2. 滚动布局</h4>
 
     <div class="snippet-group is-full-width">
       <div class="snippet-header">
@@ -189,10 +200,10 @@
           </div>
         </div>
         <div class="snippet-captions">
-          <div class="snippet-caption">Scrolling header</div>
+          <div class="snippet-caption">可滚动头部</div>
         </div>
       </div>
-      <ui-markdown :text="code[4]"></ui-markdown>
+      <ui-markdown :code="code[5]"></ui-markdown>
     </div>
 
     <div class="snippet-group is-full-width">
@@ -242,11 +253,13 @@
           </div>
         </div>
         <div class="snippet-captions">
-          <div class="snippet-caption">Waterfall header</div>
+          <div class="snippet-caption">瀑布流头部</div>
         </div>
       </div>
-      <ui-markdown :text="code[5]"></ui-markdown>
+      <ui-markdown :code="code[6]"></ui-markdown>
     </div>
+
+    <h4>3. 选项卡布局</h4>
 
     <div class="snippet-group is-full-width">
       <div class="snippet-header">
@@ -285,10 +298,10 @@
           </div>
         </div>
         <div class="snippet-captions">
-          <div class="snippet-caption">Fixed drawer, no header</div>
+          <div class="snippet-caption">可滚动选项卡</div>
         </div>
       </div>
-      <ui-markdown :text="code[6]"></ui-markdown>
+      <ui-markdown :code="code[7]"></ui-markdown>
     </div>
 
     <div class="snippet-group is-full-width">
@@ -328,30 +341,34 @@
           </div>
         </div>
         <div class="snippet-captions">
-          <div class="snippet-caption">Fixed drawer, no header</div>
+          <div class="snippet-caption">固定选项卡</div>
         </div>
       </div>
-      <ui-markdown :text="code[7]"></ui-markdown>
+      <ui-markdown :code="code[8]"></ui-markdown>
     </div>
 
     <ui-apidoc name="layout"></ui-apidoc>
     <ui-apidoc name="layout-header"></ui-apidoc>
     <ui-apidoc name="layout-header-row"></ui-apidoc>
     <ui-apidoc name="layout-title"></ui-apidoc>
-    <ui-apidoc name="nav"></ui-apidoc>
-    <ui-apidoc name="nav-link"></ui-apidoc>
+    <ui-apidoc name="layout-spacer"></ui-apidoc>
     <ui-apidoc name="layout-drawer"></ui-apidoc>
     <ui-apidoc name="layout-content"></ui-apidoc>
+    <ui-apidoc name="layout-tab-bar"></ui-apidoc>
+    <ui-apidoc name="layout-tab"></ui-apidoc>
+    <ui-apidoc name="layout-tab-panel"></ui-apidoc>
+    <ui-apidoc name="nav"></ui-apidoc>
+    <ui-apidoc name="nav-link"></ui-apidoc>
   </div>
 </template>
 
 <script>
-import snippets from '../mixins/snippets';
+import snippets from '../../mixins/snippets';
 
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - Layout'
+    titleTemplate: '%s - 布局 <ui-layout>'
   },
   data() {
     return {

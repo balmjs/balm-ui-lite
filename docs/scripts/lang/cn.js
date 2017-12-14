@@ -79,7 +79,19 @@ const data = {
     "dialog": "<ui-dialog>",
     "dialog-title": "<ui-dialog-title>",
     "dialog-content": "<ui-dialog-content>",
-    "dialog-actions": "<ui-dialog-actions>"
+    "dialog-actions": "<ui-dialog-actions>",
+    "layout": "<ui-layout>",
+    "layout-header": "<ui-layout-header>",
+    "layout-header-row": "<ui-layout-header-row>",
+    "layout-title": "<ui-layout-title>",
+    "layout-spacer": "<ui-layout-spacer>",
+    "layout-drawer": "<ui-layout-drawer>",
+    "layout-content": "<ui-layout-content>",
+    "layout-tab-bar": "<ui-layout-tab-bar>",
+    "layout-tab": "<ui-layout-tab>",
+    "layout-tab-panel": "<ui-layout-tab-panel>",
+    "nav": "<ui-nav>",
+    "nav-link": "<ui-nav-link>"
   }
 };
 

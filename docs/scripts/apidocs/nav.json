@@ -3,8 +3,8 @@
   "slots": [
   {
     "name": "(default)",
-    "description": "The default slot holds the navigation content and can contain HTML",
-    "props": "className"
+    "description": "默认插槽可以插入布局导航容器内容",
+    "props": "className（<ui-nav-link>的类名）"
   }],
   "events": []
 }

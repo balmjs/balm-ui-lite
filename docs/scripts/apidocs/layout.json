@@ -4,54 +4,42 @@
     "name": "active",
     "type": "Number",
     "default": "0",
-    "description": "Defines a tab as the current display tab"
+    "description": "当前选项卡的索引值"
   },
   {
     "name": "fixedDrawer",
     "type": "Boolean",
     "default": "false",
-    "description": "Makes the drawer always visible and open in larger screens"
+    "description": "固定展示侧边菜单（仅限大屏：屏幕宽度大于1024px）"
   },
   {
     "name": "fixedHeader",
     "type": "Boolean",
     "default": "false",
-    "description": "Makes the header always visible, even in small screens"
+    "description": "固定头部（包括小屏状态）"
   },
   {
     "name": "noDrawerButton",
     "type": "Boolean",
     "default": "false",
-    "description": "Does not display a drawer button"
+    "description": "隐藏侧边菜单按钮"
   },
   {
     "name": "noDesktopDrawerButton",
     "type": "Boolean",
     "default": "false",
-    "description": "Does not display a drawer button in desktop mode"
-  },
-  {
-    "name": "largeScreenOnly",
-    "type": "Boolean",
-    "default": "false",
-    "description": "Hides an element on smaller screens"
-  },
-  {
-    "name": "smallScreenOnly",
-    "type": "Boolean",
-    "default": "false",
-    "description": "Hides an element on larger screens"
+    "description": "桌面模式不显示侧边菜单按钮"
   },
   {
     "name": "fixedTabs",
     "type": "Boolean",
     "default": "false",
-    "description": "Uses fixed tabs instead of the default scrollable tabs"
+    "description": "使用固定选项卡代替默认的滚动选项卡"
   }],
   "slots": [
   {
     "name": "(default)",
-    "description": "The default slot holds the layout content and can contain HTML"
+    "description": "默认插槽可以插入布局子组件"
   }],
   "events": []
 }

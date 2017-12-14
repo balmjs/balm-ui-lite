@@ -1,18 +1,18 @@
-const Layout = () => import('../views/layout');
-const Grid = () => import('../views/grid');
-const Tabs = () => import('../views/tabs');
+const Layout = () => import('../../views/components/layout');
+const Grid = () => import('../../views/components/grid');
+const Tabs = () => import('../../views/components/tabs');
 
 const layoutRoutes = [{
-  path: '/layout',
-  name: 'layout',
+  path: 'layout',
+  name: 'components.layout',
   component: Layout
 }, {
-  path: '/grid',
-  name: 'grid',
+  path: 'grid',
+  name: 'components.grid',
   component: Grid
 }, {
-  path: '/tabs',
-  name: 'tabs',
+  path: 'tabs',
+  name: 'components.tabs',
   component: Tabs
 }];
 

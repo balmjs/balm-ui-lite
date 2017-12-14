@@ -41,6 +41,9 @@ img {
   td {
     text-align: left;
   }
+  thead th:first-child {
+    width: 200px;
+  }
 }
 
 .red {
