@@ -1,6 +1,6 @@
 ```html
 <!-- FAB button -->
-<ui-button fab no-ripple>
+<ui-button fab noRipple>
   <ui-icon>add</ui-icon>
 </ui-button>
 

@@ -15,7 +15,7 @@
     "default": "false",
     "description": "圆形效果"
   }, {
-    "name": "mini-fab",
+    "name": "miniFab",
     "type": "Boolean",
     "default": "false",
     "description": "mini圆形效果"
@@ -39,7 +39,7 @@
     "default": "false",
     "description": "辅色效果"
   }, {
-    "name": "no-ripple",
+    "name": "noRipple",
     "type": "Boolean",
     "default": "false",
     "description": "无波纹效果"

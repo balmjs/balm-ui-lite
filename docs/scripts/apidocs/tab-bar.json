@@ -1,6 +1,6 @@
 {
   "props": [{
-    "name": "no-ripple",
+    "name": "noRipple",
     "type": "Boolean",
     "default": "false",
     "description": "无波纹效果"

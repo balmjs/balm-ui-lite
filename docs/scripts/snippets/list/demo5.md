@@ -1,5 +1,5 @@
 ```html
-<ui-list class="demo-list-two" two-line>
+<ui-list class="demo-list-two" twoLine>
   <ui-item v-for="(item, index) in items" :key="index">
     <ui-item-primary>
       <ui-item-avatar>{{ item.avatar }}</ui-item-avatar>

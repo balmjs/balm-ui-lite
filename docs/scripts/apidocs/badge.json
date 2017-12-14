@@ -10,7 +10,7 @@
     "default": "false",
     "description": "启用Material图标识别"
   }, {
-    "name": "no-background",
+    "name": "noBackground",
     "type": "Boolean",
     "default": "false",
     "description": "开环效果"

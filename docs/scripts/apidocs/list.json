@@ -1,11 +1,11 @@
 {
   "props": [{
-    "name": "two-line",
+    "name": "twoLine",
     "type": "Boolean",
     "default": "false",
     "description": "支持两行样式"
   }, {
-    "name": "three-line",
+    "name": "threeLine",
     "type": "Boolean",
     "default": "false",
     "description": "支持三行样式"
