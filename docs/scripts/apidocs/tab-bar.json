@@ -1,21 +1,21 @@
 {
   "props": [{
-    "name": "noRipple",
+    "name": "no-ripple",
     "type": "Boolean",
     "default": "false",
-    "description": "Don't apply ripple click effect to tab links"
+    "description": "无波纹效果"
   }, {
     "name": "position",
     "type": "String",
     "default": "",
-    "description": "Tabs position ('left' or 'right')"
+    "description": "选项卡位置（'left' 或 'right'），默认居中"
   }],
   "slots": [{
     "name": "(default)",
-    "description": "The default slot holds the tab bar text and can contain HTML"
+    "description": "默认插槽可以插入选项卡子组件"
   }],
   "events": [{
     "name": "change",
-    "description": "Dispatched when the active tab is changed"
+    "description": "切换选项卡时触发（返回新激活选项卡的索引值）"
   }]
 }

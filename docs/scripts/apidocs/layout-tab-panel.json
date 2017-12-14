@@ -3,7 +3,7 @@
   "slots": [
   {
     "name": "(default)",
-    "description": "默认插槽可以插入布局选项卡板块内容"
+    "description": "默认插槽可以插入布局标签页内容"
   }],
   "events": []
 }

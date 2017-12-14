@@ -93,7 +93,11 @@ const data = {
     "nav": "<ui-nav>",
     "nav-link": "<ui-nav-link>",
     "grid": "<ui-grid>",
-    "cell": "<ui-cell>"
+    "cell": "<ui-cell>",
+    "tabs": "<ui-tabs>",
+    "tab-bar": "<ui-tab-bar>",
+    "tab": "<ui-tab>",
+    "panel": "<ui-panel>"
   }
 };
 

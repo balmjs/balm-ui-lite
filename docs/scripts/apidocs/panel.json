@@ -2,7 +2,7 @@
   "props": [],
   "slots": [{
     "name": "(default)",
-    "description": "The default slot holds the panel text and can contain HTML"
+    "description": "默认插槽可以插入标签页内容"
   }],
   "events": []
 }

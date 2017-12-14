@@ -3,16 +3,16 @@
     "name": "active",
     "type": "Number",
     "default": "0",
-    "description": "Defines a tab as the current display tab"
+    "description": "当前选项卡的索引值"
   }, {
     "name": "fixedTabs",
     "type": "Boolean",
     "default": "false",
-    "description": "Uses fixed tabs instead of the default tabs"
+    "description": "使用固定选项卡代替默认的滚动选项卡"
   }],
   "slots": [{
     "name": "(default)",
-    "description": "The default slot holds the tabs text and can contain HTML"
+    "description": "默认插槽可以插入选项卡容器和标签页子组件"
   }],
   "events": []
 }
