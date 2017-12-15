@@ -3,29 +3,29 @@
     "name": "name",
     "type": "String",
     "default": "(auto)",
-    "description": "A unique identifier for the tooltip"
+    "description": "文本提示组件唯一ID"
   }, {
     "name": "title",
     "type": "String",
     "default": "",
-    "description": "A target text"
+    "description": "提示文字"
   }, {
     "name": "large",
     "type": "Boolean",
     "default": "false",
-    "description": "Applies large-font effect"
+    "description": "使用大号字体"
   }, {
     "name": "position",
     "type": "Number, String",
     "default": "0",
-    "description": "Positions the tooltip to the target { 1: 'top', 2: 'right', 3: 'bottom', 4: 'left' }"
+    "description": "文本提示位置 { 1: 'top', 2: 'right', 3: 'bottom', 4: 'left' }"
   }],
   "slots": [{
     "name": "(default)",
-    "description": "The default slot holds the tooltip text and can contain HTML"
+    "description": "默认插槽可以插入文本提示内容"
   }, {
     "name": "title",
-    "description": "The title slot holds the tooltip's title text and can contain HTML"
+    "description": "title插槽可以插入自定义提示文字内容"
   }],
   "events": []
 }

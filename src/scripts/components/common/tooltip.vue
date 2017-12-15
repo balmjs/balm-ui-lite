@@ -1,12 +1,12 @@
 <template>
   <div>
     <span :id="`tt-${name}`">
-      <slot name="title">{{ title }}</slot>
+      <slot></slot>
     </span>
     <div ref="tooltip"
       :class="[className, positionClassName]"
       :data-mdl-for="`tt-${name}`">
-      <slot></slot>
+      <slot name="title">{{ title }}</slot>
     </div>
   </div>
 </template>

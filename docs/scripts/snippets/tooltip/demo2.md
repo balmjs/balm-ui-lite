@@ -1,8 +1,17 @@
 ```html
+<!-- Rich Tooltip -->
 <ui-tooltip>
+  Upload
   <template slot="title">
-    <ui-badge class="material-icons" overlap value="5">email</ui-badge>
+    <ui-icon>cloud_upload</ui-icon>
   </template>
-  <span>new message</span>
+</ui-tooltip>
+
+<!-- Multiline Tooltip -->
+<ui-tooltip>
+  <ui-icon>share</ui-icon>
+  <template slot="title">
+    Share your content<br>via social media
+  </template>
 </ui-tooltip>
 ```
