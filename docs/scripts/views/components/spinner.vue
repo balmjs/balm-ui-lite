@@ -1,8 +1,7 @@
 <template>
-  <div class="page--loading">
+  <div class="page--spinner">
     <div class="component-title">
-      <h3>Loading</h3>
-      <p>Indicate loading and progress states.</p>
+      <h3>Spinner 转菊花</h3>
     </div>
 
     <div class="snippet-group">
@@ -41,7 +40,7 @@
 </template>
 
 <script>
-import snippets from '../mixins/snippets';
+import snippets from '../../mixins/snippets';
 
 export default {
   mixins: [snippets],
@@ -49,7 +48,7 @@ export default {
     titleTemplate: '%s - Loading'
   },
   created() {
-    this.showCode('loading', 2);
+    this.showCode('progress', 1);
   }
 };
 </script>
