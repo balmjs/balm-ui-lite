@@ -3,7 +3,8 @@ const data = {
     "guide": "开发指南",
     "components": "组件",
     "helpers": "常用辅助方法",
-    "plugins": "通用插件"
+    "plugins": "通用插件",
+    "directives": "指令"
   },
   "menuitem": {
     // guide
@@ -57,7 +58,9 @@ const data = {
     "confirm": "确认框",
     "toast": "提示框",
     "notify": "通知框",
-    "validator": "表单验证"
+    "validator": "表单验证",
+    // directives
+    "lazy-load": "懒加载",
   },
   "components": {
     "badge": "<ui-badge> & <ui-badge-link>",

@@ -59,6 +59,9 @@ const MENU = {
     'notify',
     'validator'
   ],
+  directives: [
+    'lazy-load'
+  ],
   helpers: [
     'typeof',
     'detect-ie',

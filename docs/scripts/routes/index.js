@@ -8,6 +8,8 @@ import guideRoutes from './guide';
 import componentsRoutes from './components';
 // plugins
 import pluginsRoutes from './plugins';
+// directives
+import directivesRoutes from './directives';
 
 const routes = [{
   path: '/',
@@ -31,7 +33,13 @@ const routes = [{
   redirect: '/plugins/event',
   component: BlankLayout,
   children: pluginsRoutes
-},{
+}, {
+  path: '/directives',
+  name: 'directives',
+  redirect: '/directives/lazy-load',
+  component: BlankLayout,
+  children: directivesRoutes
+}, {
   path: '/test',
   name: 'test',
   component: Test,
