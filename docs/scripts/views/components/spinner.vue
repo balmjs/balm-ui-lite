@@ -42,7 +42,7 @@ import snippets from '../../mixins/snippets';
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - 加载中 <ui-spinner>'
+    titleTemplate: '%s - <ui-spinner>'
   },
   created() {
     this.showCode('spinner', 1);

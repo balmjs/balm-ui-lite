@@ -252,7 +252,7 @@ import snippets from '../../mixins/snippets';
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - 按钮 <ui-button>'
+    titleTemplate: '%s - <ui-button>'
   },
   created() {
     this.showCode('button', 9);

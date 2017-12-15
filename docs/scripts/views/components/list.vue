@@ -199,7 +199,7 @@ import snippets from '../../mixins/snippets';
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - 列表 <ui-list>'
+    titleTemplate: '%s - <ui-list>'
   },
   data() {
     return {

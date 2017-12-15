@@ -97,7 +97,7 @@ import snippets from '../../mixins/snippets';
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - 徽章 <ui-badge>'
+    titleTemplate: '%s - <ui-badge>'
   },
   created() {
     this.showCode('badge', 3);

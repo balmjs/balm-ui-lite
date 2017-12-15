@@ -66,7 +66,7 @@ import snippets from '../../mixins/snippets';
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - 对话框 <ui-dialog>'
+    titleTemplate: '%s - <ui-dialog>'
   },
   data() {
     return {

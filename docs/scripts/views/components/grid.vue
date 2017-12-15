@@ -55,7 +55,7 @@ import snippets from '../../mixins/snippets';
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - 栅格 <ui-grid>'
+    titleTemplate: '%s - <ui-grid>'
   },
   created() {
     this.showCode('grid');

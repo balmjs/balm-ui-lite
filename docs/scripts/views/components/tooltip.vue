@@ -68,7 +68,7 @@ import snippets from '../../mixins/snippets';
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - 文字提示 <ui-tooltip>'
+    titleTemplate: '%s - <ui-tooltip>'
   },
   created() {
     this.showCode('tooltip', 2);

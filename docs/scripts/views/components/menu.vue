@@ -49,7 +49,7 @@ import menuDocs from '../../apidocs/menu.md';
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - 下拉菜单 <ui-menu>'
+    titleTemplate: '%s - <ui-menu>'
   },
   data() {
     return {

@@ -74,7 +74,7 @@ import snippets from '../../mixins/snippets';
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - Chip <ui-chip>'
+    titleTemplate: '%s - <ui-chip>'
   },
   data() {
     return {
