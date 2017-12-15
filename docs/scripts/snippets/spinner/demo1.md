@@ -1,5 +1,7 @@
 ```html
+<!-- Default Spinner -->
 <ui-spinner active></ui-spinner>
-<!-- or -->
+
+<!-- Spinner with Single Color -->
 <ui-spinner singleColor active></ui-spinner>
 ```

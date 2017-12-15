@@ -1,0 +1,23 @@
+{
+  "props": [
+  {
+    "name": "active",
+    "type": "Boolean",
+    "default": "false",
+    "description": "激活进度状态（无进度条和缓冲区）"
+  },
+  {
+    "name": "progress",
+    "type": "Number, String",
+    "default": "0",
+    "description": "当前进度条的进度（深色部分） [0-100]"
+  },
+  {
+    "name": "buffer",
+    "type": "Number, String",
+    "default": "0",
+    "description": "当前进度条的缓冲区（浅色部分） [0-100]"
+  }],
+  "slots": [],
+  "events": []
+}
