@@ -106,7 +106,8 @@ const data = {
     "item-action": "<ui-item-action>",
     "item-body": "<ui-item-body>",
     "item-subtitle": "<ui-item-subtitle>",
-    "progress": "<ui-progress>"
+    "progress": "<ui-progress>",
+    "spinner": "<ui-spinner>"
   }
 };
 

@@ -1,8 +1,14 @@
 <template>
   <div class="page--spinner">
     <div class="component-title">
-      <h3>Spinner 转菊花</h3>
+      <h3>Spinner 加载中</h3>
+      <p>显示加载中状态。</p>
     </div>
+
+    <h4>0. 使用方式</h4>
+    <ui-markdown :text="code[0]"></ui-markdown>
+
+    <h4>1. 代码演示</h4>
 
     <div class="snippet-group">
       <div class="snippet-header">
@@ -16,26 +22,17 @@
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
-      </div>
-      <ui-markdown :text="code[0]"></ui-markdown>
-    </div>
-
-    <!-- <ui-apidoc name="spinner"></ui-apidoc> -->
-
-    <div class="snippet-group">
-      <div class="snippet-header">
-        <div class="snippet-demos">
-          <div class="snippet-demo-padding"></div>
-          <div class="snippet-demo">
-            <ui-progress active></ui-progress>
-          </div>
-          <div class="snippet-demo-padding"></div>
+        <div class="snippet-captions">
+          <div class="snippet-caption-padding"></div>
+          <div class="snippet-caption">默认</div>
+          <div class="snippet-caption">单色</div>
+          <div class="snippet-caption-padding"></div>
         </div>
       </div>
-      <ui-markdown :text="code[1]"></ui-markdown>
+      <ui-markdown :code="code[1]"></ui-markdown>
     </div>
 
-    <!-- <ui-apidoc name="progress"></ui-apidoc> -->
+    <ui-apidoc name="spinner"></ui-apidoc>
   </div>
 </template>
 
@@ -45,10 +42,10 @@ import snippets from '../../mixins/snippets';
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - Loading'
+    titleTemplate: '%s - 加载中 <ui-spinner>'
   },
   created() {
-    this.showCode('progress', 1);
+    this.showCode('spinner', 1);
   }
 };
 </script>
