@@ -1,57 +1,73 @@
 <template>
   <div class="page--menu">
     <div class="component-title">
-      <h3>Menu</h3>
-      <p>Lists of clickable actions.</p>
+      <h3>Menu 下拉菜单</h3>
+      <p>向下弹出的列表。</p>
     </div>
 
-    <h4>{{ $t('menu.basic') }}</h4>
+    <h4>0. 使用方式</h4>
+    <ui-markdown :text="code[0]"></ui-markdown>
+
+    <h4>1. 默认下拉菜单</h4>
+
     <div class="snippet-group">
       <div class="snippet-demo">
-        <ui-button id="demo-menu-lower-left" icon="more_vert"></ui-button>
-        <ui-menu btnId="demo-menu-lower-left" :menu="data" @selected="onMenu"></ui-menu>
+        <ui-button id="demo-menu-1" icon="more_vert"></ui-button>
+        <ui-menu dropdownId="demo-menu-1" :menu="data" @selected="onMenu"></ui-menu>
       </div>
-      <ui-markdown :text="code[0]"></ui-markdown>
+      <ui-markdown :code="code[1]"></ui-markdown>
     </div>
 
-    <h4>{{ $t('menu.custom') }}</h4>
+    <h4>2. 自定义下拉菜单</h4>
+
     <div class="snippet-group">
       <div class="snippet-demo">
-        <ui-button id="demo-menu-lower-right" icon="settings"></ui-button>
-        <ui-menu btnId="demo-menu-lower-right">
-          <ui-menuitem v-for="(item, index) in data" :key="index" :item="item">
-            <a :href="item.url">{{ item.label }}</a>
+        <ui-button id="demo-menu-2" icon="settings"></ui-button>
+        <ui-menu dropdownId="demo-menu-2">
+          <ui-menuitem v-for="(item, index) in data" :key="index"
+            :disabled="item.disabled"
+            :divider="item.divider"
+            @click="onMenu(item)">
+            <span v-if="item.disabled">{{ item.label }}</span>
+            <a v-else :href="item.url">{{ item.label }}</a>
           </ui-menuitem>
         </ui-menu>
       </div>
-      <ui-markdown :text="code[1]"></ui-markdown>
+      <ui-markdown :code="code[2]"></ui-markdown>
     </div>
 
     <ui-apidoc name="menu"></ui-apidoc>
     <ui-apidoc name="menuitem"></ui-apidoc>
+    <ui-markdown :text="menuDocs"></ui-markdown>
   </div>
 </template>
 
 <script>
 import snippets from '../../mixins/snippets';
+import menuDocs from '../../apidocs/menu.md';
 
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - Menu'
+    titleTemplate: '%s - 下拉菜单 <ui-menu>'
   },
   data() {
     return {
+      menuDocs,
       data: [{
-        url:'/a',
-        label: 'Item A'
+        label: 'Some Action',
+        url: '#1'
       }, {
-        url:'/b',
-        label: 'Item B',
-        disabled: true
+        label: 'Another Action',
+        divider: true,
+        url: '#2'
       }, {
-        url:'/c',
-        label: 'Item C'
+        label: 'Disabled Action',
+        disabled: true,
+        url: '#3'
+      }, {
+        label: 'Yet Another Action',
+        url: '#4'
       }]
     };
   },

@@ -4,23 +4,24 @@
     "name": "item",
     "type": "Object",
     "default": "{}",
-    "description": "Assigns data to item (default support item: { label, disabled })"
+    "description": "菜单项对象（默认对象格式 { label, disabled, divider }）"
   },
   {
     "name": "label",
     "type": "String",
-    "default": "'label'"
+    "default": "'label'",
+    "description": "菜单名的key值 - item[label]"
   },
   {
     "name": "divider",
     "type": "Boolean",
     "default": "false",
-    "description": "Modifies an item to have a full bleed divider between it and the next list item"
+    "description": "使用分割线"
   }],
   "slots": [
   {
     "name": "(default)",
-    "description": "The default slot holds the menuitem text and can contain HTML"
+    "description": "默认插槽可以插入菜单项内容"
   }],
   "events": []
 }
