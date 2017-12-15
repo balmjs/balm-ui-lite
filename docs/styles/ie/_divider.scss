@@ -1,0 +1,57 @@
+@mixin fix-divider {
+  .mdl-divider {
+    display: inline-block;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: '';
+      display: block;
+    }
+    &::after {
+      content: initial;
+      display: none;
+    }
+    span {
+      display: inline-block;
+      flex-shrink: 0;
+      font-size: 18px;
+      text-transform: uppercase;
+      background-color: #fff;
+      position: relative;
+    }
+    &.horizontal {
+      width: 100%;
+      text-align: center;
+      &::before{
+        left: 0;
+        top: 50%;
+        height: 1px;
+        width: 100%;
+        background-color: currentColor;
+      }
+      span {
+        padding: .5em 1em;
+      }
+    }
+    &.vertical {
+      width: 2em;
+      &::before {
+        left: 50%;
+        top: 0;
+        height: 100%;
+        width: 1px;
+        background-color: currentColor;
+      }
+      span {
+        padding: .5em;
+        vertical-align: middle;
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+}
