@@ -1,6 +1,6 @@
 <template>
   <div v-if="recordCount" :class="className">
-    <div v-if="showRecord" class="mdl-pagination--record">
+    <div v-if="showRecord && !mini" class="mdl-pagination--record">
       <slot :recordCount="recordCount"
             :pageSize="pageSize"
             :pageCount="pageCount"></slot>
@@ -17,6 +17,9 @@
          <span v-if="showPage(page)" @click="handleClick(page)">{{ page }}</span>
          <span v-else class="ellipsis">...</span>
       </a>
+      <template v-if="mini && !showRecord">
+        <slot></slot>
+      </template>
       <a class="mdl-pagination--paging-next">
         <span v-html="currentNext"
               @click="handleClick(currentPage === pageCount ? pageCount : currentPage + 1)"></span>

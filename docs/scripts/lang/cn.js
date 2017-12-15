@@ -114,7 +114,8 @@ const data = {
     "menu": "<ui-menu>",
     "menuitem": "<ui-menuitem>",
     "tooltip": "<ui-tooltip>",
-    "snackbar": "<ui-snackbar>"
+    "snackbar": "<ui-snackbar>",
+    "pagination": "<ui-pagination>"
   }
 };
 

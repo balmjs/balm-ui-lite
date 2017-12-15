@@ -1,10 +1,11 @@
 ```html
-<ui-pagination
+<ui-pagination mini
   :record-count="list.recordCount"
   :page-size="list.pageSize"
   :page="list.page"
-  show-jumper
-  @change="balmUI.onChange('list.page', $event)">
+  prev="Prev"
+  next="Next">
+  <span>{{ list.page }}</span>
 </ui-pagination>
 ```
 

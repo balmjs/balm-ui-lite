@@ -1,46 +1,46 @@
 {
   "props": [{
+    "name": "page",
+    "type": "Number",
+    "default": 1,
+    "description": "当前页数"
+  }, {
     "name": "recordCount",
     "type": "Number",
     "default": "(required)",
-    "description": "",
+    "description": "数据总数",
     "required": true
   }, {
     "name": "pageSize",
     "type": "Number",
     "default": "(required)",
-    "description": "",
+    "description": "每页条数",
     "required": true
-  }, {
-    "name": "page",
-    "type": "Number",
-    "default": 1,
-    "description": ""
   }, {
     "name": "prev",
     "type": "String",
     "default": "",
-    "description": ""
+    "description": "上一页"
   }, {
     "name": "next",
     "type": "String",
     "default": "",
-    "description": ""
+    "description": "下一页"
   }, {
     "name": "pageSpan",
     "type": "Number",
     "default": 3,
-    "description": ""
+    "description": "分页跨度"
   }, {
     "name": "showRecord",
     "type": "Boolean",
     "default": false,
-    "description": ""
+    "description": "显示分页记录"
   }, {
     "name": "showJumper",
     "type": "Boolean",
     "default": false,
-    "description": ""
+    "description": "显示跳转信息"
   }, {
     "name": "jumperBefore",
     "type": "String",
@@ -52,23 +52,28 @@
     "default": "",
     "description": ""
   }, {
+    "name": "jumperButton",
+    "type": "String",
+    "default": "",
+    "description": ""
+  }, {
     "name": "position",
     "type": "String",
     "default": "",
-    "description": "Paging position ('left' or 'right')"
+    "description": "分页对齐方式（'left' 或 'right'）"
   }, {
     "name": "mini",
     "type": "Boolean",
     "default": false,
-    "description": ""
+    "description": "使用极简模式"
   }],
   "slots": [{
     "name": "(default)",
-    "description": "The default slot holds the pagination record content and can contain HTML",
+    "description": "默认插槽可以插入分页额外内容",
     "props": "{ recordCount, pageSize, pageCount }"
   }],
   "events": [{
     "name": "change",
-    "description": "Dispatched when the pagination is changed"
+    "description": "切换分页事件"
   }]
 }

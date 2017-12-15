@@ -1,49 +1,68 @@
 <template>
   <div class="page--pagination">
     <div class="component-title">
-      <h3>Pagination</h3>
+      <h3>Pagination 分页</h3>
     </div>
 
-    <h4>Full paging</h4>
+    <h4>0. 使用方式</h4>
+    <ui-markdown :text="code[0]"></ui-markdown>
+
+    <h4>1. 默认分页</h4>
+
     <div class="snippet-demo">
       <ui-pagination
-        :record-count="recordCount"
-        :page-size="pageSize"
-        :page="page"
+        :record-count="list1.recordCount"
+        :page-size="list1.pageSize"
+        :page="list1.page"
+        show-jumper
+        @change="balmUI.onChange('list1.page', $event)">
+      </ui-pagination>
+    </div>
+    <ui-markdown :code="code[1]"></ui-markdown>
+
+    <h4>2. 完整分页</h4>
+
+    <div class="snippet-demo">
+      <ui-pagination
+        :record-count="list2.recordCount"
+        :page-size="list2.pageSize"
+        :page="list2.page"
         show-record
         show-jumper
         jumper-before="Goto"
         jumper-after="page"
         jumper-button="Go"
-        @change="onPage">
+        @change="balmUI.onChange('list2.page', $event)">
         <template slot-scope="props">
           Showing {{ props.recordCount }} records,
           <ui-select
             :options="pageSizeList"
             optionValue="value"
             optionKey="key"
-            :model="pageSize"
-            @change="balmUI.onChange('pageSize', $event)">
+            :model="list2.pageSize"
+            @change="balmUI.onChange('list2.pageSize', $event)">
             {{ props.pageSize }}
           </ui-select> records / page,
           {{ props.pageCount }} total pages
         </template>
       </ui-pagination>
     </div>
-    <ui-markdown :text="code[0]"></ui-markdown>
+    <ui-markdown :code="code[2]"></ui-markdown>
 
-    <h4>Mini paging</h4>
+    <h4>3. 极简分页</h4>
+
     <div class="snippet-demo">
-      <ui-pagination
-        :record-count="recordCount"
-        :page-size="pageSize"
-        :page="page"
-        mini
+      <ui-pagination mini
+        :record-count="list3.recordCount"
+        :page-size="list3.pageSize"
+        :page="list3.page"
         prev="Prev"
         next="Next"
-        @change="onPage"></ui-pagination>
+        @change="balmUI.onChange('list3.page', $event)">
+        <span>{{ list3.page }}</span>
+      </ui-pagination>
     </div>
-    <ui-markdown :text="code[1]"></ui-markdown>
+    <ui-markdown :code="code[3]"></ui-markdown>
 
     <ui-apidoc name="pagination"></ui-apidoc>
   </div>
@@ -55,13 +74,28 @@ import snippets from '../../mixins/snippets';
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - Pagination'
+    titleTemplate: '%s - <ui-pagination>'
   },
   data() {
     return {
-      recordCount: 100,
-      pageSize: 5,
-      page: 1,
+      list1: {
+        data: [],
+        recordCount: 100,
+        pageSize: 5,
+        page: 1
+      },
+      list2: {
+        data: [],
+        recordCount: 100,
+        pageSize: 5,
+        page: 1
+      },
+      list3: {
+        data: [],
+        recordCount: 100,
+        pageSize: 5,
+        page: 1
+      },
       pageSizeList: [{
         key: 5,
         value: 5
@@ -77,13 +111,8 @@ export default {
       }]
     };
   },
-  methods: {
-    onPage(page) {
-      this.page = page;
-    }
-  },
   created() {
-    this.showCode('pagination', 2);
+    this.showCode('pagination', 3);
   }
 };
 </script>
@@ -93,5 +122,4 @@ export default {
   width: 64px;
   min-width: 64px;
 }
-
 </style>
