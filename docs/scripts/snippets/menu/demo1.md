@@ -1,6 +1,7 @@
 ```html
-<ui-button id="demo-menu-lower-left" icon="more_vert"></ui-button>
-<ui-menu btnId="demo-menu-lower-left" :menu="data" @selected="onMenu"></ui-menu>
+<ui-button id="demo-menu-1" icon="more_vert"></ui-button>
+
+<ui-menu dropdownId="demo-menu-1" :menu="data" @selected="onMenu"></ui-menu>
 ```
 
 ```js
@@ -8,15 +9,19 @@ export default {
   data() {
     return {
       data: [{
-        url:'/a',
-        label: 'Item A'
+        label: 'Some Action',
+        url: '#1'
       }, {
-        url:'/b',
-        label: 'Item B',
-        disabled: true
+        label: 'Another Action',
+        divider: true,
+        url: '#2'
       }, {
-        url:'/c',
-        label: 'Item C'
+        label: 'Disabled Action',
+        disabled: true,
+        url: '#3'
+      }, {
+        label: 'Yet Another Action',
+        url: '#4'
       }]
     };
   },

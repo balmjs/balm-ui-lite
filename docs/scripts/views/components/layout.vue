@@ -368,7 +368,7 @@ import snippets from '../../mixins/snippets';
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - 布局 <ui-layout>'
+    titleTemplate: '%s - <ui-layout>'
   },
   data() {
     return {

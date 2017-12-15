@@ -53,7 +53,7 @@ import snippets from '../../mixins/snippets';
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - 选项卡 <ui-tabs>'
+    titleTemplate: '%s - <ui-tabs>'
   },
   data() {
     return {

@@ -136,7 +136,7 @@ import snippets from '../../mixins/snippets';
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - 卡片 <ui-card>'
+    titleTemplate: '%s - <ui-card>'
   },
   created() {
     this.showCode('card', 3);

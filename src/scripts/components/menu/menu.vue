@@ -1,5 +1,5 @@
 <template>
-  <ul :class="[menuClassName, positionClassName]" :data-mdl-for="btnId">
+  <ul :class="[menuClassName, positionClassName]" :data-mdl-for="dropdownId">
     <slot>
       <ui-menuitem v-for="(item, index) in currentMenu"
         :key="index"
@@ -33,10 +33,6 @@ export default {
   },
   props: {
     // state
-    btnId: {
-      type: String,
-      required: true
-    },
     menu: {
       type: Array,
       default: function() {
@@ -44,6 +40,10 @@ export default {
       }
     },
     // ui attributes
+    dropdownId: {
+      type: String,
+      required: true
+    },
     noRipple: {
       type: Boolean,
       default: false

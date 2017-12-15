@@ -59,7 +59,7 @@ import snippets from '../../mixins/snippets';
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - 进度条 <ui-progress>'
+    titleTemplate: '%s - <ui-progress>'
   },
   created() {
     this.showCode('progress', 3);
