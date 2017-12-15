@@ -113,7 +113,8 @@ const data = {
     "spinner": "<ui-spinner>",
     "menu": "<ui-menu>",
     "menuitem": "<ui-menuitem>",
-    "tooltip": "<ui-tooltip>"
+    "tooltip": "<ui-tooltip>",
+    "snackbar": "<ui-snackbar>"
   }
 };
 

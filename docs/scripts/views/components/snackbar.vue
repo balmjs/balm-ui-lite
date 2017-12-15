@@ -1,29 +1,35 @@
 <template>
   <div class="page--snackbar">
     <div class="component-title">
-      <h3>Snackbar</h3>
-      <p>Transient popup notifications.</p>
+      <h3>Snackbar 提示框</h3>
+      <p>短暂的通知弹框。</p>
     </div>
 
-    <h4>Toast</h4>
-    <div class="snippet-demo">
-      <ui-button raised effect @click="show('toast')">Show Toast</ui-button>
-      <ui-snackbar :active="toast.active" :message="toast.message" @done="hide('toast')"></ui-snackbar>
-    </div>
+    <h4>0. 使用方式</h4>
     <ui-markdown :text="code[0]"></ui-markdown>
 
-    <h4>snackbar</h4>
+    <h4>1. 代码演示</h4>
+
     <div class="snippet-demo">
-      <ui-button raised effect @click="show('snackbar')">Show Snackbar</ui-button>
+      <ui-button raised @click="balmUI.onShow('snackbar.active')">Show Snackbar</ui-button>
       <ui-snackbar :type="1"
         :active="snackbar.active"
         :message="snackbar.message"
         :timeout="3000"
         :actionHandler="actionHandler"
         actionText="Undo"
-        @done="hide('snackbar')"></ui-snackbar>
+        @done="balmUI.onHide('snackbar.active')"></ui-snackbar>
     </div>
-    <ui-markdown :text="code[1]"></ui-markdown>
+    <ui-markdown :code="code[1]"></ui-markdown>
+
+    <div class="snippet-demo">
+      <ui-button raised @click="balmUI.onShow('toast.active')">Show Toast</ui-button>
+      <ui-snackbar
+        :active="toast.active"
+        :message="toast.message"
+        @done="balmUI.onHide('toast.active')"></ui-snackbar>
+    </div>
+    <ui-markdown :code="code[2]"></ui-markdown>
 
     <ui-apidoc name="snackbar"></ui-apidoc>
   </div>
@@ -35,7 +41,7 @@ import snippets from '../../mixins/snippets';
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - Snackbar'
+    titleTemplate: '%s - <ui-snackbar>'
   },
   data() {
     return {
@@ -50,13 +56,6 @@ export default {
     };
   },
   methods: {
-    show(type) {
-      this[type].active = true;
-      this.snackbar.message = new Date().toString();
-    },
-    hide(type) {
-      this[type].active = false;
-    },
     actionHandler() {
       this.snackbar.active = false;
     }

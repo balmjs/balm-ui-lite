@@ -1,5 +1,14 @@
+
 ```html
-<ui-snackbar :active="active" :message="message" @done="hide"></ui-snackbar>
+<ui-button raised @click="balmUI.onShow('active')">Show Snackbar</ui-button>
+
+<ui-snackbar :type="1"
+  :active="active"
+  :message="message"
+  :timeout="3000"
+  :actionHandler="actionHandler"
+  actionText="Undo"
+  @done="balmUI.onHide('active')"></ui-snackbar>
 ```
 
 ```js
@@ -11,10 +20,7 @@ export default {
     };
   },
   methods: {
-    show() {
-      this.active = true;
-    },
-    hide() {
+    actionHandler() {
       this.active = false;
     }
   }

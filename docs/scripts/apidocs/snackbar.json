@@ -3,40 +3,37 @@
     "name": "type",
     "type": "Number, String",
     "default": "0",
-    "description": "The snackbar type { 0: 'toast', 1: 'snackbar' }"
+    "description": "提示框类型 { 0: 'toast', 1: 'snackbar' }"
   }, {
     "name": "active",
     "type": "Boolean",
     "default": "false",
-    "description": "Marks the snackbar as active which causes it to display"
+    "description": "开启状态"
   }, {
     "name": "message",
     "type": "String",
     "default": "(required)",
-    "description": "The text message to display",
+    "description": "提示文字",
     "required": true
   }, {
     "name": "timeout",
     "type": "Number",
     "default": "2750",
-    "description": "The amount of time in milliseconds to show the snackbar"
+    "description": "显示时长"
   }, {
     "name": "actionHandler",
     "type": "Function",
     "default": "",
-    "description": "The function to execute when the action is clicked"
+    "description": "动作按钮回调函数"
   }, {
     "name": "actionText",
     "type": "String",
     "default": "",
-    "description": "The text to display for the action button"
+    "description": "动作按钮文字"
   }],
-  "slots": [{
-    "name": "(default)",
-    "description": "The default slot holds the snackbar text and can contain HTML"
-  }],
+  "slots": [],
   "events": [{
     "name": "done",
-    "description": "Dispatched when the active is changed"
+    "description": "默认关闭时的回调函数"
   }]
 }
