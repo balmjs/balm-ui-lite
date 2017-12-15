@@ -40,6 +40,9 @@ if (isIE) {
       vue.component(UiApidoc.name, UiApidoc);
     }
   });
+
+  Vue.directive('lazy-load', BalmUI.directives.lazyLoad);
+
   Vue.prototype.$http = axios;
   Vue.prototype.$prism = prismjs;
   Vue.prototype.$docs = {

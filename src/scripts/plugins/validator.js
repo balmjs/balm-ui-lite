@@ -27,7 +27,7 @@ export default {
         messages: [] // 所有无效字段的提示语
       };
 
-      let validations = this.$options.validation || {};
+      let validations = this.$options.validations || {};
       // 获取待验证字段
       let files = Object.keys(validations);
       let l = files.length;

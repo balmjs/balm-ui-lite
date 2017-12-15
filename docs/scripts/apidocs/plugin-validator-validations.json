@@ -1,0 +1,16 @@
+{
+  "props": [{
+    "name": "label",
+    "type": "String",
+    "default": "",
+    "description": "字段的别名，如果不写则直接输出键值名"
+  }, {
+    "name": "validator",
+    "type": "String",
+    "default": "",
+    "description": "需要应用的验证规则名称，多个规则以‘,’隔开"
+  }],
+  "slots": [],
+  "events": []
+}
+

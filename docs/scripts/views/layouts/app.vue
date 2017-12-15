@@ -42,7 +42,7 @@
         </template>
       </ui-nav>
     </ui-layout-drawer>
-    <ui-layout-content>
+    <ui-layout-content v-lazy-load>
       <router-view></router-view>
     </ui-layout-content>
   </ui-layout>

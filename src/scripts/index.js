@@ -119,6 +119,10 @@ import confirm from './plugins/confirm';
 import toast from './plugins/toast';
 import notify from './plugins/notify';
 import validator from './plugins/validator';
+/**
+ * Directives
+ */
+import lazyLoad from './directives/lazy-load';
 
 const version = require('../../package.json').version;
 const helpers = Object.assign({}, BalmUI_Helpers);
@@ -210,6 +214,10 @@ const plugins = {
   validator
 };
 
+const directives = {
+  lazyLoad
+};
+
 const registers = {
   install(Vue, options = {}) {
     // Configure the component props
@@ -239,6 +247,7 @@ const BalmUI = Object.assign(
   { mixins },
   { components },
   { plugins },
+  { directives },
   registers
 );
 
@@ -247,6 +256,9 @@ if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.use(BalmUI);
   for (let key in BalmUI.plugins) {
     window.Vue.use(BalmUI.plugins[key]);
+  }
+  for (let name in BalmUI.directives) {
+    window.Vue.directive(name, BalmUI.directives[name]);
   }
 }
 

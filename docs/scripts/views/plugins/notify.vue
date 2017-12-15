@@ -13,7 +13,7 @@
     <h2 class="line">引入</h2>
     <ui-markdown :text="code[0]"></ui-markdown>
     <p>示例代码中的<strong>options</strong>参数包含以下属性：</p>
-    <ui-apidoc name="plugin-notify-useage" :show-title="false"></ui-apidoc>
+    <ui-apidoc name="plugin-notify-usage" :show-title="false"></ui-apidoc>
 
     <h2 class="line">示例</h2>
     <h3>基本用法</h3>
