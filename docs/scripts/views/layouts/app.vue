@@ -6,11 +6,11 @@
       <ui-layout-header-row>
         <ui-layout-title>Material Design Lite + Vue</ui-layout-title>
         <ui-layout-spacer></ui-layout-spacer>
-        <p class="supported-lang">
+        <!-- <p class="supported-lang">
           <a :class="{'active': isActiveLang('cn') }" @click="switchLang('cn')">{{ lang.cn }}</a>
           |
           <a :class="{'active': isActiveLang('en') }" @click="switchLang('en')">{{ lang.en }}</a>
-        </p>
+        </p> -->
       </ui-layout-header-row>
     </ui-layout-header>
     <ui-layout-drawer>

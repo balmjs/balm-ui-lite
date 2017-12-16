@@ -1,6 +1,6 @@
 ## 进阶用法
 
-> 以下配置依旧基于 [Balm CLI](https://github.com/balmjs/balm-cli) 搭建的脚手架
+> 以下配置依旧基于 [Balm CLI](https://github.com/balmjs/balm-cli) 搭建的Vue脚手架
 
 ### 1. 完整引用 BalmUI Lite
 

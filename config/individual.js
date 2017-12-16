@@ -37,7 +37,14 @@ const components = [
   'rangepicker.js'
 ];
 const helpers = ['index.js'];
-const plugins = ['event.js', 'alert.js', 'confirm.js', 'toast.js', 'notify.js'];
+const plugins = [
+  'event.js',
+  'alert.js',
+  'confirm.js',
+  'toast.js',
+  'notify.js',
+  'validator.js'
+];
 const directives = ['lazy-load.js'];
 
 const output = {

@@ -12,10 +12,10 @@ const defaultRules = {
 const LABEL_PLACEHOLDER = '%s';
 
 export default {
-  install (Vue, customRules) {
+  install(Vue, customRules) {
     let validationRules = Object.assign({}, defaultRules, customRules);
 
-    Vue.prototype.$validate = function (formData, rules = {}) {
+    Vue.prototype.$validate = function(formData = {}, rules = {}) {
 
       let currentRules = Object.assign({}, validationRules, rules);
 
@@ -33,7 +33,7 @@ export default {
       let l = files.length;
       let i = 0;
 
-      for(; i < l; i++) {
+      for (; i < l; i++) {
         let fieldName = files[i]; // 字段名
         let fieldOption = validations[fieldName]; // 对应验证配置
         let label = fieldOption.label || ''; // 字段别名
@@ -45,18 +45,18 @@ export default {
         let x = 0;
         let fieldAllValid = true;
 
-        for (; x < rulesLength; x ++) {
+        for (; x < rulesLength; x++) {
           let ruleName = filedRules[x];
           let rule = fieldOption[ruleName] || currentRules[ruleName]; // 当前验证方法
 
-          if(rule && getType(rule.validate) === 'function') {
+          if (rule && getType(rule.validate) === 'function') {
 
-            if(!rule.validate.apply(this, [formData[fieldName], formData])){
+            if (!rule.validate.apply(this, [formData[fieldName], formData])) {
 
               fieldAllValid = false;
               let message = '';
               // 错误提示
-              if(getType(rule.message) === 'function') {
+              if (getType(rule.message) === 'function') {
                 message = rule.message.apply(this, [fieldName, formData[fieldName], formData]);
               } else {
                 message = rule.message.replace(
@@ -76,7 +76,7 @@ export default {
 
         }
 
-        if(fieldAllValid) {
+        if (fieldAllValid) {
           result.valid.push(fieldName);
         } else {
           result.isValid = false;
@@ -88,4 +88,4 @@ export default {
       return result;
     };
   }
-}
+};

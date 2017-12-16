@@ -53,6 +53,9 @@
       </ui-dialog-content>
     </ui-dialog>
 
+    <h4>3. 警告框和确认框</h4>
+    <p>请参照<router-link to="/plugins/alert">Alert</router-link>和<router-link to="/plugins/confirm">Confrim</router-link>插件文档</p>
+
     <ui-apidoc name="dialog"></ui-apidoc>
     <ui-apidoc name="dialog-title"></ui-apidoc>
     <ui-apidoc name="dialog-content"></ui-apidoc>

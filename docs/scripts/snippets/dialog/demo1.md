@@ -1,8 +1,6 @@
 ```html
-<ui-button raised colored @click="showDialog('show')">Show Dialog</ui-button>
-```
+<ui-button raised colored @click="showDialog('show')">Simple Dialog</ui-button>
 
-```html
 <ui-dialog :open="show" @close="closeDialog('show')" @confirm="onConfirm">
   <ui-dialog-title>
     <h4>Allow data collection?</h4>
