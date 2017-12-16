@@ -1,7 +1,8 @@
 const input = {
   components: './src/scripts/components',
   helpers: './src/scripts/helpers',
-  plugins: './src/scripts/plugins'
+  plugins: './src/scripts/plugins',
+  directives: './src/scripts/directives'
 };
 
 const components = [
@@ -37,11 +38,13 @@ const components = [
 ];
 const helpers = ['index.js'];
 const plugins = ['event.js', 'alert.js', 'confirm.js', 'toast.js', 'notify.js'];
+const directives = ['lazy-load.js'];
 
 const output = {
   components: './components',
   helpers: './helpers',
-  plugins: './plugins'
+  plugins: './plugins',
+  directives: './directives'
 };
 
 module.exports = {
