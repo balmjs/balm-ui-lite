@@ -52,5 +52,6 @@ module.exports = {
   components,
   helpers,
   plugins,
+  directives,
   output
 };
