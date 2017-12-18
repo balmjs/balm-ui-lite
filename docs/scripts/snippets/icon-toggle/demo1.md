@@ -2,25 +2,24 @@
 <ui-icon-toggle
   icon="format_bold"
   value="b"
-  :model="picked"
-  @change="balmUI.onChange('picked', $event)">
+  :model="checked1"
+  @change="balmUI.onChange('checked1', $event)">
 </ui-icon-toggle>
 
 <ui-icon-toggle
   icon="format_italic"
   value="i"
-  :model="picked"
-  @change="balmUI.onChange('picked', $event)">
+  :model="checked2"
+  @change="balmUI.onChange('checked2', $event)">
 </ui-icon-toggle>
-
-<span>Picked: {{ picked }}</span>
 ```
 
 ```js
 export default {
   data() {
     return {
-      picked: []
+      checked1: true,
+      checked2: false
     };
   }
 };

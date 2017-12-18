@@ -55,7 +55,7 @@ export default {
   },
   data() {
     return {
-      currentValue: (getType(this.model) === 'array') ? this.model : [this.model]
+      currentValue: this.model
     };
   },
   computed: {

@@ -50,7 +50,7 @@
   "events": [
   {
     "name": "change",
-    "type": "Function(value: string)",
+    "type": "Function(picked: string)",
     "description": "选项变化时的回调函数"
   }]
 }

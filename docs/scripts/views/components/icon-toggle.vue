@@ -17,23 +17,24 @@
             <ui-icon-toggle
               icon="format_bold"
               value="b"
-              :model="picked1"
-              @change="balmUI.onChange('picked1', $event)">
+              :model="checked1"
+              @change="balmUI.onChange('checked1', $event)">
             </ui-icon-toggle>
           </div>
           <div class="snippet-demo">
             <ui-icon-toggle
               icon="format_italic"
               value="i"
-              :model="picked1"
-              @change="balmUI.onChange('picked1', $event)">
+              :model="checked2"
+              @change="balmUI.onChange('checked2', $event)">
             </ui-icon-toggle>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
         <div class="snippet-captions">
           <div class="snippet-caption-padding"></div>
-          <div class="snippet-caption">Picked: {{ picked1 }}</div>
+          <div class="snippet-caption">Checked: {{ checked1 }}</div>
+          <div class="snippet-caption">Checked: {{ checked2 }}</div>
           <div class="snippet-caption-padding"></div>
         </div>
       </div>
@@ -49,16 +50,16 @@
           <div class="snippet-demo">
             <ui-icon-toggle
               value="qr"
-              :model="picked2"
-              @change="balmUI.onChange('picked2', $event)">
+              :model="checked3"
+              @change="balmUI.onChange('checked3', $event)">
               <i class="fa fa-qrcode"></i>
             </ui-icon-toggle>
           </div>
           <div class="snippet-demo">
             <ui-icon-toggle
               value="tv"
-              :model="picked2"
-              @change="balmUI.onChange('picked2', $event)">
+              :model="checked3"
+              @change="balmUI.onChange('checked3', $event)">
               <i class="fa fa-tv"></i>
             </ui-icon-toggle>
           </div>
@@ -66,7 +67,7 @@
         </div>
         <div class="snippet-captions">
           <div class="snippet-caption-padding"></div>
-          <div class="snippet-caption">Picked: {{ picked2 }}</div>
+          <div class="snippet-caption">Checked: {{ checked3 }}</div>
           <div class="snippet-caption-padding"></div>
         </div>
       </div>
@@ -87,8 +88,9 @@ export default {
   },
   data() {
     return {
-      picked1: [],
-      picked2: []
+      checked1: true,
+      checked2: false,
+      checked3: []
     };
   },
   created() {
