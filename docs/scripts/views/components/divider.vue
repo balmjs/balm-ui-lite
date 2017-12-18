@@ -1,28 +1,27 @@
 <template>
   <div class="page--divider">
-    <div class="component-title">
-      <h3>Divider</h3>
-      <p>Some guys like to use dividers, so we made this component.</p>
-    </div>
+    <h1>Divider</h1>
 
+    <h2 class="line">概述</h2>
+    <p>有些人喜欢使用分割线，所以我们开发了这个组件</p>
     <div class="snippet-group">
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
             <div class="w320">
-              <ui-divider>divider</ui-divider>
+              <ui-divider>割</ui-divider>
             </div>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :text="code[1]"></ui-markdown>
     </div>
+    <ui-markdown :text="code[1]"></ui-markdown>
 
-    <ui-divider>diiiiiiiiiiivider!</ui-divider>
+    <ui-divider>特别长的分割线</ui-divider>
 
-    <p>We even made a vertical divider.</p>
+    <p>我们甚至做了一个垂直的分割线：</p>
     <div class="snippet-group">
       <div class="snippet-header">
         <div class="snippet-demos">
@@ -37,12 +36,12 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :text="code[2]"></ui-markdown>
     </div>
+    <ui-markdown :text="code[2]"></ui-markdown>
 
-    <ui-divider>diiiiiiiiiiivider!</ui-divider>
+    <ui-divider>特别长的分割线</ui-divider>
 
-    <p>Sometimes you may want to change the color of the dividing line, there is a  simple way here:</p>
+    <p>有时候你可能会想改变分割线的颜色, 这里有一个简单的方法:</p>
 
     <div class="snippet-group">
       <div class="snippet-header">
@@ -56,8 +55,8 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :text="code[3]"></ui-markdown>
     </div>
+    <ui-markdown :text="code[3]"></ui-markdown>
 
     <ui-apidoc name="divider"></ui-apidoc>
   </div>
@@ -76,3 +75,15 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+  h2.line {
+    border-bottom: 1px solid #ddd;
+  }
+
+  .divider {
+    height: 0;
+    width: 100%;
+    margin-bottom: 4em;
+  }
+</style>
