@@ -10,13 +10,13 @@
     "name": "id",
     "type": "String",
     "default": "",
-    "description": "Checkbox的id属性"
+    "description": "Checkbox 的 id 属性"
   },
   {
     "name": "name",
     "type": "String",
     "default": "",
-    "description": "Checkbox的name属性"
+    "description": "Checkbox 的 name 属性"
   },
   {
     "name": "disabled",
@@ -28,7 +28,7 @@
     "name": "value",
     "type": "String, Number, Boolean",
     "default": "",
-    "description": "Checkbox的value属性（指定选项值）"
+    "description": "Checkbox 的 value 属性（指定选项值）"
   },
   {
     "name": "label",
@@ -63,6 +63,6 @@
   {
     "name": "change",
     "type": "Function(checked: boolean | array)",
-    "description": "变化时回调函数"
+    "description": "选项变化时的回调函数"
   }]
 }

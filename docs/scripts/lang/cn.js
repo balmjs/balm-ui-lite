@@ -117,7 +117,8 @@ const data = {
     "snackbar": "<ui-snackbar>",
     "pagination": "<ui-pagination>",
     "slider": "<ui-slider>",
-    "checkbox": "<ui-checkbox>"
+    "checkbox": "<ui-checkbox>",
+    "radio": "<ui-radio>"
   }
 };
 

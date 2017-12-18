@@ -44,7 +44,7 @@
 
 <script>
 import snippets from '../../mixins/snippets';
-import menuDocs from '../../apidocs/menu.md';
+import menuDocs from '../../docs/components/menu.md';
 
 export default {
   mixins: [snippets],
