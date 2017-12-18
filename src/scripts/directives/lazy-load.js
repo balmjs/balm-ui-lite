@@ -83,16 +83,17 @@ export default {
 
     }, false);
 
+    if ( window.MutationObserver ) {
+      let observer = new MutationObserver(function () {
+        lazyLoad(getImgs(el));
+      });
 
-    let observer = new MutationObserver(function () {
-      lazyLoad(getImgs(el));
-    });
-
-    observer.observe(el, {
-      characterData: true,
-      childList: true,
-      subtree: true
-    });
+      observer.observe(el, {
+        characterData: true,
+        childList: true,
+        subtree: true
+      });
+    }
   },
   inserted(el){
     lazyLoad(getImgs(el));
