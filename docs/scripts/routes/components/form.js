@@ -1,58 +1,58 @@
-const Slider = () => import('../views/slider');
-const Checkbox = () => import('../views/checkbox');
-const Radio = () => import('../views/radio');
-const IconToggle = () => import('../views/icon-toggle');
-const Switch = () => import('../views/switch');
-const Textfield = () => import('../views/textfield');
-const Select = () => import('../views/select');
-const Autocomplete = () => import('../views/autocomplete');
-const Datepicker = () => import('../views/datepicker');
-const Fileupload = () => import('../views/fileupload');
-const Rangepicker = () => import('../views/rangepicker');
+const Slider = () => import('../../views/components/slider');
+const Checkbox = () => import('../../views/components/checkbox');
+const Radio = () => import('../../views/components/radio');
+const IconToggle = () => import('../../views/components/icon-toggle');
+const Switch = () => import('../../views/components/switch');
+const Textfield = () => import('../../views/components/textfield');
+const Select = () => import('../../views/components/select');
+const Fileupload = () => import('../../views/components/fileupload');
+const Autocomplete = () => import('../../views/components/autocomplete');
+const Datepicker = () => import('../../views/components/datepicker');
+const Rangepicker = () => import('../../views/components/rangepicker');
 
 const formRoutes = [{
-  path: '/slider',
-  name: 'slider',
+  path: 'slider',
+  name: 'components.slider',
   component: Slider
 }, {
-  path: '/checkbox',
-  name: 'checkbox',
+  path: 'checkbox',
+  name: 'components.checkbox',
   component: Checkbox
 }, {
-  path: '/radio',
-  name: 'radio',
+  path: 'radio',
+  name: 'components.radio',
   component: Radio
 }, {
-  path: '/icon-toggle',
-  name: 'icon-toggle',
+  path: 'icon-toggle',
+  name: 'components.icon-toggle',
   component: IconToggle
 }, {
-  path: '/switch',
-  name: 'switch',
+  path: 'switch',
+  name: 'components.switch',
   component: Switch
 }, {
-  path: '/textfield',
-  name: 'textfield',
+  path: 'textfield',
+  name: 'components.textfield',
   component: Textfield
 }, {
-  path: '/select',
-  name: 'select',
+  path: 'select',
+  name: 'components.select',
   component: Select
 }, {
-  path: '/autocomplete',
-  name: 'autocomplete',
-  component: Autocomplete
-}, {
-  path: '/datepicker',
-  name: 'datepicker',
-  component: Datepicker
-}, {
-  path: '/fileupload',
-  name: 'fileupload',
+  path: 'fileupload',
+  name: 'components.fileupload',
   component: Fileupload
 }, {
-  path: '/rangepicker',
-  name: 'rangepicker',
+  path: 'autocomplete',
+  name: 'components.autocomplete',
+  component: Autocomplete
+}, {
+  path: 'datepicker',
+  name: 'components.datepicker',
+  component: Datepicker
+}, {
+  path: 'rangepicker',
+  name: 'components.rangepicker',
   component: Rangepicker
 }];
 

@@ -29,8 +29,8 @@
 </template>
 
 <script>
-import snippets from '../mixins/snippets';
-import {date, strtotime, time} from '../helpers';
+import snippets from '../../mixins/snippets';
+import {date, strtotime, time} from '../../helpers';
 
 const DIFF_DAY_1 = 0;
 const DIFF_DAY_7 = 6;
