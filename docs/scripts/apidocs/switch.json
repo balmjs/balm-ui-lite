@@ -3,54 +3,48 @@
   {
     "name": "model",
     "type": "Boolean",
-    "default": "(required)",
-    "description": "The model that the switch value syncs to",
-    "required": true
+    "default": "",
+    "description": "当前开关的状态值"
   },
   {
     "name": "id",
     "type": "String",
     "default": "",
-    "description": "A unique identifier for the switch"
+    "description": "Switch 的 id 属性"
   },
   {
     "name": "name",
     "type": "String",
     "default": "",
-    "description": "The name attribute of the switch"
+    "description": "Switch 的 name 属性"
   },
   {
     "name": "disabled",
     "type": "Boolean",
     "default": "false",
-    "description": "Applies disabled display effect"
-  },
-  {
-    "name": "value",
-    "type": "Boolean",
-    "default": "",
-    "description": "The value attribute of the switch"
+    "description": "Switch 的 disabled 属性（禁用状态）"
   },
   {
     "name": "label",
     "type": "String",
     "default": "",
-    "description": "The label shown above the switch"
+    "description": "标签文字"
   },
   {
     "name": "noRipple",
     "type": "Boolean",
     "default": "false",
-    "description": "Don't apply ripple click effect"
+    "description": "无波纹效果"
   }],
   "slots": [
   {
     "name": "(default)",
-    "description": "The default slot holds the switch label and can contain HTML"
+    "description": "默认插槽可以插入标签内容"
   }],
   "events": [
   {
     "name": "change",
-    "description": "Dispatched when the switch is changed"
+    "type": "Function(checked: boolean)",
+    "description": "切换开关时回调函数"
   }]
 }

@@ -1,20 +1,28 @@
 <template>
   <div class="page--switch">
     <div class="component-title">
-      <h3>Switch</h3>
+      <h3>Switch 开关</h3>
+      <p>开关选择器。</p>
     </div>
+
+    <h4>0. 使用方式</h4>
+    <ui-markdown :text="code[0]"></ui-markdown>
+
+    <h4>1. 代码演示</h4>
 
     <div class="snippet-group">
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
-            <ui-switch :model="open" @change="onSwitchChange">{{ open ? 'On' : 'Off' }}</ui-switch>
+            <ui-switch
+              :model="open"
+              @change="balmUI.onChange('open', $event)">{{ open ? 'On' : 'Off' }}</ui-switch>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :text="code[0]"></ui-markdown>
+      <ui-markdown :code="code[1]"></ui-markdown>
     </div>
 
     <ui-apidoc name="switch"></ui-apidoc>
@@ -27,17 +35,12 @@ import snippets from '../../mixins/snippets';
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - Switch'
+    titleTemplate: '%s - <ui-switch>'
   },
   data() {
     return {
       open: true
     };
-  },
-  methods: {
-    onSwitchChange(val) {
-      this.open = val;
-    }
   },
   created() {
     this.showCode('switch');

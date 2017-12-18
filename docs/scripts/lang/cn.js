@@ -119,7 +119,8 @@ const data = {
     "slider": "<ui-slider>",
     "checkbox": "<ui-checkbox>",
     "radio": "<ui-radio>",
-    "icon-toggle": "<ui-icon-toggle>"
+    "icon-toggle": "<ui-icon-toggle>",
+    "switch": "<ui-switch>"
   }
 };
 

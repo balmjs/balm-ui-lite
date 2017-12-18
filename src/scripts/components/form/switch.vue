@@ -4,7 +4,6 @@
       class="mdl-switch__input"
       :id="id"
       :name="name"
-      :value="value"
       :disabled="disabled"
       v-model="currentValue"
       @change="handleChange">
@@ -34,7 +33,6 @@ export default {
       type: Boolean,
       default: false
     },
-    value: Boolean,
     // ui attributes
     label: String,
     noRipple: {
@@ -60,7 +58,7 @@ export default {
       };
     },
     isChecked() {
-      return this.currentValue === this.value || this.currentValue === true;
+      return this.currentValue === true;
     }
   },
   watch: {
