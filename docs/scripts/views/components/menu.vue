@@ -38,13 +38,13 @@
 
     <ui-apidoc name="menu"></ui-apidoc>
     <ui-apidoc name="menuitem"></ui-apidoc>
-    <ui-markdown :text="menuDocs"></ui-markdown>
+    <ui-markdown :text="docs"></ui-markdown>
   </div>
 </template>
 
 <script>
 import snippets from '../../mixins/snippets';
-import menuDocs from '../../docs/components/menu.md';
+import docs from '../../docs/components/menu.md';
 
 export default {
   mixins: [snippets],
@@ -53,7 +53,7 @@ export default {
   },
   data() {
     return {
-      menuDocs,
+      docs,
       data: [{
         label: 'Some Action',
         url: '#1'

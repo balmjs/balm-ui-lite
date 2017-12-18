@@ -7,41 +7,67 @@
     <h4>0. 使用方式</h4>
     <ui-markdown :text="code[0]"></ui-markdown>
 
+    <h4>1. 默认下拉选择</h4>
+
     <div class="snippet-group">
-      <div class="snippet-demo">
-        <ui-select :options="options" :model="formData.selected"
-          optionKey="key" optionValue="value"
-          defaultKey="0" defaultValue="All items"
-          @change="balmUI.onChange('formData.selected', $event)"
-          @selected="onOptionSelected"></ui-select>
-        <span>selected key: {{ formData.selected }}</span>
+      <div class="snippet-demos">
+        <div class="snippet-demo-padding"></div>
+        <div class="snippet-demo">
+          <ui-select :options="options" :model="formData.selected"
+            optionKey="key" optionValue="value"
+            defaultKey="0" defaultValue="All items"
+            @change="balmUI.onChange('formData.selected', $event)"
+            @selected="balmUI.onChange('currentOption', $event)"></ui-select>
+        </div>
+        <div class="snippet-demo-padding"></div>
+      </div>
+      <div class="snippet-captions">
+        <div class="snippet-caption-padding"></div>
+        <div class="snippet-caption">
+          @change: {{ formData.selected }}<br>
+          @selected: {{ currentOption }}
+        </div>
+        <div class="snippet-caption-padding"></div>
       </div>
       <ui-markdown :code="code[1]"></ui-markdown>
     </div>
 
+    <h4>2. 级联选择</h4>
+
     <div class="snippet-group">
-      <div class="snippet-demo">
-        <ui-select :options="provinces" :model="formData.province"
-          optionKey="key" optionValue="value"
-          defaultKey="0" defaultValue="Select province..."
-          @change="onSelectChange('province', $event, changeCity)"></ui-select>
+      <div class="snippet-demos">
+        <div class="snippet-demo-padding"></div>
+        <div class="snippet-demo">
+          <ui-select :options="provinces" :model="formData.province"
+            optionKey="key" optionValue="value"
+            defaultKey="0" defaultValue="Select province..."
+            @change="balmUI.onChange('formData.province', $event, initCitySelectd($event))"></ui-select>
+        </div>
+        <div class="snippet-demo">
+          <ui-select :options="cities" :model="formData.city"
+            optionKey="key" optionValue="value"
+            defaultKey="0" defaultValue="Select city..."
+            @change="balmUI.onChange('formData.city', $event)"></ui-select>
+        </div>
+        <div class="snippet-demo-padding"></div>
       </div>
-      <div class="snippet-demo">
-        <ui-select :options="cities" :model="formData.city"
-          optionKey="key" optionValue="value"
-          defaultKey="0" defaultValue="Select city..."
-          @change="onSelectChange('city', $event)"></ui-select>
-        <span>Province: {{ formData.province }} - City: {{ formData.city }}</span>
+      <div class="snippet-captions">
+        <div class="snippet-caption-padding"></div>
+        <div class="snippet-caption">Province: {{ formData.province }}</div>
+        <div class="snippet-caption">City: {{ formData.city }}</div>
+        <div class="snippet-caption-padding"></div>
       </div>
       <ui-markdown :code="code[2]"></ui-markdown>
     </div>
 
     <ui-apidoc name="select"></ui-apidoc>
+    <ui-markdown :text="docs"></ui-markdown>
   </div>
 </template>
 
 <script>
 import snippets from '../../mixins/snippets';
+import docs from '../../docs/components/select.md';
 
 const OPTIONS = [{
   key: 1,
@@ -52,57 +78,42 @@ const OPTIONS = [{
 }, {
   key: 3,
   value: 'item 3'
-}, {
-  key: 4,
-  value: 'item 4'
-}, {
-  key: 5,
-  value: 'item 5'
-}, {
-  key: 6,
-  value: 'item 6'
-}, {
-  key: 7,
-  value: 'item 7'
-}, {
-  key: 8,
-  value: 'item 8'
-}, {
-  key: 9,
-  value: 'item 9'
-}, {
-  key: 10,
-  value: 'item 10'
 }];
 
 const PROVINCES = [{
   key: 1,
-  value: 'Beijing'
+  value: 'Jiangsu'
 }, {
   key: 2,
-  value: 'Shanghai'
+  value: 'Zhejiang'
 }, {
   key: 3,
-  value: 'Guangzhou'
+  value: 'Shanghai'
 }];
 
 const CITIES = [
   [],
   [{
-    key: 1,
-    value: 'Haiding'
+    key: 3201,
+    value: 'Nanjing'
   }, {
-    key: 2,
-    value: 'Chaoyang'
+    key: 3204,
+    value: 'Changzhou'
   }],
   [{
-    key: 3,
+    key: 3301,
+    value: 'Hangzhou'
+  }, {
+    key: 3302,
+    value: 'Ningbo'
+  }],
+  [{
+    key: 310101,
     value: 'Huangpu'
   }, {
-    key: 4,
+    key: 310104,
     value: 'Xuhui'
-  }],
-  []
+  }]
 ];
 
 export default {
@@ -112,29 +123,21 @@ export default {
   },
   data() {
     return {
-      edit: false,
+      docs,
       formData: {
         selected: 0,
         province: 0,
         city: 0
       },
+      currentOption: {},
       options: OPTIONS,
       provinces: PROVINCES,
       cities: []
     };
   },
   methods: {
-    onOptionSelected(option) {
-      console.log(option);
-    },
-    onSelectChange(field, value, fn) {
-      this.formData[field] = value;
-      if (value) {
-        fn && fn(value);
-      }
-    },
-    changeCity(key) {
-      this.cities = key > -1 ? CITIES[key] : [];
+    initCitySelectd(key) {
+      this.cities = key ? CITIES[key] : [];
       this.formData.city = this.cities.length ? this.cities[0].key : 0;
     }
   },

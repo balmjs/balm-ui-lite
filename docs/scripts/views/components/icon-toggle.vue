@@ -1,7 +1,7 @@
 <template>
   <div class="page--icon-toggle">
     <div class="component-title">
-      <h3>Icon Toggle</h3>
+      <h3>Icon Toggle 图标选项</h3>
     </div>
 
     <h4>0. 使用方式</h4>

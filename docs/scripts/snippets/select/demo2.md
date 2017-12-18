@@ -1,64 +1,66 @@
 ```html
 <ui-select :options="provinces" :model="formData.province"
-           optionKey="key" optionValue="value"
-           defaultKey="0" defaultValue="Select province..."
-           @change="onSelectChange('province', $event, changeCity)"></ui-select>
+  optionKey="key" optionValue="value"
+  defaultKey="0" defaultValue="Select province..."
+  @change="balmUI.onChange('formData.province', $event, initCitySelectd($event))"></ui-select>
 
 <ui-select :options="cities" :model="formData.city"
-           optionKey="key" optionValue="value"
-           defaultKey="0" defaultValue="Select city..."
-           @change="onSelectChange('city', $event)"></ui-select>
+  optionKey="key" optionValue="value"
+  defaultKey="0" defaultValue="Select city..."
+  @change="balmUI.onChange('formData.city', $event)"></ui-select>
 ```
 
 ```js
 const PROVINCES = [{
   key: 1,
-  value: 'Beijing'
+  value: 'Jiangsu'
 }, {
   key: 2,
-  value: 'Shanghai'
+  value: 'Zhejiang'
 }, {
   key: 3,
-  value: 'Guangzhou'
+  value: 'Shanghai'
 }];
 
 const CITIES = [
   [],
   [{
-    key: 1,
-    value: 'Haiding'
+    key: 3201,
+    value: 'Nanjing'
   }, {
-    key: 2,
-    value: 'Chaoyang'
+    key: 3204,
+    value: 'Changzhou'
   }],
   [{
-    key: 3,
+    key: 3301,
+    value: 'Hangzhou'
+  }, {
+    key: 3302,
+    value: 'Ningbo'
+  }],
+  [{
+    key: 310101,
     value: 'Huangpu'
   }, {
-    key: 4,
+    key: 310104,
     value: 'Xuhui'
-  }],
-  []
+  }]
 ];
 
 export default {
   data() {
     return {
-      province: 0,
-      city: 0,
+      formData: {
+        province: 0,
+        city: 0
+      },
       provinces: PROVINCES,
       cities: []
     };
   },
   methods: {
-    onSelectChange(field, value, fn) {
-      this.formData[field] = value;
-      if (value) {
-        fn && fn(value);
-      }
-    },
-    changeCity(key) {
-      this.cities = key > -1 ? CITIES[key] : [];
+    initCitySelectd(key) {
+      this.cities = key ? CITIES[key] : [];
       this.formData.city = this.cities.length ? this.cities[0].key : 0;
     }
   }

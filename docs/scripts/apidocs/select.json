@@ -3,44 +3,48 @@
   {
     "name": "model",
     "type": "null",
-    "description": "The model that the select value syncs to"
+    "description": "当前选中项的key值"
   },
   {
     "name": "options",
     "type": "Array",
     "default": "",
-    "description": "The option data of the select"
+    "description": "选项列表"
   },
   {
     "name": "optionKey",
     "type": "String",
-    "default": "'value'"
+    "default": "'value'",
+    "description": "选项key值的名称"
   },
   {
     "name": "optionValue",
     "type": "String",
-    "default": "'label'"
+    "default": "'label'",
+    "description": "选项value值的名称"
   },
   {
     "name": "defaultKey",
     "type": "String",
     "default": "''",
-    "description": "The value attribute of the default option"
+    "description": "默认选项key值"
   },
   {
     "name": "defaultValue",
     "type": "String",
     "default": "",
-    "description": "The label attribute of the default option"
+    "description": "默认选项value值"
   }],
   "slots": [],
   "events": [
   {
     "name": "change",
-    "description": "Dispatched when the select is changed (return option[optionKey])"
+    "type": "Function(optionKey: number | string)",
+    "description": "选中 option 时调用函数"
   },
   {
     "name": "selected",
-    "description": "Dispatched when the select is selected (return option)"
+    "type": "Function(option: object)",
+    "description": "选中 option 时调用函数"
   }]
 }

@@ -116,11 +116,12 @@ const data = {
     "tooltip": "<ui-tooltip>",
     "snackbar": "<ui-snackbar>",
     "pagination": "<ui-pagination>",
-    "slider": "<ui-slider>",
     "checkbox": "<ui-checkbox>",
     "radio": "<ui-radio>",
+    "select": "<ui-select>",
     "icon-toggle": "<ui-icon-toggle>",
-    "switch": "<ui-switch>"
+    "switch": "<ui-switch>",
+    "slider": "<ui-slider>"
   }
 };
 
