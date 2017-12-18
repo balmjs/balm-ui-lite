@@ -118,7 +118,8 @@ const data = {
     "pagination": "<ui-pagination>",
     "slider": "<ui-slider>",
     "checkbox": "<ui-checkbox>",
-    "radio": "<ui-radio>"
+    "radio": "<ui-radio>",
+    "icon-toggle": "<ui-icon-toggle>"
   }
 };
 

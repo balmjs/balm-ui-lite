@@ -1,43 +1,42 @@
 {
   "props": [{
+    "name": "model",
+    "type": "Array, String, Number, Boolean",
+    "default": "false",
+    "description": "当前选中的选项值"
+  }, {
     "name": "id",
     "type": "String",
     "default": "",
-    "description": "A unique identifier for the icon toggle"
+    "description": "Icon Toggle 的 id 属性"
   }, {
     "name": "name",
     "type": "String",
     "default": "",
-    "description": "The name attribute of the icon toggle"
-  }, {
-    "name": "value",
-    "type": "String, Number, Boolean",
-    "default": "",
-    "description": "The value attribute of the icon toggle"
-  }, {
-    "name": "model",
-    "type": "Array, String, Number, Boolean",
-    "default": "false (required)",
-    "description": "The model that the icon toggle value syncs to",
-    "required": true
-  }, {
-    "name": "noRipple",
-    "type": "Boolean",
-    "default": "false",
-    "description": "Don't apply ripple click effect"
+    "description": "Icon Toggle 的 name 属性"
   }, {
     "name": "disabled",
     "type": "Boolean",
     "default": "false",
-    "description": "Applies disabled display effect"
+    "description": "Icon Toggle 的 disabled 属性（禁用状态）"
+  }, {
+    "name": "value",
+    "type": "String, Number, Boolean",
+    "default": "",
+    "description": "Icon Toggle 的 value 属性（指定选项值）"
+  }, {
+    "name": "noRipple",
+    "type": "Boolean",
+    "default": "false",
+    "description": "无波纹效果"
   }],
   "slots": [{
     "name": "(default)",
-    "description": "The default slot holds the icon toggle label and can contain HTML",
-    "props": "className"
+    "description": "默认插槽可以插入图标内容"
   }],
   "events": [{
     "name": "change",
-    "description": "Dispatched when the icon toggle is changed"
+    "type": "Function(checked: boolean | array)",
+    "description": "选项变化时的回调函数"
   }]
 }

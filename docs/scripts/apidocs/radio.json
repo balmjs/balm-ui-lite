@@ -22,7 +22,7 @@
     "name": "disabled",
     "type": "Boolean",
     "default": "false",
-    "description": "禁用状态"
+    "description": "Radio 的 disabled 属性（禁用状态）"
   },
   {
     "name": "value",

@@ -1,13 +1,26 @@
 ```html
-<ui-icon-toggle value="b" icon="format_bold" :model="icons" @change="balmUI.onChange('icons', $event)"></ui-icon-toggle>
-<ui-icon-toggle value="i" icon="format_italic" :model="icons" @change="balmUI.onChange('icons', $event)"></ui-icon-toggle>
+<ui-icon-toggle
+  icon="format_bold"
+  value="b"
+  :model="picked"
+  @change="balmUI.onChange('picked', $event)">
+</ui-icon-toggle>
+
+<ui-icon-toggle
+  icon="format_italic"
+  value="i"
+  :model="picked"
+  @change="balmUI.onChange('picked', $event)">
+</ui-icon-toggle>
+
+<span>Picked: {{ picked }}</span>
 ```
 
 ```js
 export default {
   data() {
     return {
-      icons: []
+      picked: []
     };
   }
 };

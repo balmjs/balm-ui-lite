@@ -4,22 +4,73 @@
       <h3>Icon Toggle</h3>
     </div>
 
+    <h4>0. 使用方式</h4>
+    <ui-markdown :text="code[0]"></ui-markdown>
+
+    <h4>1. Material 图标</h4>
+
     <div class="snippet-group">
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
-            <ui-icon-toggle value="b" icon="format_bold" :model="icons" @change="onIconsChange">
+            <ui-icon-toggle
+              icon="format_bold"
+              value="b"
+              :model="picked1"
+              @change="balmUI.onChange('picked1', $event)">
             </ui-icon-toggle>
           </div>
           <div class="snippet-demo">
-            <ui-icon-toggle value="i" icon="format_italic" :model="icons" @change="onIconsChange">
+            <ui-icon-toggle
+              icon="format_italic"
+              value="i"
+              :model="picked1"
+              @change="balmUI.onChange('picked1', $event)">
             </ui-icon-toggle>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
+        <div class="snippet-captions">
+          <div class="snippet-caption-padding"></div>
+          <div class="snippet-caption">Picked: {{ picked1 }}</div>
+          <div class="snippet-caption-padding"></div>
+        </div>
       </div>
-      <ui-markdown :text="code[0]"></ui-markdown>
+      <ui-markdown :code="code[1]"></ui-markdown>
+    </div>
+
+    <h4>2. 自定义图标</h4>
+
+    <div class="snippet-group">
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <ui-icon-toggle
+              value="qr"
+              :model="picked2"
+              @change="balmUI.onChange('picked2', $event)">
+              <i class="fa fa-qrcode"></i>
+            </ui-icon-toggle>
+          </div>
+          <div class="snippet-demo">
+            <ui-icon-toggle
+              value="tv"
+              :model="picked2"
+              @change="balmUI.onChange('picked2', $event)">
+              <i class="fa fa-tv"></i>
+            </ui-icon-toggle>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
+        <div class="snippet-captions">
+          <div class="snippet-caption-padding"></div>
+          <div class="snippet-caption">Picked: {{ picked2 }}</div>
+          <div class="snippet-caption-padding"></div>
+        </div>
+      </div>
+      <ui-markdown :code="code[2]"></ui-markdown>
     </div>
 
     <ui-apidoc name="icon-toggle"></ui-apidoc>
@@ -32,20 +83,16 @@ import snippets from '../../mixins/snippets';
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - IconToggle'
+    titleTemplate: '%s - <ui-icon-toggle>'
   },
   data() {
     return {
-      icons: []
+      picked1: [],
+      picked2: []
     };
   },
-  methods: {
-    onIconsChange(val) {
-      this.icons = val;
-    }
-  },
   created() {
-    this.showCode('icon-toggle');
+    this.showCode('icon-toggle', 2);
   }
 };
 </script>
