@@ -19,25 +19,27 @@ const template = `<ui-dialog
   :class="['mdl-confirm', options.className]"
   :open="open"
   :unlocked="options.unlocked"
-  @close="handleClose">
+  @close="$_handleClose">
   <ui-dialog-title v-if="options.title">{{ options.title }}</ui-dialog-title>
   <ui-dialog-content>{{ options.message }}</ui-dialog-content>
   <ui-dialog-actions>
-    <ui-button primary @click="handleConfirm(true)">
+    <ui-button primary @click="$_handleConfirm(true)">
       {{ options.acceptText }}
     </ui-button>
-    <ui-button accent @click="handleConfirm(false)">
+    <ui-button accent @click="$_handleConfirm(false)">
       {{ options.cancelText }}
     </ui-button>
   </ui-dialog-actions>
 </ui-dialog>`;
 
 const BalmUIConfirmPlugin = {
-  install(Vue) {
+  install(Vue, config) {
     let vm;
 
-    const UiConfirm = (options = {}) => {
-      return new Promise((resolve, reject) => {
+    let options = Object.assign({}, DEFAULT_OPTIONS, config);
+
+    const UiConfirm = (customOptions = {}) => {
+      return new Promise((resolve) => {
         vm = new Vue({
           components: {
             UiDialog,
@@ -49,40 +51,39 @@ const BalmUIConfirmPlugin = {
           el: document.createElement('div'),
           template,
           data: {
-            open: false,
-            options: DEFAULT_OPTIONS
+            open: true,
+            options
           },
           methods: {
-            handleClose() {
+            $_handleClose() {
               this.open = false;
-              document.body.removeChild(this.$el);
-              document.body.classList.remove('mdl-dialog-scroll-lock');
-              vm = null;
+              this.$nextTick(function () {
+                document.body.removeChild(this.$el);
+                document.body.classList.remove('mdl-dialog-scroll-lock');
+                vm = null;
+              });
             },
-            handleConfirm(result) {
-              this.handleClose();
+            $_handleConfirm(result) {
+              this.$_handleClose();
               if (getType(this.options.callback) === 'function') {
                 this.options.callback(result);
               } else {
-                if (result) {
-                  resolve();
-                } else {
-                  reject();
-                }
+                resolve(result);
               }
             }
           },
           created() {
-            if (getType(options) === 'string') {
-              this.options.message = options;
-            } else if (getType(options) === 'object') {
-              this.options = Object.assign(DEFAULT_OPTIONS, options);
+            if (getType(customOptions) === 'string') {
+              this.options.message = customOptions;
+            } else if (getType(customOptions) === 'object') {
+              this.options = Object.assign({}, this.options, customOptions);
             }
+
+            this.$nextTick(function () {
+              document.body.appendChild(vm.$el);
+            });
           }
         });
-
-        document.body.appendChild(vm.$el);
-        vm.open = true;
       });
     };
 

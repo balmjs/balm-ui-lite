@@ -55,6 +55,7 @@ const MENU = {
     'event',
     'alert',
     'confirm',
+    'prompt',
     'toast',
     'notify',
     'validator'

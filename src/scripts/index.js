@@ -116,6 +116,7 @@ import UiSnackbar from './components/common/snackbar';
 import event from './plugins/event';
 import alert from './plugins/alert';
 import confirm from './plugins/confirm';
+import prompt from './plugins/prompt';
 import toast from './plugins/toast';
 import notify from './plugins/notify';
 import validator from './plugins/validator';
@@ -209,6 +210,7 @@ const plugins = {
   event,
   alert,
   confirm,
+  prompt,
   toast,
   notify,
   validator

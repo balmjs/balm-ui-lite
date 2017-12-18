@@ -1,38 +1,4 @@
 ```html
-<ui-button primary effect raised @click="showDialog('showConfirm')">open confirm</ui-button>
+<ui-button raised colored @click="$confirm('你打开了确认框！')">打开确认框</ui-button>
 ```
 
-```html
-<ui-confirm
-  :show="showConfirm"
-  @on-close="closeDialog('showConfirm')"
-  @on-cancel="onCancel"
-  @on-confirm="onConfirm">
-  <h4>Hello, Balm!</h4>
-</ui-confirm>
-```
-
-```javascript
-export default {
-  data() {
-    return {
-      showConfirm: false
-    }
-  },
-  methods: {
-    showDialog(name){
-      this[name] = true;
-    },
-    closeDialog(name, fn){
-      this[name] = false;
-      typeof fn === 'function' && fn();
-    },
-    onCancel(){
-      console.log('clicked the Cancel button!');
-    },
-    onConfirm(){
-      console.log('clicked the OK button!');
-    }
-  }
-}
-```

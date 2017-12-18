@@ -31,6 +31,7 @@ if (isIE) {
   Vue.use(BalmUI.plugins.toast);
   Vue.use(BalmUI.plugins.notify);
   Vue.use(BalmUI.plugins.validator);
+  Vue.use(BalmUI.plugins.prompt);
   Vue.use({
     install(vue) {
       vue.component(UiMarkdown.name, UiMarkdown);

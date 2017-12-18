@@ -1,6 +1,9 @@
 const Notify = () => import('../views/plugins/notify');
 const Event = () => import('../views/plugins/event');
 const Validator = () => import('../views/plugins/validator');
+const Alert = () => import('../views/plugins/alert');
+const Confirm = () => import('../views/plugins/confirm');
+const Prompt = () => import('../views/plugins/prompt');
 
 const pluginsRoutes = [{
   path: 'notify',
@@ -10,6 +13,18 @@ const pluginsRoutes = [{
   path: 'event',
   name: 'plugins.event',
   component: Event
+}, {
+  path: 'alert',
+  name: 'plugins.alert',
+  component: Alert
+}, {
+  path: 'confirm',
+  name: 'plugins.confirm',
+  component: Confirm
+}, {
+  path: 'prompt',
+  name: 'plugins.prompt',
+  component: Prompt
 }, {
   path: 'validator',
   name: 'plugins.validator',

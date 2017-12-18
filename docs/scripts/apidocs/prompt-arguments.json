@@ -1,0 +1,16 @@
+{
+  "props": [
+    {
+      "name": "message",
+      "type": "String | Object",
+      "default": "",
+      "description": "用于显示提示框的内容"
+    },
+    {
+      "name": "default",
+      "type": "String",
+      "default": "",
+      "description": "用于设置提示框的默认值（可选）"
+    }
+  ]
+}

@@ -1,34 +1,3 @@
 ```html
-<ui-button primary effect raised @click="showDialog('showAlert')">open alert</ui-button>
-```
-
-```html
-<ui-alert
-  :show="showAlert"
-  @on-click="closeDialog('showAlert', clickButton)"
-  @on-close="closeDialog('showAlert')">
-  <h4>Hello, Balm!</h4>
-</ui-alert>
-```
-
-```javascript
-export default {
-  data() {
-    return {
-      showAlert: false
-    }
-  },
-  methods: {
-    showDialog(name){
-      this[name] = true;
-    },
-    closeDialog(name, fn){
-      this[name] = false;
-      typeof fn === 'function' && fn();
-    },
-    clickButton(){
-      console.log('clicked the button!');
-    }
-  }
-}
+<ui-button raised colored @click="$alert('你打开了警告框！')">打开警告框</ui-button>
 ```

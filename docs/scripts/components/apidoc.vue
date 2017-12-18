@@ -51,9 +51,8 @@ export default {
       let types = ['props', 'slots', 'events'];
       let flag = false;
 
-      for (let key in types) {
-        let value = types[key];
-        if (this.api[value].length) {
+      types.forEach( (value, key) => {
+        if (this.api[value] && this.api[value].length) {
           result[value] = {
             data: this.api[value],
             thead: this.$docs[value].thead,
@@ -64,7 +63,7 @@ export default {
             this.tab = +key;
           }
         }
-      }
+      });
 
       return result;
     }

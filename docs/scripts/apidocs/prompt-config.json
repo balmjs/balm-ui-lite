@@ -32,7 +32,7 @@
     },
     {
       "name": "callback",
-      "type": "Function(result: Boolean)",
+      "type": "Function(result: String)",
       "default": "",
       "description": "确认框按钮点击时的回调"
     },
