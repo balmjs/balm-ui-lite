@@ -82,6 +82,6 @@
   {
     "name": "confirm",
     "type": "Function(result: boolean)",
-    "description": "点击确定或取消按钮的事件（返回 true 或 false）"
+    "description": "点击确定或取消按钮时触发事件"
   }]
 }
