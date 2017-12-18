@@ -4,6 +4,11 @@
 
     <h2 class="line">概述</h2>
     <p>有些人喜欢使用分割线，所以我们开发了这个组件</p>
+
+    <h2 class="line">引入</h2>
+    <ui-markdown :text="code[0]"></ui-markdown>
+
+    <h2 class="line">使用方法</h2>
     <div class="snippet-group">
       <div class="snippet-header">
         <div class="snippet-demos">
@@ -79,11 +84,5 @@ export default {
 <style scoped>
   h2.line {
     border-bottom: 1px solid #ddd;
-  }
-
-  .divider {
-    height: 0;
-    width: 100%;
-    margin-bottom: 4em;
   }
 </style>
