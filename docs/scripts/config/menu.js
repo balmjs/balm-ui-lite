@@ -16,16 +16,16 @@ const components = {
     'icon'
   ],
   form: [
-    'slider',
+    'textfield',
     'checkbox',
     'radio',
+    'select',
     'icon-toggle',
     'switch',
-    'textfield',
-    'select',
+    'slider',
+    'fileupload',
     'autocomplete',
-    'datepicker',
-    'fileupload'
+    'datepicker'
   ],
   dataview: [
     'card',

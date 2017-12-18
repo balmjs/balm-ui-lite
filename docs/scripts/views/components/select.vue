@@ -1,8 +1,11 @@
 <template>
   <div class="page--select">
     <div class="component-title">
-      <h3>Select</h3>
+      <h3>Select 下拉框</h3>
     </div>
+
+    <h4>0. 使用方式</h4>
+    <ui-markdown :text="code[0]"></ui-markdown>
 
     <div class="snippet-group">
       <div class="snippet-demo">
@@ -13,7 +16,7 @@
           @selected="onOptionSelected"></ui-select>
         <span>selected key: {{ formData.selected }}</span>
       </div>
-      <ui-markdown :text="code[0]"></ui-markdown>
+      <ui-markdown :code="code[1]"></ui-markdown>
     </div>
 
     <div class="snippet-group">
@@ -30,7 +33,7 @@
           @change="onSelectChange('city', $event)"></ui-select>
         <span>Province: {{ formData.province }} - City: {{ formData.city }}</span>
       </div>
-      <ui-markdown :text="code[1]"></ui-markdown>
+      <ui-markdown :code="code[2]"></ui-markdown>
     </div>
 
     <ui-apidoc name="select"></ui-apidoc>

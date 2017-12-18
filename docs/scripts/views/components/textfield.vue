@@ -5,6 +5,9 @@
       <p>Textual input components.</p>
     </div>
 
+    <h4>0. 使用方式</h4>
+    <ui-markdown :text="code[0]"></ui-markdown>
+
     <h4>{{ $t('textfield.simple') }}</h4>
     <div class="snippet-group">
       <div class="snippet-header">
@@ -20,7 +23,7 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :text="code[0]"></ui-markdown>
+      <ui-markdown :code="code[1]"></ui-markdown>
     </div>
 
     <h4>{{ $t('textfield.pattern') }}</h4>
@@ -39,7 +42,7 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :text="code[1]"></ui-markdown>
+      <ui-markdown :code="code[2]"></ui-markdown>
     </div>
 
     <h4>{{ $t('textfield.floating') }}</h4>
@@ -57,7 +60,7 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :text="code[2]"></ui-markdown>
+      <ui-markdown :code="code[3]"></ui-markdown>
     </div>
 
     <h4>{{ $t('textfield.textarea') }}</h4>
@@ -75,7 +78,7 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :text="code[3]"></ui-markdown>
+      <ui-markdown :code="code[4]"></ui-markdown>
     </div>
 
     <h4>{{ $t('textfield.expandable') }}</h4>
@@ -96,7 +99,7 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :text="code[4]"></ui-markdown>
+      <ui-markdown :code="code[5]"></ui-markdown>
     </div>
 
     <h4>{{ $t('textfield.plus') }}</h4>
@@ -125,7 +128,7 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :text="code[5]"></ui-markdown>
+      <ui-markdown :code="code[6]"></ui-markdown>
     </div>
 
     <ui-apidoc name="textfield"></ui-apidoc>
