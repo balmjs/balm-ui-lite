@@ -5,7 +5,7 @@
     :max="max"
     :step="step"
     :disabled="disabled"
-    v-model="currentValue"
+    :value="currentValue"
     @change="handleChange">
 </template>
 
@@ -44,6 +44,7 @@ export default {
   },
   data() {
     return {
+      $slider: null,
       currentValue: this.model
     };
   },
@@ -63,11 +64,17 @@ export default {
   },
   methods: {
     handleChange() {
-      this.$emit(EVENT_CHANGE, +this.currentValue); // currentValue: number
+      let newValue = +this.$slider.element_.value;
+      this.$slider.change(newValue); // modify the value
+      this.$emit(EVENT_CHANGE, newValue);
     }
   },
   mounted() {
-    this.$mdl.upgradeElement(this.$el, 'MaterialSlider');
+    if (!this.$slider) {
+      this.$mdl.upgradeElement(this.$el, 'MaterialSlider');
+      this.$slider = this.$el.MaterialSlider;
+      this.$slider.value = this.currentValue; // initial value
+    }
   }
 };
 </script>

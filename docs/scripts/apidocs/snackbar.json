@@ -34,6 +34,7 @@
   "slots": [],
   "events": [{
     "name": "done",
+    "type": "NOOP",
     "description": "默认关闭时的回调函数"
   }]
 }

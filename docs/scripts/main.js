@@ -55,8 +55,8 @@ if (isIE) {
       tbody: ['name', 'description', 'props']
     },
     events: {
-      thead: ['名称', '说明'],
-      tbody: ['name', 'description']
+      thead: ['名称', '类型', '说明'],
+      tbody: ['name', 'type', 'description']
     }
   };
   Vue.prototype.$domain = DEBUG ? '' : '/ui-vue-lite';

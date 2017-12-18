@@ -16,6 +16,7 @@
   }],
   "events": [{
     "name": "change",
+    "type": "Function(tabIndex: number)",
     "description": "切换选项卡时触发（返回新激活选项卡的索引值）"
   }]
 }

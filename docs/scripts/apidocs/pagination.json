@@ -74,6 +74,7 @@
   }],
   "events": [{
     "name": "change",
+    "type": "Function(newPage: number)",
     "description": "切换分页事件"
   }]
 }

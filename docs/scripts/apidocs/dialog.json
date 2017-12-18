@@ -76,10 +76,12 @@
   "events": [
   {
     "name": "close",
+    "type": "NOOP",
     "description": "关闭对框框事件"
   },
   {
     "name": "confirm",
+    "type": "Function(result: boolean)",
     "description": "点击确定或取消按钮的事件（返回 true 或 false）"
   }]
 }

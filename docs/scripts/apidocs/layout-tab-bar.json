@@ -5,5 +5,9 @@
     "name": "(default)",
     "description": "默认插槽可以插入布局选项卡子组件"
   }],
-  "events": []
+  "events": [{
+    "name": "change",
+    "type": "Function(tabIndex: number)",
+    "description": "切换选项卡时触发（返回新激活选项卡的索引值）"
+  }]
 }

@@ -2,27 +2,33 @@
   "props": [{
     "name": "model",
     "type": "Number",
-    "default": "0"
+    "default": "0",
+    "description": "设置当前取值"
   }, {
     "name": "min",
     "type": "Number, String",
-    "default": "0"
+    "default": "0",
+    "description": "最小值"
   }, {
     "name": "max",
     "type": "Number, String",
-    "default": "1"
+    "default": "1",
+    "description": "最大值"
   }, {
     "name": "step",
     "type": "Number, String",
-    "default": "1"
+    "default": "1",
+    "description": "步长，取值必须大于 0，并且可被 (max - min) 整除。"
   }, {
     "name": "disabled",
     "type": "Boolean",
-    "default": "false"
+    "default": "false",
+    "description": "禁用状态"
   }],
   "slots": [],
   "events": [{
     "name": "change",
-    "description": "Dispatched when the silder is changed"
+    "type": "Function(newValue: number)",
+    "description": "当 Slider 的值发生改变时触发事件"
   }]
 }
