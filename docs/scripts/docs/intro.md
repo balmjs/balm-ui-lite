@@ -19,8 +19,6 @@
 - A 完全支持
 - B 部分支持（需要 polyfills）
 
-> Material Design Icons 仅支持IE10+
-
 ### 如何贡献
 
 我们欢迎任何形式的贡献，有任何建议或意见，请给我们 [提问](https://github.com/balmjs/ui-vue-lite/issues)。

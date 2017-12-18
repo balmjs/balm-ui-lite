@@ -5,7 +5,7 @@ if (typeof(NodeList.prototype.forEach) !== typeof(alert)) {
 // for IE
 import 'core-js/shim';
 // for IE9-
-// import 'classlist.js';
-// import 'matchmedia-polyfill';
-// import 'matchmedia-polyfill/matchMedia.addListener';
-// import './rAF';
+import 'classlist.js';
+import 'matchmedia-polyfill';
+import 'matchmedia-polyfill/matchMedia.addListener';
+import './rAF';

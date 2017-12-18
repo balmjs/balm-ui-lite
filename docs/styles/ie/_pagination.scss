@@ -1,14 +1,29 @@
 .mdl-pagination {
-  @include clearfix();
-  .mdl-pagination--record {
-    float: left;
+  text-align: center;
+  &.mdl-pagination--left {
+    text-align: left;
   }
-  .mdl-pagination--paging {
-    float: right;
+  &.mdl-pagination--right {
+    text-align: right;
+  }
+  &.mdl-pagination--between {
+    @include clearfix();
+    .mdl-pagination--record {
+      float: left;
+    }
+    .mdl-pagination--paging {
+      float: right;
+    }
   }
   &.mdl-pagination--mini {
     .mdl-pagination--paging {
-      width: 100%;
+      @include clearfix();
+      .mdl-pagination--paging-previous {
+        float: left;
+      }
+      .mdl-pagination--paging-next {
+        float: right;
+      }
     }
   }
 }

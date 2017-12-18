@@ -2,7 +2,7 @@ import helpers from './helpers';
 
 const IE = helpers.detectIE();
 
-const isIE = IE && IE < 10; // 项目兼容到IE10+
+const isIE = IE && IE < 9; // 项目兼容到IE9+
 
 const killIE = () => {
   let body = document.getElementsByTagName('body')[0];
