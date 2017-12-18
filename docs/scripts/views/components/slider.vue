@@ -16,12 +16,12 @@
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
             <div class="snippet-demo-container demo-slider demo-slider__slider-default">
-              <ui-slider min="0" max="100" :model="slider1" @change="balmUI.onChange('slider1', $event)"></ui-slider>
+              <ui-slider min="0" max="100" :model="value1" @change="balmUI.onChange('value1', $event)"></ui-slider>
             </div>
           </div>
           <div class="snippet-demo">
             <div class="snippet-demo-container demo-slider demo-slider__slider-starting-value">
-              <ui-slider min="0" max="100" :model="slider2" @change="balmUI.onChange('slider2', $event)"></ui-slider>
+              <ui-slider min="0" max="100" :model="value2" @change="balmUI.onChange('value2', $event)"></ui-slider>
             </div>
           </div>
           <div class="snippet-demo-padding"></div>
@@ -50,8 +50,8 @@ export default {
   },
   data() {
     return {
-      slider1: 0,
-      slider2: 25
+      value1: 0,
+      value2: 25
     };
   },
   created() {

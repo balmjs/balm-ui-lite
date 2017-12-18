@@ -3,66 +3,66 @@
   {
     "name": "model",
     "type": "Array, String, Number, Boolean",
-    "default": "false (required)",
-    "description": "The model that the checkbox value syncs to",
-    "required": true
+    "default": "false",
+    "description": "当前选中的选项值"
   },
   {
     "name": "id",
     "type": "String",
     "default": "",
-    "description": "A unique identifier for the checkbox"
+    "description": "Checkbox的id属性"
   },
   {
     "name": "name",
     "type": "String",
     "default": "",
-    "description": "The name attribute of the checkbox"
+    "description": "Checkbox的name属性"
   },
   {
     "name": "disabled",
     "type": "Boolean",
     "default": "false",
-    "description": "Applies disabled display effect"
+    "description": "禁用状态"
   },
   {
     "name": "value",
     "type": "String, Number, Boolean",
     "default": "",
-    "description": "The value attribute of the checkbox"
+    "description": "Checkbox的value属性（指定选项值）"
   },
   {
     "name": "label",
     "type": "String",
     "default": "",
-    "description": "The label shown above the checkbox"
+    "description": "标签文字"
   },
   {
     "name": "noRipple",
     "type": "Boolean",
     "default": "false",
-    "description": "Don't apply ripple click effect"
+    "description": "无波纹效果"
   },
   {
     "name": "hideLabel",
     "type": "Boolean",
     "default": "false",
-    "description": "Applies no label effect"
+    "description": "无标签文字"
   },
   {
     "name": "filled",
     "type": "Boolean",
     "default": "false",
-    "description": "Applies filled checked effect"
+    "description": "矩形填充式效果"
   }],
   "slots": [
   {
     "name": "(default)",
-    "description": "The default slot holds the checkbox label and can contain HTML"
+    "description": "默认插槽可以插入标签内容"
   }],
   "events": [
   {
     "name": "change",
-    "description": "Dispatched when the checkbox is changed"
+    "type": "Function(checked: boolean | array)",
+    "description": "变化时回调函数"
   }]
 }

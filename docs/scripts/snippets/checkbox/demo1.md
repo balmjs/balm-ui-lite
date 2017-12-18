@@ -1,14 +1,23 @@
 ```html
-<ui-checkbox :value="1" :model="options" @change="balmUI.onChange('options', $event)">Option 1</ui-checkbox>
-<ui-checkbox :value="2" :model="options" @change="balmUI.onChange('options', $event)">Option 2</ui-checkbox>
-<ui-checkbox :value="3" :model="options" @change="balmUI.onChange('options', $event)">Option 3</ui-checkbox>
+<ui-checkbox
+  :model="checked1"
+  @change="balmUI.onChange('checked1', $event)">
+  Checkbox ({{ checked1 }})
+</ui-checkbox>
+
+<ui-checkbox
+  :model="checked2"
+  @change="balmUI.onChange('checked2', $event)">
+  Checkbox ({{ checked2 }})
+</ui-checkbox>
 ```
 
 ```js
 export default {
   data() {
     return {
-      options: []
+      checked1: false,
+      checked2: false
     };
   }
 };

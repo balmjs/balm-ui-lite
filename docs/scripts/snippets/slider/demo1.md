@@ -1,12 +1,12 @@
 ```html
-<ui-slider min="0" max="100" :model="slider" @change="balmUI.onChange('slider', $event)"></ui-slider>
+<ui-slider min="0" max="100" :model="value" @change="balmUI.onChange('value', $event)"></ui-slider>
 ```
 
 ```js
 export default {
   data() {
     return {
-      slider: 25
+      value: 25
     };
   }
 };

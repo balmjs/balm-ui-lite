@@ -1,8 +1,13 @@
 <template>
   <div class="page--checkbox">
     <div class="component-title">
-      <h3>Checkbox button</h3>
+      <h3>Checkbox 多选框</h3>
     </div>
+
+    <h4>0. 使用方式</h4>
+    <ui-markdown :text="code[0]"></ui-markdown>
+
+    <h4>1. 单个复选框（boolean）</h4>
 
     <div class="snippet-group">
       <div class="snippet-header">
@@ -10,21 +15,27 @@
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
             <ui-checkbox
-              :value="true"
-              :model="option"
-              @change="balmUI.onChange('option', $event)">Checkbox ({{ option }})</ui-checkbox>
+              :model="checked1"
+              @change="balmUI.onChange('checked1', $event)">Checkbox ({{ checked1 }})</ui-checkbox>
           </div>
           <div class="snippet-demo">
             <ui-checkbox filled
-              :value="true"
-              :model="option"
-              @change="balmUI.onChange('option', $event)">Checkbox2 ({{ option }})</ui-checkbox>
+              :model="checked2"
+              @change="balmUI.onChange('checked2', $event)">Checkbox ({{ checked2 }})</ui-checkbox>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
+        <div class="snippet-captions">
+          <div class="snippet-caption-padding"></div>
+          <div class="snippet-caption">默认勾选式</div>
+          <div class="snippet-caption">矩形填充式</div>
+          <div class="snippet-caption-padding"></div>
+        </div>
       </div>
-      <!-- <ui-markdown :text="code[0]"></ui-markdown> -->
+      <ui-markdown :code="code[1]"></ui-markdown>
     </div>
+
+    <h4>2. 多个复选框（array）</h4>
 
     <div class="snippet-group">
       <div class="snippet-header">
@@ -35,25 +46,25 @@
               :key="index"
               :value="num"
               :model="numberOptions"
-              @change="balmUI.onChangeNumber">Option {{ num }}</ui-checkbox>
+              @change="balmUI.onChange('numberOptions', $event)">Option {{ num }}</ui-checkbox>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
         <div class="snippet-captions">
           <div class="snippet-captions-padding"></div>
           <div class="snippet-caption">
-            <ui-button @click="onWatchNumber([1, 2])">choose 1,2</ui-button>
+            <ui-button @click="balmUI.onChange('numberOptions', [1, 2])">choose 1,2</ui-button>
           </div>
           <div class="snippet-caption">
-            <ui-button @click="onWatchNumber([1, 3])">choose 1,3</ui-button>
+            <ui-button @click="balmUI.onChange('numberOptions', [1, 3])">choose 1,3</ui-button>
           </div>
           <div class="snippet-caption">
-            <ui-button @click="onWatchNumber([2, 3])">choose 2,3</ui-button>
+            <ui-button @click="balmUI.onChange('numberOptions', [2, 3])">choose 2,3</ui-button>
           </div>
           <div class="snippet-captions-padding"></div>
         </div>
       </div>
-      <ui-markdown :text="code[0]"></ui-markdown>
+      <ui-markdown :code="code[2]"></ui-markdown>
     </div>
 
     <div class="snippet-group">
@@ -65,25 +76,25 @@
               :key="index"
               :value="str"
               :model="stringOptions"
-              @change="balmUI.onChangeString">Option {{ str }}</ui-checkbox>
+              @change="balmUI.onChange('stringOptions', $event)">Option '{{ str }}'</ui-checkbox>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
         <div class="snippet-captions">
           <div class="snippet-captions-padding"></div>
           <div class="snippet-caption">
-            <ui-button @click="onWatchString(['1', '2'])">choose '1','2'</ui-button>
+            <ui-button @click="balmUI.onChange('stringOptions', ['1', '2'])">choose '1','2'</ui-button>
           </div>
           <div class="snippet-caption">
-            <ui-button @click="onWatchString(['1', '3'])">choose '1','3'</ui-button>
+            <ui-button @click="balmUI.onChange('stringOptions', ['1', '3'])">choose '1','3'</ui-button>
           </div>
           <div class="snippet-caption">
-            <ui-button @click="onWatchString(['2', '3'])">choose '2','3'</ui-button>
+            <ui-button @click="balmUI.onChange('stringOptions', ['2', '3'])">choose '2','3'</ui-button>
           </div>
           <div class="snippet-captions-padding"></div>
         </div>
       </div>
-      <ui-markdown :text="code[1]"></ui-markdown>
+      <ui-markdown :code="code[3]"></ui-markdown>
     </div>
 
     <ui-apidoc name="checkbox"></ui-apidoc>
@@ -96,31 +107,18 @@ import snippets from '../../mixins/snippets';
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - Checkbox'
+    titleTemplate: '%s - <ui-checkbox>'
   },
   data() {
     return {
-      option: false,
+      checked1: true,
+      checked2: false,
       numberOptions: [],
       stringOptions: []
     };
   },
-  methods: {
-    onChangeNumber(val) {
-      this.numberOptions = val;
-    },
-    onChangeString(val) {
-      this.stringOptions = val;
-    },
-    onWatchNumber(val) {
-      this.numberOptions = val;
-    },
-    onWatchString(val) {
-      this.stringOptions = val;
-    }
-  },
   created() {
-    this.showCode('checkbox', 2);
+    this.showCode('checkbox', 3);
   }
 };
 </script>
