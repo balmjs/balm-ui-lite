@@ -1,3 +1,5 @@
+import getType from './typeof';
+
 const jsonEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b); // The ORDER of the properties IS IMPORTANT
 
 const isEmpty = _var => {
