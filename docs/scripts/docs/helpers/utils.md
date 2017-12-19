@@ -10,7 +10,7 @@
 import {helpers} from 'balm-ui-lite';
 
 const a = [1];
-const b = [2];
+const b = [1];
 
 helpers.jsonEqual(a, b); // true;
 ```
@@ -20,7 +20,7 @@ helpers.jsonEqual(a, b); // true;
 import {jsonEqual} from 'balm-ui-lite/helpers/utils';
 
 const a = [1];
-const b = [2];
+const b = [1];
 
 helpers.jsonEqual(a, b); // true;
 ```

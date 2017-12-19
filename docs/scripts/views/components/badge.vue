@@ -1,8 +1,8 @@
 <template>
   <div class="page--badge">
     <div class="component-title">
-      <h3>Badge 徽章</h3>
-      <p>小型的状态描述符组件。</p>
+      <h3>Badge 徽标数</h3>
+      <p>图标右上角的圆形徽标数字。</p>
     </div>
 
     <h4>0. 使用方式</h4>
