@@ -10,6 +10,8 @@ import componentsRoutes from './components';
 import pluginsRoutes from './plugins';
 // directives
 import directivesRoutes from './directives';
+// helpers
+import helpersRoutes from './helpers';
 
 const routes = [{
   path: '/',
@@ -39,6 +41,12 @@ const routes = [{
   redirect: '/directives/lazy-load',
   component: BlankLayout,
   children: directivesRoutes
+}, {
+  path: '/helpers',
+  name: 'helpers',
+  redirect: '/helpers/typeof',
+  component: BlankLayout,
+  children: helpersRoutes
 }, {
   path: '/test',
   name: 'test',

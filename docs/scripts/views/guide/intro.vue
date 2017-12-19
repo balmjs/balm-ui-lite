@@ -1,5 +1,5 @@
 <template>
-  <div class="page--guide guide-intro">
+  <div class="page--guide guide-intro only-md-docs">
     <ui-markdown :text="docs"></ui-markdown>
   </div>
 </template>

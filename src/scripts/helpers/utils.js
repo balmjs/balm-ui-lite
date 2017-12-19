@@ -23,7 +23,7 @@ const isEmpty = _var => {
       return true;
     },
     number () {
-      return _var === 0;
+      return !_var;
     },
     null () {
       return true;
