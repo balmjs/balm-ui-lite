@@ -129,7 +129,7 @@
 <script>
 import mdlMixin from '../../mixins/mdl';
 import '../../../material-design-lite/data-table/data-table';
-import {isString, isObject, isArray, isFunction} from '../../helpers';
+import {isString, isObject, isArray, isFunction} from '../../helpers/is';
 import UiButton from '../common/button';
 import UiCheckbox from '../form/checkbox';
 

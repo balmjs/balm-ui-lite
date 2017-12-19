@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import {isString, isObject} from '../../helpers';
+import {isString, isObject} from '../../helpers/is';
 
 const DEVICE = ['desktop', 'tablet', 'phone'];
 const TYPE_COLUMN = 'col';

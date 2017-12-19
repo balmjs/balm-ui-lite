@@ -25,7 +25,9 @@
 
 <script>
 import UiTextfield from './textfield';
-import {isString, isObject, jsonEqual, detectIE} from '../../helpers';
+import {isString, isObject} from '../../helpers/is';
+import {jsonEqual} from '../../helpers/utils';
+import detectIE from '../../helpers/detect-ie';
 
 const KEY_UP = 38;
 const KEY_DOWN = 40;
