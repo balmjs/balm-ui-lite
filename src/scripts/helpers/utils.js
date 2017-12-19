@@ -3,7 +3,9 @@ import getType from './typeof';
 const jsonEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b); // The ORDER of the properties IS IMPORTANT
 
 const isEmpty = _var => {
+
   let type = getType(_var);
+
   let conditions = {
     string () {
       return _var === '' || _var === '0';
@@ -28,7 +30,7 @@ const isEmpty = _var => {
     }
   };
 
-  return conditions[type] ? conditions[type]() : false;
+  return !!conditions[type] && conditions[type]();
 };
 
 export {
