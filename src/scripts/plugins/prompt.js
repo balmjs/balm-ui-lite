@@ -57,7 +57,7 @@ const BalmUIPromptPlugin = {
           el: document.createElement('div'),
           template,
           data: {
-            open: true,
+            open: false,
             options,
             formData: {
               value: ''
@@ -95,6 +95,7 @@ const BalmUIPromptPlugin = {
 
             this.$nextTick(function () {
               document.body.appendChild(vm.$el);
+              this.open = true;
             });
           }
         });

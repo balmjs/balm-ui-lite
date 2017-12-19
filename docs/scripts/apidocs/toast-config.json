@@ -1,0 +1,16 @@
+{
+  "props": [
+    {
+      "name": "className",
+      "type": "String",
+      "default": "",
+      "description": "自定义的className"
+    },
+    {
+      "name": "timeout",
+      "type": "Number",
+      "default": "2750",
+      "description": "toast的显示持续时间，时间结束将自动关闭；单位：毫秒。"
+    }
+  ]
+}
