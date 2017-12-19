@@ -15,7 +15,7 @@ const isEmpty = _var => {
       return _var.length === 0;
     },
     boolean () {
-      return _var === false;
+      return !_var;
     },
     undefined () {
       return true;
