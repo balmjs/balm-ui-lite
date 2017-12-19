@@ -4,7 +4,7 @@
     <label v-if="expandable"
       class="mdl-button mdl-js-button mdl-button--icon"
       :for="id">
-      <slot>
+      <slot name="icon">
         <i class="material-icons">search</i>
       </slot>
     </label>
@@ -72,10 +72,10 @@
 import mdlMixin from '../../mixins/mdl';
 import '../../../material-design-lite/textfield/textfield';
 
-const EVENT_INPUT = 'input';
-const EVENT_CHANGE = 'change';
 const EVENT_FOCUS = 'focus';
 const EVENT_BLUR = 'blur';
+const EVENT_INPUT = 'input';
+const EVENT_CHANGE = 'change';
 const EVENT_KEYDOWN = 'keydown';
 const EVENT_KEYDOWN_ENTER = 'enter';
 

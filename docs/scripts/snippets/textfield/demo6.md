@@ -1,9 +1,19 @@
 ```html
-<ui-textfield :model="text7" @input.native="onInputChange('text7', $event)"
-  label="Plus Text..."
-  plus>
-  <template slot="plus">
-    <a href="javascript:void(0)">Button</a>
-  </template>
-</ui-textfield>
+<p class="form-item">
+  <label>Label Text:</label>
+  <ui-textfield
+    placeholder="Placeholder..."
+    :model="text6"
+    @input="balmUI.onChange('text6', $event)"></ui-textfield>
+</p>
+```
+
+```js
+export default {
+  data() {
+    return {
+      text6: ''
+    };
+  }
+};
 ```

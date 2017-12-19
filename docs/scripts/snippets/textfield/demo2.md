@@ -1,6 +1,17 @@
 ```html
-<ui-textfield :model="text2" @input.native="onInputChange('text2', $event)"
-  label="Number..."
-  pattern="-?[0-9]*(\.[0-9]+)?"
-  error="Input is not a number!"></ui-textfield>
+<ui-textfield id="sample2"
+  labelFloating
+  label="Text with floating label"
+  :model="text2"
+  @input="balmUI.onChange('text2', $event)"></ui-textfield>
+```
+
+```js
+export default {
+  data() {
+    return {
+      text2: ''
+    };
+  }
+};
 ```

@@ -36,7 +36,11 @@ const components = [
   'datepicker.js',
   'rangepicker.js'
 ];
-const helpers = ['index.js'];
+const helpers = [
+  'is.js',
+  'utils.js',
+  'detect-ie.js'
+];
 const plugins = [
   'event.js',
   'alert.js',

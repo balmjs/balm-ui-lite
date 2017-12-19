@@ -3,153 +3,172 @@
   {
     "name": "model",
     "type": "null",
-    "description": "The model that the input value syncs to"
+    "description": "输入框内容"
   },
   {
     "name": "id",
     "type": "String",
     "default": "",
-    "description": "A unique identifier for the input"
+    "description": "Textfield 的 id 属性"
   },
   {
     "name": "name",
     "type": "String",
     "default": "",
-    "description": "The name attribute of the &lt;input&gt; or &lt;textarea&gt;"
+    "description": "Textfield 的 name 属性"
   },
   {
     "name": "disabled",
     "type": "Boolean",
     "default": "false",
-    "description": "Indicates whether the user can interact with the element"
+    "description": "Textfield 的 disabled 属性（禁用状态）"
   },
   {
     "name": "maxlength",
     "type": "Number, String",
     "default": "",
-    "description": "The maximum allowed length of input"
+    "description": "Textfield 的 maxlength 属性（限制输入最大长度）"
   },
   {
     "name": "placeholder",
     "type": "String",
     "default": "",
-    "description": "Provides a hint to the user of what can be entered in the field"
+    "description": "Textfield 的 placeholder 属性"
   },
   {
     "name": "readonly",
     "type": "Boolean",
-    "default": "false"
+    "default": "false",
+    "description": "Textfield 的 readonly 属性"
+  },
+  {
+    "name": "required",
+    "type": "Boolean",
+    "default": "false",
+    "description": "Textfield 的 required 属性"
   },
   {
     "name": "type",
     "type": "String",
     "default": "'text'",
-    "description": "The type attribute of the &lt;input&gt;"
+    "description": "&lt;input&gt; 原生 type 属性"
   },
   {
     "name": "pattern",
     "type": "String",
     "default": "",
-    "description": "Defines a regular expression which the element's value will be validated against"
+    "description": "&lt;input&gt; 原生 pattern 属性"
   },
   {
     "name": "rows",
     "type": "Number",
     "default": "1",
-    "description": "The rows attribute of the &lt;textarea&gt;"
+    "description": "&lt;textarea&gt; 原生 rows 属性"
   },
   {
     "name": "cols",
     "type": "Number",
     "default": "20",
-    "description": "The cols attribute of the &lt;textarea&gt;"
+    "description": "&lt;textarea&gt; 原生 cols 属性"
   },
   {
     "name": "label",
     "type": "String",
     "default": "",
-    "description": "The label shown above the input"
+    "description": "标签文字"
   },
   {
     "name": "labelFloating",
     "type": "Boolean",
     "default": "false",
-    "description": "Applies floating label effect"
+    "description": "标签浮动效果"
   },
   {
     "name": "error",
     "type": "String",
     "default": "",
-    "description": "The help text (hint) shown to the user below the input"
+    "description": "错误提示信息（可配合 pattern 一起使用）"
   },
   {
     "name": "alignRight",
     "type": "Boolean",
-    "default": "false"
+    "default": "false",
+    "description": "右对齐"
   },
   {
     "name": "fullWidth",
     "type": "Boolean",
-    "default": "false"
+    "default": "false",
+    "description": "100%容器宽度（默认容器宽度：300px）"
   },
   {
     "name": "expandable",
     "type": "Boolean",
     "default": "false",
-    "description": "Defines an expandable text field"
+    "description": "使用可展开效果"
   },
   {
     "name": "plus",
     "type": "Boolean",
     "default": "false",
-    "description": "Defines a extra span as an expandable text field container"
+    "description": "启用额外扩展插槽"
   },
   {
     "name": "expand",
     "type": "Boolean",
     "default": "false",
-    "description": "Defines a expand div as an autocomplete field container"
+    "description": "启用特殊扩展插槽（如&lt;ui-autocomplete&gt;）"
   }],
   "slots": [
   {
     "name": "(default)",
-    "description": "The label slot holds the label or icon and can contain HTML"
+    "description": "默认插槽可以插入标签文字"
+  },
+  {
+    "name": "icon",
+    "description": "Icon插槽可以插入图标内容（需激活 expandable）"
   },
   {
     "name": "error",
-    "description": "The error slot holds the error text and can contain HTML"
+    "description": "Error插槽可以插入错误提示内容（需设置 error）"
   },
   {
     "name": "plus",
-    "description": "The plus slot holds the plus text and can contain HTML"
+    "description": "Plus插槽可以插入额外扩展内容（需激活 plus）"
   },
   {
     "name": "expand",
-    "description": "The expand slot holds the autocomplete text and can contain HTML"
+    "description": "Expand插槽可以插入特殊扩展内容（需激活 expand）"
   }],
   "events": [
   {
     "name": "focus",
-    "description": "Emitted when the textbox is focused."
+    "type": "Function(event: object)",
+    "description": "输入框聚焦时回调函数"
   },
   {
     "name": "blur",
-    "description": "Emitted when the textbox loses focus."
+    "type": "Function(event: object)",
+    "description": "输入框失去焦点时回调函数"
   },
   {
     "name": "input",
-    "description": "Emitted when the select value is changed. The handler is called with the new value. (IE10+)"
+    "type": "Function(value: string)",
+    "description": "输入框内容变化时调用函数（推荐）"
   },
   {
     "name": "change",
-    "description": "Emitted when a change in the textbox value is committed. The handler is called with the new value. (IE9+)"
+    "type": "Function(event: object)",
+    "description": "输入框内容变化后调用函数"
   },
   {
     "name": "keydown",
-    "description": "Emitted when a key is pressed in the input. The handler is called with the event object."
+    "type": "Function(event: object)",
+    "description": "按下键盘时回调函数"
   },
   {
     "name": "enter",
-    "description": "Emitted when the Enter key is pressed in the input. The handler is called with the event object."
+    "type": "Function(value: string)",
+    "description": "按下回车的回调函数"
   }]
 }
