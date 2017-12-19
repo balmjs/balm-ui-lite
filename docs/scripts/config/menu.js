@@ -25,7 +25,8 @@ const components = {
     'slider',
     'fileupload',
     'autocomplete',
-    'datepicker'
+    'datepicker',
+    'rangepicker'
   ],
   dataview: [
     'card',

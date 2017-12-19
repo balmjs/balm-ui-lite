@@ -36,7 +36,7 @@ const data = {
     "fileupload": "Fileupload 文件上传",
     "autocomplete": "Autocomplete 自动补全",
     "datepicker": "Datepicker 日期选择框",
-    "rangepicker": "Rangepicker 日期范围选择框",
+    "rangepicker": "Rangepicker 日期范围",
     // dataview
     "card": "Card 卡片",
     "list": "List 列表",

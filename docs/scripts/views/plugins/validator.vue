@@ -1,6 +1,6 @@
 <template>
   <div class="page--validator">
-    <h1>validator</h1>
+    <h1>Validator</h1>
 
     <h2 class="line">概述</h2>
     <p>这是一个简单的数据验证插件。</p>

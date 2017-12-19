@@ -1,3 +1,5 @@
+$drawerWidth: 256px;
+
 .supported-lang {
   margin: 0;
 
@@ -10,7 +12,7 @@
 }
 
 .mdl-layout__drawer {
-  width: 256px;
+  width: $drawerWidth;
   .mdl-navigation {
     padding: 0;
 
@@ -56,8 +58,9 @@
   }
 }
 
-.mdl-layout__content {
+.mdl-layout--fixed-drawer > .mdl-layout__content {
   padding: 0 16px 16px;
+  margin-left: $drawerWidth;
 }
 
 .component-title {
