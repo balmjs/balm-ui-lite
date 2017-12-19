@@ -16,10 +16,12 @@ const template = `<ui-snackbar
 </ui-snackbar>`;
 
 const BalmUIToastPlugin = {
-  install(Vue) {
+  install(Vue, config) {
     let vm;
 
-    const UiToast = (options = '') => {
+    let options = Object.assign({}, DEFAULT_OPTIONS, config);
+
+    const UiToast = (customOptions = {}) => {
       if (!document.querySelector('.mdl-toast')) {
         vm = new Vue({
           components: {
@@ -29,29 +31,33 @@ const BalmUIToastPlugin = {
           template,
           data: {
             active: false,
-            options: DEFAULT_OPTIONS
+            options
           },
           created() {
-            if (getType(options) === 'string') {
-              this.options.message = options;
-            } else if (getType(options) === 'object') {
-              this.options = Object.assign(DEFAULT_OPTIONS, options);
+            if (getType(customOptions) === 'string') {
+              this.options.message = customOptions;
+            } else if (getType(customOptions) === 'object') {
+              this.options = Object.assign({}, this.options, customOptions);
             }
+
+            this.$nextTick(function () {
+              document.body.appendChild(this.$el);
+
+              setTimeout(() => {
+                this.active = true;
+              }, DELAY);
+
+              setTimeout(() => {
+                this.active = false;
+                setTimeout(() => {
+                  document.body.removeChild(this.$el);
+                  vm = null;
+                }, DELAY);
+              }, vm.options.timeout);
+            });
           }
         });
 
-        document.body.appendChild(vm.$el);
-        setTimeout(() => {
-          vm.active = true;
-        }, DELAY);
-
-        setTimeout(() => {
-          vm.active = false;
-          setTimeout(() => {
-            document.body.removeChild(vm.$el);
-            vm = null;
-          }, DELAY);
-        }, vm.options.timeout);
       }
     };
 

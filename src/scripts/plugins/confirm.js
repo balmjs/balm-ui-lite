@@ -51,7 +51,7 @@ const BalmUIConfirmPlugin = {
           el: document.createElement('div'),
           template,
           data: {
-            open: true,
+            open: false,
             options
           },
           methods: {
@@ -81,6 +81,7 @@ const BalmUIConfirmPlugin = {
 
             this.$nextTick(function () {
               document.body.appendChild(vm.$el);
+              this.open = true;
             });
           }
         });

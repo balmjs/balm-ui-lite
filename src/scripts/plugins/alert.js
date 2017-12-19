@@ -47,7 +47,7 @@ const BalmUIAlertPlugin = {
           el: document.createElement('div'),
           template,
           data: {
-            open: true,
+            open: false,
             options
           },
           methods: {
@@ -76,6 +76,7 @@ const BalmUIAlertPlugin = {
             }
             this.$nextTick(function () {
               document.body.appendChild(vm.$el);
+              this.open = true;
             });
           }
         });

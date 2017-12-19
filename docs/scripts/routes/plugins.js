@@ -4,6 +4,7 @@ const Validator = () => import('../views/plugins/validator');
 const Alert = () => import('../views/plugins/alert');
 const Confirm = () => import('../views/plugins/confirm');
 const Prompt = () => import('../views/plugins/prompt');
+const Toast = () => import('../views/plugins/toast');
 
 const pluginsRoutes = [{
   path: 'notify',
@@ -25,6 +26,10 @@ const pluginsRoutes = [{
   path: 'prompt',
   name: 'plugins.prompt',
   component: Prompt
+}, {
+  path: 'toast',
+  name: 'plugins.toast',
+  component: Toast
 }, {
   path: 'validator',
   name: 'plugins.validator',

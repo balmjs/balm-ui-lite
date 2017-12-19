@@ -56,7 +56,7 @@ const data = {
     "event": "事件处理",
     "alert": "警告框",
     "confirm": "确认框",
-    "toast": "toast",
+    "toast": "短暂提示",
     "prompt": "提示框",
     "notify": "通知框",
     "validator": "表单验证",
