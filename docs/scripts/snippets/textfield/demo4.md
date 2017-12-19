@@ -1,9 +1,13 @@
 ```html
 <ui-textfield id="sample4"
   expandable
-  label="Expandable Input"
+  placeholder="Expandable Input"
   :model="text4"
-  @input="balmUI.onChange('text4', $event)"></ui-textfield>
+  @input="balmUI.onChange('text4', $event)">
+  <!-- <template slot="icon">
+    <ui-icon>mood</ui-icon>
+  </template> -->
+</ui-textfield>
 ```
 
 ```js
