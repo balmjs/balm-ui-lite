@@ -18,7 +18,7 @@ const data = {
     "tabs": "Tabs 选项卡",
     "footer": "Footer 页脚",
     // common
-    "badge": "Badge 徽章",
+    "badge": "Badge 徽标数",
     "button": "Button 按钮",
     "chip": "Chip",
     "menu": "Menu 下拉菜单",
