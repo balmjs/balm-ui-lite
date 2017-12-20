@@ -1,14 +1,10 @@
 ```html
 <ui-autocomplete
-  placeholder="Expand Text... (type 'a' or 'b')"
-  :model="text"
-  :url="url"
-  :params="params"
-  :suggestion="suggestion"
-  :delay="500"
-  @input="onInputChange"
-  @response="onSuggest"
-  @enter="onInputEnter">
+  placeholder="try to type"
+  :model="keywords"
+  :source="source"
+  @input="balmUI.onChange('keywords', $event)"
+  @selected="balmUI.onChange('keywords', $event.value)">
 </ui-autocomplete>
 ```
 
@@ -16,25 +12,9 @@
 export default {
   data() {
     return {
-      text: '',
-      url: `/api/test`,
-      params: {},
-      suggestion: [],
-    }
-  },
-  methods: {
-    onInputChange(value) {
-      this.text = value;
-      this.params = {
-        text: value
-      };
-    },
-    onSuggest(data) {
-      this.suggestion = data[this.text] ? data[this.text] : [];
-    },
-    onInputEnter(data) {
-      this.text = data.value;
-    }
+      keywords: '',
+      source: [ 'c++', 'java', 'php', 'coldfusion', 'javascript', 'asp', 'ruby' ]
+    };
   }
 };
 ```

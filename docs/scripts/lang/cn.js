@@ -44,7 +44,7 @@ const data = {
     "pagination": "Pagination 分页",
     // feedback
     "dialog": "Dialog 对话框",
-    "snackbar": "Snackbar 提示框",
+    "snackbar": "Snackbar 短提示框",
     // loading
     "progress": "Progress 进度条",
     "spinner": "Spinner 加载中",
@@ -123,7 +123,8 @@ const data = {
     "select": "<ui-select>",
     "icon-toggle": "<ui-icon-toggle>",
     "switch": "<ui-switch>",
-    "slider": "<ui-slider>"
+    "slider": "<ui-slider>",
+    "autocomplete": "<ui-autocomplete>"
   }
 };
 

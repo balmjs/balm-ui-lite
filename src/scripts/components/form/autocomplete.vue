@@ -1,47 +1,50 @@
 <template>
-  <ui-textfield :class="['mdl-autocomplete', {'is-expand': isExpand}]"
-    :model="currentValue"
+  <ui-textfield expand
+    :class="className"
+    :disabled="disabled"
     :placeholder="placeholder"
     :plus="plus"
-    expand
-    @input.native="handleInput($event)"
+    :model="currentValue"
+    @focus="handleFocus"
     @blur="handleBlur"
+    @input="handleInput"
     @keydown="handleKeydown">
-    <template slot="expand">
-      <ul ref="autocomplete">
-        <li v-for="(suggestion, index) in currentSuggestion"
-            v-html="suggestion[ITEM_VALUE]"
-            :class="{'active': suggestion[ITEM_ACTIVE]}"
-            @click="fillText(suggestion)"
-            :data-index="index">
-        </li>
-      </ul>
-    </template>
     <template slot="plus">
       <slot name="plus"></slot>
+    </template>
+    <template slot="expand">
+      <ul ref="autocomplete">
+        <li v-for="(item, index) in currentSuggestion"
+            v-html="item[ITEM_VALUE]"
+            :key="index"
+            :data-index="index"
+            :class="{'active': index === currentSuggestionIndex}"
+            @click="onSelect(item)">
+        </li>
+      </ul>
     </template>
   </ui-textfield>
 </template>
 
 <script>
 import UiTextfield from './textfield';
-import {isString, isObject} from '../../helpers/is';
+import getType from '../../helpers/typeof';
 import {jsonEqual} from '../../helpers/utils';
 import detectIE from '../../helpers/detect-ie';
 
-const KEY_UP = 38;
-const KEY_DOWN = 40;
-const KEY_ENTER = 13;
-const METHOD_GET = 'GET';
-const METHOD_POST = 'POST';
+const KEYCODE_UP = 38;
+const KEYCODE_DOWN = 40;
+// const KEYCODE_ESCAPE = 27;
+const KEYCODE_ENTER = 13;
 const ITEM_ACTIVE = 'active';
 const ITEM_KEY = 'key';
 const ITEM_VALUE = 'value';
 const _EVENT_CLICK = 'click';
 const _EVENT_MOUSEOVER = 'mouseover';
+const _EVENT_MOUSELEAVE = 'mouseleave';
 const EVENT_INPUT = 'input';
-const EVENT_RESPONSE = 'response';
-const EVENT_ENTER = 'enter';
+const EVENT_SEARCH = 'search';
+const EVENT_SELECTED = 'selected';
 const REMOVE_HTML_TAG_REGEX = new RegExp('<[^>]+>', 'g');
 
 export default {
@@ -52,29 +55,29 @@ export default {
   props: {
     // state
     model: null,
-    // element attributes
-    placeholder: String,
-    // ajax attributes
-    method: {
-      type: String,
-      default: METHOD_GET
+    // ui attributes
+    autoFocus: {
+      type: Boolean,
+      default: false
     },
-    url: {
-      type: String,
-      required: true
-    },
-    params: {
-      type: Object,
-      default: function() {
-        return {};
-      }
-    },
-    suggestion: Array,
     delay: {
       type: Number,
       default: 300
     },
-    // ui attributes
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    placeholder: String,
+    minLength: {
+      type: Number,
+      default: 1
+    },
+    source: [Array, Function], // Two supported formats: ['value1', 'value2'] or [{key1: 'value1'}, {key2: 'value2'}]
+    remote: {
+      type: Boolean,
+      default: false
+    },
     plus: {
       type: Boolean,
       default: false
@@ -82,52 +85,107 @@ export default {
   },
   data() {
     return {
-      ITEM_ACTIVE: ITEM_ACTIVE,
-      ITEM_VALUE: ITEM_VALUE,
+      ITEM_VALUE,
+      $autocomplete: null,
       _callback: null,
       isExpand: false,
-      currentValue: this.model,
-      currentParams: this.params,
-      currentSuggestion: [],
-      currentSuggestionIndex: 0,
+      currentValue: this.model || '',
+      currentSource: [], // source data
+      currentSuggestion: [], // filter data
+      currentSuggestionIndex: -1,
+      currentSelectedItem: null,
       timer: null,
-      $autocomplete: null,
       lteIE10: false
     }
   },
+  computed: {
+    className() {
+      return {
+        'mdl-autocomplete': true,
+        'is-expand': this.isExpand
+      };
+    }
+  },
+  watch: {
+    model(val) {
+      if (val !== this.currentValue) {
+        this.currentValue = val;
+      }
+    },
+    source(data) {
+      this.setDataSource(data);
+      this.show();
+    }
+  },
+  mounted() {
+    let ie = detectIE();
+    this.lteIE10 = ie && ie < 11;
+
+    this.$autocomplete = this.$refs.autocomplete;
+    this.$autocomplete.addEventListener(_EVENT_MOUSEOVER, this.handleMouseover);
+    this.$autocomplete.addEventListener(_EVENT_MOUSELEAVE, this.handleMouseleave);
+
+    this.setDataSource(this.source);
+  },
+  beforeDestroy() {
+    if (this._callback) {
+      document.removeEventListener(_EVENT_CLICK, this._callback);
+    }
+    this.$autocomplete.removeEventListener(_EVENT_MOUSEOVER, this.handleMouseover);
+    this.$autocomplete.removeEventListener(_EVENT_MOUSELEAVE, this.handleMouseleave);
+  },
   methods: {
     show() {
-      this.isExpand = true;
+      let keywords = this.currentValue.trim();
+      if (keywords.length >= this.minLength && this.currentSuggestion.length) {
+        this.isExpand = true;
+      }
     },
     hide() {
       this.isExpand = false;
-      this.currentSuggestion = [];
-      this.currentSuggestionIndex = 0;
+      this.currentSuggestionIndex = -1;
+      this.clearSelected();
     },
-    async search() {
-      let config = {
-        method: this.method.toLowerCase(),
-        url: this.url
-      };
+    search(keywords) {
+      if (this.remote) { // remote datasource
+        if (this.timer) {
+          clearTimeout(this.timer);
+        }
 
-      switch (this.method.toUpperCase()) {
-        case METHOD_GET:
-          config.params = this.currentParams;
-          break;
-        case METHOD_POST:
-          config.data = this.currentParams;
-          break;
+        this.timer = setTimeout(() => {
+          this.$emit(EVENT_SEARCH, keywords); // AJAX
+        }, this.delay);
+      } else { // local datasource
+        this.currentSuggestion = this.currentSource.filter(word => {
+          return RegExp(keywords).test(word.value);
+        });
+
+        this.show();
       }
-
-      let response = await this.$http(config);
-      this.$emit(EVENT_RESPONSE, response.data);
     },
-    handleInput(event) {
-      this.currentValue = event.target.value;
-      this.$emit(EVENT_INPUT, this.currentValue); // currentValue: string
+    setDataSource(dataSource) {
+      if (getType(dataSource) === 'array') {
+        this.currentSource = dataSource.map(data => {
+          let item = {};
 
-      if (!this.currentValue) {
-        this.hide();
+          if (getType(data) === 'string') {
+            item[ITEM_KEY] = data;
+            item[ITEM_VALUE] = data;
+          } else if (getType(data) === 'object') {
+            item = data;
+          } else {
+            console.warn('DataSource\'s item must be a string or object.');
+          }
+
+          return item;
+        });
+
+        this.currentSuggestion = this.currentSource;
+      }
+    },
+    handleFocus(event) {
+      if (this.autoFocus) {
+        this.show();
       }
     },
     handleBlur(event) {
@@ -135,11 +193,12 @@ export default {
         this._callback = e => {
           let inTextfield = false;
           let parentEl = e.target.parentNode;
+
           while (parentEl && parentEl !== this.$el) {
+            parentEl = parentEl.parentNode;
             if (parentEl === this.$el) {
               inTextfield = true;
             }
-            parentEl = parentEl.parentNode;
           }
 
           if (e !== event && this.isExpand && !inTextfield) {
@@ -150,125 +209,78 @@ export default {
       }
       document.addEventListener(_EVENT_CLICK, this._callback);
     },
-    fillText(data) {
-      this.hide();
+    handleInput(value) {
+      this.currentValue = value;
+      this.$emit(EVENT_INPUT, this.currentValue); // currentValue: string
 
-      delete data[ITEM_ACTIVE];
-      let result = Object.assign({}, data);
-      result[ITEM_VALUE] = result[ITEM_VALUE].replace(REMOVE_HTML_TAG_REGEX, '');
-      this.currentValue = result[ITEM_VALUE];
-      this.$emit(EVENT_ENTER, result); // result: any
-    },
-    setSuggestionIndex(data = this.currentSuggestion) {
-      this.currentSuggestion = data.map((item, index) => {
-        let result = {};
-
-        if (isObject(item)) {
-          result[ITEM_KEY] = item[ITEM_KEY];
-          result[ITEM_VALUE] = item[ITEM_VALUE];
-        } else if (isString(item)) {
-          result[ITEM_KEY] = index;
-          result[ITEM_VALUE] = item;
-        } else {
-          console.warn('Suggestion item must be a string or object.');
-        }
-        result[ITEM_ACTIVE] = index === this.currentSuggestionIndex;
-
-        return result;
-      });
+      let keywords = this.currentValue.trim();
+      if (keywords.length >= this.minLength) {
+        this.search(keywords);
+      } else {
+        this.hide();
+      }
     },
     handleKeydown(event) {
       if (this.currentSuggestion.length) { // TODO: overflow-y
-        let count = this.currentSuggestion.length - 1;
+        let MIN = 0;
+        let MAX = this.currentSuggestion.length - 1;
 
-        if (event.keyCode === KEY_UP) {
-          if (this.currentSuggestionIndex === 0) {
-            this.currentSuggestionIndex = count;
-          } else {
-            this.currentSuggestionIndex--;
-          }
-        } else if (event.keyCode === KEY_DOWN) { // TODO: overflow-y
-          if (this.currentSuggestionIndex === count) {
-            this.currentSuggestionIndex = 0;
-          } else {
-            this.currentSuggestionIndex++;
-          }
-        } else if (event.keyCode === KEY_ENTER) {
-          let data = this.currentSuggestion[this.currentSuggestionIndex];
-          this.hide();
-
-          delete data[ITEM_ACTIVE];
-          let result = Object.assign({}, data);
-          result[ITEM_VALUE] = result[ITEM_VALUE].replace(REMOVE_HTML_TAG_REGEX, '');
-          this.currentValue = result[ITEM_VALUE];
-          this.$emit(EVENT_ENTER, result); // result: any
-          event.preventDefault();
+        switch (event.keyCode) {
+          case KEYCODE_UP:
+            if (this.currentSuggestionIndex === MIN || this.currentSuggestionIndex === -1) {
+              this.currentSuggestionIndex = MAX;
+            } else {
+              this.currentSuggestionIndex--;
+            }
+            break;
+          case KEYCODE_DOWN: // TODO: overflow-y
+            if (this.currentSuggestionIndex === MAX) {
+              this.currentSuggestionIndex = MIN;
+            } else {
+              this.currentSuggestionIndex++;
+            }
+            break;
+          case KEYCODE_ENTER:
+            let selectedItem = this.currentSuggestion[this.currentSuggestionIndex];
+            this.onSelect(selectedItem);
+            event.preventDefault();
+            break;
         }
-
-        this.setSuggestionIndex();
       }
     },
     handleMouseover(event) {
       let el = event.target;
       if (el.tagName === 'LI' && !el.classList.contains(ITEM_ACTIVE)) {
-        let activeItem = this.$autocomplete.querySelector('li.active');
-        if (activeItem) {
-          activeItem.classList.remove(ITEM_ACTIVE);
-        }
+        this.currentSelectedItem = el;
+
+        this.clearSelected();
 
         el.classList.add(ITEM_ACTIVE);
         this.currentSuggestionIndex = this.lteIE10
           ? el.getAttribute('data-index')
           : el.dataset.index;
       }
-    }
-  },
-  watch: {
-    model(val) {
-      if (val !== this.currentValue) {
-        this.currentValue = val;
-      }
     },
-    params(val) {
-      if (!jsonEqual(val, this.currentParams)) {
-        this.currentParams = val;
-
-        if (this.timer) {
-          clearTimeout(this.timer);
-        }
-
-        if (this.currentValue && this.currentValue.trim()) {
-          this.timer = setTimeout(() => {
-            this.search();
-          }, this.delay);
-        }
-      }
+    handleMouseleave() {
+      this.currentSelectedItem.classList.remove(ITEM_ACTIVE);
     },
-    suggestion(data) {
-      this.setSuggestionIndex(data);
-      if (this.currentSuggestion.length) {
-        this.show();
-      } else {
-        this.hide();
+    onSelect(selectedItem) {
+      this.hide();
+
+      delete selectedItem[ITEM_ACTIVE];
+
+      let result = Object.assign({}, selectedItem);
+      result[ITEM_VALUE] = result[ITEM_VALUE].replace(REMOVE_HTML_TAG_REGEX, '');
+      this.currentValue = result[ITEM_VALUE];
+
+      this.$emit(EVENT_SELECTED, result); // result: any
+    },
+    clearSelected() {
+      let activeItem = this.$autocomplete.querySelector('li.active');
+      if (activeItem) {
+        activeItem.classList.remove(ITEM_ACTIVE);
       }
     }
-  },
-  created() {
-    let ie = detectIE();
-    this.lteIE10 = ie && ie < 11;
-    if (!this.$http) {
-      console.warn('You need to install a http plugin for `Vue.prototype.$http`.');
-    }
-  },
-  mounted() {
-    this.$autocomplete = this.$refs.autocomplete;
-    this.$autocomplete.addEventListener(_EVENT_MOUSEOVER, this.handleMouseover);
-  },
-  beforeDestroy() {
-    if (this._callback) {
-      document.removeEventListener(_EVENT_CLICK, this._callback);
-    }
-    this.$autocomplete.removeEventListener(_EVENT_MOUSEOVER, this.handleMouseover);
   }
 };
 </script>
