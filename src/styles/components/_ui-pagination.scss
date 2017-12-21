@@ -1,5 +1,5 @@
 $ui-pagination-color: #49a9ee !default;
-$ui-pagination-active-color: #108ee9 !default;
+$ui-pagination-color-active: #108ee9 !default;
 
 .mdl-pagination {
   line-height: 28px;
@@ -48,8 +48,8 @@ $ui-pagination-active-color: #108ee9 !default;
         cursor: default;
 
         color: white;
-        border-color: $ui-pagination-active-color;
-        background-color: $ui-pagination-active-color;
+        border-color: $ui-pagination-color-active;
+        background-color: $ui-pagination-color-active;
       }
     }
   }
