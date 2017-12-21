@@ -1,17 +1,12 @@
 <template>
   <header class="mdl-dialog__title">
     <slot></slot>
-    <ui-icon class="close" @click="$parent.handleClose">close</ui-icon>
+    <i class="material-icons close" @click="$parent.handleClose">close</i>
   </header>
 </template>
 
 <script>
-import UiIcon from '../common/icon';
-
 export default {
-  name: 'ui-dialog-title',
-  components: {
-    UiIcon
-  }
+  name: 'ui-dialog-title'
 };
 </script>
