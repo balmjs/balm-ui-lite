@@ -6,5 +6,8 @@
   .mdl-datepicker__toggle,
   .mdl-datepicker__clear {
     padding: 0 8px;
+    i {
+      cursor: pointer;
+    }
   }
 }

@@ -9,12 +9,12 @@
       <template slot="plus">
         <div v-if="toggle || allowInput" class="mdl-datepicker__toggle" data-toggle>
           <slot name="toggle">
-            <i class="fa fa-calendar"></i>
+            <i class="material-icons md-16">event</i>
           </slot>
         </div>
         <div v-if="clear" class="mdl-datepicker__clear" data-clear>
           <slot name="clear">
-            <i class="fa fa-close"></i>
+            <i class="material-icons md-16">clear</i>
           </slot>
         </div>
       </template>
