@@ -40,7 +40,7 @@ const ITEM_ACTIVE = 'active';
 const ITEM_KEY = 'key';
 const ITEM_VALUE = 'value';
 const _EVENT_CLICK = 'click';
-const _EVENT_MOUSEOVER = 'mouseover';
+const _EVENT_MOUSEMOVE = 'mousemove';
 const _EVENT_MOUSELEAVE = 'mouseleave';
 const EVENT_INPUT = 'input';
 const EVENT_SEARCH = 'search';
@@ -95,7 +95,19 @@ export default {
       currentSuggestionIndex: -1,
       currentSelectedItem: null,
       timer: null,
-      lteIE10: false
+      lteIE10: false,
+      scroll: {
+        $view: null,
+        viewHeight: 0,
+        listHeight: 0,
+        itemHeight: 0,
+        currentFirstIndex: 0,
+        currentLastIndex: 0,
+        defaultFirstIndex: 0,
+        defaultLastIndex: 0,
+        defaultReversedLastIndex: 0,
+        defaultReversedFirstIndex: 0
+      }
     }
   },
   computed: {
@@ -122,7 +134,7 @@ export default {
     this.lteIE10 = ie && ie < 11;
 
     this.$autocomplete = this.$refs.autocomplete;
-    this.$autocomplete.addEventListener(_EVENT_MOUSEOVER, this.handleMouseover);
+    this.$autocomplete.addEventListener(_EVENT_MOUSEMOVE, this.handleMousemove);
     this.$autocomplete.addEventListener(_EVENT_MOUSELEAVE, this.handleMouseleave);
 
     this.setDataSource(this.source);
@@ -131,14 +143,43 @@ export default {
     if (this._callback) {
       document.removeEventListener(_EVENT_CLICK, this._callback);
     }
-    this.$autocomplete.removeEventListener(_EVENT_MOUSEOVER, this.handleMouseover);
+    this.$autocomplete.removeEventListener(_EVENT_MOUSEMOVE, this.handleMousemove);
     this.$autocomplete.removeEventListener(_EVENT_MOUSELEAVE, this.handleMouseleave);
   },
   methods: {
+    initClientHeight() {
+      let view = this.$autocomplete.parentNode;
+      let list = view.querySelector('ul');
+      let item = view.querySelector('li');
+
+      if (!this.scroll.$view) {
+        this.scroll.$view = view;
+        this.scroll.viewHeight = view.offsetHeight;
+      }
+      if (!this.scroll.item) {
+        this.scroll.itemHeight = item.offsetHeight;
+      }
+      if (this.scroll.list !== list.offsetHeight) {
+        this.scroll.listHeight = list.offsetHeight;
+      }
+
+      this.scroll.defaultFirstIndex = 0;
+      this.scroll.defaultLastIndex = parseInt(this.scroll.viewHeight / this.scroll.itemHeight, 10) - 1;
+      let maxHeight = this.currentSuggestion.length - 1;
+      if (this.scroll.defaultReversedLastIndex !== maxHeight) {
+        this.scroll.defaultReversedLastIndex = maxHeight;
+        this.scroll.defaultReversedFirstIndex = this.scroll.defaultReversedLastIndex - this.scroll.defaultLastIndex;
+      }
+
+      this.scroll.currentLastIndex = this.scroll.defaultLastIndex;
+    },
     show() {
       let keywords = this.currentValue.trim();
       if (keywords.length >= this.minLength && this.currentSuggestion.length) {
         this.isExpand = true;
+        this.$nextTick(() => {
+          this.initClientHeight();
+        });
       }
     },
     hide() {
@@ -157,7 +198,7 @@ export default {
         }, this.delay);
       } else { // local datasource
         this.currentSuggestion = this.currentSource.filter(word => {
-          return RegExp(keywords).test(word.value);
+          return RegExp(keywords, 'i').test(word.value);
         });
 
         this.show();
@@ -168,7 +209,7 @@ export default {
         this.currentSource = dataSource.map(data => {
           let item = {};
 
-          if (getType(data) === 'string') {
+          if (getType(data) === 'string' || getType(data) === 'number') {
             item[ITEM_KEY] = data;
             item[ITEM_VALUE] = data;
           } else if (getType(data) === 'object') {
@@ -221,24 +262,56 @@ export default {
       }
     },
     handleKeydown(event) {
-      if (this.currentSuggestion.length) { // TODO: overflow-y
+      if (this.currentSuggestion.length) {
         let MIN = 0;
         let MAX = this.currentSuggestion.length - 1;
 
         switch (event.keyCode) {
-          case KEYCODE_UP:
-            if (this.currentSuggestionIndex === MIN || this.currentSuggestionIndex === -1) {
-              this.currentSuggestionIndex = MAX;
-            } else {
-              this.currentSuggestionIndex--;
-            }
-            break;
-          case KEYCODE_DOWN: // TODO: overflow-y
+          case KEYCODE_DOWN:
+            this.clearSelected();
+
             if (this.currentSuggestionIndex === MAX) {
               this.currentSuggestionIndex = MIN;
+
+              this.scroll.currentFirstIndex = this.scroll.defaultFirstIndex;
+              this.scroll.currentLastIndex = this.scroll.defaultLastIndex;
+              this.scroll.$view.scrollTop = 0;
             } else {
               this.currentSuggestionIndex++;
+
+              if (this.currentSuggestionIndex > this.scroll.currentLastIndex) {
+                this.scroll.currentFirstIndex++;
+                this.scroll.currentLastIndex++;
+                this.scroll.$view.scrollTop += this.scroll.itemHeight;
+              }
             }
+
+            this.$autocomplete.blur(); // hide mouse
+            event.preventDefault();
+            break;
+          case KEYCODE_UP:
+            this.clearSelected();
+
+            if (this.currentSuggestionIndex === MIN || this.currentSuggestionIndex === -1) {
+              this.currentSuggestionIndex = MAX;
+
+              this.scroll.currentFirstIndex = this.scroll.defaultReversedFirstIndex;
+              this.scroll.currentLastIndex = this.scroll.defaultReversedLastIndex;
+              this.scroll.$view.scrollTop = this.scroll.itemHeight * this.scroll.defaultReversedFirstIndex;
+            } else {
+              this.currentSuggestionIndex--;
+
+              if (this.currentSuggestionIndex < this.scroll.currentLastIndex) {
+                this.scroll.currentFirstIndex--;
+                this.scroll.currentLastIndex--;
+                if (this.currentSuggestionIndex < this.scroll.defaultReversedFirstIndex) {
+                  this.scroll.$view.scrollTop -= this.scroll.itemHeight;
+                }
+              }
+            }
+
+            this.$autocomplete.blur(); // hide mouse
+            event.preventDefault();
             break;
           case KEYCODE_ENTER:
             let selectedItem = this.currentSuggestion[this.currentSuggestionIndex];
@@ -248,7 +321,7 @@ export default {
         }
       }
     },
-    handleMouseover(event) {
+    handleMousemove(event) {
       let el = event.target;
       if (el.tagName === 'LI' && !el.classList.contains(ITEM_ACTIVE)) {
         this.currentSelectedItem = el;

@@ -1,5 +1,8 @@
 @import '../../material-design-lite/variables';
 
+// $ui-autocomplete-item-color: white;
+// $ui-autocomplete-item-bgcolor: black;
+
 .mdl-autocomplete {
   .mdl-textfield__expand {
     position: absolute;
@@ -8,25 +11,31 @@
     display: none;
     text-align: left;
 
+    overflow-x: hidden;
+    overflow-y: auto;
+
     width: 100%;
+    max-height: 210px;
 
     border: 1px solid $input-text-bottom-border-color;
     background: white;
     ul {
-      overflow-x: hidden;
-      overflow-y: auto;
-
-      max-height: 240px;
       margin: 0;
       padding: 0;
+      border: 0;
 
       list-style: none;
     }
     li {
+      line-height: 30px;
+      height: 30px;
+
+      margin: 0;
+      padding: 0;
+      border: 0;
       b {
         font-weight: bold;
       }
-      &:hover,
       &.active {
         color: white;
         background: black;
