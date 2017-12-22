@@ -1,0 +1,61 @@
+@import '../../material-design-lite/variables';
+
+.mdl-rangepicker {
+  display: inline-block;
+  &.mdl-rangepicker--full-width {
+    display: flex;
+  }
+}
+
+.mdl-rangepicker__input {
+  width: 300px;
+  padding: 4px 10px;
+  border: 1px solid $input-text-bottom-border-color;
+  transition: all .3s;
+  &:hover {
+    border-color: #40a9ff;
+  }
+  .mdl-textfield {
+    width: 128px;
+    padding: 0;
+  }
+  .mdl-textfield__input {
+    border: 0;
+    text-align: center;
+  }
+}
+
+.mdl-rangepicker__tabs {
+  display: inline-block;
+  width: auto;
+  border-width: 1px 0 1px 1px;
+  border-style: solid;
+  border-color: $input-text-bottom-border-color;
+  &.mdl-tabs {
+    &.is-upgraded .mdl-tabs__tab.is-active::after {
+      height: 0;
+    }
+    .mdl-tabs__tab.is-active {
+      color: white;
+      background: #1890ff;
+      &::after {
+        background: none;
+      }
+    }
+  }
+  .mdl-tabs__tab-bar {
+    height: 100%;
+    border: 0;
+  }
+  .mdl-tabs__tab {
+    line-height: 34px;
+    height: 100%;
+    border-right: 1px solid $input-text-bottom-border-color;
+    &:last-child {
+      border-right: 0;
+    }
+    &:hover {
+      color: #1890ff;
+    }
+  }
+}

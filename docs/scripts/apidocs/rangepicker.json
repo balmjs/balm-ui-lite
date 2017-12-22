@@ -1,0 +1,43 @@
+{
+  "props": [
+  {
+    "name": "model",
+    "type": "null",
+    "description": "输入框内容"
+  },
+  {
+    "name": "config",
+    "type": "Object",
+    "default": "{}",
+    "description": "同 Datepicker，日期选择配置，请参照 [<a href='https://chmln.github.io/flatpickr/options/' target='_blank'>flatpickr文档</a>]"
+  },
+  {
+    "name": "startPlaceholder",
+    "type": "String",
+    "default": "",
+    "description": "开始时间的 placeholder 属性"
+  },
+  {
+    "name": "endPlaceholder",
+    "type": "String",
+    "default": "",
+    "description": "结束时间的 placeholder 属性"
+  },
+  {
+    "name": "options",
+    "type": "Array",
+    "default": "[]",
+    "description": "快速选取时间范围选项（详见下面的使用注意点）"
+  }],
+  "slots": [
+  {
+    "name": "separator",
+    "description": "Separator插槽可以插入自定义日期分隔符"
+  }],
+  "events": [
+  {
+    "name": "change",
+    "type": "Function(value: array)",
+    "description": "当日期变化时触发函数"
+  }]
+}
