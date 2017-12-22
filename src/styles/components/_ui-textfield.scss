@@ -3,14 +3,15 @@
    * Textfield with plus
    */
   .mdl-textfield__plus {
-    line-height: 27px;
+    font-size: 14px;
 
     position: absolute;
-    top: 20px;
+    top: $input-text-vertical-spacing;
     right: 0;
-    bottom: 20px;
-    left: auto;
+    bottom: $input-text-vertical-spacing;
 
+    display: inline-block;
+    padding: $input-text-padding 0;
     overflow: hidden;
     .mdl-button {
       position: static;

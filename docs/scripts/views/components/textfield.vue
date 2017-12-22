@@ -17,7 +17,7 @@
             <ui-textfield id="sample1_1" alignRight
               label="Text..."
               :model="text1_1"
-              @change="balmUI.onChange('text1_1', $event)"></ui-textfield>
+              @input="balmUI.onChange('text1_1', $event)"></ui-textfield>
           </div>
           <div class="snippet-demo">
             <ui-textfield id="sample1_2"
