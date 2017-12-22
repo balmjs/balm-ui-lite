@@ -21,7 +21,7 @@ const data = {
     "badge": "Badge 徽标数",
     "button": "Button 按钮",
     "chip": "Chip",
-    "menu": "Menu 下拉菜单",
+    "menu": "Menu 菜单",
     "tooltip": "Tooltip 文字提示",
     "divider": "Divider 分割线",
     "icon": "Icon 图标",

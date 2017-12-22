@@ -8,59 +8,88 @@
     <ui-markdown :text="code[0]"></ui-markdown>
 
     <h4>1. 基本日期选择 + 默认图标</h4>
-
-    <div class="snippet-demo">
-      <ui-datepicker
-        placeholder="Select Date.."
-        toggle
-        clear
-        :config="config1"
-        :model="date1"
-        @change="balmUI.onChange('date1', $event)">
-      </ui-datepicker>
+    <div class="snippet-group">
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <ui-datepicker
+              placeholder="Select Date.."
+              toggle
+              clear
+              :config="config1"
+              :model="date1"
+              @change="balmUI.onChange('date1', $event)">
+            </ui-datepicker>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
+      </div>
+      <ui-markdown :code="code[1]"></ui-markdown>
     </div>
-    <ui-markdown :code="code[1]"></ui-markdown>
 
     <h4>2. 日期时间选择 + 自定义图标</h4>
-    <div class="snippet-demo">
-      <ui-datepicker
-        placeholder="Select Datetime.."
-        toggle
-        clear
-        :config="config2"
-        :model="date2"
-        @change="balmUI.onChange('date2', $event)">
-        <template slot="toggle">
-          <i class="fa fa-calendar"></i>
-        </template>
-        <template slot="clear">
-          <i class="fa fa-close"></i>
-        </template>
-      </ui-datepicker>
+    <div class="snippet-group">
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <ui-datepicker
+              placeholder="Select Datetime.."
+              toggle
+              clear
+              :config="config2"
+              :model="date2"
+              @change="balmUI.onChange('date2', $event)">
+              <template slot="toggle">
+                <i class="fa fa-calendar"></i>
+              </template>
+              <template slot="clear">
+                <i class="fa fa-close"></i>
+              </template>
+            </ui-datepicker>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
+      </div>
+      <ui-markdown :code="code[2]"></ui-markdown>
     </div>
-    <ui-markdown :code="code[2]"></ui-markdown>
 
     <h4>3. 简单时间范围选择（如需定制化时间范围选择推荐使用<router-link to="/components/rangepicker">&lt;ui-rangepicker&gt;</router-link>）</h4>
-
-    <div class="snippet-demo">
-      <ui-datepicker
-        placeholder="Select Date Range.."
-        :config="config3"
-        :model="date3"
-        @change="balmUI.onChange('date3', $event)"></ui-datepicker>
+    <div class="snippet-group">
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <ui-datepicker
+              placeholder="Select Date Range.."
+              :config="config3"
+              :model="date3"
+              @change="balmUI.onChange('date3', $event)"></ui-datepicker>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
+      </div>
+      <ui-markdown :code="code[3]"></ui-markdown>
     </div>
-    <ui-markdown :code="code[3]"></ui-markdown>
 
     <h4>4. 多时间选择</h4>
-
-    <div class="snippet-demo">
-      <ui-datepicker
-        placeholder="Select Multi Date.."
-        :config="config4"
-        :model="date4"
-        @change="balmUI.onChange('date4', $event)" ></ui-datepicker>
+    <div class="snippet-group">
+      <div class="snippet-header">
+        <div class="snippet-demos">
+          <div class="snippet-demo-padding"></div>
+          <div class="snippet-demo">
+            <ui-datepicker
+              placeholder="Select Multi Date.."
+              :config="config4"
+              :model="date4"
+              @change="balmUI.onChange('date4', $event)" ></ui-datepicker>
+          </div>
+          <div class="snippet-demo-padding"></div>
+        </div>
+      </div>
+      <ui-markdown :code="code[4]"></ui-markdown>
     </div>
-    <ui-markdown :code="code[4]"></ui-markdown>
 
     <ui-apidoc name="datepicker"></ui-apidoc>
     <ui-markdown :text="docs"></ui-markdown>
