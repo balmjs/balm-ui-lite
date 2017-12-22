@@ -1,10 +1,17 @@
 ```html
-<ui-datepicker :config="config"
-  :model="date"
-  placeholder="Select Date.."
+<ui-datepicker
+  placeholder="Select Datetime.."
   toggle
+  clear
+  :config="config"
+  :model="date"
   @change="balmUI.onChange('date', $event)">
-  <i slot="toggle" class="fa fa-calendar"></i>
+  <template slot="toggle">
+    <i class="fa fa-calendar"></i>
+  </template>
+  <template slot="clear">
+    <i class="fa fa-close"></i>
+  </template>
 </ui-datepicker>
 ```
 
@@ -14,7 +21,7 @@ export default {
     return {
       date: '',
       config: {
-        defaultDate: 'today'
+        enableTime: true
       }
     };
   }

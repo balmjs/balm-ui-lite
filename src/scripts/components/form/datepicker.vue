@@ -1,25 +1,23 @@
 <template>
-  <div class="mdl-datepicker">
-    <ui-textfield
-      ref="text"
-      :model="currentValue"
-      :placeholder="placeholder"
-      :plus="(toggle || allowInput) || clear"
-      @change="handleChange">
-      <template slot="plus">
-        <div v-if="toggle || allowInput" class="mdl-datepicker__toggle" data-toggle>
-          <slot name="toggle">
-            <i class="material-icons md-16">event</i>
-          </slot>
-        </div>
-        <div v-if="clear" class="mdl-datepicker__clear" data-clear>
-          <slot name="clear">
-            <i class="material-icons md-16">clear</i>
-          </slot>
-        </div>
-      </template>
-    </ui-textfield>
-  </div>
+  <ui-textfield ref="text"
+    class="mdl-datepicker"
+    :model="currentValue"
+    :placeholder="placeholder"
+    :plus="(toggle || allowInput) || clear"
+    @change="handleChange">
+    <template slot="plus">
+      <span v-if="toggle || allowInput" class="mdl-datepicker__toggle" data-toggle>
+        <slot name="toggle">
+          <i class="material-icons md-16">event</i>
+        </slot>
+      </span>
+      <span v-if="clear" class="mdl-datepicker__clear" data-clear>
+        <slot name="clear">
+          <i class="material-icons md-16">clear</i>
+        </slot>
+      </span>
+    </template>
+  </ui-textfield>
 </template>
 
 <script>

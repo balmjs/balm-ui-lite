@@ -3,44 +3,45 @@
   {
     "name": "model",
     "type": "null",
-    "description": "The model that the input value syncs to"
+    "description": "输入框内容"
   },
   {
     "name": "config",
     "type": "Object",
     "default": "{}",
-    "description": "see [<a href='https://chmln.github.io/flatpickr/options/' target='_blank'>flatpickr</a>]"
+    "description": "日期选择配置，请参照 [<a href='https://chmln.github.io/flatpickr/options/' target='_blank'>flatpickr文档</a>]"
   },
   {
     "name": "placeholder",
     "type": "String",
     "default": "",
-    "description": "Provides a hint to the user of what can be entered in the field"
+    "description": "Datepicker 的 placeholder 属性"
   },
   {
     "name": "toggle",
     "type": "Boolean",
     "default": "false",
-    "description": ""
+    "description": "显示日历按钮图标"
   },
   {
     "name": "clear",
     "type": "Boolean",
     "default": "false",
-    "description": ""
+    "description": "显示清楚按钮图标"
   }],
   "slots": [
   {
     "name": "toggle",
-    "description": "The toggle slot holds the toggle icon and can contain HTML"
+    "description": "Toggle插槽可以插入自定义日历按钮图标"
   },
   {
     "name": "clear",
-    "description": "The clear slot holds the clear icon and can contain HTML"
+    "description": "Clear插槽可以插入自定义清楚按钮图标"
   }],
   "events": [
   {
     "name": "change",
-    "description": "Dispatched when the datepickr is changed"
+    "type": "Function(value: string | array)",
+    "description": "当日期变化时触发函数"
   }]
 }

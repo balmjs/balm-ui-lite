@@ -124,7 +124,8 @@ const data = {
     "icon-toggle": "<ui-icon-toggle>",
     "switch": "<ui-switch>",
     "slider": "<ui-slider>",
-    "autocomplete": "<ui-autocomplete>"
+    "autocomplete": "<ui-autocomplete>",
+    "datepicker": "<ui-datepicker>"
   }
 };
 

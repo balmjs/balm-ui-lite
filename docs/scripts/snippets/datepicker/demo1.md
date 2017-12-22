@@ -1,19 +1,23 @@
-```js
-// gulpfile.js
-
-balm.config = {
-  ...
-  scripts: {
-    ...
-    alias: {
-      flatpickrCss: 'flatpickr/dist/flatpickr.min.css'
-    },
-  ...
-};
+```html
+<ui-datepicker
+  placeholder="Select Date.."
+  toggle
+  clear
+  :config="config"
+  :model="date"
+  @change="balmUI.onChange('date', $event)">
+</ui-datepicker>
 ```
 
 ```js
-// /path/to/your_entry.js
-...
-import 'flatpickrCss';
+export default {
+  data() {
+    return {
+      date: '',
+      config: {
+        defaultDate: 'today'
+      }
+    };
+  }
+};
 ```

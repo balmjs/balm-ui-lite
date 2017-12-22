@@ -1,26 +1,18 @@
 ```html
-<ui-datepicker :config="config"
+<ui-datepicker
+  placeholder="Select Date Range.."
+  :config="config"
   :model="date"
-  placeholder="Select Datetime.."
-  toggle
-  clear
-  @change="balmUI.onChange('date', $event)">
-  <template slot="toggle">
-    <i class="fa fa-calendar"></i>
-  </template>
-  <template slot="clear">
-    <i class="fa fa-close"></i>
-  </template>
-</ui-datepicker>
+  @change="balmUI.onChange('date', $event)"></ui-datepicker>
 ```
 
 ```js
 export default {
   data() {
     return {
-      date: '',
+      date: ['2017-11-10', '2017-11-20'],
       config: {
-        enableTime: true
+        mode: 'range'
       }
     };
   }

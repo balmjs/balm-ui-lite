@@ -1,17 +1,18 @@
 ```html
-<ui-datepicker :config="config"
+<ui-datepicker
+  placeholder="Select Multi Date.."
+  :config="config"
   :model="date"
-  placeholder="Select Date Range.."
-  @change="balmUI.onChange('date', $event)"></ui-datepicker>
+  @change="balmUI.onChange('date', $event)" ></ui-datepicker>
 ```
 
 ```js
 export default {
   data() {
     return {
-      date: '',
+      date: ['2017-11-05', '2017-11-15', '2017-11-25'],
       config: {
-        mode: 'range'
+        mode: 'multiple'
       }
     };
   }

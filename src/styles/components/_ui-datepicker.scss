@@ -1,13 +1,8 @@
-.mdl-datepicker {
+.mdl-datepicker__toggle,
+.mdl-datepicker__clear {
   display: inline-block;
-  .mdl-textfield__plus {
-    display: flex;
-  }
-  .mdl-datepicker__toggle,
-  .mdl-datepicker__clear {
-    padding: 0 8px;
-    i {
-      cursor: pointer;
-    }
+  padding: 0 6px;
+  i {
+    cursor: pointer;
   }
 }
