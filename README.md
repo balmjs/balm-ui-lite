@@ -8,7 +8,9 @@
 - 基于 __[BalmJS](http://balmjs.com/)__ 的工作流，支持 ES2015+
 - 支持多种使用方式
 
-## 开发环境
+## 安装配置
+
+### 1. 开发环境
 
 推荐使用我们官方的 __[Balm CLI](https://github.com/balmjs/balm-cli)__ 来快速搭建 Vue 脚手架项目
 
@@ -18,7 +20,7 @@ npm install -g balm-cli
 balm init vue my-project
 ```
 
-## 安装 BalmUI Lite
+### 2. 安装 BalmUI Lite
 
 ```sh
 yarn add balm-ui-lite
@@ -26,9 +28,9 @@ yarn add balm-ui-lite
 npm i --save balm-ui-lite
 ```
 
-## 使用方式
+### 3. 使用方式
 
-### 普通使用(Desktop开发推荐)
+#### 普通使用(Desktop开发推荐)
 
 __`my-project/app/styles/global/_vendor.scss`__
 
@@ -46,7 +48,7 @@ Vue.use(BalmUI);
 Vue.use(BalmUI.plugins.event);
 ```
 
-### 独立使用(Mobile开发推荐)
+#### 独立使用(Mobile开发推荐)
 > 样式脚本完全模块化，打包小
 
 ```js
@@ -65,7 +67,7 @@ Vue.use($event);
 
 请查看 [BalmUI Lite 官网](http://balmjs.com/ui-vue-lite/)
 
-## UI组件列表
+### UI组件列表
 
 - Layout
     - layout
@@ -104,7 +106,7 @@ Vue.use($event);
     - progress
     - spinner
 
-## UI插件列表
+### UI插件列表
 
 - event
 - alert
@@ -116,7 +118,7 @@ Vue.use($event);
 
 > BalmUI Lite 中还包含一些常用 _指令服务_ 和 _辅助方法_，具体请查看[官方文档](http://balmjs.com/ui-vue-lite/)
 
-## 支持环境
+### 支持环境
 
 | IE9 | IE10 | IE11 | Chrome | Opera | Firefox | Safari | Chrome (Android) | Mobile Safari |
 |-----|------|------|--------|-------|---------|--------|------------------|---------------|
