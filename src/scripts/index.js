@@ -63,16 +63,17 @@ import UiIcon from './components/common/icon';
 /**
  * Form
  */
-import UiSlider from './components/form/slider';
+import UiTextfield from './components/form/textfield';
 import UiCheckbox from './components/form/checkbox';
 import UiRadio from './components/form/radio';
+import UiSelect from './components/form/select';
+import UiSelectmenu from './components/form/selectmenu';
 import UiIconToggle from './components/form/icon-toggle';
 import UiSwitch from './components/form/switch';
-import UiTextfield from './components/form/textfield';
-import UiSelect from './components/form/select';
+import UiSlider from './components/form/slider';
+import UiFileupload from './components/form/fileupload';
 import UiAutocomplete from './components/form/autocomplete';
 import UiDatepicker from './components/form/datepicker';
-import UiFileupload from './components/form/fileupload';
 import UiRangepicker from './components/form/rangepicker';
 /**
  * Loading
@@ -163,16 +164,17 @@ const components = {
   UiDivider,
   UiIcon,
   // Form
-  UiSlider,
+  UiTextfield,
   UiCheckbox,
   UiRadio,
+  UiSelect,
+  UiSelectmenu,
   UiIconToggle,
   UiSwitch,
-  UiTextfield,
-  UiSelect,
+  UiSlider,
+  UiFileupload,
   UiAutocomplete,
   UiDatepicker,
-  UiFileupload,
   UiRangepicker,
   // Loading
   UiProgress,

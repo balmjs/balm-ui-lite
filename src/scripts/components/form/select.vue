@@ -1,65 +1,41 @@
 <template>
-  <select class="mdl-select"
-    v-model="currentValue"
-    @change="handleChange">
-    <!-- Default value -->
-    <option v-if="defaultValue"
-      :value="defaultKey"
-      selected>{{ defaultValue }}</option>
-    <!-- Option list -->
-    <option v-for="option in currentOptions"
-      :value="option[optionKey]">{{ option[optionValue] }}</option>
-  </select>
+  <div class="mdl-select">
+    <select class="mdl-select__surface"
+      v-model="currentValue"
+      @change="handleChange">
+      <!-- Default value -->
+      <option v-if="defaultValue"
+        :value="defaultKey"
+        selected>{{ defaultValue }}</option>
+      <!-- Option list -->
+      <option v-for="option in currentOptions"
+        :value="option[optionKey]">{{ option[optionValue] }}</option>
+    </select>
+    <div class="mdl-select__bottom-line"></div>
+  </div>
 </template>
 
 <script>
+import selectMixin from '../../mixins/select';
+
 const EVENT_CHANGE = 'change'; // return option[optionKey]
 const EVENT_SELECTED = 'selected'; // return option
 
 export default {
   name: 'ui-select',
-  props: {
-    // state
-    model: null,
-    // ui attributes
-    options: {
-      type: Array,
-      default() {
-        return [];
-      }
-    },
-    optionKey: {
-      type: String,
-      default: 'value'
-    },
-    optionValue: {
-      type: String,
-      default: 'label'
-    },
-    defaultKey: {
-      type: String,
-      default: ''
-    },
-    defaultValue: String
-  },
-  data() {
-    return {
-      currentValue: this.model,
-      currentOptions: this.options
-    };
-  },
-  watch: {
-    model(val) {
-      this.currentValue = val;
-    },
-    options(val) {
-      this.currentOptions = val;
-    }
-  },
+  mixins: [selectMixin],
   computed: {
     currentOption() {
       return this.currentOptions.find(option => option[this.optionKey] == this.currentValue);
     }
+  },
+  watch: {
+    options(val) {
+      this.currentOptions = val;
+    }
+  },
+  mounted() {
+    this.init();
   },
   methods: {
     handleChange() {
@@ -77,9 +53,6 @@ export default {
         this.$emit(EVENT_CHANGE, defaultOption[this.optionKey]); // value: number|string
       }
     }
-  },
-  mounted() {
-    this.init();
   }
 };
 </script>
