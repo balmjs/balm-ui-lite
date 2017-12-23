@@ -33,8 +33,7 @@ npm i --save balm-ui-lite
 #### 普通使用(Desktop开发推荐)
 
 ```css
-// my-project/app/styles/global/_vendor.scss
-
+/* my-project/app/styles/global/_vendor.scss */
 @import '../../../node_modules/balm-ui-lite/src/styles/balm-ui-lite.scss';
 ```
 
