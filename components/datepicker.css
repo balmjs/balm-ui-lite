@@ -1,1 +1,1 @@
-.mdl-datepicker{display:inline-block}.mdl-datepicker .mdl-textfield__plus{display:-webkit-box;display:-ms-flexbox;display:flex}.mdl-datepicker .mdl-datepicker__clear,.mdl-datepicker .mdl-datepicker__toggle{padding:0 8px}.mdl-datepicker .mdl-datepicker__clear i,.mdl-datepicker .mdl-datepicker__toggle i{cursor:pointer}
+.mdl-datepicker__clear,.mdl-datepicker__toggle{display:inline-block;padding:0 6px}.mdl-datepicker__clear i,.mdl-datepicker__toggle i{cursor:pointer}
