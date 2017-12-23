@@ -1,5 +1,10 @@
 {
-  "props": [
+  "props": [{
+    "name": "name",
+    "type": "String",
+    "default": "(auto)",
+    "description": "下拉菜单组件唯一ID"
+  },
   {
     "name": "model",
     "type": "null",

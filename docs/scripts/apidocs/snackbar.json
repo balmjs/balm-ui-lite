@@ -31,7 +31,6 @@
     "default": "",
     "description": "动作按钮文字"
   }],
-  "slots": [],
   "events": [{
     "name": "done",
     "type": "NOOP",

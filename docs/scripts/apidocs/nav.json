@@ -1,10 +1,8 @@
 {
-  "props": [],
   "slots": [
   {
     "name": "(default)",
     "description": "默认插槽可以插入布局导航容器内容",
     "props": "className（<ui-nav-link>的类名）"
-  }],
-  "events": []
+  }]
 }

@@ -1,8 +1,6 @@
 {
-  "props": [],
   "slots": [{
     "name": "(default)",
     "description": "默认插槽可以插入卡片（右上角）菜单内容"
-  }],
-  "events": []
+  }]
 }

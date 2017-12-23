@@ -1,9 +1,7 @@
 {
-  "props": [],
   "slots": [
   {
     "name": "(default)",
     "description": "默认插槽可以插入布局间隔块（常用于分割头部标题和顶部导航）"
-  }],
-  "events": []
+  }]
 }

@@ -122,6 +122,7 @@ const data = {
     "checkbox": "<ui-checkbox>",
     "radio": "<ui-radio>",
     "select": "<ui-select>",
+    "selectmenu": "<ui-selectmenu>",
     "icon-toggle": "<ui-icon-toggle>",
     "switch": "<ui-switch>",
     "slider": "<ui-slider>",

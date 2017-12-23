@@ -1,9 +1,7 @@
 {
-  "props": [],
   "slots": [
   {
     "name": "(default)",
     "description": "默认插槽可以插入布局选项卡内容"
-  }],
-  "events": []
+  }]
 }

@@ -8,6 +8,5 @@
   "slots": [{
     "name": "(default)",
     "description": "默认插槽可以插入卡片头部容器子组件（如标题，副标题等）"
-  }],
-  "events": []
+  }]
 }

@@ -31,6 +31,7 @@ const components = [
   'divider.js',
   'pagination.js',
   'select.js',
+  'selectmenu.js',
   'fileupload.js',
   'autocomplete.js',
   'datepicker.js',

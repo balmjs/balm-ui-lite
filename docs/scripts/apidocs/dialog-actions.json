@@ -22,6 +22,5 @@
   {
     "name": "(default)",
     "description": "默认插槽可以插入对话框动作"
-  }],
-  "events": []
+  }]
 }

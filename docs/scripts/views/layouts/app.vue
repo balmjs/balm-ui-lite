@@ -9,6 +9,9 @@
           |
           <a :class="{'active': isActiveLang('en') }" @click="switchLang('en')">{{ lang.en }}</a>
         </p> -->
+        <p class="welcome-issues">
+          欢迎 <a href="https://github.com/balmjs/ui-vue-lite/issues" target="_blank">ISSUE</a>
+        </p>
       </ui-layout-header-row>
     </ui-layout-header>
     <ui-layout-drawer>

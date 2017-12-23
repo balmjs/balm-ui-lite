@@ -13,6 +13,5 @@
   "slots": [{
     "name": "(default)",
     "description": "默认插槽可以插入选项卡容器和标签页子组件"
-  }],
-  "events": []
+  }]
 }

@@ -1,9 +1,7 @@
 {
-  "props": [],
   "slots": [
   {
     "name": "(default)",
     "description": "默认插槽可以插入对话框标题（该组件右上角自带关闭按钮）"
-  }],
-  "events": []
+  }]
 }

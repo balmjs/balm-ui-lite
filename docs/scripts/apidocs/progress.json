@@ -17,7 +17,5 @@
     "type": "Number, String",
     "default": "0",
     "description": "当前进度条的缓冲区（浅色部分） [0-100]"
-  }],
-  "slots": [],
-  "events": []
+  }]
 }

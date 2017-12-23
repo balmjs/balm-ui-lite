@@ -1,8 +1,6 @@
 {
-  "props": [],
   "slots": [{
     "name": "(default)",
     "description": "默认插槽可以插入列表项头像"
-  }],
-  "events": []
+  }]
 }

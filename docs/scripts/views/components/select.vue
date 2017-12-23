@@ -1,21 +1,19 @@
 <template>
   <div class="page--select">
     <div class="component-title">
-      <h3>Select 下拉框(Desktop端 更推荐使用<router-link to="/components/selectmenu">Selectmenu</router-link>)</h3>
+      <h3>Select 下拉框 (Desktop端 更推荐使用<router-link to="/components/selectmenu">Selectmenu</router-link>)</h3>
     </div>
 
     <h4>0. 使用方式</h4>
     <ui-markdown :text="code[0]"></ui-markdown>
 
     <h4>1. 默认下拉选择</h4>
-
     <div class="snippet-group">
       <div class="snippet-demos">
         <div class="snippet-demo-padding"></div>
         <div class="snippet-demo">
           <ui-select :options="options" :model="formData.selected"
             optionKey="key" optionValue="value"
-            defaultKey="0" defaultValue="All items"
             @change="balmUI.onChange('formData.selected', $event)"
             @selected="balmUI.onChange('currentOption', $event)"></ui-select>
         </div>
@@ -33,7 +31,6 @@
     </div>
 
     <h4>2. 级联选择</h4>
-
     <div class="snippet-group">
       <div class="snippet-demos">
         <div class="snippet-demo-padding"></div>
@@ -125,7 +122,7 @@ export default {
     return {
       docs,
       formData: {
-        selected: 0,
+        selected: 1,
         province: 0,
         city: 0
       },

@@ -1,8 +1,8 @@
 ```html
-<ui-select :options="options" :model="selected"
+<ui-selectmenu :options="options" :model="formData.selected"
   optionKey="key" optionValue="value"
-  @change="balmUI.onChange('selected', $event)"
-  @selected="balmUI.onChange('currentOption', $event)"></ui-select>
+  @change="balmUI.onChange('formData.selected', $event)"
+  @selected="balmUI.onChange('currentOption', $event)"></ui-selectmenu>
 ```
 
 ```js

@@ -1,8 +1,6 @@
 {
-  "props": [],
   "slots": [{
     "name": "(default)",
     "description": "默认插槽可以插入Chip自定义按钮"
-  }],
-  "events": []
+  }]
 }

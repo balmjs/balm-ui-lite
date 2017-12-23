@@ -11,7 +11,5 @@
     "type": "Boolean",
     "default": "false",
     "description": "使用主色代替变换色加载效果"
-  }],
-  "slots": [],
-  "events": []
+  }]
 }
