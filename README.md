@@ -32,15 +32,14 @@ npm i --save balm-ui-lite
 
 #### 普通使用(Desktop开发推荐)
 
-__`my-project/app/styles/global/_vendor.scss`__
-
 ```css
+// my-project/app/styles/global/_vendor.scss
+
 @import '../../../node_modules/balm-ui-lite/src/styles/balm-ui-lite.scss';
 ```
 
-__`my-project/app/scripts/main.js`__
-
 ```js
+// my-project/app/scripts/main.js
 import Vue from 'vue';
 import BalmUI from 'balm-ui-lite';
 
