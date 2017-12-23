@@ -30,6 +30,7 @@ const data = {
     "checkbox": "Checkbox 多选框",
     "radio": "Radio 单选框",
     "select": "Select 下拉框",
+    "selectmenu": "Selectmenu 下拉菜单",
     "icon-toggle": "Icon Toggle 图标选项",
     "switch": "Switch 开关",
     "slider": "Slider 滑动条",

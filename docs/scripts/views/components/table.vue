@@ -1,8 +1,7 @@
 <template>
   <div class="page--table">
     <div class="component-title">
-      <h3>Table</h3>
-      <p>Organize data.</p>
+      <h3>Table 表格</h3>
     </div>
 
     <h4>{{ $t('table.basic') }}</h4>
@@ -70,7 +69,7 @@ import snippets from '../../mixins/snippets';
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - Table'
+    titleTemplate: '%s - <ui-table>'
   },
   data() {
     return {

@@ -1,19 +1,20 @@
-const Slider = () => import('../../views/components/slider');
+const Textfield = () => import('../../views/components/textfield');
 const Checkbox = () => import('../../views/components/checkbox');
 const Radio = () => import('../../views/components/radio');
+const Select = () => import('../../views/components/select');
+const Selectmenu = () => import('../../views/components/selectmenu');
 const IconToggle = () => import('../../views/components/icon-toggle');
 const Switch = () => import('../../views/components/switch');
-const Textfield = () => import('../../views/components/textfield');
-const Select = () => import('../../views/components/select');
+const Slider = () => import('../../views/components/slider');
 const Fileupload = () => import('../../views/components/fileupload');
 const Autocomplete = () => import('../../views/components/autocomplete');
 const Datepicker = () => import('../../views/components/datepicker');
 const Rangepicker = () => import('../../views/components/rangepicker');
 
 const formRoutes = [{
-  path: 'slider',
-  name: 'components.slider',
-  component: Slider
+  path: 'textfield',
+  name: 'components.textfield',
+  component: Textfield
 }, {
   path: 'checkbox',
   name: 'components.checkbox',
@@ -23,6 +24,14 @@ const formRoutes = [{
   name: 'components.radio',
   component: Radio
 }, {
+  path: 'select',
+  name: 'components.select',
+  component: Select
+}, {
+  path: 'selectmenu',
+  name: 'components.selectmenu',
+  component: Selectmenu
+}, {
   path: 'icon-toggle',
   name: 'components.icon-toggle',
   component: IconToggle
@@ -31,13 +40,9 @@ const formRoutes = [{
   name: 'components.switch',
   component: Switch
 }, {
-  path: 'textfield',
-  name: 'components.textfield',
-  component: Textfield
-}, {
-  path: 'select',
-  name: 'components.select',
-  component: Select
+  path: 'slider',
+  name: 'components.slider',
+  component: Slider
 }, {
   path: 'fileupload',
   name: 'components.fileupload',

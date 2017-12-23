@@ -20,6 +20,7 @@ const components = {
     'checkbox',
     'radio',
     'select',
+    'selectmenu',
     'icon-toggle',
     'switch',
     'slider',

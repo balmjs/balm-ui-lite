@@ -1,7 +1,7 @@
 <template>
   <div class="page--select">
     <div class="component-title">
-      <h3>Select 下拉框</h3>
+      <h3>Select 下拉框(Desktop端 更推荐使用<router-link to="/components/selectmenu">Selectmenu</router-link>)</h3>
     </div>
 
     <h4>0. 使用方式</h4>
@@ -119,7 +119,7 @@ const CITIES = [
 export default {
   mixins: [snippets],
   metaInfo: {
-    titleTemplate: '%s - Select'
+    titleTemplate: '%s - <ui-select>'
   },
   data() {
     return {

@@ -1,7 +1,5 @@
 <template>
-  <ui-layout
-    class="container"
-    fixedDrawer>
+  <ui-layout class="container">
     <ui-layout-header>
       <ui-layout-header-row>
         <ui-layout-title>Material Design Lite + Vue</ui-layout-title>
