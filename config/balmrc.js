@@ -17,12 +17,16 @@ module.exports = {
   scripts: {
     entry: env.useDocs ? {
       a: [
+        'core-js/shim',
+        'classlist.js',
+        'matchmedia-polyfill',
+        'matchmedia-polyfill/matchMedia.addListener'
+      ],
+      b: [
         'vue',
         'vue-router',
         'vue-meta',
-        'vue-i18n'
-      ],
-      b: [
+        'vue-i18n',
         'axios',
         'prismjs'
       ],
