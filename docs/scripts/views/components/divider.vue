@@ -1,14 +1,16 @@
 <template>
   <div class="page--divider">
-    <h1>Divider</h1>
+    <div class="component-title">
+      <h2>Divider (未更新)</h2>
+    </div>
 
-    <h2 class="line">概述</h2>
+    <h4 class="line">概述</h4>
     <p>有些人喜欢使用分割线，所以我们开发了这个组件</p>
 
-    <h2 class="line">引入</h2>
+    <h4 class="line">引入</h4>
     <ui-markdown :text="code[0]"></ui-markdown>
 
-    <h2 class="line">使用方法</h2>
+    <h4 class="line">使用方法</h4>
     <div class="snippet-group">
       <div class="snippet-header">
         <div class="snippet-demos">

@@ -1,7 +1,7 @@
 <template>
   <div class="page--rangepicker">
     <div class="component-title">
-      <h3>RangePicker 日期范围选择</h3>
+      <h2>RangePicker 日期范围选择</h2>
     </div>
 
     <h4>0. 使用方式</h4>

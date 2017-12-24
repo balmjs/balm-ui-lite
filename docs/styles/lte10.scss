@@ -1,7 +1,7 @@
-@import '../global/mixins';
-@import 'checkbox';
-@import 'list';
-@import 'divider';
+@import 'global/mixins';
+@import 'ie/checkbox';
+@import 'ie/list';
+@import 'ie/divider';
 
 /**
  * IE9 and IE10 rule sets go here

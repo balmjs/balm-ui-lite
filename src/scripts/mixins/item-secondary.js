@@ -1,6 +1,6 @@
 export default {
-  created() {
-    if (!this.$parent.hasMultiLine) {
+  mounted() {
+    if (!this.$parent.$parent.hasMultiLine) {
       console.warn('The item requires multi-line.');
     }
   }

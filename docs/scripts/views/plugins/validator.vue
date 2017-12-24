@@ -1,20 +1,22 @@
 <template>
   <div class="page--validator">
-    <h1>Validator</h1>
+    <div class="component-title">
+      <h2>Validator</h2>
+    </div>
 
-    <h2 class="line">概述</h2>
+    <h4 class="line">概述</h4>
     <p>这是一个简单的数据验证插件。</p>
 
-    <h2 class="line">引入</h2>
+    <h4 class="line">引入</h4>
     <ui-markdown :text="code[0]"></ui-markdown>
     <p>引入之后，Vue实例获得$validate方法。</p>
 
-    <h2 class="line">使用</h2>
+    <h4 class="line">使用</h4>
     <p>$validate方法有两个参数:</p>
     <ui-apidoc name="plugin-validator-arguments" :show-title="false"></ui-apidoc>
-    <h4>
+    <p>
       虽然$validate方法有第二个参数，但是我们强烈推荐将验证规则注入在Vue实例的validations属性上，可以大幅度减少方法的复杂度。
-    </h4>
+    </p>
     <p>通过在Vue实例上添加validations属性，使得待验证数据自动应用验证规则。validations每一项的键值对应待验证的字段，其中包含以下属性：</p>
     <ui-apidoc name="plugin-validator-validations" :show-title="false"></ui-apidoc>
     <div class="divider"></div>
@@ -38,12 +40,9 @@
       </template>
     </p>
     <ui-markdown :text="code[1]"></ui-markdown>
-    <h4>
+    <p>
       以上为临时插入规则的方法。自定义规则中的message属性也可以是一个方法，它和validate方法的作用域均指向当前实例。
-    </h4>
-
-    <div class="divider"></div>
-
+    </p>
   </div>
 </template>
 <script>

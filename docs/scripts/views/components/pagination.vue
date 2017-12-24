@@ -1,7 +1,7 @@
 <template>
   <div class="page--pagination">
     <div class="component-title">
-      <h3>Pagination 分页</h3>
+      <h2>Pagination 分页</h2>
     </div>
 
     <h4>0. 使用方式</h4>

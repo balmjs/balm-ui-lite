@@ -1,7 +1,7 @@
 <template>
   <div class="page--table">
     <div class="component-title">
-      <h3>Table 表格 (未更新)</h3>
+      <h2>Table 表格 (未更新)</h2>
     </div>
 
     <h4>{{ $t('table.basic') }}</h4>

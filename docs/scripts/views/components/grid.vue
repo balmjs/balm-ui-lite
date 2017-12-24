@@ -1,7 +1,7 @@
 <template>
   <div class="page--grid">
     <div class="component-title">
-      <h3>Grid 栅格</h3>
+      <h2>Grid 栅格</h2>
       <p>12 栅格系统。</p>
     </div>
 

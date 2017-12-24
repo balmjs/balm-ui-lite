@@ -6,6 +6,14 @@
 
 <script>
 export default {
-  name: 'ui-layout-drawer'
+  name: 'ui-layout-drawer',
+  watch: {
+    $route(val) {
+      // auto close drawer
+      if (this.$el.getAttribute('aria-hidden') === 'false') {
+        this.$parent.$el.MaterialLayout.toggleDrawer();
+      }
+    }
+  }
 };
 </script>

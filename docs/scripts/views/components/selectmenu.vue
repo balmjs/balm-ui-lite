@@ -1,7 +1,7 @@
 <template>
   <div class="page--selectmenu">
     <div class="component-title">
-      <h3>Select Menu 下拉菜单 (Moile端 更推荐使用<router-link to="/components/select">Select</router-link>)</h3>
+      <h2>Select Menu 下拉菜单 (Moile端 更推荐使用<router-link to="/components/select">Select</router-link>)</h2>
     </div>
 
     <h4>0. 使用方式</h4>

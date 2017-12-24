@@ -1,7 +1,7 @@
 <template>
   <div class="page--slider">
     <div class="component-title">
-      <h3>Slider 滑动条</h3>
+      <h2>Slider 滑动条</h2>
       <p>滑动型输入器，展示当前值和可选范围。</p>
     </div>
 

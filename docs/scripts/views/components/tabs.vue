@@ -1,7 +1,7 @@
 <template>
   <div class="page--tabs">
     <div class="component-title">
-      <h3>Tabs 选项卡</h3>
+      <h2>Tabs 选项卡</h2>
       <p>选项卡切换组件。</p>
     </div>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="page--layout">
     <div class="component-title">
-      <h3>Layout 布局</h3>
+      <h2>Layout 布局</h2>
       <p>构建一个页面布局。</p>
     </div>
 

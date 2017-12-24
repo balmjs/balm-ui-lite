@@ -1,7 +1,7 @@
 <template>
   <div class="page--upload">
     <div class="component-title">
-      <h3>FileUpload (未更新)</h3>
+      <h2>FileUpload (未更新)</h2>
     </div>
 
     <div class="snippet-group">

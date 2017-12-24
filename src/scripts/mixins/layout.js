@@ -1,4 +1,3 @@
-// TODO: just for layout sub components
 export default {
   props: {
     // ui attributes

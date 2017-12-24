@@ -1,7 +1,7 @@
 <template>
   <div class="page--tooltip">
     <div class="component-title">
-      <h3>Tooltip 文字提示</h3>
+      <h2>Tooltip 文字提示</h2>
       <p>简单的文字提示气泡框。</p>
     </div>
 

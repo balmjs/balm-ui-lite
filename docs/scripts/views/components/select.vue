@@ -1,7 +1,7 @@
 <template>
   <div class="page--select">
     <div class="component-title">
-      <h3>Select 下拉框 (Desktop端 更推荐使用<router-link to="/components/selectmenu">Selectmenu</router-link>)</h3>
+      <h2>Select 下拉框 (Desktop端 更推荐使用<router-link to="/components/selectmenu">Selectmenu</router-link>)</h2>
     </div>
 
     <h4>0. 使用方式</h4>

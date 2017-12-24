@@ -34,5 +34,9 @@
   {
     "name": "(default)",
     "description": "默认插槽可以插入布局头部子组件"
+  },
+  {
+    "name": "icon",
+    "description": "Icon插槽可以插入站点LOGO"
   }]
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="page--switch">
     <div class="component-title">
-      <h3>Switch 开关</h3>
+      <h2>Switch 开关</h2>
       <p>开关选择器。</p>
     </div>
 

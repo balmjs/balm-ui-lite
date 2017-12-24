@@ -1,7 +1,7 @@
 <template>
   <div class="page--autocomplete">
     <div class="component-title">
-      <h3>AutoComplete 自动补全</h3>
+      <h2>AutoComplete 自动补全</h2>
       <p>输入框自动完成功能。</p>
     </div>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="page--radio">
     <div class="component-title">
-      <h3>Radio button 单选框</h3>
+      <h2>Radio button 单选框</h2>
     </div>
 
     <h4>0. 使用方式</h4>

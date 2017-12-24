@@ -1,7 +1,7 @@
 <template>
   <div class="page--datepicker">
     <div class="component-title">
-      <h3>DatePicker 日期选择器</h3>
+      <h2>DatePicker 日期选择器</h2>
     </div>
 
     <h4>0. 使用方式</h4>

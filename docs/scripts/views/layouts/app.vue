@@ -1,5 +1,5 @@
 <template>
-  <ui-layout class="container">
+  <ui-layout class="container" fixedDrawer>
     <ui-layout-header>
       <ui-layout-header-row>
         <ui-layout-title>Material Design Lite + Vue</ui-layout-title>
@@ -11,6 +11,7 @@
         </p> -->
         <p class="welcome-issues">
           欢迎 <a href="https://github.com/balmjs/ui-vue-lite/issues" target="_blank">ISSUE</a>
+          @<strong>BalmUI Lite</strong>
         </p>
       </ui-layout-header-row>
     </ui-layout-header>
@@ -23,7 +24,7 @@
       </ui-layout-title>
       <ui-nav v-for="(item, index) in menu" :key="index">
         <template slot-scope="props">
-          <h3>{{ $t(item.name) }}</h3>
+          <h5>{{ $t(item.name) }}</h5>
           <template v-for="(subitem, index) in item.subitems">
             <label v-if="subitem.label">{{ subitem.name }}</label>
             <a v-else-if="subitem.name === 'menuitem.icon'"

@@ -5,10 +5,12 @@
 </template>
 
 <script>
-import itemSecondaryMixin from '../../mixins/item-secondary';
-
 export default {
   name: 'ui-item-secondary',
-  mixins: [itemSecondaryMixin]
+  mounted() {
+    if (!this.$parent.hasMultiLine) {
+      console.warn('The item requires multi-line.');
+    }
+  }
 };
 </script>

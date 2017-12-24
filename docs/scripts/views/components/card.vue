@@ -1,7 +1,7 @@
 <template>
   <div class="page--card">
     <div class="component-title">
-      <h3>Card 卡片</h3>
+      <h2>Card 卡片</h2>
       <p>卡片式容器展示数据。</p>
     </div>
 

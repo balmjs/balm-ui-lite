@@ -1,7 +1,7 @@
 <template>
   <div class="page--progress">
     <div class="component-title">
-      <h3>Progress Bar 进度条</h3>
+      <h2>Progress Bar 进度条</h2>
       <p>展示操作的当前进度。</p>
     </div>
 

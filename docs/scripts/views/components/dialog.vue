@@ -1,7 +1,7 @@
 <template>
   <div class="page--dialog">
     <div class="component-title">
-      <h3>Dialog 对话框</h3>
+      <h2>Dialog 对话框</h2>
       <p>可包含用户操作内容的模拟弹窗。</p>
     </div>
 

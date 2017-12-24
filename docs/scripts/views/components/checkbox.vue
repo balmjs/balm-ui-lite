@@ -1,7 +1,7 @@
 <template>
   <div class="page--checkbox">
     <div class="component-title">
-      <h3>Checkbox 多选框</h3>
+      <h2>Checkbox 多选框</h2>
     </div>
 
     <h4>0. 使用方式</h4>

@@ -116,6 +116,7 @@ const data = {
     "menu": "<ui-menu>",
     "menuitem": "<ui-menuitem>",
     "tooltip": "<ui-tooltip>",
+    "divider": "<ui-divider>",
     "snackbar": "<ui-snackbar>",
     "pagination": "<ui-pagination>",
     "textfield": "<ui-textfield>",
@@ -126,8 +127,10 @@ const data = {
     "icon-toggle": "<ui-icon-toggle>",
     "switch": "<ui-switch>",
     "slider": "<ui-slider>",
+    "fileupload": "<ui-fileupload>",
     "autocomplete": "<ui-autocomplete>",
-    "datepicker": "<ui-datepicker>"
+    "datepicker": "<ui-datepicker>",
+    "rangepicker": "<ui-rangepicker>"
   }
 };
 

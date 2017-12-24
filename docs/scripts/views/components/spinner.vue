@@ -1,7 +1,7 @@
 <template>
   <div class="page--spinner">
     <div class="component-title">
-      <h3>Spinner 加载中</h3>
+      <h2>Spinner 加载中</h2>
       <p>显示加载中状态。</p>
     </div>
 

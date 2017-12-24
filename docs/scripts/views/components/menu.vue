@@ -1,7 +1,7 @@
 <template>
   <div class="page--menu">
     <div class="component-title">
-      <h3>Menu 菜单</h3>
+      <h2>Menu 菜单</h2>
       <p>向下弹出的列表。</p>
     </div>
 

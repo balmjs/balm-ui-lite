@@ -1,7 +1,7 @@
 <template>
   <div class="page--list">
     <div class="component-title">
-      <h3>List 列表</h3>
+      <h2>List 列表</h2>
       <p>通用列表。</p>
     </div>
 
@@ -122,7 +122,7 @@
           <div class="snippet-demo">
             <div class="snippet-demo-container demo-list demo-list__two-line">
               <!-- Two Line List with secondary info and action -->
-              <ui-list class="demo-list-two" two-line>
+              <ui-list class="demo-list-two" twoLine>
                 <ui-item v-for="(item, index) in items2" :key="index">
                   <ui-item-primary>
                     <ui-item-avatar>{{ item.avatar }}</ui-item-avatar>
@@ -156,7 +156,7 @@
           <div class="snippet-demo">
             <div class="snippet-demo-container demo-list demo-list__three-line">
               <!-- Three Line List with secondary info and action -->
-              <ui-list class="demo-list-three" three-line>
+              <ui-list class="demo-list-three" threeLine>
                 <ui-item v-for="(item, index) in items2" :key="index">
                   <ui-item-primary>
                     <ui-item-avatar>{{ item.avatar }}</ui-item-avatar>

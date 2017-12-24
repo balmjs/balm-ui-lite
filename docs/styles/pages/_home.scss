@@ -1,8 +1,9 @@
 .page--home {
   display: flex;
+  flex-wrap: wrap;
 
   max-width: 1500px;
-  padding-top: 64px;
+  padding-top: 32px;
 
   justify-content: space-around;
   align-items: center;
@@ -10,6 +11,16 @@
     font-size: 16px;
   }
   .banner {
-    width: 800px;
+    width: 600px;
+    margin: 0 20px 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .page--home {
+    flex-wrap: nowrap;
+    .banner {
+      margin-left: 0;
+    }
   }
 }

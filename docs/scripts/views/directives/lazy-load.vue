@@ -1,15 +1,17 @@
 <template>
   <div class="page--lazy-load">
-    <h1>lazy-load</h1>
+    <div class="component-title">
+      <h2>Lazy Load</h2>
+    </div>
 
-    <h2 class="line">概述</h2>
+    <h4 class="line">概述</h4>
     <p>一个懒加载指令。</p>
-    <h4>注意：这个指令PC端不兼容IE11以下，移动端不能兼容ios</h4>
+    <p>注意：这个指令PC端不兼容IE11以下，移动端不能兼容ios</p>
 
-    <h2 class="line">引入</h2>
+    <h4 class="line">引入</h4>
     <ui-markdown :text="code[0]"></ui-markdown>
 
-    <h2 class="line">使用</h2>
+    <h4 class="line">使用</h4>
     这里有一个示例：
     <div class="image-list" v-lazy-load>
       <div class="item" v-for="image in images">
@@ -17,9 +19,8 @@
       </div>
     </div>
     <ui-markdown :text="code[1]"></ui-markdown>
-    <h4>使用'v-lazy-load'指令在需要滚动的容器上，然后使用data-src自定义属性设置图片路径。</h4>
+    <p>使用'v-lazy-load'指令在需要滚动的容器上，然后使用data-src自定义属性设置图片路径。</p>
     <p>如果你使用img标签，则自动设置src属性；其他标签会自动设置css背景图片样式。</p>
-
   </div>
 </template>
 <script>

@@ -1,7 +1,7 @@
 <template>
   <div class="page--textfield">
     <div class="component-title">
-      <h3>Text Field 输入框</h3>
+      <h2>Text Field 输入框</h2>
     </div>
 
     <h4>0. 使用方式</h4>

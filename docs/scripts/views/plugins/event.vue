@@ -1,8 +1,10 @@
 <template>
   <div class="page--event">
+    <div class="component-title">
+      <h2>Event</h2>
+    </div>
 
-    <h1>Event</h1>
-    <h2 class="line">概述</h2>
+    <h4 class="line">概述</h4>
     <p>我们注意到，当你触发一些表单事件（例如：input的change事件）或者触发一些组件的事件（例如弹框组件的打开和关闭）时，你需要在当前Vue实例下面注册事件的处理方法。就像下面：</p>
     <p>
       <ui-textfield :model="formData.name" @change="onChange($event)" placeholder="请输入"></ui-textfield>
@@ -14,10 +16,10 @@
     <p>赋值 -> 处理方法，如果每次都能够自动赋值（尤其是父子组件之间），那么我们仅仅需要添加一个处理方法就可以达到目的。</p>
     <p>为了实现上面的目的，我们开发了这个全局通用事件处理方法的插件。你仅仅需要调用这个插件的方法，然后专注自己的逻辑就行了！不用每次都在Vue实例的methods里面添加一个类似'onChange'的处理函数。</p>
 
-    <h2 class="line">引入</h2>
+    <h4 class="line">引入</h4>
     <ui-markdown :text="code[0]"></ui-markdown>
 
-    <h2 class="line">示例</h2>
+    <h4 class="line">示例</h4>
     <p>还是最开始的例子：</p>
     <p>
       <ui-textfield :model="formData.name" @change="balmUI.onChange('formData.name', $event.target.value.trim())" placeholder="请输入"></ui-textfield>
@@ -38,7 +40,7 @@
     </ui-dialog>
     <ui-markdown :text="code[3]"></ui-markdown>
     <p>上面的示例展示了如何通过Event插件更改当前数据的状态，从而使我们只专注于自己的业务逻辑。</p>
-    <h2 class="line">方法</h2>
+    <h4 class="line">方法</h4>
     <p>Event插件包含以下方法：</p>
     <ul>
       <li>balmUI.onChange(property, value, fn)</li>

@@ -1,7 +1,7 @@
 <template>
   <div class="page--snackbar">
     <div class="component-title">
-      <h3>Snackbar 提示框（一般情况下推荐直接使用<router-link to="/plugins/toast">Toast插件</router-link>）</h3>
+      <h2>Snackbar 提示框（一般情况下推荐直接使用<router-link to="/plugins/toast">Toast插件</router-link>）</h2>
       <p>短暂的通知弹框。</p>
     </div>
 

@@ -5,10 +5,7 @@
 </template>
 
 <script>
-import itemSecondaryMixin from '../../mixins/item-secondary';
-
 export default {
-  name: 'ui-item-action',
-  mixins: [itemSecondaryMixin]
+  name: 'ui-item-action'
 };
 </script>
