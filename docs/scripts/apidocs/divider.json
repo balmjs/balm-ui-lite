@@ -3,10 +3,10 @@
     "name": "type",
     "type": "String, Number",
     "default": "'horizontal'",
-    "description": "Determine the direction of the divider."
+    "description": "确定分割线的方向"
   }],
   "slots": [{
     "name": "(default)",
-    "description": "The default slot holds the divider text and can contain HTML"
+    "description": "默认插槽"
   }]
 }
