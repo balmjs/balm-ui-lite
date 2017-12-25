@@ -98,9 +98,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.mdl-icon-toggle.is-checked .mdl-icon-toggle__label {
-  color: red;
-}
-</style>
