@@ -4,7 +4,6 @@
       <h2>Table 表格 (未更新)</h2>
     </div>
 
-    <h4>{{ $t('table.basic') }}</h4>
     <ui-table
       :data="table1.data"
       :thead="table1.thead"
@@ -14,9 +13,8 @@
       @edit="onEdit"
       @delete="onDelete">
     </ui-table>
-    <ui-markdown :text="code[0]"></ui-markdown>
+    <ui-markdown :code="code[1]"></ui-markdown>
 
-    <h4>{{ $t('table.advanced') }}</h4>
     <ui-table
       :data="table2.data"
       :caption="table2.caption"
@@ -36,7 +34,7 @@
         {{ table2.tableDetail }}
       </div>
     </ui-table>
-    <ui-markdown :text="code[1]"></ui-markdown>
+    <ui-markdown :code="code[2]"></ui-markdown>
 
     <h4>Custom</h4>
     <ui-table>
@@ -57,7 +55,7 @@
         </tr>
       </template>
     </ui-table>
-    <ui-markdown :text="code[2]"></ui-markdown>
+    <ui-markdown :code="code[3]"></ui-markdown>
 
     <ui-apidoc name="table"></ui-apidoc>
   </div>

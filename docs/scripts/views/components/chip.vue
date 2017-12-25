@@ -1,7 +1,7 @@
 <template>
   <div class="page--chip">
     <div class="component-title">
-      <h2>Chip</h2>
+      <h2>Chip 标签</h2>
     </div>
 
     <h4>0. 使用方式</h4>

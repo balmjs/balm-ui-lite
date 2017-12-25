@@ -20,7 +20,7 @@ const data = {
     // common
     "badge": "Badge 徽标数",
     "button": "Button 按钮",
-    "chip": "Chip",
+    "chip": "Chip 标签",
     "menu": "Menu 菜单",
     "tooltip": "Tooltip 文字提示",
     "divider": "Divider 分割线",
