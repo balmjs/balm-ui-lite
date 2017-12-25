@@ -52,5 +52,36 @@
   "slots": [{
     "name": "(default)",
     "description": "默认插槽可以插入按钮内容"
+  }],
+  "sass": [{
+    "var": "$button-primary-color",
+    "description": "默认按钮 主色（背景色）"
+  }, {
+    "var": "$button-secondary-color",
+    "description": "默认按钮 辅色（前景色）"
+  }, {
+    "var": "$button-hover-color",
+    "description": "默认按钮 hover颜色"
+  }, {
+    "var": "$button-active-color",
+    "description": "默认按钮 激活颜色"
+  }, {
+    "var": "$button-primary-color-alt",
+    "description": "着色按钮 主色（背景色），扁平化或图标按钮的前景色"
+  }, {
+    "var": "$button-secondary-color-alt",
+    "description": "着色按钮 辅色（前景色）"
+  }, {
+    "var": "$button-hover-color-alt",
+    "description": "着色按钮 hover颜色"
+  }, {
+    "var": "$button-active-color-alt",
+    "description": "着色按钮 激活颜色"
+  }, {
+    "var": "$button-primary-color-disabled",
+    "description": "禁用按钮 主色（背景色）"
+  }, {
+    "var": "$button-secondary-color-disabled",
+    "description": "禁用按钮 辅色（前景色）"
   }]
 }

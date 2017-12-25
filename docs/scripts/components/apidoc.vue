@@ -4,14 +4,14 @@
     <ui-tabs :active="tab">
       <ui-tab-bar effect position="left" @change="balmUI.onChange('tab', $event)">
         <ui-tab
-          v-for="(item, index) in ['props', 'slots', 'events']"
+          v-for="(item, index) in TYPES"
           v-show="docs[item]"
           :key="index">
           {{ item }}
         </ui-tab>
       </ui-tab-bar>
       <ui-panel
-        v-for="(item, index) in ['props', 'slots', 'events']"
+        v-for="(item, index) in TYPES"
         v-show="docs[item]"
         :key="index">
         <ui-table
@@ -27,6 +27,8 @@
 </template>
 
 <script>
+const TYPES = ['props', 'slots', 'events', 'sass'];
+
 export default {
   name: 'ui-apidoc',
   props: {
@@ -41,6 +43,7 @@ export default {
   },
   data() {
     return {
+      TYPES,
       api: {},
       tab: 0
     };
@@ -48,10 +51,9 @@ export default {
   computed: {
     docs() {
       let result = {};
-      let types = ['props', 'slots', 'events'];
       let flag = false;
 
-      types.forEach( (value, key) => {
+      TYPES.forEach((value, key) => {
         if (this.api[value] && this.api[value].length) {
           result[value] = {
             data: this.api[value],
