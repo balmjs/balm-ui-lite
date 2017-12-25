@@ -52,5 +52,15 @@
     "name": "change",
     "type": "Function(picked: string)",
     "description": "选项变化时的回调函数"
+  }],
+  "sass": [{
+    "var": "$radio-color",
+    "description": "选中后的颜色"
+  }, {
+    "var": "$radio-off-color",
+    "description": "未选中的颜色"
+  }, {
+    "var": "$radio-disabled-color",
+    "description": "禁用时的颜色"
   }]
 }
