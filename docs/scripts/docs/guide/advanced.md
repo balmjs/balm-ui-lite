@@ -1,5 +1,9 @@
 # BalmUI Lite 进阶用法
 
+1. 样式模块化方案
+2. 脚本模块化方案
+3. 自动获取UI所需的图片和字体资源
+
 > ⚠️ 以下配置依旧基于 [Balm CLI](https://github.com/balmjs/balm-cli) 搭建的 Vue脚手架
 
 ## 1. 样式模块化
@@ -219,7 +223,7 @@ module.exports = {
 
 > 然后代码中引用的 `balm-ui-lite` 就直接指向源代码了，可用于调试 BalmUI Lite 的源代码
 
-## 3. 自动复制UI所需的图片和字体资源
+## 3. 自动获取UI所需的图片和字体资源
 
 编辑 `/path/to/my-project/gulpfile.js`
 
