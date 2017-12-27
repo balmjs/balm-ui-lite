@@ -24,7 +24,9 @@
         </div>
       </div>
     </div>
-    <ui-markdown :text="code[1]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[1]"></ui-markdown>
+    </ui-accordion>
 
     <ui-divider>特别长的分割线</ui-divider>
 
@@ -44,7 +46,9 @@
         </div>
       </div>
     </div>
-    <ui-markdown :text="code[2]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[2]"></ui-markdown>
+    </ui-accordion>
 
     <ui-divider>特别长的分割线</ui-divider>
 
@@ -63,7 +67,9 @@
         </div>
       </div>
     </div>
-    <ui-markdown :text="code[3]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[3]"></ui-markdown>
+    </ui-accordion>
 
     <ui-apidoc name="divider"></ui-apidoc>
   </div>

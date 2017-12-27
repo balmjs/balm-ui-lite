@@ -34,7 +34,9 @@
           <div class="snippet-caption-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[1]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[1]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <!-- Demo 2 -->
@@ -67,7 +69,9 @@
           <div class="snippet-caption-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[2]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[2]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <h4>2. 矩形按钮 &lt;ui-button raised&gt;</h4>
@@ -96,7 +100,9 @@
           <div class="snippet-caption-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[3]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[3]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <!-- Demo 4 -->
@@ -123,7 +129,9 @@
           <div class="snippet-caption-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[4]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[4]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <h4>3. 扁平化按钮 &lt;ui-button&gt;</h4>
@@ -152,7 +160,9 @@
           <div class="snippet-caption-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[5]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[5]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <!-- Demo 6 -->
@@ -175,7 +185,9 @@
           <div class="snippet-caption-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[6]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[6]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <h4>4. 其他按钮</h4>
@@ -200,7 +212,9 @@
           <div class="snippet-caption-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[7]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[7]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <!-- Demo 8 -->
@@ -227,7 +241,9 @@
           <div class="snippet-caption-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[8]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[8]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <!-- Demo 9 -->
@@ -239,7 +255,9 @@
           </div>
         </div>
       </div>
-      <ui-markdown :code="code[9]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[9]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <ui-apidoc name="button"></ui-apidoc>

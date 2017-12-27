@@ -19,7 +19,7 @@
       {{ files1 }}
     </div>
     <ui-accordion>
-      <ui-markdown :text="code[1]"></ui-markdown>
+      <ui-markdown :code="code[1]"></ui-markdown>
     </ui-accordion>
 
     <h6>2.多选 + 文件类型限定 + 图片预览</h6>

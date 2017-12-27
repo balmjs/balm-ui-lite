@@ -18,7 +18,9 @@
         <span :data-src="image"></span>
       </div>
     </div>
-    <ui-markdown :text="code[1]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[1]"></ui-markdown>
+    </ui-accordion>
     <p>使用'v-lazy-load'指令在需要滚动的容器上，然后使用data-src自定义属性设置图片路径。</p>
     <p>如果你使用img标签，则自动设置src属性；其他标签会自动设置css背景图片样式。</p>
   </div>

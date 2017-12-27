@@ -17,7 +17,9 @@
 
     <h3>示例</h3>
     <p><ui-button raised colored @click="$alert('你打开了警告框！')">打开警告框</ui-button></p>
-    <ui-markdown :text="code[1]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[1]"></ui-markdown>
+    </ui-accordion>
     <p>通过这个插件，你可以很容易的创造一个简单的警告框。</p>
   </div>
 </template>

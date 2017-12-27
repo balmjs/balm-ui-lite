@@ -25,7 +25,9 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[1]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[1]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <h4>2. 日期时间选择 + 自定义图标</h4>
@@ -52,7 +54,9 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[2]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[2]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <h4>3. 简单时间范围选择（如需定制化时间范围选择推荐使用<router-link to="/components/rangepicker">&lt;ui-rangepicker&gt;</router-link>）</h4>
@@ -70,7 +74,9 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[3]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[3]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <h4>4. 多时间选择</h4>
@@ -88,7 +94,9 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[4]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[4]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <ui-apidoc name="datepicker"></ui-apidoc>

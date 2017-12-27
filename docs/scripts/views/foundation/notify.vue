@@ -16,9 +16,13 @@
 
     <h2 class="line">调用方法</h2>
     <p>全局调用，用于Vue实例外部</p>
-    <ui-markdown :text="code[1]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[1]"></ui-markdown>
+    </ui-accordion>
     <p>实例内部调用</p>
-    <ui-markdown :text="code[2]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[2]"></ui-markdown>
+    </ui-accordion>
     <p>
       <ui-button colored
                  raised
@@ -52,10 +56,14 @@
 
     <h3>$notify.add(options)</h3>
     <p>add是Notify的主要方法，通过将配置属性传入add方法，我们可以改变消息通知框的结构和表现形式。</p>
-    <ui-markdown :text="code[3]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[3]"></ui-markdown>
+    </ui-accordion>
     <h4>下面是一个示例</h4>
     <p><ui-button colored raised @click="$notify.add(options2)">带有头像和多个按钮的</ui-button></p>
-    <ui-markdown :text="code[4]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[4]"></ui-markdown>
+    </ui-accordion>
     <h4>另一些示例</h4>
     <p>
       <ui-button colored raised @click="$notify.add(options3)">移除进度条的（不会再自动关闭）</ui-button>
@@ -68,18 +76,24 @@
     <p>addButtonHandler是一个灵活的方法，它允许你事先将各种函数预设进Notify的btnHandlers集合中，从而使得在添加按钮handler的时候可以使用字符串来映射对应的处理方法。</p>
     <h4>提示：当按钮被点击触发处理函数时，不会改变当前函数执行的作用域，同时会把当前的notify对象作为参数传入该函数中。</h4>
     <p><ui-button colored raised @click="$notify.add(options5)">使用字符串映射预设的处理方法</ui-button></p>
-    <ui-markdown :text="code[5]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[5]"></ui-markdown>
+    </ui-accordion>
     <h4>提示：你可以比较这个例子和上面调用相同方法的例子之间的区别。</h4>
     <h4>扩展：通过这个方法，我们可以全局预设好Notify需要处理的事件，而调用的时候只需要把自定义按钮的handler属性设置为对应字符串。</h4>
     <p>这个方法的传参有三种形式：</p>
-    <ui-markdown :text="code[6]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[6]"></ui-markdown>
+    </ui-accordion>
 
     <div class="divider"></div>
 
     <h3>$notify.close(notify)</h3>
     <p>这个方法用于手动关闭指定Notify。通常用于按钮设置为点击不自动关闭，然后自行处理的逻辑。</p>
     <p><ui-button colored raised @click="$notify.add(options6)">输入like关闭</ui-button></p>
-    <ui-markdown :text="code[7]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[7]"></ui-markdown>
+    </ui-accordion>
 
     <div class="divider"></div>
 

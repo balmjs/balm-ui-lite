@@ -39,7 +39,9 @@
         原因：<span v-for="message in messages">{{ message }}；</span>
       </template>
     </p>
-    <ui-markdown :text="code[1]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[1]"></ui-markdown>
+    </ui-accordion>
     <p>
       以上为临时插入规则的方法。自定义规则中的message属性也可以是一个方法，它和validate方法的作用域均指向当前实例。
     </p>

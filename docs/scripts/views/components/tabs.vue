@@ -37,7 +37,9 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[1]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[1]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <ui-apidoc name="tabs"></ui-apidoc>

@@ -29,7 +29,9 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[1]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[1]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <div class="snippet-group">
@@ -52,7 +54,9 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[2]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[2]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <h4>2. 可操作列表</h4>
@@ -82,7 +86,9 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[3]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[3]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <div class="snippet-group">
@@ -110,7 +116,9 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[4]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[4]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <h4>3. 两行结构列表</h4>
@@ -144,7 +152,9 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[5]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[5]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <h4>4. 三行结构列表</h4>
@@ -177,7 +187,9 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[6]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[6]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <ui-apidoc name="list"></ui-apidoc>

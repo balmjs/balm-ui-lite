@@ -11,7 +11,9 @@
       <br>
       你的输入：{{formData.name}}
     </p>
-    <ui-markdown :text="code[1]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[1]"></ui-markdown>
+    </ui-accordion>
     <p>这当然是无可厚非的做法，但是这些方法都大同小异，无非是改变当前实例下某个状态，可能接下来还要再处理一些额外的逻辑。</p>
     <p>赋值 -> 处理方法，如果每次都能够自动赋值（尤其是父子组件之间），那么我们仅仅需要添加一个处理方法就可以达到目的。</p>
     <p>为了实现上面的目的，我们开发了这个全局通用事件处理方法的插件。你仅仅需要调用这个插件的方法，然后专注自己的逻辑就行了！不用每次都在Vue实例的methods里面添加一个类似'onChange'的处理函数。</p>
@@ -26,7 +28,9 @@
       <br>
       你的输入：{{formData.name}}
     </p>
-    <ui-markdown :text="code[2]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[2]"></ui-markdown>
+    </ui-accordion>
     <p>比对代码，你会发现这一次我们没有为表单的change事件编写处理函数，但是依然成功的改变了状态。</p>
     <p>再来一个对话框组件的例子：</p>
     <p><ui-button raised colored @click="balmUI.onShow('dialog.show')">打开对话框组件</ui-button></p>
@@ -38,7 +42,9 @@
       <ui-dialog-content>对话框组件</ui-dialog-content>
       <ui-dialog-actions></ui-dialog-actions>
     </ui-dialog>
-    <ui-markdown :text="code[3]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[3]"></ui-markdown>
+    </ui-accordion>
     <p>上面的示例展示了如何通过Event插件更改当前数据的状态，从而使我们只专注于自己的业务逻辑。</p>
     <h4 class="line">方法</h4>
     <p>Event插件包含以下方法：</p>

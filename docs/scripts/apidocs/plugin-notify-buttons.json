@@ -3,7 +3,7 @@
     "name": "autoClose",
     "type": "Boolean",
     "default": "true",
-    "description": "是否自动关闭"
+    "description": "点击按钮是否关闭Notify"
   },{
     "name": "className",
     "type": "String",

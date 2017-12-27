@@ -17,12 +17,14 @@
 
     <h4>示例</h4>
     <p><ui-button raised colored @click="$confirm('你打开了确认框！')">打开确认框</ui-button></p>
-    <ui-markdown :text="code[1]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[1]"></ui-markdown>
+    </ui-accordion>
     <p>通过这个插件，你可以很容易的创造一个简单的确认框。</p>
     <p>不过通常，我们要根据点击不同的按钮来区分逻辑，请看下面这个例子：</p>
     <p><ui-button raised colored @click="openConfirm">打开另一个确认框</ui-button></p>
     <ui-markdown :text="code[2]"></ui-markdown>
-    <h4>这是使用confirm插件来处理逻辑的标准方式，但是由于$confirm方法返回的是一个Promise实例，所以它还有另外两种写法：</h4>
+    <h6>这是使用confirm插件来处理逻辑的标准方式，但是由于$confirm方法返回的是一个Promise实例，所以它还有另外两种写法：</h6>
     <ui-markdown :text="code[3]"></ui-markdown>
 
     <p>你可以比较几种写法的区别。如果你不需要复写确认框的样式，我们强烈推荐使用最后一种方式。</p>

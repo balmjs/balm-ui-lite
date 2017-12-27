@@ -13,7 +13,9 @@
       @edit="onEdit"
       @delete="onDelete">
     </ui-table>
-    <ui-markdown :code="code[1]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[1]"></ui-markdown>
+    </ui-accordion>
 
     <ui-table
       :data="table2.data"
@@ -34,7 +36,9 @@
         {{ table2.tableDetail }}
       </div>
     </ui-table>
-    <ui-markdown :code="code[2]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[2]"></ui-markdown>
+    </ui-accordion>
 
     <h4>Custom</h4>
     <ui-table>
@@ -55,7 +59,9 @@
         </tr>
       </template>
     </ui-table>
-    <ui-markdown :code="code[3]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[3]"></ui-markdown>
+    </ui-accordion>
 
     <ui-apidoc name="table"></ui-apidoc>
   </div>

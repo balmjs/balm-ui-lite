@@ -33,14 +33,18 @@
 
     <h5>更改布局</h5>
     <p><ui-button colored raised @click="$notify.add(options2)">带有头像和多个按钮的</ui-button></p>
-    <ui-markdown :text="code[3]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[3]"></ui-markdown>
+    </ui-accordion>
 
     <h5>更改进度条</h5>
     <p>
       <ui-button colored raised @click="$notify.add(options3)">移除进度条的（不会再自动关闭）</ui-button>
       <ui-button raised @click="$notify.add(options4)">改变了进度条颜色的</ui-button>
     </p>
-    <ui-markdown :text="code[4]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[4]"></ui-markdown>
+    </ui-accordion>
 
     <p><strong>使用$notify.add方法，通过传入不同的参数，可以随意定义每个Notify的样式。</strong></p>
 
@@ -60,24 +64,32 @@
     <p>提示：当按钮被点击触发处理函数时，不会改变当前函数执行的作用域，同时会把当前的notify对象作为参数传入该函数中。</p>
     <p>通过这个方法，可以把上面多个按钮的例子改写一下：</p>
     <p><ui-button colored raised @click="$notify.add(options5)">使用字符串映射预设的处理方法</ui-button></p>
-    <ui-markdown :text="code[5]"></ui-markdown>
+    <ui-accordion expanded>
+      <ui-markdown :code="code[5]"></ui-markdown>
+    </ui-accordion>
     <p>提示：你可以比较这个例子和上面调用相同方法的例子之间的区别。</p>
     <p>扩展：通过这个方法，我们可以全局预设好Notify需要处理的事件，而调用的时候只需要把自定义按钮的handler属性设置为对应字符串。</p>
     <p>这个方法的传参有三种形式：</p>
-    <ui-markdown :text="code[6]"></ui-markdown>
+    <ui-accordion expanded>
+      <ui-markdown :code="code[6]"></ui-markdown>
+    </ui-accordion>
 
     <div class="divider"></div>
 
     <h5>$notify.close(notify: Object)</h5>
     <p>这个方法用于手动关闭指定Notify。通常用于按钮设置为点击不自动关闭，然后自行处理的逻辑。</p>
     <p><ui-button colored raised @click="$notify.add(options6)">输入like关闭</ui-button></p>
-    <ui-markdown :text="code[7]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[7]"></ui-markdown>
+    </ui-accordion>
     <p>notify参数是一个对象，只需要包含指定notify的id即可：{id: targetNotifyId}；这个对象一般会作为参数传入按钮的处理方法中，另外Notify的add方法也会返回这个对象。</p>
 
     <div class="divider"></div>
 
     <h5>$notify.findNotifyIndex(notify: Object)</h5>
     <p>这个方法用于返回指定Notify的索引。可能会在某些场景下有用。</p>
+
+    <div class="divider"></div>
 
     <h5>$notify.findNotify(notify: Object)</h5>
     <p>这个方法用于返回指定的Notify。可能会在某些场景下有用。</p>

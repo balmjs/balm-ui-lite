@@ -21,7 +21,9 @@
       <ui-button raised colored @click="$toast({timeout: 3000, className: 'my-custom-toast', message: '更多改变的短暂提示更多改变的短暂提示更多改变的短暂提示更多改变的短暂提示更多改变的短暂提示更多改变的短暂提示'})">打开第三个toast</ui-button>
     </p>
 
-    <ui-markdown :text="code[1]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[1]"></ui-markdown>
+    </ui-accordion>
 
     <p>通过这个插件，你可以很容易的创造一个短暂提示框。</p>
 

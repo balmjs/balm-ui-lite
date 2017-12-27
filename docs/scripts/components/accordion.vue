@@ -15,9 +15,15 @@
 <script>
   export default {
   	name: 'ui-accordion',
+    props: {
+      expanded: {
+      	type: Boolean,
+        default: false
+      }
+    },
   	data () {
   		return {
-  			show: false
+  			show: this.expanded
       }
     },
     methods: {

@@ -14,7 +14,9 @@
       <div class="snippet-demo">
         <ui-button raised colored @click="balmUI.onShow('show1')">Simple Dialog</ui-button>
       </div>
-      <ui-markdown :code="code[1]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[1]"></ui-markdown>
+      </ui-accordion>
     </div>
     <ui-dialog :open="show1" @close="balmUI.onClose('show1')" @confirm="onConfirm">
       <ui-dialog-title>
@@ -30,7 +32,9 @@
       <div class="snippet-demo">
         <ui-button raised colored @click="balmUI.onShow('show2')">Dialog with full width actions</ui-button>
       </div>
-      <ui-markdown :code="code[2]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[2]"></ui-markdown>
+      </ui-accordion>
     </div>
     <ui-dialog :open="show2" @close="balmUI.onClose('show2')" @confirm="onConfirm">
       <ui-dialog-content>
@@ -45,7 +49,9 @@
       <div class="snippet-demo">
         <ui-button raised colored @click="balmUI.onShow('show3')">Scrolling Dialog</ui-button>
       </div>
-      <ui-markdown :code="code[3]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[3]"></ui-markdown>
+      </ui-accordion>
     </div>
     <ui-dialog maskClosable :open="show3" @close="balmUI.onClose('show3')">
       <ui-dialog-content>

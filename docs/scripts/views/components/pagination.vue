@@ -18,7 +18,9 @@
         @change="balmUI.onChange('list1.page', $event)">
       </ui-pagination>
     </div>
-    <ui-markdown :code="code[1]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[1]"></ui-markdown>
+    </ui-accordion>
 
     <h4>2. 完整分页</h4>
 
@@ -47,7 +49,9 @@
         </template>
       </ui-pagination>
     </div>
-    <ui-markdown :code="code[2]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[2]"></ui-markdown>
+    </ui-accordion>
 
     <h4>3. 极简分页</h4>
 
@@ -62,7 +66,9 @@
         <span>{{ list3.page }}</span>
       </ui-pagination>
     </div>
-    <ui-markdown :code="code[3]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[3]"></ui-markdown>
+    </ui-accordion>
 
     <ui-apidoc name="pagination"></ui-apidoc>
   </div>

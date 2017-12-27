@@ -22,7 +22,7 @@ import {jsonEqual} from 'balm-ui-lite/helpers/utils';
 const a = [1];
 const b = [1];
 
-helpers.jsonEqual(a, b); // true;
+jsonEqual(a, b); // true;
 ```
 
 如果你把helpers封装成插件，则可以在Vue实例下直接使用this.$helpers.xxx了。
