@@ -1,0 +1,147 @@
+.preview-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1em 0 0 1em;
+  position: relative;
+}
+
+.preview-list > .item {
+  width: 12.5%;
+  padding-right: 1em;
+  margin-bottom: 1em;
+  list-style: none;
+  transition: all .25s;
+}
+
+.preview-list > .item .inner {
+  width: 100%;
+}
+
+.preview-list > .item .preview {
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.preview-list > .item .name {
+  display: block;
+  width: 100%;
+  line-height: 1.8em;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.preview-list > .item .actions {
+  display: flex;
+  height: 48px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1em;
+}
+
+.preview-list > .item.add-btn .mdl-file {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.preview-list > .item.add-btn .add-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+}
+
+.list-enter, .list-leave-to {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.list-leave-active {
+  position: absolute;
+}
+
+.file-list {
+  padding: 1em 0 0 0;
+  width: 640px;
+  max-width: 100%;
+}
+
+.file-list > .item {
+  list-style: none;
+  width: 100%;
+  transform-style: preserve-3d;
+  margin-bottom: 1em;
+  position: relative;
+}
+
+.file-list > .item > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  padding: 0 1em;
+  transform-origin: 50% 0;
+}
+
+.file-list .progress {
+  background-color: #f8f8f8;
+}
+
+.file-list .file-info {
+  background-color: #fff;
+}
+
+.file-list > .item .progress .mdl-progress {
+  width: calc(100% - 47px);
+}
+
+.file-list > .item .progress .mdl-button {
+  margin-left: 15px;
+}
+
+.file-list > .item .file-info > div {
+  display: flex;
+  align-items: center;
+}
+
+.file-list > .item .file-info .info {
+  font-size: 14px;
+}
+
+.file-list > .item .file-icon {
+  transform: rotate(-45deg);
+  margin-right: .5em;
+}
+
+.file-list > .item .file-info .mdl-button + .mdl-button {
+  margin-left: .5em;
+}
+
+.flip-enter-active, .flip-leave-active {
+  transition: all .25s
+}
+.flip-enter, .flip-leave-to {
+  //opacity: 0;
+  transform: rotateX(-90deg);
+}
+
+.flip-leave-active {
+  position: absolute;
+  width: 100%;
+  left: 0;
+}

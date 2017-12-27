@@ -4,18 +4,18 @@
       <h2>Confirm</h2>
     </div>
 
-    <h4 class="line">概述</h4>
+    <h4>概述</h4>
     <p>既然我们已经有了Alert插件，那么就没有理由不做一个Confirm插件。依然是对dialog的封装。如果你需要一个内容简单的确认框，这个插件可以很好的帮助你。</p>
 
-    <h4 class="line">引入</h4>
+    <h4>引入</h4>
     <ui-markdown :text="code[0]"></ui-markdown>
     <p>关于可配置参数<strong>options</strong>的具体属性如下：</p>
     <ui-apidoc name="confirm" :show-title="false"></ui-apidoc>
 
-    <h4 class="line">方法</h4>
+    <h4>方法</h4>
     <p>引入插件后，Vue实例将被注入$confirm方法，该方法接收一个message参数，用于表示确认框内容；如果你想为确认框做更多设置，可以传入一个对象，对象的属性和上面全局预设属性完全一致。</p>
 
-    <h3>示例</h3>
+    <h4>示例</h4>
     <p><ui-button raised colored @click="$confirm('你打开了确认框！')">打开确认框</ui-button></p>
     <ui-markdown :text="code[1]"></ui-markdown>
     <p>通过这个插件，你可以很容易的创造一个简单的确认框。</p>
@@ -54,9 +54,3 @@
     }
   }
 </script>
-
-<style scoped>
-  h2.line {
-    border-bottom: 1px solid #ddd;
-  }
-</style>

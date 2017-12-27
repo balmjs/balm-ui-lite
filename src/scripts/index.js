@@ -75,6 +75,7 @@ import UiFileupload from './components/form/fileupload';
 import UiAutocomplete from './components/form/autocomplete';
 import UiDatepicker from './components/form/datepicker';
 import UiRangepicker from './components/form/rangepicker';
+import UiFile from './components/form/file';
 /**
  * Loading
  */
@@ -176,6 +177,7 @@ const components = {
   UiAutocomplete,
   UiDatepicker,
   UiRangepicker,
+  UiFile,
   // Loading
   UiProgress,
   UiSpinner,

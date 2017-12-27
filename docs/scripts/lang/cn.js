@@ -34,7 +34,7 @@ const data = {
     "icon-toggle": "Icon Toggle 图标选项",
     "switch": "Switch 开关",
     "slider": "Slider 滑动条",
-    "fileupload": "Fileupload 文件上传",
+    "file": "File 文件处理",
     "autocomplete": "Autocomplete 自动补全",
     "datepicker": "Datepicker 日期选择框",
     "rangepicker": "Rangepicker 日期范围",

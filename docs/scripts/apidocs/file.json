@@ -1,0 +1,27 @@
+{
+  "props": [{
+    "name": "accept",
+    "type": "String",
+    "default": "",
+    "description": "文件类型限定；用法和原生input保持一致"
+  }, {
+    "name": "multiple",
+    "type": "Boolean",
+    "default": "false",
+    "description": "切换文件单选/多选；用法和原生input保持一致"
+  }, {
+    "name": "preview",
+    "type": "Boolean",
+    "default": "false",
+    "description": "开启文件预览；<br>如开启，被包装的文件对象将包含'previewError'和'previewSrc'两个额外属性"
+  }],
+  "slots": [{
+    "name": "(default)",
+    "description": "默认插槽，用于自定义上传按钮"
+  }],
+  "events": [{
+    "name": "change",
+    "type": "Function(files: Array)",
+    "description": "选择文件后的触发函数，返回一个文件数组"
+  }]
+}

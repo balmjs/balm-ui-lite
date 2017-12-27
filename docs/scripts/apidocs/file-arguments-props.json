@@ -1,0 +1,48 @@
+{
+  "props": [{
+    "name": "uid",
+    "type": "String",
+    "default": "",
+    "description": "每个文件包装对象的id"
+  }, {
+    "name": "lastModified",
+    "type": "Number",
+    "default": "",
+    "description": "文件最后修改日期的时间戳"
+  }, {
+    "name": "lastModifiedDate",
+    "type": "Date",
+    "default": "",
+    "description": "文件最后修改日期的时间对象"
+  }, {
+    "name": "name",
+    "type": "String",
+    "default": "",
+    "description": "文件名称"
+  }, {
+    "name": "size",
+    "type": "Number",
+    "default": "",
+    "description": "文件大小；单位：字节"
+  }, {
+    "name": "type",
+    "type": "String",
+    "default": "",
+    "description": "文件类型"
+  }, {
+    "name": "sourceFile",
+    "type": "File",
+    "default": "",
+    "description": "原始文件的Blob对象，参见例子3、例子4"
+  }, {
+    "name": "previewError",
+    "type": "Number",
+    "default": "0",
+    "description": "预览错误代码；仅在组件设置preview时出现；<br>0：正常；<br>1：无法预览的文件类型；<br>2：当前浏览器不支持本地预览；"
+  }, {
+    "name": "previewSrc",
+    "type": "String",
+    "default": "",
+    "description": "本地预览的src；仅在组件设置preview时出现；<br>通常是一个blob url或base64字符串"
+  }]
+}
