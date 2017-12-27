@@ -118,6 +118,7 @@ const data = {
     "tooltip": "<ui-tooltip>",
     "divider": "<ui-divider>",
     "snackbar": "<ui-snackbar>",
+    "table": "<ui-table>",
     "pagination": "<ui-pagination>",
     "textfield": "<ui-textfield>",
     "checkbox": "<ui-checkbox>",

@@ -2,92 +2,102 @@
   "props": [{
     "name": "data",
     "type": "Array",
-    "default": "(required)",
-    "description": "The data record array to be rendered",
-    "required": true
+    "default": "[]",
+    "description": "表格数据源"
   }, {
     "name": "caption",
-    "type": "String",
-    "default": "",
-    "description": "The table caption title"
+    "type": "String, Boolean",
+    "default": "false",
+    "description": "设置表格标题 或 启用表格标题插槽"
+  }, {
+    "name": "colgroup",
+    "type": "Boolean",
+    "default": "false",
+    "description": "显示表格列 或 启用表格列插槽"
   }, {
     "name": "thead",
-    "type": "Array",
-    "default": "[]",
-    "description": "The table head data"
+    "type": "Array, Boolean",
+    "default": "false",
+    "description": "设置表头 或 启用表头插槽"
   }, {
     "name": "tbody",
     "type": "Array",
     "default": "[]",
-    "description": "The table body data"
+    "description": "设置表数据"
   }, {
     "name": "tfoot",
     "type": "Array, Boolean",
     "default": "false",
-    "description": "The table foot data"
+    "description": "设置表尾 或 启用表尾插槽"
   }, {
     "name": "action",
     "type": "Array",
     "default": "[]",
-    "description": "The custom actions"
+    "description": "设置表格操作按钮"
   }, {
     "name": "selectable",
     "type": "String, Boolean",
     "default": "false",
-    "description": "True to show a checkbox on the left ('left' or 'right')"
+    "description": "启用表格选框列 (设置 'left' 或 'right')"
+  }, {
+    "name": "checkedList",
+    "type": "Array",
+    "default": "[]",
+    "description": "表格勾选结果"
   }, {
     "name": "selectKeyField",
     "type": "Boolean",
     "default": "false",
-    "description": "True to select keyField, False to select row index"
+    "description": "启用 <b>自定义字段内容</b> 代替 <b>表格行索引值</b> 作为表格勾选结果"
   }, {
     "name": "keyField",
     "type": "String",
     "default": "'id'",
-    "description": "The field of data source"
-  }, {
-    "name": "checkboxList",
-    "type": "Array",
-    "default": "[]",
-    "description": "Select result"
+    "description": "设置一个数据源中的字段名"
   }, {
     "name": "noData",
     "type": "String",
     "default": "'No Data'",
-    "description": "No data text"
+    "description": "无数据时的文字提示"
   }, {
     "name": "hasDetailView",
     "type": "Boolean",
     "default": "false",
-    "description": "True to show detail view table"
+    "description": "启用表格扩展行"
   }],
   "slots": [{
     "name": "(default)",
-    "description": "The default slot holds the table caption text and can contain HTML"
+    "description": "默认插槽可以插入表格扩展行内容 (需激活 hasDetailView 属性)"
+  }, {
+    "name": "caption",
+    "description": "Caption插槽可以插入表格标题"
+  }, {
+    "name": "colgroup",
+    "description": "Colgroup插槽可以插入表格列元素"
   }, {
     "name": "thead",
-    "description": "The thead slot holds the table head text and can contain HTML",
+    "description": "Thead插槽可以插入表格头部内容",
     "props": "className: { asc, desc }"
   }, {
     "name": "tbody",
-    "description": "The tbody slot holds the table body text and can contain HTML",
+    "description": "Tbody插槽可以插入表格主体内容",
     "props": "data"
   }, {
     "name": "tfoot",
-    "description": "The tfoot slot holds the table foot text and can contain HTML",
-    "props": "data (Need to config `props.tfoot`)"
-  }, {
-    "name": "detail",
-    "description": "The detail slot holds the detail view text and can contain HTML"
+    "description": "Tfoot插槽可以插入表格尾部内容",
+    "props": "data"
   }],
   "events": [{
     "name": "(custom action)",
-    "description": "See action props"
+    "type": "N/A",
+    "description": "点击表格操作按钮时触发自定义函数"
   }, {
     "name": "selected",
-    "description": "Callback that is called when selected rows change"
+    "type": "Function(result: array)",
+    "description": "表格勾选结果变化时触发函数"
   }, {
     "name": "view-detail",
-    "description": "Dispatched when the detail view is changed"
+    "type": "Function(rowData: object)",
+    "description": "展开表格某行数据时触发函数"
   }]
 }

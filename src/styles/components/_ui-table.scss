@@ -24,6 +24,17 @@
   .mdl-no-data-table {
     text-align: center;
   }
+  .mdl-data-table__checkbox {
+    &:first-of-type,
+    &:last-of-type {
+      width: 60px;
+      padding: 16px;
+    }
+  }
+  .mdl-data-table__row-expand:first-of-type {
+    width: 50px;
+    padding: 16px;
+  }
 }
 
 .mdl-data-table__detail-view {

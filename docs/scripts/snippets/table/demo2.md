@@ -1,22 +1,15 @@
 ```html
 <ui-table
   :data="data"
-  :caption="caption"
   :thead="thead"
   :tbody="tbody"
-  :tfoot="tfoot"
   :action="action"
-  :selectable="selectable"
-  :checkboxList="checkboxList"
+  selectable="left"
+  :checkedList="checkedList"
+  @selected="balmUI.onChange('checkedList', $event)"
   @view="onView"
   @edit="onEdit"
-  @delete="onDelete"
-  @selected="onSelected"
-  hasDetailView
-  @view-detail="onViewDetail">
-  <div slot="detail">
-    {{ tableDetail }}
-  </div>
+  @delete="onDelete">
 </ui-table>
 ```
 
@@ -25,94 +18,62 @@ export default {
   data() {
     return {
       data: [],
-      caption: 'Table Caption',
       thead: [
-        [{
-          value: 'Base Info',
-          col: 2,
-          class: 'base-info'
-        }, {
-          value: 'Data Info',
-          col: 2,
-          class: 'data-info'
-        }, {
-          value: 'Operate',
-          row: 2,
-          align: 'center'
-        }],
-        [{
-          value: 'ID',
-          sort: 'asc',
-          by: 'id',
-          align: 'center'
-        },
+        'ID',
         {
           value: 'Name',
-          align: 'left'
-        },
-        'Quantity',
-        'Price']
-      ],
-      tbody: [
-        {
-          field: 'id',
           align: 'center'
         },
+        'Quantity',
+        'Price',
+        {
+          value: 'Operate',
+          align: 'center'
+        }
+      ],
+      tbody: [
+        'id',
         {
           field: 'name',
-          noNum: true,
-          url: (data, index) => {
-            return `#/detail/${data.id}`;
+          align: 'center',
+          url(data) {
+            return `/#/user/${data.id}`;
           }
         },
         {
           field: 'quantity',
-          class: data => {
+          align: 'center',
+          class(data) {
             return data.quantity > 20 ? 'green' : 'red';
           }
         },
         {
           field: 'price',
+          align: 'right',
           raw: true,
-          fn: data => {
+          fn(data) {
             let price = data.price.toFixed(2);
-            return `<b style="color:gold">$</b>${price}`;
-          }
-        }
-      ],
-      tfoot: [
-        null,
-        null,
-        {
-          name: 'sum',
-          field: 'quantity'
-        },
-        {
-          name: 'avg',
-          field: 'price',
-          raw: true,
-          fn: result => {
-            let price = result.toFixed(3);
             return `<b style="color:gold">$</b>${price}`;
           }
         }
       ],
       action: [{
         type: 'link',
-        name: 'view',
-        value: 'View'
+        name: 'view', // 设置了url就会直接跳转，无需操作@view
+        value: 'View',
+        url(data) {
+          return `#/user/${data.id}`;
+        }
       }, {
         type: 'icon',
-        name: 'edit',
-        value: '<i class="material-icons">mood</i>'
+        name: 'edit', // @edit
+        value: '<i class="fa fa-edit"></i>'
       }, {
         type: 'button',
-        name: 'delete',
+        name: 'delete', // @delete
         value: 'Delete'
       }],
-      selectable: 'left',
-      checkboxList: [],
-      tableDetail: 'Hello'
+      checkedList: []
     }
   },
   methods: {
@@ -124,13 +85,6 @@ export default {
     },
     onDelete(data) {
       console.log('delete', data);
-    },
-    onSelected(data) {
-      this.checkboxList = data;
-    },
-    onViewDetail(data) {
-      // console.log('detail', data);
-      this.tableDetail +=  ('-' + data.id);
     }
   }
 };

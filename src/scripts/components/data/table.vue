@@ -1,5 +1,4 @@
 <template>
-<div>
   <table class="mdl-data-table mdl-js-data-table">
     <!-- an optional <caption> element -->
     <caption v-if="caption">
@@ -14,14 +13,14 @@
       </slot>
     </colgroup>
     <!-- an optional <thead> element -->
-    <thead v-if="currentThead.length">
+    <thead v-if="thead">
       <slot name="thead" :className="{asc: CLASSNAME_ASC, desc: CLASSNAME_DESC}">
         <tr v-for="(rowValue, rowKey) in theadData" :key="rowKey">
           <template v-for="(cell, index) in rowValue">
             <template v-if="cell.isCheckbox">
               <th
               :key="index"
-              :class="cell.class"
+              :class="['mdl-data-table__checkbox', cell.class]"
               :colspan="cell.col"
               :rowspan="cell.row">
                 <ui-checkbox noRipple
@@ -96,8 +95,12 @@
                 <td
                   :key="index"
                   :class="[
-                    cell.class,
-                    {'mdl-data-table__action': cell.isAction}
+                    {
+                      'mdl-data-table__action': cell.isAction,
+                      'mdl-data-table__checkbox': cell.isCheckbox,
+                      'mdl-data-table__row-expand': cell.isPlus
+                    },
+                    cell.class
                   ]"
                   :colspan="cell.col"
                   :rowspan="cell.row">
@@ -119,7 +122,7 @@
                     @change="onCheckOne"></ui-checkbox>
                   <!-- Detail View Control -->
                   <i v-if="cell.isPlus"
-                    class="material-icons"
+                    class="material-icons md-16"
                     @click="viewDetail(rowKey, cell)">{{ cell.show ? 'remove' : 'add' }}</i>
                   <!-- Detail View -->
                   <div v-if="isDetailView(rowKey)" class="detail-view">
@@ -139,7 +142,7 @@
       </slot>
     </tbody>
     <!-- an optional <tfoot> element -->
-    <tfoot v-if="tfootData.length">
+    <tfoot v-if="tfoot">
       <slot name="tfoot" :data="tfootData">
         <tr>
           <template v-for="(cell, index) in tfootData">
@@ -161,7 +164,6 @@
       </slot>
     </tfoot>
   </table>
-</div>
 </template>
 
 <script>
@@ -245,13 +247,17 @@ export default {
       }
     },
     // structure attributes
-    caption: String,
-    colgroup: Boolean,
+    caption: {
+      type: [String, Boolean],
+      default: false
+    },
+    colgroup: {
+      type: Boolean,
+      default: false
+    },
     thead: {
-      type: Array,
-      default() {
-        return [];
-      }
+      type: [Array, Boolean],
+      default: false
     },
     tbody: {
       type: Array,
@@ -260,10 +266,8 @@ export default {
       }
     },
     tfoot: {
-      type: Array,
-      default() {
-        return [];
-      }
+      type: [Array, Boolean],
+      default: false
     },
     // ui attributes
     action: {
@@ -344,10 +348,12 @@ export default {
       });
     },
     tfootData() {
-      return this.tfoot && this.currentData.length ? this.getData({
-        type: T_FOOT,
-        data: this.tfoot
-      }) : [];
+      return (this.tfoot.length && this.currentData.length)
+        ? this.getData({
+          type: T_FOOT,
+          data: this.tfoot
+        })
+        : [];
     },
     currentDataCount() {
       return (this.currentDetailViewIndex === DEFAULTS.detailViewIndex)
@@ -702,7 +708,9 @@ export default {
             break;
         }
       } else {
-        console.error(`${type} must be an array!`);
+        if (type === T_BODY) {
+          console.error(`${type} must be an array!`);
+        }
       }
 
       return result;
@@ -790,6 +798,7 @@ export default {
         let sortBy = data.by;
         let currentSort;
 
+        // TODO 多个表格共用数据bug
         if (data[CELL_SORT] === SORT_ASC) {
           currentSort = SORT_DESC;
           this.currentData.sort((a, b) => {

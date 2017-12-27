@@ -12,7 +12,7 @@ const dataviewRoutes = [{
   name: 'components.list',
   component: List
 }, {
-  path: 'table',
+  path: 'table/:id?',
   name: 'components.table',
   component: Table
 }, {
