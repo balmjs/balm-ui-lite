@@ -1,4 +1,5 @@
 <template>
+  <!-- 0.6.0 弃用并更新为 <ui-file> -->
   <label class="mdl-fileupload">
     <input type="file"
       class="mdl-fileupload__input"

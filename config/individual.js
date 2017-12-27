@@ -32,10 +32,10 @@ const components = [
   'pagination.js',
   'select.js',
   'selectmenu.js',
-  'fileupload.js',
   'autocomplete.js',
   'datepicker.js',
-  'rangepicker.js'
+  'rangepicker.js',
+  'file.js'
 ];
 const helpers = [
   'is.js',

@@ -71,7 +71,6 @@ import UiSelectmenu from './components/form/selectmenu';
 import UiIconToggle from './components/form/icon-toggle';
 import UiSwitch from './components/form/switch';
 import UiSlider from './components/form/slider';
-import UiFileupload from './components/form/fileupload';
 import UiAutocomplete from './components/form/autocomplete';
 import UiDatepicker from './components/form/datepicker';
 import UiRangepicker from './components/form/rangepicker';
@@ -173,7 +172,6 @@ const components = {
   UiIconToggle,
   UiSwitch,
   UiSlider,
-  UiFileupload,
   UiAutocomplete,
   UiDatepicker,
   UiRangepicker,

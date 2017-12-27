@@ -1,8 +1,8 @@
 <template>
   <div :class="className" @click="$_handleClick">
     <input
-      type="file"
       v-show="false"
+      type="file"
       :accept="accept"
       :multiple="multiple"
       @change="$_handleChange($event)">
@@ -14,9 +14,9 @@
     </slot>
   </div>
 </template>
+
 <script>
   import UiButton from '../common/button';
-  import UiIcon from '../common/icon';
 
   const slice = [].slice;
 
@@ -56,7 +56,9 @@
 
   export default {
     name: 'ui-file',
-    components: { UiButton, UiIcon },
+    components: {
+      UiButton
+    },
     props: {
     	accept: {
     		type: String,
