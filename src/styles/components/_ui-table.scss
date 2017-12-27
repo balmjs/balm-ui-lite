@@ -25,3 +25,11 @@
     text-align: center;
   }
 }
+
+.mdl-data-table__detail-view {
+  td:last-of-type {
+    padding: 0;
+
+    text-align: left;
+  }
+}

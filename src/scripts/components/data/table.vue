@@ -1,48 +1,64 @@
 <template>
+<div>
   <table class="mdl-data-table mdl-js-data-table">
-    <slot>
-      <caption v-if="caption">{{ caption }}</caption>
-      <colgroup v-if="currentCol">
-        <col v-for="(value, key) in currentCol" :key="key" :class="`col-${value}`">
-      </colgroup>
-    </slot>
-    <!-- Table Head -->
-    <thead>
+    <!-- an optional <caption> element -->
+    <caption v-if="caption">
+      <slot name="caption">{{ caption }}</slot>
+    </caption>
+    <!-- zero or more <colgroup> elements -->
+    <colgroup v-if="colgroup">
+      <slot name="colgroup">
+        <col v-for="(colValue, colKey) in currentCol"
+          :key="colKey"
+          :class="`col-${colValue}`">
+      </slot>
+    </colgroup>
+    <!-- an optional <thead> element -->
+    <thead v-if="currentThead.length">
       <slot name="thead" :className="{asc: CLASSNAME_ASC, desc: CLASSNAME_DESC}">
         <tr v-for="(rowValue, rowKey) in theadData" :key="rowKey">
           <template v-for="(cell, index) in rowValue">
             <template v-if="cell.isCheckbox">
               <th
               :key="index"
+              :class="cell.class"
               :colspan="cell.col"
-              :rowspan="cell.row"
-              :class="cell.class">
-                <ui-checkbox
-                  noRipple
-                  name="checkAll"
+              :rowspan="cell.row">
+                <ui-checkbox noRipple
+                  :class="[CLASSNAME_SELECT, 'mdl-data-table__check-all']"
                   :value="cell.value"
                   :model="isCheckAll"
                   @change="onCheckAll"></ui-checkbox>
               </th>
             </template>
             <template v-else>
-              <th
-              :key="index"
-              :colspan="cell.col"
-              :rowspan="cell.row"
-              :class="[
-                cell.class,
-                getSortClass(cell.sort)
-              ]"
-              @click="sort(cell)">
-                <span>{{ cell.value }}</span>
+              <!-- Raw HTML -->
+              <th v-if="cell.raw"
+                :key="index"
+                :class="[cell.class, getSortClass(cell.sort)]"
+                :colspan="cell.col"
+                :rowspan="cell.row"
+                @click="onSort(cell)"
+                v-html="cell.value"></th>
+              <!-- Text -->
+              <th v-else
+                :key="index"
+                :class="[cell.class, getSortClass(cell.sort)]"
+                :colspan="cell.col"
+                :rowspan="cell.row"
+                @click="onSort(cell)">
+                {{ cell.value }}
               </th>
             </template>
           </template>
         </tr>
       </slot>
     </thead>
-    <!-- Table Body -->
+    <!--
+      either one of the following:
+      * zero or more <tbody> elements
+      * one or more <tr> elements
+    -->
     <tbody>
       <slot name="tbody" :data="currentData">
         <!-- Has Data -->
@@ -51,49 +67,67 @@
             :key="rowKey"
             :class="{
               'selected': isSelected(rowValue, rowKey),
-              'detail-view': isDetailView(rowKey)
+              'mdl-data-table__detail-view': isDetailView(rowKey)
             }">
-            <td v-for="(cell, index) in rowValue"
-              :key="index"
-              :colspan="cell.col"
-              :rowspan="cell.row"
-              :class="cell.class">
+            <template v-for="(cell, index) in rowValue">
               <!-- Data View -->
-              <div v-if="isCellData(rowKey, cell) && !cell.raw">
-                <template v-if="cell.url">
-                  <a :href="cell.url">{{ cell.value }}</a>
-                </template>
-                <template v-else>
-                  {{ cell.value }}
-                </template>
-              </div>
-              <div v-if="isCellData(rowKey, cell) && cell.raw" v-html="cell.value"></div>
-              <!-- Detail View Control -->
-              <i v-if="cell.isPlus"
-                class="material-icons"
-                @click="viewDetail(rowKey, cell)">{{ cell.show ? 'remove' : 'add' }}</i>
-              <!-- Checkbox -->
-              <ui-checkbox v-if="cell.isCheckbox"
-                noRipple
-                name="checkOne[]"
-                :value="selectKeyField ? cell.value : getSelectIndex(rowKey)"
-                :model="currentCheckboxList"
-                @change="onCheckOne"></ui-checkbox>
-              <!-- Actions -->
-              <div v-if="cell.isAction">
-                <ui-button v-for="(actionValue, actionKey) in cell.actions"
-                  :key="actionKey"
-                  :icon="actionValue.icon || actionValue.isIcon"
-                  :link="actionValue.isLink"
-                  @click="doAction(actionValue.name, actionValue.data)">
-                  <span v-if="!actionValue.icon" v-html="actionValue.value"></span>
-                </ui-button>
-              </div>
-              <!-- Detail View -->
-              <div v-if="isDetailView(rowKey)" class="mdl-data-table__detail-view">
-                <slot name="detail"></slot>
-              </div>
-            </td>
+              <template v-if="isCellData(rowKey, cell)">
+                <!-- Raw HTML -->
+                <td v-if="cell.raw"
+                  :key="index"
+                  :class="cell.class"
+                  :colspan="cell.col"
+                  :rowspan="cell.row"
+                  v-html="cell.value"></td>
+                <!-- Text -->
+                <td v-else
+                  :key="index"
+                  :class="cell.class"
+                  :colspan="cell.col"
+                  :rowspan="cell.row">
+                  <template v-if="cell.url">
+                    <a :href="cell.url">{{ cell.value }}</a>
+                  </template>
+                  <template v-else>{{ cell.value }}</template>
+                </td>
+              </template>
+              <!-- Others View -->
+              <template v-else>
+                <td
+                  :key="index"
+                  :class="[
+                    cell.class,
+                    {'mdl-data-table__action': cell.isAction}
+                  ]"
+                  :colspan="cell.col"
+                  :rowspan="cell.row">
+                  <!-- Actions -->
+                  <template v-if="cell.isAction">
+                    <ui-button v-for="(actionValue, actionKey) in cell.actions"
+                      :key="actionKey"
+                      :icon="actionValue.icon || actionValue.isIcon"
+                      :link="actionValue.isLink"
+                      @click="doAction(actionValue)">
+                      <span v-if="!actionValue.icon" v-html="actionValue.value"></span>
+                    </ui-button>
+                  </template>
+                  <!-- Checkbox -->
+                  <ui-checkbox v-if="cell.isCheckbox" noRipple
+                    :class="[CLASSNAME_SELECT, 'mdl-data-table__check-one']"
+                    :value="selectKeyField ? cell.value : getSelectIndex(rowKey)"
+                    :model="currentCheckedList"
+                    @change="onCheckOne"></ui-checkbox>
+                  <!-- Detail View Control -->
+                  <i v-if="cell.isPlus"
+                    class="material-icons"
+                    @click="viewDetail(rowKey, cell)">{{ cell.show ? 'remove' : 'add' }}</i>
+                  <!-- Detail View -->
+                  <div v-if="isDetailView(rowKey)" class="detail-view">
+                    <slot></slot>
+                  </div>
+                </td>
+              </template>
+            </template>
           </tr>
         </template>
         <!-- No Data -->
@@ -104,26 +138,30 @@
         </template>
       </slot>
     </tbody>
-    <!-- Table Foot -->
+    <!-- an optional <tfoot> element -->
     <tfoot v-if="tfootData.length">
       <slot name="tfoot" :data="tfootData">
         <tr>
-          <td v-for="(cell, index) in tfootData"
-            :key="index"
-            :colspan="cell.col"
-            :rowspan="cell.row"
-            :class="cell.class">
-            <template v-if="cell.raw">
-              <div v-html="cell.value"></div>
-            </template>
-            <template v-else>
-              <div>{{ cell.value }}</div>
-            </template>
-          </td>
+          <template v-for="(cell, index) in tfootData">
+            <td v-if="cell.raw"
+              :key="index"
+              :class="cell.class"
+              :colspan="cell.col"
+              :rowspan="cell.row"
+              v-html="cell.value"></td>
+            <td v-else
+              :key="index"
+              :class="cell.class"
+              :colspan="cell.col"
+              :rowspan="cell.row">
+              {{ cell.value }}
+            </td>
+          </template>
         </tr>
       </slot>
     </tfoot>
   </table>
+</div>
 </template>
 
 <script>
@@ -136,9 +174,12 @@ import UiCheckbox from '../form/checkbox';
 const DEFAULTS = {
   detailViewIndex: -1
 };
+// Type
 const T_HEAD = 'thead';
 const T_BODY = 'tbody';
 const T_FOOT = 'tfoot';
+// Cell
+const CELL_ACTION = 'actions';
 const CELL_CLASS = 'class';
 const CELL_COLSPAN = 'col';
 const CELL_DATA = 'data';
@@ -147,37 +188,41 @@ const CELL_FIELD = 'field';
 const CELL_FUNCTION = 'fn';
 const CELL_ICON = 'icon';
 const CELL_INDEX = 'index';
+const CELL_NAME = 'name';
 const CELL_RAW = 'raw';
 const CELL_ROWSPAN = 'row';
 const CELL_SORT = 'sort';
 const CELL_VALUE = 'value';
 const CELL_URL = 'url';
-const CELL_ACTION = 'actions';
+// Action
 const ACTION_BUTTON = 'button';
 const ACTION_ICON = 'icon';
 const ACTION_LINK = 'link';
-const CHECKBOX_POSITION_LEFT = 'left';
-const CHECKBOX_POSITION_RIGHT = 'right';
+// Aggregate functions
 const AGGREGATE_COUNT = 'count';
 const AGGREGATE_SUM = 'sum';
 const AGGREGATE_AVG = 'avg';
 const AGGREGATE_MIN = 'min';
 const AGGREGATE_MAX = 'max';
+// Checkbox positon
+const CHECKBOX_POSITION_LEFT = 'left';
+const CHECKBOX_POSITION_RIGHT = 'right';
+// Sort
 const SORT_ASC = 'asc';
 const SORT_DESC = 'desc';
 const SORT_BY = 'by';
+// Class name
+const CLASSNAME_SELECT = 'mdl-data-table__select';
+const CLASSNAME_ASC = 'mdl-data-table__header--sorted-ascending';
+const CLASSNAME_DESC = 'mdl-data-table__header--sorted-descending';
 const CLASSNAME_NON_NUMERIC = 'mdl-data-table__cell--non-numeric';
 const CLASSNAME_TEXT_LEFT = 'mdl-data-table__cell--text-left';
 const CLASSNAME_TEXT_CENTER = 'mdl-data-table__cell--text-center';
 const CLASSNAME_TEXT_RIGHT = 'mdl-data-table__cell--text-right';
-const CLASSNAME_ASC = 'mdl-data-table__header--sorted-ascending';
-const CLASSNAME_DESC = 'mdl-data-table__header--sorted-descending';
+// Event
 const EVENT_SELECTED = 'selected';
 const EVENT_VIEW_DETAIL = 'view-detail';
 
-/**
- * Supoorted: thead(2 rows) + tbody(N rows) + tfoot(1 row)
- */
 export default {
   name: 'ui-table',
   mixins: [mdlMixin],
@@ -193,14 +238,15 @@ export default {
         return [];
       }
     },
-    checkboxList: {
+    checkedList: {
       type: Array,
       default() {
         return [];
       }
     },
-    // ui attributes
+    // structure attributes
     caption: String,
+    colgroup: Boolean,
     thead: {
       type: Array,
       default() {
@@ -214,11 +260,14 @@ export default {
       }
     },
     tfoot: {
-      type: [Array, Boolean],
-      default: false
+      type: Array,
+      default() {
+        return [];
+      }
     },
+    // ui attributes
     action: {
-      type: [Array, Object],
+      type: Array,
       default() {
         return [];
       }
@@ -246,19 +295,24 @@ export default {
   },
   data() {
     return {
-      isCheckAll: false,
-      currentCheckboxList: this.checkboxList,
+      CLASSNAME_SELECT,
+      CLASSNAME_ASC,
+      CLASSNAME_DESC,
       currentData: this.data,
       currentThead: this.thead,
-      currentDetailViewIndex: DEFAULTS.detailViewIndex,
-      CLASSNAME_ASC,
-      CLASSNAME_DESC
+      currentActions: this.action,
+      currentCheckedList: this.checkedList,
+      isCheckAll: false,
+      currentDetailViewIndex: DEFAULTS.detailViewIndex
     };
   },
   computed: {
-    currentActions() {
-      let actions = this.action;
-      return isObject(actions) ? actions[CELL_VALUE] : actions;
+    className() {
+      return {
+        'mdl-data-table': true,
+        'mdl-js-data-table': true,
+        'mdl-data-table--selectable': this.selectable
+      };
     },
     currentCol() {
       let result = this.tbody.length;
@@ -301,16 +355,24 @@ export default {
         : this.currentData.length -1;
     }
   },
-  methods: {
-    getSortClass(sort) {
-      let className = '';
-      if (sort === SORT_ASC) {
-        className = CLASSNAME_ASC;
-      } else if (sort === SORT_DESC) {
-        className = CLASSNAME_DESC;
-      }
-      return className;
+  watch: {
+    data(val) {
+      this.currentData = val;
     },
+    checkboxList(val) {
+      this.currentCheckedList = val;
+    },
+    thead(val) {
+      this.currentThead = val; // Just for sort
+    }
+  },
+  created() {
+    this._checkAll();
+  },
+  mounted() {
+    this.$mdl.upgradeElement(this.$el, 'MaterialDataTable');
+  },
+  methods: {
     getCell(type, data, index = -1) {
       let cell = {};
       let fn;
@@ -318,29 +380,12 @@ export default {
       if (isString(data)) {
         cell[CELL_VALUE] = data;
       } else if (isObject(data)) {
-        // colspan attribute
-        if (data[CELL_COLSPAN]) {
-          cell[CELL_COLSPAN] = data[CELL_COLSPAN];
-        }
-        // rowspan attribute
-        if (data[CELL_ROWSPAN]) {
-          cell[CELL_ROWSPAN] = data[CELL_ROWSPAN];
-        }
         // class attribute
         let className = [];
-        // custom class
-        let _className = data[CELL_CLASS];
-        if (_className) {
-          if (isFunction(_className)) {
-            _className = _className(this.currentData[index], index);
-          }
-          className.push(_className);
-        }
         // text-align
         if (data.noNum) {
           className.push(CLASSNAME_NON_NUMERIC);
-        }
-        if (data.align) {
+        } else if (data.align) {
           switch (data.align.toLowerCase()) {
             case 'left':
               className.push(CLASSNAME_TEXT_LEFT);
@@ -353,9 +398,32 @@ export default {
               break;
           }
         }
-        // text-align end
+
+        // custom class
+        let _className = data[CELL_CLASS];
+        if (_className) {
+          if (type === T_HEAD && isString(_className)) {
+            className.push(_className);
+          } else {
+            if (isFunction(_className)) {
+              let currentCellData = Object.assign({}, this.currentData[index]);
+              _className = _className(currentCellData);
+            }
+            className.push(_className);
+          }
+        }
+
+        // class attribute
         if (className.length) {
           cell[CELL_CLASS] = className.join(' ');
+        }
+
+        // colspan and rowspan attribute
+        if (data[CELL_COLSPAN]) {
+          cell[CELL_COLSPAN] = data[CELL_COLSPAN];
+        }
+        if (data[CELL_ROWSPAN]) {
+          cell[CELL_ROWSPAN] = data[CELL_ROWSPAN];
         }
 
         switch (type) {
@@ -372,7 +440,8 @@ export default {
           case T_FOOT:
             let result = 0;
             if (data[CELL_DATA].length) {
-              switch (data.name.toLowerCase()) {
+              // let cellData = data[CELL_DATA];
+              switch (data.fnName.toLowerCase()) {
                 case AGGREGATE_COUNT:
                   result = data[CELL_DATA].length;
                   if (this.currentDetailIndex > DEFAULTS.detailViewIndex) {
@@ -394,6 +463,13 @@ export default {
                   });
                   result /= data[CELL_DATA].length;
                   break;
+                case AGGREGATE_MAX:
+                   data[CELL_DATA].forEach(value => {
+                    if (value && value > result) {
+                      result = value;
+                    }
+                  });
+                  break;
                 case AGGREGATE_MIN:
                   data[CELL_DATA].forEach(value => {
                     if (value) {
@@ -405,13 +481,6 @@ export default {
                     }
                   });
                   break;
-                case AGGREGATE_MAX:
-                   data[CELL_DATA].forEach(value => {
-                    if (value && value > result) {
-                      result = value;
-                    }
-                  });
-                  break;
                 default:
                   result = '';
                   break;
@@ -419,24 +488,66 @@ export default {
             }
             fn = data[CELL_FUNCTION];
             cell[CELL_VALUE] = fn ? fn(result) : Math.round(result * 100) / 100;
-            // dangerously set innerHTML
-            cell[CELL_RAW] = data[CELL_RAW];
             break;
           default: // T_BODY
-            fn = data[CELL_FUNCTION];
+            let currentCellData = Object.assign({}, this.currentData[index]);
             let _url = data[CELL_URL];
-            cell[CELL_VALUE] = fn ? fn(this.currentData[index], index) : data[CELL_VALUE];
-            cell[CELL_URL] = isFunction(_url) ? _url(this.currentData[index], index) : false;
-            // dangerously set innerHTML
-            cell[CELL_RAW] = data[CELL_RAW];
+            fn = data[CELL_FUNCTION];
+
+            cell[CELL_VALUE] = fn ? fn(currentCellData, index) : data[CELL_VALUE];
+            cell[CELL_URL] = isFunction(_url) ? _url(currentCellData, index) : false;
             break;
         }
+
+        // dangerously set innerHTML
+        cell[CELL_RAW] = data[CELL_RAW];
       } else {
         console.warn('Invalid cell data!');
         cell[CELL_VALUE] = '';
       }
 
       return cell;
+    },
+    getAction(result, data) {
+      let cell = {
+        isAction: true
+      };
+      let currentActions = [];
+      let actions = this.currentActions;
+
+      if (actions.length) {
+        for (let action of actions) {
+          let cellData = {};
+          let currentCellData = Object.assign({}, data);
+
+          cellData[CELL_NAME] = action.name;
+          cellData[CELL_VALUE] = action[CELL_VALUE];
+          cellData[CELL_DATA] = currentCellData;
+
+          switch (action.type.toLowerCase()) {
+            case ACTION_LINK:
+              cellData.isLink = true;
+              let _url = action[CELL_URL];
+              cellData[CELL_URL] = isFunction(_url) ? _url(currentCellData) : false;
+              break;
+            case ACTION_ICON:
+              cellData.isIcon = true;
+              cellData[CELL_ICON] = action[CELL_ICON];
+              break;
+            default:
+              cellData.isButton = true;
+              break;
+          }
+
+          currentActions.push(cellData);
+        }
+
+        cell[CELL_ACTION] = currentActions.length ? currentActions : [];
+
+        result.push(cell);
+      }
+
+      return result;
     },
     getCheckbox(type, result, value = 1) {
       if (this.selectable) {
@@ -465,66 +576,6 @@ export default {
         } else if (this.selectable === CHECKBOX_POSITION_LEFT || this.selectable) {
           result.unshift(cell);
         }
-      }
-
-      return result;
-    },
-    getAction(result, data) {
-      let cell = {
-        isAction: true
-      };
-
-      let actions = this.action;
-      if (isObject(actions)) {
-        let className = [];
-
-        let _className = actions[CELL_CLASS];
-        if (_className) {
-          className.push(_className);
-        }
-        // text-align
-        if (actions.align) {
-          switch (actions.align.toLowerCase()) {
-            case 'left':
-              className.push(CLASSNAME_TEXT_LEFT);
-              break;
-            case 'center':
-              className.push(CLASSNAME_TEXT_CENTER);
-              break;
-            case 'right':
-              className.push(CLASSNAME_TEXT_RIGHT);
-              break;
-          }
-        }
-        // text-align end
-        if (className.length) {
-          cell[CELL_CLASS] = className.join(' ');
-        }
-      }
-
-      let currentActions = [];
-      if (this.currentActions.length) {
-        for (let action of this.currentActions) {
-          let cellData = {
-            name: action.name,
-            value: action[CELL_VALUE] || action.name,
-            data: data
-          };
-          switch (action.type.toLowerCase()) {
-            case ACTION_LINK:
-              cellData.isLink = true;
-              break;
-            case ACTION_ICON:
-              cellData.isIcon = true;
-              cellData[CELL_ICON] = action[CELL_ICON];
-              break;
-          }
-          currentActions.push(cellData);
-        }
-
-        cell[CELL_ACTION] = currentActions.length ? currentActions : [];
-
-        result.push(cell);
       }
 
       return result;
@@ -594,10 +645,10 @@ export default {
                 result[0].push(this.getCell(type, cell));
               }
             }
-            // add checkbox
+            // append checkbox
             let rowspan = isArray(data[0]) ? data.length : 1;
             result[0] = this.getCheckbox(type, result[0], rowspan);
-            // add plus
+            // append detail view
             result[0] = this.getDetailView(type, result[0], data.length);
             break;
           case T_BODY:
@@ -609,7 +660,7 @@ export default {
                   col: this.currentCol
                 }));
               } else {
-                // fill for cell
+                // fill cell
                 for (let item of data) {
                   cell = {};
                   if (isObject(item)) {
@@ -620,11 +671,11 @@ export default {
                   }
                   result[key].push(this.getCell(type, cell, key));
                 }
-                // add action
+                // append action
                 result[key] = this.getAction(result[key], value);
-                // add checkbox
+                // append checkbox
                 result[key] = this.getCheckbox(type, result[key], value[this.keyField]);
-                // add plus
+                // append detail view
                 result[key] = this.getDetailView(type, result[key], key, value);
               }
             }
@@ -642,7 +693,7 @@ export default {
                 result.push({});
               }
             }
-            // add empty action & checkbox & plus
+            // append empty action & checkbox & detail view
             if (this.currentActions.length) {
               result.push({});
             }
@@ -656,37 +707,53 @@ export default {
 
       return result;
     },
-    doAction(name, data) {
-      this.$emit(name, data);
+    doAction({url, name, data}) {
+      if (url) {
+        window.location.href = url;
+      } else {
+        this.$emit(name, data);
+      }
     },
-    onSelected() {
-      let beEqual = this.currentCheckboxList.length === this.currentDataCount;
-      let lastCheckList = beEqual
+    _getCheckedIds() {
+      return this.currentData.filter(value => !value[CELL_DETAIL_VIEW]).map((value, index) => this.selectKeyField ? value[this.keyField] : index);
+    },
+    _onChecked() {
+      let beEqual = this.currentCheckedList.length === this.currentDataCount;
+      let lastCheckedList = beEqual
         ? []
-        : this.currentCheckboxList;
+        : this.currentCheckedList;
 
-      this.currentCheckboxList = this.isCheckAll
-        ? this.currentData.filter(value => !value[CELL_DETAIL_VIEW]).map((value, index) => this.selectKeyField ? value[this.keyField] : index)
-        : lastCheckList;
+      this.currentCheckedList = this.isCheckAll
+        ? this._getCheckedIds()
+        : lastCheckedList;
 
-      this.$emit(EVENT_SELECTED, Object.assign([], this.currentCheckboxList)); // result: array
+      this.$emit(EVENT_SELECTED, Object.assign([], this.currentCheckedList)); // result: array
     },
-    checkAll() {
+    _checkAll() {
       let notEmpty = this.currentDataCount;
-      let beEqual = this.currentCheckboxList.length === this.currentDataCount;
-      let ids = this.currentData.filter(value => !value[CELL_DETAIL_VIEW]).map((value, index) => this.selectKeyField ? value[this.keyField] : index);
-      let exists = this.currentCheckboxList.every(id => ids.indexOf(id) > -1);
+      let beEqual = this.currentCheckedList.length === this.currentDataCount;
+      let ids = this._getCheckedIds();
+      let isExist = this.currentCheckedList.every(id => ids.includes(id));
 
-      this.isCheckAll = notEmpty && beEqual && exists;
-      this.onSelected();
+      this.isCheckAll = notEmpty && beEqual && isExist;
+      this._onChecked();
     },
     onCheckOne(data) {
-      this.currentCheckboxList = data;
-      this.checkAll();
+      this.currentCheckedList = data;
+      this._checkAll();
     },
     onCheckAll(checked) {
       this.isCheckAll = checked;
-      this.onSelected();
+      this._onChecked();
+    },
+    getSortClass(sort) {
+      let className = '';
+      if (sort === SORT_ASC) {
+        className = CLASSNAME_ASC;
+      } else if (sort === SORT_DESC) {
+        className = CLASSNAME_DESC;
+      }
+      return className;
     },
     isSelected(rowData, index) {
       let cell = rowData.find(cell => cell.isCheckbox);
@@ -694,16 +761,16 @@ export default {
       let result;
       if (this.selectKeyField) {
         result = cell
-          ? this.currentCheckboxList.indexOf(cell[CELL_VALUE]) > -1
+          ? this.currentCheckedList.indexOf(cell[CELL_VALUE]) > -1
           : false;
       } else {
         if (this.currentDetailViewIndex === DEFAULTS.detailViewIndex) {
-          result = this.currentCheckboxList.indexOf(index) > -1;
+          result = this.currentCheckedList.indexOf(index) > -1;
         } else {
           let _index = (index > this.currentDetailViewIndex)
             ? index - 1
             : index;
-          result = this.currentCheckboxList.indexOf(_index) > -1;
+          result = this.currentCheckedList.indexOf(_index) > -1;
         }
       }
 
@@ -713,7 +780,7 @@ export default {
       this.currentData.splice(index + 1, 1);
       this.currentDetailViewIndex = DEFAULTS.detailViewIndex;
     },
-    sort(data) {
+    onSort(data) {
       if (this.currentDetailViewIndex !== DEFAULTS.detailViewIndex) {
         let currentIndex = this.currentData.findIndex((value, index) => index === this.currentDetailViewIndex);
         this.resetData(currentIndex);
@@ -744,7 +811,7 @@ export default {
       }
 
       if (!this.selectKeyField) {
-        this.currentCheckboxList = [];
+        this.currentCheckedList = [];
         this.$emit(EVENT_SELECTED, []); // result: array
       }
     },
@@ -790,40 +857,23 @@ export default {
         this.$emit(EVENT_VIEW_DETAIL, Object.assign({}, cell[CELL_DATA])); // result: any
       }
     },
+    isCellData(currentIndex, cell) {
+      return !(cell.isAction || cell.isCheckbox || cell.isPlus || this.isDetailView(currentIndex));
+    },
     isDetailView(index) {
       let hasDetailViewRow = this.currentDetailViewIndex + 1 > 0;
       let isDetailViewRow = index === this.currentDetailViewIndex + 1;
       return hasDetailViewRow && isDetailViewRow;
     },
-    isCellData(currentIndex, cell) {
-      return !(cell.isPlus || cell.isCheckbox || cell.isAction || this.isDetailView(currentIndex));
-    },
     getSelectIndex(currentIndex) {
       let result = currentIndex;
 
-      if (this.currentDetailViewIndex > DEFAULTS.detailViewIndex & currentIndex > this.currentDetailViewIndex) {
+      if (this.currentDetailViewIndex > DEFAULTS.detailViewIndex && currentIndex > this.currentDetailViewIndex) {
         result -= 1;
       }
 
       return result;
     }
-  },
-  watch: {
-    data(val) {
-      this.currentData = val;
-    },
-    checkboxList(val) {
-      this.currentCheckboxList = val;
-    },
-    thead(val) {
-      this.currentThead = val;
-    }
-  },
-  created() {
-    this.checkAll();
-  },
-  mounted() {
-    this.$mdl.upgradeElement(this.$el, 'MaterialDataTable');
   }
 };
 </script>
