@@ -88,7 +88,7 @@ Vue.use($event);
     - icon toggle
     - switch
     - slider
-    - fileupload
+    - file
     - autocomplete
     - datepicker
     - rangepicker
