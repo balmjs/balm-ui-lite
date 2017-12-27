@@ -10,6 +10,7 @@ import App from './views/layouts/app';
 import routes from './routes/index';
 import UiMarkdown from './components/markdown';
 import UiApidoc from './components/apidoc';
+import UiAccordion from './components/accordion';
 // syntax highlighting
 import prismjs from 'prismjs';
 // ready translated locales
@@ -36,6 +37,7 @@ if (isIE) {
     install(vue) {
       vue.component(UiMarkdown.name, UiMarkdown);
       vue.component(UiApidoc.name, UiApidoc);
+      Vue.component(UiAccordion.name, UiAccordion);
     }
   });
 

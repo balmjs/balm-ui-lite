@@ -18,7 +18,9 @@
     <div v-if="files1.length">
       {{ files1 }}
     </div>
-    <ui-markdown :text="code[1]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :text="code[1]"></ui-markdown>
+    </ui-accordion>
 
     <h6>2.多选 + 文件类型限定 + 图片预览</h6>
     <p><ui-file preview multiple accept="image/*" @change="balmUI.onChange('files2', $event)"></ui-file></p>
@@ -30,7 +32,9 @@
         </div>
       </li>
     </transition-group>
-    <ui-markdown :text="code[2]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :text="code[2]"></ui-markdown>
+    </ui-accordion>
 
     <h6>3.经典多图上传</h6>
     <transition-group class="preview-list" name="list" tag="ul">
@@ -64,7 +68,9 @@
         全部上传
       </ui-button>
     </p>
-    <ui-markdown :text="code[3]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :text="code[3]"></ui-markdown>
+    </ui-accordion>
 
     <h6>4.上传带进度条</h6>
     <p>
@@ -103,7 +109,9 @@
         全部上传
       </ui-button>
     </p>
-    <ui-markdown :text="code[4]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :text="code[4]"></ui-markdown>
+    </ui-accordion>
 
     <h4>补充说明</h4>
     <p>上面的例子表明，你可以从组件的change事件处理方法的参数中获得一个文件数组，这是对原生FileList对象的包装。数组的每项都是一个对象，包含以下属性：</p>
@@ -133,21 +141,21 @@
     },
     methods: {
       onChange3 (files) {
-      	if(files.length > this.limit - this.files3.length) {
-      		this.$toast(`图片最多不能超过${this.limit}张！`);
+        if(files.length > this.limit - this.files3.length) {
+          this.$toast(`图片最多不能超过${this.limit}张！`);
         } else {
           files.forEach((file) => {
-          	file.uploaded = false;
-          	this.files3.push(file);
+            file.uploaded = false;
+            this.files3.push(file);
           });
         }
       },
       onChange4 (files) {
         files.forEach((file)=> {
-        	file.state = 'beforeUpload';
-        	file.progress = 0;
-        	file.request = null;
-        	this.files4.push(file);
+          file.state = 'beforeUpload';
+          file.progress = 0;
+          file.request = null;
+          this.files4.push(file);
         });
       },
       async upload (file) {
@@ -156,8 +164,8 @@
             file: file.sourceFile
           });
           if(res.data) {
-          	file.uploaded = true;
-          	this.$notify.add({content: `${file.name}上传成功！`});
+            file.uploaded = true;
+            this.$notify.add({content: `${file.name}上传成功！`});
           } else {
             this.$notify.add({content: `${file.name}上传失败！`});
           }
@@ -166,7 +174,7 @@
         }
       },
       uploadWithProgress (file) {
-      	if(file.state === 'beforeUpload') {
+        if(file.state === 'beforeUpload') {
 
           file.state = 'progress';
 
@@ -216,15 +224,15 @@
         file.request.abort();
       },
       uploadAllFiles () {
-      	this.files3.forEach((file)=>{
-      		this.upload(file);
+        this.files3.forEach((file)=>{
+          this.upload(file);
         });
       },
       remove (name, index) {
-      	this[name].splice(index, 1);
+        this[name].splice(index, 1);
       },
       setBg ({previewSrc}) {
-      	return previewSrc ? {backgroundImage: `url(${previewSrc})`} : {};
+        return previewSrc ? {backgroundImage: `url(${previewSrc})`} : {};
       }
     },
     created() {
