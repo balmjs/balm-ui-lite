@@ -20,7 +20,9 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[1]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[1]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <div class="snippet-group">
@@ -33,7 +35,9 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[2]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[2]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <div class="snippet-group">
@@ -46,7 +50,9 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[3]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[3]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <ui-apidoc name="progress"></ui-apidoc>

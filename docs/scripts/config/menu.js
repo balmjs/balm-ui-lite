@@ -24,7 +24,7 @@ const components = {
     'icon-toggle',
     'switch',
     'slider',
-    'fileupload',
+    'file',
     'autocomplete',
     'datepicker',
     'rangepicker'

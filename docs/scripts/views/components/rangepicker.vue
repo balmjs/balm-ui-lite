@@ -17,7 +17,9 @@
           @change="balmUI.onChange('date1', $event)"></ui-rangepicker>
         Choose date range: {{ date1 }}
       </div>
-      <ui-markdown :code="code[1]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[1]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <h4>2. 高级选择</h4>
@@ -31,7 +33,9 @@
           @change="balmUI.onChange('date2', $event)"></ui-rangepicker>
         <p>Choose date range: {{ date2 }}</p>
       </div>
-      <ui-markdown :code="code[2]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[2]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <ui-apidoc name="rangepicker"></ui-apidoc>

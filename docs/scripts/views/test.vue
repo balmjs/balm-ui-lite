@@ -1,5 +1,5 @@
 <template>
-  <div class="page--test">
+  <div class="page--test" v-lazy-load>
     <fieldset class="form-test">
       <legend>Form test</legend>
       <div class="form-item">
@@ -11,7 +11,7 @@
       <div class="form-action">
         <ui-button @click="submit">Submit</ui-button>
       </div>
-      <div class="images">
+      <div class="images" v-show="false">
         <span>
           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s031.jpg"></div>
         </span>
@@ -102,6 +102,17 @@
         <span>
            <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s060.jpg"></div>
         </span></div>
+
+      <div style="width: 50%;">
+        <ui-file multiple preview @change="onChange"></ui-file>
+        <ul>
+          <li v-for="(file, index) in files" :key="file.uid">
+            <img :src="file.previewSrc">
+            <span>{{file.name}} -- {{file.size}} b</span>
+            <span>{{file.type}}</span>
+          </li>
+        </ul>
+      </div>
     </fieldset>
   </div>
 </template>
@@ -133,6 +144,8 @@ export default {
   },
   data() {
     return {
+    	url: 'https://jsonplaceholder.typicode.com/posts',
+      files: [],
       formData: {
         name: ''
       },
@@ -144,6 +157,20 @@ export default {
       let formData = Object.assign({}, this.formData);
       let result = this.$validate(formData);
       console.log(formData, result);
+    },
+    async upload (file) {
+    	try {
+        let res = await this.$http.post(this.url, {
+          file: file.sourceFile
+        });
+
+        console.log(res);
+      } catch (e) {
+    		console.log(e);
+      }
+    },
+    onChange(files){
+    	this.files = files;
     }
   }
 };

@@ -20,7 +20,9 @@
         actionText="Undo"
         @done="balmUI.onHide('snackbar.active')"></ui-snackbar>
     </div>
-    <ui-markdown :code="code[1]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[1]"></ui-markdown>
+    </ui-accordion>
 
     <div class="snippet-demo">
       <ui-button raised colored @click="balmUI.onShow('toast.active')">Show Toast</ui-button>
@@ -29,7 +31,9 @@
         :message="toast.message"
         @done="balmUI.onHide('toast.active')"></ui-snackbar>
     </div>
-    <ui-markdown :code="code[2]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[2]"></ui-markdown>
+    </ui-accordion>
 
     <ui-apidoc name="snackbar"></ui-apidoc>
   </div>

@@ -27,7 +27,9 @@
         </div>
         <div class="snippet-caption-padding"></div>
       </div>
-      <ui-markdown :code="code[1]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[1]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <h4>2. 级联选择</h4>
@@ -54,7 +56,9 @@
         <div class="snippet-caption">City: {{ formData.city }}</div>
         <div class="snippet-caption-padding"></div>
       </div>
-      <ui-markdown :code="code[2]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[2]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <ui-apidoc name="select"></ui-apidoc>

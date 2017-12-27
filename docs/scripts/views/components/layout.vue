@@ -47,7 +47,9 @@
           <div class="snippet-caption">透明头部</div>
         </div>
       </div>
-      <ui-markdown :code="code[1]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[1]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <div class="snippet-group is-full-width">
@@ -77,7 +79,9 @@
           <div class="snippet-caption">无头部 + 固定侧边菜单</div>
         </div>
       </div>
-      <ui-markdown :code="code[2]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[2]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <div class="snippet-group is-full-width">
@@ -119,7 +123,9 @@
           <div class="snippet-caption">固定头部</div>
         </div>
       </div>
-      <ui-markdown :code="code[3]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[3]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <div class="snippet-group is-full-width">
@@ -159,7 +165,9 @@
           <div class="snippet-caption">固定头部和侧边菜单</div>
         </div>
       </div>
-      <ui-markdown :code="code[4]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[4]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <h4>2. 滚动布局</h4>
@@ -203,7 +211,9 @@
           <div class="snippet-caption">可滚动头部</div>
         </div>
       </div>
-      <ui-markdown :code="code[5]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[5]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <div class="snippet-group is-full-width">
@@ -256,7 +266,9 @@
           <div class="snippet-caption">瀑布流头部</div>
         </div>
       </div>
-      <ui-markdown :code="code[6]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[6]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <h4>3. 选项卡布局</h4>
@@ -301,7 +313,9 @@
           <div class="snippet-caption">可滚动选项卡</div>
         </div>
       </div>
-      <ui-markdown :code="code[7]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[7]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <div class="snippet-group is-full-width">
@@ -344,7 +358,9 @@
           <div class="snippet-caption">固定选项卡</div>
         </div>
       </div>
-      <ui-markdown :code="code[8]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[8]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <ui-apidoc name="layout"></ui-apidoc>

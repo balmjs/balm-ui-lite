@@ -20,7 +20,9 @@
 
     <h4>示例</h4>
     <p><ui-button raised colored @click="$prompt('你打开了提示框准备输入些什么')">打开提示框</ui-button></p>
-    <ui-markdown :text="code[1]"></ui-markdown>
+    <ui-accordion>
+      <ui-markdown :code="code[1]"></ui-markdown>
+    </ui-accordion>
     <p>通过这个插件，你可以很容易的创造一个简单的提示框。</p>
     <p>不过通常，我们要处理输入的值，请看下面这个例子：</p>
     <p><ui-button raised colored @click="openPrompt">打开另一个提示框</ui-button></p>

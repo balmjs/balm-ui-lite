@@ -6,7 +6,7 @@ const Selectmenu = () => import('../../views/components/selectmenu');
 const IconToggle = () => import('../../views/components/icon-toggle');
 const Switch = () => import('../../views/components/switch');
 const Slider = () => import('../../views/components/slider');
-const Fileupload = () => import('../../views/components/fileupload');
+const File = () => import('../../views/components/file');
 const Autocomplete = () => import('../../views/components/autocomplete');
 const Datepicker = () => import('../../views/components/datepicker');
 const Rangepicker = () => import('../../views/components/rangepicker');
@@ -44,9 +44,9 @@ const formRoutes = [{
   name: 'components.slider',
   component: Slider
 }, {
-  path: 'fileupload',
-  name: 'components.fileupload',
-  component: Fileupload
+  path: 'file',
+  name: 'components.file',
+  component: File
 }, {
   path: 'autocomplete',
   name: 'components.autocomplete',

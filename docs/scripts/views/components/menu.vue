@@ -22,7 +22,9 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[1]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[1]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <h4>2. 自定义菜单</h4>
@@ -45,7 +47,9 @@
           <div class="snippet-demo-padding"></div>
         </div>
       </div>
-      <ui-markdown :code="code[2]"></ui-markdown>
+      <ui-accordion>
+        <ui-markdown :code="code[2]"></ui-markdown>
+      </ui-accordion>
     </div>
 
     <ui-apidoc name="menu"></ui-apidoc>
