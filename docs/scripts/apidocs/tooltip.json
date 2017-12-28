@@ -31,6 +31,13 @@
   },
   {
     "name": "title",
-    "description": "title插槽可以插入自定义提示文字内容"
+    "description": "Title插槽可以插入自定义提示文字内容"
+  }],
+  "sass": [{
+    "var": "$tooltip-text-color",
+    "description": "提示的颜色"
+  }, {
+    "var": "$tooltip-background-color",
+    "description": "提示的背景色"
   }]
 }

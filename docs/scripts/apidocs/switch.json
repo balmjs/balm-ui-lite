@@ -46,5 +46,24 @@
     "name": "change",
     "type": "Function(checked: boolean)",
     "description": "切换开关时回调函数"
+  }],
+  "sass": [{
+    "var": "$switch-thumb-color",
+    "description": "开关开启时的按钮的颜色"
+  }, {
+    "var": "$switch-track-color",
+    "description": "开关开启时的轨道的颜色"
+  }, {
+    "var": "$switch-off-thumb-color",
+    "description": "开关关闭时的按钮的颜色"
+  }, {
+    "var": "$switch-off-track-color",
+    "description": "开关关闭时的轨道的颜色"
+  }, {
+    "var": "$switch-disabled-thumb-color",
+    "description": "开关禁用时的按钮的颜色"
+  }, {
+    "var": "$switch-disabled-track-color",
+    "description": "开关禁用时的轨道的颜色"
   }]
 }

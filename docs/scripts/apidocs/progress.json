@@ -17,5 +17,12 @@
     "type": "Number, String",
     "default": "0",
     "description": "当前进度条的缓冲区（浅色部分） [0-100]"
+  }],
+  "sass": [{
+    "var": "$progress-main-color",
+    "description": "当前进度的颜色"
+  }, {
+    "var": "$progress-secondary-color",
+    "description": "进度条的颜色"
   }]
 }

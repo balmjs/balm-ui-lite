@@ -8,5 +8,9 @@
   "slots": [{
     "name": "(default)",
     "description": "默认插槽可以插入卡片动作内容"
+  }],
+  "sass": [{
+    "var": "$card-border-color",
+    "description": "分割线的颜色 (需激活 <code>border</code> 属性)"
   }]
 }

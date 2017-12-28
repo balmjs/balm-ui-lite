@@ -22,5 +22,27 @@
   {
     "name": "(default)",
     "description": "默认插槽可以插入菜单项内容"
+  }],
+  "sass": [{
+    "var": "$default-item-text-color",
+    "description": "菜单项的颜色"
+  }, {
+    "var": "$default-item-outline-color",
+    "description": "菜单项轮廓的颜色"
+  }, {
+    "var": "$default-item-hover-bg-color",
+    "description": "菜单项鼠标经过时的背景色"
+  }, {
+    "var": "$default-item-focus-bg-color",
+    "description": "菜单项聚焦是的背景色"
+  }, {
+    "var": "$default-item-active-bg-color",
+    "description": "菜单项选中时的背景色"
+  }, {
+    "var": "$default-item-divider-color",
+    "description": "菜单项分割线的颜色"
+  }, {
+    "var": "$disabled-item-text-color",
+    "description": "菜单项禁用时的颜色"
   }]
 }

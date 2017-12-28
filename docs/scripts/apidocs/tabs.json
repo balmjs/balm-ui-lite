@@ -16,7 +16,7 @@
   }],
   "sass": [{
     "var": "$tab-highlight-color",
-    "description": "选项卡激活时底部状态颜色"
+    "description": "选项卡激活时底部状态的颜色"
   }, {
     "var": "$tab-text-color",
     "description": "选项卡前景色"
@@ -25,6 +25,6 @@
     "description": "选项卡激活时前景色"
   }, {
     "var": "$tab-border-color",
-    "description": "选项卡下边框颜色"
+    "description": "选项卡下边框的颜色"
   }]
 }

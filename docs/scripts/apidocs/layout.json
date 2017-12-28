@@ -40,5 +40,12 @@
   {
     "name": "(default)",
     "description": "默认插槽可以插入布局子组件"
+  }],
+  "sass": [{
+    "var": "$text-color-primary",
+    "description": "全局默认文本颜色"
+  }, {
+    "var": "$text-link-color",
+    "description": "全局默认链接颜色"
   }]
 }

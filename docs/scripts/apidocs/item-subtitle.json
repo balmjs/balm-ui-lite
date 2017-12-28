@@ -2,5 +2,9 @@
   "slots": [{
     "name": "(default)",
     "description": "默认插槽可以插入列表项副标题"
+  }],
+  "sass": [{
+    "var": "$list-supporting-text-text-color",
+    "description": "列表项副标题、信息、正文内容的颜色"
   }]
 }

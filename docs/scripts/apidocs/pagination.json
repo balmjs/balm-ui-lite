@@ -76,5 +76,33 @@
     "name": "change",
     "type": "Function(newPage: number)",
     "description": "切换分页事件"
+  }],
+  "sass": [{
+    "var": "$pagination-color",
+    "description": "分页的颜色"
+  }, {
+    "var": "$pagination-border-color",
+    "description": "分页边框的颜色"
+  }, {
+    "var": "$pagination-bg-color",
+    "description": "分页的背景色"
+  }, {
+    "var": "$pagination-hover-color",
+    "description": "分页鼠标经过时的颜色"
+  }, {
+    "var": "$pagination-hover-border-color",
+    "description": "分页 hover 边框的颜色"
+  }, {
+    "var": "$pagination-hover-bg-color",
+    "description": "分页鼠标经过时的背景色"
+  }, {
+    "var": "$pagination-active-color",
+    "description": "当前分页的颜色"
+  }, {
+    "var": "$pagination-active-border-color",
+    "description": "当前分页边框的颜色"
+  }, {
+    "var": "$pagination-active-bg-color",
+    "description": "当前分页的背景色"
   }]
 }

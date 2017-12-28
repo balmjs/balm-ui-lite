@@ -10,6 +10,22 @@
     "name": "singleColor",
     "type": "Boolean",
     "default": "false",
-    "description": "使用主色代替变换色加载效果"
+    "description": "使用单色代替变换色加载效果"
+  }],
+  "sass": [{
+    "var": "$spinner-color-1",
+    "description": "变换色1"
+  }, {
+    "var": "$spinner-color-2",
+    "description": "变换色2"
+  }, {
+    "var": "$spinner-color-3",
+    "description": "变换色3"
+  }, {
+    "var": "$spinner-color-4",
+    "description": "变换色4"
+  }, {
+    "var": "$spinner-single-color",
+    "description": "单色 (需激活 <code>singleColor</code> 属性)"
   }]
 }

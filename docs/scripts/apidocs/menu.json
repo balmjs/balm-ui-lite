@@ -34,5 +34,9 @@
     "name": "selected",
     "type": "Function(menuitem: object)",
     "description": "选中菜单项时触发事件（仅限非自定义菜单下有效，返回菜单项对象）"
+  }],
+  "sass": [{
+    "var": "$default-dropdown-bg-color",
+    "description": "下拉菜单的背景色"
   }]
 }

@@ -6,7 +6,7 @@
   }],
   "sass": [{
     "var": "$layout-nav-color",
-    "description": "侧边栏菜单项 hover颜色"
+    "description": "侧边栏菜单项鼠标经过时的颜色"
   }, {
     "var": "$layout-drawer-bg-color",
     "description": "侧边栏背景色"
@@ -18,7 +18,7 @@
     "description": "侧边栏前景色"
   }, {
     "var": "$layout-drawer-navigation-color",
-    "description": "侧边栏导航链接颜色"
+    "description": "侧边栏导航链接的颜色"
   }, {
     "var": "$layout-drawer-navigation-link-active-background",
     "description": "侧边栏导航链接激活后的背景色 (注：激活链接的 <code>class</code> 需要设置 \"<code>mdl-navigation__link--current</code>\" )"

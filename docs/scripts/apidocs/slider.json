@@ -28,6 +28,13 @@
   "events": [{
     "name": "change",
     "type": "Function(newValue: number)",
-    "description": "当 Slider 的值发生改变时触发事件"
+    "description": "当滑动条的值发生改变时触发事件"
+  }],
+  "sass": [{
+    "var": "$range-bg-color",
+    "description": "滑动条轨道的颜色"
+  }, {
+    "var": "$range-color",
+    "description": "滑动条按钮的颜色"
   }]
 }

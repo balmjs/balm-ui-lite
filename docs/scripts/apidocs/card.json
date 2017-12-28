@@ -9,5 +9,8 @@
     "name": "(default)",
     "description": "默认插槽可以插入卡片子组件"
   }],
-  "events": []
+  "sass": [{
+    "var": "$card-background-color",
+    "description": "卡片的背景色"
+  }]
 }

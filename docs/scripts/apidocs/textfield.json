@@ -170,5 +170,24 @@
     "name": "enter",
     "type": "Function(value: string)",
     "description": "按下回车的回调函数"
+  }],
+  "sass": [{
+    "var": "$input-text-label-color",
+    "description": "标签或占位符的颜色"
+  }, {
+    "var": "$input-text-bottom-border-color",
+    "description": "输入框下边框的颜色"
+  }, {
+    "var": "$input-text-highlight-color",
+    "description": "输入框聚焦时底部状态的颜色"
+  }, {
+    "var": "$input-text-disabled-color",
+    "description": "输入框禁用时下边框的颜色"
+  }, {
+    "var": "$input-text-disabled-text-color",
+    "description": "输入框禁用时文本的颜色"
+  }, {
+    "var": "$input-text-error-color",
+    "description": "输入框发生错误时下边框和提示语的颜色"
   }]
 }
