@@ -147,3 +147,11 @@
     left: 0;
   }
 }
+
+@media (max-width: 641px) {
+  .page--file {
+    .preview-list > .item {
+      width: 33.333%;
+    }
+  }
+}
