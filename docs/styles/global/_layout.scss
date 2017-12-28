@@ -42,14 +42,8 @@
     width: 32px;
   }
   .mdl-navigation {
-    .mdl-navigation__link {
-      color: rgba(0, 0, 0, .65);
-      &.active {
+    .mdl-navigation__link--current:hover {
         background-color: #757575;
-        span {
-          color: white;
-        }
-      }
     }
   }
 }

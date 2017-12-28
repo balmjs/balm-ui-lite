@@ -37,7 +37,7 @@
               :key="index"
               :class="props.className"
               :to="subitem.url"
-              active-class="active">
+              active-class="mdl-navigation__link--current">
               <span>{{ $t(subitem.name) }}</span>
             </router-link>
           </template>

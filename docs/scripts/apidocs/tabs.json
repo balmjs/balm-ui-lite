@@ -13,5 +13,18 @@
   "slots": [{
     "name": "(default)",
     "description": "默认插槽可以插入选项卡容器和标签页子组件"
+  }],
+  "sass": [{
+    "var": "$tab-highlight-color",
+    "description": "选项卡激活时底部状态颜色"
+  }, {
+    "var": "$tab-text-color",
+    "description": "选项卡前景色"
+  }, {
+    "var": "$tab-active-text-color",
+    "description": "选项卡激活时前景色"
+  }, {
+    "var": "$tab-border-color",
+    "description": "选项卡下边框颜色"
   }]
 }

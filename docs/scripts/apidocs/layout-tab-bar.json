@@ -8,5 +8,12 @@
     "name": "change",
     "type": "Function(tabIndex: number)",
     "description": "切换选项卡时触发（返回新激活选项卡的索引值）"
+  }],
+  "sass": [{
+    "var": "$layout-header-tab-text-color",
+    "description": "头部选项卡前景色"
+  }, {
+    "var": "$layout-header-tab-highlight",
+    "description": "头部选项卡激活时底部状态颜色"
   }]
 }

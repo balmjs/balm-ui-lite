@@ -3,5 +3,27 @@
   {
     "name": "(default)",
     "description": "默认插槽可以插入布局侧边菜单内容"
+  }],
+  "sass": [{
+    "var": "$layout-nav-color",
+    "description": "侧边栏菜单项 hover颜色"
+  }, {
+    "var": "$layout-drawer-bg-color",
+    "description": "侧边栏背景色"
+  }, {
+    "var": "$layout-drawer-border-color",
+    "description": "侧边栏右边框线"
+  }, {
+    "var": "$layout-text-color",
+    "description": "侧边栏前景色"
+  }, {
+    "var": "$layout-drawer-navigation-color",
+    "description": "侧边栏导航链接颜色"
+  }, {
+    "var": "$layout-drawer-navigation-link-active-background",
+    "description": "侧边栏导航链接激活后的背景色 (注：激活链接的 <code>class</code> 需要设置 \"<code>mdl-navigation__link--current</code>\" )"
+  }, {
+    "var": "$layout-drawer-navigation-link-active-color",
+    "description": "侧边栏导航链接激活后的前景色 (注：激活链接的 <code>class</code> 需要设置 \"<code>mdl-navigation__link--current</code>\" )"
   }]
 }

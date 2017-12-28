@@ -63,7 +63,10 @@ if (isIE) {
     },
     sass: {
       thead: ['可复写的Sass变量', '说明'],
-      tbody: ['var', 'description']
+      tbody: ['var', {
+        field: 'description',
+        raw: true
+      }]
     }
   };
   Vue.prototype.$domain = DEBUG ? '' : '/ui-vue-lite';

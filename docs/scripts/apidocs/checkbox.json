@@ -64,5 +64,15 @@
     "name": "change",
     "type": "Function(checked: boolean | array)",
     "description": "选项变化时的回调函数"
+  }],
+  "sass": [{
+    "var": "$checkbox-color",
+    "description": "选中后的颜色"
+  }, {
+    "var": "$checkbox-off-color",
+    "description": "未选中的颜色"
+  }, {
+    "var": "$checkbox-disabled-color",
+    "description": "禁用时的颜色"
   }]
 }

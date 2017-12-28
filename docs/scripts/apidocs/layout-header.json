@@ -38,5 +38,12 @@
   {
     "name": "icon",
     "description": "Icon插槽可以插入站点LOGO"
+  }],
+  "sass": [{
+    "var": "$layout-header-bg-color",
+    "description": "头部背景色"
+  }, {
+    "var": "$layout-header-text-color",
+    "description": "头部前景色"
   }]
 }
