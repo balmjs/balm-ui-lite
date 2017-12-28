@@ -1,7 +1,7 @@
 <template>
   <div class="page--file">
     <div class="component-title">
-      <h2>File</h2>
+      <h2>File 文件处理</h2>
     </div>
 
     <h4>概述</h4>
@@ -127,7 +127,7 @@
   export default {
     mixins: [snippets],
     metaInfo: {
-      titleTemplate: '%s - File'
+      titleTemplate: '%s - <ui-file>'
     },
     data () {
       return {

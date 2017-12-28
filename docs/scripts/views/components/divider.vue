@@ -1,7 +1,7 @@
 <template>
   <div class="page--divider">
     <div class="component-title">
-      <h2>Divider</h2>
+      <h2>Divider 分割线</h2>
     </div>
 
     <h4 class="line">概述</h4>
