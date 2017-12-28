@@ -47,7 +47,7 @@ export default {
     name: {
       type: String,
       default: function() {
-        return generateRandomAlphaNum(7);
+        return generateRandomAlphaNum(8);
       }
     }
   },
