@@ -43,7 +43,7 @@
   }
   .mdl-navigation {
     .mdl-navigation__link--current:hover {
-        background-color: #757575;
+        background-color: $layout-drawer-navigation-link-active-background;
     }
   }
 }
