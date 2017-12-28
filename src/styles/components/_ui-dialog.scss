@@ -61,17 +61,6 @@
   overflow-y: auto;
 }
 
-@media (max-width:640px) {
-  .mdl-dialog,
-  .mdl-dialog__surface {
-    min-width: 280px;
-  }
-
-  .mdl-dialog__body {
-    line-height: 24px;
-  }
-}
-
 .default-enter-active,
 .default-leave-active {
   visibility: visible;
@@ -124,6 +113,25 @@
     justify-content: center;
     .mdl-button {
       margin: 0 5px;
+    }
+  }
+}
+
+@media (max-width:640px) {
+  .mdl-dialog,
+  .mdl-dialog__surface {
+    min-width: 280px;
+  }
+
+  .mdl-dialog__body {
+    line-height: 24px;
+  }
+
+  .mdl-alert,
+  .mdl-confirm {
+    .mdl-dialog__surface {
+      width: calc(100% - 30px);
+      min-width: initial;
     }
   }
 }
