@@ -566,7 +566,7 @@ export default {
               isCheckbox
             };
             if (value > 1) {
-              cell.row = value; // row number
+              cell[CELL_ROWSPAN] = value; // row number
             }
             break;
           case T_BODY:
@@ -592,10 +592,8 @@ export default {
 
         switch (type) {
           case T_HEAD:
-            if (key > 0) {
-              cell = {
-                row: key // row number
-              };
+            if (key > 1) {
+              cell[CELL_ROWSPAN] = key; // row number
             }
             break;
           case T_BODY:
@@ -651,11 +649,12 @@ export default {
                 result[0].push(this.getCell(type, cell));
               }
             }
-            // append checkbox
+
             let rowspan = isArray(data[0]) ? data.length : 1;
+            // append checkbox
             result[0] = this.getCheckbox(type, result[0], rowspan);
             // append detail view
-            result[0] = this.getDetailView(type, result[0], data.length);
+            result[0] = this.getDetailView(type, result[0], rowspan);
             break;
           case T_BODY:
             for (let key in this.currentData) {
