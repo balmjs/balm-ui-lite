@@ -1,16 +1,16 @@
+import multiBootstrap from '../config/multi-bootstrap';
 import UiMenu from './menu/menu';
 import UiMenuitem from './menu/menuitem';
 
-const components = {
+const UiMenuComponents = {
   UiMenu,
   UiMenuitem
 };
 
-if (typeof window !== 'undefined' && window.Vue) {
-  for (let key in components) {
-    let component = components[key];
-    window.Vue.component(component.name, component);
-  }
-}
+multiBootstrap(UiMenuComponents);
 
-export default components;
+export default UiMenuComponents;
+export {
+  UiMenu,
+  UiMenuitem
+};

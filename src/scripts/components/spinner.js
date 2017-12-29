@@ -1,7 +1,6 @@
+import bootstrap from '../config/bootstrap';
 import UiSpinner from './loading/spinner';
 
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.component(UiSpinner.name, UiSpinner);
-}
+bootstrap(UiSpinner);
 
 export default UiSpinner;

@@ -1,4 +1,4 @@
-import { multiConfigure } from './configure';
+import multiConfigure from './config/multi-configure';
 /**
  * Helpers
  */

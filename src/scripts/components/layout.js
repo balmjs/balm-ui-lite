@@ -1,3 +1,4 @@
+import multiBootstrap from '../config/multi-bootstrap';
 import UiLayout from './layout/layout';
 import UiLayoutHeader from './layout/layout-header';
 import UiLayoutHeaderRow from './layout/layout-header-row';
@@ -11,7 +12,7 @@ import UiLayoutTabPanel from './layout/layout-tab-panel';
 import UiNav from './layout/nav';
 import UiNavLink from './layout/nav-link';
 
-const components = {
+const UiLayoutComponents = {
   UiLayout,
   UiLayoutHeader,
   UiLayoutHeaderRow,
@@ -26,11 +27,20 @@ const components = {
   UiNavLink
 };
 
-if (typeof window !== 'undefined' && window.Vue) {
-  for (let key in components) {
-    let component = components[key];
-    window.Vue.component(component.name, component);
-  }
-}
+multiBootstrap(UiLayoutComponents);
 
-export default components;
+export default UiLayoutComponents;
+export {
+  UiLayout,
+  UiLayoutHeader,
+  UiLayoutHeaderRow,
+  UiLayoutTitle,
+  UiLayoutSpacer,
+  UiLayoutDrawer,
+  UiLayoutContent,
+  UiLayoutTabBar,
+  UiLayoutTab,
+  UiLayoutTabPanel,
+  UiNav,
+  UiNavLink
+};

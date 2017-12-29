@@ -1,7 +1,6 @@
+import bootstrap from '../config/bootstrap';
 import UiDivider from './common/divider';
 
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.component(UiDivider.name, UiDivider);
-}
+bootstrap(UiDivider);
 
 export default UiDivider;

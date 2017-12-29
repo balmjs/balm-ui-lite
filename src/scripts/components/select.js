@@ -1,7 +1,6 @@
+import bootstrap from '../config/bootstrap';
 import UiSelect from './form/select';
 
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.component(UiSelect.name, UiSelect);
-}
+bootstrap(UiSelect);
 
 export default UiSelect;

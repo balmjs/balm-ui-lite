@@ -1,3 +1,4 @@
+import multiBootstrap from '../config/multi-bootstrap';
 import UiList from './list/list';
 import UiItem from './list/item';
 import UiItemPrimary from './list/item-primary';
@@ -9,7 +10,7 @@ import UiItemAction from './list/item-action';
 import UiItemBody from './list/item-body';
 import UiItemSubtitle from './list/item-subtitle';
 
-const components = {
+const UiListComponents = {
   UiList,
   UiItem,
   UiItemPrimary,
@@ -22,11 +23,18 @@ const components = {
   UiItemSubtitle
 };
 
-if (typeof window !== 'undefined' && window.Vue) {
-  for (let key in components) {
-    let component = components[key];
-    window.Vue.component(component.name, component);
-  }
-}
+multiBootstrap(UiListComponents)
 
-export default components;
+export default UiListComponents;
+export {
+  UiList,
+  UiItem,
+  UiItemPrimary,
+  UiItemAvatar,
+  UiItemIcon,
+  UiItemSecondary,
+  UiItemInfo,
+  UiItemAction,
+  UiItemBody,
+  UiItemSubtitle
+};

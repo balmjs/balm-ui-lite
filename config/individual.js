@@ -14,6 +14,8 @@ const components = [
   'chip.js',
   'dialog.js',
   'layout.js',
+  'grid.js',
+  'tabs.js',
   'list.js',
   'progress.js',
   'spinner.js',

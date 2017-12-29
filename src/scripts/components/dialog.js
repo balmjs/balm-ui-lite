@@ -1,29 +1,22 @@
-import { multiConfigure } from '../configure';
+import multiBootstrap from '../config/multi-bootstrap';
 import UiDialog from './dialog/dialog';
 import UiDialogTitle from './dialog/dialog-title';
 import UiDialogContent from './dialog/dialog-content';
 import UiDialogActions from './dialog/dialog-actions';
 
-const components = {
+const UiDialogComponents = {
   UiDialog,
   UiDialogTitle,
   UiDialogContent,
   UiDialogActions
 };
 
-Object.defineProperty(components, 'config', {
-  get() {
-    return function(options = {}) {
-      multiConfigure(components, options);
-    };
-  }
-});
+multiBootstrap(UiDialogComponents);
 
-if (typeof window !== 'undefined' && window.Vue) {
-  for (let key in components) {
-    let component = components[key];
-    window.Vue.component(component.name, component);
-  }
-}
-
-export default components;
+export default UiDialogComponents;
+export {
+  UiDialog,
+  UiDialogTitle,
+  UiDialogContent,
+  UiDialogActions
+};

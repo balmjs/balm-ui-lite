@@ -1,20 +1,15 @@
+import multiBootstrap from '../config/multi-bootstrap';
 import UiBadge from './common/badge';
 import UiBadgeLink from './common/badge-link';
 
-const components = {
+const UiBadgeComponents = {
   UiBadge,
   UiBadgeLink
 };
 
-if (typeof window !== 'undefined' && window.Vue) {
-  for (let key in components) {
-    let component = components[key];
-    window.Vue.component(component.name, component);
-  }
-}
+multiBootstrap(UiBadgeComponents);
 
-export default components;
-
+export default UiBadgeComponents;
 export {
   UiBadge,
   UiBadgeLink

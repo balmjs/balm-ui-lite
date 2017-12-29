@@ -1,7 +1,6 @@
+import bootstrap from '../config/bootstrap';
 import UiFile from './form/file';
 
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.component(UiFile.name, UiFile);
-}
+bootstrap(UiFile);
 
 export default UiFile;

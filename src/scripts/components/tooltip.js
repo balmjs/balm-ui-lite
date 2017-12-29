@@ -1,7 +1,6 @@
+import bootstrap from '../config/bootstrap';
 import UiTooltip from './common/tooltip';
 
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.component(UiTooltip.name, UiTooltip);
-}
+bootstrap(UiTooltip);
 
 export default UiTooltip;

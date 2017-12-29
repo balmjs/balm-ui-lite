@@ -1,7 +1,6 @@
+import bootstrap from '../config/bootstrap';
 import UiAutocomplete from './form/autocomplete';
 
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.component(UiAutocomplete.name, UiAutocomplete);
-}
+bootstrap(UiAutocomplete);
 
 export default UiAutocomplete;

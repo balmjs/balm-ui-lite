@@ -1,3 +1,4 @@
+import multiBootstrap from '../config/multi-bootstrap';
 import UiCard from './card/card';
 import UiCardHead from './card/card-head';
 import UiCardTitle from './card/card-title';
@@ -7,7 +8,7 @@ import UiCardBody from './card/card-body';
 import UiCardActions from './card/card-actions';
 import UiCardMenu from './card/card-menu';
 
-const components = {
+const UiCardComponents = {
   UiCard,
   UiCardHead,
   UiCardTitle,
@@ -18,11 +19,16 @@ const components = {
   UiCardMenu
 };
 
-if (typeof window !== 'undefined' && window.Vue) {
-  for (let key in components) {
-    let component = components[key];
-    window.Vue.component(component.name, component);
-  }
-}
+multiBootstrap(UiCardComponents);
 
-export default components;
+export default UiCardComponents;
+export {
+  UiCard,
+  UiCardHead,
+  UiCardTitle,
+  UiCardSubtitle,
+  UiCardMedia,
+  UiCardBody,
+  UiCardActions,
+  UiCardMenu
+};

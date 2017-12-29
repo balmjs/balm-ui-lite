@@ -1,16 +1,16 @@
+import multiBootstrap from '../config/multi-bootstrap';
 import UiGrid from './grid/grid';
 import UiCell from './grid/cell';
 
-const components = {
+const UiGridComponents = {
   UiGrid,
   UiCell
 };
 
-if (typeof window !== 'undefined' && window.Vue) {
-  for (let key in components) {
-    let component = components[key];
-    window.Vue.component(component.name, component);
-  }
-}
+multiBootstrap(UiGridComponents);
 
-export default components;
+export default UiGridComponents;
+export {
+  UiGrid,
+  UiCell
+};

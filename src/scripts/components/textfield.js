@@ -1,7 +1,6 @@
+import bootstrap from '../config/bootstrap';
 import UiTextfield from './form/textfield';
 
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.component(UiTextfield.name, UiTextfield);
-}
+bootstrap(UiTextfield);
 
 export default UiTextfield;

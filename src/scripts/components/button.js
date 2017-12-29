@@ -1,16 +1,6 @@
-import configure from '../configure';
+import bootstrap from '../config/bootstrap';
 import UiButton from './common/button';
 
-Object.defineProperty(UiButton, 'config', {
-  get() {
-    return function(props = {}) {
-      configure(UiButton, props);
-    };
-  }
-});
-
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.component(UiButton.name, UiButton);
-}
+bootstrap(UiButton);
 
 export default UiButton;
