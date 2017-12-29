@@ -12,7 +12,7 @@
 
     <div class="snippet-group">
       <div class="snippet-demo">
-        <ui-button raised colored @click="balmUI.onShow('show1')">Simple Dialog</ui-button>
+        <ui-button raised colored @click="balmUI.onOpen('show1')">Simple Dialog</ui-button>
       </div>
       <ui-accordion>
         <ui-markdown :code="code[1]"></ui-markdown>
@@ -36,7 +36,7 @@
         <ui-markdown :code="code[2]"></ui-markdown>
       </ui-accordion>
     </div>
-    <ui-dialog :open="show2" @close="balmUI.onClose('show2')" @confirm="onConfirm">
+    <ui-dialog :open="show2" @close="balmUI.onHide('show2')" @confirm="onConfirm">
       <ui-dialog-content>
         <p>Allow this site to collect usage data to improve your experience?</p>
       </ui-dialog-content>
@@ -47,7 +47,7 @@
 
     <div class="snippet-group">
       <div class="snippet-demo">
-        <ui-button raised colored @click="balmUI.onShow('show3')">Scrolling Dialog</ui-button>
+        <ui-button raised colored @click="balmUI.onOpen('show3')">Scrolling Dialog</ui-button>
       </div>
       <ui-accordion>
         <ui-markdown :code="code[3]"></ui-markdown>

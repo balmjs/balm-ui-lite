@@ -1,5 +1,5 @@
 ```html
-<ui-button raised colored @click="balmUI.onShow('show')">Scrolling Dialog</ui-button>
+<ui-button raised colored @click="balmUI.onOpen('show')">Scrolling Dialog</ui-button>
 
 <ui-dialog maskClosable :open="show" @close="balmUI.onClose('show')">
   <ui-dialog-content>

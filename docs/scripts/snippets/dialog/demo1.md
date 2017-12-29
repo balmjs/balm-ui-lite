@@ -1,7 +1,7 @@
 ```html
-<ui-button raised colored @click="showDialog('show')">Simple Dialog</ui-button>
+<ui-button raised colored @click="balmUI.onOpen('show')">Simple Dialog</ui-button>
 
-<ui-dialog :open="show" @close="closeDialog('show')" @confirm="onConfirm">
+<ui-dialog :open="show" @close="balmUI.onClose('show')" @confirm="onConfirm">
   <ui-dialog-title>
     <h4>Allow data collection?</h4>
   </ui-dialog-title>
