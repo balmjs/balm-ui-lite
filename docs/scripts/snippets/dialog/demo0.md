@@ -22,6 +22,13 @@ import 'balm-ui-lite/components/core.css';
 import 'balm-ui-lite/components/dialog.css';
 import 'balm-ui-lite/components/button.css';
 
+UiDialogComponents.config({
+  UiDialogActions: {
+    acceptText: '确定',
+    cancelText: '取消'
+  }
+});
+
 for (let key in UiDialogComponents) {
   let Component = UiDialogComponents[key];
   Vue.component(Component.name, Component);

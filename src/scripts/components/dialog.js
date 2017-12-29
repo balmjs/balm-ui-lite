@@ -1,3 +1,4 @@
+import { multiConfigure } from '../configure';
 import UiDialog from './dialog/dialog';
 import UiDialogTitle from './dialog/dialog-title';
 import UiDialogContent from './dialog/dialog-content';
@@ -9,6 +10,14 @@ const components = {
   UiDialogContent,
   UiDialogActions
 };
+
+Object.defineProperty(components, 'config', {
+  get() {
+    return function(options = {}) {
+      multiConfigure(components, options);
+    };
+  }
+});
 
 if (typeof window !== 'undefined' && window.Vue) {
   for (let key in components) {

@@ -1,4 +1,4 @@
-import configure from './configure';
+import { multiConfigure } from './configure';
 /**
  * Helpers
  */
@@ -224,17 +224,8 @@ const directives = {
 
 const registers = {
   install(Vue, options = {}) {
-    // Configure the component props
-    Object.keys(options).forEach(key => {
-      if (BalmUI.components[key] === undefined) {
-        return;
-      }
-
-      const Component = BalmUI.components[key];
-      const props = options[key];
-
-      configure(Component, props);
-    });
+    // Configure the components' props
+    multiConfigure(BalmUI.components, options);
 
     // Install the components
     for (let key in BalmUI.components) {
