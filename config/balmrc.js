@@ -66,7 +66,7 @@ module.exports = {
     excludes: ['index.js']
   },
   assets: {
-    publicUrl: env.buildDocs ? 'http://balmjs.com/ui-vue-lite/' : ''
+    publicUrl: env.buildDocs ? 'http://mdl.balmjs.com/' : ''
   },
   useDefault: env.useDefault
 };

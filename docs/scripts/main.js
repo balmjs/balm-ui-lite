@@ -69,7 +69,7 @@ if (isIE) {
       }]
     }
   };
-  Vue.prototype.$domain = DEBUG ? '' : '/ui-vue-lite';
+  Vue.prototype.$domain = DEBUG ? '' : 'http://mdl.balmjs.com';
 
   const router = new VueRouter({
     routes
