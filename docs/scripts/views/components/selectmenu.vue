@@ -5,7 +5,7 @@
     </div>
 
     <h4>0. 使用方式</h4>
-    <!-- <ui-markdown :text="code[0]"></ui-markdown> -->
+    <ui-markdown :text="code[0]"></ui-markdown>
 
     <h4>1. 默认下拉选择</h4>
     <div class="snippet-group">

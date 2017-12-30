@@ -56,7 +56,7 @@ import UiChipText from './components/chip/chip-text';
 import UiChipAction from './components/chip/chip-action';
 import UiChipContact from './components/chip/chip-contact';
 import UiMenu from './components/menu/menu';
-import UiMenuItem from './components/menu/menuitem';
+import UiMenuitem from './components/menu/menuitem';
 import UiTooltip from './components/common/tooltip';
 import UiDivider from './components/common/divider';
 import UiIcon from './components/common/icon';
@@ -159,7 +159,7 @@ const components = {
   UiChipAction,
   UiChipContact,
   UiMenu,
-  UiMenuItem,
+  UiMenuitem,
   UiTooltip,
   UiDivider,
   UiIcon,

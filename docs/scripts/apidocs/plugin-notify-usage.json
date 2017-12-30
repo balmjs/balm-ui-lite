@@ -2,12 +2,12 @@
   "props": [{
     "name": "cancelText",
     "type": "String",
-    "default": "Close",
+    "default": "'Close'",
     "description": "默认按钮（关闭）的文字"
   }, {
     "name": "progressColor",
     "type": "String",
-    "default": "#3f51b5",
+    "default": "'#3f51b5'",
     "description": "进度条的颜色"
   }, {
     "name": "timeout",
@@ -17,7 +17,7 @@
   }, {
     "name": "transitionName",
     "type": "String",
-    "default": "notify-list",
+    "default": "'notify-list'",
     "description": "出入场动画名称，设置为空字符串则无动画"
   }],
   "slots": [],

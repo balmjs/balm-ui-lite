@@ -37,7 +37,7 @@
   }, {
     "name": "type",
     "type": "String",
-    "default": "info",
+    "default": "'info'",
     "description": "定义Notify类型的className;<br>会为Notify节点增加'type-${className}'的类名，通过该类名为不同类型的Notify扩展不同的样式"
   }],
   "slots": [],

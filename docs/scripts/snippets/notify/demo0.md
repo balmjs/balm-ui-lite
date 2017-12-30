@@ -11,9 +11,9 @@ Vue.use(BalmUI.plugins.notify, options);
 
 ```js
 import Vue from 'vue';
-import notify from 'balm-ui-lite/plugins/notify';
+import $notify from 'balm-ui-lite/plugins/notify';
 
 import 'balm-ui-lite/plugins/notify.css';
 
-Vue.use(notify, options);
+Vue.use($notify, options);
 ```

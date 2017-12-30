@@ -3,12 +3,12 @@
     "name": "property",
     "type": "String",
     "default": "",
-    "description": "需要改变状态的字段，如：show，dialog.show"
+    "description": "需要改变状态的字段，如：'show', 'dialog.show'"
   }, {
     "name": "value",
     "type": "any",
     "default": "",
-    "description": "仅用于onChange方法，表示字段将要更改的值/状态"
+    "description": "仅用于 <b>onChange</b> 方法，表示字段将要更改的值/状态"
   }, {
     "name": "fn",
     "type": "Function",

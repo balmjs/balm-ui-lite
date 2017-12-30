@@ -20,7 +20,7 @@ Vue.use(BalmUI.plugins.validator, rules);
 
 ```js
 import Vue from 'vue';
-import validator from 'balm-ui-lite/plugins/validator';
+import $validator from 'balm-ui-lite/plugins/validator';
 
 const rules = {
   required: {
@@ -31,10 +31,10 @@ const rules = {
   }
 };
 
-Vue.use(validator, rules);
+Vue.use($validator, rules);
 ```
 
-rules是自定义的验证规则集合，每个键值对代表一种规则，包含一个validate方法用于验证数据，一个message用于验证不通过的提示。
-
-
-validator插件默认包含了一个'required'的规则，你也可以编写自己的'required'规则来覆盖掉默认规则。
+- `rules` 是自定义的验证规则集合，每个键值对代表一种规则
+    - 包含一个 `validate(value: any)` 方法用于验证数据
+    - 包含一个 `message` 用于验证不通过的提示。
+- __Validator__ 插件默认包含了一个'required'的规则，你也可以编写自己的'required'规则来覆盖掉默认规则。

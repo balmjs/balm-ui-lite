@@ -11,7 +11,7 @@ Vue.use(BalmUI.plugins.toast, options);
 
 ```js
 import Vue from 'vue';
-import toast from 'balm-ui-lite/plugins/toast';
+import $toast from 'balm-ui-lite/plugins/toast';
 
-Vue.use(toast, options); 
+Vue.use($toast, options);
 ```

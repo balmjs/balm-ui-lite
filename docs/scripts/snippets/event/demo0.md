@@ -4,14 +4,16 @@
 import Vue from 'vue';
 import BalmUI from 'balm-ui-lite';
 
-Vue.use(BalmUI.plugins.event, options); // options为可选参数，默认值：{ namspace: 'balmUI' }
+Vue.use(BalmUI.plugins.event, options);
 ```
+
+> `options` 为可选参数，默认值：`{ namesapce: 'balmUI' }`
 
 独立使用
 
 ```js
 import Vue from 'vue';
-import event from 'balm-ui-lite/plugins/event';
+import $event from 'balm-ui-lite/plugins/event';
 
-Vue.use(event, options); 
+Vue.use($event, options);
 ```

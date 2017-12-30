@@ -21,7 +21,7 @@
     {
       "name": "buttonText",
       "type": "String",
-      "default": "OK",
+      "default": "'OK'",
       "description": "警告框按钮的文字"
     },
     {

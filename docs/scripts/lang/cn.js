@@ -128,7 +128,7 @@ const data = {
     "icon-toggle": "<ui-icon-toggle>",
     "switch": "<ui-switch>",
     "slider": "<ui-slider>",
-    "fileupload": "<ui-fileupload>",
+    "file": "<ui-file>",
     "autocomplete": "<ui-autocomplete>",
     "datepicker": "<ui-datepicker>",
     "rangepicker": "<ui-rangepicker>"
