@@ -7,7 +7,7 @@ import BalmUI from 'balm-ui-lite';
 Vue.use(BalmUI.plugins.event, options);
 ```
 
-> `options` 为可选参数，默认值：`{ namesapce: 'balmUI' }`
+> `options` 为可选参数，默认值：`{ namespace: 'balmUI' }`
 
 独立使用
 
