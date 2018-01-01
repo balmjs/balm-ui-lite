@@ -1,4 +1,4 @@
-# [BalmUI Lite](http://balmjs.com/ui-vue-lite/)
+# [BalmUI Lite](http://balmjs.com/ui-vue-lite/) [![NPM version][balm-ui-lite-image]][balm-ui-lite-url]
 > 基于 Material Design Lite 组件库 和 Vue.js 框架 的 UI 解决方案
 
 ## 特点
@@ -128,6 +128,10 @@ Vue.use($event);
 ## 如何贡献
 
 我们欢迎任何形式的贡献，有任何建议或意见，请给我们 [提问](https://github.com/balmjs/ui-vue-lite/issues)。
+
+
+[balm-ui-lite-image]: https://badge.fury.io/js/balm-ui-lite.svg
+[balm-ui-lite-url]: https://npmjs.org/package/balm-ui-lite
 
 
 > __thx [BalmJS](http://balmjs.com/) & [Vue.js](https://vuejs.org/)__
