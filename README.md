@@ -1,4 +1,4 @@
-# [BalmUI Lite](http://balmjs.com/ui-vue-lite/) [![NPM version][balm-ui-lite-image]][balm-ui-lite-url]
+# [BalmUI Lite](http://mdl.balmjs.com/) [![NPM version][balm-ui-lite-image]][balm-ui-lite-url]
 > 基于 Material Design Lite 组件库 和 Vue.js 框架 的 UI 解决方案
 
 ## 特点
@@ -63,7 +63,7 @@ Vue.use($event);
 
 ## 完整文档
 
-请查看 [BalmUI Lite 官网](http://balmjs.com/ui-vue-lite/)
+请查看 [BalmUI Lite 官网](http://mdl.balmjs.com/)
 
 ### UI组件列表
 
@@ -114,7 +114,7 @@ Vue.use($event);
 - notify
 - validator
 
-> BalmUI Lite 中还包含一些常用 _指令服务_ 和 _辅助方法_，具体请查看[官方文档](http://balmjs.com/ui-vue-lite/)
+> BalmUI Lite 中还包含一些常用 _指令服务_ 和 _辅助方法_，具体请查看[官方文档](http://mdl.balmjs.com/)
 
 ### 支持环境
 
