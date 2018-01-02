@@ -45,7 +45,12 @@
       </ui-nav>
     </ui-layout-drawer>
     <ui-layout-content>
-      <router-view></router-view>
+      <transition name="loading">
+        <div v-if="loading" class="loading-container">
+          <ui-spinner active></ui-spinner>
+        </div>
+        <router-view v-else></router-view>
+      </transition>
     </ui-layout-content>
   </ui-layout>
 </template>
@@ -62,6 +67,7 @@ export default {
   data() {
     return {
       version: BalmUI.version,
+      loading: true,
       lang,
       menu
     };
@@ -78,6 +84,15 @@ export default {
     switchLang(lang) {
       this.$i18n.locale = lang;
     }
+  },
+  created() {
+    this.$router.beforeEach((to, from, next) => {
+      this.loading = true;
+      next();
+    });
+    this.$router.afterEach(() => {
+      this.loading = false;
+    });
   }
 };
 </script>
