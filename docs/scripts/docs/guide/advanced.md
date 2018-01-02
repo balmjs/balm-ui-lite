@@ -86,11 +86,7 @@ __模板统一格式__
 import Vue from 'vue';
 import BalmUI from 'balm-ui-lite';
 
-// 安装全部组件
 Vue.use(BalmUI);
-// 选择需要安装的通用插件
-Vue.use(BalmUI.plugins.event); // Event 插件是推荐必选插件
-...
 ```
 
 #### 2.1.2 浏览器引入
@@ -143,7 +139,7 @@ Vue.use(BalmUI.plugins.event); // Event 插件是推荐必选插件
 import Vue from 'vue';
 // 引用UI部分脚本
 import UiButton from 'balm-ui-lite/components/button';
-import UiAlertPlugin from 'balm-ui-lite/plugins/alert';
+import $alert from 'balm-ui-lite/plugins/alert';
 
 // 引用UI部分样式
 import 'balm-ui-lite/components/core.css';
@@ -153,7 +149,7 @@ import 'balm-ui-lite/components/dialog.css';
 // 安装Button组件
 Vue.component(UiButton.name, UiButton);
 // 安装Alert插件
-Vue.use(UiAlertPlugin);
+Vue.use($alert);
 ```
 
 > 关于 _CSSinJS_，可通过 BalmJS 配置提取样式，但 BalmJS的思想 更推荐将样式和脚本分离管理，以达成更加灵活的模块配置和管理

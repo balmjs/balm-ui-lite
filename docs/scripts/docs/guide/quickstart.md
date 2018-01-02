@@ -70,14 +70,8 @@ npm i --save balm-ui-lite
 // 脚本文件：my-project/app/scripts/main.js
 import Vue from 'vue';
 import BalmUI from 'balm-ui-lite'; // 引用
-...
 
-// 安装BalmUI组件
-Vue.use(BalmUI);
-// 安装BalmUI插件
-Vue.use(BalmUI.plugins.event);
-Vue.use(BalmUI.plugins.alert);
-...
+Vue.use(BalmUI); // 安装
 ```
 
 ### 4.3 UI库所需的图片和字体

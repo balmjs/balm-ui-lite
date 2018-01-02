@@ -26,13 +26,6 @@ if (isIE) {
   Vue.use(VueMeta);
   Vue.use(VueI18n);
   Vue.use(BalmUI);
-  Vue.use(BalmUI.plugins.event);
-  Vue.use(BalmUI.plugins.alert);
-  Vue.use(BalmUI.plugins.confirm);
-  Vue.use(BalmUI.plugins.toast);
-  Vue.use(BalmUI.plugins.notify);
-  Vue.use(BalmUI.plugins.validator);
-  Vue.use(BalmUI.plugins.prompt);
   Vue.use({
     install(vue) {
       vue.component(UiMarkdown.name, UiMarkdown);
@@ -40,8 +33,6 @@ if (isIE) {
       Vue.component(UiAccordion.name, UiAccordion);
     }
   });
-
-  Vue.directive('lazy-load', BalmUI.directives.lazyLoad);
 
   Vue.prototype.$http = axios;
   Vue.prototype.$prism = prismjs;

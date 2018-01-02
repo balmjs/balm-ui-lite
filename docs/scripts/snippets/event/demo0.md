@@ -4,10 +4,13 @@
 import Vue from 'vue';
 import BalmUI from 'balm-ui-lite';
 
-Vue.use(BalmUI.plugins.event, options);
+Vue.use(BalmUI, {
+  // (可选) 复写全局 $event 属性的默认值
+  $event: {
+    namespace: 'balmUI'
+  }
+});
 ```
-
-> `options` 为可选参数，默认值：`{ namespace: 'balmUI' }`
 
 独立使用
 
@@ -15,5 +18,8 @@ Vue.use(BalmUI.plugins.event, options);
 import Vue from 'vue';
 import $event from 'balm-ui-lite/plugins/event';
 
-Vue.use($event, options);
+Vue.use($event, {
+  // (可选) 复写全局 $event 属性的默认值
+  namespace: 'balmUI'
+});
 ```

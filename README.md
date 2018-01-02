@@ -4,7 +4,7 @@
 ## 特点
 
 - 高度集成 Google 的 Material Design Lite 和 Material Design Icons，并扩展更多常用组件
-- 开箱即用的高质量 Vue 组件，插件，混合方法及通用方法
+- 开箱即用的高质量 Vue 组件，插件，指令及通用方法
 - 基于 __[BalmJS](http://balmjs.com/)__ 的工作流，支持 ES2015+
 - 支持多种使用方式
 

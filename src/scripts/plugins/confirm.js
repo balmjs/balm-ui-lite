@@ -32,13 +32,13 @@ const template = `<ui-dialog
   </ui-dialog-actions>
 </ui-dialog>`;
 
-const BalmUIConfirmPlugin = {
-  install(Vue, config) {
+const BalmUI_ConfirmPlugin = {
+  install(Vue, config = {}) {
     let vm;
 
     let options = Object.assign({}, DEFAULT_OPTIONS, config);
 
-    const UiConfirm = (customOptions = {}) => {
+    const $confirm = (customOptions = {}) => {
       return new Promise((resolve) => {
         vm = new Vue({
           components: {
@@ -57,7 +57,7 @@ const BalmUIConfirmPlugin = {
           methods: {
             $_handleClose() {
               this.open = false;
-              this.$nextTick(function () {
+              this.$nextTick(function() {
                 document.body.removeChild(this.$el);
                 document.body.classList.remove('mdl-dialog-scroll-lock');
                 vm = null;
@@ -79,7 +79,7 @@ const BalmUIConfirmPlugin = {
               this.options = Object.assign({}, this.options, customOptions);
             }
 
-            this.$nextTick(function () {
+            this.$nextTick(function() {
               document.body.appendChild(vm.$el);
               this.open = true;
             });
@@ -88,12 +88,12 @@ const BalmUIConfirmPlugin = {
       });
     };
 
-    Vue.prototype.$confirm = UiConfirm;
+    Vue.prototype.$confirm = $confirm;
   }
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(BalmUIConfirmPlugin);
+  window.Vue.use(BalmUI_ConfirmPlugin);
 }
 
-export default BalmUIConfirmPlugin;
+export default BalmUI_ConfirmPlugin;

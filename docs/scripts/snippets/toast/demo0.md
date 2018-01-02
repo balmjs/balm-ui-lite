@@ -4,7 +4,12 @@
 import Vue from 'vue';
 import BalmUI from 'balm-ui-lite';
 
-Vue.use(BalmUI.plugins.toast, options);
+Vue.use(BalmUI, {
+  // (可选) 复写全局 $toast 属性的默认值
+  $toast: {
+    // ...
+  }
+});
 ```
 
 独立使用
@@ -13,5 +18,8 @@ Vue.use(BalmUI.plugins.toast, options);
 import Vue from 'vue';
 import $toast from 'balm-ui-lite/plugins/toast';
 
-Vue.use($toast, options);
+Vue.use($toast, {
+  // (可选) 复写全局 $toast 属性的默认值
+  // ...
+});
 ```

@@ -15,13 +15,13 @@ const template = `<ui-snackbar
   :timeout="options.timeout">
 </ui-snackbar>`;
 
-const BalmUIToastPlugin = {
-  install(Vue, config) {
+const BalmUI_ToastPlugin = {
+  install(Vue, config = {}) {
     let vm;
 
     let options = Object.assign({}, DEFAULT_OPTIONS, config);
 
-    const UiToast = (customOptions = {}) => {
+    const $toast = (customOptions = {}) => {
       if (!document.querySelector('.mdl-toast')) {
         vm = new Vue({
           components: {
@@ -40,7 +40,7 @@ const BalmUIToastPlugin = {
               this.options = Object.assign({}, this.options, customOptions);
             }
 
-            this.$nextTick(function () {
+            this.$nextTick(function() {
               document.body.appendChild(this.$el);
 
               setTimeout(() => {
@@ -61,12 +61,12 @@ const BalmUIToastPlugin = {
       }
     };
 
-    Vue.prototype.$toast = UiToast;
+    Vue.prototype.$toast = $toast;
   }
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(BalmUIToastPlugin);
+  window.Vue.use(BalmUI_ToastPlugin);
 }
 
-export default BalmUIToastPlugin;
+export default BalmUI_ToastPlugin;

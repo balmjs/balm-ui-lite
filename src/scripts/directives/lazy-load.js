@@ -1,3 +1,5 @@
+// TODO 未完全测试，未自动安装
+
 /**
  * @method 检测元素是否在viewport内
  * @param  el {Element}
@@ -98,4 +100,4 @@ export default {
   inserted(el){
     lazyLoad(getImgs(el));
   }
-}
+};

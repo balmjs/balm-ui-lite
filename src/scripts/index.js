@@ -4,10 +4,6 @@ import multiConfigure from './config/multi-configure';
  */
 import * as BalmUI_Helpers from './helpers';
 /**
- * Mixins
- */
-import * as BalmUI_Mixins from './mixins';
-/**
  * Layout
  */
 import UiLayout from './components/layout/layout';
@@ -124,11 +120,10 @@ import validator from './plugins/validator';
 /**
  * Directives
  */
-import lazyLoad from './directives/lazy-load';
+// import lazyLoad from './directives/lazy-load';
 
 const version = require('../../package.json').version;
 const helpers = Object.assign({}, BalmUI_Helpers);
-const mixins = Object.assign({}, BalmUI_Mixins);
 
 const components = {
   // Layout
@@ -218,9 +213,9 @@ const plugins = {
   validator
 };
 
-const directives = {
-  lazyLoad
-};
+// const directives = {
+//   lazyLoad
+// };
 
 const registers = {
   install(Vue, options = {}) {
@@ -232,6 +227,16 @@ const registers = {
       let Component = BalmUI.components[key];
       Vue.component(Component.name, Component);
     }
+
+    // Install the plugins
+    for (let key in BalmUI.plugins) {
+      let Plugin = BalmUI.plugins[key];
+      if (options[`$${key}`]) {
+        Vue.use(Plugin, options[`$${key}`]);
+      } else {
+        Vue.use(Plugin);
+      }
+    }
   }
 };
 
@@ -239,24 +244,16 @@ const BalmUI = Object.assign(
   {},
   { version },
   { helpers },
-  { mixins },
   { components },
   { plugins },
-  { directives },
+  // { directives },
   registers
 );
 
 // Auto install in dist mode
 if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.use(BalmUI);
-  for (let key in BalmUI.plugins) {
-    window.Vue.use(BalmUI.plugins[key]);
-  }
-  for (let name in BalmUI.directives) {
-    window.Vue.directive(name, BalmUI.directives[name]);
-  }
 }
 
 export default BalmUI;
-
-export { helpers, mixins };
+export { helpers };

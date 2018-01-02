@@ -11,12 +11,12 @@ const defaultRules = {
 
 const LABEL_PLACEHOLDER = '%s';
 
-export default {
-  install(Vue, customRules) {
+const BalmUI_ValidatorPlugin = {
+  install(Vue, customRules = {}) {
     let validationRules = Object.assign({}, defaultRules, customRules);
 
-    Vue.prototype.$validate = function(formData = {}, rules = {}) {
-
+    const $validate = function(formData = {}, rules = {}) {
+      let currentFormData = Object.assign({}, formData);
       let currentRules = Object.assign({}, validationRules, rules);
 
       let result = {
@@ -50,30 +50,29 @@ export default {
           let rule = fieldOption[ruleName] || currentRules[ruleName]; // 当前验证方法
 
           if (rule && getType(rule.validate) === 'function') {
-
-            if (!rule.validate.apply(this, [formData[fieldName], formData])) {
-
+            if (!rule.validate.apply(this, [currentFormData[fieldName], currentFormData])) {
               fieldAllValid = false;
               let message = '';
+
               // 错误提示
               if (getType(rule.message) === 'function') {
-                message = rule.message.apply(this, [fieldName, formData[fieldName], formData]);
+                message = rule.message.apply(this, [fieldName, currentFormData[fieldName], currentFormData]);
               } else {
                 message = rule.message.replace(
                   LABEL_PLACEHOLDER,
                   label
                 );
               }
+
               if (!result.message) {
                 result.message = message;
               }
+
               result.messages.push(message);
             }
-
           } else {
             console.warn(`The field [${fieldName}] is missing a validation rule: '${ruleName}'`);
           }
-
         }
 
         if (fieldAllValid) {
@@ -82,10 +81,17 @@ export default {
           result.isValid = false;
           result.invalid.push(fieldName);
         }
-
       }
 
       return result;
     };
+
+    Vue.prototype.$validate = $validate; // NOTE: named '$validate'
   }
 };
+
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(BalmUI_ValidatorPlugin);
+}
+
+export default BalmUI_ValidatorPlugin;

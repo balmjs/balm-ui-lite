@@ -13,7 +13,10 @@ const rules = {
   }
 };
 
-Vue.use(BalmUI.plugins.validator, rules);
+Vue.use(BalmUI, {
+  // (可选) 复写全局 $validate 验证规则的默认值
+  $validator: rules
+});
 ```
 
 独立使用

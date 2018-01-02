@@ -28,13 +28,13 @@ const template = `<ui-dialog
   </ui-dialog-actions>
 </ui-dialog>`;
 
-const BalmUIAlertPlugin = {
+const BalmUI_AlertPlugin = {
   install(Vue, config = {}) {
     let vm;
 
     let options = Object.assign({}, DEFAULT_OPTIONS, config);
 
-    const UiAlert = (customOptions = {}) => {
+    const $alert = (customOptions = {}) => {
       return new Promise((resolve) => {
         vm = new Vue({
           components: {
@@ -53,7 +53,7 @@ const BalmUIAlertPlugin = {
           methods: {
             $_handleClose() {
               this.open = false;
-              this.$nextTick(function () {
+              this.$nextTick(function() {
                 document.body.removeChild(this.$el);
                 document.body.classList.remove('mdl-dialog-scroll-lock');
                 vm = null;
@@ -74,7 +74,7 @@ const BalmUIAlertPlugin = {
             } else if (getType(customOptions) === 'object') {
               this.options = Object.assign({}, this.options, customOptions);
             }
-            this.$nextTick(function () {
+            this.$nextTick(function() {
               document.body.appendChild(vm.$el);
               this.open = true;
             });
@@ -83,12 +83,12 @@ const BalmUIAlertPlugin = {
       });
     };
 
-    Vue.prototype.$alert = UiAlert;
+    Vue.prototype.$alert = $alert;
   }
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(BalmUIAlertPlugin);
+  window.Vue.use(BalmUI_AlertPlugin);
 }
 
-export default BalmUIAlertPlugin;
+export default BalmUI_AlertPlugin;

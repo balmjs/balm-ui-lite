@@ -37,13 +37,13 @@ const template = `<ui-dialog
   </ui-dialog-actions>
 </ui-dialog>`;
 
-const BalmUIPromptPlugin = {
-  install(Vue, config) {
+const BalmUI_PromptPlugin = {
+  install(Vue, config = {}) {
     let vm;
 
     let options = Object.assign({}, DEFAULT_OPTIONS, config);
 
-    const UiPrompt= (customOptions = {}, value) => {
+    const $prompt = (customOptions = {}, value) => {
       return new Promise((resolve) => {
         vm = new Vue({
           components: {
@@ -64,12 +64,12 @@ const BalmUIPromptPlugin = {
             }
           },
           methods: {
-            $_onChange (event) {
+            $_onChange(event) {
               this.formData.value = event.target.value;
             },
             $_handleClose() {
               this.open = false;
-              this.$nextTick(function () {
+              this.$nextTick(function() {
                 document.body.removeChild(this.$el);
                 document.body.classList.remove('mdl-dialog-scroll-lock');
                 vm = null;
@@ -93,7 +93,7 @@ const BalmUIPromptPlugin = {
               this.options.defaultValue && (this.formData.value = this.options.defaultValue);
             }
 
-            this.$nextTick(function () {
+            this.$nextTick(function() {
               document.body.appendChild(vm.$el);
               this.open = true;
             });
@@ -102,12 +102,12 @@ const BalmUIPromptPlugin = {
       });
     };
 
-    Vue.prototype.$prompt = UiPrompt;
+    Vue.prototype.$prompt = $prompt;
   }
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(BalmUIPromptPlugin);
+  window.Vue.use(BalmUI_PromptPlugin);
 }
 
-export default BalmUIPromptPlugin;
+export default BalmUI_PromptPlugin;

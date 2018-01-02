@@ -41,19 +41,17 @@ const template = `<div class="mdl-notify" v-if="open">
 const itemProps = {
   type: 'info', // 消息类型
   timeout: 5000, // 自动关闭时间，设置为0则不会关闭
-  avatar:'', // 头像
+  avatar: '', // 头像
   className: '', // 自定义css class
   title: '', // 标题
   content: '', // 内容
   progressColor: '', // 单独设置当前的进度条颜色
-  buttons: [
-    {
-      // 自定义按钮 {className: String, text: String, handler: Function|String, autoClose: Boolean}
-      className: '', // 自定义按钮css class
-      text: 'Close', // 按钮文本
-      autoClose: YES // 点击按钮是否自动关闭 默认: 关闭
-    }
-  ]
+  buttons: [{
+    // 自定义按钮 {className: String, text: String, handler: Function|String, autoClose: Boolean}
+    className: '', // 自定义按钮css class
+    text: 'Close', // 按钮文本
+    autoClose: YES // 点击按钮是否自动关闭 默认: 关闭
+  }]
 };
 
 const defaultGlobalOptions = {};
@@ -62,13 +60,13 @@ const createNotifyId = () => Math.floor((1 + Math.random()) * 0x10000).toString(
 
 const btnHandlers = {};
 
-const BalmUINotifyPlugin = {
+const BalmUI_NotifyPlugin = {
   install(Vue, options = {}) {
     const notifyContainer = document.createElement('div');
 
     let config = Object.assign({}, defaultGlobalOptions, options);
 
-    const data = function () {
+    const data = function() {
       return {
         open: YES,
         progressColor: config.progressColor || '#3f51b5',
@@ -92,15 +90,14 @@ const BalmUINotifyPlugin = {
       },
       add(newNotify = {}) {
         !this.open &&
-        console.warn(
-          `[BalmUI]:Plugin $notify has not open yet. use 'this.$notify.open = true' to open the notify plugin in Vue instance.`
-        );
+          console.warn(
+            `[BalmUI]:Plugin $notify has not open yet. use 'this.$notify.open = true' to open the notify plugin in Vue instance.`
+          );
 
         getType(config.timeout) === 'number' && (itemProps.timeout = config.timeout);
         config.cancelText && (itemProps.buttons[0].text = config.cancelText);
 
-        newNotify = Object.assign(
-          {
+        newNotify = Object.assign({
             id: `${createNotifyId()}-${Date.now()}`
           },
           itemProps,
@@ -108,7 +105,7 @@ const BalmUINotifyPlugin = {
         );
 
         this.notifies.push(newNotify);
-        return {id: newNotify.id};
+        return { id: newNotify.id };
       },
       addButtonHandler(handlerName = '', fn) {
         let type = getType(handlerName);
@@ -143,7 +140,7 @@ const BalmUINotifyPlugin = {
           return notify.id === item.id;
         });
       },
-      findNotify (notify) {
+      findNotify(notify) {
         return this.notifies.find(function(item) {
           return notify.id === item.id;
         });
@@ -184,7 +181,7 @@ const BalmUINotifyPlugin = {
       }
     };
 
-    const created = function () {
+    const created = function() {
       document.body.appendChild(notifyContainer);
     };
 
@@ -199,7 +196,7 @@ const BalmUINotifyPlugin = {
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(BalmUINotifyPlugin);
+  window.Vue.use(BalmUI_NotifyPlugin);
 }
 
-export default BalmUINotifyPlugin;
+export default BalmUI_NotifyPlugin;

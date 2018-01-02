@@ -8967,9 +8967,9 @@ vue-i18n@^7.3.3:
   version "7.3.3"
   resolved "http://registry.npm.taobao.org/vue-i18n/download/vue-i18n-7.3.3.tgz#e162431fef05daae1a9b9b3992ac5be238eff954"
 
-vue-loader@^13.6.1:
-  version "13.6.1"
-  resolved "http://registry.npm.taobao.org/vue-loader/download/vue-loader-13.6.1.tgz#3ad365271b3db382722ab2eb0d6936d8d52ec2ce"
+vue-loader@^13.6.2:
+  version "13.6.2"
+  resolved "http://registry.npm.taobao.org/vue-loader/download/vue-loader-13.6.2.tgz#43d9688f2c80400916104d1138941aacd7e389cb"
   dependencies:
     consolidate "^0.14.0"
     hash-sum "^1.0.2"
