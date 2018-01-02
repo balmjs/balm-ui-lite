@@ -9,7 +9,7 @@
 
     <h4 class="line">引入</h4>
     <ui-markdown :text="code[0]"></ui-markdown>
-    <p>关于可配置参数<strong>options</strong>的具体属性如下：</p>
+    <p>关于可配置项的具体属性如下：</p>
     <ui-apidoc name="alert" :show-title="false"></ui-apidoc>
 
     <h4 class="line">方法</h4>

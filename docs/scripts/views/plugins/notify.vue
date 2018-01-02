@@ -13,7 +13,7 @@
 
     <h4 class="line">引入</h4>
     <ui-markdown :text="code[0]"></ui-markdown>
-    <p>示例代码中的<strong>options</strong>参数包含以下属性：</p>
+    <p>示例代码中的可配置项包含以下属性：</p>
     <ui-apidoc name="plugin-notify-usage" :show-title="false"></ui-apidoc>
 
     <h4 class="line">示例</h4>

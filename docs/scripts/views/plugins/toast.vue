@@ -9,7 +9,7 @@
 
     <h4 class="line">引入</h4>
     <ui-markdown :text="code[0]"></ui-markdown>
-    <p>其中<strong>options</strong>参数的属性包括：</p>
+    <p>其中可配置项的属性包括：</p>
     <ui-apidoc name="toast-config" :show-title="false"></ui-apidoc>
 
     <h4 class="line">方法</h4>
