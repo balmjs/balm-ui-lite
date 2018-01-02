@@ -1,5 +1,43 @@
 # [BalmUI Lite](http://mdl.balmjs.com/)
 
+## 1.0.1 (2018.01.02)
+
+### :beetle: Bug fixes and improvements
+
+__Auto install plugins for `balm-ui-lite`__
+
+```js
+import Vue from 'vue';
+import BalmUI from 'balm-ui-lite';
+
+Vue.use(BalmUI); // include all plugins
+```
+
+__Update plugins config__
+
+- event
+- alert
+- confirm
+- prompt
+- toast
+- notify
+- validator
+
+### :page_with_curl: Update docs
+
+- Plugins
+    - event
+    - alert
+    - confirm
+    - prompt
+    - toast
+    - notify
+    - validator
+- Directives
+    - remove `lazy-load` docs (temporary)
+
+---
+
 ## 1.0.0 (2018.01.01)
 
 ### :tada: New features
@@ -150,7 +188,7 @@ __`<ui-table>`__
 
 ### :point_up: Directives
 
-- lazy-load
+- <del>lazy-load</del>
 
 ### :reminder_ribbon: Helpers
 

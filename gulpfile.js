@@ -53,7 +53,7 @@ balm.go(function(mix) {
         ]);
 
         // build individual
-        const individualBuild = ['components', 'helpers', 'plugins', 'directives'];
+        const individualBuild = ['components', 'helpers', 'plugins']; // , 'directives'
         individualBuild.forEach(buildName => {
           let buildFiles = individual[buildName].map(item => {
             return individual.input[buildName] + '/' + item;
