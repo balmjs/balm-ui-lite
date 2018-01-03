@@ -67,7 +67,7 @@ export default {
   data() {
     return {
       version: BalmUI.version,
-      loading: true,
+      loading: false,
       lang,
       menu
     };

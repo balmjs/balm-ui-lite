@@ -1,14 +1,11 @@
 // .supported-lang {
 //   margin: 0;
-
 //   cursor: pointer;
 //   a.active {
 //     font-weight: bolder;
-
 //     color: white;
 //   }
 // }
-
 .welcome-issues {
   margin: 0;
 }
@@ -43,13 +40,14 @@
   }
   .mdl-navigation {
     .mdl-navigation__link--current:hover {
-        background-color: $layout-drawer-navigation-link-active-background;
+      background-color: $layout-drawer-navigation-link-active-background;
     }
   }
 }
 
-.mdl-layout__content {
-  padding: 20px;
+.mdl-layout__content,
+.loading-leave-active {
+  padding: 15px;
 }
 
 .component-title {
@@ -72,17 +70,21 @@
   }
 }
 
-.loading-enter-active, .loading-leave-active {
+.loading-enter-active,
+.loading-leave-active {
   transition: opacity .4s;
 }
-.loading-enter, .loading-leave-to {
+
+.loading-enter,
+.loading-leave-to {
   opacity: 0;
 }
+
 .loading-leave-active {
   position: absolute;
   width: 100%;
-  left: 20px;
   top: 0;
+  left: 0;
 }
 
 /// 浮动布局
