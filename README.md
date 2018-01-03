@@ -43,7 +43,6 @@ import Vue from 'vue';
 import BalmUI from 'balm-ui-lite';
 
 Vue.use(BalmUI);
-Vue.use(BalmUI.plugins.event);
 ```
 
 #### 独立使用(Mobile开发推荐)
