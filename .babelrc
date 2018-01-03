@@ -3,5 +3,10 @@
     ["es2015", { "modules": false }],
     "stage-2"
   ],
-  "plugins": ["transform-runtime"]
+  "plugins": ["transform-runtime"],
+  "env": {
+    "test": {
+      "presets": "es2015"
+    }
+  }
 }
