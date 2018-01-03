@@ -1,5 +1,5 @@
 <template>
-  <ui-layout class="container" fixedDrawer>
+  <ui-layout class="balm-ui-container" fixedDrawer>
     <ui-layout-header>
       <ui-layout-header-row>
         <ui-layout-title>Material Design Lite + Vue</ui-layout-title>

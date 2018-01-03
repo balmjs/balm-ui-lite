@@ -45,6 +45,12 @@
   }
 }
 
+.balm-ui-container>.mdl-layout__drawer-button {
+  background-color: white;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+  margin-left: 0;
+}
+
 .mdl-layout__content,
 .loading-leave-active {
   padding: 15px;
@@ -102,4 +108,11 @@
 
 .pull-left {
   float: left;
+}
+
+@media (max-width: $layout-screen-size-threshold) {
+  .markdown-body > *:first-child,
+  .component-title {
+    margin-left: 44px;
+  }
 }

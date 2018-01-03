@@ -1,5 +1,14 @@
 # [BalmUI Lite](http://mdl.balmjs.com/)
 
+## 1.0.2 (2018.01.03)
+
+### :beetle: Bug fixes and improvements
+
+- fix __`<ui-layout-drawer>`__ click link bug
+- add spinner for docs
+
+---
+
 ## 1.0.1 (2018.01.02)
 
 ### :beetle: Bug fixes and improvements
