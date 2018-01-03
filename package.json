@@ -30,7 +30,8 @@
     "mdl": "gulp --silent --mdl",
     "dev": "gulp --silent",
     "prod": "gulp --silent --production",
-    "docs": "gulp --silent --production --docs"
+    "docs": "gulp --silent --production --docs",
+    "test": "mocha-webpack --webpack-config webpack-test.config.js --require test/setup.js test/**/*.spec.js"
   },
   "repository": {
     "type": "git",
@@ -48,18 +49,26 @@
     "balm": "^0.12.0",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.3",
+    "expect": "^22.0.3",
+    "glob": "^7.1.2",
     "gulp": "^3.9.1",
+    "jsdom": "^11.5.1",
+    "jsdom-global": "^3.0.2",
     "markdown-loader": "^2.0.1",
     "matchmedia-polyfill": "^0.3.0",
     "material-design-icons": "^3.0.1",
     "material-design-lite": "^1.3.0",
+    "mocha": "^4.1.0",
+    "mocha-webpack": "^1.0.1",
     "prismjs": "^1.9.0",
     "vue": "^2.5.13",
     "vue-i18n": "^7.3.3",
     "vue-loader": "^13.6.2",
     "vue-meta": "^1.4.0",
     "vue-router": "^3.0.1",
-    "vue-template-compiler": "^2.5.13"
+    "vue-template-compiler": "^2.5.13",
+    "vue-test-utils": "^1.0.0-beta.9",
+    "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
     "deepmerge": "^2.0.1",
