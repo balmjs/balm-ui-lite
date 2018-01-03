@@ -1,6 +1,6 @@
 <template>
   <div class="page--guide guide-quickstart  only-md-docs">
-    <ui-markdown :text="docs"></ui-markdown>
+    <ui-markdown class="markdown-page" :text="docs"></ui-markdown>
   </div>
 </template>
 

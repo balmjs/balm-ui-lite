@@ -1,6 +1,6 @@
 <template>
   <div class="page--install">
-    <ui-markdown :text="docs"></ui-markdown>
+    <ui-markdown class="markdown-page" :text="docs"></ui-markdown>
   </div>
 </template>
 

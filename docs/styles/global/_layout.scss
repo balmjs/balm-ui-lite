@@ -111,7 +111,7 @@
 }
 
 @media (max-width: $layout-screen-size-threshold) {
-  .markdown-body > *:first-child,
+  .markdown-body.markdown-page > *:first-child,
   .component-title {
     margin-left: 44px;
   }
