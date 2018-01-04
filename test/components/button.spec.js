@@ -1,7 +1,7 @@
 import UiButton from '../../components/button';
 
-describe('<ui-button>', () => {
-  it('renders a default button', () => {
+describe('Button Test', () => {
+  it('renders a <ui-button>', () => {
     let wrapper = mount(UiButton, {
       slots: {
         default: 'Button'
@@ -15,8 +15,8 @@ describe('<ui-button>', () => {
     expect(wrapper.classes()).to.contain('mdl-button');
   });
 
-  it('renders a fab button', () => {
-    let wrapper = mount(UiButton, {
+  it('renders a <ui-button fab>', () => {
+    let wrapper = shallow(UiButton, {
       propsData: {
         fab: true
       }
@@ -25,8 +25,8 @@ describe('<ui-button>', () => {
     expect(wrapper.classes()).to.contain('mdl-button--fab');
   });
 
-  it('renders a raised button', () => {
-    let wrapper = mount(UiButton, {
+  it('renders a <ui-button raised>', () => {
+    let wrapper = shallow(UiButton, {
       propsData: {
         raised: true
       }
