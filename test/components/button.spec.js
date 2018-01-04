@@ -10,10 +10,10 @@ describe('<ui-button>', () => {
         default: 'Button'
       }
     });
-    let classList = wrapper.vm.$el.classList;
+    let el = wrapper.vm.$el;
 
-    expect(classList.contains('mdl-button')).to.equal(true);
-    expect(wrapper.vm.$el.innerHTML).to.equal('Button');
+    expect(el.classList.contains('mdl-button')).to.equal(true);
+    expect(el.innerHTML).to.equal('Button');
   });
 
   it('renders a fab button', () => {
