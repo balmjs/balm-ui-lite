@@ -1,7 +1,8 @@
 import '../../material-design-lite/mdlComponentHandler';
 
 // Just for node (2018.01.04 by Elf-mousE)
-if (typeof exports === 'object') {
+const isNode = Object.prototype.toString.call(typeof global['process'] !== 'undefined' ? global['process'] : 0) === '[object process]';
+if (isNode && global['process'].env.NODE_ENV === 'test') {
   global.componentHandler = window.componentHandler;
 }
 
