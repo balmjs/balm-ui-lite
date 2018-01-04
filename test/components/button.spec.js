@@ -3,17 +3,17 @@ import UiButton from '../../components/button';
 describe('<ui-button>', () => {
   it('renders a default button', () => {
     let wrapper = mount(UiButton, {
-      propsData: {
-        noRipple: true
-      },
       slots: {
         default: 'Button'
+      },
+      propsData: {
+        noRipple: true
       }
     });
     let el = wrapper.vm.$el;
 
-    expect(el.classList.contains('mdl-button')).to.equal(true);
     expect(el.innerHTML).to.equal('Button');
+    expect(el.classList.contains('mdl-button')).to.equal(true);
   });
 
   it('renders a fab button', () => {

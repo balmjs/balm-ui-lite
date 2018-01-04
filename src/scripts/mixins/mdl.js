@@ -1,7 +1,7 @@
 import '../../material-design-lite/mdlComponentHandler';
 
-// NOTE: Just for node (2018.01.04 by Elf-mousE)
-if (global !== window) {
+// Just for node (2018.01.04 by Elf-mousE)
+if (typeof exports === 'object') {
   global.componentHandler = window.componentHandler;
 }
 

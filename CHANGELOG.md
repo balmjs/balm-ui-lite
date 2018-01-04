@@ -1,6 +1,6 @@
 # [BalmUI Lite](http://mdl.balmjs.com/)
 
-## 1.0.3 (2018.01.04)
+## 1.0.4 (2018.01.04)
 
 ### :beetle: Bug fixes and improvements
 
