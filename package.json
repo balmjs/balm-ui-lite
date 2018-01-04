@@ -1,6 +1,6 @@
 {
   "name": "balm-ui-lite",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Material Design Lite + Vue",
   "homepage": "http://mdl.balmjs.com/",
   "author": [
@@ -31,7 +31,7 @@
     "dev": "gulp --silent",
     "prod": "gulp --silent --production",
     "docs": "gulp --silent --production --docs",
-    "test": "NODE_ENV=test mocha-webpack --webpack-config test/webpack-config.test.js --require babel-register"
+    "test": "NODE_ENV=test mocha-webpack --webpack-config test/webpack-config.test.js --require babel-register --require test/setup.js"
   },
   "repository": {
     "type": "git",
