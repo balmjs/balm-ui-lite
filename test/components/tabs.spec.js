@@ -35,7 +35,7 @@ describe('Tabs Test', () => {
     expect(wrapper.emitted().change[0]).to.deep.equal([2]);
   });
 
-  // <ui-tab> 带有`$parent`，暂时不做测试
+  // TODO <ui-tab> 带有`$parent`，暂时不做测试
 
   it('renders a <ui-panel>', () => {
     let wrapper = shallow(UiPanel, {

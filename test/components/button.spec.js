@@ -34,4 +34,30 @@ describe('Button Test', () => {
 
     expect(wrapper.classes()).to.contain('mdl-button--raised');
   });
+
+  it('renders a <ui-button icon>', () => {
+    let wrapper = shallow(UiButton, {
+      propsData: {
+        icon: 'mood',
+        noRipple: true
+      }
+    });
+
+    expect(wrapper.classes()).to.contain('mdl-button--icon');
+    expect(wrapper.find('.material-icons').text()).to.contain('mood');
+  });
+
+  it('<ui-button @click>', () => {
+    const spy = sinon.spy();
+
+    let wrapper = mount(UiButton, {
+      methods: {
+        handleClick: spy
+      }
+    });
+
+    wrapper.trigger('click');
+
+    expect(spy.calledOnce).to.equal(true);
+  });
 });
