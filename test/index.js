@@ -4,3 +4,6 @@ helpersTestsContext.keys().forEach(helpersTestsContext);
 
 const componentsTestsContext = require.context('./components', true, /\.spec$/);
 componentsTestsContext.keys().forEach(componentsTestsContext);
+
+const pluginsTestsContext = require.context('./plugins', true, /\.spec$/);
+pluginsTestsContext.keys().forEach(pluginsTestsContext);

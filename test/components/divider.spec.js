@@ -7,9 +7,8 @@ describe('<ui-divider>', () => {
         default: 'diviiiiider!'
       }
     });
-    let el = wrapper.vm.$el;
-    expect(el.innerHTML).to.equal('<span>diviiiiider!</span>');
-    expect(el.classList.contains('horizontal')).to.equal(true);
+    expect(wrapper.text()).to.equal('diviiiiider!');
+    expect(wrapper.classes()).to.contain('horizontal');
   });
 
   it(`type为'horizontal'或'h'或0时，应该渲染为一个水平分割线`, () => {
