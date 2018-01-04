@@ -34,4 +34,16 @@ describe('Tabs Test', () => {
     expect(wrapper.classes()).to.contain('mdl-tabs--tab-left');
     expect(wrapper.emitted().change[0]).to.deep.equal([2]);
   });
+
+  // <ui-tab> 带有`$parent`，暂时不做测试
+
+  it('renders a <ui-panel>', () => {
+    let wrapper = shallow(UiPanel, {
+      slots: {
+        default: 'Content'
+      }
+    });
+
+    expect(wrapper.text()).to.equal('Content');
+  });
 });
