@@ -10,10 +10,9 @@ describe('<ui-button>', () => {
         noRipple: true
       }
     });
-    let el = wrapper.vm.$el;
 
-    expect(el.innerHTML).to.equal('Button');
-    expect(el.classList.contains('mdl-button')).to.equal(true);
+    expect(wrapper.text()).to.equal('Button');
+    expect(wrapper.classes()).to.contain('mdl-button');
   });
 
   it('renders a fab button', () => {
@@ -22,9 +21,8 @@ describe('<ui-button>', () => {
         fab: true
       }
     });
-    let classList = wrapper.vm.$el.classList;
 
-    expect(classList.contains('mdl-button--fab')).to.equal(true);
+    expect(wrapper.classes()).to.contain('mdl-button--fab');
   });
 
   it('renders a raised button', () => {
@@ -33,8 +31,7 @@ describe('<ui-button>', () => {
         raised: true
       }
     });
-    let classList = wrapper.vm.$el.classList;
 
-    expect(classList.contains('mdl-button--raised')).to.equal(true);
+    expect(wrapper.classes()).to.contain('mdl-button--raised');
   });
 });
