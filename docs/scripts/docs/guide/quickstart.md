@@ -12,6 +12,12 @@
 
 > 请先在终端/控制台窗口中运行命令 `node -v` 和 `npm -v`， 来验证一下你正在运行 node 6.x.x 和 npm 3.x.x 以上的版本。 更老的版本可能会出现错误，更新的版本则没问题。
 
+因为 __BalmJS__ 需要依赖 __gulp__，如果不能运行 `gulp -v`，请先安装 __gulp-cli__。
+
+```sh
+npm install -g gulp-cli
+```
+
 然后全局安装 Balm CLI 。
 
 ```sh
@@ -19,6 +25,8 @@ npm install -g balm-cli
 
 # 验证
 balm -V
+
+# 输出结果：0.0.3
 ```
 
 ## 2. 创建新项目
