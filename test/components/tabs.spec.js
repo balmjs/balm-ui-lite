@@ -35,15 +35,46 @@ describe('Tabs Test', () => {
     expect(wrapper.emitted().change[0]).to.deep.equal([2]);
   });
 
-  // TODO <ui-tab> 带有`$parent`，暂时不做测试
+  it('renders a <ui-tab> without $parent', () => {
+    let wrapper = shallow(UiTab);
+
+    expect(wrapper.html()).to.equal(undefined);
+  });
+
+  // TODO: provide has bug?
+  // it('renders a <ui-tab> with $parent', () => {
+  //   const spy = sinon.spy();
+
+  //   let wrapper = mount(UiTab, {
+  //     provide: {
+  //       $parent: {}
+  //     },
+  //     slots: {
+  //       default: 'Tab'
+  //     },
+  //     propsData: {
+  //       noRipple: true
+  //     },
+  //     methods: {
+  //       handleClick: spy
+  //     }
+  //   });
+
+  //   console.log(wrapper.html());
+
+  //   // wrapper.trigger('click');
+
+  //   // expect(wrapper.text()).to.equal('Tab');
+  //   // expect(spy.calledOnce).to.equal(true);
+  // });
 
   it('renders a <ui-panel>', () => {
     let wrapper = shallow(UiPanel, {
       slots: {
-        default: 'Content'
+        default: 'Panel'
       }
     });
 
-    expect(wrapper.text()).to.equal('Content');
+    expect(wrapper.text()).to.equal('Panel');
   });
 });
