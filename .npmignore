@@ -1,0 +1,4 @@
+src/fonts/*.css
+src/scripts/components/*.js
+!src/styles/components/_*.scss
+!src/styles/plugins/_*.scss
