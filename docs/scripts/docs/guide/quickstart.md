@@ -57,21 +57,32 @@ npm i --save balm-ui-lite
 
 ### 4.1 配置样式
 
-推荐使用Sass引入 `/path/to/balm-ui-lite.scss` ，可以使用Sass变量快速重写全局或组件的样式
+编辑样式文件：`my-project/app/styles/global/_vendor.scss`
 
 ```css
-/* 样式文件：my-project/app/styles/global/_vendor.scss */
+/* 新增 BalmUI Lite 样式库 */
 @import '../../../node_modules/balm-ui-lite/src/styles/balm-ui-lite.scss';
 ```
 
+> 推荐使用Sass引入 `/path/to/balm-ui-lite.scss` ，可以使用Sass变量快速重写全局或组件的样式
+
 ### 4.2 配置脚本
 
+编辑脚本文件：`my-project/app/scripts/main.js`
+
 ```js
-// 脚本文件：my-project/app/scripts/main.js
 import Vue from 'vue';
+import app from './views/layouts/app';
 import BalmUI from 'balm-ui-lite'; // 引用
 
+Vue.config.productionTip = false;
 Vue.use(BalmUI); // 安装
+
+new Vue({
+  el: '#app',
+  components: { app },
+  template: '<app/>'
+});
 ```
 
 ### 4.3 UI库所需的图片和字体
@@ -86,10 +97,9 @@ Vue.use(BalmUI); // 安装
 npm run dev
 ```
 
-编辑一个组件
+修改一个组件，编辑Vue文件：`my-project/app/scripts/views/components/hello.vue`
 
 ```html
-<!-- 文件：my-project/app/scripts/views/components/hello.vue -->
 <template>
   <div class="hello">
     ...

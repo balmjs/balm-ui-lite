@@ -13,6 +13,7 @@
 编辑 `/path/to/my-project/app/styles/global/_vendor.scss`（第三方 Sass 入口文件管理）
 
 ```css
+/* 新增 BalmUI Lite 样式库 */
 @import '../../../node_modules/balm-ui-lite/src/styles/balm-ui-lite.scss';
 ```
 
@@ -84,9 +85,16 @@ __模板统一格式__
 
 ```js
 import Vue from 'vue';
-import BalmUI from 'balm-ui-lite';
+import app from './views/layouts/app';
+import BalmUI from 'balm-ui-lite'; // 引用
 
-Vue.use(BalmUI);
+Vue.use(BalmUI); // 安装
+
+new Vue({
+  el: '#app',
+  components: { app },
+  template: '<app/>'
+});
 ```
 
 #### 2.1.2 浏览器引入
@@ -137,6 +145,7 @@ Vue.use(BalmUI);
 
 ```js
 import Vue from 'vue';
+import app from './views/layouts/app';
 // 引用UI部分脚本
 import UiButton from 'balm-ui-lite/components/button';
 import $alert from 'balm-ui-lite/plugins/alert';
@@ -150,6 +159,12 @@ import 'balm-ui-lite/components/dialog.css';
 Vue.component(UiButton.name, UiButton);
 // 安装Alert插件
 Vue.use($alert);
+
+new Vue({
+  el: '#app',
+  components: { app },
+  template: '<app/>'
+});
 ```
 
 > 关于 _CSSinJS_，可通过 BalmJS 配置提取样式，但 BalmJS的思想 更推荐将样式和脚本分离管理，以达成更加灵活的模块配置和管理
@@ -198,10 +213,10 @@ Vue.use($alert);
 
 > 打包效果同 __完整引用__ 方案
 
-编辑 `/path/to/my-project/app/config/balmrc.js`
+编辑 `/path/to/my-project/app/config/balmrc.js`，新增下面几行代码
 
 ```js
-var path = require('path');
+var path = require('path'); // 引用path库
 
 module.exports = {
   ...
@@ -209,9 +224,9 @@ module.exports = {
     ...
     alias: {
       ...
-      'balm-ui-lite': 'balm-ui-lite/src/scripts/index.js'
+      'balm-ui-lite': 'balm-ui-lite/src/scripts/index.js' // 重新指定入口文件
     },
-    include: [path.resolve('./node_modules/balm-ui-lite/src/scripts')]
+    include: [path.resolve('./node_modules/balm-ui-lite/src/scripts')] // 此文件夹中的脚本需要编译ES6+
   },
   ...
 };
@@ -230,6 +245,7 @@ balm.go(function(mix) {
   if (balm.config.production) {
     ...
   } else {
+    // 新增下面两句
     mix.copy('./node_modules/balm-ui-lite/img/*', './app/images');
     mix.copy('./node_modules/balm-ui-lite/font/*', './app/fonts');
   }
