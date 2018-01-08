@@ -31,13 +31,13 @@ Object.keys(methods).forEach((name)=>{
     let method = methods[name];
     let valueKey = name.replace('is', '').toLowerCase();
     let val = values[valueKey];
-    describe(name, () => {
+    describe(`helpers is methods: [${name}]`, () => {
       it('should returns true', () => {
         expect(method(val)).to.equal(true);
       });
     });
   } else {
-    describe('getType(any)', () => {
+    describe('helpers is methods: [getType(any)]', () => {
       it('should returns a string indicating the type of the unevaluated operand', () => {
         Object.keys(values).forEach((name)=>{
           let val = values[name];

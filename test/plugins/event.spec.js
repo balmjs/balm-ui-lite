@@ -1,9 +1,6 @@
 import { createLocalVue } from 'vue-test-utils';
 import $event from '../../plugins/event';
 
-import scene1 from './test.vue';
-import scene2 from './test.js';
-
 let localVue = createLocalVue();
 
 let createdScene = (obj) => {
