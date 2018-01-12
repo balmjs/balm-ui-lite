@@ -1,6 +1,6 @@
 import {jsonEqual, isEmpty} from '../../helpers/utils';
 
-describe('helpers util methods: [jsonEqual]', () => {
+describe(`helpers 'util' methods: [jsonEqual]`, () => {
 
   it('[] should equal []', () => {
     expect(jsonEqual([], [])).to.equal(true);
@@ -12,7 +12,7 @@ describe('helpers util methods: [jsonEqual]', () => {
 
 });
 
-describe('helpers util methods:[isEmpty]', () => {
+describe(`helpers 'util' methods:[isEmpty]`, () => {
 
   it(`[String]: '' or '0' should return true`, () => {
     expect(isEmpty('')).to.equal(true);
