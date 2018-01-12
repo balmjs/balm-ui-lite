@@ -1,4 +1,4 @@
-import { createLocalVue } from 'vue-test-utils';
+import { createLocalVue } from '@vue/test-utils';
 import $event from '../../plugins/event';
 
 let localVue = createLocalVue();
@@ -21,20 +21,6 @@ let createdScene = (obj) => {
     }
   }, obj);
 };
-
-/*let createTester = () => createdScene({
-  template: `<div>1<tester
-                      @close="balmUI.onClose('formData.show', callback)"
-                      @show="balmUI.onShow('formData.show', callback)"></tester></div>`,
-  components: {
-    tester: {
-      template: `<div class="tester">
-                    <span class="close-btn" @click="$emit('close')">1</span>
-                    <span class="show-btn" @click="$emit('show')">2</span>
-                   </div>`
-    }
-  }
-});*/
 
 let createTester = () => createdScene({
   template: `<div>1<tester 
@@ -86,34 +72,14 @@ describe('$event', () => {
     sinon.assert.calledOnce(callback);
   });
 
-  /*it('a', () => {
-    let wrapper1 = mount(scene1);
-    let wrapper2 = mount({
-      template: `<div>1<tester></tester></div>`,
-      components: {
-        tester: {
-          template: '<span>2</span>'
-        }
-      }
-    });
-    console.log(wrapper2.html());
-    // expect(wrapper1).to.deep.equal(wrapper2);
-  });*/
-
-  /** TODO: waiting [mount] for child component render bug fixed
-   * https://github.com/vuejs/vue-test-utils/issues/329
-   **/
-
-  /*it('balmUI.onShow: 自动更新指定属性状态为true，并执行一次方法', () => {
+  it('balmUI.onShow: 自动更新指定属性状态为true，并执行一次方法', () => {
 
     let callback = sinon.spy();
 
-    let wrapper = mount(scene, {
-      localVue
+    let wrapper = mount(createTester(), {
+      localVue,
+      methods: { callback }
     });
-
-    console.log(wrapper.is(scene));
-    console.log(wrapper.vm.$el);
 
     let btn = wrapper.find('.show-btn');
 
@@ -122,9 +88,9 @@ describe('$event', () => {
     expect(wrapper.vm.formData.show).to.equal(true);
 
     sinon.assert.calledOnce(callback);
-  });*/
+  });
 
-  /*it('balmUI.onClose: 自动更新指定属性状态为false，并执行一次方法', () => {
+  it('balmUI.onClose: 自动更新指定属性状态为false，并执行一次方法', () => {
 
     let callback = sinon.spy();
 
@@ -140,7 +106,7 @@ describe('$event', () => {
     expect(wrapper.vm.formData.show).to.equal(false);
 
     sinon.assert.calledOnce(callback);
-  });*/
+  });
 
 });
 
