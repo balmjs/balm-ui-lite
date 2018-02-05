@@ -1,5 +1,18 @@
 # [BalmUI Lite](http://mdl.balmjs.com/)
 
+## 1.0.6 (2018.02.05)
+
+### :beetle: Bug fixes and improvements
+
+- add `<ui-select>` && `<ui-selectmenu>` sass variables
+
+### :page_with_curl: Update docs
+
+- `<ui-select>`
+- `<ui-selectmenu>`
+
+---
+
 ## 1.0.5 (2018.01.04)
 
 ### :beetle: Bug fixes and improvements

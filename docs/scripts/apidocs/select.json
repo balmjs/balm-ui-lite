@@ -45,5 +45,24 @@
     "name": "selected",
     "type": "Function(option: object)",
     "description": "选中 option 时调用函数"
+  }],
+  "sass": [{
+    "var": "$select-width",
+    "description": "下拉框长度"
+  }, {
+    "var": "$select-height",
+    "description": "下拉框高度"
+  }, {
+    "var": "$select-padding",
+    "description": "下拉框padding值"
+  }, {
+    "var": "$select-border-radius",
+    "description": "下拉框圆角属性"
+  }, {
+    "var": "$select-bg-color",
+    "description": "下拉框背景色"
+  }, {
+    "var": "$select-bottom-border-color",
+    "description": "下拉框底边线颜色"
   }]
 }
