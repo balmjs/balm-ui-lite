@@ -1,6 +1,6 @@
 {
   "name": "balm-ui-lite",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Material Design Lite + Vue",
   "homepage": "http://mdl.balmjs.com/",
   "authors": [
@@ -25,10 +25,7 @@
   },
   "overrides": {
     "font-awesome": {
-      "main": [
-        "scss/font-awesome.scss",
-        "fonts/*"
-      ]
+      "main": ["scss/font-awesome.scss", "fonts/*"]
     }
   }
 }

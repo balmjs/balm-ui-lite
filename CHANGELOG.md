@@ -1,5 +1,18 @@
 # [BalmUI Lite](http://mdl.balmjs.com/)
 
+## 1.0.7 (2018.02.06)
+
+### :beetle: Bug fixes and improvements
+
+- add `<ui-rangepicker>` sass variables
+- update `<ui-file>` style
+
+### :page_with_curl: Update docs
+
+- `<ui-rangepicker>`
+
+---
+
 ## 1.0.6 (2018.02.05)
 
 ### :beetle: Bug fixes and improvements

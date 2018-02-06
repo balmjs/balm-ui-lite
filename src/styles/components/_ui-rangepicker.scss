@@ -1,5 +1,19 @@
 @import '../../material-design-lite/variables';
 
+$rangepicker-input-width: 300px !default;
+$rangepicker-input-padding: 4px 10px !default;
+$rangepicker-input-border-color: $input-text-bottom-border-color !default;
+$rangepicker-input-hover-border-color: #40a9ff !default;
+
+$rangepicker-textfield-width: 128px !default;
+
+$rangepicker-tabs-border-width: 1px 0 1px 1px !default;
+$rangepicker-tabs-border-color: $input-text-bottom-border-color !default;
+$rangepicker-tab-active-color: white !default;
+$rangepicker-tab-active-bg-color: #1890ff !default;
+$rangepicker-tab-line-height: 34px !default;
+$rangepicker-tab-hover-color: $rangepicker-tab-active-bg-color !default;
+
 .mdl-rangepicker {
   display: inline-block;
   &.mdl-rangepicker--full-width {
@@ -8,15 +22,15 @@
 }
 
 .mdl-rangepicker__input {
-  width: 300px;
-  padding: 4px 10px;
-  border: 1px solid $input-text-bottom-border-color;
-  transition: all .3s;
+  width: $rangepicker-input-width;
+  padding: $rangepicker-input-padding;
+  border: 1px solid $rangepicker-input-border-color;
+  transition: all 0.3s;
   &:hover {
-    border-color: #40a9ff;
+    border-color: $rangepicker-input-hover-border-color;
   }
   .mdl-textfield {
-    width: 128px;
+    width: $rangepicker-textfield-width;
     padding: 0;
   }
   .mdl-textfield__input {
@@ -28,16 +42,16 @@
 .mdl-rangepicker__tabs {
   display: inline-block;
   width: auto;
-  border-width: 1px 0 1px 1px;
+  border-width: $rangepicker-tabs-border-width;
   border-style: solid;
-  border-color: $input-text-bottom-border-color;
+  border-color: $rangepicker-tabs-border-color;
   &.mdl-tabs {
     &.is-upgraded .mdl-tabs__tab.is-active::after {
       height: 0;
     }
     .mdl-tabs__tab.is-active {
-      color: white;
-      background: #1890ff;
+      color: $rangepicker-tab-active-color;
+      background: $rangepicker-tab-active-bg-color;
       &::after {
         background: none;
       }
@@ -48,14 +62,14 @@
     border: 0;
   }
   .mdl-tabs__tab {
-    line-height: 34px;
+    line-height: $rangepicker-tab-line-height;
     height: 100%;
-    border-right: 1px solid $input-text-bottom-border-color;
+    border-right: 1px solid $rangepicker-tabs-border-color;
     &:last-child {
       border-right: 0;
     }
     &:hover {
-      color: #1890ff;
+      color: $rangepicker-tab-hover-color;
     }
   }
 }
