@@ -65,7 +65,7 @@
           <tr v-for="(rowValue, rowKey) in tbodyData"
             :key="rowKey"
             :class="{
-              'selected': isSelected(rowValue, rowKey),
+              'is-selected': isSelected(rowValue, rowKey),
               'mdl-data-table__detail-view': isDetailView(rowKey)
             }">
             <template v-for="(cell, index) in rowValue">
@@ -136,7 +136,7 @@
         <!-- No Data -->
         <template v-else>
           <tr>
-            <td class="mdl-no-data-table" :colspan="currentCol">{{ noData }}</td>
+            <td class="mdl-data-table__cell--no-data" :colspan="currentCol">{{ noData }}</td>
           </tr>
         </template>
       </slot>

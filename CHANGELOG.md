@@ -1,5 +1,13 @@
 # [BalmUI Lite](http://mdl.balmjs.com/)
 
+## 1.0.8
+
+### :beetle: Bug fixes and improvements
+
+- update `<ui-table>` style
+
+---
+
 ## 1.0.7 (2018.02.06)
 
 ### :beetle: Bug fixes and improvements
