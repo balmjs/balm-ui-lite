@@ -48,66 +48,66 @@
   </div>
 </template>
 <script>
-  import snippets from '../../mixins/snippets';
+import snippets from '../../mixins/snippets';
 
-  export default {
-    mixins: [snippets],
-    metaInfo: {
-      titleTemplate: '%s - Validator'
+export default {
+  mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - Validator'
+  },
+  validations: {
+    name: {
+      label: '用户名',
+      validator: 'required'
     },
-    validations: {
-      name: {
-        label: '用户名',
-        validator: 'required'
-      },
+    number: {
+      label: '工号',
+      validator: 'required, number, customRule',
       number: {
-      	label: '工号',
-        validator: 'required, number, customRule',
-        number: {
-      		validate (value) {
-            return /^\d+$/g.test(value);
-          },
-          message: '%s必须是数字'
+        validate(value) {
+          return /^\d+$/g.test(value);
         },
-        customRule: {
-          validate (value) {
-            return value.length > 5;
-          },
-          message: '%s不能少于6位'
-        }
+        message: '%s必须是数字'
       },
-    },
-    data () {
-      return {
-        formData: {
-        	name: '',
-          number: '',
+      customRule: {
+        validate(value) {
+          return value.length > 5;
         },
-        messages: [],
-        allValid: false,
-      };
-    },
-    methods: {
-      validate () {
-      	let res = this.$validate(this.formData);
-      	let {isValid, messages} = res;
-      	this.allValid = isValid;
-      	this.messages = messages;
+        message: '%s不能少于6位'
       }
-    },
-    created() {
-      this.showCode('validator', 1);
     }
+  },
+  data() {
+    return {
+      formData: {
+        name: '',
+        number: ''
+      },
+      messages: [],
+      allValid: false
+    };
+  },
+  methods: {
+    validate() {
+      let res = this.$validate(this.formData);
+      let { isValid, messages } = res;
+      this.allValid = isValid;
+      this.messages = messages;
+    }
+  },
+  created() {
+    this.showCode('validator', 1);
   }
+};
 </script>
 <style scoped>
-  h2.line {
-    border-bottom: 1px solid #ddd;
-  }
+h2.line {
+  border-bottom: 1px solid #ddd;
+}
 
-  .divider {
-    height: 0;
-    width: 100%;
-    margin-bottom: 4em;
-  }
+.divider {
+  height: 0;
+  width: 100%;
+  margin-bottom: 4em;
+}
 </style>

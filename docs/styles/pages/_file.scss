@@ -11,7 +11,7 @@
     padding-right: 1em;
     margin-bottom: 1em;
     list-style: none;
-    transition: all .25s;
+    transition: all 0.25s;
   }
 
   .preview-list > .item .inner {
@@ -67,7 +67,8 @@
     font-size: 48px;
   }
 
-  .list-enter, .list-leave-to {
+  .list-enter,
+  .list-leave-to {
     opacity: 0;
     transform: translateY(100%);
   }
@@ -126,17 +127,19 @@
 
   .file-list > .item .file-icon {
     transform: rotate(-45deg);
-    margin-right: .5em;
+    margin-right: 0.5em;
   }
 
   .file-list > .item .file-info .mdl-button + .mdl-button {
-    margin-left: .5em;
+    margin-left: 0.5em;
   }
 
-  .flip-enter-active, .flip-leave-active {
-    transition: all .25s
+  .flip-enter-active,
+  .flip-leave-active {
+    transition: all 0.25s;
   }
-  .flip-enter, .flip-leave-to {
+  .flip-enter,
+  .flip-leave-to {
     //opacity: 0;
     transform: rotateX(-90deg);
   }

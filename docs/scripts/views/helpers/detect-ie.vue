@@ -4,16 +4,16 @@
   </div>
 </template>
 <script>
-  import docs from '../../docs/helpers/detect-ie.md';
+import docs from '../../docs/helpers/detect-ie.md';
 
-  export default {
-    metaInfo: {
-      titleTemplate: '%s - IE-Detector'
-    },
-    data () {
-      return {
-        docs
-      };
-    }
+export default {
+  metaInfo: {
+    titleTemplate: '%s - IE-Detector'
+  },
+  data() {
+    return {
+      docs
+    };
   }
+};
 </script>

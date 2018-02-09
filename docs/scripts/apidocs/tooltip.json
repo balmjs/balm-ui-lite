@@ -1,43 +1,49 @@
 {
   "props": [
-  {
-    "name": "name",
-    "type": "String",
-    "default": "(auto)",
-    "description": "文本提示组件唯一ID"
-  },
-  {
-    "name": "title",
-    "type": "String",
-    "default": "",
-    "description": "提示文字"
-  },
-  {
-    "name": "large",
-    "type": "Boolean",
-    "default": "false",
-    "description": "使用大号字体"
-  },
-  {
-    "name": "position",
-    "type": "Number, String",
-    "default": "0",
-    "description": "文本提示位置 { 1: 'top', 2: 'right', 3: 'bottom', 4: 'left' }"
-  }],
+    {
+      "name": "name",
+      "type": "String",
+      "default": "(auto)",
+      "description": "文本提示组件唯一ID"
+    },
+    {
+      "name": "title",
+      "type": "String",
+      "default": "",
+      "description": "提示文字"
+    },
+    {
+      "name": "large",
+      "type": "Boolean",
+      "default": "false",
+      "description": "使用大号字体"
+    },
+    {
+      "name": "position",
+      "type": "Number, String",
+      "default": "0",
+      "description":
+        "文本提示位置 { 1: 'top', 2: 'right', 3: 'bottom', 4: 'left' }"
+    }
+  ],
   "slots": [
-  {
-    "name": "(default)",
-    "description": "默认插槽可以插入文本提示内容"
-  },
-  {
-    "name": "title",
-    "description": "Title插槽可以插入自定义提示文字内容"
-  }],
-  "sass": [{
-    "var": "$tooltip-text-color",
-    "description": "提示的颜色"
-  }, {
-    "var": "$tooltip-background-color",
-    "description": "提示的背景色"
-  }]
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入文本提示内容"
+    },
+    {
+      "name": "title",
+      "description": "Title插槽可以插入自定义提示文字内容"
+    }
+  ],
+  "sass": [
+    {
+      "var": "$tooltip-text-color",
+      "description": "提示的颜色"
+    },
+    {
+      "var": "$tooltip-background-color",
+      "description": "提示的背景色"
+    }
+  ]
 }

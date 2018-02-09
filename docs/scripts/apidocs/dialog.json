@@ -1,87 +1,91 @@
 {
   "props": [
-  {
-    "name": "open",
-    "type": "Boolean",
-    "default": "false",
-    "description": "对话框是否可见"
-  },
-  {
-    "name": "closable",
-    "type": "Boolean",
-    "default": "true",
-    "description": "点击“确定”按钮后自动关闭对话框"
-  },
-  {
-    "name": "maskClosable",
-    "type": "Boolean",
-    "default": "false",
-    "description": "点击背景时关闭对话框"
-  },
-  {
-    "name": "transitionName",
-    "type": "String",
-    "default": "'default'",
-    "description": "定义对话框进入/离开时动画类名。<br>你可以参照 Vue.js <a href='https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes' target='_blank'>[Custom Transition Classes]</a>"
-  },
-  {
-    "name": "enterClass",
-    "type": "String",
-    "default": "'default-enter'"
-  },
-  {
-    "name": "enterActiveClass",
-    "type": "String",
-    "default": "'default-enter-active'"
-  },
-  {
-    "name": "enterToClass",
-    "type": "String",
-    "default": "'default-enter-to'",
-    "description": "vue@2.1.8+"
-  },
-  {
-    "name": "leaveClass",
-    "type": "String",
-    "default": "'default-leave'"
-  },
-  {
-    "name": "leaveActiveClass",
-    "type": "String",
-    "default": "'default-leave-active'"
-  },
-  {
-    "name": "leaveToClass",
-    "type": "String",
-    "default": "'default-leave-to'",
-    "description": "vue@2.1.8+"
-  },
-  {
-    "name": "unlocked",
-    "type": "Boolean",
-    "default": "false",
-    "description": "不锁定页面（此属性仅用于某些特殊场景）"
-  },
-  {
-    "name": "maxHeight",
-    "type": "Number",
-    "default": "0",
-    "description": "带滚轴的内容展示最大高度（单位：px）"
-  }],
+    {
+      "name": "open",
+      "type": "Boolean",
+      "default": "false",
+      "description": "对话框是否可见"
+    },
+    {
+      "name": "closable",
+      "type": "Boolean",
+      "default": "true",
+      "description": "点击“确定”按钮后自动关闭对话框"
+    },
+    {
+      "name": "maskClosable",
+      "type": "Boolean",
+      "default": "false",
+      "description": "点击背景时关闭对话框"
+    },
+    {
+      "name": "transitionName",
+      "type": "String",
+      "default": "'default'",
+      "description":
+        "定义对话框进入/离开时动画类名。<br>你可以参照 Vue.js <a href='https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes' target='_blank'>[Custom Transition Classes]</a>"
+    },
+    {
+      "name": "enterClass",
+      "type": "String",
+      "default": "'default-enter'"
+    },
+    {
+      "name": "enterActiveClass",
+      "type": "String",
+      "default": "'default-enter-active'"
+    },
+    {
+      "name": "enterToClass",
+      "type": "String",
+      "default": "'default-enter-to'",
+      "description": "vue@2.1.8+"
+    },
+    {
+      "name": "leaveClass",
+      "type": "String",
+      "default": "'default-leave'"
+    },
+    {
+      "name": "leaveActiveClass",
+      "type": "String",
+      "default": "'default-leave-active'"
+    },
+    {
+      "name": "leaveToClass",
+      "type": "String",
+      "default": "'default-leave-to'",
+      "description": "vue@2.1.8+"
+    },
+    {
+      "name": "unlocked",
+      "type": "Boolean",
+      "default": "false",
+      "description": "不锁定页面（此属性仅用于某些特殊场景）"
+    },
+    {
+      "name": "maxHeight",
+      "type": "Number",
+      "default": "0",
+      "description": "带滚轴的内容展示最大高度（单位：px）"
+    }
+  ],
   "slots": [
-  {
-    "name": "(default)",
-    "description": "默认插槽可以插入对话框子组件"
-  }],
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入对话框子组件"
+    }
+  ],
   "events": [
-  {
-    "name": "close",
-    "type": "NOOP",
-    "description": "关闭对框框事件"
-  },
-  {
-    "name": "confirm",
-    "type": "Function(result: boolean)",
-    "description": "点击确定或取消按钮时触发事件"
-  }]
+    {
+      "name": "close",
+      "type": "NOOP",
+      "description": "关闭对框框事件"
+    },
+    {
+      "name": "confirm",
+      "type": "Function(result: boolean)",
+      "description": "点击确定或取消按钮时触发事件"
+    }
+  ]
 }

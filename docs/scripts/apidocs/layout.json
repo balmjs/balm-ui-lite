@@ -1,51 +1,56 @@
 {
   "props": [
-  {
-    "name": "active",
-    "type": "Number",
-    "default": "0",
-    "description": "当前选项卡的索引值"
-  },
-  {
-    "name": "fixedDrawer",
-    "type": "Boolean",
-    "default": "false",
-    "description": "固定展示侧边菜单（仅限大屏：屏幕宽度大于1024px）"
-  },
-  {
-    "name": "fixedHeader",
-    "type": "Boolean",
-    "default": "false",
-    "description": "固定头部（包括小屏状态）"
-  },
-  {
-    "name": "noDrawerButton",
-    "type": "Boolean",
-    "default": "false",
-    "description": "隐藏侧边菜单按钮"
-  },
-  {
-    "name": "noDesktopDrawerButton",
-    "type": "Boolean",
-    "default": "false",
-    "description": "桌面模式不显示侧边菜单按钮"
-  },
-  {
-    "name": "fixedTabs",
-    "type": "Boolean",
-    "default": "false",
-    "description": "使用固定选项卡代替默认的滚动选项卡"
-  }],
+    {
+      "name": "active",
+      "type": "Number",
+      "default": "0",
+      "description": "当前选项卡的索引值"
+    },
+    {
+      "name": "fixedDrawer",
+      "type": "Boolean",
+      "default": "false",
+      "description": "固定展示侧边菜单（仅限大屏：屏幕宽度大于1024px）"
+    },
+    {
+      "name": "fixedHeader",
+      "type": "Boolean",
+      "default": "false",
+      "description": "固定头部（包括小屏状态）"
+    },
+    {
+      "name": "noDrawerButton",
+      "type": "Boolean",
+      "default": "false",
+      "description": "隐藏侧边菜单按钮"
+    },
+    {
+      "name": "noDesktopDrawerButton",
+      "type": "Boolean",
+      "default": "false",
+      "description": "桌面模式不显示侧边菜单按钮"
+    },
+    {
+      "name": "fixedTabs",
+      "type": "Boolean",
+      "default": "false",
+      "description": "使用固定选项卡代替默认的滚动选项卡"
+    }
+  ],
   "slots": [
-  {
-    "name": "(default)",
-    "description": "默认插槽可以插入布局子组件"
-  }],
-  "sass": [{
-    "var": "$text-color-primary",
-    "description": "全局默认文本颜色"
-  }, {
-    "var": "$text-link-color",
-    "description": "全局默认链接颜色"
-  }]
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入布局子组件"
+    }
+  ],
+  "sass": [
+    {
+      "var": "$text-color-primary",
+      "description": "全局默认文本颜色"
+    },
+    {
+      "var": "$text-link-color",
+      "description": "全局默认链接颜色"
+    }
+  ]
 }

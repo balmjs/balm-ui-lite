@@ -1,193 +1,203 @@
 {
   "props": [
-  {
-    "name": "model",
-    "type": "null",
-    "description": "输入框内容"
-  },
-  {
-    "name": "id",
-    "type": "String",
-    "default": "",
-    "description": "Textfield 的 id 属性"
-  },
-  {
-    "name": "name",
-    "type": "String",
-    "default": "",
-    "description": "Textfield 的 name 属性"
-  },
-  {
-    "name": "disabled",
-    "type": "Boolean",
-    "default": "false",
-    "description": "Textfield 的 disabled 属性（禁用状态）"
-  },
-  {
-    "name": "maxlength",
-    "type": "Number, String",
-    "default": "",
-    "description": "Textfield 的 maxlength 属性（限制输入最大长度）"
-  },
-  {
-    "name": "placeholder",
-    "type": "String",
-    "default": "",
-    "description": "Textfield 的 placeholder 属性"
-  },
-  {
-    "name": "readonly",
-    "type": "Boolean",
-    "default": "false",
-    "description": "Textfield 的 readonly 属性"
-  },
-  {
-    "name": "required",
-    "type": "Boolean",
-    "default": "false",
-    "description": "Textfield 的 required 属性"
-  },
-  {
-    "name": "type",
-    "type": "String",
-    "default": "'text'",
-    "description": "&lt;input&gt; 原生 type 属性"
-  },
-  {
-    "name": "pattern",
-    "type": "String",
-    "default": "",
-    "description": "&lt;input&gt; 原生 pattern 属性"
-  },
-  {
-    "name": "rows",
-    "type": "Number",
-    "default": "1",
-    "description": "&lt;textarea&gt; 原生 rows 属性"
-  },
-  {
-    "name": "cols",
-    "type": "Number",
-    "default": "20",
-    "description": "&lt;textarea&gt; 原生 cols 属性"
-  },
-  {
-    "name": "label",
-    "type": "String",
-    "default": "",
-    "description": "标签文字"
-  },
-  {
-    "name": "labelFloating",
-    "type": "Boolean",
-    "default": "false",
-    "description": "标签浮动效果"
-  },
-  {
-    "name": "error",
-    "type": "String",
-    "default": "",
-    "description": "错误提示信息（可配合 pattern 一起使用）"
-  },
-  {
-    "name": "alignRight",
-    "type": "Boolean",
-    "default": "false",
-    "description": "右对齐"
-  },
-  {
-    "name": "fullWidth",
-    "type": "Boolean",
-    "default": "false",
-    "description": "100%容器宽度（默认容器宽度：300px）"
-  },
-  {
-    "name": "expandable",
-    "type": "Boolean",
-    "default": "false",
-    "description": "使用可展开效果"
-  },
-  {
-    "name": "plus",
-    "type": "Boolean",
-    "default": "false",
-    "description": "启用额外扩展插槽"
-  },
-  {
-    "name": "expand",
-    "type": "Boolean",
-    "default": "false",
-    "description": "启用特殊扩展插槽（如&lt;ui-autocomplete&gt;）"
-  }],
+    {
+      "name": "model",
+      "type": "null",
+      "description": "输入框内容"
+    },
+    {
+      "name": "id",
+      "type": "String",
+      "default": "",
+      "description": "Textfield 的 id 属性"
+    },
+    {
+      "name": "name",
+      "type": "String",
+      "default": "",
+      "description": "Textfield 的 name 属性"
+    },
+    {
+      "name": "disabled",
+      "type": "Boolean",
+      "default": "false",
+      "description": "Textfield 的 disabled 属性（禁用状态）"
+    },
+    {
+      "name": "maxlength",
+      "type": "Number, String",
+      "default": "",
+      "description": "Textfield 的 maxlength 属性（限制输入最大长度）"
+    },
+    {
+      "name": "placeholder",
+      "type": "String",
+      "default": "",
+      "description": "Textfield 的 placeholder 属性"
+    },
+    {
+      "name": "readonly",
+      "type": "Boolean",
+      "default": "false",
+      "description": "Textfield 的 readonly 属性"
+    },
+    {
+      "name": "required",
+      "type": "Boolean",
+      "default": "false",
+      "description": "Textfield 的 required 属性"
+    },
+    {
+      "name": "type",
+      "type": "String",
+      "default": "'text'",
+      "description": "&lt;input&gt; 原生 type 属性"
+    },
+    {
+      "name": "pattern",
+      "type": "String",
+      "default": "",
+      "description": "&lt;input&gt; 原生 pattern 属性"
+    },
+    {
+      "name": "rows",
+      "type": "Number",
+      "default": "1",
+      "description": "&lt;textarea&gt; 原生 rows 属性"
+    },
+    {
+      "name": "cols",
+      "type": "Number",
+      "default": "20",
+      "description": "&lt;textarea&gt; 原生 cols 属性"
+    },
+    {
+      "name": "label",
+      "type": "String",
+      "default": "",
+      "description": "标签文字"
+    },
+    {
+      "name": "labelFloating",
+      "type": "Boolean",
+      "default": "false",
+      "description": "标签浮动效果"
+    },
+    {
+      "name": "error",
+      "type": "String",
+      "default": "",
+      "description": "错误提示信息（可配合 pattern 一起使用）"
+    },
+    {
+      "name": "alignRight",
+      "type": "Boolean",
+      "default": "false",
+      "description": "右对齐"
+    },
+    {
+      "name": "fullWidth",
+      "type": "Boolean",
+      "default": "false",
+      "description": "100%容器宽度（默认容器宽度：300px）"
+    },
+    {
+      "name": "expandable",
+      "type": "Boolean",
+      "default": "false",
+      "description": "使用可展开效果"
+    },
+    {
+      "name": "plus",
+      "type": "Boolean",
+      "default": "false",
+      "description": "启用额外扩展插槽"
+    },
+    {
+      "name": "expand",
+      "type": "Boolean",
+      "default": "false",
+      "description": "启用特殊扩展插槽（如&lt;ui-autocomplete&gt;）"
+    }
+  ],
   "slots": [
-  {
-    "name": "(default)",
-    "description": "默认插槽可以插入标签文字"
-  },
-  {
-    "name": "icon",
-    "description": "Icon插槽可以插入图标内容（需激活 expandable）"
-  },
-  {
-    "name": "error",
-    "description": "Error插槽可以插入错误提示内容（需设置 error）"
-  },
-  {
-    "name": "plus",
-    "description": "Plus插槽可以插入额外扩展内容（需激活 plus）"
-  },
-  {
-    "name": "expand",
-    "description": "Expand插槽可以插入特殊扩展内容（需激活 expand）"
-  }],
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入标签文字"
+    },
+    {
+      "name": "icon",
+      "description": "Icon插槽可以插入图标内容（需激活 expandable）"
+    },
+    {
+      "name": "error",
+      "description": "Error插槽可以插入错误提示内容（需设置 error）"
+    },
+    {
+      "name": "plus",
+      "description": "Plus插槽可以插入额外扩展内容（需激活 plus）"
+    },
+    {
+      "name": "expand",
+      "description": "Expand插槽可以插入特殊扩展内容（需激活 expand）"
+    }
+  ],
   "events": [
-  {
-    "name": "focus",
-    "type": "Function(event: object)",
-    "description": "输入框聚焦时回调函数"
-  },
-  {
-    "name": "blur",
-    "type": "Function(event: object)",
-    "description": "输入框失去焦点时回调函数"
-  },
-  {
-    "name": "input",
-    "type": "Function(value: string)",
-    "description": "输入框内容变化时调用函数（推荐）"
-  },
-  {
-    "name": "change",
-    "type": "Function(event: object)",
-    "description": "输入框内容变化后调用函数"
-  },
-  {
-    "name": "keydown",
-    "type": "Function(event: object)",
-    "description": "按下键盘时回调函数"
-  },
-  {
-    "name": "enter",
-    "type": "Function(value: string)",
-    "description": "按下回车的回调函数"
-  }],
-  "sass": [{
-    "var": "$input-text-label-color",
-    "description": "标签或占位符的颜色"
-  }, {
-    "var": "$input-text-bottom-border-color",
-    "description": "输入框下边框的颜色"
-  }, {
-    "var": "$input-text-highlight-color",
-    "description": "输入框聚焦时底部状态的颜色"
-  }, {
-    "var": "$input-text-disabled-color",
-    "description": "输入框禁用时下边框的颜色"
-  }, {
-    "var": "$input-text-disabled-text-color",
-    "description": "输入框禁用时文本的颜色"
-  }, {
-    "var": "$input-text-error-color",
-    "description": "输入框发生错误时下边框和提示语的颜色"
-  }]
+    {
+      "name": "focus",
+      "type": "Function(event: object)",
+      "description": "输入框聚焦时回调函数"
+    },
+    {
+      "name": "blur",
+      "type": "Function(event: object)",
+      "description": "输入框失去焦点时回调函数"
+    },
+    {
+      "name": "input",
+      "type": "Function(value: string)",
+      "description": "输入框内容变化时调用函数（推荐）"
+    },
+    {
+      "name": "change",
+      "type": "Function(event: object)",
+      "description": "输入框内容变化后调用函数"
+    },
+    {
+      "name": "keydown",
+      "type": "Function(event: object)",
+      "description": "按下键盘时回调函数"
+    },
+    {
+      "name": "enter",
+      "type": "Function(value: string)",
+      "description": "按下回车的回调函数"
+    }
+  ],
+  "sass": [
+    {
+      "var": "$input-text-label-color",
+      "description": "标签或占位符的颜色"
+    },
+    {
+      "var": "$input-text-bottom-border-color",
+      "description": "输入框下边框的颜色"
+    },
+    {
+      "var": "$input-text-highlight-color",
+      "description": "输入框聚焦时底部状态的颜色"
+    },
+    {
+      "var": "$input-text-disabled-color",
+      "description": "输入框禁用时下边框的颜色"
+    },
+    {
+      "var": "$input-text-disabled-text-color",
+      "description": "输入框禁用时文本的颜色"
+    },
+    {
+      "var": "$input-text-error-color",
+      "description": "输入框发生错误时下边框和提示语的颜色"
+    }
+  ]
 }

@@ -1,17 +1,22 @@
 {
-  "props": [{
-    "name": "contact",
-    "type": "Boolean",
-    "default": "false",
-    "description": "启用联系人头像样式"
-  }, {
-    "name": "action",
-    "type": "Boolean",
-    "default": "false",
-    "description": "启用删除操作样式"
-  }],
-  "slots": [{
-    "name": "(default)",
-    "description": "默认插槽可以插入Chip子组件"
-  }]
+  "props": [
+    {
+      "name": "contact",
+      "type": "Boolean",
+      "default": "false",
+      "description": "启用联系人头像样式"
+    },
+    {
+      "name": "action",
+      "type": "Boolean",
+      "default": "false",
+      "description": "启用删除操作样式"
+    }
+  ],
+  "slots": [
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入Chip子组件"
+    }
+  ]
 }

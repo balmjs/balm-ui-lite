@@ -122,121 +122,120 @@
   </div>
 </template>
 <script>
-  import snippets from '../../mixins/snippets';
+import snippets from '../../mixins/snippets';
 
-  export default {
-    mixins: [snippets],
-    metaInfo: {
-      titleTemplate: '%s - <ui-file>'
-    },
-    data () {
-      return {
-        files1: [],
-        files2: [],
-        files3: [],
-        files4: [],
-        postUrl: 'https://jsonplaceholder.typicode.com/posts',
-        limit: 5
-      };
-    },
-    methods: {
-      onChange3 (files) {
-        if(files.length > this.limit - this.files3.length) {
-          this.$toast(`图片最多不能超过${this.limit}张！`);
-        } else {
-          files.forEach((file) => {
-            file.uploaded = false;
-            this.files3.push(file);
-          });
-        }
-      },
-      onChange4 (files) {
-        files.forEach((file)=> {
-          file.state = 'beforeUpload';
-          file.progress = 0;
-          file.request = null;
-          this.files4.push(file);
+export default {
+  mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - <ui-file>'
+  },
+  data() {
+    return {
+      files1: [],
+      files2: [],
+      files3: [],
+      files4: [],
+      postUrl: 'https://jsonplaceholder.typicode.com/posts',
+      limit: 5
+    };
+  },
+  methods: {
+    onChange3(files) {
+      if (files.length > this.limit - this.files3.length) {
+        this.$toast(`图片最多不能超过${this.limit}张！`);
+      } else {
+        files.forEach(file => {
+          file.uploaded = false;
+          this.files3.push(file);
         });
-      },
-      async upload (file) {
-        try {
-          let res = await this.$http.post(this.postUrl, {
-            file: file.sourceFile
-          });
-          if(res.data) {
-            file.uploaded = true;
-            this.$notify.add({content: `${file.name}上传成功！`});
-          } else {
-            this.$notify.add({content: `${file.name}上传失败！`});
-          }
-        } catch (e) {
-          this.$notify.add({content: `${file.name}上传失败！`});
-        }
-      },
-      uploadWithProgress (file) {
-        if(file.state === 'beforeUpload') {
-
-          file.state = 'progress';
-
-          let formData = new FormData();
-
-          formData.append('file', file.sourceFile);
-
-          file.request = new XMLHttpRequest();
-
-          file.request.onload = () => {
-            let data = JSON.parse(file.request.response);
-            if(data) {
-              this.$notify.add({content: `${file.name}上传成功！`});
-              file.state = 'uploaded';
-            }
-          };
-
-          file.request.onerror = () => {
-            file.state = 'beforeUpload';
-            file.progress = 0;
-            this.$notify.add({content: `${file.name}上传失败！`});
-          };
-
-          file.request.onabort = () => {
-            file.state = 'beforeUpload';
-            file.progress = 0;
-            this.$notify.add({content: `已取消了${file.name}的上传。`});
-          };
-
-          file.request.upload.onprogress = (e) => {
-            if (e.total > 0) {
-              file.progress = e.loaded / e.total * 100;
-            }
-          };
-
-          file.request.open('post', this.postUrl, true);
-
-          file.request.send(formData);
-        }
-      },
-      uploadAllFilesWithProgress() {
-        this.files4.forEach((file) => {
-          this.uploadWithProgress(file);
-        });
-      },
-      abort (file) {
-        file.request.abort();
-      },
-      uploadAllFiles () {
-        this.files3.forEach((file)=>{
-          this.upload(file);
-        });
-      },
-      remove (name, index) {
-        this[name].splice(index, 1);
-      },
-      setBg ({previewSrc}) {
-        return previewSrc ? {backgroundImage: `url(${previewSrc})`} : {};
       }
     },
-    created() {
-      this.showCode('file', 4);
+    onChange4(files) {
+      files.forEach(file => {
+        file.state = 'beforeUpload';
+        file.progress = 0;
+        file.request = null;
+        this.files4.push(file);
+      });
+    },
+    async upload(file) {
+      try {
+        let res = await this.$http.post(this.postUrl, {
+          file: file.sourceFile
+        });
+        if (res.data) {
+          file.uploaded = true;
+          this.$notify.add({ content: `${file.name}上传成功！` });
+        } else {
+          this.$notify.add({ content: `${file.name}上传失败！` });
+        }
+      } catch (e) {
+        this.$notify.add({ content: `${file.name}上传失败！` });
+      }
+    },
+    uploadWithProgress(file) {
+      if (file.state === 'beforeUpload') {
+        file.state = 'progress';
+
+        let formData = new FormData();
+
+        formData.append('file', file.sourceFile);
+
+        file.request = new XMLHttpRequest();
+
+        file.request.onload = () => {
+          let data = JSON.parse(file.request.response);
+          if (data) {
+            this.$notify.add({ content: `${file.name}上传成功！` });
+            file.state = 'uploaded';
+          }
+        };
+
+        file.request.onerror = () => {
+          file.state = 'beforeUpload';
+          file.progress = 0;
+          this.$notify.add({ content: `${file.name}上传失败！` });
+        };
+
+        file.request.onabort = () => {
+          file.state = 'beforeUpload';
+          file.progress = 0;
+          this.$notify.add({ content: `已取消了${file.name}的上传。` });
+        };
+
+        file.request.upload.onprogress = e => {
+          if (e.total > 0) {
+            file.progress = e.loaded / e.total * 100;
+          }
+        };
+
+        file.request.open('post', this.postUrl, true);
+
+        file.request.send(formData);
+      }
+    },
+    uploadAllFilesWithProgress() {
+      this.files4.forEach(file => {
+        this.uploadWithProgress(file);
+      });
+    },
+    abort(file) {
+      file.request.abort();
+    },
+    uploadAllFiles() {
+      this.files3.forEach(file => {
+        this.upload(file);
+      });
+    },
+    remove(name, index) {
+      this[name].splice(index, 1);
+    },
+    setBg({ previewSrc }) {
+      return previewSrc ? { backgroundImage: `url(${previewSrc})` } : {};
     }
+  },
+  created() {
+    this.showCode('file', 4);
   }
+};
 </script>

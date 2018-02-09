@@ -68,51 +68,68 @@
 <script>
 import snippets from '../../mixins/snippets';
 
-const OPTIONS = [{
-  key: 1,
-  value: 'item 1'
-}, {
-  key: 2,
-  value: 'item 2'
-}, {
-  key: 3,
-  value: 'item 3'
-}];
+const OPTIONS = [
+  {
+    key: 1,
+    value: 'item 1'
+  },
+  {
+    key: 2,
+    value: 'item 2'
+  },
+  {
+    key: 3,
+    value: 'item 3'
+  }
+];
 
-const PROVINCES = [{
-  key: 1,
-  value: 'Jiangsu'
-}, {
-  key: 2,
-  value: 'Zhejiang'
-}, {
-  key: 3,
-  value: 'Shanghai'
-}];
+const PROVINCES = [
+  {
+    key: 1,
+    value: 'Jiangsu'
+  },
+  {
+    key: 2,
+    value: 'Zhejiang'
+  },
+  {
+    key: 3,
+    value: 'Shanghai'
+  }
+];
 
 const CITIES = [
   [],
-  [{
-    key: 3201,
-    value: 'Nanjing'
-  }, {
-    key: 3204,
-    value: 'Changzhou'
-  }],
-  [{
-    key: 3301,
-    value: 'Hangzhou'
-  }, {
-    key: 3302,
-    value: 'Ningbo'
-  }],
-  [{
-    key: 310101,
-    value: 'Huangpu'
-  }, {
-    key: 310104,
-    value: 'Xuhui'
-  }]
+  [
+    {
+      key: 3201,
+      value: 'Nanjing'
+    },
+    {
+      key: 3204,
+      value: 'Changzhou'
+    }
+  ],
+  [
+    {
+      key: 3301,
+      value: 'Hangzhou'
+    },
+    {
+      key: 3302,
+      value: 'Ningbo'
+    }
+  ],
+  [
+    {
+      key: 310101,
+      value: 'Huangpu'
+    },
+    {
+      key: 310104,
+      value: 'Xuhui'
+    }
+  ]
 ];
 
 export default {

@@ -45,7 +45,7 @@
 
 <script>
 import snippets from '../../mixins/snippets';
-import {date, time} from '../../helpers';
+import { date, time } from '../../helpers';
 import docs from '../../docs/components/rangepicker.md';
 
 const TODAY = date('Y-m-d', time());
@@ -60,16 +60,20 @@ export default {
       docs,
       date1: [],
       date2: [TODAY, TODAY],
-      options: [{
-        key: 0,
-        value: 'Today'
-      }, {
-        key: 6,
-        value: '7 Days'
-      }, {
-        key: 29,
-        value: '30 Days'
-      }]
+      options: [
+        {
+          key: 0,
+          value: 'Today'
+        },
+        {
+          key: 6,
+          value: '7 Days'
+        },
+        {
+          key: 29,
+          value: '30 Days'
+        }
+      ]
     };
   },
   created() {

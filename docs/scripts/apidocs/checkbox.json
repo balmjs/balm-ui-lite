@@ -1,78 +1,85 @@
 {
   "props": [
-  {
-    "name": "model",
-    "type": "Array, String, Number, Boolean",
-    "default": "false",
-    "description": "当前选中的选项值"
-  },
-  {
-    "name": "id",
-    "type": "String",
-    "default": "",
-    "description": "Checkbox 的 id 属性"
-  },
-  {
-    "name": "name",
-    "type": "String",
-    "default": "",
-    "description": "Checkbox 的 name 属性"
-  },
-  {
-    "name": "disabled",
-    "type": "Boolean",
-    "default": "false",
-    "description": "Checkbox 的 disabled 属性（禁用状态）"
-  },
-  {
-    "name": "value",
-    "type": "String, Number, Boolean",
-    "default": "",
-    "description": "Checkbox 的 value 属性（指定选项值）"
-  },
-  {
-    "name": "label",
-    "type": "String",
-    "default": "",
-    "description": "标签文字"
-  },
-  {
-    "name": "noRipple",
-    "type": "Boolean",
-    "default": "false",
-    "description": "无波纹效果"
-  },
-  {
-    "name": "hideLabel",
-    "type": "Boolean",
-    "default": "false",
-    "description": "无标签文字"
-  },
-  {
-    "name": "filled",
-    "type": "Boolean",
-    "default": "false",
-    "description": "矩形填充式效果"
-  }],
+    {
+      "name": "model",
+      "type": "Array, String, Number, Boolean",
+      "default": "false",
+      "description": "当前选中的选项值"
+    },
+    {
+      "name": "id",
+      "type": "String",
+      "default": "",
+      "description": "Checkbox 的 id 属性"
+    },
+    {
+      "name": "name",
+      "type": "String",
+      "default": "",
+      "description": "Checkbox 的 name 属性"
+    },
+    {
+      "name": "disabled",
+      "type": "Boolean",
+      "default": "false",
+      "description": "Checkbox 的 disabled 属性（禁用状态）"
+    },
+    {
+      "name": "value",
+      "type": "String, Number, Boolean",
+      "default": "",
+      "description": "Checkbox 的 value 属性（指定选项值）"
+    },
+    {
+      "name": "label",
+      "type": "String",
+      "default": "",
+      "description": "标签文字"
+    },
+    {
+      "name": "noRipple",
+      "type": "Boolean",
+      "default": "false",
+      "description": "无波纹效果"
+    },
+    {
+      "name": "hideLabel",
+      "type": "Boolean",
+      "default": "false",
+      "description": "无标签文字"
+    },
+    {
+      "name": "filled",
+      "type": "Boolean",
+      "default": "false",
+      "description": "矩形填充式效果"
+    }
+  ],
   "slots": [
-  {
-    "name": "(default)",
-    "description": "默认插槽可以插入标签内容"
-  }],
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入标签内容"
+    }
+  ],
   "events": [
-  {
-    "name": "change",
-    "type": "Function(checked: boolean | array)",
-    "description": "选项变化时的回调函数"
-  }],
-  "sass": [{
-    "var": "$checkbox-color",
-    "description": "选中后的颜色"
-  }, {
-    "var": "$checkbox-off-color",
-    "description": "未选中的颜色"
-  }, {
-    "var": "$checkbox-disabled-color",
-    "description": "禁用时的颜色"
-  }]
+    {
+      "name": "change",
+      "type": "Function(checked: boolean | array)",
+      "description": "选项变化时的回调函数"
+    }
+  ],
+  "sass": [
+    {
+      "var": "$checkbox-color",
+      "description": "选中后的颜色"
+    },
+    {
+      "var": "$checkbox-off-color",
+      "description": "未选中的颜色"
+    },
+    {
+      "var": "$checkbox-disabled-color",
+      "description": "禁用时的颜色"
+    }
+  ]
 }

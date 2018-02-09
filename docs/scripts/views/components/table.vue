@@ -126,19 +126,23 @@ export default {
         data: [],
         thead: ['ID', 'Name', 'Quantity', 'Price', 'Operate'],
         tbody: ['id', 'name', 'quantity', 'price'],
-        action: [{
-          type: 'link',
-          name: 'view',
-          value: 'View'
-        }, {
-          type: 'icon',
-          name: 'edit',
-          icon: 'edit'
-        }, {
-          type: 'button',
-          name: 'delete',
-          value: 'Delete'
-        }],
+        action: [
+          {
+            type: 'link',
+            name: 'view',
+            value: 'View'
+          },
+          {
+            type: 'icon',
+            name: 'edit',
+            icon: 'edit'
+          },
+          {
+            type: 'button',
+            name: 'delete',
+            value: 'Delete'
+          }
+        ],
         checkedList: []
       },
       table2: {
@@ -184,7 +188,7 @@ export default {
           null,
           {
             field: 'quantity',
-            fnName: 'sum',
+            fnName: 'sum'
           },
           {
             field: 'price',
@@ -196,19 +200,23 @@ export default {
             }
           }
         ],
-        action: [{
-          type: 'link',
-          name: 'view',
-          value: 'View'
-        }, {
-          type: 'icon',
-          name: 'edit',
-          value: '<i class="fa fa-edit"></i>'
-        }, {
-          type: 'button',
-          name: 'delete',
-          value: 'Delete'
-        }],
+        action: [
+          {
+            type: 'link',
+            name: 'view',
+            value: 'View'
+          },
+          {
+            type: 'icon',
+            name: 'edit',
+            value: '<i class="fa fa-edit"></i>'
+          },
+          {
+            type: 'button',
+            name: 'delete',
+            value: 'Delete'
+          }
+        ],
         checkedList: []
       },
       table3: {
@@ -224,7 +232,7 @@ export default {
           'Operate'
         ]
       }
-    }
+    };
   },
   methods: {
     onView(data) {

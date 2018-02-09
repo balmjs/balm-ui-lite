@@ -1,30 +1,40 @@
 {
-  "props": [{
-    "name": "active",
-    "type": "Number",
-    "default": "0",
-    "description": "当前选项卡的索引值"
-  }, {
-    "name": "fixedTabs",
-    "type": "Boolean",
-    "default": "false",
-    "description": "使用固定选项卡代替默认的滚动选项卡"
-  }],
-  "slots": [{
-    "name": "(default)",
-    "description": "默认插槽可以插入选项卡容器和标签页子组件"
-  }],
-  "sass": [{
-    "var": "$tab-highlight-color",
-    "description": "选项卡激活时底部状态的颜色"
-  }, {
-    "var": "$tab-text-color",
-    "description": "选项卡前景色"
-  }, {
-    "var": "$tab-active-text-color",
-    "description": "选项卡激活时前景色"
-  }, {
-    "var": "$tab-border-color",
-    "description": "选项卡下边框的颜色"
-  }]
+  "props": [
+    {
+      "name": "active",
+      "type": "Number",
+      "default": "0",
+      "description": "当前选项卡的索引值"
+    },
+    {
+      "name": "fixedTabs",
+      "type": "Boolean",
+      "default": "false",
+      "description": "使用固定选项卡代替默认的滚动选项卡"
+    }
+  ],
+  "slots": [
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入选项卡容器和标签页子组件"
+    }
+  ],
+  "sass": [
+    {
+      "var": "$tab-highlight-color",
+      "description": "选项卡激活时底部状态的颜色"
+    },
+    {
+      "var": "$tab-text-color",
+      "description": "选项卡前景色"
+    },
+    {
+      "var": "$tab-active-text-color",
+      "description": "选项卡激活时前景色"
+    },
+    {
+      "var": "$tab-border-color",
+      "description": "选项卡下边框的颜色"
+    }
+  ]
 }

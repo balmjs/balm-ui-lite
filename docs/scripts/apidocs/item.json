@@ -1,10 +1,14 @@
 {
-  "slots": [{
-    "name": "(default)",
-    "description": "默认插槽可以插入列表项子组件"
-  }],
-  "sass": [{
-    "var": "$list-main-text-text-color",
-    "description": "列表项的颜色"
-  }]
+  "slots": [
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入列表项子组件"
+    }
+  ],
+  "sass": [
+    {
+      "var": "$list-main-text-text-color",
+      "description": "列表项的颜色"
+    }
+  ]
 }

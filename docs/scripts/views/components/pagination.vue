@@ -102,19 +102,24 @@ export default {
         pageSize: 5,
         page: 1
       },
-      pageSizeList: [{
-        key: 5,
-        value: 5
-      }, {
-        key: 10,
-        value: 10
-      }, {
-        key: 15,
-        value: 15
-      }, {
-        key: 20,
-        value: 20
-      }]
+      pageSizeList: [
+        {
+          key: 5,
+          value: 5
+        },
+        {
+          key: 10,
+          value: 10
+        },
+        {
+          key: 15,
+          value: 15
+        },
+        {
+          key: 20,
+          value: 20
+        }
+      ]
     };
   },
   created() {

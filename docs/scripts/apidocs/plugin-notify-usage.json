@@ -1,26 +1,28 @@
 {
-  "props": [{
-    "name": "cancelText",
-    "type": "String",
-    "default": "'Close'",
-    "description": "默认按钮（关闭）的文字"
-  }, {
-    "name": "progressColor",
-    "type": "String",
-    "default": "'#3f51b5'",
-    "description": "进度条的颜色"
-  }, {
-    "name": "timeout",
-    "type": "Number",
-    "default": "5000",
-    "description": "自动关闭的时间间隔，单位：毫秒；设置为0，则不自动关闭"
-  }, {
-    "name": "transitionName",
-    "type": "String",
-    "default": "'notify-list'",
-    "description": "出入场动画名称，设置为空字符串则无动画"
-  }],
-  "slots": [],
-  "events": []
+  "props": [
+    {
+      "name": "cancelText",
+      "type": "String",
+      "default": "'Close'",
+      "description": "默认按钮（关闭）的文字"
+    },
+    {
+      "name": "progressColor",
+      "type": "String",
+      "default": "'#3f51b5'",
+      "description": "进度条的颜色"
+    },
+    {
+      "name": "timeout",
+      "type": "Number",
+      "default": "5000",
+      "description": "自动关闭的时间间隔，单位：毫秒；设置为0，则不自动关闭"
+    },
+    {
+      "name": "transitionName",
+      "type": "String",
+      "default": "'notify-list'",
+      "description": "出入场动画名称，设置为空字符串则无动画"
+    }
+  ]
 }
-

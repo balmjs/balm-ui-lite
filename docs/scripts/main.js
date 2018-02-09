@@ -39,10 +39,15 @@ if (isIE) {
   Vue.prototype.$docs = {
     props: {
       thead: ['参数', '类型', '默认值', '说明'],
-      tbody: ['name', 'type', 'default', {
-        field: 'description',
-        raw: true
-      }]
+      tbody: [
+        'name',
+        'type',
+        'default',
+        {
+          field: 'description',
+          raw: true
+        }
+      ]
     },
     slots: {
       thead: ['名称', '说明', '作用域'],
@@ -54,10 +59,13 @@ if (isIE) {
     },
     sass: {
       thead: ['可复写的Sass变量', '说明'],
-      tbody: ['var', {
-        field: 'description',
-        raw: true
-      }]
+      tbody: [
+        'var',
+        {
+          field: 'description',
+          raw: true
+        }
+      ]
     }
   };
   Vue.prototype.$domain = DEBUG ? '' : 'http://mdl.balmjs.com';
@@ -69,7 +77,7 @@ if (isIE) {
   // Create VueI18n instance with options
   const i18n = new VueI18n({
     locale: 'cn', // set locale
-    messages: locales, // set locale messages
+    messages: locales // set locale messages
   });
   Vue.prototype.flatpickrLang = flatpickrLang;
 

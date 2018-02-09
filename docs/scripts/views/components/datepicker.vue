@@ -117,7 +117,7 @@ export default {
     return {
       docs,
       config1: {
-        defaultDate: 'today',
+        defaultDate: 'today'
         // locale: this.flatpickrLang.cn
       },
       date1: '',

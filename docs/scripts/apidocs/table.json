@@ -1,103 +1,130 @@
 {
-  "props": [{
-    "name": "data",
-    "type": "Array",
-    "default": "[]",
-    "description": "表格数据源"
-  }, {
-    "name": "caption",
-    "type": "String, Boolean",
-    "default": "false",
-    "description": "设置表格标题 或 启用表格标题插槽"
-  }, {
-    "name": "colgroup",
-    "type": "Boolean",
-    "default": "false",
-    "description": "显示表格列 或 启用表格列插槽"
-  }, {
-    "name": "thead",
-    "type": "Array, Boolean",
-    "default": "false",
-    "description": "设置表头 或 启用表头插槽"
-  }, {
-    "name": "tbody",
-    "type": "Array",
-    "default": "[]",
-    "description": "设置表数据"
-  }, {
-    "name": "tfoot",
-    "type": "Array, Boolean",
-    "default": "false",
-    "description": "设置表尾 或 启用表尾插槽"
-  }, {
-    "name": "action",
-    "type": "Array",
-    "default": "[]",
-    "description": "设置表格操作按钮"
-  }, {
-    "name": "selectable",
-    "type": "String, Boolean",
-    "default": "false",
-    "description": "启用表格选框列 (设置 'left' 或 'right')"
-  }, {
-    "name": "checkedList",
-    "type": "Array",
-    "default": "[]",
-    "description": "表格勾选结果"
-  }, {
-    "name": "selectKeyField",
-    "type": "Boolean",
-    "default": "false",
-    "description": "启用 <b>自定义字段内容</b> 代替 <b>表格行索引值</b> 作为表格勾选结果"
-  }, {
-    "name": "keyField",
-    "type": "String",
-    "default": "'id'",
-    "description": "设置一个数据源中的字段名"
-  }, {
-    "name": "noData",
-    "type": "String",
-    "default": "'No Data'",
-    "description": "无数据时的文字提示"
-  }, {
-    "name": "hasDetailView",
-    "type": "Boolean",
-    "default": "false",
-    "description": "启用表格扩展行"
-  }],
-  "slots": [{
-    "name": "(default)",
-    "description": "默认插槽可以插入表格扩展行内容 (需激活 hasDetailView 属性)"
-  }, {
-    "name": "caption",
-    "description": "Caption插槽可以插入表格标题"
-  }, {
-    "name": "colgroup",
-    "description": "Colgroup插槽可以插入表格列元素"
-  }, {
-    "name": "thead",
-    "description": "Thead插槽可以插入表格头部内容",
-    "props": "className: { asc, desc }"
-  }, {
-    "name": "tbody",
-    "description": "Tbody插槽可以插入表格主体内容",
-    "props": "data"
-  }, {
-    "name": "tfoot",
-    "description": "Tfoot插槽可以插入表格尾部内容",
-    "props": "data"
-  }],
-  "events": [{
-    "name": "(custom action)",
-    "type": "N/A",
-    "description": "点击表格操作按钮时触发自定义函数"
-  }, {
-    "name": "selected",
-    "type": "Function(result: array)",
-    "description": "表格勾选结果变化时触发函数"
-  }, {
-    "name": "view-detail",
-    "type": "Function(rowData: object)",
-    "description": "展开表格某行数据时触发函数"
-  }]
+  "props": [
+    {
+      "name": "data",
+      "type": "Array",
+      "default": "[]",
+      "description": "表格数据源"
+    },
+    {
+      "name": "caption",
+      "type": "String, Boolean",
+      "default": "false",
+      "description": "设置表格标题 或 启用表格标题插槽"
+    },
+    {
+      "name": "colgroup",
+      "type": "Boolean",
+      "default": "false",
+      "description": "显示表格列 或 启用表格列插槽"
+    },
+    {
+      "name": "thead",
+      "type": "Array, Boolean",
+      "default": "false",
+      "description": "设置表头 或 启用表头插槽"
+    },
+    {
+      "name": "tbody",
+      "type": "Array",
+      "default": "[]",
+      "description": "设置表数据"
+    },
+    {
+      "name": "tfoot",
+      "type": "Array, Boolean",
+      "default": "false",
+      "description": "设置表尾 或 启用表尾插槽"
+    },
+    {
+      "name": "action",
+      "type": "Array",
+      "default": "[]",
+      "description": "设置表格操作按钮"
+    },
+    {
+      "name": "selectable",
+      "type": "String, Boolean",
+      "default": "false",
+      "description": "启用表格选框列 (设置 'left' 或 'right')"
+    },
+    {
+      "name": "checkedList",
+      "type": "Array",
+      "default": "[]",
+      "description": "表格勾选结果"
+    },
+    {
+      "name": "selectKeyField",
+      "type": "Boolean",
+      "default": "false",
+      "description":
+        "启用 <b>自定义字段内容</b> 代替 <b>表格行索引值</b> 作为表格勾选结果"
+    },
+    {
+      "name": "keyField",
+      "type": "String",
+      "default": "'id'",
+      "description": "设置一个数据源中的字段名"
+    },
+    {
+      "name": "noData",
+      "type": "String",
+      "default": "'No Data'",
+      "description": "无数据时的文字提示"
+    },
+    {
+      "name": "hasDetailView",
+      "type": "Boolean",
+      "default": "false",
+      "description": "启用表格扩展行"
+    }
+  ],
+  "slots": [
+    {
+      "name": "(default)",
+      "description":
+        "默认插槽可以插入表格扩展行内容 (需激活 hasDetailView 属性)"
+    },
+    {
+      "name": "caption",
+      "description": "Caption插槽可以插入表格标题"
+    },
+    {
+      "name": "colgroup",
+      "description": "Colgroup插槽可以插入表格列元素"
+    },
+    {
+      "name": "thead",
+      "description": "Thead插槽可以插入表格头部内容",
+      "props": "className: { asc, desc }"
+    },
+    {
+      "name": "tbody",
+      "description": "Tbody插槽可以插入表格主体内容",
+      "props": "data"
+    },
+    {
+      "name": "tfoot",
+      "description": "Tfoot插槽可以插入表格尾部内容",
+      "props": "data"
+    }
+  ],
+  "events": [
+    {
+      "name": "(custom action)",
+      "type": "N/A",
+      "description": "点击表格操作按钮时触发自定义函数"
+    },
+    {
+      "name": "selected",
+      "type": "Function(result: array)",
+      "description": "表格勾选结果变化时触发函数"
+    },
+    {
+      "name": "view-detail",
+      "type": "Function(rowData: object)",
+      "description": "展开表格某行数据时触发函数"
+    }
+  ]
 }

@@ -1,40 +1,51 @@
 {
-  "props": [{
-    "name": "model",
-    "type": "Number",
-    "default": "0",
-    "description": "设置当前取值"
-  }, {
-    "name": "min",
-    "type": "Number, String",
-    "default": "0",
-    "description": "最小值"
-  }, {
-    "name": "max",
-    "type": "Number, String",
-    "default": "1",
-    "description": "最大值"
-  }, {
-    "name": "step",
-    "type": "Number, String",
-    "default": "1",
-    "description": "步长，取值必须大于 0，并且可被 (max - min) 整除。"
-  }, {
-    "name": "disabled",
-    "type": "Boolean",
-    "default": "false",
-    "description": "禁用状态"
-  }],
-  "events": [{
-    "name": "change",
-    "type": "Function(newValue: number)",
-    "description": "当滑动条的值发生改变时触发事件"
-  }],
-  "sass": [{
-    "var": "$range-bg-color",
-    "description": "滑动条轨道的颜色"
-  }, {
-    "var": "$range-color",
-    "description": "滑动条按钮的颜色"
-  }]
+  "props": [
+    {
+      "name": "model",
+      "type": "Number",
+      "default": "0",
+      "description": "设置当前取值"
+    },
+    {
+      "name": "min",
+      "type": "Number, String",
+      "default": "0",
+      "description": "最小值"
+    },
+    {
+      "name": "max",
+      "type": "Number, String",
+      "default": "1",
+      "description": "最大值"
+    },
+    {
+      "name": "step",
+      "type": "Number, String",
+      "default": "1",
+      "description": "步长，取值必须大于 0，并且可被 (max - min) 整除。"
+    },
+    {
+      "name": "disabled",
+      "type": "Boolean",
+      "default": "false",
+      "description": "禁用状态"
+    }
+  ],
+  "events": [
+    {
+      "name": "change",
+      "type": "Function(newValue: number)",
+      "description": "当滑动条的值发生改变时触发事件"
+    }
+  ],
+  "sass": [
+    {
+      "var": "$range-bg-color",
+      "description": "滑动条轨道的颜色"
+    },
+    {
+      "var": "$range-color",
+      "description": "滑动条按钮的颜色"
+    }
+  ]
 }

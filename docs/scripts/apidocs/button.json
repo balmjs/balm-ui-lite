@@ -1,87 +1,112 @@
 {
-  "props": [{
-    "name": "type",
-    "type": "String",
-    "default": "'button'",
-    "description": "原生&lt;button&gt;的type属性"
-  }, {
-    "name": "raised",
-    "type": "Boolean",
-    "default": "false",
-    "description": "矩形效果"
-  }, {
-    "name": "fab",
-    "type": "Boolean",
-    "default": "false",
-    "description": "圆形效果"
-  }, {
-    "name": "miniFab",
-    "type": "Boolean",
-    "default": "false",
-    "description": "mini圆形效果"
-  }, {
-    "name": "icon",
-    "type": "String",
-    "description": "Material图标，请参考<a href='http://balmjs.com/ui-vue/#/icons' target='_blank'>图标库</a>"
-  }, {
-    "name": "colored",
-    "type": "Boolean",
-    "default": "false",
-    "description": "着色效果（主色或辅色取决于按钮效果类型）"
-  }, {
-    "name": "primary",
-    "type": "Boolean",
-    "default": "false",
-    "description": "主色效果"
-  }, {
-    "name": "accent",
-    "type": "Boolean",
-    "default": "false",
-    "description": "辅色效果"
-  }, {
-    "name": "noRipple",
-    "type": "Boolean",
-    "default": "false",
-    "description": "无波纹效果"
-  }, {
-    "name": "link",
-    "type": "Boolean",
-    "default": "false",
-    "description": "链接效果"
-  }],
-  "slots": [{
-    "name": "(default)",
-    "description": "默认插槽可以插入按钮内容"
-  }],
-  "sass": [{
-    "var": "$button-primary-color",
-    "description": "默认按钮 主色（背景色）"
-  }, {
-    "var": "$button-secondary-color",
-    "description": "默认按钮 辅色（前景色）"
-  }, {
-    "var": "$button-hover-color",
-    "description": "默认按钮鼠标经过时的颜色"
-  }, {
-    "var": "$button-active-color",
-    "description": "默认按钮 激活的颜色"
-  }, {
-    "var": "$button-primary-color-alt",
-    "description": "着色按钮 主色（背景色），扁平化或图标按钮的前景色"
-  }, {
-    "var": "$button-secondary-color-alt",
-    "description": "着色按钮 辅色（前景色）"
-  }, {
-    "var": "$button-hover-color-alt",
-    "description": "着色按钮鼠标经过时的颜色"
-  }, {
-    "var": "$button-active-color-alt",
-    "description": "着色按钮 激活颜色"
-  }, {
-    "var": "$button-primary-color-disabled",
-    "description": "禁用按钮 主色（背景色）"
-  }, {
-    "var": "$button-secondary-color-disabled",
-    "description": "禁用按钮 辅色（前景色）"
-  }]
+  "props": [
+    {
+      "name": "type",
+      "type": "String",
+      "default": "'button'",
+      "description": "原生&lt;button&gt;的type属性"
+    },
+    {
+      "name": "raised",
+      "type": "Boolean",
+      "default": "false",
+      "description": "矩形效果"
+    },
+    {
+      "name": "fab",
+      "type": "Boolean",
+      "default": "false",
+      "description": "圆形效果"
+    },
+    {
+      "name": "miniFab",
+      "type": "Boolean",
+      "default": "false",
+      "description": "mini圆形效果"
+    },
+    {
+      "name": "icon",
+      "type": "String",
+      "description":
+        "Material图标，请参考<a href='http://balmjs.com/ui-vue/#/icons' target='_blank'>图标库</a>"
+    },
+    {
+      "name": "colored",
+      "type": "Boolean",
+      "default": "false",
+      "description": "着色效果（主色或辅色取决于按钮效果类型）"
+    },
+    {
+      "name": "primary",
+      "type": "Boolean",
+      "default": "false",
+      "description": "主色效果"
+    },
+    {
+      "name": "accent",
+      "type": "Boolean",
+      "default": "false",
+      "description": "辅色效果"
+    },
+    {
+      "name": "noRipple",
+      "type": "Boolean",
+      "default": "false",
+      "description": "无波纹效果"
+    },
+    {
+      "name": "link",
+      "type": "Boolean",
+      "default": "false",
+      "description": "链接效果"
+    }
+  ],
+  "slots": [
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入按钮内容"
+    }
+  ],
+  "sass": [
+    {
+      "var": "$button-primary-color",
+      "description": "默认按钮 主色（背景色）"
+    },
+    {
+      "var": "$button-secondary-color",
+      "description": "默认按钮 辅色（前景色）"
+    },
+    {
+      "var": "$button-hover-color",
+      "description": "默认按钮鼠标经过时的颜色"
+    },
+    {
+      "var": "$button-active-color",
+      "description": "默认按钮 激活的颜色"
+    },
+    {
+      "var": "$button-primary-color-alt",
+      "description": "着色按钮 主色（背景色），扁平化或图标按钮的前景色"
+    },
+    {
+      "var": "$button-secondary-color-alt",
+      "description": "着色按钮 辅色（前景色）"
+    },
+    {
+      "var": "$button-hover-color-alt",
+      "description": "着色按钮鼠标经过时的颜色"
+    },
+    {
+      "var": "$button-active-color-alt",
+      "description": "着色按钮 激活颜色"
+    },
+    {
+      "var": "$button-primary-color-disabled",
+      "description": "禁用按钮 主色（背景色）"
+    },
+    {
+      "var": "$button-secondary-color-disabled",
+      "description": "禁用按钮 辅色（前景色）"
+    }
+  ]
 }

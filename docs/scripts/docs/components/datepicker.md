@@ -1,10 +1,10 @@
 #### 使用注意点
 
-> Datepicker 使用了第三方插件 - [flatpickr](https://chmln.github.io/flatpickr/)，使用时需要额外加载flatpickr的样式
+> Datepicker 使用了第三方插件 - [flatpickr](https://chmln.github.io/flatpickr/)，使用时需要额外加载 flatpickr 的样式
 
-__flatpickr样式配置方案 I（推荐）__
+**flatpickr 样式配置方案 I（推荐）**
 
-在 [BalmJS](http://balmjs.com/) 工作流环境中可直接在HTML文件中调用第三方插件样式或脚本进行开发，且打包时会合成自定义的第三方包，无需额外配置，所以推荐使用。
+在 [BalmJS](http://balmjs.com/) 工作流环境中可直接在 HTML 文件中调用第三方插件样式或脚本进行开发，且打包时会合成自定义的第三方包，无需额外配置，所以推荐使用。
 
 ```html
 <head>
@@ -19,10 +19,9 @@ __flatpickr样式配置方案 I（推荐）__
 
 > 例子中 `css/plugins.css` 就是打包时的目标目录和文件
 
-__flatpickr样式配置方案 II__
+**flatpickr 样式配置方案 II**
 
-通常 [Balm CLI](https://github.com/balmjs/balm-cli) 生成的脚手架项目中有一个 `config/balmrc.js`，修改即可。（非BalmJS环境请自行修改 `webpack` 配置，效果一样）
-
+通常 [Balm CLI](https://github.com/balmjs/balm-cli) 生成的脚手架项目中有一个 `config/balmrc.js`，修改即可。（非 BalmJS 环境请自行修改 `webpack` 配置，效果一样）
 
 ```js
 // balmrc.js
@@ -50,4 +49,4 @@ import 'flatpickrCss';
 Vue.use(BalmUI);
 ```
 
-> __BalmJS__ 思想是 __CSS__ 和 __JS__ 分离管理，以达到__“所有的样式和脚本全部模块化”__，而不是简简单单的从脚本中萃取一个 All in one 的 CSS，所以推荐使用 __方案 I__
+> **BalmJS** 思想是 **CSS** 和 **JS** 分离管理，以达到**“所有的样式和脚本全部模块化”**，而不是简简单单的从脚本中萃取一个 All in one 的 CSS，所以推荐使用 **方案 I**

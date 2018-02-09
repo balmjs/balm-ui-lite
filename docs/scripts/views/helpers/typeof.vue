@@ -4,16 +4,16 @@
   </div>
 </template>
 <script>
-  import docs from '../../docs/helpers/typeof.md';
+import docs from '../../docs/helpers/typeof.md';
 
-  export default {
-    metaInfo: {
-      titleTemplate: '%s - typeof'
-    },
-    data () {
-      return {
-        docs
-      };
-    }
+export default {
+  metaInfo: {
+    titleTemplate: '%s - typeof'
+  },
+  data() {
+    return {
+      docs
+    };
   }
+};
 </script>

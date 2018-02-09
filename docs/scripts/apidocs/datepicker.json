@@ -1,47 +1,51 @@
 {
   "props": [
-  {
-    "name": "model",
-    "type": "null",
-    "description": "输入框内容"
-  },
-  {
-    "name": "config",
-    "type": "Object",
-    "default": "{}",
-    "description": "日期选择配置，请参照 [<a href='https://chmln.github.io/flatpickr/options/' target='_blank'>flatpickr文档</a>]"
-  },
-  {
-    "name": "placeholder",
-    "type": "String",
-    "default": "",
-    "description": "Datepicker 的 placeholder 属性"
-  },
-  {
-    "name": "toggle",
-    "type": "Boolean",
-    "default": "false",
-    "description": "显示日历按钮图标"
-  },
-  {
-    "name": "clear",
-    "type": "Boolean",
-    "default": "false",
-    "description": "显示清楚按钮图标"
-  }],
+    {
+      "name": "model",
+      "type": "null",
+      "description": "输入框内容"
+    },
+    {
+      "name": "config",
+      "type": "Object",
+      "default": "{}",
+      "description":
+        "日期选择配置，请参照 [<a href='https://chmln.github.io/flatpickr/options/' target='_blank'>flatpickr文档</a>]"
+    },
+    {
+      "name": "placeholder",
+      "type": "String",
+      "default": "",
+      "description": "Datepicker 的 placeholder 属性"
+    },
+    {
+      "name": "toggle",
+      "type": "Boolean",
+      "default": "false",
+      "description": "显示日历按钮图标"
+    },
+    {
+      "name": "clear",
+      "type": "Boolean",
+      "default": "false",
+      "description": "显示清楚按钮图标"
+    }
+  ],
   "slots": [
-  {
-    "name": "toggle",
-    "description": "Toggle插槽可以插入自定义日历按钮图标"
-  },
-  {
-    "name": "clear",
-    "description": "Clear插槽可以插入自定义清楚按钮图标"
-  }],
+    {
+      "name": "toggle",
+      "description": "Toggle插槽可以插入自定义日历按钮图标"
+    },
+    {
+      "name": "clear",
+      "description": "Clear插槽可以插入自定义清楚按钮图标"
+    }
+  ],
   "events": [
-  {
-    "name": "change",
-    "type": "Function(value: string | array)",
-    "description": "当日期变化时触发函数"
-  }]
+    {
+      "name": "change",
+      "type": "Function(value: string | array)",
+      "description": "当日期变化时触发函数"
+    }
+  ]
 }

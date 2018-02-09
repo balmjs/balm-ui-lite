@@ -6,8 +6,7 @@ const isIE = IE && IE < 9; // 项目兼容到IE9+
 
 const killIE = () => {
   let body = document.getElementsByTagName('body')[0];
-  let template =
-    `<div class="kill-ie">
+  let template = `<div class="kill-ie">
       <div class="container">
         <div class="content">
           <h1>您的浏览器版本过低，请点击<a href="https://browsehappy.com/">链接</a>升级您的浏览器</h1>
@@ -24,7 +23,4 @@ const killIE = () => {
   body.innerHTML = template;
 };
 
-export {
-  isIE,
-  killIE
-};
+export { isIE, killIE };

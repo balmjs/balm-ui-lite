@@ -34,32 +34,32 @@
 </template>
 
 <script>
-  import snippets from '../../mixins/snippets';
+import snippets from '../../mixins/snippets';
 
-  export default {
-    mixins: [snippets],
-    metaInfo: {
-      titleTemplate: '%s - Prompt'
-    },
-    data () {
-      return {
-        content: 'Hello'
-      };
-    },
-    methods: {
-      async openPrompt () {
-        let result = await this.$prompt('请输入你的名字：', 'BalmUI');
-        this.$alert(`${this.content} ${result}！`);
-      }
-    },
-    created() {
-      this.showCode('prompt', 3);
+export default {
+  mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - Prompt'
+  },
+  data() {
+    return {
+      content: 'Hello'
+    };
+  },
+  methods: {
+    async openPrompt() {
+      let result = await this.$prompt('请输入你的名字：', 'BalmUI');
+      this.$alert(`${this.content} ${result}！`);
     }
+  },
+  created() {
+    this.showCode('prompt', 3);
   }
+};
 </script>
 
 <style scoped>
-  h2.line {
-    border-bottom: 1px solid #ddd;
-  }
+h2.line {
+  border-bottom: 1px solid #ddd;
+}
 </style>

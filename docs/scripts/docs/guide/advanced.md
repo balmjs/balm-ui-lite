@@ -2,9 +2,9 @@
 
 1. 样式模块化方案
 2. 脚本模块化方案
-3. 自动获取UI所需的图片和字体资源
+3. 自动获取 UI 所需的图片和字体资源
 
-> ⚠️ 以下配置依旧基于 [Balm CLI](https://github.com/balmjs/balm-cli) 搭建的 Vue脚手架
+> ⚠️ 以下配置依旧基于 [Balm CLI](https://github.com/balmjs/balm-cli) 搭建的 Vue 脚手架
 
 ## 1. 样式模块化
 
@@ -17,9 +17,9 @@
 @import '../../../node_modules/balm-ui-lite/src/styles/balm-ui-lite.scss';
 ```
 
-> 然后可以通过编辑 `/path/to/my-project/app/styles/global/_var.scss` 设定指定的样式变量来快速复写UI样式
+> 然后可以通过编辑 `/path/to/my-project/app/styles/global/_var.scss` 设定指定的样式变量来快速复写 UI 样式
 
-__模板统一格式__
+**模板统一格式**
 
 ```html
 <!DOCTYPE html>
@@ -48,10 +48,10 @@ __模板统一格式__
 </html>
 ```
 
-- `main.css` 项目样式入口文件
-- `css/plugins.css` 所有第三方样式文件打包后的文件路径（如果第三方提供 Sass，也可直接在 `/path/to/my-project/app/styles/global/_vendor.scss` 中进行管理）
-- `lte10.css` 为兼容 _IE10-_ 而生
-- `ie9.css` 为强行兼容 _IE_ 而生
+* `main.css` 项目样式入口文件
+* `css/plugins.css` 所有第三方样式文件打包后的文件路径（如果第三方提供 Sass，也可直接在 `/path/to/my-project/app/styles/global/_vendor.scss` 中进行管理）
+* `lte10.css` 为兼容 _IE10-_ 而生
+* `ie9.css` 为强行兼容 _IE_ 而生
 
 > 没有 IE8-，因为 [Vue.js](https://vuejs.org/v2/guide/installation.html) 不支持 IE8 及其以下版本
 
@@ -167,7 +167,7 @@ new Vue({
 });
 ```
 
-> 关于 _CSSinJS_，可通过 BalmJS 配置提取样式，但 BalmJS的思想 更推荐将样式和脚本分离管理，以达成更加灵活的模块配置和管理
+> 关于 _CSSinJS_，可通过 BalmJS 配置提取样式，但 BalmJS 的思想 更推荐将样式和脚本分离管理，以达成更加灵活的模块配置和管理
 
 #### 2.2.2 浏览器引入
 
@@ -211,7 +211,7 @@ new Vue({
 
 ### 2.3 源码引用
 
-> 打包效果同 __完整引用__ 方案
+> 打包效果同 **完整引用** 方案
 
 编辑 `/path/to/my-project/app/config/balmrc.js`，新增下面几行代码
 
@@ -234,7 +234,7 @@ module.exports = {
 
 > 然后代码中引用的 `balm-ui-lite` 就直接指向源代码了，可用于调试 BalmUI Lite 的源代码
 
-## 3. 自动获取UI所需的图片和字体资源
+## 3. 自动获取 UI 所需的图片和字体资源
 
 编辑 `/path/to/my-project/gulpfile.js`
 

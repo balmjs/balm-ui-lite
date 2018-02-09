@@ -32,27 +32,27 @@
 </template>
 
 <script>
-  import snippets from '../../mixins/snippets';
+import snippets from '../../mixins/snippets';
 
-  export default {
-    mixins: [snippets],
-    metaInfo: {
-      titleTemplate: '%s - Confirm'
-    },
-    data () {
-    	return {
-    		content: 'Hello BalmUI'
-      };
-    },
-    methods: {
-    	async openConfirm () {
-        if(await this.$confirm('你打开了确认框！')){
-          this.$alert(this.content);
-        }
+export default {
+  mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - Confirm'
+  },
+  data() {
+    return {
+      content: 'Hello BalmUI'
+    };
+  },
+  methods: {
+    async openConfirm() {
+      if (await this.$confirm('你打开了确认框！')) {
+        this.$alert(this.content);
       }
-    },
-    created() {
-      this.showCode('confirm', 3);
     }
+  },
+  created() {
+    this.showCode('confirm', 3);
   }
+};
 </script>

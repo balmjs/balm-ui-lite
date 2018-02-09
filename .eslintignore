@@ -2,6 +2,7 @@
 /components/
 /config/
 /dist/
+/docs/styles/global/_normalize.scss
 /helpers/
 /plugins/
 /src/fonts/

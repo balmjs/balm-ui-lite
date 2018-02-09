@@ -90,7 +90,7 @@ export default {
 </script>
 
 <style scoped>
-  h2.line {
-    border-bottom: 1px solid #ddd;
-  }
+h2.line {
+  border-bottom: 1px solid #ddd;
+}
 </style>

@@ -1,66 +1,73 @@
 {
   "props": [
-  {
-    "name": "model",
-    "type": "String, Number, Boolean",
-    "default": "false",
-    "description": "当前选中的选项值"
-  },
-  {
-    "name": "id",
-    "type": "String",
-    "default": "",
-    "description": "Radio 的 id 属性"
-  },
-  {
-    "name": "name",
-    "type": "String",
-    "default": "",
-    "description": "Radio 的 name 属性"
-  },
-  {
-    "name": "disabled",
-    "type": "Boolean",
-    "default": "false",
-    "description": "Radio 的 disabled 属性（禁用状态）"
-  },
-  {
-    "name": "value",
-    "type": "String, Number, Boolean",
-    "default": "",
-    "description": "Radio 的 value 属性（指定选项值）"
-  },
-  {
-    "name": "label",
-    "type": "String",
-    "default": "",
-    "description": "标签文字"
-  },
-  {
-    "name": "noRipple",
-    "type": "Boolean",
-    "default": "false",
-    "description": "无波纹效果"
-  }],
+    {
+      "name": "model",
+      "type": "String, Number, Boolean",
+      "default": "false",
+      "description": "当前选中的选项值"
+    },
+    {
+      "name": "id",
+      "type": "String",
+      "default": "",
+      "description": "Radio 的 id 属性"
+    },
+    {
+      "name": "name",
+      "type": "String",
+      "default": "",
+      "description": "Radio 的 name 属性"
+    },
+    {
+      "name": "disabled",
+      "type": "Boolean",
+      "default": "false",
+      "description": "Radio 的 disabled 属性（禁用状态）"
+    },
+    {
+      "name": "value",
+      "type": "String, Number, Boolean",
+      "default": "",
+      "description": "Radio 的 value 属性（指定选项值）"
+    },
+    {
+      "name": "label",
+      "type": "String",
+      "default": "",
+      "description": "标签文字"
+    },
+    {
+      "name": "noRipple",
+      "type": "Boolean",
+      "default": "false",
+      "description": "无波纹效果"
+    }
+  ],
   "slots": [
-  {
-    "name": "(default)",
-    "description": "默认插槽可以插入标签内容"
-  }],
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入标签内容"
+    }
+  ],
   "events": [
-  {
-    "name": "change",
-    "type": "Function(picked: string)",
-    "description": "选项变化时的回调函数"
-  }],
-  "sass": [{
-    "var": "$radio-color",
-    "description": "选中后的颜色"
-  }, {
-    "var": "$radio-off-color",
-    "description": "未选中的颜色"
-  }, {
-    "var": "$radio-disabled-color",
-    "description": "禁用时的颜色"
-  }]
+    {
+      "name": "change",
+      "type": "Function(picked: string)",
+      "description": "选项变化时的回调函数"
+    }
+  ],
+  "sass": [
+    {
+      "var": "$radio-color",
+      "description": "选中后的颜色"
+    },
+    {
+      "var": "$radio-off-color",
+      "description": "未选中的颜色"
+    },
+    {
+      "var": "$radio-disabled-color",
+      "description": "禁用时的颜色"
+    }
+  ]
 }

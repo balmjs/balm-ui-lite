@@ -1,12 +1,16 @@
 {
-  "props": [{
-    "name": "type",
-    "type": "String, Number",
-    "default": "'horizontal'",
-    "description": "确定分割线的方向"
-  }],
-  "slots": [{
-    "name": "(default)",
-    "description": "默认插槽"
-  }]
+  "props": [
+    {
+      "name": "type",
+      "type": "String, Number",
+      "default": "'horizontal'",
+      "description": "确定分割线的方向"
+    }
+  ],
+  "slots": [
+    {
+      "name": "(default)",
+      "description": "默认插槽"
+    }
+  ]
 }

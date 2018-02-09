@@ -1,39 +1,48 @@
 {
-  "props": [{
-    "name": "type",
-    "type": "Number, String",
-    "default": "0",
-    "description": "提示框类型 { 0: 'toast', 1: 'snackbar' }"
-  }, {
-    "name": "active",
-    "type": "Boolean",
-    "default": "false",
-    "description": "开启状态"
-  }, {
-    "name": "message",
-    "type": "String",
-    "default": "(required)",
-    "description": "提示文字",
-    "required": true
-  }, {
-    "name": "timeout",
-    "type": "Number",
-    "default": "2750",
-    "description": "显示时长"
-  }, {
-    "name": "actionHandler",
-    "type": "Function",
-    "default": "",
-    "description": "动作按钮回调函数"
-  }, {
-    "name": "actionText",
-    "type": "String",
-    "default": "",
-    "description": "动作按钮文字"
-  }],
-  "events": [{
-    "name": "done",
-    "type": "NOOP",
-    "description": "默认关闭时的回调函数"
-  }]
+  "props": [
+    {
+      "name": "type",
+      "type": "Number, String",
+      "default": "0",
+      "description": "提示框类型 { 0: 'toast', 1: 'snackbar' }"
+    },
+    {
+      "name": "active",
+      "type": "Boolean",
+      "default": "false",
+      "description": "开启状态"
+    },
+    {
+      "name": "message",
+      "type": "String",
+      "default": "(required)",
+      "description": "提示文字",
+      "required": true
+    },
+    {
+      "name": "timeout",
+      "type": "Number",
+      "default": "2750",
+      "description": "显示时长"
+    },
+    {
+      "name": "actionHandler",
+      "type": "Function",
+      "default": "",
+      "description": "动作按钮回调函数"
+    },
+    {
+      "name": "actionText",
+      "type": "String",
+      "default": "",
+      "description": "动作按钮文字"
+    }
+  ],
+  "events": [
+    {
+      "name": "done",
+      "type": "NOOP",
+      "description": "默认关闭时的回调函数"
+    }
+  ]
 }

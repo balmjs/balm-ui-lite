@@ -1,22 +1,29 @@
 {
-  "props": [{
-    "name": "noRipple",
-    "type": "Boolean",
-    "default": "false",
-    "description": "无波纹效果"
-  }, {
-    "name": "position",
-    "type": "String",
-    "default": "",
-    "description": "选项卡位置（'left' 或 'right'），默认居中"
-  }],
-  "slots": [{
-    "name": "(default)",
-    "description": "默认插槽可以插入选项卡子组件"
-  }],
-  "events": [{
-    "name": "change",
-    "type": "Function(tabIndex: number)",
-    "description": "切换选项卡时触发（返回新激活选项卡的索引值）"
-  }]
+  "props": [
+    {
+      "name": "noRipple",
+      "type": "Boolean",
+      "default": "false",
+      "description": "无波纹效果"
+    },
+    {
+      "name": "position",
+      "type": "String",
+      "default": "",
+      "description": "选项卡位置（'left' 或 'right'），默认居中"
+    }
+  ],
+  "slots": [
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入选项卡子组件"
+    }
+  ],
+  "events": [
+    {
+      "name": "change",
+      "type": "Function(tabIndex: number)",
+      "description": "切换选项卡时触发（返回新激活选项卡的索引值）"
+    }
+  ]
 }

@@ -1,20 +1,8 @@
 import helpers from '../helpers';
 
 const components = {
-  layout: [
-    'layout',
-    'grid',
-    'tabs'
-  ],
-  common: [
-    'badge',
-    'button',
-    'chip',
-    'menu',
-    'tooltip',
-    'divider',
-    'icon'
-  ],
+  layout: ['layout', 'grid', 'tabs'],
+  common: ['badge', 'button', 'chip', 'menu', 'tooltip', 'divider', 'icon'],
   form: [
     'textfield',
     'checkbox',
@@ -29,29 +17,13 @@ const components = {
     'datepicker',
     'rangepicker'
   ],
-  dataview: [
-    'card',
-    'list',
-    'table',
-    'pagination'
-  ],
-  feedback: [
-    'dialog',
-    'snackbar'
-  ],
-  'loading': [
-    'progress',
-    'spinner'
-  ]
+  dataview: ['card', 'list', 'table', 'pagination'],
+  feedback: ['dialog', 'snackbar'],
+  loading: ['progress', 'spinner']
 };
 
 const MENU = {
-  guide: [
-    'intro',
-    'quickstart',
-    'advanced',
-    'kill-ie'
-  ],
+  guide: ['intro', 'quickstart', 'advanced', 'kill-ie'],
   components,
   plugins: [
     'event',
@@ -65,11 +37,7 @@ const MENU = {
   // directives: [
   //   'lazy-load'
   // ],
-  helpers: [
-    'typeof',
-    'detect-ie',
-    'other-fn'
-  ]
+  helpers: ['typeof', 'detect-ie', 'other-fn']
 };
 
 let data = [];
@@ -77,7 +45,8 @@ for (let key in MENU) {
   let menuitems = MENU[key];
   let items = {};
 
-  if (helpers.isObject(menuitems)) { // components
+  if (helpers.isObject(menuitems)) {
+    // components
     items = {
       name: `menu.${key}`
     };
@@ -100,7 +69,8 @@ for (let key in MENU) {
     });
 
     items.subitems = subitems;
-  } else { // others
+  } else {
+    // others
     items = {
       name: `menu.${key}`,
       subitems: menuitems.map(subitem => {

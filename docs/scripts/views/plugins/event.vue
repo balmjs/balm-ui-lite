@@ -59,41 +59,41 @@
 </template>
 
 <script>
-  import snippets from '../../mixins/snippets';
-  import UiTextfield from "../../../../src/scripts/components/form/textfield";
+import snippets from '../../mixins/snippets';
+import UiTextfield from '../../../../src/scripts/components/form/textfield';
 
-  export default {
-    components: {UiTextfield},
-    mixins: [snippets],
-    metaInfo: {
-      titleTemplate: '%s - Event'
-    },
-    data () {
-      return {
-      	dialog: {
-      		show: false
-        },
-      	formData: {
-      		name: '',
-        }
-      };
-    },
-    methods: {
-      onChange (event) {
-        this.formData.name = event.target.value.trim();
+export default {
+  components: { UiTextfield },
+  mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - Event'
+  },
+  data() {
+    return {
+      dialog: {
+        show: false
       },
-      confirmHandler () {
-      	alert('你点击了OK按钮！');
+      formData: {
+        name: ''
       }
+    };
+  },
+  methods: {
+    onChange(event) {
+      this.formData.name = event.target.value.trim();
     },
-    created() {
-      this.showCode('event', 3);
+    confirmHandler() {
+      alert('你点击了OK按钮！');
     }
+  },
+  created() {
+    this.showCode('event', 3);
   }
+};
 </script>
 
 <style scoped>
-  h2.line {
-    border-bottom: 1px solid #ddd;
-  }
+h2.line {
+  border-bottom: 1px solid #ddd;
+}
 </style>

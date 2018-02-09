@@ -37,7 +37,7 @@ export default {
       required: true
     },
     showTitle: {
-    	type: Boolean,
+      type: Boolean,
       default: true
     }
   },

@@ -25,21 +25,21 @@
 </template>
 
 <script>
-  import snippets from '../../mixins/snippets';
+import snippets from '../../mixins/snippets';
 
-  export default {
-    mixins: [snippets],
-    metaInfo: {
-      titleTemplate: '%s - Alert'
-    },
-    created() {
-      this.showCode('alert', 1);
-    }
+export default {
+  mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - Alert'
+  },
+  created() {
+    this.showCode('alert', 1);
   }
+};
 </script>
 
 <style scoped>
-  h2.line {
-    border-bottom: 1px solid #ddd;
-  }
+h2.line {
+  border-bottom: 1px solid #ddd;
+}
 </style>

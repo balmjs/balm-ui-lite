@@ -1,68 +1,77 @@
 {
   "props": [
-  {
-    "name": "model",
-    "type": "null",
-    "description": "当前选中项的key值"
-  },
-  {
-    "name": "options",
-    "type": "Array",
-    "default": "",
-    "description": "选项列表"
-  },
-  {
-    "name": "optionKey",
-    "type": "String",
-    "default": "'value'",
-    "description": "选项key值的名称"
-  },
-  {
-    "name": "optionValue",
-    "type": "String",
-    "default": "'label'",
-    "description": "选项value值的名称"
-  },
-  {
-    "name": "defaultKey",
-    "type": "String",
-    "default": "''",
-    "description": "默认选项key值"
-  },
-  {
-    "name": "defaultValue",
-    "type": "String",
-    "default": "",
-    "description": "默认选项value值"
-  }],
+    {
+      "name": "model",
+      "type": "null",
+      "description": "当前选中项的key值"
+    },
+    {
+      "name": "options",
+      "type": "Array",
+      "default": "",
+      "description": "选项列表"
+    },
+    {
+      "name": "optionKey",
+      "type": "String",
+      "default": "'value'",
+      "description": "选项key值的名称"
+    },
+    {
+      "name": "optionValue",
+      "type": "String",
+      "default": "'label'",
+      "description": "选项value值的名称"
+    },
+    {
+      "name": "defaultKey",
+      "type": "String",
+      "default": "''",
+      "description": "默认选项key值"
+    },
+    {
+      "name": "defaultValue",
+      "type": "String",
+      "default": "",
+      "description": "默认选项value值"
+    }
+  ],
   "events": [
-  {
-    "name": "change",
-    "type": "Function(optionKey: number | string)",
-    "description": "选中 option 时调用函数"
-  },
-  {
-    "name": "selected",
-    "type": "Function(option: object)",
-    "description": "选中 option 时调用函数"
-  }],
-  "sass": [{
-    "var": "$select-width",
-    "description": "下拉框长度"
-  }, {
-    "var": "$select-height",
-    "description": "下拉框高度"
-  }, {
-    "var": "$select-padding",
-    "description": "下拉框padding值"
-  }, {
-    "var": "$select-border-radius",
-    "description": "下拉框圆角属性"
-  }, {
-    "var": "$select-bg-color",
-    "description": "下拉框背景色"
-  }, {
-    "var": "$select-bottom-border-color",
-    "description": "下拉框底边线颜色"
-  }]
+    {
+      "name": "change",
+      "type": "Function(optionKey: number | string)",
+      "description": "选中 option 时调用函数"
+    },
+    {
+      "name": "selected",
+      "type": "Function(option: object)",
+      "description": "选中 option 时调用函数"
+    }
+  ],
+  "sass": [
+    {
+      "var": "$select-width",
+      "description": "下拉框长度"
+    },
+    {
+      "var": "$select-height",
+      "description": "下拉框高度"
+    },
+    {
+      "var": "$select-padding",
+      "description": "下拉框padding值"
+    },
+    {
+      "var": "$select-border-radius",
+      "description": "下拉框圆角属性"
+    },
+    {
+      "var": "$select-bg-color",
+      "description": "下拉框背景色"
+    },
+    {
+      "var": "$select-bottom-border-color",
+      "description": "下拉框底边线颜色"
+    }
+  ]
 }

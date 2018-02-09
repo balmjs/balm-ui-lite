@@ -1,6 +1,8 @@
 {
-  "slots": [{
-    "name": "(default)",
-    "description": "默认插槽可以插入Chip头部信息"
-  }]
+  "slots": [
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入Chip头部信息"
+    }
+  ]
 }

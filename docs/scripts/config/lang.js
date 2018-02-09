@@ -19,8 +19,4 @@ const flatpickrLang = {
   cn: flatpickrLangZh.zh
 };
 
-export {
-  lang,
-  locales,
-  flatpickrLang
-};
+export { lang, locales, flatpickrLang };

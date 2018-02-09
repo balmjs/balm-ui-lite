@@ -182,7 +182,7 @@ export default {
       text5_1: '',
       text5_2: '',
       text6: ''
-    }
+    };
   },
   created() {
     this.showCode('textfield', 6);

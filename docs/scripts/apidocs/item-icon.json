@@ -1,10 +1,14 @@
 {
-  "slots": [{
-    "name": "(default)",
-    "description": "默认插槽可以插入列表项图标"
-  }],
-  "sass": [{
-    "var": "$list-icon-color",
-    "description": "列表项图标颜色 或 列表项头像的背景色"
-  }]
+  "slots": [
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入列表项图标"
+    }
+  ],
+  "sass": [
+    {
+      "var": "$list-icon-color",
+      "description": "列表项图标颜色 或 列表项头像的背景色"
+    }
+  ]
 }

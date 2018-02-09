@@ -123,73 +123,78 @@
 </template>
 
 <script>
-  import snippets from '../../mixins/snippets';
+import snippets from '../../mixins/snippets';
 
-  const options1 = {content: 'Hello BalmUI!'};
-  const options2 = {
-    avatar: require('../../../images/assets/demos/image_card.jpg'),
-    content: `Hey! It's you!`,
-    buttons: [{
+const options1 = { content: 'Hello BalmUI!' };
+const options2 = {
+  avatar: require('../../../images/assets/demos/image_card.jpg'),
+  content: `Hey! It's you!`,
+  buttons: [
+    {
       text: 'Close'
-    }, {
+    },
+    {
       text: 'Hello',
       handler: 'sayHello'
-    }]
-  };
-  const options3 = Object.assign({}, options1, {timeout: 0});
-  const options4 = Object.assign({}, options1, {progressColor: '#ff4081'});
-  const options5 = Object.assign({}, options2, options4);
-  const options6 = Object.assign({}, options3, {
-  	content: 'Do you like BalmUI?',
-  	buttons: [{
-  		text: 'like',
+    }
+  ]
+};
+const options3 = Object.assign({}, options1, { timeout: 0 });
+const options4 = Object.assign({}, options1, { progressColor: '#ff4081' });
+const options5 = Object.assign({}, options2, options4);
+const options6 = Object.assign({}, options3, {
+  content: 'Do you like BalmUI?',
+  buttons: [
+    {
+      text: 'like',
       handler: 'like',
       autoClose: false
-    }]
-  });
-
-	export default {
-		mixins: [snippets],
-    metaInfo: {
-      titleTemplate: '%s - Notify'
-    },
-		data () {
-			return {
-				options1,
-        options2,
-        options3,
-        options4,
-        options5,
-        options6
-      };
-		},
-    methods: {
-			sayHello () {
-				alert(`Yes, it's me.\nHello!`);
-      },
-      like (notify) {
-				let result = prompt('say like!');
-				if(result.toLowerCase() === 'like') {
-					this.$notify.close(notify);
-        }
-      }
-    },
-    created() {
-      this.showCode('notify', 7);
-      this.$notify.addButtonHandler('sayHello', this.sayHello);
-      this.$notify.addButtonHandler('like', this.like);
     }
-	}
+  ]
+});
+
+export default {
+  mixins: [snippets],
+  metaInfo: {
+    titleTemplate: '%s - Notify'
+  },
+  data() {
+    return {
+      options1,
+      options2,
+      options3,
+      options4,
+      options5,
+      options6
+    };
+  },
+  methods: {
+    sayHello() {
+      alert(`Yes, it's me.\nHello!`);
+    },
+    like(notify) {
+      let result = prompt('say like!');
+      if (result.toLowerCase() === 'like') {
+        this.$notify.close(notify);
+      }
+    }
+  },
+  created() {
+    this.showCode('notify', 7);
+    this.$notify.addButtonHandler('sayHello', this.sayHello);
+    this.$notify.addButtonHandler('like', this.like);
+  }
+};
 </script>
 
 <style scoped>
-  h2.line {
-    border-bottom: 1px solid #ddd;
-  }
+h2.line {
+  border-bottom: 1px solid #ddd;
+}
 
-  .divider {
-    height: 0;
-    width: 100%;
-    margin-bottom: 4em;
-  }
+.divider {
+  height: 0;
+  width: 100%;
+  margin-bottom: 4em;
+}
 </style>

@@ -1,74 +1,80 @@
 {
   "props": [
-  {
-    "name": "model",
-    "type": "null",
-    "description": "输入框内容"
-  },
-  {
-    "name": "autoFocus",
-    "type": "Boolean",
-    "default": "false",
-    "description": "聚焦输入框后自动显示已有选项列表"
-  },
-  {
-    "name": "delay",
-    "type": "Number",
-    "default": "300",
-    "description": "延时发送数据请求（仅限remote模式）"
-  },
-  {
-    "name": "disabled",
-    "type": "Boolean",
-    "default": "false",
-    "description": "AutoComplete 的 disabled 属性（禁用状态）"
-  },
-  {
-    "name": "placeholder",
-    "type": "String",
-    "default": "",
-    "description": "AutoComplete 的 placeholder 属性"
-  },
-  {
-    "name": "minLength",
-    "type": "Number",
-    "default": 1,
-    "description": "至少输入几个字符后开始过滤或搜索"
-  },
-  {
-    "name": "source",
-    "type": "Array",
-    "description": "数据源"
-  },
-  {
-    "name": "remote",
-    "type": "Boolean",
-    "default": "false",
-    "description": "默认使用本地数据源，开启后使用远程数据源（需添加search事件）"
-  },
-  {
-    "name": "plus",
-    "type": "Boolean",
-    "default": "false",
-    "description": "启用额外扩展插槽"
-  }],
+    {
+      "name": "model",
+      "type": "null",
+      "description": "输入框内容"
+    },
+    {
+      "name": "autoFocus",
+      "type": "Boolean",
+      "default": "false",
+      "description": "聚焦输入框后自动显示已有选项列表"
+    },
+    {
+      "name": "delay",
+      "type": "Number",
+      "default": "300",
+      "description": "延时发送数据请求（仅限remote模式）"
+    },
+    {
+      "name": "disabled",
+      "type": "Boolean",
+      "default": "false",
+      "description": "AutoComplete 的 disabled 属性（禁用状态）"
+    },
+    {
+      "name": "placeholder",
+      "type": "String",
+      "default": "",
+      "description": "AutoComplete 的 placeholder 属性"
+    },
+    {
+      "name": "minLength",
+      "type": "Number",
+      "default": 1,
+      "description": "至少输入几个字符后开始过滤或搜索"
+    },
+    {
+      "name": "source",
+      "type": "Array",
+      "description": "数据源"
+    },
+    {
+      "name": "remote",
+      "type": "Boolean",
+      "default": "false",
+      "description":
+        "默认使用本地数据源，开启后使用远程数据源（需添加search事件）"
+    },
+    {
+      "name": "plus",
+      "type": "Boolean",
+      "default": "false",
+      "description": "启用额外扩展插槽"
+    }
+  ],
   "slots": [
-  {
-    "name": "plus",
-    "description": "Plus插槽可以插入额外扩展内容（需激活 plus）"
-  }],
+    {
+      "name": "plus",
+      "description": "Plus插槽可以插入额外扩展内容（需激活 plus）"
+    }
+  ],
   "events": [
-  {
-    "name": "input",
-    "type": "Function(value: string)",
-    "description": "输入框内容变化时调用函数"
-  },{
-    "name": "search",
-    "type": "Function(value: string)",
-    "description": "自定义接口更新数据源（需激活remote）"
-  },{
-    "name": "selected",
-    "type": "Function(item: object)",
-    "description": "键盘或鼠标选中选项时调用函数"
-  }]
+    {
+      "name": "input",
+      "type": "Function(value: string)",
+      "description": "输入框内容变化时调用函数"
+    },
+    {
+      "name": "search",
+      "type": "Function(value: string)",
+      "description": "自定义接口更新数据源（需激活remote）"
+    },
+    {
+      "name": "selected",
+      "type": "Function(item: object)",
+      "description": "键盘或鼠标选中选项时调用函数"
+    }
+  ]
 }

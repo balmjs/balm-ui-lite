@@ -1,12 +1,16 @@
 {
-  "props": [{
-    "name": "noSpacing",
-    "type": "Boolean",
-    "default": "false",
-    "description": "无间距栅格化"
-  }],
-  "slots": [{
-    "name": "(default)",
-    "description": "默认插槽可以插入栅格子组件"
-  }]
+  "props": [
+    {
+      "name": "noSpacing",
+      "type": "Boolean",
+      "default": "false",
+      "description": "无间距栅格化"
+    }
+  ],
+  "slots": [
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入栅格子组件"
+    }
+  ]
 }

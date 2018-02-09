@@ -21,7 +21,9 @@ export default {
           this.code.push(code);
         }
       } else {
-        console.warn('The snippet name is required. You can run `showCode(snippetName, snippetCount)` for it.');
+        console.warn(
+          'The snippet name is required. You can run `showCode(snippetName, snippetCount)` for it.'
+        );
       }
     }
   }

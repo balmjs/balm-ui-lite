@@ -57,7 +57,7 @@
 
 <script>
 import BalmUI from '../../../../src/scripts/index';
-import {lang} from '../../config/lang';
+import { lang } from '../../config/lang';
 import menu from '../../config/menu';
 
 export default {

@@ -1,7 +1,8 @@
 {
   "slots": [
-  {
-    "name": "(default)",
-    "description": "默认插槽可以插入布局头部行内容"
-  }]
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入布局头部行内容"
+    }
+  ]
 }

@@ -70,21 +70,26 @@ export default {
   data() {
     return {
       docs,
-      data: [{
-        label: 'Some Action',
-        url: '#1'
-      }, {
-        label: 'Another Action',
-        divider: true,
-        url: '#2'
-      }, {
-        label: 'Disabled Action',
-        disabled: true,
-        url: '#3'
-      }, {
-        label: 'Yet Another Action',
-        url: '#4'
-      }]
+      data: [
+        {
+          label: 'Some Action',
+          url: '#1'
+        },
+        {
+          label: 'Another Action',
+          divider: true,
+          url: '#2'
+        },
+        {
+          label: 'Disabled Action',
+          disabled: true,
+          url: '#3'
+        },
+        {
+          label: 'Yet Another Action',
+          url: '#4'
+        }
+      ]
     };
   },
   methods: {

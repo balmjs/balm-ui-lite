@@ -19,7 +19,7 @@
       "description": "确认框的内容"
     },
     {
-      "name":"acceptText",
+      "name": "acceptText",
       "type": "String",
       "default": "'OK'",
       "description": "确认框确认按钮的文字"

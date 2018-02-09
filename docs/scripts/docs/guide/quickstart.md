@@ -12,7 +12,7 @@
 
 > 请先在终端/控制台窗口中运行命令 `node -v` 和 `npm -v`， 来验证一下你正在运行 node 6.x.x 和 npm 3.x.x 以上的版本。 更老的版本可能会出现错误，更新的版本则没问题。
 
-因为 __BalmJS__ 需要依赖 __gulp__，如果不能运行 `gulp -v`，请先安装 __gulp-cli__。
+因为 **BalmJS** 需要依赖 **gulp**，如果不能运行 `gulp -v`，请先安装 **gulp-cli**。
 
 ```sh
 npm install -g gulp-cli
@@ -51,9 +51,9 @@ yarn
 npm install
 ```
 
-> 请耐心等待。 安装依赖需要花费一定时间，大多数时候都是在安装那些npm包。如果“网络状况”不佳，请走[淘宝源](https://npm.taobao.org/)
+> 请耐心等待。 安装依赖需要花费一定时间，大多数时候都是在安装那些 npm 包。如果“网络状况”不佳，请走[淘宝源](https://npm.taobao.org/)
 
-安装 __BalmUI Lite__
+安装 **BalmUI Lite**
 
 ```sh
 yarn add balm-ui-lite
@@ -72,7 +72,7 @@ npm i --save balm-ui-lite
 @import '../../../node_modules/balm-ui-lite/src/styles/balm-ui-lite.scss';
 ```
 
-> 推荐使用Sass引入 `/path/to/balm-ui-lite.scss` ，可以使用Sass变量快速重写全局或组件的样式
+> 推荐使用 Sass 引入 `/path/to/balm-ui-lite.scss` ，可以使用 Sass 变量快速重写全局或组件的样式
 
 ### 4.2 配置脚本
 
@@ -93,9 +93,9 @@ new Vue({
 });
 ```
 
-### 4.3 UI库所需的图片和字体
+### 4.3 UI 库所需的图片和字体
 
-下载 [BalmUI Lite assets](http://balmjs.com/ui-vue-lite/assets.zip) 并解压，将其中的 _images_ 和 _fonts_ 文件夹复制到项目中（__`/path/to/my-project/app`__）
+下载 [BalmUI Lite assets](http://balmjs.com/ui-vue-lite/assets.zip) 并解压，将其中的 _images_ 和 _fonts_ 文件夹复制到项目中（**`/path/to/my-project/app`**）
 
 > 更多使用方式和免下载资源的方法请参照 [进阶用法](http://balmjs.com/ui-vue-lite/#/guide/advanced)
 
@@ -105,7 +105,7 @@ new Vue({
 npm run dev
 ```
 
-修改一个组件，编辑Vue文件：`my-project/app/scripts/views/components/hello.vue`
+修改一个组件，编辑 Vue 文件：`my-project/app/scripts/views/components/hello.vue`
 
 ```html
 <template>

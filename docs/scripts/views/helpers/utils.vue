@@ -4,16 +4,16 @@
   </div>
 </template>
 <script>
-  import docs from '../../docs/helpers/utils.md';
+import docs from '../../docs/helpers/utils.md';
 
-  export default {
-    metaInfo: {
-      titleTemplate: '%s - utils'
-    },
-    data () {
-      return {
-        docs
-      };
-    }
+export default {
+  metaInfo: {
+    titleTemplate: '%s - utils'
+  },
+  data() {
+    return {
+      docs
+    };
   }
+};
 </script>

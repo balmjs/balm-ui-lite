@@ -1,69 +1,79 @@
 {
   "props": [
-  {
-    "name": "model",
-    "type": "Boolean",
-    "default": "",
-    "description": "当前开关的状态值"
-  },
-  {
-    "name": "id",
-    "type": "String",
-    "default": "",
-    "description": "Switch 的 id 属性"
-  },
-  {
-    "name": "name",
-    "type": "String",
-    "default": "",
-    "description": "Switch 的 name 属性"
-  },
-  {
-    "name": "disabled",
-    "type": "Boolean",
-    "default": "false",
-    "description": "Switch 的 disabled 属性（禁用状态）"
-  },
-  {
-    "name": "label",
-    "type": "String",
-    "default": "",
-    "description": "标签文字"
-  },
-  {
-    "name": "noRipple",
-    "type": "Boolean",
-    "default": "false",
-    "description": "无波纹效果"
-  }],
+    {
+      "name": "model",
+      "type": "Boolean",
+      "default": "",
+      "description": "当前开关的状态值"
+    },
+    {
+      "name": "id",
+      "type": "String",
+      "default": "",
+      "description": "Switch 的 id 属性"
+    },
+    {
+      "name": "name",
+      "type": "String",
+      "default": "",
+      "description": "Switch 的 name 属性"
+    },
+    {
+      "name": "disabled",
+      "type": "Boolean",
+      "default": "false",
+      "description": "Switch 的 disabled 属性（禁用状态）"
+    },
+    {
+      "name": "label",
+      "type": "String",
+      "default": "",
+      "description": "标签文字"
+    },
+    {
+      "name": "noRipple",
+      "type": "Boolean",
+      "default": "false",
+      "description": "无波纹效果"
+    }
+  ],
   "slots": [
-  {
-    "name": "(default)",
-    "description": "默认插槽可以插入标签内容"
-  }],
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入标签内容"
+    }
+  ],
   "events": [
-  {
-    "name": "change",
-    "type": "Function(checked: boolean)",
-    "description": "切换开关时回调函数"
-  }],
-  "sass": [{
-    "var": "$switch-thumb-color",
-    "description": "开关开启时的按钮的颜色"
-  }, {
-    "var": "$switch-track-color",
-    "description": "开关开启时的轨道的颜色"
-  }, {
-    "var": "$switch-off-thumb-color",
-    "description": "开关关闭时的按钮的颜色"
-  }, {
-    "var": "$switch-off-track-color",
-    "description": "开关关闭时的轨道的颜色"
-  }, {
-    "var": "$switch-disabled-thumb-color",
-    "description": "开关禁用时的按钮的颜色"
-  }, {
-    "var": "$switch-disabled-track-color",
-    "description": "开关禁用时的轨道的颜色"
-  }]
+    {
+      "name": "change",
+      "type": "Function(checked: boolean)",
+      "description": "切换开关时回调函数"
+    }
+  ],
+  "sass": [
+    {
+      "var": "$switch-thumb-color",
+      "description": "开关开启时的按钮的颜色"
+    },
+    {
+      "var": "$switch-track-color",
+      "description": "开关开启时的轨道的颜色"
+    },
+    {
+      "var": "$switch-off-thumb-color",
+      "description": "开关关闭时的按钮的颜色"
+    },
+    {
+      "var": "$switch-off-track-color",
+      "description": "开关关闭时的轨道的颜色"
+    },
+    {
+      "var": "$switch-disabled-thumb-color",
+      "description": "开关禁用时的按钮的颜色"
+    },
+    {
+      "var": "$switch-disabled-track-color",
+      "description": "开关禁用时的轨道的颜色"
+    }
+  ]
 }

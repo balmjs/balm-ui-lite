@@ -3,22 +3,27 @@ const Quickstart = () => import('../views/guide/quickstart');
 const Advanced = () => import('../views/guide/advanced');
 const KillIE = () => import('../views/guide/kill-ie');
 
-const guideRoutes = [{
-  path: 'intro',
-  name: 'guide.intro',
-  component: Intro
-}, {
-  path: 'quickstart',
-  name: 'guide.quickstart',
-  component: Quickstart
-}, {
-  path: 'advanced',
-  name: 'guide.advanced',
-  component: Advanced
-}, {
-  path: 'kill-ie',
-  name: 'guide.kill-ie',
-  component: KillIE
-}];
+const guideRoutes = [
+  {
+    path: 'intro',
+    name: 'guide.intro',
+    component: Intro
+  },
+  {
+    path: 'quickstart',
+    name: 'guide.quickstart',
+    component: Quickstart
+  },
+  {
+    path: 'advanced',
+    name: 'guide.advanced',
+    component: Advanced
+  },
+  {
+    path: 'kill-ie',
+    name: 'guide.kill-ie',
+    component: KillIE
+  }
+];
 
 export default guideRoutes;

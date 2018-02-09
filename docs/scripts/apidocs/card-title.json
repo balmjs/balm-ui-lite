@@ -1,10 +1,14 @@
 {
-  "slots": [{
-    "name": "(default)",
-    "description": "默认插槽可以插入卡片标题"
-  }],
-  "sass": [{
-    "var": "$card-text-color",
-    "description": "卡片标题的颜色"
-  }]
+  "slots": [
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入卡片标题"
+    }
+  ],
+  "sass": [
+    {
+      "var": "$card-text-color",
+      "description": "卡片标题的颜色"
+    }
+  ]
 }

@@ -1,27 +1,34 @@
 {
-  "props": [{
-    "name": "value",
-    "type": "Number, String",
-    "default": "0",
-    "description": "状态值"
-  }, {
-    "name": "icon",
-    "type": "Boolean",
-    "default": "false",
-    "description": "启用Material图标识别"
-  }, {
-    "name": "noBackground",
-    "type": "Boolean",
-    "default": "false",
-    "description": "开环效果"
-  }, {
-    "name": "overlap",
-    "type": "Boolean",
-    "default": "false",
-    "description": "使状态值与它的容器重叠"
-  }],
-  "slots": [{
-    "name": "(default)",
-    "description": "默认插槽可以插入徽章内容"
-  }]
+  "props": [
+    {
+      "name": "value",
+      "type": "Number, String",
+      "default": "0",
+      "description": "状态值"
+    },
+    {
+      "name": "icon",
+      "type": "Boolean",
+      "default": "false",
+      "description": "启用Material图标识别"
+    },
+    {
+      "name": "noBackground",
+      "type": "Boolean",
+      "default": "false",
+      "description": "开环效果"
+    },
+    {
+      "name": "overlap",
+      "type": "Boolean",
+      "default": "false",
+      "description": "使状态值与它的容器重叠"
+    }
+  ],
+  "slots": [
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入徽章内容"
+    }
+  ]
 }

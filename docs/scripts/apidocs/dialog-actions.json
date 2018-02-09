@@ -1,26 +1,28 @@
 {
   "props": [
-  {
-    "name": "fullWidth",
-    "type": "Boolean",
-    "default": "false",
-    "description": "使操作按钮呈现100%宽度"
-  },
-  {
-    "name": "acceptText",
-    "type": "String",
-    "default": "'OK'",
-    "description": "确定按钮文字"
-  },
-  {
-    "name": "cancelText",
-    "type": "String",
-    "default": "'Cancel'",
-    "description": "取消按钮文字"
-  }],
+    {
+      "name": "fullWidth",
+      "type": "Boolean",
+      "default": "false",
+      "description": "使操作按钮呈现100%宽度"
+    },
+    {
+      "name": "acceptText",
+      "type": "String",
+      "default": "'OK'",
+      "description": "确定按钮文字"
+    },
+    {
+      "name": "cancelText",
+      "type": "String",
+      "default": "'Cancel'",
+      "description": "取消按钮文字"
+    }
+  ],
   "slots": [
-  {
-    "name": "(default)",
-    "description": "默认插槽可以插入对话框动作"
-  }]
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入对话框动作"
+    }
+  ]
 }

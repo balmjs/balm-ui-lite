@@ -103,7 +103,7 @@ export default {
       url: `${this.$domain}/data/autocomplete.json`,
       keywords2: '',
       source2: []
-    }
+    };
   },
   methods: {
     async onSearch(keywords) {

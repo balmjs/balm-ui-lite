@@ -14,7 +14,7 @@
   .mdl-navigation {
     padding: 0;
 
-    border-top: 1px solid rgba(0, 0, 0, .12);
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
   }
   h5 {
     padding-left: 20px;
@@ -24,9 +24,9 @@
 
     padding: 8px 16px 8px 24px;
 
-    color: rgba(0, 0, 0, .43);
+    color: rgba(0, 0, 0, 0.43);
   }
-  &>.mdl-layout__title {
+  & > .mdl-layout__title {
     display: flex;
 
     padding: 0 10px 0 20px;
@@ -45,7 +45,7 @@
   }
 }
 
-.balm-ui-container>.mdl-layout__drawer-button {
+.balm-ui-container > .mdl-layout__drawer-button {
   background-color: white;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
   margin-left: 0;
@@ -78,7 +78,7 @@
 
 .loading-enter-active,
 .loading-leave-active {
-  transition: opacity .4s;
+  transition: opacity 0.4s;
 }
 
 .loading-enter,

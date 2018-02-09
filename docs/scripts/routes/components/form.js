@@ -11,54 +11,67 @@ const Autocomplete = () => import('../../views/components/autocomplete');
 const Datepicker = () => import('../../views/components/datepicker');
 const Rangepicker = () => import('../../views/components/rangepicker');
 
-const formRoutes = [{
-  path: 'textfield',
-  name: 'components.textfield',
-  component: Textfield
-}, {
-  path: 'checkbox',
-  name: 'components.checkbox',
-  component: Checkbox
-}, {
-  path: 'radio',
-  name: 'components.radio',
-  component: Radio
-}, {
-  path: 'select',
-  name: 'components.select',
-  component: Select
-}, {
-  path: 'selectmenu',
-  name: 'components.selectmenu',
-  component: Selectmenu
-}, {
-  path: 'icon-toggle',
-  name: 'components.icon-toggle',
-  component: IconToggle
-}, {
-  path: 'switch',
-  name: 'components.switch',
-  component: Switch
-}, {
-  path: 'slider',
-  name: 'components.slider',
-  component: Slider
-}, {
-  path: 'file',
-  name: 'components.file',
-  component: File
-}, {
-  path: 'autocomplete',
-  name: 'components.autocomplete',
-  component: Autocomplete
-}, {
-  path: 'datepicker',
-  name: 'components.datepicker',
-  component: Datepicker
-}, {
-  path: 'rangepicker',
-  name: 'components.rangepicker',
-  component: Rangepicker
-}];
+const formRoutes = [
+  {
+    path: 'textfield',
+    name: 'components.textfield',
+    component: Textfield
+  },
+  {
+    path: 'checkbox',
+    name: 'components.checkbox',
+    component: Checkbox
+  },
+  {
+    path: 'radio',
+    name: 'components.radio',
+    component: Radio
+  },
+  {
+    path: 'select',
+    name: 'components.select',
+    component: Select
+  },
+  {
+    path: 'selectmenu',
+    name: 'components.selectmenu',
+    component: Selectmenu
+  },
+  {
+    path: 'icon-toggle',
+    name: 'components.icon-toggle',
+    component: IconToggle
+  },
+  {
+    path: 'switch',
+    name: 'components.switch',
+    component: Switch
+  },
+  {
+    path: 'slider',
+    name: 'components.slider',
+    component: Slider
+  },
+  {
+    path: 'file',
+    name: 'components.file',
+    component: File
+  },
+  {
+    path: 'autocomplete',
+    name: 'components.autocomplete',
+    component: Autocomplete
+  },
+  {
+    path: 'datepicker',
+    name: 'components.datepicker',
+    component: Datepicker
+  },
+  {
+    path: 'rangepicker',
+    name: 'components.rangepicker',
+    component: Rangepicker
+  }
+];
 
 export default formRoutes;

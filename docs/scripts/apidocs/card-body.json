@@ -1,10 +1,14 @@
 {
-  "slots": [{
-    "name": "(default)",
-    "description": "默认插槽可以插入卡片主体内容"
-  }],
-  "sass": [{
-    "var": "$card-image-placeholder-color",
-    "description": "卡片主体内容的颜色"
-  }]
+  "slots": [
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入卡片主体内容"
+    }
+  ],
+  "sass": [
+    {
+      "var": "$card-image-placeholder-color",
+      "description": "卡片主体内容的颜色"
+    }
+  ]
 }

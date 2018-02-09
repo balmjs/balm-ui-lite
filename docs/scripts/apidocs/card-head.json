@@ -1,12 +1,16 @@
 {
-  "props": [{
-    "name": "expand",
-    "type": "Boolean",
-    "default": "false",
-    "description": "扩展卡片头部容器效果"
-  }],
-  "slots": [{
-    "name": "(default)",
-    "description": "默认插槽可以插入卡片头部容器子组件（如标题，副标题等）"
-  }]
+  "props": [
+    {
+      "name": "expand",
+      "type": "Boolean",
+      "default": "false",
+      "description": "扩展卡片头部容器效果"
+    }
+  ],
+  "slots": [
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入卡片头部容器子组件（如标题，副标题等）"
+    }
+  ]
 }

@@ -1,57 +1,63 @@
 {
   "props": [
-  {
-    "name": "name",
-    "type": "String",
-    "default": "",
-    "description": "The name attribute of the &lt;input&gt; or &lt;textarea&gt;"
-  },
-  {
-    "name": "accept",
-    "type": "String",
-    "default": "",
-    "description": "Define the types of files that the control can select"
-  },
-  {
-    "name": "multiple",
-    "type": "Boolean",
-    "default": "false",
-    "description": "Indicates whether the user can enter more than one value"
-  },
-  {
-    "name": "disabled",
-    "type": "Boolean",
-    "default": "false",
-    "description": "Indicates whether the user can interact with the element"
-  },
-  {
-    "name": "label",
-    "type": "String",
-    "default": "",
-    "description": "placeholder"
-  },
-  {
-    "name": "autoReset",
-    "type": "Boolean",
-    "default": "true",
-    "description": "Reset input after the file changed"
-  }],
+    {
+      "name": "name",
+      "type": "String",
+      "default": "",
+      "description":
+        "The name attribute of the &lt;input&gt; or &lt;textarea&gt;"
+    },
+    {
+      "name": "accept",
+      "type": "String",
+      "default": "",
+      "description": "Define the types of files that the control can select"
+    },
+    {
+      "name": "multiple",
+      "type": "Boolean",
+      "default": "false",
+      "description": "Indicates whether the user can enter more than one value"
+    },
+    {
+      "name": "disabled",
+      "type": "Boolean",
+      "default": "false",
+      "description": "Indicates whether the user can interact with the element"
+    },
+    {
+      "name": "label",
+      "type": "String",
+      "default": "",
+      "description": "placeholder"
+    },
+    {
+      "name": "autoReset",
+      "type": "Boolean",
+      "default": "true",
+      "description": "Reset input after the file changed"
+    }
+  ],
   "slots": [
-  {
-    "name": "(default)",
-    "description": "The default slot holds the fileupload text and can contain HTML"
-  }],
+    {
+      "name": "(default)",
+      "description":
+        "The default slot holds the fileupload text and can contain HTML"
+    }
+  ],
   "events": [
-  {
-    "name": "focus",
-    "description": "Emitted when the fileupload is focused."
-  },
-  {
-    "name": "blur",
-    "description": "Emitted when the fileupload loses focus."
-  },
-  {
-    "name": "change",
-    "description": "Emitted when a change in the fileupload value is committed."
-  }]
+    {
+      "name": "focus",
+      "description": "Emitted when the fileupload is focused."
+    },
+    {
+      "name": "blur",
+      "description": "Emitted when the fileupload loses focus."
+    },
+    {
+      "name": "change",
+      "description":
+        "Emitted when a change in the fileupload value is committed."
+    }
+  ]
 }

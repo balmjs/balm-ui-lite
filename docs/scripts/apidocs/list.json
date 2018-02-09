@@ -1,17 +1,22 @@
 {
-  "props": [{
-    "name": "twoLine",
-    "type": "Boolean",
-    "default": "false",
-    "description": "支持两行样式"
-  }, {
-    "name": "threeLine",
-    "type": "Boolean",
-    "default": "false",
-    "description": "支持三行样式"
-  }],
-  "slots": [{
-    "name": "(default)",
-    "description": "默认插槽可以插入列表子组件"
-  }]
+  "props": [
+    {
+      "name": "twoLine",
+      "type": "Boolean",
+      "default": "false",
+      "description": "支持两行样式"
+    },
+    {
+      "name": "threeLine",
+      "type": "Boolean",
+      "default": "false",
+      "description": "支持三行样式"
+    }
+  ],
+  "slots": [
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入列表子组件"
+    }
+  ]
 }

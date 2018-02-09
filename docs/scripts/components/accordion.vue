@@ -22,24 +22,24 @@
   </div>
 </template>
 <script>
-  export default {
-  	name: 'ui-accordion',
-    props: {
-      expanded: {
-      	type: Boolean,
-        default: false
-      }
-    },
-  	data () {
-  		return {
-  			show: this.expanded
-      }
-    },
-    methods: {
-      toggle () {
-      	this.show = !this.show;
-      	this.$emit('accordion-toggle', this.show);
-      }
+export default {
+  name: 'ui-accordion',
+  props: {
+    expanded: {
+      type: Boolean,
+      default: false
+    }
+  },
+  data() {
+    return {
+      show: this.expanded
+    };
+  },
+  methods: {
+    toggle() {
+      this.show = !this.show;
+      this.$emit('accordion-toggle', this.show);
     }
   }
+};
 </script>

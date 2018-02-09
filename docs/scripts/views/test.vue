@@ -118,7 +118,6 @@
 </template>
 
 <script>
-
 export default {
   /*mixins: [mixins.formValidator],
   validationRules: formValidatorRules,*/
@@ -133,18 +132,18 @@ export default {
         message: 'min length < 6'
       },
       customRule2: {
-      	validate (value) {
-      		return /^\d+$/g.test(value);
+        validate(value) {
+          return /^\d+$/g.test(value);
         },
-        message(){
-      		return this.msg;
+        message() {
+          return this.msg;
         }
       }
     }
   },
   data() {
     return {
-    	url: 'https://jsonplaceholder.typicode.com/posts',
+      url: 'https://jsonplaceholder.typicode.com/posts',
       files: [],
       formData: {
         name: ''
@@ -158,49 +157,48 @@ export default {
       let result = this.$validate(formData);
       console.log(formData, result);
     },
-    async upload (file) {
-    	try {
+    async upload(file) {
+      try {
         let res = await this.$http.post(this.url, {
           file: file.sourceFile
         });
 
         console.log(res);
       } catch (e) {
-    		console.log(e);
+        console.log(e);
       }
     },
-    onChange(files){
-    	this.files = files;
+    onChange(files) {
+      this.files = files;
     }
   }
 };
 </script>
 
 <style>
-  .images {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1em 0 0 1em;
-  }
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1em 0 0 1em;
+}
 
-  .images > span {
-    display: flex;
-    width: 10%;
-    padding-right: 1em;
-    margin-bottom: 1em;
-    flex-shrink: 0;
-  }
+.images > span {
+  display: flex;
+  width: 10%;
+  padding-right: 1em;
+  margin-bottom: 1em;
+  flex-shrink: 0;
+}
 
-  .images [data-src] {
-    display: block;
-    background-color: #ccc;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    align-self: stretch;
-    width: 100%;
-    height: 0;
-    padding-bottom: 100%;
-  }
-
+.images [data-src] {
+  display: block;
+  background-color: #ccc;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  align-self: stretch;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+}
 </style>
