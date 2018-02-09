@@ -4,5 +4,8 @@
 /dist/
 /helpers/
 /plugins/
+/src/fonts/
+/src/images/
+/src/material-design-lite/
 /*.js
 /test/

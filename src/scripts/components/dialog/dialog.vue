@@ -90,9 +90,10 @@ export default {
       };
     },
     style() {
-      let height = this.maxHeight && (this.maxHeight < this.currentWindowHeight)
-        ? this.maxHeight + 'px'
-        : Math.round(this.currentWindowHeight * 0.618) + 'px';
+      let height =
+        this.maxHeight && this.maxHeight < this.currentWindowHeight
+          ? this.maxHeight + 'px'
+          : Math.round(this.currentWindowHeight * 0.618) + 'px';
       return {
         'max-height': height
       };
@@ -130,9 +131,10 @@ export default {
       this.handleClose();
     },
     handleResize() {
-      this.currentWindowHeight = window.innerHeight
-        || document.documentElement.clientHeight
-        || document.body.clientHeight;
+      this.currentWindowHeight =
+        window.innerHeight ||
+        document.documentElement.clientHeight ||
+        document.body.clientHeight;
     }
   },
   mounted() {

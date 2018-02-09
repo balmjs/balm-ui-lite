@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import {isString, isObject} from '../../helpers/is';
+import { isString, isObject } from '../../helpers/is';
 
 const DEVICE = ['desktop', 'tablet', 'phone'];
 const TYPE_COLUMN = 'col';
@@ -51,17 +51,19 @@ export default {
       }
 
       // Hides the cell
-      let hideMode = (isString(this.hide) && HIDE_MODE.indexOf(this.hide) > -1)
-        ? this.hide
-        : HIDE_MODE[+this.hide];
+      let hideMode =
+        isString(this.hide) && HIDE_MODE.indexOf(this.hide) > -1
+          ? this.hide
+          : HIDE_MODE[+this.hide];
       if (hideMode) {
         result.push(`mdl-cell--hide-${hideMode}`);
       }
 
       // Aligns the cell to the parent
-      let currentAlign = (isString(this.align) && ALIGNMENT.indexOf(this.align) > -1)
-        ? this.align
-        : ALIGNMENT[+this.align];
+      let currentAlign =
+        isString(this.align) && ALIGNMENT.indexOf(this.align) > -1
+          ? this.align
+          : ALIGNMENT[+this.align];
       if (currentAlign) {
         result.push(`mdl-cell--${currentAlign}`);
       }
@@ -74,7 +76,7 @@ export default {
       if (isObject(data)) {
         for (let key in data) {
           let value = data[key];
-          let suffix = (DEVICE.indexOf(key) > -1) ? `-${key}` : '';
+          let suffix = DEVICE.indexOf(key) > -1 ? `-${key}` : '';
           if (type === TYPE_ORDER) {
             result.push(`mdl-cell--${type}-${value}${suffix}`);
           } else {

@@ -14,9 +14,4 @@ const UiDialogComponents = {
 multiBootstrap(UiDialogComponents);
 
 export default UiDialogComponents;
-export {
-  UiDialog,
-  UiDialogTitle,
-  UiDialogContent,
-  UiDialogActions
-};
+export { UiDialog, UiDialogTitle, UiDialogContent, UiDialogActions };

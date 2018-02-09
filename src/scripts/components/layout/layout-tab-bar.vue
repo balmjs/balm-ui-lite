@@ -36,7 +36,8 @@ export default {
     }
   },
   methods: {
-    handleChange(index) { // index: number
+    handleChange(index) {
+      // index: number
       this.$emit(EVENT_CHANGE, +index);
     }
   }

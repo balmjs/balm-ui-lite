@@ -117,7 +117,9 @@ export default {
       } else {
         if (this.showRecord) {
           result.push(`mdl-pagination--between`);
-        } else if ([POSITION_LEFT, POSITION_RIGHT].indexOf(this.position) > -1) {
+        } else if (
+          [POSITION_LEFT, POSITION_RIGHT].indexOf(this.position) > -1
+        ) {
           result.push(`mdl-pagination--${this.position}`);
         }
       }
@@ -145,27 +147,32 @@ export default {
     isShow(page) {
       let show = false;
       switch (true) {
-        case (page === 1):
-        case (page === this.pageCount):
-        case (this.currentPage >= page && page >= this.currentPage - this.pageSpan):
-        case (this.currentPage <= page && page <= this.currentPage + this.pageSpan):
+        case page === 1:
+        case page === this.pageCount:
+        case this.currentPage >= page &&
+          page >= this.currentPage - this.pageSpan:
+        case this.currentPage <= page &&
+          page <= this.currentPage + this.pageSpan:
           show = true;
           break;
       }
       return show;
     },
     showPage(page) {
-      let isExisted = (this.currentPage === page - this.pageSpan || this.currentPage === page + this.pageSpan);
-      let noFirstOrLast = (page !== 1 && page !== this.pageCount);
+      let isExisted =
+        this.currentPage === page - this.pageSpan ||
+        this.currentPage === page + this.pageSpan;
+      let noFirstOrLast = page !== 1 && page !== this.pageCount;
       return !(isExisted && noFirstOrLast);
     },
-    handleClick(page) { // page: number
+    handleClick(page) {
+      // page: number
       if (!isNaN(page)) {
         switch (true) {
-          case (page > this.pageCount):
+          case page > this.pageCount:
             page = this.pageCount;
             break;
-          case (page < 1):
+          case page < 1:
             page = 1;
             break;
         }

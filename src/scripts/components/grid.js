@@ -10,7 +10,4 @@ const UiGridComponents = {
 multiBootstrap(UiGridComponents);
 
 export default UiGridComponents;
-export {
-  UiGrid,
-  UiCell
-};
+export { UiGrid, UiCell };

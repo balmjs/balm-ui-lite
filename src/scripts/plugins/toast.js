@@ -57,7 +57,6 @@ const BalmUI_ToastPlugin = {
             });
           }
         });
-
       }
     };
 

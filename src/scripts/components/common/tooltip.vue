@@ -24,7 +24,13 @@ const POSITION_LEFT = 4; // Positions the tooltip to the left of the target
 
 const generateRandomAlphaNum = len => {
   let rdmString = '';
-  for (; rdmString.length < len; rdmString += Math.random().toString(36).substr(2));
+  for (
+    ;
+    rdmString.length < len;
+    rdmString += Math.random()
+      .toString(36)
+      .substr(2)
+  );
   return rdmString.substr(0, len);
 };
 
@@ -63,10 +69,13 @@ export default {
         currentPositon = POSITIONS.indexOf(currentPositon);
       }
 
-      let currentPositonName = (currentPositon > 0 && currentPositon < POSITIONS.length)
-        ? POSITIONS[currentPositon]
+      let currentPositonName =
+        currentPositon > 0 && currentPositon < POSITIONS.length
+          ? POSITIONS[currentPositon]
+          : '';
+      let className = currentPositonName
+        ? `mdl-tooltip--${currentPositonName}`
         : '';
-      let className = currentPositonName ? `mdl-tooltip--${currentPositonName}` : '';
 
       return className;
     }

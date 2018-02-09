@@ -13,7 +13,7 @@
     right: 20px;
 
     cursor: pointer;
-    transition: all .5s;
+    transition: all 0.5s;
     &:hover {
       transform: rotate(360deg);
     }
@@ -37,7 +37,7 @@
   z-index: -1;
 
   opacity: 0;
-  background-color: rgba(0, 0, 0, .87);
+  background-color: rgba(0, 0, 0, 0.87);
 }
 
 .mdl-dialog__surface {
@@ -53,7 +53,8 @@
   opacity: 1;
   border-radius: 2px;
   background-color: #fff;
-  box-shadow: 0 11px 15px -7px rgba(0, 0, 0, .2), 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12);
+  box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2),
+    0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
 }
 
 .mdl-dialog__content {
@@ -65,19 +66,20 @@
 .default-leave-active {
   visibility: visible;
 
-  transition: all .12s;
+  transition: all 0.12s;
   .mdl-dialog__backdrop {
-    transition: opacity .12s cubic-bezier(0, 0, .2, 1);
+    transition: opacity 0.12s cubic-bezier(0, 0, 0.2, 1);
   }
   .mdl-dialog__surface {
-    transition: opacity .12s cubic-bezier(0, 0, .2, 1), transform .12s cubic-bezier(0, 0, .2, 1);
+    transition: opacity 0.12s cubic-bezier(0, 0, 0.2, 1),
+      transform 0.12s cubic-bezier(0, 0, 0.2, 1);
   }
 }
 
 .default-enter,
 .default-leave-to {
   .mdl-dialog__surface {
-    transform: translateY(150px) scale(.8);
+    transform: translateY(150px) scale(0.8);
 
     opacity: 0;
   }
@@ -86,7 +88,7 @@
 .mdl-dialog--open {
   visibility: visible;
   .mdl-dialog__backdrop {
-    opacity: .3;
+    opacity: 0.3;
   }
 }
 
@@ -102,7 +104,6 @@
 .mdl-confirm {
   z-index: 5;
 
-
   .mdl-dialog__surface {
     width: 500px;
     min-width: 500px;
@@ -117,7 +118,7 @@
   }
 }
 
-@media (max-width:640px) {
+@media (max-width: 640px) {
   .mdl-dialog,
   .mdl-dialog__surface {
     min-width: 280px;

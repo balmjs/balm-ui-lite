@@ -10,7 +10,4 @@ const UiBadgeComponents = {
 multiBootstrap(UiBadgeComponents);
 
 export default UiBadgeComponents;
-export {
-  UiBadge,
-  UiBadgeLink
-};
+export { UiBadge, UiBadgeLink };

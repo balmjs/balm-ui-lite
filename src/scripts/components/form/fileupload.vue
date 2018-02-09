@@ -62,7 +62,8 @@ export default {
     reset(input) {
       input.value = ''; // All browsers
 
-      if (!/safari/i.test(navigator.userAgent)) { // IE8+
+      if (!/safari/i.test(navigator.userAgent)) {
+        // IE8+
         input.type = '';
         input.type = 'file';
       }

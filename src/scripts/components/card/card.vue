@@ -19,13 +19,12 @@ export default {
   computed: {
     shadowClassName() {
       // Assigns variable shadow depths (2, 3, 4, 6, 8, or 16) to card
-      return (SHADOW_DEPTHS.indexOf(+this.shadow) > -1) ? `mdl-shadow--${this.shadow}dp` : '';
+      return SHADOW_DEPTHS.indexOf(+this.shadow) > -1
+        ? `mdl-shadow--${this.shadow}dp`
+        : '';
     },
     className() {
-      return [
-        'mdl-card',
-        this.shadowClassName
-      ];
+      return ['mdl-card', this.shadowClassName];
     }
   }
 };

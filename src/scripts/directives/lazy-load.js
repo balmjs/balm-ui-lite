@@ -5,7 +5,7 @@
  * @param  el {Element}
  * @return result {Boolean}
  * */
-const isInViewport = function(el){
+const isInViewport = function(el) {
   let rect = el.getBoundingClientRect();
 
   return (
@@ -14,7 +14,6 @@ const isInViewport = function(el){
     rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
     rect.left <= (window.innerWidth || document.documentElement.clientWidth)
   );
-
 };
 
 /**
@@ -23,9 +22,9 @@ const isInViewport = function(el){
  * @param node {Element}
  * @param src {String}
  * */
-const setSrc = function (node, src) {
+const setSrc = function(node, src) {
   let nodeName = node.nodeName.toLowerCase();
-  if(nodeName === 'img'){
+  if (nodeName === 'img') {
     node.src = src;
   } else {
     node.style.backgroundImage = `url(${src})`;
@@ -37,15 +36,16 @@ const setSrc = function (node, src) {
  * @method 获取元素的[data-src]准备渲染图片
  * @param el {Element}
  * */
-const loadImage = function (el) {
-  let img = new Image(), src = el.getAttribute('data-src');
+const loadImage = function(el) {
+  let img = new Image(),
+    src = el.getAttribute('data-src');
   img.src = src;
-  if(img.complete){
-    setSrc(el, src)
+  if (img.complete) {
+    setSrc(el, src);
   } else {
-    img.onload = function () {
+    img.onload = function() {
       setSrc(el, src);
-    }
+    };
   }
 };
 
@@ -53,8 +53,8 @@ const loadImage = function (el) {
  * @method 批量懒加载
  * @param imgs {Array}
  * */
-const lazyLoad = function (imgs) {
-  imgs.forEach((img)=>{
+const lazyLoad = function(imgs) {
+  imgs.forEach(img => {
     isInViewport(img) && loadImage(img);
   });
 };
@@ -63,30 +63,33 @@ const lazyLoad = function (imgs) {
  * @method 获取 && 筛选需要懒加载的对象
  * @param el {Element}
  * */
-const getImgs = el => [].slice.call(el.querySelectorAll('[data-src]')).filter(function (node) {
-  return !node.getAttribute('data-loaded');
-});
+const getImgs = el =>
+  [].slice.call(el.querySelectorAll('[data-src]')).filter(function(node) {
+    return !node.getAttribute('data-loaded');
+  });
 
 /**
  * @module 懒加载指令
  * @description pc端适用于大于ie10或其他浏览器，移动端仅适用于安卓
  * */
 export default {
-  bind(el){
-
+  bind(el) {
     let timer = null;
 
-    el.addEventListener('scroll', function () {
-      timer && clearTimeout(timer);
+    el.addEventListener(
+      'scroll',
+      function() {
+        timer && clearTimeout(timer);
 
-      timer = setTimeout(function () {
-        lazyLoad(getImgs(el));
-      }, 200);
+        timer = setTimeout(function() {
+          lazyLoad(getImgs(el));
+        }, 200);
+      },
+      false
+    );
 
-    }, false);
-
-    if ( window.MutationObserver ) {
-      let observer = new MutationObserver(function () {
+    if (window.MutationObserver) {
+      let observer = new MutationObserver(function() {
         lazyLoad(getImgs(el));
       });
 
@@ -97,7 +100,7 @@ export default {
       });
     }
   },
-  inserted(el){
+  inserted(el) {
     lazyLoad(getImgs(el));
   }
 };

@@ -30,7 +30,7 @@
 <script>
 import getType from '../../helpers/typeof';
 import UiDatepicker from './datepicker';
-import {date, strtotime, time} from '../../helpers/datetime';
+import { date, strtotime, time } from '../../helpers/datetime';
 
 const ONE_DAY = 86400;
 const EVENT_CHANGE = 'change';
@@ -65,7 +65,7 @@ export default {
       currentOptions: this.options,
       startDate: '',
       endDate: ''
-    }
+    };
   },
   computed: {
     className() {
@@ -113,9 +113,10 @@ export default {
       let diffOption = this.currentOptions[tab];
       let today = time();
 
-      this.startDate = (diffOption.key === 0)
-        ? this.endDate
-        : date('Y-m-d', strtotime(`-${diffOption.key} day`, today));
+      this.startDate =
+        diffOption.key === 0
+          ? this.endDate
+          : date('Y-m-d', strtotime(`-${diffOption.key} day`, today));
       this.endDate = date('Y-m-d', today);
     },
     // 改变输入框时同步选项卡
@@ -123,7 +124,9 @@ export default {
       if (startDate && endDate) {
         let diffDay = (strtotime(endDate) - strtotime(startDate)) / ONE_DAY;
 
-        this.tab = this.currentOptions.findIndex(option => option.key === diffDay);
+        this.tab = this.currentOptions.findIndex(
+          option => option.key === diffDay
+        );
       }
     }
   }

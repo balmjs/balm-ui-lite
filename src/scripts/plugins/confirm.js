@@ -39,7 +39,7 @@ const BalmUI_ConfirmPlugin = {
     let options = Object.assign({}, DEFAULT_OPTIONS, config);
 
     const $confirm = (customOptions = {}) => {
-      return new Promise((resolve) => {
+      return new Promise(resolve => {
         vm = new Vue({
           components: {
             UiDialog,

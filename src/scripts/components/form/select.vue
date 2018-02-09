@@ -26,7 +26,9 @@ export default {
   mixins: [selectMixin],
   computed: {
     currentOption() {
-      return this.currentOptions.find(option => option[this.optionKey] == this.currentValue);
+      return this.currentOptions.find(
+        option => option[this.optionKey] == this.currentValue
+      );
     }
   },
   watch: {

@@ -28,9 +28,9 @@
     border-radius: 6px;
     overflow: hidden;
     margin-bottom: 20px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
     position: relative;
-    transition: all .25s;
+    transition: all 0.25s;
 
     &.info-type {
       background-color: #fff;
@@ -99,7 +99,8 @@
       }
     }
 
-    &.with-avatar, &.with-buttons {
+    &.with-avatar,
+    &.with-buttons {
       .body {
         width: calc(100% - 64px);
       }
@@ -134,8 +135,8 @@
     }
   }
 
-
-  .notify-list-enter, .notify-list-leave-to {
+  .notify-list-enter,
+  .notify-list-leave-to {
     opacity: 0;
     transform: translateX(100px);
   }
@@ -144,10 +145,17 @@
   }
 }
 
-@keyframes progress
-{
-  0%   {width: 0;}
-  25%  {width: 25%;}
-  50%  {width: 50%;}
-  100% {width: 100%;}
+@keyframes progress {
+  0% {
+    width: 0;
+  }
+  25% {
+    width: 25%;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
 }

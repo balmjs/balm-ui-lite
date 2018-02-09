@@ -184,7 +184,8 @@ export default {
     checkDirty() {
       if (this.label) {
         // Bugfix for dynamic assignment
-        this.className.outer['is-dirty'] = this.currentValue && this.currentValue.length;
+        this.className.outer['is-dirty'] =
+          this.currentValue && this.currentValue.length;
       }
     },
     handleFocus(event) {

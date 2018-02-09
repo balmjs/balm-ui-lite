@@ -35,7 +35,7 @@ const BalmUI_AlertPlugin = {
     let options = Object.assign({}, DEFAULT_OPTIONS, config);
 
     const $alert = (customOptions = {}) => {
-      return new Promise((resolve) => {
+      return new Promise(resolve => {
         vm = new Vue({
           components: {
             UiDialog,

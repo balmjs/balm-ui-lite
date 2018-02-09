@@ -23,7 +23,7 @@ const UiListComponents = {
   UiItemSubtitle
 };
 
-multiBootstrap(UiListComponents)
+multiBootstrap(UiListComponents);
 
 export default UiListComponents;
 export {

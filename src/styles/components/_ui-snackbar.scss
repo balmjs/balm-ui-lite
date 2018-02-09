@@ -4,7 +4,7 @@
 
   min-width: 0;
 
-  transition: opacity .25s;
+  transition: opacity 0.25s;
   transform: none;
   transform: translate(-50%, -50%);
 
@@ -19,7 +19,7 @@
     display: none;
     visibility: hidden;
   }
-  @media(max-width: $snackbar-tablet-breakpoint - 1) {
+  @media (max-width: $snackbar-tablet-breakpoint - 1) {
     top: auto;
     bottom: 0;
     left: 50%;

@@ -69,11 +69,13 @@ export default {
       };
     },
     positionClassName() {
-      let currentPositon = (getType(this.position) === 'string')
-        ? POSITIONS.indexOf(this.position) + 1
-        : this.position;
+      let currentPositon =
+        getType(this.position) === 'string'
+          ? POSITIONS.indexOf(this.position) + 1
+          : this.position;
 
-      let currentPositonName = (currentPositon > 0 && currentPositon <= POSITIONS.length)
+      let currentPositonName =
+        currentPositon > 0 && currentPositon <= POSITIONS.length
           ? POSITIONS[currentPositon - 1]
           : false;
 

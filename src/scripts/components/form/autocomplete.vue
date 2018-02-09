@@ -29,7 +29,7 @@
 <script>
 import UiTextfield from './textfield';
 import getType from '../../helpers/typeof';
-import {jsonEqual} from '../../helpers/utils';
+import { jsonEqual } from '../../helpers/utils';
 import detectIE from '../../helpers/detect-ie';
 
 const KEYCODE_UP = 38;
@@ -108,7 +108,7 @@ export default {
         defaultReversedLastIndex: 0,
         defaultReversedFirstIndex: 0
       }
-    }
+    };
   },
   computed: {
     className() {
@@ -135,7 +135,10 @@ export default {
 
     this.$autocomplete = this.$refs.autocomplete;
     this.$autocomplete.addEventListener(_EVENT_MOUSEMOVE, this.handleMousemove);
-    this.$autocomplete.addEventListener(_EVENT_MOUSELEAVE, this.handleMouseleave);
+    this.$autocomplete.addEventListener(
+      _EVENT_MOUSELEAVE,
+      this.handleMouseleave
+    );
 
     this.setDataSource(this.source);
   },
@@ -143,8 +146,14 @@ export default {
     if (this._callback) {
       document.removeEventListener(_EVENT_CLICK, this._callback);
     }
-    this.$autocomplete.removeEventListener(_EVENT_MOUSEMOVE, this.handleMousemove);
-    this.$autocomplete.removeEventListener(_EVENT_MOUSELEAVE, this.handleMouseleave);
+    this.$autocomplete.removeEventListener(
+      _EVENT_MOUSEMOVE,
+      this.handleMousemove
+    );
+    this.$autocomplete.removeEventListener(
+      _EVENT_MOUSELEAVE,
+      this.handleMouseleave
+    );
   },
   methods: {
     initClientHeight() {
@@ -164,11 +173,13 @@ export default {
       }
 
       this.scroll.defaultFirstIndex = 0;
-      this.scroll.defaultLastIndex = parseInt(this.scroll.viewHeight / this.scroll.itemHeight, 10) - 1;
+      this.scroll.defaultLastIndex =
+        parseInt(this.scroll.viewHeight / this.scroll.itemHeight, 10) - 1;
       let maxHeight = this.currentSuggestion.length - 1;
       if (this.scroll.defaultReversedLastIndex !== maxHeight) {
         this.scroll.defaultReversedLastIndex = maxHeight;
-        this.scroll.defaultReversedFirstIndex = this.scroll.defaultReversedLastIndex - this.scroll.defaultLastIndex;
+        this.scroll.defaultReversedFirstIndex =
+          this.scroll.defaultReversedLastIndex - this.scroll.defaultLastIndex;
       }
 
       this.scroll.currentLastIndex = this.scroll.defaultLastIndex;
@@ -188,7 +199,8 @@ export default {
       this.clearSelected();
     },
     search(keywords) {
-      if (this.remote) { // remote datasource
+      if (this.remote) {
+        // remote datasource
         if (this.timer) {
           clearTimeout(this.timer);
         }
@@ -196,7 +208,8 @@ export default {
         this.timer = setTimeout(() => {
           this.$emit(EVENT_SEARCH, keywords); // AJAX
         }, this.delay);
-      } else { // local datasource
+      } else {
+        // local datasource
         this.currentSuggestion = this.currentSource.filter(word => {
           return RegExp(keywords, 'i').test(word.value);
         });
@@ -215,7 +228,7 @@ export default {
           } else if (getType(data) === 'object') {
             item = data;
           } else {
-            console.warn('DataSource\'s item must be a string or object.');
+            console.warn("DataSource's item must be a string or object.");
           }
 
           return item;
@@ -292,19 +305,26 @@ export default {
           case KEYCODE_UP:
             this.clearSelected();
 
-            if (this.currentSuggestionIndex === MIN || this.currentSuggestionIndex === -1) {
+            if (
+              this.currentSuggestionIndex === MIN ||
+              this.currentSuggestionIndex === -1
+            ) {
               this.currentSuggestionIndex = MAX;
 
               this.scroll.currentFirstIndex = this.scroll.defaultReversedFirstIndex;
               this.scroll.currentLastIndex = this.scroll.defaultReversedLastIndex;
-              this.scroll.$view.scrollTop = this.scroll.itemHeight * this.scroll.defaultReversedFirstIndex;
+              this.scroll.$view.scrollTop =
+                this.scroll.itemHeight * this.scroll.defaultReversedFirstIndex;
             } else {
               this.currentSuggestionIndex--;
 
               if (this.currentSuggestionIndex < this.scroll.currentLastIndex) {
                 this.scroll.currentFirstIndex--;
                 this.scroll.currentLastIndex--;
-                if (this.currentSuggestionIndex < this.scroll.defaultReversedFirstIndex) {
+                if (
+                  this.currentSuggestionIndex <
+                  this.scroll.defaultReversedFirstIndex
+                ) {
                   this.scroll.$view.scrollTop -= this.scroll.itemHeight;
                 }
               }
@@ -314,7 +334,9 @@ export default {
             event.preventDefault();
             break;
           case KEYCODE_ENTER:
-            let selectedItem = this.currentSuggestion[this.currentSuggestionIndex];
+            let selectedItem = this.currentSuggestion[
+              this.currentSuggestionIndex
+            ];
             this.onSelect(selectedItem);
             event.preventDefault();
             break;
@@ -343,7 +365,10 @@ export default {
       delete selectedItem[ITEM_ACTIVE];
 
       let result = Object.assign({}, selectedItem);
-      result[ITEM_VALUE] = result[ITEM_VALUE].replace(REMOVE_HTML_TAG_REGEX, '');
+      result[ITEM_VALUE] = result[ITEM_VALUE].replace(
+        REMOVE_HTML_TAG_REGEX,
+        ''
+      );
       this.currentValue = result[ITEM_VALUE];
 
       this.$emit(EVENT_SELECTED, result); // result: any

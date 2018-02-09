@@ -60,7 +60,7 @@ export default {
       flatpickr: null,
       currentValue: this.model,
       mode: this.config.mode || MODE_SINGLE
-    }
+    };
   },
   computed: {
     allowInput() {
@@ -126,19 +126,23 @@ export default {
       let result;
       switch (this.mode) {
         case MODE_MULTIPLE:
-          let multipleValue = this.currentValue.replace(/\s,\s/, ',').split(',');
-          result = (multipleValue.length === 1)
-            ? multipleValue[0] // string
-            : multipleValue; // array
+          let multipleValue = this.currentValue
+            .replace(/\s,\s/, ',')
+            .split(',');
+          result =
+            multipleValue.length === 1
+              ? multipleValue[0] // string
+              : multipleValue; // array
           break;
         case MODE_RANGE:
           let rangeValue = this.currentValue.split(' to ');
           let startDate = rangeValue[0];
           let endDate = rangeValue[1];
           if (startDate && endDate) {
-            result = (startDate === endDate)
-              ? startDate // string
-              : [startDate, endDate]; // array
+            result =
+              startDate === endDate
+                ? startDate // string
+                : [startDate, endDate]; // array
 
             this.syncSelectedDates(result);
           }
@@ -156,9 +160,8 @@ export default {
       if (getType(selectedDates) === 'array' && selectedDates.length === 2) {
         let startDate = selectedDates[0];
         let endDate = selectedDates[1];
-        this.currentValue = (startDate === endDate)
-          ? startDate
-          : `${startDate} to ${endDate}`;
+        this.currentValue =
+          startDate === endDate ? startDate : `${startDate} to ${endDate}`;
       }
     }
   }

@@ -3,29 +3,28 @@ import getType from './typeof';
 const jsonEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b); // The ORDER of the properties IS IMPORTANT
 
 const isEmpty = _var => {
-
   let type = getType(_var);
 
   let conditions = {
-    string () {
+    string() {
       return _var === '' || _var === '0';
     },
-    object () {
+    object() {
       return Object.keys(_var).length === 0;
     },
-    array () {
+    array() {
       return _var.length === 0;
     },
-    boolean () {
+    boolean() {
       return !_var;
     },
-    undefined () {
+    undefined() {
       return true;
     },
-    number () {
+    number() {
       return !_var;
     },
-    null () {
+    null() {
       return true;
     }
   };
@@ -33,7 +32,4 @@ const isEmpty = _var => {
   return !!conditions[type] && conditions[type]();
 };
 
-export {
-  jsonEqual,
-  isEmpty
-};
+export { jsonEqual, isEmpty };

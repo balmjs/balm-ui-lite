@@ -27,7 +27,7 @@ export default {
     className() {
       let type = this.type;
 
-      if(getType(type) === 'number'){
+      if (getType(type) === 'number') {
         return typeArr[type] || 'horizontal';
       }
 

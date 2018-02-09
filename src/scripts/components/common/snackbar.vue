@@ -56,12 +56,11 @@ export default {
         'mdl-snackbar': true,
         'mdl-js-snackbar': true,
         'mdl-snackbar--active': this.active
-      }
+      };
     },
     isSnackbar() {
-      let type = (getType(this.type) === 'string')
-        ? TYPES[TYPE_SNACKBAR]
-        : TYPE_SNACKBAR;
+      let type =
+        getType(this.type) === 'string' ? TYPES[TYPE_SNACKBAR] : TYPE_SNACKBAR;
       return this.type === type;
     }
   },
@@ -99,7 +98,9 @@ export default {
   created() {
     if (this.isSnackbar) {
       if (!(this.actionHandler && this.actionText)) {
-        console.warn('`actionHandler` and `actionText` is required in a snackbar.');
+        console.warn(
+          '`actionHandler` and `actionText` is required in a snackbar.'
+        );
       }
     }
   },

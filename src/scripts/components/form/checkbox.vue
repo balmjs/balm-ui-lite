@@ -74,9 +74,9 @@ export default {
       };
     },
     isChecked() {
-      return (getType(this.currentValue) === 'array')
+      return getType(this.currentValue) === 'array'
         ? this.currentValue.indexOf(this.value) > -1
-        : (this.currentValue == this.value || this.currentValue === true);
+        : this.currentValue == this.value || this.currentValue === true;
     }
   },
   watch: {

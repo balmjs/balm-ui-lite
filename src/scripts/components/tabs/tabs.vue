@@ -40,13 +40,17 @@ export default {
   },
   methods: {
     activeItem(currentIndex, items = []) {
-      items.length && items.forEach((item, index) => {
-        if (index === +currentIndex && !item.classList.contains(CLASSNAME_ACTIVE)) {
-          item.classList.add(CLASSNAME_ACTIVE);
-        } else {
-          item.classList.remove(CLASSNAME_ACTIVE);
-        }
-      });
+      items.length &&
+        items.forEach((item, index) => {
+          if (
+            index === +currentIndex &&
+            !item.classList.contains(CLASSNAME_ACTIVE)
+          ) {
+            item.classList.add(CLASSNAME_ACTIVE);
+          } else {
+            item.classList.remove(CLASSNAME_ACTIVE);
+          }
+        });
     },
     activeTab(currentIndex = this.active) {
       this.activeItem(currentIndex, this.tabs);

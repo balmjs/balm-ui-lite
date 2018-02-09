@@ -35,7 +35,7 @@ export default {
     className() {
       return {
         'mdl-menu__item': true,
-        'mdl-menu__item--full-bleed-divider': this.hasDivider || false,
+        'mdl-menu__item--full-bleed-divider': this.hasDivider || false
       };
     }
   },

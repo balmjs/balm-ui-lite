@@ -4,7 +4,7 @@ import UiDialogTitle from '../components/dialog/dialog-title';
 import UiDialogContent from '../components/dialog/dialog-content';
 import UiDialogActions from '../components/dialog/dialog-actions';
 import UiButton from '../components/common/button';
-import UITextfield from '../components/form/textfield'
+import UiTextfield from '../components/form/textfield';
 
 const DEFAULT_OPTIONS = {
   className: '',
@@ -25,7 +25,7 @@ const template = `<ui-dialog
   <ui-dialog-content>
     {{ options.message }}
     <br>
-    <UITextfield :model="formData.value" @change="$_onChange($event)"></UITextfield>
+    <ui-textfield :model="formData.value" @change="$_onChange($event)"></ui-textfield>
   </ui-dialog-content>
   <ui-dialog-actions>
     <ui-button primary @click="$_handleConfirm">
@@ -44,14 +44,14 @@ const BalmUI_PromptPlugin = {
     let options = Object.assign({}, DEFAULT_OPTIONS, config);
 
     const $prompt = (customOptions = {}, value) => {
-      return new Promise((resolve) => {
+      return new Promise(resolve => {
         vm = new Vue({
           components: {
             UiDialog,
             UiDialogTitle,
             UiDialogContent,
             UiDialogActions,
-            UITextfield,
+            UiTextfield,
             UiButton
           },
           el: document.createElement('div'),
@@ -90,7 +90,8 @@ const BalmUI_PromptPlugin = {
               value && (this.formData.value = value);
             } else if (getType(customOptions) === 'object') {
               this.options = Object.assign({}, this.options, customOptions);
-              this.options.defaultValue && (this.formData.value = this.options.defaultValue);
+              this.options.defaultValue &&
+                (this.formData.value = this.options.defaultValue);
             }
 
             this.$nextTick(function() {

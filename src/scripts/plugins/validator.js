@@ -50,18 +50,24 @@ const BalmUI_ValidatorPlugin = {
           let rule = fieldOption[ruleName] || currentRules[ruleName]; // 当前验证方法
 
           if (rule && getType(rule.validate) === 'function') {
-            if (!rule.validate.apply(this, [currentFormData[fieldName], currentFormData])) {
+            if (
+              !rule.validate.apply(this, [
+                currentFormData[fieldName],
+                currentFormData
+              ])
+            ) {
               fieldAllValid = false;
               let message = '';
 
               // 错误提示
               if (getType(rule.message) === 'function') {
-                message = rule.message.apply(this, [fieldName, currentFormData[fieldName], currentFormData]);
+                message = rule.message.apply(this, [
+                  fieldName,
+                  currentFormData[fieldName],
+                  currentFormData
+                ]);
               } else {
-                message = rule.message.replace(
-                  LABEL_PLACEHOLDER,
-                  label
-                );
+                message = rule.message.replace(LABEL_PLACEHOLDER, label);
               }
 
               if (!result.message) {
@@ -71,7 +77,9 @@ const BalmUI_ValidatorPlugin = {
               result.messages.push(message);
             }
           } else {
-            console.warn(`The field [${fieldName}] is missing a validation rule: '${ruleName}'`);
+            console.warn(
+              `The field [${fieldName}] is missing a validation rule: '${ruleName}'`
+            );
           }
         }
 

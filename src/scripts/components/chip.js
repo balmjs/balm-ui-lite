@@ -14,9 +14,4 @@ const UiChipComponents = {
 multiBootstrap(UiChipComponents);
 
 export default UiChipComponents;
-export {
-  UiChip,
-  UiChipText,
-  UiChipAction,
-  UiChipContact
-};
+export { UiChip, UiChipText, UiChipAction, UiChipContact };

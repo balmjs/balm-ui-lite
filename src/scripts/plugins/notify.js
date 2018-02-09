@@ -46,17 +46,20 @@ const itemProps = {
   title: '', // 标题
   content: '', // 内容
   progressColor: '', // 单独设置当前的进度条颜色
-  buttons: [{
-    // 自定义按钮 {className: String, text: String, handler: Function|String, autoClose: Boolean}
-    className: '', // 自定义按钮css class
-    text: 'Close', // 按钮文本
-    autoClose: YES // 点击按钮是否自动关闭 默认: 关闭
-  }]
+  buttons: [
+    {
+      // 自定义按钮 {className: String, text: String, handler: Function|String, autoClose: Boolean}
+      className: '', // 自定义按钮css class
+      text: 'Close', // 按钮文本
+      autoClose: YES // 点击按钮是否自动关闭 默认: 关闭
+    }
+  ]
 };
 
 const defaultGlobalOptions = {};
 
-const createNotifyId = () => Math.floor((1 + Math.random()) * 0x10000).toString(16);
+const createNotifyId = () =>
+  Math.floor((1 + Math.random()) * 0x10000).toString(16);
 
 const btnHandlers = {};
 
@@ -70,7 +73,10 @@ const BalmUI_NotifyPlugin = {
       return {
         open: YES,
         progressColor: config.progressColor || '#3f51b5',
-        transitionName: getType(config.transitionName) === 'string' ? config.transitionName : 'notify-list',
+        transitionName:
+          getType(config.transitionName) === 'string'
+            ? config.transitionName
+            : 'notify-list',
         notifies: []
       };
     };
@@ -94,10 +100,12 @@ const BalmUI_NotifyPlugin = {
             `[BalmUI]:Plugin $notify has not open yet. use 'this.$notify.open = true' to open the notify plugin in Vue instance.`
           );
 
-        getType(config.timeout) === 'number' && (itemProps.timeout = config.timeout);
+        getType(config.timeout) === 'number' &&
+          (itemProps.timeout = config.timeout);
         config.cancelText && (itemProps.buttons[0].text = config.cancelText);
 
-        newNotify = Object.assign({
+        newNotify = Object.assign(
+          {
             id: `${createNotifyId()}-${Date.now()}`
           },
           itemProps,

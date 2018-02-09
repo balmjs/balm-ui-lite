@@ -20,9 +20,10 @@ import UiButton from '../common/button';
 
 const slice = [].slice;
 
-const _createUid = () => Math.floor((1 + Math.random()) * 0x10000).toString(16) + '-' + Date.now();
+const _createUid = () =>
+  Math.floor((1 + Math.random()) * 0x10000).toString(16) + '-' + Date.now();
 
-const _createFileObj = (file) => {
+const _createFileObj = file => {
   return {
     uid: _createUid(),
     lastModified: file.lastModified,
@@ -34,8 +35,8 @@ const _createFileObj = (file) => {
   };
 };
 
-const _getPreviewSrc = (fileObj) => {
-  return new Promise(function (resolve, reject) {
+const _getPreviewSrc = fileObj => {
+  return new Promise(function(resolve, reject) {
     if (fileObj.type.indexOf('image/') < 0) {
       reject(1); // 无法预览的文件类型
     } else {
@@ -43,7 +44,7 @@ const _getPreviewSrc = (fileObj) => {
         resolve(window.URL.createObjectURL(fileObj.sourceFile));
       } else if (window.FileReader) {
         let fr = new FileReader();
-        fr.onload = function () {
+        fr.onload = function() {
           resolve(this.result);
         };
         fr.readAsDataURL(fileObj.sourceFile);
@@ -74,20 +75,20 @@ export default {
     }
   },
   computed: {
-    className () {
+    className() {
       return {
         'mdl-file': true,
         'single-file': !this.multiple,
         'multiple-files': this.multiple
-      }
+      };
     }
   },
   methods: {
-    $_handleClick () {
+    $_handleClick() {
       let input = this.$el.querySelector('input');
       input && input.click();
     },
-    async $_handlePreview (fileObj) {
+    async $_handlePreview(fileObj) {
       fileObj.previewSrc = '';
       fileObj.previewError = 0;
       try {
@@ -96,20 +97,18 @@ export default {
         fileObj.previewError = e;
       }
     },
-    $_handleChange (event) {
+    $_handleChange(event) {
       let files = slice.call(event.target.files);
-      if(files.length) {
+      if (files.length) {
         let arr = [];
-        if(this.multiple){
-
-          arr = files.map((file) => {
+        if (this.multiple) {
+          arr = files.map(file => {
             let fileObj = _createFileObj(file);
             this.preview && this.$_handlePreview(fileObj);
             return fileObj;
           });
 
           this.$emit('change', arr);
-
         } else {
           let fileObj = _createFileObj(files[0]);
           this.preview && this.$_handlePreview(fileObj);

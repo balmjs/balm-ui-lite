@@ -169,7 +169,7 @@
 <script>
 import mdlMixin from '../../mixins/mdl';
 import '../../../material-design-lite/data-table/data-table';
-import {isString, isObject, isArray, isFunction} from '../../helpers/is';
+import { isString, isObject, isArray, isFunction } from '../../helpers/is';
 import UiButton from '../common/button';
 import UiCheckbox from '../form/checkbox';
 
@@ -348,17 +348,17 @@ export default {
       });
     },
     tfootData() {
-      return (this.tfoot.length && this.currentData.length)
+      return this.tfoot.length && this.currentData.length
         ? this.getData({
-          type: T_FOOT,
-          data: this.tfoot
-        })
+            type: T_FOOT,
+            data: this.tfoot
+          })
         : [];
     },
     currentDataCount() {
-      return (this.currentDetailViewIndex === DEFAULTS.detailViewIndex)
+      return this.currentDetailViewIndex === DEFAULTS.detailViewIndex
         ? this.currentData.length
-        : this.currentData.length -1;
+        : this.currentData.length - 1;
     }
   },
   watch: {
@@ -470,7 +470,7 @@ export default {
                   result /= data[CELL_DATA].length;
                   break;
                 case AGGREGATE_MAX:
-                   data[CELL_DATA].forEach(value => {
+                  data[CELL_DATA].forEach(value => {
                     if (value && value > result) {
                       result = value;
                     }
@@ -495,13 +495,18 @@ export default {
             fn = data[CELL_FUNCTION];
             cell[CELL_VALUE] = fn ? fn(result) : Math.round(result * 100) / 100;
             break;
-          default: // T_BODY
+          default:
+            // T_BODY
             let currentCellData = Object.assign({}, this.currentData[index]);
             let _url = data[CELL_URL];
             fn = data[CELL_FUNCTION];
 
-            cell[CELL_VALUE] = fn ? fn(currentCellData, index) : data[CELL_VALUE];
-            cell[CELL_URL] = isFunction(_url) ? _url(currentCellData, index) : false;
+            cell[CELL_VALUE] = fn
+              ? fn(currentCellData, index)
+              : data[CELL_VALUE];
+            cell[CELL_URL] = isFunction(_url)
+              ? _url(currentCellData, index)
+              : false;
             break;
         }
 
@@ -534,7 +539,9 @@ export default {
             case ACTION_LINK:
               cellData.isLink = true;
               let _url = action[CELL_URL];
-              cellData[CELL_URL] = isFunction(_url) ? _url(currentCellData) : false;
+              cellData[CELL_URL] = isFunction(_url)
+                ? _url(currentCellData)
+                : false;
               break;
             case ACTION_ICON:
               cellData.isIcon = true;
@@ -579,7 +586,10 @@ export default {
 
         if (this.selectable === CHECKBOX_POSITION_RIGHT) {
           result.push(cell);
-        } else if (this.selectable === CHECKBOX_POSITION_LEFT || this.selectable) {
+        } else if (
+          this.selectable === CHECKBOX_POSITION_LEFT ||
+          this.selectable
+        ) {
           result.unshift(cell);
         }
       }
@@ -614,7 +624,7 @@ export default {
     },
     getData(object) {
       let result = [];
-      let {type, data} = object;
+      let { type, data } = object;
 
       if (isArray(data)) {
         let cell;
@@ -624,7 +634,8 @@ export default {
             result[0] = []; // single line init
             for (let index in data) {
               let row = data[index];
-              if (isArray(row)) { // multi line
+              if (isArray(row)) {
+                // multi line
                 result[index] = [];
                 for (let key in row) {
                   let value = row[key];
@@ -637,7 +648,8 @@ export default {
                   cell[CELL_INDEX] = `${index},${key}`; // array index separation
                   result[index].push(this.getCell(type, cell));
                 }
-              } else { // single line
+              } else {
+                // single line
                 let value = row;
                 cell = {};
                 if (isObject(value)) {
@@ -661,9 +673,11 @@ export default {
               let value = this.currentData[key];
               result[key] = [];
               if (value[CELL_DETAIL_VIEW]) {
-                result[key].push(this.getCell(type, {
-                  col: this.currentCol
-                }));
+                result[key].push(
+                  this.getCell(type, {
+                    col: this.currentCol
+                  })
+                );
               } else {
                 // fill cell
                 for (let item of data) {
@@ -679,7 +693,11 @@ export default {
                 // append action
                 result[key] = this.getAction(result[key], value);
                 // append checkbox
-                result[key] = this.getCheckbox(type, result[key], value[this.keyField]);
+                result[key] = this.getCheckbox(
+                  type,
+                  result[key],
+                  value[this.keyField]
+                );
                 // append detail view
                 result[key] = this.getDetailView(type, result[key], key, value);
               }
@@ -691,7 +709,9 @@ export default {
                 cell = item;
                 let field = item && item[CELL_FIELD] ? item[CELL_FIELD] : false;
                 if (field) {
-                  cell[CELL_DATA] = item ? this.currentData.map(value => value[field]) : '';
+                  cell[CELL_DATA] = item
+                    ? this.currentData.map(value => value[field])
+                    : '';
                 }
                 result.push(this.getCell(type, cell));
               } else {
@@ -714,7 +734,7 @@ export default {
 
       return result;
     },
-    doAction({url, name, data}) {
+    doAction({ url, name, data }) {
       if (url) {
         window.location.href = url;
       } else {
@@ -722,13 +742,15 @@ export default {
       }
     },
     _getCheckedIds() {
-      return this.currentData.filter(value => !value[CELL_DETAIL_VIEW]).map((value, index) => this.selectKeyField ? value[this.keyField] : index);
+      return this.currentData
+        .filter(value => !value[CELL_DETAIL_VIEW])
+        .map(
+          (value, index) => (this.selectKeyField ? value[this.keyField] : index)
+        );
     },
     _onChecked() {
       let beEqual = this.currentCheckedList.length === this.currentDataCount;
-      let lastCheckedList = beEqual
-        ? []
-        : this.currentCheckedList;
+      let lastCheckedList = beEqual ? [] : this.currentCheckedList;
 
       this.currentCheckedList = this.isCheckAll
         ? this._getCheckedIds()
@@ -774,9 +796,7 @@ export default {
         if (this.currentDetailViewIndex === DEFAULTS.detailViewIndex) {
           result = this.currentCheckedList.indexOf(index) > -1;
         } else {
-          let _index = (index > this.currentDetailViewIndex)
-            ? index - 1
-            : index;
+          let _index = index > this.currentDetailViewIndex ? index - 1 : index;
           result = this.currentCheckedList.indexOf(_index) > -1;
         }
       }
@@ -789,7 +809,9 @@ export default {
     },
     onSort(data) {
       if (this.currentDetailViewIndex !== DEFAULTS.detailViewIndex) {
-        let currentIndex = this.currentData.findIndex((value, index) => index === this.currentDetailViewIndex);
+        let currentIndex = this.currentData.findIndex(
+          (value, index) => index === this.currentDetailViewIndex
+        );
         this.resetData(currentIndex);
       }
 
@@ -866,7 +888,12 @@ export default {
       }
     },
     isCellData(currentIndex, cell) {
-      return !(cell.isAction || cell.isCheckbox || cell.isPlus || this.isDetailView(currentIndex));
+      return !(
+        cell.isAction ||
+        cell.isCheckbox ||
+        cell.isPlus ||
+        this.isDetailView(currentIndex)
+      );
     },
     isDetailView(index) {
       let hasDetailViewRow = this.currentDetailViewIndex + 1 > 0;
@@ -876,7 +903,10 @@ export default {
     getSelectIndex(currentIndex) {
       let result = currentIndex;
 
-      if (this.currentDetailViewIndex > DEFAULTS.detailViewIndex && currentIndex > this.currentDetailViewIndex) {
+      if (
+        this.currentDetailViewIndex > DEFAULTS.detailViewIndex &&
+        currentIndex > this.currentDetailViewIndex
+      ) {
         result -= 1;
       }
 
