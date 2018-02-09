@@ -39,11 +39,7 @@ const components = [
   'rangepicker.js',
   'file.js'
 ];
-const helpers = [
-  'is.js',
-  'utils.js',
-  'detect-ie.js'
-];
+const helpers = ['is.js', 'utils.js', 'detect-ie.js'];
 const plugins = [
   'event.js',
   'alert.js',

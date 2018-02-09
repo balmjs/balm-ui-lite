@@ -1,0 +1,8 @@
+/.tmp/
+/components/
+/config/
+/dist/
+/helpers/
+/plugins/
+/*.js
+/test/

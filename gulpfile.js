@@ -21,7 +21,7 @@ balm.go(function(mix) {
       // get material design lite
       mix.copy(
         constants.DML_SOURCE +
-        '/src/{_*scss,material-design-lite.scss,mdlComponentHandler.js}',
+          '/src/{_*scss,material-design-lite.scss,mdlComponentHandler.js}',
         constants.DEV_SOURCE.mdl
       );
       mix.copy(
@@ -66,12 +66,7 @@ balm.go(function(mix) {
         mix.copy('./dist/css/plugins/*', './plugins');
         mix.copy('./dist/font/*', './font');
         mix.copy('./dist/img/*', './img');
-        mix.remove([
-          './dist/css',
-          './dist/js',
-          './dist/img',
-          './dist/font'
-        ]);
+        mix.remove(['./dist/css', './dist/js', './dist/img', './dist/font']);
       }
     }
   }
