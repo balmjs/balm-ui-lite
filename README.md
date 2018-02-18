@@ -1,18 +1,19 @@
 # [BalmUI Lite](http://mdl.balmjs.com/) [![NPM version][balm-ui-lite-image]][balm-ui-lite-url]
+
 > 基于 Material Design Lite 组件库 和 Vue.js 框架 的 UI 解决方案
 
 ## 特点
 
-- 高度集成 Google 的 Material Design Lite 和 Material Design Icons，并扩展更多常用组件
-- 开箱即用的高质量 Vue 组件，插件，指令及通用方法
-- 基于 __[BalmJS](http://balmjs.com/)__ 的工作流，支持 ES2015+
-- 支持多种使用方式
+* 高度集成 Google 的 Material Design Lite 和 Material Design Icons，并扩展更多常用组件
+* 开箱即用的高质量 Vue 组件，插件，指令及通用方法
+* 基于 **[BalmJS](http://balmjs.com/)** 的工作流，支持 ES2015+
+* 支持多种使用方式
 
 ## 安装配置
 
 ### 1. 开发环境
 
-推荐使用我们官方的 __[Balm CLI](https://github.com/balmjs/balm-cli)__ 来快速搭建 Vue 脚手架项目
+推荐使用我们官方的 **[Balm CLI](https://github.com/balmjs/balm-cli)** 来快速搭建 Vue 脚手架项目
 
 ```sh
 npm install -g balm-cli
@@ -30,11 +31,11 @@ npm i --save balm-ui-lite
 
 ### 3. 使用方式
 
-#### 普通使用(Desktop开发推荐)
+#### 普通使用(Desktop 开发推荐)
 
 ```css
 /* my-project/app/styles/global/_vendor.scss */
-@import '../../../node_modules/balm-ui-lite/src/styles/balm-ui-lite.scss';
+@import 'node_modules/balm-ui-lite/src/styles/balm-ui-lite.scss';
 ```
 
 ```js
@@ -45,7 +46,8 @@ import BalmUI from 'balm-ui-lite';
 Vue.use(BalmUI);
 ```
 
-#### 独立使用(Mobile开发推荐)
+#### 独立使用(Mobile 开发推荐)
+
 > 样式脚本完全模块化，打包小
 
 ```js
@@ -64,73 +66,71 @@ Vue.use($event);
 
 请查看 [BalmUI Lite 官网](http://mdl.balmjs.com/)
 
-### UI组件列表
+### UI 组件列表
 
-- Layout
-    - layout
-    - grid
-    - tabs
-- Common
-    - badge
-    - button
-    - chip
-    - menu
-    - tooltip
-    - divider
-    - icon
-- Form
-    - textfield
-    - checkbox
-    - radio
-    - select
-    - selectmenu
-    - icon toggle
-    - switch
-    - slider
-    - file
-    - autocomplete
-    - datepicker
-    - rangepicker
-- Dataview
-    - card
-    - list
-    - table
-    - pagination
-- Feedback
-    - dialog
-    - snackbar
-- Loading
-    - progress
-    - spinner
+* Layout
+  * layout
+  * grid
+  * tabs
+* Common
+  * badge
+  * button
+  * chip
+  * menu
+  * tooltip
+  * divider
+  * icon
+* Form
+  * textfield
+  * checkbox
+  * radio
+  * select
+  * selectmenu
+  * icon toggle
+  * switch
+  * slider
+  * file
+  * autocomplete
+  * datepicker
+  * rangepicker
+* Dataview
+  * card
+  * list
+  * table
+  * pagination
+* Feedback
+  * dialog
+  * snackbar
+* Loading
+  * progress
+  * spinner
 
-### UI插件列表
+### UI 插件列表
 
-- event
-- alert
-- confirm
-- prompt
-- toast
-- notify
-- validator
+* event
+* alert
+* confirm
+* prompt
+* toast
+* notify
+* validator
 
 > BalmUI Lite 中还包含一些常用 _指令服务_ 和 _辅助方法_，具体请查看[官方文档](http://mdl.balmjs.com/)
 
 ### 支持环境
 
 | IE9 | IE10 | IE11 | Chrome | Opera | Firefox | Safari | Chrome (Android) | Mobile Safari |
-|-----|------|------|--------|-------|---------|--------|------------------|---------------|
+| --- | ---- | ---- | ------ | ----- | ------- | ------ | ---------------- | ------------- |
 | B   | A    | A    | A      | A     | A       | A      | A                | A             |
 
-- A 完全支持
-- B 部分支持（需要 polyfills）
+* A 完全支持
+* B 部分支持（需要 polyfills）
 
 ## 如何贡献
 
 我们欢迎任何形式的贡献，有任何建议或意见，请给我们 [提问](https://github.com/balmjs/ui-vue-lite/issues)。
 
-
 [balm-ui-lite-image]: https://badge.fury.io/js/balm-ui-lite.svg
 [balm-ui-lite-url]: https://npmjs.org/package/balm-ui-lite
 
-
-> __thx [BalmJS](http://balmjs.com/) & [Vue.js](https://vuejs.org/)__
+> **thx [BalmJS](http://balmjs.com/) & [Vue.js](https://vuejs.org/)**

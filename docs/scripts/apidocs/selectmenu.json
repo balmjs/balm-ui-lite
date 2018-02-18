@@ -80,6 +80,10 @@
       "description": "下拉框底边线颜色"
     },
     {
+      "var": "$select-menu-height",
+      "description": "下拉菜单项的高度"
+    },
+    {
       "var": "$select-menu-transition",
       "description": "下拉菜单 动画属性"
     },

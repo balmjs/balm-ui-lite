@@ -37,14 +37,14 @@
         @change="balmUI.onChange('list2.page', $event)">
         <template slot-scope="props">
           Showing {{ props.recordCount }} records,
-          <ui-select
+          <ui-selectmenu
             :options="pageSizeList"
             optionValue="value"
             optionKey="key"
             :model="list2.pageSize"
             @change="balmUI.onChange('list2.pageSize', $event)">
             {{ props.pageSize }}
-          </ui-select> records / page,
+          </ui-selectmenu> records / page,
           {{ props.pageCount }} total pages
         </template>
       </ui-pagination>
@@ -131,6 +131,15 @@ export default {
 <style>
 .mdl-pagination--record .mdl-select {
   width: 64px;
-  min-width: 64px;
+}
+
+.mdl-pagination--record .mdl-select,
+.mdl-pagination--record .mdl-select__surface {
+  height: 29px;
+}
+
+.mdl-pagination--record .mdl-menu__item {
+  height: 29px;
+  line-height: 29px;
 }
 </style>

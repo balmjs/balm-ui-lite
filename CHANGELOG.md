@@ -1,10 +1,16 @@
 # [BalmUI Lite](http://mdl.balmjs.com/)
 
-## 1.0.8
+## 1.0.8 (2018.02.18)
 
 ### :beetle: Bug fixes and improvements
 
-- update `<ui-table>` style
+* update `<ui-table>` style
+* update `<ui-select>` style for clip bug
+
+### :page_with_curl: Update docs
+
+* `<ui-pagination>`
+* `<ui-selectmenu>`
 
 ---
 
@@ -12,12 +18,12 @@
 
 ### :beetle: Bug fixes and improvements
 
-- add `<ui-rangepicker>` sass variables
-- update `<ui-file>` style
+* add `<ui-rangepicker>` sass variables
+* update `<ui-file>` style
 
 ### :page_with_curl: Update docs
 
-- `<ui-rangepicker>`
+* `<ui-rangepicker>`
 
 ---
 
@@ -25,12 +31,12 @@
 
 ### :beetle: Bug fixes and improvements
 
-- add `<ui-select>` && `<ui-selectmenu>` sass variables
+* add `<ui-select>` && `<ui-selectmenu>` sass variables
 
 ### :page_with_curl: Update docs
 
-- `<ui-select>`
-- `<ui-selectmenu>`
+* `<ui-select>`
+* `<ui-selectmenu>`
 
 ---
 
@@ -38,11 +44,11 @@
 
 ### :beetle: Bug fixes and improvements
 
-- fix `componentHandler` bug for node
+* fix `componentHandler` bug for node
 
 ### :memo: Test
 
-- setup test
+* setup test
 
 ---
 
@@ -50,8 +56,8 @@
 
 ### :beetle: Bug fixes and improvements
 
-- fix __`<ui-layout-drawer>`__ click link bug
-- add spinner for docs
+* fix **`<ui-layout-drawer>`** click link bug
+* add spinner for docs
 
 ---
 
@@ -59,7 +65,7 @@
 
 ### :beetle: Bug fixes and improvements
 
-__Auto install plugins for `balm-ui-lite`__
+**Auto install plugins for `balm-ui-lite`**
 
 ```js
 import Vue from 'vue';
@@ -68,28 +74,28 @@ import BalmUI from 'balm-ui-lite';
 Vue.use(BalmUI); // include all plugins
 ```
 
-__Update plugins config__
+**Update plugins config**
 
-- event
-- alert
-- confirm
-- prompt
-- toast
-- notify
-- validator
+* event
+* alert
+* confirm
+* prompt
+* toast
+* notify
+* validator
 
 ### :page_with_curl: Update docs
 
-- Plugins
-    - event
-    - alert
-    - confirm
-    - prompt
-    - toast
-    - notify
-    - validator
-- Directives
-    - remove `lazy-load` docs (temporary)
+* Plugins
+  * event
+  * alert
+  * confirm
+  * prompt
+  * toast
+  * notify
+  * validator
+* Directives
+  * remove `lazy-load` docs (temporary)
 
 ---
 
@@ -97,16 +103,16 @@ __Update plugins config__
 
 ### :tada: New features
 
-- individual package for components, plugins, directives and helpers
-- new SASS variables for components
-- global options for all components props' default value
-- new docs for Chinese
+* individual package for components, plugins, directives and helpers
+* new SASS variables for components
+* global options for all components props' default value
+* new docs for Chinese
 
 ### :beetle: Bug fixes and improvements
 
-__`<ui-button>`__
+**`<ui-button>`**
 
-- add `click` event
+* add `click` event
 
 ```html
 <!-- 0.5.x `click.native` -->
@@ -116,34 +122,34 @@ __`<ui-button>`__
 <ui-button @click="onClick"></ui-button>
 ```
 
-__`<ui-card>`__
+**`<ui-card>`**
 
-- add subcomponents `<ui-card-head>` & `<ui-card-subtitle>`
+* add subcomponents `<ui-card-head>` & `<ui-card-subtitle>`
 
-__`<ui-list>`__
+**`<ui-list>`**
 
-- add `<ui-item-primary>` & `<ui-item-secondary>`
+* add `<ui-item-primary>` & `<ui-item-secondary>`
 
-__`<ui-pagination>`__
+**`<ui-pagination>`**
 
-- add default slot for `mini` mode
+* add default slot for `mini` mode
 
-__`<ui-textfield>`__
+**`<ui-textfield>`**
 
-- add `icon` slot for `expandable` mode
+* add `icon` slot for `expandable` mode
 
-__`<ui-table>`__
+**`<ui-table>`**
 
-- add props `colgroup`
+* add props `colgroup`
 
 ### :warning: Breaking changes (Migration from _0.5.x_)
 
-__event plugin__
+**event plugin**
 
-- rename `openDialog` to `onOpen`
-- rename `closeDialog` to `onClose`
-- rename `showDialog` to `onShow`
-- rename `hideDialog` to `onHide`
+* rename `openDialog` to `onOpen`
+* rename `closeDialog` to `onClose`
+* rename `showDialog` to `onShow`
+* rename `hideDialog` to `onHide`
 
 ```html
 <!-- 0.5.x non namespace -->
@@ -153,116 +159,116 @@ __event plugin__
 <ui-textfield @input="BalmUI.onChange('formData.username', $event)"></ui-textfield>
 ```
 
-__`<ui-card>`__
+**`<ui-card>`**
 
-- `<ui-card-text>` rename to `<ui-card-body>`
-- `<ui-card>` props `dp` rename to `shadow`
+* `<ui-card-text>` rename to `<ui-card-body>`
+* `<ui-card>` props `dp` rename to `shadow`
 
-__`<ui-list>`__
+**`<ui-list>`**
 
-- `<ui-item-textbody>` rename to `<ui-item-body>`
+* `<ui-item-textbody>` rename to `<ui-item-body>`
 
-__`<ui-loading>`__
+**`<ui-loading>`**
 
-- remove `<ui-loading>`
-- separate into `<ui-progress>` & `<ui-spinner>`
+* remove `<ui-loading>`
+* separate into `<ui-progress>` & `<ui-spinner>`
 
-__`<ui-menu>`__
+**`<ui-menu>`**
 
-- `<ui-menu>` props `btnId` rename to `dropdownId`
+* `<ui-menu>` props `btnId` rename to `dropdownId`
 
-__`<ui-tooltip>`__
+**`<ui-tooltip>`**
 
-- update `title` slot
+* update `title` slot
 
-__`<ui-pagination>`__
+**`<ui-pagination>`**
 
-- sass variable `$ui-pagination-active-color` is deprecated
+* sass variable `$ui-pagination-active-color` is deprecated
 
-__`<ui-autocomplete>`__
+**`<ui-autocomplete>`**
 
-- remove event `response` & `enter`
-- add event `search` & `selected`
-- remove props `method`, `url`, `params`, `suggestion`
-- add props `autoFocus`, `disabled`, `minLength`, `source`, `remote`
+* remove event `response` & `enter`
+* add event `search` & `selected`
+* remove props `method`, `url`, `params`, `suggestion`
+* add props `autoFocus`, `disabled`, `minLength`, `source`, `remote`
 
-__`<ui-table>`__
+**`<ui-table>`**
 
-- `<ui-table>` props `checkboxList` rename to `checkedList`
+* `<ui-table>` props `checkboxList` rename to `checkedList`
 
-> Now, we use __`<ui-file>`__ instead of __`<ui-fileupload>`__, __`<ui-fileupload>`__ is deprecated.
+> Now, we use **`<ui-file>`** instead of **`<ui-fileupload>`**, **`<ui-fileupload>`** is deprecated.
 
 ### :gear: Components
 
-- Layout
-    - layout
-    - grid
-    - tabs
-- Common
-    - badge
-    - button
-    - chip
-    - menu
-    - tooltip
-    - divider
-    - icon (need fonts resource)
-- Form
-    - textfield
-    - checkbox (need images resource)
-    - radio
-    - select
-    - selectmenu
-    - icon toggle
-    - switch
-    - slider
-    - file
-    - autocomplete
-    - datepicker (need vendor stylesheet)
-    - rangepicker (need vendor stylesheet)
-- Dataview
-    - card
-    - list
-    - table
-    - pagination
-- Feedback
-    - dialog
-    - snackbar
-- Loading
-    - progress (need images resource)
-    - spinner
+* Layout
+  * layout
+  * grid
+  * tabs
+* Common
+  * badge
+  * button
+  * chip
+  * menu
+  * tooltip
+  * divider
+  * icon (need fonts resource)
+* Form
+  * textfield
+  * checkbox (need images resource)
+  * radio
+  * select
+  * selectmenu
+  * icon toggle
+  * switch
+  * slider
+  * file
+  * autocomplete
+  * datepicker (need vendor stylesheet)
+  * rangepicker (need vendor stylesheet)
+* Dataview
+  * card
+  * list
+  * table
+  * pagination
+* Feedback
+  * dialog
+  * snackbar
+* Loading
+  * progress (need images resource)
+  * spinner
 
 ### :hammer_and_wrench: Plugins
 
-- event
-- alert
-- confirm
-- prompt
-- toast
-- notify
-- validator
+* event
+* alert
+* confirm
+* prompt
+* toast
+* notify
+* validator
 
 ### :point_up: Directives
 
-- <del>lazy-load</del>
+* <del>lazy-load</del>
 
 ### :reminder_ribbon: Helpers
 
-- type
-    - getType
-    - isArray
-    - isBoolean
-    - isFunction
-    - isNull
-    - isNumber
-    - isObject
-    - isString
-    - isSymbol
-    - isUndefined
-- ie
-    - detectIE
-- others
-    - jsonEqual
-    - isEmpty
+* type
+  * getType
+  * isArray
+  * isBoolean
+  * isFunction
+  * isNull
+  * isNumber
+  * isObject
+  * isString
+  * isSymbol
+  * isUndefined
+* ie
+  * detectIE
+* others
+  * jsonEqual
+  * isEmpty
 
 ---
 

@@ -14,7 +14,7 @@
 
 ```css
 /* 新增 BalmUI Lite 样式库 */
-@import '../../../node_modules/balm-ui-lite/src/styles/balm-ui-lite.scss';
+@import 'node_modules/balm-ui-lite/src/styles/balm-ui-lite.scss';
 ```
 
 > 然后可以通过编辑 `/path/to/my-project/app/styles/global/_var.scss` 设定指定的样式变量来快速复写 UI 样式

@@ -26,7 +26,7 @@ npm install -g balm-cli
 # 验证
 balm -V
 
-# 输出结果：0.0.3
+# 输出结果：0.1.0
 ```
 
 ## 2. 创建新项目
@@ -51,7 +51,7 @@ yarn
 npm install
 ```
 
-> 请耐心等待。 安装依赖需要花费一定时间，大多数时候都是在安装那些 npm 包。如果“网络状况”不佳，请走[淘宝源](https://npm.taobao.org/)
+> 请耐心等待。 安装依赖需要花费一定时间，大多数时候都是在安装那些 npm 包。如果“网络状况”不科学，请设置[淘宝源](https://npm.taobao.org/)
 
 安装 **BalmUI Lite**
 
@@ -69,7 +69,7 @@ npm i --save balm-ui-lite
 
 ```css
 /* 新增 BalmUI Lite 样式库 */
-@import '../../../node_modules/balm-ui-lite/src/styles/balm-ui-lite.scss';
+@import 'node_modules/balm-ui-lite/src/styles/balm-ui-lite.scss';
 ```
 
 > 推荐使用 Sass 引入 `/path/to/balm-ui-lite.scss` ，可以使用 Sass 变量快速重写全局或组件的样式
@@ -80,7 +80,7 @@ npm i --save balm-ui-lite
 
 ```js
 import Vue from 'vue';
-import app from './views/layouts/app';
+import App from './views/layouts/app';
 import BalmUI from 'balm-ui-lite'; // 引用
 
 Vue.config.productionTip = false;
@@ -88,7 +88,7 @@ Vue.use(BalmUI); // 安装
 
 new Vue({
   el: '#app',
-  components: { app },
+  components: { App },
   template: '<app/>'
 });
 ```

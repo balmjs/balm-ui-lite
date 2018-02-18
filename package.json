@@ -1,6 +1,6 @@
 {
   "name": "balm-ui-lite",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Material Design Lite + Vue",
   "homepage": "http://mdl.balmjs.com/",
   "author": [
@@ -52,7 +52,7 @@
     "chai": "^4.1.2",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.3",
-    "eslint": "^4.17.0",
+    "eslint": "^4.18.0",
     "eslint-plugin-vue": "^4.2.2",
     "gulp": "^3.9.1",
     "jsdom": "^11.6.2",
@@ -61,20 +61,20 @@
     "matchmedia-polyfill": "^0.3.0",
     "material-design-icons": "^3.0.1",
     "material-design-lite": "^1.3.0",
-    "mocha": "^4.1.0",
+    "mocha": "^5.0.1",
     "mocha-webpack": "^1.0.1",
-    "prismjs": "^1.10.0",
-    "sinon": "^4.2.2",
+    "prismjs": "^1.11.0",
+    "sinon": "^4.3.0",
     "vue": "^2.5.13",
     "vue-i18n": "^7.4.2",
     "vue-loader": "^14.1.1",
-    "vue-meta": "^1.4.2",
+    "vue-meta": "^1.4.3",
     "vue-router": "^3.0.1",
     "vue-template-compiler": "^2.5.13",
     "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
     "deepmerge": "^2.0.1",
-    "flatpickr": "^4.2.4"
+    "flatpickr": "^4.3.2"
   }
 }

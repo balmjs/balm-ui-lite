@@ -22,6 +22,7 @@ $pagination-active-border-color: $pagination-active-bg-color !default;
   }
   &.mdl-pagination--between {
     justify-content: space-between;
+    align-items: center;
   }
   .mdl-pagination--record {
     flex: 1;

@@ -7,6 +7,7 @@ $select-border-radius: 4px 4px 0 0 !default;
 $select-bg-color: rgba(black, 0.04) !default;
 $select-bottom-border-color: rgba(black, 0.5) !default;
 
+$select-menu-height: 48px !default;
 $select-menu-transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1) !default;
 $select-menu-item-hover-bg-color: rgba(black, 0.04) !default;
 $select-menu-item-active-bg-color: rgba(black, 0.4) !default;
@@ -17,89 +18,106 @@ $select-menu-item-active-color: white !default;
 }
 
 .mdl-select {
-  @include mdl-select-dd-arrow-svg-bg_;
+  position: relative;
 
   display: inline-flex;
-  position: relative;
-  align-items: center;
-  justify-content: flex-start;
+  overflow: visible;
+
   box-sizing: border-box;
   width: $select-width;
   height: $select-height;
+
+  cursor: pointer;
+
   border: none;
   border-radius: $select-border-radius;
   outline: none;
   background-repeat: no-repeat;
   background-position: right 10px center;
-  cursor: pointer;
-  overflow: visible;
+
+  @include mdl-select-dd-arrow-svg-bg_;
+  align-items: center;
+  justify-content: flex-start;
 
   &__surface {
-    -webkit-font-smoothing: antialiased;
-
-    &::-ms-expand {
-      display: none;
-    }
+    position: relative;
 
     display: flex;
-    position: relative;
-    flex-grow: 1;
+    overflow: hidden;
+
     width: 100%;
     height: $select-height;
     padding: $select-padding;
+
     border: none;
     border-radius: $select-border-radius;
     outline: none;
     background-color: $select-bg-color;
+
+    -webkit-font-smoothing: antialiased;
+    flex-grow: 1;
     // Resets for <select> element
     appearance: none;
-    overflow: hidden;
+
+    &::-ms-expand {
+      display: none;
+    }
   }
 
   &__selected-text {
     display: flex;
-    align-items: center;
+    overflow: hidden;
+
     transition: mdc-animation-exit-temporary(opacity, 125ms),
       mdc-animation-exit-temporary(transform, 125ms);
     white-space: nowrap;
-    overflow: hidden;
+
+    align-items: center;
   }
 
   &__bottom-line {
     position: absolute;
     bottom: 0;
     left: 0;
+
     width: 100%;
     height: 1px;
+
+    transition: $select-menu-transition;
     transform: scaleY(1);
     transform-origin: bottom;
-    transition: $select-menu-transition;
+
     background-color: $select-bottom-border-color;
 
     &::after {
       position: absolute;
+      z-index: 2;
       bottom: -1px;
       left: 0;
+
       width: 100%;
       height: 2px;
-      transform: scaleX(0);
-      transition: $select-menu-transition;
-      opacity: 0;
+
       content: '';
-      z-index: 2;
+      transition: $select-menu-transition;
+      transform: scaleX(0);
+
+      opacity: 0;
     }
   }
 
   .mdl-menu__container {
-    max-height: 100%;
-    transform-origin: center center;
     z-index: 4; // Should pop up above everything else. temporary-drawer is next highest at 3.
+
+    max-height: 100%;
+
+    transform-origin: center center;
   }
 
   // Overwirte menu style
   .mdl-menu__container,
   .mdl-menu__outline {
-    width: 100% !important;
+    min-width: 100% !important;
   }
 
   .mdl-menu__outline {
@@ -107,18 +125,22 @@ $select-menu-item-active-color: white !default;
   }
 
   .mdl-menu {
-    clip: auto !important;
+    clip: auto !important; // Remove transition effect
+
     width: 100%;
     padding: 0;
   }
 
   .mdl-menu__item {
+    line-height: $select-menu-height;
+
+    height: $select-menu-height;
     &:hover {
       background-color: $select-menu-item-hover-bg-color;
     }
     &.active {
-      background-color: $select-menu-item-active-bg-color;
       color: $select-menu-item-active-color;
+      background-color: $select-menu-item-active-bg-color;
     }
   }
 }
