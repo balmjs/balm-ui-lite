@@ -95,9 +95,9 @@ new Vue({
 
 ### 4.3 UI 库所需的图片和字体
 
-下载 [BalmUI Lite assets](http://balmjs.com/ui-vue-lite/assets.zip) 并解压，将其中的 _images_ 和 _fonts_ 文件夹复制到项目中（**`/path/to/my-project/app`**）
+下载 [BalmUI Lite assets](http://mdl.balmjs.com/assets.zip) 并解压，将其中的 _images_ 和 _fonts_ 文件夹复制到项目中（**`/path/to/my-project/app`**）
 
-> 更多使用方式和免下载资源的方法请参照 [进阶用法](http://balmjs.com/ui-vue-lite/#/guide/advanced)
+> 更多使用方式和免下载资源的方法请参照 [进阶用法](http://mdl.balmjs.com/#/guide/advanced)
 
 ## 5. 开发调试
 
