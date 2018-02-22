@@ -53,8 +53,10 @@ module.exports = {
     include: env.useDocs ? [path.resolve('./src/scripts')] : []
   },
   extras: {
-    excludes: ['index.js']
+    excludes: ['index.js'],
+    includes: ['CNAME', 'assets.zip']
   },
+  zip: 'assets.zip',
   assets: {
     publicUrl: env.buildDocs ? 'http://mdl.balmjs.com/' : ''
   },
