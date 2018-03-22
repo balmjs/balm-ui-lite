@@ -18,9 +18,12 @@ const isSymbol = sym => getType(sym) === 'symbol';
 
 const isObject = obj => getType(obj) === 'object';
 
-const isArray = arr => getType(arr) === 'array';
+const isArray = obj => Array.isArray(obj);
 
-const isFunction = arr => getType(arr) === 'function';
+const isFunction = fn => {
+  let type = getType(fn);
+  return type === 'function' || type === 'generatorfunction';
+};
 
 export {
   getType,

@@ -22,18 +22,17 @@ if (isIE) {
   const DEBUG = process.env.NODE_ENV !== 'production';
 
   Vue.config.productionTip = false;
+
   Vue.use(VueRouter);
   Vue.use(VueMeta);
   Vue.use(VueI18n);
   Vue.use(BalmUI);
-  Vue.use({
-    install(vue) {
-      vue.component(UiMarkdown.name, UiMarkdown);
-      vue.component(UiApidoc.name, UiApidoc);
-      Vue.component(UiAccordion.name, UiAccordion);
-    }
-  });
 
+  Vue.component(UiMarkdown.name, UiMarkdown);
+  Vue.component(UiApidoc.name, UiApidoc);
+  Vue.component(UiAccordion.name, UiAccordion);
+
+  Vue.prototype.$domain = DEBUG ? '' : 'http://mdl.balmjs.com';
   Vue.prototype.$http = axios;
   Vue.prototype.$prism = prismjs;
   Vue.prototype.$docs = {
@@ -68,7 +67,6 @@ if (isIE) {
       ]
     }
   };
-  Vue.prototype.$domain = DEBUG ? '' : 'http://mdl.balmjs.com';
 
   const router = new VueRouter({
     routes

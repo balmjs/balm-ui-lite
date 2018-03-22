@@ -14,12 +14,21 @@ module.exports = {
     entry: env.useDocs
       ? {
           a: [
-            'core-js/shim',
+            'core-js',
             'classlist.js',
             'matchmedia-polyfill',
-            'matchmedia-polyfill/matchMedia.addListener'
+            'prismjs',
+            'deepmerge',
+            'flatpickr'
           ],
-          b: ['vue', 'vue-router', 'vue-meta', 'vue-i18n', 'axios', 'prismjs'],
+          b: [
+            'vue',
+            'vue-router',
+            'vue-meta',
+            'vue-i18n',
+            'axios',
+            'material-design-lite'
+          ],
           main: './docs/scripts/main.js'
         }
       : {

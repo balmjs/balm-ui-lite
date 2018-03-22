@@ -1,6 +1,3 @@
-// main pages
-import Home from '../views/home';
-import Test from '../views/test';
 // layouts
 import BlankLayout from '../views/layouts/blank';
 // sub pages
@@ -12,6 +9,10 @@ import pluginsRoutes from './plugins';
 import directivesRoutes from './directives';
 // helpers
 import helpersRoutes from './helpers';
+// home page
+import Home from '../views/home';
+// test
+const Test = () => import('../views/test');
 
 const routes = [
   {

@@ -1,5 +1,11 @@
 # [BalmUI Lite](http://mdl.balmjs.com/)
 
+## 1.1.0 (2018.03.22)
+
+* Upgrade to `balm@0.17.0`
+
+---
+
 ## 1.0.8 (2018.02.18)
 
 ### :beetle: Bug fixes and improvements

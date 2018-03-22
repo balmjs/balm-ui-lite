@@ -1,35 +1,36 @@
 import getType from './typeof';
 
-const jsonEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b); // The ORDER of the properties IS IMPORTANT
+// Reference http://php.net/manual/en/function.empty.php
+const emptyValues = [undefined, null, false, 0, '', '0'];
 
-const isEmpty = _var => {
-  let type = getType(_var);
+const isEmpty = value => {
+  let result = false;
 
-  let conditions = {
-    string() {
-      return _var === '' || _var === '0';
-    },
-    object() {
-      return Object.keys(_var).length === 0;
-    },
-    array() {
-      return _var.length === 0;
-    },
-    boolean() {
-      return !_var;
-    },
-    undefined() {
-      return true;
-    },
-    number() {
-      return !_var;
-    },
-    null() {
-      return true;
-    }
-  };
+  let type = getType(value);
+  switch (type) {
+    case 'array':
+      result = !value.length;
+      break;
+    case 'map':
+    case 'set':
+      result = !value.size;
+      break;
+    case 'object':
+      result = !Object.keys(value).length;
+      break;
+    default:
+      let len = emptyValues.length;
+      while (len--) {
+        if (value === emptyValues[len]) {
+          result = true;
+          break;
+        }
+      }
+  }
 
-  return !!conditions[type] && conditions[type]();
+  return result;
 };
 
-export { jsonEqual, isEmpty };
+const jsonEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b); // The ORDER of the properties IS IMPORTANT
+
+export { isEmpty, jsonEqual };
