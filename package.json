@@ -32,7 +32,7 @@
     "prod": "gulp --silent --production",
     "docs": "gulp --silent --production --docs",
     "test":
-      "NODE_ENV=test mocha-webpack --webpack-config test/webpack-config.test.js --require babel-register --require test/setup.js"
+      "cross-env NODE_ENV=test mocha-webpack --webpack-config test/webpack-config.test.js --require babel-register --require test/setup.js"
   },
   "repository": {
     "type": "git",
@@ -52,6 +52,7 @@
     "chai": "^4.1.2",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.3",
+    "cross-env": "^5.1.4",
     "eslint": "^4.19.1",
     "eslint-plugin-vue": "^4.3.0",
     "gulp": "^3.9.1",

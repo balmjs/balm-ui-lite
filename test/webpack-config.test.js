@@ -1,8 +1,11 @@
-var nodeExternals = require('webpack-node-externals');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  // target: 'node', // webpack should emit node.js compatible code
-  externals: [nodeExternals()], // in order to ignore all modules in node_modules folder from bundling
+  // mode: 'development',
+  // Exclude NPM deps from test bundle
+  externals: [nodeExternals()],
+  // Use inline source map so that it works with mocha-webpack
+  devtool: 'inline-cheap-module-source-map',
   module: {
     rules: [
       {
