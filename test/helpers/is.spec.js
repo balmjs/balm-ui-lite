@@ -14,20 +14,19 @@ const {
 } = methods;
 
 const values = {
-  'array': [],
-  'boolean': false,
-  'function': function () {},
-  'number': 0,
-  'null': null,
-  'object': {},
-  'string': '',
-  'symbol': Symbol(),
-  'undefined': undefined
+  array: [],
+  boolean: false,
+  function: function() {},
+  number: 0,
+  null: null,
+  object: {},
+  string: '',
+  symbol: Symbol(),
+  undefined: undefined
 };
 
-
-Object.keys(methods).forEach((name)=>{
-  if(name !== 'getType') {
+Object.keys(methods).forEach(name => {
+  if (name !== 'getType') {
     let method = methods[name];
     let valueKey = name.replace('is', '').toLowerCase();
     let val = values[valueKey];
@@ -39,7 +38,7 @@ Object.keys(methods).forEach((name)=>{
   } else {
     describe(`helpers 'is' methods: [getType(any)]`, () => {
       it('should returns a string indicating the type of the unevaluated operand', () => {
-        Object.keys(values).forEach((name)=>{
+        Object.keys(values).forEach(name => {
           let val = values[name];
           expect(getType(val)).to.equal(name);
         });
@@ -47,7 +46,3 @@ Object.keys(methods).forEach((name)=>{
     });
   }
 });
-
-
-
-

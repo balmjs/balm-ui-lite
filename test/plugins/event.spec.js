@@ -3,38 +3,43 @@ import $event from '../../plugins/event';
 
 let localVue = createLocalVue();
 
-let createdScene = (obj) => {
-  return Object.assign({}, {
-    template: `<div>
+let createdScene = obj => {
+  return Object.assign(
+    {},
+    {
+      template: `<div>
                 <input type="text" :value="formData.name" @change="balmUI.onChange('formData.name', $event.target.value, callback)">
               </div>`,
-    data () {
-      return {
-        formData: {
-          name: '',
-          show: false
-        }
-      };
+      data() {
+        return {
+          formData: {
+            name: '',
+            show: false
+          }
+        };
+      },
+      methods: {
+        callback() {}
+      }
     },
-    methods: {
-      callback () {}
-    }
-  }, obj);
+    obj
+  );
 };
 
-let createTester = () => createdScene({
-  template: `<div>1<tester 
-                      @close="balmUI.onClose('formData.show', callback)" 
+let createTester = () =>
+  createdScene({
+    template: `<div>1<tester
+                      @close="balmUI.onClose('formData.show', callback)"
                       @show="balmUI.onShow('formData.show', callback)"></tester></div>`,
-  components: {
-    tester: {
-      template: `<div class="tester">
+    components: {
+      tester: {
+        template: `<div class="tester">
                     <span class="close-btn" @click="$emit('close')">1</span>
                     <span class="show-btn" @click="$emit('show')">2</span>
                    </div>`
+      }
     }
-  }
-});
+  });
 
 localVue.use($event);
 
@@ -73,7 +78,6 @@ describe('$event', () => {
   });
 
   it('balmUI.onShow: 自动更新指定属性状态为true，并执行一次方法', () => {
-
     let callback = sinon.spy();
 
     let wrapper = mount(createTester(), {
@@ -91,7 +95,6 @@ describe('$event', () => {
   });
 
   it('balmUI.onClose: 自动更新指定属性状态为false，并执行一次方法', () => {
-
     let callback = sinon.spy();
 
     let wrapper = mount(createTester(), {
@@ -107,6 +110,4 @@ describe('$event', () => {
 
     sinon.assert.calledOnce(callback);
   });
-
 });
-

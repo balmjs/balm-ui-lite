@@ -28,7 +28,8 @@ describe('<ui-divider>', () => {
       }
     });
 
-    let result = wrapper1.vm.$el.classList.contains('horizontal') &&
+    let result =
+      wrapper1.vm.$el.classList.contains('horizontal') &&
       wrapper2.vm.$el.classList.contains('horizontal') &&
       wrapper3.vm.$el.classList.contains('horizontal');
 
@@ -52,10 +53,11 @@ describe('<ui-divider>', () => {
       }
     });
 
-    let result = wrapper1.vm.$el.classList.contains('vertical') &&
+    let result =
+      wrapper1.vm.$el.classList.contains('vertical') &&
       wrapper2.vm.$el.classList.contains('vertical') &&
       wrapper3.vm.$el.classList.contains('vertical');
 
     expect(result).to.equal(true);
-  })
+  });
 });
