@@ -13,14 +13,7 @@ module.exports = {
   scripts: {
     entry: env.useDocs
       ? {
-          a: [
-            'core-js',
-            'classlist.js',
-            'matchmedia-polyfill',
-            'prismjs',
-            'deepmerge',
-            'flatpickr'
-          ],
+          a: ['core-js', 'classlist.js', 'matchmedia-polyfill', 'prismjs'],
           b: [
             'vue',
             'vue-router',
