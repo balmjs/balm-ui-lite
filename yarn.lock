@@ -1232,9 +1232,9 @@ balanced-match@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/balanced-match/download/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
 
-balm@^0.17.0:
-  version "0.17.0"
-  resolved "http://registry.npm.taobao.org/balm/download/balm-0.17.0.tgz#e8d2bf580633095f324302c20f483bb5d995ecdc"
+balm@^0.17.1:
+  version "0.17.1"
+  resolved "http://registry.npm.taobao.org/balm/download/balm-0.17.1.tgz#3acb4df10a8d5119baa57065bd52daba5e88d111"
   dependencies:
     ansi-colors "^1.1.0"
     autoprefixer "^8.0.0"
@@ -3205,9 +3205,9 @@ escodegen@~1.3.2:
   optionalDependencies:
     source-map "~0.1.33"
 
-eslint-plugin-vue@^4.3.0:
-  version "4.3.0"
-  resolved "http://registry.npm.taobao.org/eslint-plugin-vue/download/eslint-plugin-vue-4.3.0.tgz#478c6267269dbaa20f6e8b2cfae7a0ccc98c1d72"
+eslint-plugin-vue@^4.4.0:
+  version "4.4.0"
+  resolved "http://registry.npm.taobao.org/eslint-plugin-vue/download/eslint-plugin-vue-4.4.0.tgz#bfc3a71f76bd0e139313e4425a807257ae42f768"
   dependencies:
     vue-eslint-parser "^2.0.3"
 
@@ -6706,9 +6706,9 @@ mocha-webpack@^1.1.0:
     toposort "^1.0.0"
     yargs "^4.8.0"
 
-mocha@^5.0.4:
-  version "5.0.4"
-  resolved "http://registry.npm.taobao.org/mocha/download/mocha-5.0.4.tgz#6b7aa328472da1088e69d47e75925fd3a3bb63c6"
+mocha@^5.0.5:
+  version "5.0.5"
+  resolved "http://registry.npm.taobao.org/mocha/download/mocha-5.0.5.tgz#e228e3386b9387a4710007a641f127b00be44b52"
   dependencies:
     browser-stdout "1.3.1"
     commander "2.11.0"

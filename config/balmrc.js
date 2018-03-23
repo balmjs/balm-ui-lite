@@ -13,15 +13,6 @@ module.exports = {
   scripts: {
     entry: env.useDocs
       ? {
-          a: ['core-js', 'classlist.js', 'matchmedia-polyfill', 'prismjs'],
-          b: [
-            'vue',
-            'vue-router',
-            'vue-meta',
-            'vue-i18n',
-            'axios',
-            'material-design-lite'
-          ],
           main: './docs/scripts/main.js'
         }
       : {
@@ -52,7 +43,8 @@ module.exports = {
         drop_console: false
       }
     },
-    include: env.useDocs ? [path.resolve('./src/scripts')] : []
+    include: env.useDocs ? [path.resolve('./src/scripts')] : [],
+    extractAllVendors: env.useDocs
   },
   extras: {
     excludes: ['index.js'],
@@ -62,5 +54,6 @@ module.exports = {
   assets: {
     publicUrl: env.buildDocs ? 'http://mdl.balmjs.com/' : ''
   },
+  cache: env.buildDocs,
   useDefault: env.useDefault
 };
