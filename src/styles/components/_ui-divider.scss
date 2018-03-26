@@ -8,7 +8,7 @@
   span {
     display: inline-block;
     flex-shrink: 0;
-    font-size: 18px;
+    font-size: inherit;
     text-transform: uppercase;
   }
   &.horizontal {
