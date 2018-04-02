@@ -101,9 +101,9 @@
   dependencies:
     samsam "1.3.0"
 
-"@vue/test-utils@^1.0.0-beta.12":
-  version "1.0.0-beta.12"
-  resolved "http://registry.npm.taobao.org/@vue/test-utils/download/@vue/test-utils-1.0.0-beta.12.tgz#c020d5e7566d176a654e44c88d303743ad19b3cf"
+"@vue/test-utils@^1.0.0-beta.13":
+  version "1.0.0-beta.13"
+  resolved "http://registry.npm.taobao.org/@vue/test-utils/download/@vue/test-utils-1.0.0-beta.13.tgz#309dc50d2a55ac9facf781f62bbd236475ba5033"
   dependencies:
     lodash "^4.17.4"
 
@@ -1232,9 +1232,9 @@ balanced-match@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/balanced-match/download/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
 
-balm@^0.17.1:
-  version "0.17.1"
-  resolved "http://registry.npm.taobao.org/balm/download/balm-0.17.1.tgz#3acb4df10a8d5119baa57065bd52daba5e88d111"
+balm@^0.18.0:
+  version "0.18.0"
+  resolved "http://registry.npm.taobao.org/balm/download/balm-0.18.0.tgz#1b6a526a4173b0ee5e6e22e000c4cd0fc8d0a385"
   dependencies:
     ansi-colors "^1.1.0"
     autoprefixer "^8.0.0"
@@ -1263,7 +1263,7 @@ balm@^0.17.1:
     gulp-replace "^0.6.1"
     gulp-rev-all "^0.9.7"
     gulp-rev-delete-original "^0.2.3"
-    gulp-sass "^3.2.0"
+    gulp-sass "^3.2.1"
     gulp-sftp "^0.1.5"
     gulp-size "^3.0.0"
     gulp-sourcemaps "^2.6.4"
@@ -1276,7 +1276,7 @@ balm@^0.17.1:
     http-proxy-middleware "^0.18.0"
     main-bower-files "^2.13.1"
     merge-stream "^1.0.1"
-    mini-css-extract-plugin "^0.2.0"
+    mini-css-extract-plugin "^0.4.0"
     postcss-cssnext "^3.1.0"
     postcss-import "^11.1.0"
     postcss-loader "^2.1.3"
@@ -1285,8 +1285,8 @@ balm@^0.17.1:
     style-loader "^0.20.2"
     uglifyjs-webpack-plugin "^1.2.4"
     url-loader "^1.0.1"
-    webpack "^4.2.0"
-    webpack-dev-middleware "^3.0.1"
+    webpack "^4.4.1"
+    webpack-dev-middleware "^3.1.0"
     webpack-hot-middleware "^2.21.0"
     webpack-merge "^4.1.2"
     wiredep "^4.0.0"
@@ -2229,10 +2229,6 @@ constants-browserify@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/constants-browserify/download/constants-browserify-1.0.0.tgz#c20b96d8c617748aaf1c16021760cd27fcb8cb75"
 
-content-type-parser@^1.0.2:
-  version "1.0.2"
-  resolved "http://registry.npm.taobao.org/content-type-parser/download/content-type-parser-1.0.2.tgz#caabe80623e63638b2502fd4c7f12ff4ce2352e7"
-
 contentstream@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/contentstream/download/contentstream-1.0.0.tgz#0bdcfa46da30464a86ce8fa7ece565410dc6f9a5"
@@ -2262,9 +2258,13 @@ copy-descriptor@^0.1.0:
   version "0.1.1"
   resolved "http://registry.npm.taobao.org/copy-descriptor/download/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
 
-core-js@^2.4.0, core-js@^2.5.0, core-js@^2.5.3:
+core-js@^2.4.0, core-js@^2.5.0:
   version "2.5.3"
   resolved "http://registry.npm.taobao.org/core-js/download/core-js-2.5.3.tgz#8acc38345824f16d8365b7c9b4259168e8ed603e"
+
+core-js@^2.5.4:
+  version "2.5.4"
+  resolved "http://registry.npm.taobao.org/core-js/download/core-js-2.5.4.tgz#f2c8bf181f2a80b92f360121429ce63a2f0aeae0"
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -2568,6 +2568,14 @@ dashdash@^1.12.0:
 data-uri-to-buffer@0.0.3:
   version "0.0.3"
   resolved "http://registry.npm.taobao.org/data-uri-to-buffer/download/data-uri-to-buffer-0.0.3.tgz#18ae979a6a0ca994b0625853916d2662bbae0b1a"
+
+data-urls@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/data-urls/download/data-urls-1.0.0.tgz#24802de4e81c298ea8a9388bb0d8e461c774684f"
+  dependencies:
+    abab "^1.0.4"
+    whatwg-mimetype "^2.0.0"
+    whatwg-url "^6.4.0"
 
 date-now@^0.1.4:
   version "0.1.4"
@@ -3765,9 +3773,9 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
-flatpickr@^4.4.0:
-  version "4.4.0"
-  resolved "http://registry.npm.taobao.org/flatpickr/download/flatpickr-4.4.0.tgz#44410ba77fd4feb6a24fa22a14a6111efe7882cb"
+flatpickr@^4.4.3:
+  version "4.4.3"
+  resolved "http://registry.npm.taobao.org/flatpickr/download/flatpickr-4.4.3.tgz#53ba7b06523f73ee69175b3ed808c7fc0f245c4f"
 
 flatten@^1.0.2:
   version "1.0.2"
@@ -4429,13 +4437,13 @@ gulp-rev-delete-original@^0.2.3:
     rimraf "^2.3.4"
     through2 "^0.6.5"
 
-gulp-sass@^3.2.0:
-  version "3.2.0"
-  resolved "http://registry.npm.taobao.org/gulp-sass/download/gulp-sass-3.2.0.tgz#1997e6e722a5e83d6dc227d1ce260ee7a9c08b8b"
+gulp-sass@^3.2.1:
+  version "3.2.1"
+  resolved "http://registry.npm.taobao.org/gulp-sass/download/gulp-sass-3.2.1.tgz#2e3688a96fd8be1c0c01340750c191b2e79fab94"
   dependencies:
     gulp-util "^3.0"
     lodash.clonedeep "^4.3.2"
-    node-sass "^4.8.1"
+    node-sass "^4.8.3"
     through2 "^2.0.0"
     vinyl-sourcemaps-apply "^0.2.0"
 
@@ -5687,18 +5695,17 @@ jsdom-global@^3.0.2:
   version "3.0.2"
   resolved "http://registry.npm.taobao.org/jsdom-global/download/jsdom-global-3.0.2.tgz#6bd299c13b0c4626b2da2c0393cd4385d606acb9"
 
-jsdom@^11.6.2:
-  version "11.6.2"
-  resolved "http://registry.npm.taobao.org/jsdom/download/jsdom-11.6.2.tgz#25d1ef332d48adf77fc5221fe2619967923f16bb"
+jsdom@^11.7.0:
+  version "11.7.0"
+  resolved "http://registry.npm.taobao.org/jsdom/download/jsdom-11.7.0.tgz#8b45b657dae90d6d2d3a5f5d1126bb7102d0a172"
   dependencies:
     abab "^1.0.4"
     acorn "^5.3.0"
     acorn-globals "^4.1.0"
     array-equal "^1.0.0"
-    browser-process-hrtime "^0.1.2"
-    content-type-parser "^1.0.2"
     cssom ">= 0.3.2 < 0.4.0"
     cssstyle ">= 0.2.37 < 0.3.0"
+    data-urls "^1.0.0"
     domexception "^1.0.0"
     escodegen "^1.9.0"
     html-encoding-sniffer "^1.0.2"
@@ -5714,6 +5721,7 @@ jsdom@^11.6.2:
     w3c-hr-time "^1.0.1"
     webidl-conversions "^4.0.2"
     whatwg-encoding "^1.0.3"
+    whatwg-mimetype "^2.1.0"
     whatwg-url "^6.4.0"
     ws "^4.0.0"
     xml-name-validator "^3.0.0"
@@ -6604,9 +6612,9 @@ mimic-fn@^1.0.0:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/mimic-fn/download/mimic-fn-1.1.0.tgz#e667783d92e89dbd342818b5230b9d62a672ad18"
 
-mini-css-extract-plugin@^0.2.0:
-  version "0.2.0"
-  resolved "http://registry.npm.taobao.org/mini-css-extract-plugin/download/mini-css-extract-plugin-0.2.0.tgz#7a16b0e1096c86de8e4d1c3b063aa1aeae88d41d"
+mini-css-extract-plugin@^0.4.0:
+  version "0.4.0"
+  resolved "http://registry.npm.taobao.org/mini-css-extract-plugin/download/mini-css-extract-plugin-0.4.0.tgz#ff3bf08bee96e618e177c16ca6131bfecef707f9"
   dependencies:
     loader-utils "^1.1.0"
     webpack-sources "^1.1.0"
@@ -6936,7 +6944,7 @@ node-pre-gyp@^0.6.36:
     tar "^2.2.1"
     tar-pack "^3.4.0"
 
-node-sass@^4.8.1:
+node-sass@^4.8.3:
   version "4.8.3"
   resolved "http://registry.npm.taobao.org/node-sass/download/node-sass-4.8.3.tgz#d077cc20a08ac06f661ca44fb6f19cd2ed41debb"
   dependencies:
@@ -9136,9 +9144,9 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
-sinon@^4.4.8:
-  version "4.4.8"
-  resolved "http://registry.npm.taobao.org/sinon/download/sinon-4.4.8.tgz#0479e0ccb8caa0d737ce9773c8d53d57d38f2d84"
+sinon@^4.5.0:
+  version "4.5.0"
+  resolved "http://registry.npm.taobao.org/sinon/download/sinon-4.5.0.tgz#427ae312a337d3c516804ce2754e8c0d5028cb04"
   dependencies:
     "@sinonjs/formatio" "^2.0.0"
     diff "^3.1.0"
@@ -10188,7 +10196,7 @@ uglify-to-browserify@~1.0.0:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/uglify-to-browserify/download/uglify-to-browserify-1.0.2.tgz#6e0924d6bda6b5afe349e39a6d632850a0f882b7"
 
-uglifyjs-webpack-plugin@^1.1.1, uglifyjs-webpack-plugin@^1.2.4:
+uglifyjs-webpack-plugin@^1.2.4:
   version "1.2.4"
   resolved "http://registry.npm.taobao.org/uglifyjs-webpack-plugin/download/uglifyjs-webpack-plugin-1.2.4.tgz#5eec941b2e9b8538be0a20fc6eda25b14c7c1043"
   dependencies:
@@ -10606,9 +10614,9 @@ vue-i18n@^7.6.0:
   version "7.6.0"
   resolved "http://registry.npm.taobao.org/vue-i18n/download/vue-i18n-7.6.0.tgz#8745807756f6ca5090fd85629e9cab99b1c6e442"
 
-vue-loader@^14.2.1:
-  version "14.2.1"
-  resolved "http://registry.npm.taobao.org/vue-loader/download/vue-loader-14.2.1.tgz#3ace19f98187b1fa9e0709defa963a0a2396b6b3"
+vue-loader@^14.2.2:
+  version "14.2.2"
+  resolved "http://registry.npm.taobao.org/vue-loader/download/vue-loader-14.2.2.tgz#c8cf3c2e29b6fb2ee595248a2aa6005038a125b3"
   dependencies:
     consolidate "^0.14.0"
     hash-sum "^1.0.2"
@@ -10682,9 +10690,9 @@ webidl-conversions@^4.0.1, webidl-conversions@^4.0.2:
   version "4.0.2"
   resolved "http://registry.npm.taobao.org/webidl-conversions/download/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
 
-webpack-dev-middleware@^3.0.1:
-  version "3.0.1"
-  resolved "http://registry.npm.taobao.org/webpack-dev-middleware/download/webpack-dev-middleware-3.0.1.tgz#7ffd6d0192883c83d3f262e8d7dec822493c6166"
+webpack-dev-middleware@^3.1.0:
+  version "3.1.0"
+  resolved "http://registry.npm.taobao.org/webpack-dev-middleware/download/webpack-dev-middleware-3.1.0.tgz#b354b17d0baa274ea3af38c6f005e66a16bdb76b"
   dependencies:
     loud-rejection "^1.6.0"
     memory-fs "~0.4.1"
@@ -10718,9 +10726,9 @@ webpack-merge@^4.1.2:
   dependencies:
     lodash "^4.17.5"
 
-webpack-node-externals@^1.6.0:
-  version "1.6.0"
-  resolved "http://registry.npm.taobao.org/webpack-node-externals/download/webpack-node-externals-1.6.0.tgz#232c62ec6092b100635a3d29d83c1747128df9bd"
+webpack-node-externals@^1.7.2:
+  version "1.7.2"
+  resolved "http://registry.npm.taobao.org/webpack-node-externals/download/webpack-node-externals-1.7.2.tgz#6e1ee79ac67c070402ba700ef033a9b8d52ac4e3"
 
 webpack-sources@^1.0.1:
   version "1.0.1"
@@ -10736,9 +10744,9 @@ webpack-sources@^1.1.0:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack@^4.2.0:
-  version "4.2.0"
-  resolved "http://registry.npm.taobao.org/webpack/download/webpack-4.2.0.tgz#a4f80807651a0e611bb09609600dc266262efcc1"
+webpack@^4.4.1:
+  version "4.4.1"
+  resolved "http://registry.npm.taobao.org/webpack/download/webpack-4.4.1.tgz#b0105789890c28bfce9f392623ef5850254328a4"
   dependencies:
     acorn "^5.0.0"
     acorn-dynamic-import "^3.0.0"
@@ -10756,7 +10764,7 @@ webpack@^4.2.0:
     node-libs-browser "^2.0.0"
     schema-utils "^0.4.2"
     tapable "^1.0.0"
-    uglifyjs-webpack-plugin "^1.1.1"
+    uglifyjs-webpack-plugin "^1.2.4"
     watchpack "^1.5.0"
     webpack-sources "^1.0.1"
 
@@ -10765,6 +10773,10 @@ whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.3:
   resolved "http://registry.npm.taobao.org/whatwg-encoding/download/whatwg-encoding-1.0.3.tgz#57c235bc8657e914d24e1a397d3c82daee0a6ba3"
   dependencies:
     iconv-lite "0.4.19"
+
+whatwg-mimetype@^2.0.0, whatwg-mimetype@^2.1.0:
+  version "2.1.0"
+  resolved "http://registry.npm.taobao.org/whatwg-mimetype/download/whatwg-mimetype-2.1.0.tgz#f0f21d76cbba72362eb609dbed2a30cd17fcc7d4"
 
 whatwg-url@^6.4.0:
   version "6.4.0"
