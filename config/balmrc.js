@@ -23,14 +23,11 @@ module.exports = {
     loaders: [
       {
         test: /\.vue$/,
-        loader: 'vue',
-        options: {
-          esModule: false
-        }
+        loader: 'vue-loader'
       },
       {
         test: /\.md$/,
-        loader: 'html!markdown'
+        loader: 'html-loader!markdown-loader'
       }
     ],
     alias: {
