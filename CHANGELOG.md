@@ -1,8 +1,20 @@
 # [BalmUI Lite](http://mdl.balmjs.com/)
 
+## 1.2.0 (2018.04.27)
+
+### :tada: New features
+
+* upgrade to `balm@0.20`
+
+### :gear: New components
+
+* `<ui-circle>`
+
+---
+
 ## 1.1.0 (2018.03.22)
 
-* Upgrade to `balm@0.17.0`
+* upgrade to `balm@0.17`
 
 ---
 
