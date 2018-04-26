@@ -56,6 +56,7 @@ import UiMenuitem from './components/menu/menuitem';
 import UiTooltip from './components/common/tooltip';
 import UiDivider from './components/common/divider';
 import UiIcon from './components/common/icon';
+import UiCircle from './components/common/circle';
 /**
  * Form
  */
@@ -158,6 +159,7 @@ const components = {
   UiTooltip,
   UiDivider,
   UiIcon,
+  UiCircle,
   // Form
   UiTextfield,
   UiCheckbox,

@@ -69,14 +69,22 @@ const BalmUI_NotifyPlugin = {
 
     let config = Object.assign({}, defaultGlobalOptions, options);
 
+    getType(config.timeout) === 'number' &&
+      (itemProps.timeout = config.timeout);
+    config.cancelText && (itemProps.buttons[0].text = config.cancelText);
+
+    const transitionName =
+      getType(config.transitionName) === 'string'
+        ? config.transitionName
+        : 'notify-list';
+
+    const progressColor = config.progressColor || '#3f51b5';
+
     const data = function() {
       return {
         open: YES,
-        progressColor: config.progressColor || '#3f51b5',
-        transitionName:
-          getType(config.transitionName) === 'string'
-            ? config.transitionName
-            : 'notify-list',
+        progressColor,
+        transitionName,
         notifies: []
       };
     };
@@ -99,10 +107,10 @@ const BalmUI_NotifyPlugin = {
           console.warn(
             `[BalmUI]:Plugin $notify has not open yet. use 'this.$notify.open = true' to open the notify plugin in Vue instance.`
           );
-
-        getType(config.timeout) === 'number' &&
-          (itemProps.timeout = config.timeout);
-        config.cancelText && (itemProps.buttons[0].text = config.cancelText);
+        if (getType(newNotify) === 'string') {
+          let content = newNotify;
+          newNotify = { content };
+        }
 
         newNotify = Object.assign(
           {
@@ -128,7 +136,7 @@ const BalmUI_NotifyPlugin = {
               btnHandlers[handlerName] = fn;
             } else {
               console.error(
-                `[BalmUI]:Plugin $notify added method '${handlerName}' failed. The 2nd argument of method 'addButtonHandler' should be a 'function' type, but received is '${getType(
+                `[BalmUI]:Plugin $notify added method '${handlerName}' failed. The 2nd argument should be a 'function' type, but got '${getType(
                   fn
                 )}'.`
               );

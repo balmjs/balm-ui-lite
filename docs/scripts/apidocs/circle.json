@@ -1,0 +1,76 @@
+{
+  "props": [
+    {
+      "name": "animate",
+      "type": "Boolean",
+      "default": "true",
+      "description": "是否启用过渡效果"
+    },
+    {
+      "name": "size",
+      "type": "[String, number]",
+      "default": "100%",
+      "description": "进度条区块的高宽度"
+    },
+    {
+      "name": "strokeWidth",
+      "type": "[String, Number]",
+      "default": "20",
+      "description": "进度条背景宽度"
+    },
+    {
+      "name": "strokeLinecap",
+      "type": "String",
+      "default": "round",
+      "description": "进度条边框风格"
+    },
+    {
+      "name": "stroke",
+      "type": "String",
+      "default": "#e4e7f6",
+      "description": "进度条背景颜色"
+    },
+    {
+      "name": "progressColor",
+      "type": "String",
+      "default": "#ff4081",
+      "description": "进度条颜色"
+    },
+    {
+      "name": "progress",
+      "type": "[Number, String] {0 <= progress <= 100}",
+      "default": "0",
+      "description": "进度"
+    },
+    {
+      "name": "progressWidth",
+      "type": "[Number, String]",
+      "default": "strokeWidth",
+      "description": "进度条宽度"
+    }
+  ],
+  "slots": [
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入文本内容"
+    }
+  ],
+  "sass": [
+    {
+      "var": "$mdl-circle-text-color",
+      "description": "默认文本颜色"
+    },
+    {
+      "var": "$mdl-circle-font-size",
+      "description": "默认字体大小"
+    },
+    {
+      "var": "$mdl-circle-font-weight",
+      "description": "默认字体粗细"
+    },
+    {
+      "var": "$mdl-circle-transition",
+      "description": "默认字体过渡"
+    }
+  ]
+}

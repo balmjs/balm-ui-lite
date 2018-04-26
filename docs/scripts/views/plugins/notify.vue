@@ -62,7 +62,7 @@
     <h5>$notify.addButtonHandler(handlerName | Object | Array, handler)</h5>
     <p>addButtonHandler是一个灵活的方法，它允许你事先将各种函数预设进Notify的btnHandlers集合中，从而使得在添加按钮handler的时候可以使用字符串来映射对应的处理方法。</p>
     <p>提示：当按钮被点击触发处理函数时，不会改变当前函数执行的作用域，同时会把当前的notify对象作为参数传入该函数中。</p>
-    <p>通过这个方法，可以把上面多个按钮的例子改写一下：</p>
+    <p>通过这个方法，可以把上面多个按钮的例子改写为：</p>
     <p><ui-button colored raised @click="$notify.add(options5)">使用字符串映射预设的处理方法</ui-button></p>
     <ui-accordion expanded>
       <ui-markdown :code="code[5]"></ui-markdown>

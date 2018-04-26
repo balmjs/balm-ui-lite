@@ -4,6 +4,7 @@ const Chip = () => import('../../views/components/chip');
 const Menu = () => import('../../views/components/menu');
 const Tooltip = () => import('../../views/components/tooltip');
 const Divider = () => import('../../views/components/divider');
+const Circle = () => import('../../views/components/circle');
 
 const commonRoutes = [
   {
@@ -35,6 +36,11 @@ const commonRoutes = [
     path: 'divider',
     name: 'components.divider',
     component: Divider
+  },
+  {
+    path: 'circle',
+    name: 'components.circle',
+    component: Circle
   }
 ];
 

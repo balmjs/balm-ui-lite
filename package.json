@@ -28,7 +28,7 @@
   "main": "dist/balm-ui-lite.js",
   "scripts": {
     "mdl": "gulp --silent --mdl",
-    "dev": "gulp --silent",
+    "dev": "gulp",
     "prod": "gulp --silent --production",
     "docs": "gulp --silent --production --docs",
     "test":

@@ -2,7 +2,16 @@ import helpers from '../helpers';
 
 const components = {
   layout: ['layout', 'grid', 'tabs'],
-  common: ['badge', 'button', 'chip', 'menu', 'tooltip', 'divider', 'icon'],
+  common: [
+    'badge',
+    'button',
+    'chip',
+    'menu',
+    'tooltip',
+    'divider',
+    'icon',
+    'circle'
+  ],
   form: [
     'textfield',
     'checkbox',

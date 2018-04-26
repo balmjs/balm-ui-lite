@@ -2,10 +2,8 @@
   <div class="page--divider">
     <div class="component-title">
       <h2>Divider 分割线</h2>
+      <p>有些人喜欢使用分割线，所以我们开发了这个组件</p>
     </div>
-
-    <h4 class="line">概述</h4>
-    <p>有些人喜欢使用分割线，所以我们开发了这个组件</p>
 
     <h4 class="line">引入</h4>
     <ui-markdown :text="code[0]"></ui-markdown>

@@ -1,6 +1,6 @@
 <template>
-  <div class="page--test" v-lazy-load>
-    <fieldset class="form-test">
+  <div class="page--test" >
+    <fieldset class="form-test" v-show="false">
       <legend>Form test</legend>
       <div class="form-item">
         <ui-textfield
@@ -11,109 +11,24 @@
       <div class="form-action">
         <ui-button @click="submit">Submit</ui-button>
       </div>
-      <div class="images" v-show="false">
-        <span>
-          <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s031.jpg"></div>
-        </span>
-        <span>
-          <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s032.jpg"></div>
-        </span>
-        <span>
-          <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s033.jpg"></div>
-        </span>
-        <span>
-          <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s034.jpg"></div>
-        </span>
-        <span>
-          <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s035.jpg"></div>
-        </span>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s036.jpg"></div>
-        </span><br>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s037.jpg"></div>
-        </span>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s038.jpg"></div>
-        </span>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s039.jpg"></div>
-        </span>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s040.jpg"></div>
-        </span>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s041.jpg"></div>
-        </span>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s042.jpg"></div>
-        </span><br>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s043.jpg"></div>
-        </span>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s044.jpg"></div>
-        </span>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s045.jpg"></div>
-        </span>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s046.jpg"></div>
-        </span>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s047.jpg"></div>
-        </span>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s048.jpg"></div>
-        </span><br>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s049.jpg"></div>
-        </span>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s050.jpg"></div>
-        </span>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s051.jpg"></div>
-        </span>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s052.jpg"></div>
-        </span>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s053.jpg"></div>
-        </span>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s054.jpg"></div>
-        </span><br>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s055.jpg"></div>
-        </span>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s056.jpg"></div>
-        </span>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s057.jpg"></div>
-        </span>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s058.jpg"></div>
-        </span>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s059.jpg"></div>
-        </span>
-        <span>
-           <div data-src="http://image5.tuku.cn/pic/dongwushijie/endearing_beastie_188/s060.jpg"></div>
-        </span></div>
-
-      <div style="width: 50%;">
+    </fieldset>
+    
+      <div style="width: 50%;" v-show="false">
         <ui-file multiple preview @change="onChange"></ui-file>
         <ul>
-          <li v-for="(file, index) in files" :key="file.uid">
+          <li v-for="file in files" :key="file.uid">
             <img :src="file.previewSrc">
             <span>{{file.name}} -- {{file.size}} b</span>
             <span>{{file.type}}</span>
           </li>
         </ul>
       </div>
-    </fieldset>
+      <input type="range" v-model="progress">
+      <div style="width: 200px;height: 200px;">
+        <ui-circle :progress="progress" :strokeWidth="30" :animate="true">
+          {{ progress }} %
+        </ui-circle>
+      </div>
   </div>
 </template>
 
@@ -148,7 +63,8 @@ export default {
       formData: {
         name: ''
       },
-      msg: 'must be numbers'
+      msg: 'must be numbers',
+      progress: 0
     };
   },
   methods: {
