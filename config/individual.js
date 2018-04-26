@@ -37,7 +37,8 @@ const components = [
   'autocomplete.js',
   'datepicker.js',
   'rangepicker.js',
-  'file.js'
+  'file.js',
+  'circle.js'
 ];
 const helpers = ['is.js', 'utils.js', 'detect-ie.js'];
 const plugins = [
