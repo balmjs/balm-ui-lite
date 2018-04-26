@@ -1,29 +1,30 @@
 <template>
   <svg :width="size" :height="size" class="mdl-circle" viewBox="-25 -25 400 400">
-    <circle class="mdl-circle__bg" 
-    :cx="r" 
-    :cy="r" 
-    :r="r" 
-    :stroke-width="strokeWidth" 
-    :stroke="stroke" 
+    <circle class="mdl-circle__bg"
+    :cx="r"
+    :cy="r"
+    :r="r"
+    :stroke-width="strokeWidth"
+    :stroke="stroke"
      />
-    <circle 
+    <circle
     :class="['mdl-circle__front', {'no-transition': !animate}]"
-    :cx="r" 
-    :cy="r" 
-    :r="r" 
+    :cx="r"
+    :cy="r"
+    :r="r"
     :transform="`rotate(-90, ${r}, ${r})`"
-    :stroke-linecap="lineStyle" 
-    :stroke="progressColor" 
-    :stroke-width="progressWidth" 
+    :stroke-linecap="lineStyle"
+    :stroke="progressColor"
+    :stroke-width="progressWidth"
     :stroke-dasharray="perimeter"
-    :stroke-dashoffset="strokeDashoffset" 
+    :stroke-dashoffset="strokeDashoffset"
     />
-    <text dx="-25" x="50%" y="50%"> 
+    <text dx="-25" x="50%" y="50%">
       <slot></slot>
     </text>
   </svg>
 </template>
+
 <script>
 export default {
   name: 'ui-circle',

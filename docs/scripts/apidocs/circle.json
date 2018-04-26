@@ -8,13 +8,13 @@
     },
     {
       "name": "size",
-      "type": "[String, number]",
+      "type": "String, Number",
       "default": "100%",
       "description": "进度条区块的高宽度"
     },
     {
       "name": "strokeWidth",
-      "type": "[String, Number]",
+      "type": "String, Number",
       "default": "20",
       "description": "进度条背景宽度"
     },
@@ -38,13 +38,13 @@
     },
     {
       "name": "progress",
-      "type": "[Number, String] {0 <= progress <= 100}",
+      "type": "Number, String",
       "default": "0",
-      "description": "进度"
+      "description": "进度 [0, 100]"
     },
     {
       "name": "progressWidth",
-      "type": "[Number, String]",
+      "type": "Number, String",
       "default": "strokeWidth",
       "description": "进度条宽度"
     }
@@ -57,19 +57,19 @@
   ],
   "sass": [
     {
-      "var": "$mdl-circle-text-color",
+      "var": "$circle-text-color",
       "description": "默认文本颜色"
     },
     {
-      "var": "$mdl-circle-font-size",
+      "var": "$circle-font-size",
       "description": "默认字体大小"
     },
     {
-      "var": "$mdl-circle-font-weight",
+      "var": "$circle-font-weight",
       "description": "默认字体粗细"
     },
     {
-      "var": "$mdl-circle-transition",
+      "var": "$circle-transition",
       "description": "默认字体过渡"
     }
   ]

@@ -1,16 +1,18 @@
 @import '../../material-design-lite/variables';
-$mdl-circle-text-color: $text-color-primary;
-$mdl-circle-font-size: 3.6rem;
-$mdl-circle-font-weight: 700;
-$mdl-circle-transition: stroke-dashoffset 0.5s ease-out;
+$circle-text-color: $text-color-primary !default;
+$circle-font-size: 3.6rem !default;
+$circle-font-weight: 700 !default;
+$circle-transition: stroke-dashoffset 0.5s ease-out !default;
 
 .mdl-circle {
   font-family: inherit;
-  color: $mdl-circle-text-color;
+
+  color: $circle-text-color;
   text {
     font-family: inherit;
-    font-size: $mdl-circle-font-size;
-    font-weight: $mdl-circle-font-weight;
+    font-size: $circle-font-size;
+    font-weight: $circle-font-weight;
+
     text-anchor: middle;
     fill: currentColor;
   }
@@ -19,7 +21,7 @@ $mdl-circle-transition: stroke-dashoffset 0.5s ease-out;
   }
 
   &__front {
-    transition: $mdl-circle-transition;
+    transition: $circle-transition;
     &.no-transition {
       transition: none;
     }
