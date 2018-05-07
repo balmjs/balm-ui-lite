@@ -1,6 +1,6 @@
 {
   "name": "balm-ui-lite",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Material Design Lite + Vue",
   "homepage": "http://mdl.balmjs.com/",
   "author": [
@@ -43,12 +43,12 @@
     "url": "https://github.com/balmjs/ui-vue-lite/issues"
   },
   "devDependencies": {
-    "@vue/test-utils": "^1.0.0-beta.14",
+    "@vue/test-utils": "^1.0.0-beta.15",
     "axios": "^0.18.0",
     "babel-eslint": "^8.2.3",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
-    "balm": "^0.20.2",
+    "balm": "^0.20.3",
     "chai": "^4.1.2",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.5",
@@ -56,7 +56,7 @@
     "eslint": "^4.19.1",
     "eslint-plugin-vue": "^4.5.0",
     "gulp": "^3.9.1",
-    "jsdom": "^11.8.0",
+    "jsdom": "^11.10.0",
     "jsdom-global": "^3.0.2",
     "markdown-loader": "^2.0.2",
     "matchmedia-polyfill": "^0.3.0",
@@ -65,7 +65,7 @@
     "mocha": "^5.1.1",
     "mocha-webpack": "^1.1.0",
     "prismjs": "^1.14.0",
-    "sinon": "^4.5.0",
+    "sinon": "^5.0.5",
     "vue": "^2.5.16",
     "vue-i18n": "^7.6.0",
     "vue-loader": "^14.2.2",
@@ -76,6 +76,6 @@
   },
   "dependencies": {
     "deepmerge": "^2.1.0",
-    "flatpickr": "^4.4.4"
+    "flatpickr": "^4.4.6"
   }
 }

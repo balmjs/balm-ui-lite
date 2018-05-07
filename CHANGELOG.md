@@ -1,6 +1,16 @@
 # [BalmUI Lite](http://mdl.balmjs.com/)
 
-## 1.2.0 (2018.04.27)
+## 1.3.0 (2018.05.07)
+
+### :beetle: Bug fixes
+
+* fix components entries' build bug
+
+---
+
+## <del>1.2.0 (2018.04.27)</del>
+
+> `balm-ui-lite@1.2.0` is deprecated, upgrade to `1.3.0` please.
 
 ### :tada: New features
 
