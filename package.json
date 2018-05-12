@@ -31,8 +31,7 @@
     "dev": "gulp",
     "prod": "gulp --silent --production",
     "docs": "gulp --silent --production --docs",
-    "test":
-      "cross-env NODE_ENV=test mocha-webpack --webpack-config test/webpack-config.test.js --require babel-register --require test/setup.js"
+    "test": "cross-env NODE_ENV=test mocha-webpack --webpack-config test/webpack-config.test.js --require babel-register --require test/setup.js"
   },
   "repository": {
     "type": "git",
@@ -43,12 +42,12 @@
     "url": "https://github.com/balmjs/ui-vue-lite/issues"
   },
   "devDependencies": {
-    "@vue/test-utils": "^1.0.0-beta.15",
+    "@vue/test-utils": "^1.0.0-beta.16",
     "axios": "^0.18.0",
     "babel-eslint": "^8.2.3",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
-    "balm": "^0.20.5",
+    "balm": "^0.20.6",
     "chai": "^4.1.2",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.6",
