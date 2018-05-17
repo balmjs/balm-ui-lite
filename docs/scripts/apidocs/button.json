@@ -59,6 +59,12 @@
       "type": "Boolean",
       "default": "false",
       "description": "链接效果"
+    },
+    {
+      "name": "disabled",
+      "type": "Boolean",
+      "default": "false",
+      "description": "禁用效果"
     }
   ],
   "slots": [
