@@ -107,8 +107,8 @@ const BalmUI_NotifyPlugin = {
           console.warn(
             `[BalmUI]:Plugin $notify has not open yet. use 'this.$notify.open = true' to open the notify plugin in Vue instance.`
           );
-        if (getType(newNotify) === 'string') {
-          let content = newNotify;
+        if (getType(newNotify) !== 'object') {
+          let content = '' + newNotify;
           newNotify = { content };
         }
 

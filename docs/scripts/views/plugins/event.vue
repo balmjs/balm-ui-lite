@@ -24,7 +24,7 @@
     <h4 class="line">示例</h4>
     <p>还是最开始的例子：</p>
     <p>
-      <ui-textfield :model="formData.name" @change="balmUI.onChange('formData.name', $event.target.value.trim())" placeholder="请输入"></ui-textfield>
+      <ui-textfield :model="formData.name" @change="balmUI.onChange('formData.name', $event.target.value.trim(), confirmHandler)" placeholder="请输入"></ui-textfield>
       <br>
       你的输入：{{formData.name}}
     </p>
@@ -60,10 +60,8 @@
 
 <script>
 import snippets from '../../mixins/snippets';
-import UiTextfield from '../../../../src/scripts/components/form/textfield';
 
 export default {
-  components: { UiTextfield },
   mixins: [snippets],
   metaInfo: {
     titleTemplate: '%s - Event'
@@ -82,8 +80,10 @@ export default {
     onChange(event) {
       this.formData.name = event.target.value.trim();
     },
-    confirmHandler() {
-      alert('你点击了OK按钮！');
+    async confirmHandler() {
+      // alert('你点击了OK按钮！');
+      let result = await this.$http.get('https://jsonplaceholder.typicode.com/posts/1');
+      console.log(result);
     }
   },
   created() {
