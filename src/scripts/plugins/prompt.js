@@ -85,13 +85,13 @@ const BalmUI_PromptPlugin = {
             }
           },
           created() {
-            if (getType(customOptions) === 'string') {
-              this.options.message = customOptions;
-              value && (this.formData.value = value);
-            } else if (getType(customOptions) === 'object') {
+            if (getType(customOptions) === 'object') {
               this.options = Object.assign({}, this.options, customOptions);
               this.options.defaultValue &&
                 (this.formData.value = this.options.defaultValue);
+            } else {
+              this.options.message = `${customOptions}`;
+              value && (this.formData.value = `${value}`);
             }
 
             this.$nextTick(function() {

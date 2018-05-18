@@ -69,11 +69,12 @@ const BalmUI_AlertPlugin = {
             }
           },
           created() {
-            if (getType(customOptions) === 'string') {
-              this.options.message = customOptions;
-            } else if (getType(customOptions) === 'object') {
+            if (getType(customOptions) === 'object') {
               this.options = Object.assign({}, this.options, customOptions);
+            } else {
+              this.options.message = `${customOptions}`;
             }
+
             this.$nextTick(function() {
               document.body.appendChild(vm.$el);
               this.open = true;
