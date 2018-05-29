@@ -10,7 +10,7 @@
           <a :class="{'active': isActiveLang('en') }" @click="switchLang('en')">{{ lang.en }}</a>
         </p> -->
         <p class="welcome-issues">
-          欢迎 <a href="https://github.com/balmjs/ui-vue-lite/issues" target="_blank">ISSUE</a>
+          欢迎 <a href="https://github.com/balmjs/ui-vue-lite/issues" target="_blank" rel="noopener">ISSUE</a>
           @<strong>BalmUI Lite</strong>
         </p>
       </ui-layout-header-row>
@@ -30,6 +30,7 @@
             <a v-else-if="subitem.name === 'menuitem.icon'"
               href="http://balmjs.com/ui-vue/#/icons"
               target="_blank"
+              rel="noopener"
               :class="props.className">
               <span>{{ $t(subitem.name) }}</span>
             </a>
