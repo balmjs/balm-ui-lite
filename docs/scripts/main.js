@@ -32,7 +32,7 @@ if (isIE) {
   Vue.component(UiApidoc.name, UiApidoc);
   Vue.component(UiAccordion.name, UiAccordion);
 
-  Vue.prototype.$domain = DEBUG ? '' : 'http://mdl.balmjs.com';
+  Vue.prototype.$domain = DEBUG ? '' : '//mdl.balmjs.com';
   Vue.prototype.$http = axios;
   Vue.prototype.$prism = prismjs;
   Vue.prototype.$docs = {

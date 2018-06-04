@@ -51,7 +51,7 @@ module.exports = {
   },
   zip: 'assets.zip',
   assets: {
-    publicUrl: env.buildDocs ? 'http://mdl.balmjs.com/' : ''
+    publicUrl: env.buildDocs ? '//mdl.balmjs.com/' : ''
   },
   cache: env.buildDocs,
   useDefault: env.useDefault

@@ -4,7 +4,7 @@
 
 * 高度集成 Google 的 Material Design Lite 和 Material Design Icons，并扩展更多常用组件
 * 开箱即用的高质量 Vue 组件，插件，指令及通用方法
-* 基于 [BalmJS](http://balmjs.com/) 的工作流，支持 ES2015+
+* 基于 [BalmJS](https://balmjs.com/) 的工作流，支持 ES2015+
 * 支持三种使用方式
   * 浏览器中引入（使用 `script` 和 `link` 标签）
   * 完整模块引用：`import BalmUI from 'balm-ui-lite';`

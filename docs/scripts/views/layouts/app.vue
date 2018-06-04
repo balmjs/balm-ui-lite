@@ -28,7 +28,7 @@
           <template v-for="(subitem, index) in item.subitems">
             <label v-if="subitem.label">{{ subitem.name }}</label>
             <a v-else-if="subitem.name === 'menuitem.icon'"
-              href="http://balmjs.com/ui-vue/#/icons"
+              href="https://material.balmjs.com/#/icons"
               target="_blank"
               rel="noopener"
               :class="props.className">

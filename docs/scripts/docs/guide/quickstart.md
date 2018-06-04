@@ -2,7 +2,7 @@
 
 好的工具能让开发更加简单快捷。
 
-[Balm CLI](https://github.com/balmjs/balm-cli) 是一个命令行界面工具，它可以快速创建基于 [BalmJS](http://balmjs.com/) 的项目脚手架。
+[Balm CLI](https://github.com/balmjs/balm-cli) 是一个命令行界面工具，它可以快速创建基于 [BalmJS](https://balmjs.com/) 的项目脚手架。
 
 ## 1. 设置开发环境
 
@@ -95,9 +95,9 @@ new Vue({
 
 ### 4.3 UI 库所需的图片和字体
 
-下载 [BalmUI Lite assets](http://mdl.balmjs.com/assets.zip) 并解压，将其中的 _images_ 和 _fonts_ 文件夹复制到项目中（**`/path/to/my-project/app`**）
+下载 [BalmUI Lite assets](https://mdl.balmjs.com/assets.zip) 并解压，将其中的 _images_ 和 _fonts_ 文件夹复制到项目中（**`/path/to/my-project/app`**）
 
-> 更多使用方式和免下载资源的方法请参照 [进阶用法](http://mdl.balmjs.com/#/guide/advanced)
+> 更多使用方式和免下载资源的方法请参照 [进阶用法](https://mdl.balmjs.com/#/guide/advanced)
 
 ## 5. 开发调试
 
@@ -123,4 +123,4 @@ npm run dev
 npm run prod
 ```
 
-> [BalmJS](http://balmjs.com/) 默认会将项目构建到 `dist` 目录中，你可以根据具体业务需求修改构建和部署的配置（`my-project/config/balmrc.js`）。
+> [BalmJS](https://balmjs.com/) 默认会将项目构建到 `dist` 目录中，你可以根据具体业务需求修改构建和部署的配置（`my-project/config/balmrc.js`）。

@@ -28,7 +28,7 @@
       "name": "icon",
       "type": "String",
       "description":
-        "Material图标，请参考<a href='http://balmjs.com/ui-vue/#/icons' target='_blank'>图标库</a>"
+        "Material图标，请参考<a href='https://material.balmjs.com/#/icons' target='_blank'>图标库</a>"
     },
     {
       "name": "colored",
