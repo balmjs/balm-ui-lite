@@ -1,7 +1,6 @@
 {
-  "props": [
-    {
-      "name": "open",
+  "props": [{
+      "name": "open (v-model)",
       "type": "Boolean",
       "default": "false",
       "description": "对话框是否可见"
@@ -22,8 +21,7 @@
       "name": "transitionName",
       "type": "String",
       "default": "'default'",
-      "description":
-        "定义对话框进入/离开时动画类名。<br>你可以参照 Vue.js <a href='https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes' target='_blank'>[Custom Transition Classes]</a>"
+      "description": "定义对话框进入/离开时动画类名。<br>你可以参照 Vue.js <a href='https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes' target='_blank'>[Custom Transition Classes]</a>"
     },
     {
       "name": "enterClass",
@@ -70,14 +68,11 @@
       "description": "带滚轴的内容展示最大高度（单位：px）"
     }
   ],
-  "slots": [
-    {
-      "name": "(default)",
-      "description": "默认插槽可以插入对话框子组件"
-    }
-  ],
-  "events": [
-    {
+  "slots": [{
+    "name": "(default)",
+    "description": "默认插槽可以插入对话框子组件"
+  }],
+  "events": [{
       "name": "close",
       "type": "NOOP",
       "description": "关闭对框框事件"

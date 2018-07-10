@@ -17,9 +17,8 @@
           <div class="snippet-demo">
             <ui-autocomplete
               placeholder="try to type"
-              :model="keywords1"
+              v-model="keywords1"
               :source="source1"
-              @input="balmUI.onChange('keywords1', $event)"
               @selected="balmUI.onChange('keywords1', $event.value)">
             </ui-autocomplete>
           </div>
@@ -40,12 +39,11 @@
           <div class="snippet-demo">
             <ui-autocomplete
               placeholder="type 'a' and 'b'"
-              :model="keywords2"
+              v-model="keywords2"
               :source="source2"
               :delay="500"
               remote
               autoFocus
-              @input="balmUI.onChange('keywords2', $event)"
               @search="onSearch"
               @selected="balmUI.onChange('keywords2', $event.value)">
             </ui-autocomplete>

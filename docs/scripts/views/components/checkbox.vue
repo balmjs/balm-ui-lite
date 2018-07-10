@@ -15,13 +15,11 @@
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
             <ui-checkbox
-              :model="checked1"
-              @change="balmUI.onChange('checked1', $event)">Checkbox ({{ checked1 }})</ui-checkbox>
+              v-model="checked1">Checkbox ({{ checked1 }})</ui-checkbox>
           </div>
           <div class="snippet-demo">
             <ui-checkbox filled
-              :model="checked2"
-              @change="balmUI.onChange('checked2', $event)">Checkbox ({{ checked2 }})</ui-checkbox>
+              v-model="checked2">Checkbox ({{ checked2 }})</ui-checkbox>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
@@ -43,12 +41,10 @@
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
-          <div class="snippet-demo" v-for="(num, index) in [1, 2, 3]">
+          <div class="snippet-demo" v-for="(num, index) in [1, 2, 3]" :key="index">
             <ui-checkbox
-              :key="index"
               :value="num"
-              :model="numberOptions"
-              @change="balmUI.onChange('numberOptions', $event)">Option {{ num }}</ui-checkbox>
+              v-model="numberOptions">Option {{ num }}</ui-checkbox>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
@@ -75,12 +71,10 @@
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
-          <div class="snippet-demo" v-for="(str, index) in ['1', '2', '3']">
+          <div class="snippet-demo" v-for="(str, index) in ['1', '2', '3']" :key="index">
             <ui-checkbox
-              :key="index"
               :value="str"
-              :model="stringOptions"
-              @change="balmUI.onChange('stringOptions', $event)">Option '{{ str }}'</ui-checkbox>
+              v-model="stringOptions">Option '{{ str }}'</ui-checkbox>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>

@@ -232,6 +232,10 @@ export default {
     UiButton,
     UiCheckbox
   },
+  model: {
+    prop: 'checkedList',
+    event: EVENT_SELECTED
+  },
   props: {
     // state
     data: {

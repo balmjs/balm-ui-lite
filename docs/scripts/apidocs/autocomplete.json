@@ -1,7 +1,6 @@
 {
-  "props": [
-    {
-      "name": "model",
+  "props": [{
+      "name": "model (v-model)",
       "type": "null",
       "description": "输入框内容"
     },
@@ -44,8 +43,7 @@
       "name": "remote",
       "type": "Boolean",
       "default": "false",
-      "description":
-        "默认使用本地数据源，开启后使用远程数据源（需添加search事件）"
+      "description": "默认使用本地数据源，开启后使用远程数据源（需添加search事件）"
     },
     {
       "name": "plus",
@@ -54,14 +52,11 @@
       "description": "启用额外扩展插槽"
     }
   ],
-  "slots": [
-    {
-      "name": "plus",
-      "description": "Plus插槽可以插入额外扩展内容（需激活 plus）"
-    }
-  ],
-  "events": [
-    {
+  "slots": [{
+    "name": "plus",
+    "description": "Plus插槽可以插入额外扩展内容（需激活 plus）"
+  }],
+  "events": [{
       "name": "input",
       "type": "Function(value: string)",
       "description": "输入框内容变化时调用函数"

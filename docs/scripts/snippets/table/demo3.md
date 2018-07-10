@@ -6,10 +6,9 @@
   :tfoot="tfoot"
   :action="action"
   selectable="right"
-  :checkedList="checkedList"
+  v-model="checkedList"
   selectKeyField
   keyField="name"
-  @selected="balmUI.onChange('checkedList', $event)"
   @view="onView"
   @edit="onEdit"
   @delete="onDelete">
@@ -65,7 +64,7 @@ export default {
         null,
         {
           field: 'quantity',
-          fnName: 'sum',
+          fnName: 'sum'
         },
         {
           field: 'price',
@@ -77,24 +76,28 @@ export default {
           }
         }
       ],
-      action: [{
-        type: 'link',
-        name: 'view', // 设置了url就会直接跳转，无需操作@view
-        value: 'View',
-        url(data) {
-          return `#/user/${data.id}`;
+      action: [
+        {
+          type: 'link',
+          name: 'view', // 设置了url就会直接跳转，无需操作@view
+          value: 'View',
+          url(data) {
+            return `#/user/${data.id}`;
+          }
+        },
+        {
+          type: 'icon',
+          name: 'edit', // @edit
+          value: '<i class="fa fa-edit"></i>'
+        },
+        {
+          type: 'button',
+          name: 'delete', // @delete
+          value: 'Delete'
         }
-      }, {
-        type: 'icon',
-        name: 'edit', // @edit
-        value: '<i class="fa fa-edit"></i>'
-      }, {
-        type: 'button',
-        name: 'delete', // @delete
-        value: 'Delete'
-      }],
+      ],
       checkedList: []
-    }
+    };
   },
   methods: {
     onView(data) {

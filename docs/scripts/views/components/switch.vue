@@ -15,9 +15,7 @@
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
-            <ui-switch
-              :model="open"
-              @change="balmUI.onChange('open', $event)">{{ open ? 'On' : 'Off' }}</ui-switch>
+            <ui-switch v-model="open">{{ open ? 'On' : 'Off' }}</ui-switch>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>

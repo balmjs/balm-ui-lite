@@ -3,8 +3,7 @@
   <label>Label Text:</label>
   <ui-textfield
     placeholder="Placeholder..."
-    :model="text6"
-    @input="balmUI.onChange('text6', $event)"></ui-textfield>
+    v-model="text6"></ui-textfield>
 </p>
 ```
 

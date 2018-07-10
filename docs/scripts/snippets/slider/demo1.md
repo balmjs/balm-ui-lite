@@ -1,5 +1,5 @@
 ```html
-<ui-slider min="0" max="100" :model="value" @change="balmUI.onChange('value', $event)"></ui-slider>
+<ui-slider min="0" max="100" v-model="value"></ui-slider>
 ```
 
 ```js

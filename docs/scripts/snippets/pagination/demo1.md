@@ -2,9 +2,8 @@
 <ui-pagination
   :record-count="list.recordCount"
   :page-size="list.pageSize"
-  :page="list.page"
-  show-jumper
-  @change="balmUI.onChange('list.page', $event)">
+  v-model="list.page"
+  show-jumper>
 </ui-pagination>
 ```
 

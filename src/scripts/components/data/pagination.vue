@@ -55,6 +55,10 @@ export default {
   components: {
     UiButton
   },
+  model: {
+    prop: 'page',
+    event: EVENT_CHANGE
+  },
   props: {
     // state
     page: {

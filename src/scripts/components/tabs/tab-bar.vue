@@ -32,8 +32,11 @@ export default {
   },
   methods: {
     handleChange(index) {
-      // index: number
       this.$emit(EVENT_CHANGE, +index);
+
+      this.$parent.$nextTick(() => {
+        this.$parent.$emit(EVENT_CHANGE, +index);
+      });
     }
   }
 };

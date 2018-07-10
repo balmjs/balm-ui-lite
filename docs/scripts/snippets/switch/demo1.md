@@ -1,7 +1,5 @@
 ```html
-<ui-switch
-  :model="open"
-  @change="balmUI.onChange('open', $event)">{{ open ? 'On' : 'Off' }}</ui-switch>
+<ui-switch v-model="open">{{ open ? 'On' : 'Off' }}</ui-switch>
 ```
 
 ```js

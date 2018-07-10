@@ -17,16 +17,14 @@
             <ui-icon-toggle
               icon="format_bold"
               value="b"
-              :model="checked1"
-              @change="balmUI.onChange('checked1', $event)">
+              v-model="checked1">
             </ui-icon-toggle>
           </div>
           <div class="snippet-demo">
             <ui-icon-toggle
               icon="format_italic"
               value="i"
-              :model="checked2"
-              @change="balmUI.onChange('checked2', $event)">
+              v-model="checked2">
             </ui-icon-toggle>
           </div>
           <div class="snippet-demo-padding"></div>
@@ -52,16 +50,14 @@
           <div class="snippet-demo">
             <ui-icon-toggle
               value="qr"
-              :model="checked3"
-              @change="balmUI.onChange('checked3', $event)">
+              v-model="checked3">
               <i class="fa fa-qrcode"></i>
             </ui-icon-toggle>
           </div>
           <div class="snippet-demo">
             <ui-icon-toggle
               value="tv"
-              :model="checked3"
-              @change="balmUI.onChange('checked3', $event)">
+              v-model="checked3">
               <i class="fa fa-tv"></i>
             </ui-icon-toggle>
           </div>

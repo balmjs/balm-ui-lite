@@ -12,9 +12,8 @@
       <div class="snippet-demos">
         <div class="snippet-demo-padding"></div>
         <div class="snippet-demo">
-          <ui-selectmenu :options="options" :model="formData.selected"
+          <ui-selectmenu :options="options" v-model="formData.selected"
             optionKey="key" optionValue="value"
-            @change="balmUI.onChange('formData.selected', $event)"
             @selected="balmUI.onChange('currentOption', $event)"></ui-selectmenu>
         </div>
         <div class="snippet-demo-padding"></div>
@@ -43,10 +42,9 @@
             @change="balmUI.onChange('formData.province', $event, initCitySelectd($event))"></ui-selectmenu>
         </div>
         <div class="snippet-demo">
-          <ui-selectmenu :options="cities" :model="formData.city"
+          <ui-selectmenu :options="cities" v-model="formData.city"
             optionKey="key" optionValue="value"
-            defaultKey="0" defaultValue="Select city..."
-            @change="balmUI.onChange('formData.city', $event)"></ui-selectmenu>
+            defaultKey="0" defaultValue="Select city..."></ui-selectmenu>
         </div>
         <div class="snippet-demo-padding"></div>
       </div>

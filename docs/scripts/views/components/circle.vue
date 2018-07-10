@@ -11,14 +11,14 @@
     <h4>示例</h4>
     <div class="demo">
       <div class="circle-container">
-        <ui-circle 
+        <ui-circle
           size="200px"
           :animate="animate"
           :stroke="stroke"
           :strokeWidth="strokeWidth"
           :progress="progress"
           :progressWidth="progressWidth"
-          :progressColor="progressColor" 
+          :progressColor="progressColor"
           :strokeLinecap="strokeLinecap">
           {{progress}} %
         </ui-circle>
@@ -26,11 +26,11 @@
       <div class="operate-panel">
         <p>
           启动过渡 [<strong>animate</strong>]:
-          <br> 
-          <ui-checkbox :model="animate" @change="balmUI.onChange('animate', $event)"></ui-checkbox>
+          <br>
+          <ui-checkbox v-model="animate"></ui-checkbox>
         </p>
         <p>
-          进度条 [<strong>progress</strong>]: 
+          进度条 [<strong>progress</strong>]:
           <br>
           <input type="range" min="0" max="100" v-model="progress">
         </p>

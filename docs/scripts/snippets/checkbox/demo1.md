@@ -1,13 +1,9 @@
 ```html
-<ui-checkbox
-  :model="checked1"
-  @change="balmUI.onChange('checked1', $event)">
+<ui-checkbox v-model="checked1">
   Checkbox ({{ checked1 }})
 </ui-checkbox>
 
-<ui-checkbox
-  :model="checked2"
-  @change="balmUI.onChange('checked2', $event)">
+<ui-checkbox v-model="checked2">
   Checkbox ({{ checked2 }})
 </ui-checkbox>
 ```

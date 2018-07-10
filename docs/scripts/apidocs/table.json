@@ -1,6 +1,5 @@
 {
-  "props": [
-    {
+  "props": [{
       "name": "data",
       "type": "Array",
       "default": "[]",
@@ -49,7 +48,7 @@
       "description": "启用表格选框列 (设置 'left' 或 'right')"
     },
     {
-      "name": "checkedList",
+      "name": "checkedList (v-model)",
       "type": "Array",
       "default": "[]",
       "description": "表格勾选结果"
@@ -58,8 +57,7 @@
       "name": "selectKeyField",
       "type": "Boolean",
       "default": "false",
-      "description":
-        "启用 <b>自定义字段内容</b> 代替 <b>表格行索引值</b> 作为表格勾选结果"
+      "description": "启用 <b>自定义字段内容</b> 代替 <b>表格行索引值</b> 作为表格勾选结果"
     },
     {
       "name": "keyField",
@@ -80,11 +78,9 @@
       "description": "启用表格扩展行"
     }
   ],
-  "slots": [
-    {
+  "slots": [{
       "name": "(default)",
-      "description":
-        "默认插槽可以插入表格扩展行内容 (需激活 hasDetailView 属性)"
+      "description": "默认插槽可以插入表格扩展行内容 (需激活 hasDetailView 属性)"
     },
     {
       "name": "caption",
@@ -110,8 +106,7 @@
       "props": "data"
     }
   ],
-  "events": [
-    {
+  "events": [{
       "name": "(custom action)",
       "type": "N/A",
       "description": "点击表格操作按钮时触发自定义函数"

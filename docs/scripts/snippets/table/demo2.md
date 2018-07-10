@@ -5,8 +5,7 @@
   :tbody="tbody"
   :action="action"
   selectable="left"
-  :checkedList="checkedList"
-  @selected="balmUI.onChange('checkedList', $event)"
+  v-model="checkedList"
   @view="onView"
   @edit="onEdit"
   @delete="onDelete">
@@ -57,24 +56,28 @@ export default {
           }
         }
       ],
-      action: [{
-        type: 'link',
-        name: 'view', // 设置了url就会直接跳转，无需操作@view
-        value: 'View',
-        url(data) {
-          return `#/user/${data.id}`;
+      action: [
+        {
+          type: 'link',
+          name: 'view', // 设置了url就会直接跳转，无需操作@view
+          value: 'View',
+          url(data) {
+            return `#/user/${data.id}`;
+          }
+        },
+        {
+          type: 'icon',
+          name: 'edit', // @edit
+          value: '<i class="fa fa-edit"></i>'
+        },
+        {
+          type: 'button',
+          name: 'delete', // @delete
+          value: 'Delete'
         }
-      }, {
-        type: 'icon',
-        name: 'edit', // @edit
-        value: '<i class="fa fa-edit"></i>'
-      }, {
-        type: 'button',
-        name: 'delete', // @delete
-        value: 'Delete'
-      }],
+      ],
       checkedList: []
-    }
+    };
   },
   methods: {
     onView(data) {

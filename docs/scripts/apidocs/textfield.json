@@ -1,7 +1,6 @@
 {
-  "props": [
-    {
-      "name": "model",
+  "props": [{
+      "name": "model (v-model)",
       "type": "null",
       "description": "输入框内容"
     },
@@ -120,8 +119,7 @@
       "description": "启用特殊扩展插槽（如&lt;ui-autocomplete&gt;）"
     }
   ],
-  "slots": [
-    {
+  "slots": [{
       "name": "(default)",
       "description": "默认插槽可以插入标签文字"
     },
@@ -142,8 +140,7 @@
       "description": "Expand插槽可以插入特殊扩展内容（需激活 expand）"
     }
   ],
-  "events": [
-    {
+  "events": [{
       "name": "focus",
       "type": "Function(event: object)",
       "description": "输入框聚焦时回调函数"
@@ -174,8 +171,7 @@
       "description": "按下回车的回调函数"
     }
   ],
-  "sass": [
-    {
+  "sass": [{
       "var": "$input-text-label-color",
       "description": "标签或占位符的颜色"
     },

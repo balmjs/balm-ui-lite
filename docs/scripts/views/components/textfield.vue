@@ -16,16 +16,14 @@
           <div class="snippet-demo">
             <ui-textfield id="sample1_1" alignRight
               label="Text..."
-              :model="text1_1"
-              @input="balmUI.onChange('text1_1', $event)"></ui-textfield>
+              v-model="text1_1"></ui-textfield>
           </div>
           <div class="snippet-demo">
             <ui-textfield id="sample1_2"
               label="Number..."
               pattern="-?[0-9]*(\.[0-9]+)?"
               error="Input is not a number!"
-              :model="text1_2"
-              @input="balmUI.onChange('text1_2', $event)"></ui-textfield>
+              v-model="text1_2"></ui-textfield>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
@@ -45,8 +43,7 @@
             <ui-textfield id="sample2"
               labelFloating
               label="Text with floating label"
-              :model="text3"
-              @input="balmUI.onChange('text3', $event)"></ui-textfield>
+              v-model="text2"></ui-textfield>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
@@ -67,8 +64,7 @@
               type="textarea"
               label="Text lines..."
               :rows="3"
-              :model="text4"
-              @input="balmUI.onChange('text4', $event)"></ui-textfield>
+              v-model="text3"></ui-textfield>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
@@ -89,8 +85,7 @@
               <ui-textfield id="sample4"
                 expandable
                 placeholder="Expandable Input"
-                :model="text4"
-                @input="balmUI.onChange('text4', $event)">
+                v-model="text4">
                   <!-- <template slot="icon">
                     <ui-icon>mood</ui-icon>
                   </template> -->
@@ -115,8 +110,7 @@
             <ui-textfield id="sample5_1"
               plus
               label="Plus Text..."
-              :model="text5_1"
-              @input="balmUI.onChange('text5_1', $event)">
+              v-model="text5_1">
               <template slot="plus">
                 <a href="javascript:void(0)">Link</a>
               </template>
@@ -126,8 +120,7 @@
             <ui-textfield id="sample5_2"
               plus
               label="Plus Text..."
-              :model="text5_2"
-              @input="balmUI.onChange('text5_2', $event)">
+              v-model="text5_2">
               <template slot="plus">
                 <ui-button link @click="$alert('Do something')">Button</ui-button>
               </template>
@@ -150,8 +143,7 @@
             <label>Label Text:</label>
             <ui-textfield
               placeholder="Placeholder..."
-              :model="text6"
-              @input="balmUI.onChange('text6', $event)"></ui-textfield>
+              v-model="text6"></ui-textfield>
           </p>
         </div>
       </div>

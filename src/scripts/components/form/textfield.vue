@@ -82,6 +82,10 @@ const EVENT_KEYDOWN_ENTER = 'enter';
 export default {
   name: 'ui-textfield',
   mixins: [mdlMixin],
+  model: {
+    prop: 'model',
+    event: EVENT_INPUT
+  },
   props: {
     // state
     model: null,

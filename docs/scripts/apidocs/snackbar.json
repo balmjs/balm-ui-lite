@@ -1,13 +1,12 @@
 {
-  "props": [
-    {
+  "props": [{
       "name": "type",
       "type": "Number, String",
       "default": "0",
       "description": "提示框类型 { 0: 'toast', 1: 'snackbar' }"
     },
     {
-      "name": "active",
+      "name": "active (v-model)",
       "type": "Boolean",
       "default": "false",
       "description": "开启状态"
@@ -38,11 +37,9 @@
       "description": "动作按钮文字"
     }
   ],
-  "events": [
-    {
-      "name": "done",
-      "type": "NOOP",
-      "description": "默认关闭时的回调函数"
-    }
-  ]
+  "events": [{
+    "name": "done",
+    "type": "NOOP",
+    "description": "默认关闭时的回调函数"
+  }]
 }

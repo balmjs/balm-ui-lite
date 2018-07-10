@@ -1,7 +1,6 @@
 {
-  "props": [
-    {
-      "name": "model",
+  "props": [{
+      "name": "model (v-model)",
       "type": "Number",
       "default": "0",
       "description": "设置当前取值"
@@ -31,15 +30,12 @@
       "description": "禁用状态"
     }
   ],
-  "events": [
-    {
-      "name": "change",
-      "type": "Function(newValue: number)",
-      "description": "当滑动条的值发生改变时触发事件"
-    }
-  ],
-  "sass": [
-    {
+  "events": [{
+    "name": "change",
+    "type": "Function(newValue: number)",
+    "description": "当滑动条的值发生改变时触发事件"
+  }],
+  "sass": [{
       "var": "$range-bg-color",
       "description": "滑动条轨道的颜色"
     },

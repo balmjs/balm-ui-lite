@@ -40,6 +40,10 @@ export default {
   components: {
     UiDatepicker
   },
+  model: {
+    prop: 'model',
+    event: EVENT_CHANGE
+  },
   props: {
     // state
     model: null,

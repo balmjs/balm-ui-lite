@@ -5,14 +5,13 @@
       <div class="form-item">
         <ui-textfield
           label="Input..."
-          :model="formData.name"
-          @input="balmUI.onChange('formData.name', $event)"></ui-textfield>
+          v-model="formData.name"></ui-textfield>
       </div>
       <div class="form-action">
         <ui-button @click="submit">Submit</ui-button>
       </div>
     </fieldset>
-    
+
       <div style="width: 50%;" v-show="false">
         <ui-file multiple preview @change="onChange"></ui-file>
         <ul>

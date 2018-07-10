@@ -30,8 +30,7 @@
       :tbody="table2.tbody"
       :action="table2.action"
       selectable="left"
-      :checkedList="table.checkedList"
-      @selected="balmUI.onChange('table.checkedList', $event)"
+      v-model="table.checkedList"
       @view="onView"
       @edit="onEdit"
       @delete="onDelete">
@@ -50,10 +49,9 @@
       :tfoot="table2.tfoot"
       :action="table2.action"
       selectable="right"
-      :checkedList="table2.checkedList"
+      v-model="table2.checkedList"
       selectKeyField
       keyField="name"
-      @selected="balmUI.onChange('table2.checkedList', $event)"
       @view="onView"
       @edit="onEdit"
       @delete="onDelete">

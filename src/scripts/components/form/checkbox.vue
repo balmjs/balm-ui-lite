@@ -11,7 +11,6 @@
     <span v-if="!hideLabel" class="mdl-checkbox__label">
       <slot>{{ label }}</slot>
     </span>
-    </span>
   </label>
 </template>
 
@@ -26,6 +25,10 @@ const EVENT_CHANGE = 'change';
 export default {
   name: 'ui-checkbox',
   mixins: [mdlMixin],
+  model: {
+    prop: 'model',
+    event: EVENT_CHANGE
+  },
   props: {
     // state
     model: {

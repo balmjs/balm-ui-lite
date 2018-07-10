@@ -1,8 +1,7 @@
 <template>
   <button :class="className" :type="type" @click="handleClick">
-    <slot>
-      <i v-if="icon" class="material-icons">{{ icon }}</i>
-    </slot>
+    <i v-if="icon" class="material-icons">{{ icon }}</i>
+    <slot></slot>
   </button>
 </template>
 
@@ -35,10 +34,7 @@ export default {
       type: Boolean,
       default: false
     },
-    icon: {
-      type: [Boolean, String],
-      default: false
-    },
+    icon: String,
     colored: {
       type: Boolean,
       default: false

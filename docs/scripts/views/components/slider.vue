@@ -16,12 +16,12 @@
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
             <div class="snippet-demo-container demo-slider demo-slider__slider-default">
-              <ui-slider min="0" max="100" :model="value1" @change="balmUI.onChange('value1', $event)"></ui-slider>
+              <ui-slider min="0" max="100" v-model="value1"></ui-slider>
             </div>
           </div>
           <div class="snippet-demo">
             <div class="snippet-demo-container demo-slider demo-slider__slider-starting-value">
-              <ui-slider min="0" max="100" :model="value2" @change="balmUI.onChange('value2', $event)"></ui-slider>
+              <ui-slider min="0" max="100" v-model="value2"></ui-slider>
             </div>
           </div>
           <div class="snippet-demo-padding"></div>

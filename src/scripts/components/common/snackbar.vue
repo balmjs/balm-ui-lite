@@ -17,11 +17,16 @@ import getType from '../../helpers/typeof';
 const TYPES = ['toast', 'snackbar'];
 const TYPE_TOAST = 0;
 const TYPE_SNACKBAR = 1;
+const EVENT_CHANGE = 'change';
 const EVENT_DONE = 'done';
 
 export default {
   name: 'ui-snackbar',
   mixins: [mdlMixin],
+  model: {
+    prop: 'active',
+    event: EVENT_CHANGE
+  },
   props: {
     // state
     active: {
@@ -91,6 +96,7 @@ export default {
 
       setTimeout(() => {
         this.currentActive = false;
+        this.$emit(EVENT_CHANGE, false);
         this.$emit(EVENT_DONE);
       }, this.timeout);
     }

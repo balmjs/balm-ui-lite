@@ -1,7 +1,6 @@
 {
-  "props": [
-    {
-      "name": "model",
+  "props": [{
+      "name": "model (v-model)",
       "type": "Boolean",
       "default": "",
       "description": "当前开关的状态值"
@@ -37,21 +36,16 @@
       "description": "无波纹效果"
     }
   ],
-  "slots": [
-    {
-      "name": "(default)",
-      "description": "默认插槽可以插入标签内容"
-    }
-  ],
-  "events": [
-    {
-      "name": "change",
-      "type": "Function(checked: boolean)",
-      "description": "切换开关时回调函数"
-    }
-  ],
-  "sass": [
-    {
+  "slots": [{
+    "name": "(default)",
+    "description": "默认插槽可以插入标签内容"
+  }],
+  "events": [{
+    "name": "change",
+    "type": "Function(checked: boolean)",
+    "description": "切换开关时回调函数"
+  }],
+  "sass": [{
       "var": "$switch-thumb-color",
       "description": "开关开启时的按钮的颜色"
     },

@@ -1,11 +1,15 @@
 export default {
+  model: {
+    prop: 'model',
+    event: 'change'
+  },
   props: {
     // state
     model: null,
     // ui attributes
     options: {
       type: Array,
-      default() {
+      default () {
         return [];
       }
     },

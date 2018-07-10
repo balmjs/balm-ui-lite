@@ -4,8 +4,7 @@
   toggle
   clear
   :config="config"
-  :model="date"
-  @change="balmUI.onChange('date', $event)">
+  v-model="date">
 </ui-datepicker>
 ```
 

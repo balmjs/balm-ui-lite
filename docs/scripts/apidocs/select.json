@@ -1,7 +1,6 @@
 {
-  "props": [
-    {
-      "name": "model",
+  "props": [{
+      "name": "model (v-model)",
       "type": "null",
       "description": "当前选中项的key值"
     },
@@ -36,8 +35,7 @@
       "description": "默认选项value值"
     }
   ],
-  "events": [
-    {
+  "events": [{
       "name": "change",
       "type": "Function(optionKey: number | string)",
       "description": "选中 option 时调用函数"
@@ -48,8 +46,7 @@
       "description": "选中 option 时调用函数"
     }
   ],
-  "sass": [
-    {
+  "sass": [{
       "var": "$select-width",
       "description": "下拉框长度"
     },

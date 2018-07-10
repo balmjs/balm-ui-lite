@@ -18,7 +18,7 @@
         <ui-markdown :code="code[1]"></ui-markdown>
       </ui-accordion>
     </div>
-    <ui-dialog :open="show1" @close="balmUI.onClose('show1')" @confirm="onConfirm">
+    <ui-dialog v-model="show1" @confirm="onConfirm">
       <ui-dialog-title>
         <h4>Allow data collection?</h4>
       </ui-dialog-title>
@@ -36,7 +36,7 @@
         <ui-markdown :code="code[2]"></ui-markdown>
       </ui-accordion>
     </div>
-    <ui-dialog :open="show2" @close="balmUI.onHide('show2')" @confirm="onConfirm">
+    <ui-dialog v-model="show2" @confirm="onConfirm">
       <ui-dialog-content>
         <p>Allow this site to collect usage data to improve your experience?</p>
       </ui-dialog-content>
@@ -53,9 +53,9 @@
         <ui-markdown :code="code[3]"></ui-markdown>
       </ui-accordion>
     </div>
-    <ui-dialog maskClosable :open="show3" @close="balmUI.onClose('show3')">
+    <ui-dialog maskClosable v-model="show3">
       <ui-dialog-content>
-        <p v-for="i in 20">Some content {{ i }}</p>
+        <p v-for="i in 20" :key="i">Some content {{ i }}</p>
       </ui-dialog-content>
     </ui-dialog>
 

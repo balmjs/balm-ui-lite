@@ -2,8 +2,7 @@
 <ui-datepicker
   placeholder="Select Date Range.."
   :config="config"
-  :model="date"
-  @change="balmUI.onChange('date', $event)"></ui-datepicker>
+  v-model="date"></ui-datepicker>
 ```
 
 ```js

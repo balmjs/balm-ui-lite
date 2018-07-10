@@ -18,6 +18,10 @@ const EVENT_CHANGE = 'change';
 export default {
   name: 'ui-slider',
   mixins: [mdlMixin],
+  model: {
+    prop: 'model',
+    event: EVENT_CHANGE
+  },
   props: {
     // state
     model: {

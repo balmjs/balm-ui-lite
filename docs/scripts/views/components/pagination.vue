@@ -13,9 +13,8 @@
       <ui-pagination
         :record-count="list1.recordCount"
         :page-size="list1.pageSize"
-        :page="list1.page"
-        show-jumper
-        @change="balmUI.onChange('list1.page', $event)">
+        v-model="list1.page"
+        show-jumper>
       </ui-pagination>
     </div>
     <ui-accordion>
@@ -28,21 +27,19 @@
       <ui-pagination
         :record-count="list2.recordCount"
         :page-size="list2.pageSize"
-        :page="list2.page"
+        v-model="list2.page"
         show-record
         show-jumper
         jumper-before="Goto"
         jumper-after="page"
-        jumper-button="Go"
-        @change="balmUI.onChange('list2.page', $event)">
+        jumper-button="Go">
         <template slot-scope="props">
           Showing {{ props.recordCount }} records,
           <ui-selectmenu
             :options="pageSizeList"
             optionValue="value"
             optionKey="key"
-            :model="list2.pageSize"
-            @change="balmUI.onChange('list2.pageSize', $event)">
+            v-model="list2.pageSize">
             {{ props.pageSize }}
           </ui-selectmenu> records / page,
           {{ props.pageCount }} total pages
@@ -59,10 +56,9 @@
       <ui-pagination mini
         :record-count="list3.recordCount"
         :page-size="list3.pageSize"
-        :page="list3.page"
+        v-model="list3.page"
         prev="Prev"
-        next="Next"
-        @change="balmUI.onChange('list3.page', $event)">
+        next="Next">
         <span>{{ list3.page }}</span>
       </ui-pagination>
     </div>

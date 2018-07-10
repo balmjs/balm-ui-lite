@@ -2,8 +2,7 @@
 <ui-textfield id="sample4"
   expandable
   placeholder="Expandable Input"
-  :model="text4"
-  @input="balmUI.onChange('text4', $event)">
+  v-model="text4">
   <!-- <template slot="icon">
     <ui-icon>mood</ui-icon>
   </template> -->

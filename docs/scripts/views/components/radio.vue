@@ -16,14 +16,12 @@
           <div class="snippet-demo">
             <ui-radio name="sex"
               value="M"
-              :model="gender"
-              @change="balmUI.onChange('gender', $event)">Male</ui-radio>
+              v-model="gender">Male</ui-radio>
           </div>
           <div class="snippet-demo">
             <ui-radio name="sex"
               value="F"
-              :model="gender"
-              @change="balmUI.onChange('gender', $event)">Female</ui-radio>
+              v-model="gender">Female</ui-radio>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>

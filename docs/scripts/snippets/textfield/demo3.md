@@ -3,8 +3,7 @@
   type="textarea"
   label="Text lines..."
   :rows="3"
-  :model="text3"
-  @input="balmUI.onChange('text3', $event)"></ui-textfield>
+  v-model="text3"></ui-textfield>
 ```
 
 ```js

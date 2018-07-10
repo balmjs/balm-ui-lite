@@ -11,10 +11,9 @@
     <div class="snippet-group">
       <div class="snippet-demo">
         <ui-rangepicker
-          :model="date1"
+          v-model="date1"
           startPlaceholder="Start date"
-          endPlaceholder="End date"
-          @change="balmUI.onChange('date1', $event)"></ui-rangepicker>
+          endPlaceholder="End date"></ui-rangepicker>
         Choose date range: {{ date1 }}
       </div>
       <ui-accordion>
@@ -26,11 +25,10 @@
     <div class="snippet-group">
       <div class="snippet-demo">
         <ui-rangepicker
-          :model="date2"
+          v-model="date2"
           :options="options"
           startPlaceholder="Start date"
-          endPlaceholder="End date"
-          @change="balmUI.onChange('date2', $event)"></ui-rangepicker>
+          endPlaceholder="End date"></ui-rangepicker>
         <p>Choose date range: {{ date2 }}</p>
       </div>
       <ui-accordion>

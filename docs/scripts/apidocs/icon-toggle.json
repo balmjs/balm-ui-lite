@@ -1,7 +1,6 @@
 {
-  "props": [
-    {
-      "name": "model",
+  "props": [{
+      "name": "model (v-model)",
       "type": "Array, String, Number, Boolean",
       "default": "false",
       "description": "当前选中的选项值"
@@ -37,21 +36,16 @@
       "description": "无波纹效果"
     }
   ],
-  "slots": [
-    {
-      "name": "(default)",
-      "description": "默认插槽可以插入图标内容"
-    }
-  ],
-  "events": [
-    {
-      "name": "change",
-      "type": "Function(checked: boolean | array)",
-      "description": "选项变化时的回调函数"
-    }
-  ],
-  "sass": [
-    {
+  "slots": [{
+    "name": "(default)",
+    "description": "默认插槽可以插入图标内容"
+  }],
+  "events": [{
+    "name": "change",
+    "type": "Function(checked: boolean | array)",
+    "description": "选项变化时的回调函数"
+  }],
+  "sass": [{
       "var": "$icon-toggle-color",
       "description": "未选中的颜色"
     },

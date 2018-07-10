@@ -16,8 +16,8 @@
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
             <div class="snippet-demo-container demo-tabs demo-tabs__tabs">
-              <ui-tabs :active="tab">
-                <ui-tab-bar @change="balmUI.onChange('tab', $event)">
+              <ui-tabs v-model="tab">
+                <ui-tab-bar>
                   <ui-tab v-for="(item, index) in ['Tab1', 'Tab2', 'Tab3']" :key="index">
                     {{ item }}
                   </ui-tab>

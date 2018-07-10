@@ -11,6 +11,10 @@ const CLASSNAME_ACTIVE = 'is-active';
 
 export default {
   name: 'ui-tabs',
+  model: {
+    prop: 'active',
+    event: 'change'
+  },
   props: {
     // state
     active: {

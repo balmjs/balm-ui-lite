@@ -24,6 +24,10 @@ const EVENT_CHANGE = 'change';
 export default {
   name: 'ui-radio',
   mixins: [mdlMixin],
+  model: {
+    prop: 'model',
+    event: EVENT_CHANGE
+  },
   props: {
     // state
     model: {

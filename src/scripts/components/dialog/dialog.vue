@@ -18,11 +18,16 @@
 
 <script>
 const CLASSNAME_LOCK = 'mdl-dialog-scroll-lock';
+const EVENT_CHANGE = 'change';
 const EVENT_CLOSE = 'close';
 const EVENT_CONFIRM = 'confirm';
 
 export default {
   name: 'ui-dialog',
+  model: {
+    prop: 'open',
+    event: EVENT_CHANGE
+  },
   props: {
     // state
     open: {
@@ -113,7 +118,11 @@ export default {
   },
   methods: {
     handleClose() {
-      this.$emit(EVENT_CLOSE);
+      if (this.closable) {
+        this.$emit(EVENT_CHANGE, false);
+      } else {
+        this.$emit(EVENT_CLOSE);
+      }
     },
     handleBackdrop() {
       if (this.maskClosable) {

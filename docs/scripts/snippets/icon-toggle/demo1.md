@@ -2,15 +2,13 @@
 <ui-icon-toggle
   icon="format_bold"
   value="b"
-  :model="checked1"
-  @change="balmUI.onChange('checked1', $event)">
+  v-model="checked1">
 </ui-icon-toggle>
 
 <ui-icon-toggle
   icon="format_italic"
   value="i"
-  :model="checked2"
-  @change="balmUI.onChange('checked2', $event)">
+  v-model="checked2">
 </ui-icon-toggle>
 ```
 

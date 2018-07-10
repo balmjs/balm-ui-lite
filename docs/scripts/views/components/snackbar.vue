@@ -13,12 +13,11 @@
     <div class="snippet-demo">
       <ui-button raised colored @click="balmUI.onShow('snackbar.active')">Show Snackbar</ui-button>
       <ui-snackbar :type="1"
-        :active="snackbar.active"
+        v-model="snackbar.active"
         :message="snackbar.message"
         :timeout="3000"
         :actionHandler="actionHandler"
-        actionText="Undo"
-        @done="balmUI.onHide('snackbar.active')"></ui-snackbar>
+        actionText="Undo"></ui-snackbar>
     </div>
     <ui-accordion>
       <ui-markdown :code="code[1]"></ui-markdown>
@@ -27,9 +26,8 @@
     <div class="snippet-demo">
       <ui-button raised colored @click="balmUI.onShow('toast.active')">Show Toast</ui-button>
       <ui-snackbar
-        :active="toast.active"
-        :message="toast.message"
-        @done="balmUI.onHide('toast.active')"></ui-snackbar>
+        v-model="toast.active"
+        :message="toast.message"></ui-snackbar>
     </div>
     <ui-accordion>
       <ui-markdown :code="code[2]"></ui-markdown>

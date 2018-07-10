@@ -1,14 +1,12 @@
-
 ```html
 <ui-button raised @click="balmUI.onShow('active')">Show Snackbar</ui-button>
 
 <ui-snackbar :type="1"
-  :active="active"
+  v-model="active"
   :message="message"
   :timeout="3000"
   :actionHandler="actionHandler"
-  actionText="Undo"
-  @done="balmUI.onHide('active')"></ui-snackbar>
+  actionText="Undo"></ui-snackbar>
 ```
 
 ```js

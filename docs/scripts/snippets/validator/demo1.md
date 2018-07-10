@@ -1,15 +1,13 @@
 ```html
 <p>
-  <ui-textfield 
-  :model="formData.name" 
-  placeholder="输入名字" 
-  @input="balmUI.onChange('formData.name', $event)"></ui-textfield>
+  <ui-textfield
+  v-model="formData.name"
+  placeholder="输入名字"></ui-textfield>
 </p>
 <p>
-  <ui-textfield 
-  :model="formData.number"  
-  placeholder="输入工号" 
-  @input="balmUI.onChange('formData.number', $event)"></ui-textfield>
+  <ui-textfield
+  v-model="formData.number"  
+  placeholder="输入工号"></ui-textfield>
 </p>
 <p>
   <ui-button raised colored @click="validate">验证</ui-button>
@@ -34,36 +32,36 @@ export default {
       label: '工号',
       validator: 'required, number, customRule',
       number: {
-        validate (value) {
+        validate(value) {
           return /^\d+$/g.test(value);
         },
         message: '%s必须是数字'
       },
       customRule: {
-        validate (value) {
+        validate(value) {
           return value.length > 5;
         },
         message: '%s不能少于6位'
       }
-    },
+    }
   },
-  data () {
+  data() {
     return {
       formData: {
         name: '',
-        number: '',
+        number: ''
       },
       messages: [],
-      allValid: false,
+      allValid: false
     };
   },
   methods: {
-    validate () {
+    validate() {
       let res = this.$validate(this.formData);
-      let {isValid, messages} = res;
+      let { isValid, messages } = res;
       this.allValid = isValid;
       this.messages = messages;
     }
   }
-}
+};
 ```

@@ -35,6 +35,10 @@ export default {
   components: {
     UiTextfield
   },
+  model: {
+    prop: 'model',
+    event: EVENT_CHANGE
+  },
   props: {
     // state
     model: null,

@@ -24,10 +24,10 @@
       除了应用预设规则之外，插件还支持临时插入自定义规则，看下面的例子：
     </p>
     <p>
-      <ui-textfield :model="formData.name" placeholder="输入名字" @input="balmUI.onChange('formData.name', $event)"></ui-textfield>
+      <ui-textfield v-model="formData.name" placeholder="输入名字"></ui-textfield>
     </p>
     <p>
-      <ui-textfield :model="formData.number"  placeholder="输入工号" @input="balmUI.onChange('formData.number', $event)"></ui-textfield>
+      <ui-textfield v-model="formData.number"  placeholder="输入工号"></ui-textfield>
     </p>
     <p>
       <ui-button raised colored @click="validate">验证</ui-button>

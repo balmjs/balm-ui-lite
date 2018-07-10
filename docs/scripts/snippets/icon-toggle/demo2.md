@@ -1,15 +1,13 @@
 ```html
 <ui-icon-toggle
   value="qr"
-  :model="checked"
-  @change="balmUI.onChange('checked', $event)">
+  v-model="checked">
   <i class="fa fa-qrcode"></i>
 </ui-icon-toggle>
 
 <ui-icon-toggle
   value="tv"
-  :model="checked"
-  @change="balmUI.onChange('checked', $event)">
+  v-model="checked">
   <i class="fa fa-tv"></i>
 </ui-icon-toggle>
 ```

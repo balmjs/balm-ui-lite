@@ -18,8 +18,7 @@
               toggle
               clear
               :config="config1"
-              :model="date1"
-              @change="balmUI.onChange('date1', $event)">
+              v-model="date1">
             </ui-datepicker>
           </div>
           <div class="snippet-demo-padding"></div>
@@ -41,8 +40,7 @@
               toggle
               clear
               :config="config2"
-              :model="date2"
-              @change="balmUI.onChange('date2', $event)">
+              v-model="date2">
               <template slot="toggle">
                 <i class="fa fa-calendar"></i>
               </template>
@@ -68,8 +66,7 @@
             <ui-datepicker
               placeholder="Select Date Range.."
               :config="config3"
-              :model="date3"
-              @change="balmUI.onChange('date3', $event)"></ui-datepicker>
+              v-model="date3"></ui-datepicker>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
@@ -88,8 +85,7 @@
             <ui-datepicker
               placeholder="Select Multi Date.."
               :config="config4"
-              :model="date4"
-              @change="balmUI.onChange('date4', $event)" ></ui-datepicker>
+              v-model="date4"></ui-datepicker>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>

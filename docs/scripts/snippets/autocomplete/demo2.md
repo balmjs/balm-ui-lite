@@ -1,12 +1,11 @@
 ```html
 <ui-autocomplete
   placeholder="type 'a' and 'b'"
-  :model="keywords"
+  v-model="keywords"
   :source="source"
   :delay="500"
   remote
   autoFocus
-  @input="balmUI.onChange('keywords', $event)"
   @search="onSearch"
   @selected="balmUI.onChange('keywords', $event.value)">
 </ui-autocomplete>

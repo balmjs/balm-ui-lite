@@ -1,7 +1,6 @@
 {
-  "props": [
-    {
-      "name": "active",
+  "props": [{
+      "name": "active (v-model)",
       "type": "Number",
       "default": "0",
       "description": "当前选项卡的索引值"
@@ -13,14 +12,11 @@
       "description": "使用固定选项卡代替默认的滚动选项卡"
     }
   ],
-  "slots": [
-    {
-      "name": "(default)",
-      "description": "默认插槽可以插入选项卡容器和标签页子组件"
-    }
-  ],
-  "sass": [
-    {
+  "slots": [{
+    "name": "(default)",
+    "description": "默认插槽可以插入选项卡容器和标签页子组件"
+  }],
+  "sass": [{
       "var": "$tab-highlight-color",
       "description": "选项卡激活时底部状态的颜色"
     },

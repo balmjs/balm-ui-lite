@@ -2,7 +2,7 @@
 <ui-pagination mini
   :record-count="list.recordCount"
   :page-size="list.pageSize"
-  :page="list.page"
+  v-model="list.page"
   prev="Prev"
   next="Next">
   <span>{{ list.page }}</span>

@@ -1,9 +1,8 @@
 ```html
 <ui-autocomplete
   placeholder="try to type"
-  :model="keywords"
+  v-model="keywords"
   :source="source"
-  @input="balmUI.onChange('keywords', $event)"
   @selected="balmUI.onChange('keywords', $event.value)">
 </ui-autocomplete>
 ```

@@ -1,7 +1,7 @@
 <template>
   <header class="mdl-dialog__title">
     <slot></slot>
-    <i class="material-icons close" @click="$parent.handleClose">close</i>
+    <i class="material-icons close" @click="$parent.$emit('change', false)">close</i>
   </header>
 </template>
 
