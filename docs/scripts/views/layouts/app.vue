@@ -24,22 +24,23 @@
       </ui-layout-title>
       <ui-nav v-for="(item, index) in menu" :key="index">
         <template slot-scope="props">
-          <h5>{{ $t(item.name) }}</h5>
+          <h5>{{ T_CN.menu[item.name] }}</h5>
           <template v-for="(subitem, index) in item.subitems">
-            <label v-if="subitem.label">{{ subitem.name }}</label>
+            <label v-if="subitem.label" :key="`label${index}`">{{ subitem.name }}</label>
             <a v-else-if="subitem.name === 'menuitem.icon'"
+               :key="`a${index}`"
               href="https://material.balmjs.com/#/icons"
               target="_blank"
               rel="noopener"
               :class="props.className">
-              <span>{{ $t(subitem.name) }}</span>
+              <span>{{ T_CN.menuitem[subitem.name] }}</span>
             </a>
             <router-link v-else
               :key="index"
               :class="props.className"
               :to="subitem.url"
               active-class="mdl-navigation__link--current">
-              <span>{{ $t(subitem.name) }}</span>
+              <span>{{ T_CN.menuitem[subitem.name] }}</span>
             </router-link>
           </template>
         </template>
@@ -58,8 +59,9 @@
 
 <script>
 import BalmUI from '../../../../src/scripts/index';
-import { lang } from '../../config/lang';
+// import { lang } from '../../config/lang';
 import menu from '../../config/menu';
+import T_CN from '../../lang/cn';
 
 export default {
   metaInfo: {
@@ -67,9 +69,9 @@ export default {
   },
   data() {
     return {
+      T_CN,
       version: BalmUI.version,
       loading: false,
-      lang,
       menu
     };
   },
@@ -78,14 +80,14 @@ export default {
       this.$el.querySelector('.mdl-layout__content').scrollTop = 0;
     }
   },
-  methods: {
-    isActiveLang(lang) {
-      return lang === this.$i18n.locale;
-    },
-    switchLang(lang) {
-      this.$i18n.locale = lang;
-    }
-  },
+  // methods: {
+  //   isActiveLang(lang) {
+  //     return lang === this.$i18n.locale;
+  //   },
+  //   switchLang(lang) {
+  //     this.$i18n.locale = lang;
+  //   }
+  // },
   created() {
     this.$router.beforeEach((to, from, next) => {
       this.loading = true;

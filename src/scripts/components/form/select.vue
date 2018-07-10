@@ -8,7 +8,8 @@
         :value="defaultKey"
         selected>{{ defaultValue }}</option>
       <!-- Option list -->
-      <option v-for="option in currentOptions"
+      <option v-for="(option, index) in currentOptions"
+        :key="index"
         :value="option[optionKey]">{{ option[optionValue] }}</option>
     </select>
     <div class="mdl-select__bottom-line"></div>

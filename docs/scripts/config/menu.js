@@ -57,7 +57,7 @@ for (let key in MENU) {
   if (helpers.isObject(menuitems)) {
     // components
     items = {
-      name: `menu.${key}`
+      name: `${key}`
     };
 
     let subitems = [];
@@ -72,7 +72,7 @@ for (let key in MENU) {
       components.forEach(component => {
         subitems.push({
           url: `/${key}/${component}`,
-          name: `menuitem.${component}`
+          name: `${component}`
         });
       });
     });
@@ -81,11 +81,11 @@ for (let key in MENU) {
   } else {
     // others
     items = {
-      name: `menu.${key}`,
+      name: `${key}`,
       subitems: menuitems.map(subitem => {
         return {
           url: `/${key}/${subitem}`,
-          name: `menuitem.${subitem}`
+          name: `${subitem}`
         };
       })
     };

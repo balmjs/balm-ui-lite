@@ -132,7 +132,8 @@ const data = {
     file: '<ui-file>',
     autocomplete: '<ui-autocomplete>',
     datepicker: '<ui-datepicker>',
-    rangepicker: '<ui-rangepicker>'
+    rangepicker: '<ui-rangepicker>',
+    circle: '<ui-circle>'
   }
 };
 

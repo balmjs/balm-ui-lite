@@ -1,3 +1,4 @@
+// NOTE: unused
 const data = {
   quickstart: {
     requirement: 'Requirement',

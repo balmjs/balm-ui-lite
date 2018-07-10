@@ -1,9 +1,12 @@
-import { isIE, killIE } from './kill-ie';
+import {
+  isIE,
+  killIE
+} from './kill-ie';
 import './polyfill';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueMeta from 'vue-meta';
-import VueI18n from 'vue-i18n';
+// import VueI18n from 'vue-i18n';
 import axios from 'axios';
 import BalmUI from '../../src/scripts/index'; // 'balm-ui-lite'
 import App from './views/layouts/app';
@@ -14,7 +17,9 @@ import UiAccordion from './components/accordion';
 // syntax highlighting
 import prismjs from 'prismjs';
 // ready translated locales
-import { locales, flatpickrLang } from './config/lang';
+import {
+  flatpickrLang
+} from './config/lang';
 
 if (isIE) {
   killIE();
@@ -25,7 +30,7 @@ if (isIE) {
 
   Vue.use(VueRouter);
   Vue.use(VueMeta);
-  Vue.use(VueI18n);
+  // Vue.use(VueI18n);
   Vue.use(BalmUI);
 
   Vue.component(UiMarkdown.name, UiMarkdown);
@@ -73,17 +78,19 @@ if (isIE) {
   });
 
   // Create VueI18n instance with options
-  const i18n = new VueI18n({
-    locale: 'cn', // set locale
-    messages: locales // set locale messages
-  });
+  // const i18n = new VueI18n({
+  //   locale: 'cn', // set locale
+  //   messages: locales // set locale messages
+  // });
   Vue.prototype.flatpickrLang = flatpickrLang;
 
   new Vue({
     el: '#app',
     router,
     template: '<App/>',
-    components: { App },
-    i18n
+    components: {
+      App
+    },
+    // i18n
   });
 }

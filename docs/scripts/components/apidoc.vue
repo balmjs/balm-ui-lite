@@ -1,6 +1,6 @@
 <template>
   <div class="apidoc">
-    <h4 v-if="showTitle">{{ $t(`components.${name}`) }} API</h4>
+    <h4 v-if="showTitle">{{ T_CN.components[name] }} API</h4>
     <ui-tabs :active="tab">
       <ui-tab-bar effect position="left" @change="balmUI.onChange('tab', $event)">
         <ui-tab
@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import T_CN from '../lang/cn';
 const TYPES = ['props', 'slots', 'events', 'sass'];
 
 export default {
@@ -43,6 +44,7 @@ export default {
   },
   data() {
     return {
+      T_CN,
       TYPES,
       api: {},
       tab: 0

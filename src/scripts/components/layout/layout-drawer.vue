@@ -17,7 +17,6 @@ export default {
       } else {
         let parentEl = currentTarget.parentNode;
         while (parentEl && parentEl !== this.$el) {
-          console.log(parentEl);
           if (parentEl.tagName === 'A') {
             isLink = true;
             break;

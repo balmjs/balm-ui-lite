@@ -24,23 +24,6 @@ import UiTabs from './components/tabs/tabs';
 import UiTabBar from './components/tabs/tab-bar';
 import UiTab from './components/tabs/tab';
 import UiPanel from './components/tabs/panel';
-// Deprecated: <ui-footer-X>
-// import UiFooter from './components/footer/footer';
-// import UiFooterTop from './components/footer/footer-top';
-// import UiFooterLeft from './components/footer/footer-left';
-// import UiFooterSocialBtn from './components/footer/footer-social-btn';
-// import UiFooterRight from './components/footer/footer-right';
-// import UiFooterMiddle from './components/footer/footer-middle';
-// import UiFooterDropDown from './components/footer/footer-drop-down';
-// import UiFooterHeading from './components/footer/footer-heading';
-// import UiFooterLinkList from './components/footer/footer-link-list';
-// import UiFooterBottom from './components/footer/footer-bottom';
-// import UiLogo from './components/footer/logo';
-// import UiMiniFooter from './components/footer/mini-footer';
-// import UiMiniFooterLeft from './components/footer/mini-footer-left';
-// import UiMiniFooterLinkList from './components/footer/mini-footer-link-list';
-// import UiMiniFooterRight from './components/footer/mini-footer-right';
-// import UiMiniFooterSocialBtn from './components/footer/min-footer-social-btn';
 /**
  * Common
  */
@@ -242,12 +225,15 @@ const registers = {
   }
 };
 
-const BalmUI = Object.assign(
-  {},
-  { version },
-  { helpers },
-  { components },
-  { plugins },
+const BalmUI = Object.assign({}, {
+    version
+  }, {
+    helpers
+  }, {
+    components
+  }, {
+    plugins
+  },
   // { directives },
   registers
 );
@@ -258,4 +244,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default BalmUI;
-export { helpers };
+export {
+  helpers
+};
