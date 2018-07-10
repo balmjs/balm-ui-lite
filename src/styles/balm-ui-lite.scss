@@ -1,14 +1,12 @@
 @import 'global/var';
 @import 'global/reset';
 @import 'global/vendor';
-/// Components
+/// Base Components
 @import 'components/ui-icon';
 @import 'components/ui-badge';
 @import 'components/ui-button';
 @import 'components/ui-chip';
-@import 'components/ui-circle';
 @import 'components/ui-dialog';
-@import 'components/ui-divider';
 @import 'components/ui-tabs';
 @import 'components/ui-progress';
 @import 'components/ui-snackbar';
@@ -16,11 +14,14 @@
 @import 'components/ui-icon-toggle';
 @import 'components/ui-table';
 @import 'components/ui-textfield';
+/// Plus Components
+@import 'components/ui-circle';
+@import 'components/ui-divider';
 @import 'components/ui-select';
+@import 'components/ui-file';
 @import 'components/ui-autocomplete';
 @import 'components/ui-datepicker';
-@import 'components/ui-pagination';
-@import 'components/ui-file';
 @import 'components/ui-rangepicker';
+@import 'components/ui-pagination';
 /// Plugins
 @import 'plugins/ui-notify';
