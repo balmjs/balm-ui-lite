@@ -27,9 +27,9 @@
           <h5>{{ T_CN.menu[item.name] }}</h5>
           <template v-for="(subitem, index) in item.subitems">
             <label v-if="subitem.label" :key="`label${index}`">{{ subitem.name }}</label>
-            <a v-else-if="subitem.name === 'menuitem.icon'"
+            <a v-else-if="subitem.name === 'icon'"
                :key="`a${index}`"
-              href="https://material.balmjs.com/#/icons"
+              href="https://material.balmjs.com/#/icon"
               target="_blank"
               rel="noopener"
               :class="props.className">
