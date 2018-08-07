@@ -1,13 +1,15 @@
-# [BalmUI Lite](http://mdl.balmjs.com/) [![NPM version][balm-ui-lite-image]][balm-ui-lite-url]
+# [BalmUI Lite](https://mdl.balmjs.com/) [![NPM version][balm-ui-lite-image]][balm-ui-lite-url]
 
 > 基于 Material Design Lite 组件库 和 Vue.js 框架 的 UI 解决方案
 
 ## 特点
 
-* 高度集成 Google 的 Material Design Lite 和 Material Design Icons，并扩展更多常用组件
-* 开箱即用的高质量 Vue 组件，插件，指令及通用方法
-* 基于 **[BalmJS](http://balmjs.com/)** 的工作流，支持 ES2015+
-* 支持多种使用方式
+- 高度集成 Google 的 Material Design Lite 和 Material Design Icons，并扩展更多常用组件
+- 开箱即用的高质量 Vue 组件，插件，指令及通用方法
+- 基于 **[BalmJS](https://balmjs.com/)** 的工作流，支持 ES2015+
+- 支持多种使用方式
+
+:bell: **BalmUI Lite** 基于 Google MDL，而 MDL 现在所能表现的功能和扩展上支持都比较有限，所以 BalmJS 官方已将开发重点转向了基于 Material Components 的下一代为 Vue.js 量身定制的 Material UI —— [BalmUI](https://material.balmjs.com/)
 
 ## 安装配置
 
@@ -64,56 +66,56 @@ Vue.use($event);
 
 ## 完整文档
 
-请查看 [BalmUI Lite 官网](http://mdl.balmjs.com/)
+请查看 [BalmUI Lite 官网](https://mdl.balmjs.com/)
 
 ### UI 组件列表
 
-* Layout
-  * layout
-  * grid
-  * tabs
-* Common
-  * badge
-  * button
-  * chip
-  * menu
-  * tooltip
-  * divider
-  * icon
-* Form
-  * textfield
-  * checkbox
-  * radio
-  * select
-  * selectmenu
-  * icon toggle
-  * switch
-  * slider
-  * file
-  * autocomplete
-  * datepicker
-  * rangepicker
-* Dataview
-  * card
-  * list
-  * table
-  * pagination
-* Feedback
-  * dialog
-  * snackbar
-* Loading
-  * progress
-  * spinner
+- Layout
+  - layout
+  - grid
+  - tabs
+- Common
+  - badge
+  - button
+  - chip
+  - menu
+  - tooltip
+  - divider
+  - icon
+- Form
+  - textfield
+  - checkbox
+  - radio
+  - select
+  - selectmenu
+  - icon toggle
+  - switch
+  - slider
+  - file
+  - autocomplete
+  - datepicker
+  - rangepicker
+- Dataview
+  - card
+  - list
+  - table
+  - pagination
+- Feedback
+  - dialog
+  - snackbar
+- Loading
+  - progress
+  - spinner
 
 ### UI 插件列表
 
-* event
-* alert
-* confirm
-* prompt
-* toast
-* notify
-* validator
+- event
+- alert
+- confirm
+- prompt
+- toast
+- notify
+- validator
 
 > BalmUI Lite 中还包含一些常用 _指令服务_ 和 _辅助方法_，具体请查看[官方文档](http://mdl.balmjs.com/)
 
@@ -123,8 +125,8 @@ Vue.use($event);
 | --- | ---- | ---- | ------ | ----- | ------- | ------ | ---------------- | ------------- |
 | B   | A    | A    | A      | A     | A       | A      | A                | A             |
 
-* A 完全支持
-* B 部分支持（需要 polyfills）
+- A 完全支持
+- B 部分支持（需要 polyfills）
 
 ## 如何贡献
 
@@ -133,4 +135,4 @@ Vue.use($event);
 [balm-ui-lite-image]: https://badge.fury.io/js/balm-ui-lite.svg
 [balm-ui-lite-url]: https://npmjs.org/package/balm-ui-lite
 
-> **thx [BalmJS](http://balmjs.com/) & [Vue.js](https://vuejs.org/)**
+> **thx [BalmJS](https://balmjs.com/) & [Vue.js](https://vuejs.org/)**
