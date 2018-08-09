@@ -9,7 +9,7 @@ const components = {
     'menu',
     'tooltip',
     'divider',
-    'icon',
+    'icons',
     'circle'
   ],
   form: [

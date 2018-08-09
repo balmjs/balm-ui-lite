@@ -42,7 +42,7 @@ const data = {
     menuitem: 'Menuitem',
     tooltip: 'Tooltip',
     divider: 'Divider',
-    icon: 'Icon',
+    icons: 'Icons',
     form: 'Form Components',
     slider: 'Slider',
     checkbox: 'Checkbox',

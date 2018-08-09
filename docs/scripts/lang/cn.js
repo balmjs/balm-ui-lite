@@ -24,7 +24,7 @@ const data = {
     menu: 'Menu 菜单',
     tooltip: 'Tooltip 文字提示',
     divider: 'Divider 分割线',
-    icon: 'Icon 图标',
+    icons: 'Icons 图标',
     circle: 'Circle 环形进度条',
     // form
     textfield: 'Textfield 输入框',
