@@ -1,5 +1,15 @@
 # [BalmUI Lite](https://mdl.balmjs.com/)
 
+## 1.5.0 (2018.11.02)
+
+### :tada: Update auto install
+
+### :beetle: Bug fixes
+
+- `<ui-button>`: some bugfix
+
+---
+
 ## 1.4.1 (2018.08.07)
 
 ### :beetle: Bug fixes

@@ -26,7 +26,8 @@
     },
     {
       "name": "icon",
-      "type": "String",
+      "type": "Boolean, String",
+      "default": "false",
       "description":
         "Material图标，请参考<a href='https://material.balmjs.com/#/icons' target='_blank'>图标库</a>"
     },
