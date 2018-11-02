@@ -1,3 +1,4 @@
+import autoInstall from '../config/auto-install';
 import getType from '../helpers/typeof';
 import UiSnackbar from '../components/common/snackbar';
 
@@ -64,8 +65,6 @@ const BalmUI_ToastPlugin = {
   }
 };
 
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(BalmUI_ToastPlugin);
-}
+autoInstall(BalmUI_ToastPlugin);
 
 export default BalmUI_ToastPlugin;

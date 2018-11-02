@@ -1,3 +1,4 @@
+import autoInstall from '../config/auto-install';
 import getType from '../helpers/typeof';
 import UiDialog from '../components/dialog/dialog';
 import UiDialogTitle from '../components/dialog/dialog-title';
@@ -92,8 +93,6 @@ const BalmUI_ConfirmPlugin = {
   }
 };
 
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(BalmUI_ConfirmPlugin);
-}
+autoInstall(BalmUI_ConfirmPlugin);
 
 export default BalmUI_ConfirmPlugin;

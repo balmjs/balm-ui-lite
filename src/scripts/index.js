@@ -1,3 +1,4 @@
+import autoInstall from './config/auto-install';
 import multiConfigure from './config/multi-configure';
 /**
  * Helpers
@@ -202,20 +203,21 @@ const plugins = {
 //   lazyLoad
 // };
 
-const registers = {
+const BalmUI = {
+  version,
   install(Vue, options = {}) {
     // Configure the components' props
-    multiConfigure(BalmUI.components, options);
+    multiConfigure(components, options);
 
     // Install the components
-    for (let key in BalmUI.components) {
-      let Component = BalmUI.components[key];
+    for (let key in components) {
+      let Component = components[key];
       Vue.component(Component.name, Component);
     }
 
     // Install the plugins
-    for (let key in BalmUI.plugins) {
-      let Plugin = BalmUI.plugins[key];
+    for (let key in plugins) {
+      let Plugin = plugins[key];
       if (options[`$${key}`]) {
         Vue.use(Plugin, options[`$${key}`]);
       } else {
@@ -225,23 +227,7 @@ const registers = {
   }
 };
 
-const BalmUI = Object.assign({}, {
-    version
-  }, {
-    helpers
-  }, {
-    components
-  }, {
-    plugins
-  },
-  // { directives },
-  registers
-);
-
-// Auto install in dist mode
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(BalmUI);
-}
+autoInstall(BalmUI);
 
 export default BalmUI;
 export {

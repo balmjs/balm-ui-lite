@@ -1,3 +1,4 @@
+import autoInstall from '../config/auto-install';
 import getType from '../helpers/typeof';
 import UiDialog from '../components/dialog/dialog';
 import UiDialogTitle from '../components/dialog/dialog-title';
@@ -107,8 +108,6 @@ const BalmUI_PromptPlugin = {
   }
 };
 
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(BalmUI_PromptPlugin);
-}
+autoInstall(BalmUI_PromptPlugin)
 
 export default BalmUI_PromptPlugin;

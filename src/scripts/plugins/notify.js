@@ -1,3 +1,4 @@
+import autoInstall from '../config/auto-install';
 import getType from '../helpers/typeof';
 
 const YES = true;
@@ -211,8 +212,6 @@ const BalmUI_NotifyPlugin = {
   }
 };
 
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(BalmUI_NotifyPlugin);
-}
+autoInstall(BalmUI_NotifyPlugin);
 
 export default BalmUI_NotifyPlugin;
