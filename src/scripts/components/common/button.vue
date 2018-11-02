@@ -34,7 +34,10 @@ export default {
       type: Boolean,
       default: false
     },
-    icon: String,
+    icon: {
+      type: [Boolean, String],
+      default: false
+    },
     colored: {
       type: Boolean,
       default: false
