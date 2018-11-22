@@ -1,5 +1,6 @@
 {
-  "props": [{
+  "props": [
+    {
       "name": "page (v-model)",
       "type": "Number",
       "default": 1,
@@ -22,13 +23,13 @@
     {
       "name": "prev",
       "type": "String",
-      "default": "",
+      "default": "''",
       "description": "上一页"
     },
     {
       "name": "next",
       "type": "String",
-      "default": "",
+      "default": "''",
       "description": "下一页"
     },
     {
@@ -80,17 +81,22 @@
       "description": "使用极简模式"
     }
   ],
-  "slots": [{
-    "name": "(default)",
-    "description": "默认插槽可以插入分页额外内容",
-    "props": "{ recordCount, pageSize, pageCount }"
-  }],
-  "events": [{
-    "name": "change",
-    "type": "Function(newPage: number)",
-    "description": "切换分页事件"
-  }],
-  "sass": [{
+  "slots": [
+    {
+      "name": "(default)",
+      "description": "默认插槽可以插入分页额外内容",
+      "props": "{ recordCount, pageSize, pageCount }"
+    }
+  ],
+  "events": [
+    {
+      "name": "change",
+      "type": "Function(newPage: number)",
+      "description": "切换分页事件"
+    }
+  ],
+  "sass": [
+    {
       "var": "$pagination-color",
       "description": "分页的颜色"
     },

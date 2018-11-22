@@ -1,5 +1,13 @@
 # [BalmUI Lite](https://mdl.balmjs.com/)
 
+## 1.5.1 (2018.11.22)
+
+### :beetle: Bug fixes
+
+- `<ui-pagination>`: add default value for `prev` and `next` props
+
+---
+
 ## 1.5.0 (2018.11.02)
 
 ### :tada: Update auto install
@@ -50,7 +58,10 @@
 <ui-textfield v-model="value"></ui-textfield>
 
 // Old: manual assignment
-<ui-textfield :model="value" @change="balmUI.onChange('value', $event)"></ui-textfield>
+<ui-textfield
+  :model="value"
+  @change="balmUI.onChange('value', $event)"
+></ui-textfield>
 ```
 
 ---
@@ -239,7 +250,9 @@ Vue.use(BalmUI); // include all plugins
 <ui-textfield @input="onChange('formData.username', $event)"></ui-textfield>
 
 <!-- 1.0.0 has namespace -->
-<ui-textfield @input="BalmUI.onChange('formData.username', $event)"></ui-textfield>
+<ui-textfield
+  @input="BalmUI.onChange('formData.username', $event)"
+></ui-textfield>
 ```
 
 **`<ui-card>`**

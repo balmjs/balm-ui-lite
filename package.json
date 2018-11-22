@@ -1,9 +1,10 @@
 {
   "name": "balm-ui-lite",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Material Design Lite + Vue + Idea",
   "homepage": "https://mdl.balmjs.com/",
-  "author": [{
+  "author": [
+    {
       "name": "Elf-mousE",
       "email": "ifmouz@gmail.com",
       "url": "http://elf-mouse.me/"
@@ -51,7 +52,7 @@
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.7",
     "cross-env": "^5.2.0",
-    "eslint": "^5.8.0",
+    "eslint": "^5.4.0",
     "eslint-plugin-vue": "^4.7.1",
     "gulp": "^3.9.1",
     "jsdom": "^13.0.0",
@@ -65,7 +66,7 @@
     "prismjs": "^1.15.0",
     "sinon": "^7.1.1",
     "vue": "^2.5.17",
-    "vue-i18n": "^8.3.0",
+    "vue-i18n": "^8.3.2",
     "vue-loader": "^15.4.2",
     "vue-meta": "^1.5.5",
     "vue-router": "^3.0.1",

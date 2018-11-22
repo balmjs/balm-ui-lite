@@ -1,7 +1,4 @@
-import {
-  isIE,
-  killIE
-} from './kill-ie';
+import { isIE, killIE } from './kill-ie';
 import './polyfill';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
@@ -17,9 +14,7 @@ import UiAccordion from './components/accordion';
 // syntax highlighting
 import prismjs from 'prismjs';
 // ready translated locales
-import {
-  flatpickrLang
-} from './config/lang';
+import { flatpickrLang } from './config/lang';
 
 if (isIE) {
   killIE();
@@ -90,7 +85,7 @@ if (isIE) {
     template: '<App/>',
     components: {
       App
-    },
+    }
     // i18n
   });
 }

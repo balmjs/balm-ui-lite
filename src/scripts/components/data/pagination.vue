@@ -74,8 +74,14 @@ export default {
       type: Number,
       required: true
     },
-    prev: String,
-    next: String,
+    prev: {
+      type: String,
+      default: ''
+    },
+    next: {
+      type: String,
+      default: ''
+    },
     pageSpan: {
       type: Number,
       default: 3

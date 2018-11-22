@@ -12,6 +12,8 @@ const configure = (Component, props) => {
     if (getType(defaultValue) === 'object') {
       Component.props[propName].default = merge(defaultValue, props[propName]);
       return;
+    } else {
+      console.warn(`The ${propName} prop cannot be overwritten.`);
     }
 
     Component.props[propName].default = props[propName];
