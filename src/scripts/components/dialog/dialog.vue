@@ -111,7 +111,9 @@ export default {
           this.$body.classList.add(CLASSNAME_LOCK);
         } else {
           this.$body.classList.remove(CLASSNAME_LOCK);
-          this.$content.scrollTop = 0;
+          if (this.$content) {
+            this.$content.scrollTop = 0;
+          }
         }
       }
     }

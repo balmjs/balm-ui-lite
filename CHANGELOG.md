@@ -1,5 +1,13 @@
 # [BalmUI Lite](https://mdl.balmjs.com/)
 
+## 1.5.2 (2018.11.24)
+
+### :beetle: Bug fixes
+
+- `<ui-dialog>`: some bugfix
+
+---
+
 ## 1.5.1 (2018.11.22)
 
 ### :beetle: Bug fixes
