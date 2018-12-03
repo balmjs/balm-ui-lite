@@ -766,7 +766,7 @@ export default {
       let notEmpty = this.currentDataCount;
       let beEqual = this.currentCheckedList.length === this.currentDataCount;
       let ids = this._getCheckedIds();
-      let isExist = this.currentCheckedList.every(id => ids.includes(id));
+      let isExist = this.currentCheckedList.every(id => ids.indexOf(id) > -1);
 
       this.isCheckAll = notEmpty && beEqual && isExist;
       this._onChecked();

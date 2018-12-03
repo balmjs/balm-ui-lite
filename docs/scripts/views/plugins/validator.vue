@@ -14,20 +14,16 @@
     <h4 class="line">使用</h4>
     <p>$validate方法有两个参数:</p>
     <ui-apidoc name="plugin-validator-arguments" :show-title="false"></ui-apidoc>
-    <p>
-      虽然$validate方法有第二个参数，但是我们强烈推荐将验证规则注入在Vue实例的validations属性上，可以大幅度减少方法的复杂度。
-    </p>
+    <p>虽然$validate方法有第二个参数，但是我们强烈推荐将验证规则注入在Vue实例的validations属性上，可以大幅度减少方法的复杂度。</p>
     <p>通过在Vue实例上添加validations属性，使得待验证数据自动应用验证规则。validations每一项的键值对应待验证的字段，其中包含以下属性：</p>
     <ui-apidoc name="plugin-validator-validations" :show-title="false"></ui-apidoc>
     <div class="divider"></div>
-    <p>
-      除了应用预设规则之外，插件还支持临时插入自定义规则，看下面的例子：
-    </p>
+    <p>除了应用预设规则之外，插件还支持临时插入自定义规则，看下面的例子：</p>
     <p>
       <ui-textfield v-model="formData.name" placeholder="输入名字"></ui-textfield>
     </p>
     <p>
-      <ui-textfield v-model="formData.number"  placeholder="输入工号"></ui-textfield>
+      <ui-textfield v-model="formData.number" placeholder="输入工号"></ui-textfield>
     </p>
     <p>
       <ui-button raised colored @click="validate">验证</ui-button>
@@ -35,16 +31,14 @@
     <p>
       验证结果：{{ allValid ? '通过': '不通过' }}
       <template v-if="!allValid">
-        <br>
-        原因：<span v-for="message in messages">{{ message }}；</span>
+        <br>原因：
+        <span v-for="(message, index) in messages" :key="index">{{ message }}；</span>
       </template>
     </p>
     <ui-accordion>
       <ui-markdown :code="code[1]"></ui-markdown>
     </ui-accordion>
-    <p>
-      以上为临时插入规则的方法。自定义规则中的message属性也可以是一个方法，它和validate方法的作用域均指向当前实例。
-    </p>
+    <p>以上为临时插入规则的方法。自定义规则中的message属性也可以是一个方法，它和validate方法的作用域均指向当前实例。</p>
   </div>
 </template>
 <script>

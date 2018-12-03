@@ -4,7 +4,7 @@ import getType from '../helpers/typeof';
 const defaultRules = {
   required: {
     validate(value) {
-      return value.length > 0;
+      return value && value.length > 0;
     },
     message: '%s is required'
   }
@@ -16,13 +16,10 @@ const FIELD_VALIDATOR = 'validator';
 const LABEL_PLACEHOLDER = '%s';
 
 const BalmUI_ValidatorPlugin = {
-  install(Vue, customGlobalRules = {}) {
-    let validationRules = Object.assign({}, defaultRules, customGlobalRules);
+  install(Vue, customRules = {}) {
+    let globalValidationRules = Object.assign({}, defaultRules, customRules);
 
-    const $validate = function(formData = {}, customLocalRules = {}) {
-      let currentFormData = Object.assign({}, formData);
-      let currentRules = Object.assign({}, validationRules, customLocalRules);
-
+    const $validate = function(formData = {}, customFieldset = []) {
       let result = {
         isValid: true, // 是否验证通过
         valid: [], // 有效字段
@@ -35,6 +32,12 @@ const BalmUI_ValidatorPlugin = {
       // 获取待验证字段
       let validations = this.$options.validations || {};
       let validationFields = Object.keys(validations);
+
+      if (customFieldset.length) {
+        validationFields = validationFields.filter(
+          field => customFieldset.indexOf(field) > -1
+        );
+      }
 
       for (
         let i = 0, fieldCount = validationFields.length;
@@ -51,27 +54,33 @@ const BalmUI_ValidatorPlugin = {
 
         for (let j = 0, rulesCount = fieldRules.length; j < rulesCount; j++) {
           let ruleName = fieldRules[j];
-          let rule = fieldOption[ruleName] || currentRules[ruleName]; // 当前验证方法
+          let localValidationRule = fieldOption[ruleName];
+          let rule = localValidationRule || globalValidationRules[ruleName]; // 当前验证方法
 
           if (rule && getType(rule.validate) === 'function') {
-            if (
-              !rule.validate.apply(this, [
-                currentFormData[fieldName],
-                currentFormData
-              ])
-            ) {
+            let fieldValue = formData[fieldName];
+            let fieldArgs = [fieldValue, formData];
+            if (!rule.validate.apply(this, fieldArgs)) {
               isAllValidOfField = false;
+              let message = '';
 
-              let message =
-                getType(rule.message) === 'function'
-                  ? rule.message.apply(this, [
-                      fieldName,
-                      currentFormData[fieldName],
-                      currentFormData
-                    ])
-                  : rule.message.replace(LABEL_PLACEHOLDER, fieldLabel);
+              switch (getType(rule.message)) {
+                case 'string':
+                  message = rule.message.replace(LABEL_PLACEHOLDER, fieldLabel);
+                  break;
+                case 'function':
+                  message = rule.message.apply(this, fieldArgs);
+                  break;
+                default:
+                  console.warn(
+                    `'[${fieldName}.message]' must be a string or function.`
+                  );
+                  break;
+              }
 
-              result.messages.push(message);
+              if (message) {
+                result.messages.push(message);
+              }
               break;
             }
           } else {
