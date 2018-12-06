@@ -1,4 +1,12 @@
 {
+  "props": [
+    {
+      "name": "disableCloseButton",
+      "type": "Boolean",
+      "default": "false",
+      "description": "“X”关闭按钮是否可用"
+    }
+  ],
   "slots": [
     {
       "name": "(default)",

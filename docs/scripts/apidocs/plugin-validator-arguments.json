@@ -3,15 +3,14 @@
     {
       "name": "formData",
       "type": "Object",
-      "default": "",
-      "description": "待验证的数据"
+      "default": "{}",
+      "description": "待验证的表单数据"
     },
     {
-      "name": "rules",
-      "type": "Object",
-      "default": "",
-      "description":
-        "字段对应的验证规则；这个规则优先级最高，会覆盖掉其他同名的规则"
+      "name": "customFieldset",
+      "type": "Array",
+      "default": "[]",
+      "description": "（从验证规则中挑选）当前需要验证表单数据字段"
     }
   ]
 }
