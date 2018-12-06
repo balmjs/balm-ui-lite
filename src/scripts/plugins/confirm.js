@@ -9,6 +9,7 @@ import UiButton from '../components/common/button';
 const DEFAULT_OPTIONS = {
   className: '',
   title: '',
+  raw: false,
   message: '',
   acceptText: 'OK',
   cancelText: 'Cancel',
@@ -22,7 +23,7 @@ const template = `<ui-dialog
   :unlocked="options.unlocked"
   @close="$_handleClose">
   <ui-dialog-title v-if="options.title" disableCloseBtn>{{ options.title }}</ui-dialog-title>
-  <ui-dialog-content v-if="raw" v-html="options.message"></ui-dialog-content>
+  <ui-dialog-content v-if="options.raw" v-html="options.message"></ui-dialog-content>
   <ui-dialog-content v-else>{{ options.message }}</ui-dialog-content>
   <ui-dialog-actions>
     <ui-button primary @click="$_handleConfirm(true)">
