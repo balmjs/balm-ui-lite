@@ -2,7 +2,7 @@
   <header class="mdl-dialog__title">
     <slot></slot>
     <i
-      v-if="!disableCloseBtn"
+      v-if="!disableCloseButton"
       class="material-icons close"
       @click="$parent.$emit('change', false)"
     >close</i>
