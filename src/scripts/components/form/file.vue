@@ -5,7 +5,8 @@
       type="file"
       :accept="accept"
       :multiple="multiple"
-      @change="$_handleChange($event)">
+      @change="$_handleChange($event)"
+    >
     <slot>
       <ui-button raised>
         <i class="material-icons">file_upload</i>
@@ -101,19 +102,14 @@ export default {
       let files = slice.call(event.target.files);
       if (files.length) {
         let arr = [];
-        if (this.multiple) {
-          arr = files.map(file => {
-            let fileObj = _createFileObj(file);
-            this.preview && this.$_handlePreview(fileObj);
-            return fileObj;
-          });
 
-          this.$emit('change', arr);
-        } else {
-          let fileObj = _createFileObj(files[0]);
+        arr = files.map(file => {
+          let fileObj = _createFileObj(file);
           this.preview && this.$_handlePreview(fileObj);
-          this.$emit('change', [fileObj]);
-        }
+          return fileObj;
+        });
+
+        this.$emit('change', arr);
 
         event.target.value = '';
       }

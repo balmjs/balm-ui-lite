@@ -21,8 +21,9 @@ const template = `<ui-dialog
   :open="open"
   :unlocked="options.unlocked"
   @close="$_handleClose">
-  <ui-dialog-title v-if="options.title">{{ options.title }}</ui-dialog-title>
-  <ui-dialog-content>{{ options.message }}</ui-dialog-content>
+  <ui-dialog-title v-if="options.title" disableCloseBtn>{{ options.title }}</ui-dialog-title>
+  <ui-dialog-content v-if="raw" v-html="options.message"></ui-dialog-content>
+  <ui-dialog-content v-else>{{ options.message }}</ui-dialog-content>
   <ui-dialog-actions>
     <ui-button primary @click="$_handleConfirm(true)">
       {{ options.acceptText }}
