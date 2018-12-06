@@ -1,5 +1,22 @@
 # [BalmUI Lite](https://mdl.balmjs.com/)
 
+## 1.5.3 (2018.12.06)
+
+### :beetle: Bug fixes and improvements
+
+- `$validate`: update `$validate(formData, customFieldset)`
+- `<ui-dialog-title>`: add props `disableCloseButton`
+- `$alert/$confirm`: add options `disableCloseButton`, `raw`
+- `$prompt`: add options `disableCloseButton`
+
+### :page_with_curl: Update docs
+
+- `<ui-dialog>`
+- `$alert/$confirm/$prompt`
+- `$validate`
+
+---
+
 ## 1.5.2 (2018.11.24)
 
 ### :beetle: Bug fixes

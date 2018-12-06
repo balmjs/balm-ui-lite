@@ -45,6 +45,7 @@ const plugins = [
   'event.js',
   'alert.js',
   'confirm.js',
+  'prompt.js',
   'toast.js',
   'notify.js',
   'validator.js'
