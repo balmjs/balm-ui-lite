@@ -41,6 +41,18 @@
       "type": "Boolean",
       "default": "false",
       "description": "是否锁定页面（此属性仅用于某些特殊场景）"
+    },
+    {
+      "name": "disableCloseButton",
+      "type": "Boolean",
+      "default": "true",
+      "description": "是否禁用关闭按钮"
+    },
+    {
+      "name": "raw",
+      "type": "Boolean",
+      "default": "false",
+      "description": "内容是否按HTML进行渲染"
     }
   ]
 }
