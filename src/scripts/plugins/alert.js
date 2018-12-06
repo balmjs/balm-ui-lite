@@ -9,19 +9,24 @@ import UiButton from '../components/common/button';
 const DEFAULT_OPTIONS = {
   className: '',
   title: '',
-  raw: false,
+  disableCloseButton: true,
   message: '',
+  raw: false,
   buttonText: 'OK',
   callback: false,
   unlocked: false
 };
 
 const template = `<ui-dialog
+  v-model="open"
   :class="['mdl-alert', options.className]"
-  :open="open"
   :unlocked="options.unlocked"
   @close="$_handleClose">
-  <ui-dialog-title v-if="options.title">{{ options.title }}</ui-dialog-title>
+  <ui-dialog-title
+    v-if="options.title"
+    :disableCloseButton="options.disableCloseButton">
+    {{ options.title }}
+  </ui-dialog-title>
   <ui-dialog-content v-if="options.raw" v-html="options.message"></ui-dialog-content>
   <ui-dialog-content v-else>{{ options.message }}</ui-dialog-content>
   <ui-dialog-actions>

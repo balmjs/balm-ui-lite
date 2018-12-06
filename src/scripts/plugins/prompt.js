@@ -10,6 +10,7 @@ import UiTextfield from '../components/form/textfield';
 const DEFAULT_OPTIONS = {
   className: '',
   title: '',
+  disableCloseButton: true,
   message: '',
   acceptText: 'OK',
   cancelText: 'Cancel',
@@ -18,15 +19,17 @@ const DEFAULT_OPTIONS = {
 };
 
 const template = `<ui-dialog
+  v-model="open"
   :class="['mdl-confirm', options.className]"
-  :open="open"
   :unlocked="options.unlocked"
   @close="$_handleClose">
-  <ui-dialog-title v-if="options.title">{{ options.title }}</ui-dialog-title>
+  <ui-dialog-title v-if="options.title" :disableCloseButton="options.disableCloseButton">
+    {{ options.title }}
+  </ui-dialog-title>
   <ui-dialog-content>
     {{ options.message }}
     <br>
-    <ui-textfield :model="formData.value" @change="$_onChange($event)"></ui-textfield>
+    <ui-textfield v-model="formData.value"></ui-textfield>
   </ui-dialog-content>
   <ui-dialog-actions>
     <ui-button primary @click="$_handleConfirm">
@@ -65,9 +68,6 @@ const BalmUI_PromptPlugin = {
             }
           },
           methods: {
-            $_onChange(event) {
-              this.formData.value = event.target.value;
-            },
             $_handleClose() {
               this.open = false;
               this.$nextTick(function() {
@@ -108,6 +108,6 @@ const BalmUI_PromptPlugin = {
   }
 };
 
-autoInstall(BalmUI_PromptPlugin)
+autoInstall(BalmUI_PromptPlugin);
 
 export default BalmUI_PromptPlugin;

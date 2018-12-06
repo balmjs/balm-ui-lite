@@ -13,7 +13,7 @@
 export default {
   name: 'ui-dialog-title',
   props: {
-    disableCloseBtn: {
+    disableCloseButton: {
       type: Boolean,
       default: false
     }
