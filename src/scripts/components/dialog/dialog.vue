@@ -6,7 +6,8 @@
     :enter-to-class="enterToClass"
     :leave-class="leaveClass"
     :leave-active-class="leaveActiveClass"
-    :leave-to-class="leaveToClass">
+    :leave-to-class="leaveToClass"
+  >
     <aside v-show="open" :class="className">
       <div class="mdl-dialog__surface" ref="dialog" :style="style">
         <slot></slot>
@@ -122,9 +123,8 @@ export default {
     handleClose() {
       if (this.closable) {
         this.$emit(EVENT_CHANGE, false);
-      } else {
-        this.$emit(EVENT_CLOSE);
       }
+      this.$emit(EVENT_CLOSE);
     },
     handleBackdrop() {
       if (this.maskClosable) {
