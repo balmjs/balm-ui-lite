@@ -1,5 +1,15 @@
 # [BalmUI Lite](https://mdl.balmjs.com/)
 
+## 1.5.4 (2019.01.10)
+
+### :beetle: Bug fixes and improvements
+
+- `balmUI`: update `fn` argument compatibility
+- `<ui-dialog>`: fix `close` event
+- `<ui-checkbox>`: fix some css bug
+
+---
+
 ## 1.5.3 (2018.12.06)
 
 ### :beetle: Bug fixes and improvements
