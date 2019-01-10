@@ -1,11 +1,7 @@
 <template>
   <header class="mdl-dialog__title">
     <slot></slot>
-    <i
-      v-if="!disableCloseButton"
-      class="material-icons close"
-      @click="$parent.$emit('change', false)"
-    >close</i>
+    <i v-if="!disableCloseButton" class="material-icons close" @click="$parent.handleClose">close</i>
   </header>
 </template>
 

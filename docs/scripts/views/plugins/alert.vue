@@ -16,7 +16,9 @@
     <p>引入插件后，Vue实例将被注入$alert方法，该方法接收一个message参数，用于表示警告框内容；如果你想为警告框做更多设置，可以传入一个对象，对象的属性和上面全局预设属性完全一致。</p>
 
     <h3>示例</h3>
-    <p><ui-button raised colored @click="$alert('你打开了警告框！')">打开警告框</ui-button></p>
+    <p>
+      <ui-button raised colored @click="$alert('你打开了警告框！')">打开警告框</ui-button>
+    </p>
     <ui-accordion>
       <ui-markdown :code="code[1]"></ui-markdown>
     </ui-accordion>
