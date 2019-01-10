@@ -1,9 +1,12 @@
+.mdl-checkbox__tick-outline {
+  mask: none;
+}
+
 .mdl-checkbox.is-filled {
   .mdl-checkbox__tick-outline {
     width: 8px;
     height: 8px;
     margin: 2px;
     background-image: none;
-    mask: none;
   }
 }
