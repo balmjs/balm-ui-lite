@@ -12,7 +12,7 @@
 export default {
   data() {
     return {
-      checked1: false,
+      checked1: true,
       checked2: false
     };
   }

@@ -1,5 +1,14 @@
 # [BalmUI Lite](https://mdl.balmjs.com/)
 
+## 1.5.5 (2019.02.28)
+
+### :beetle: Bug fixes and improvements
+
+- `<ui-checkbox>`: fix single checked bug
+- `<ui-rangepicker>`: add `reverseSelection` props, update sync datepicker code
+
+---
+
 ## 1.5.4 (2019.01.10)
 
 ### :beetle: Bug fixes and improvements

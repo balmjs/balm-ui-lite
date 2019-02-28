@@ -10,10 +10,7 @@
     <h4>1. 简单选择</h4>
     <div class="snippet-group">
       <div class="snippet-demo">
-        <ui-rangepicker
-          v-model="date1"
-          startPlaceholder="Start date"
-          endPlaceholder="End date"></ui-rangepicker>
+        <ui-rangepicker v-model="date1" startPlaceholder="Start date" endPlaceholder="End date"></ui-rangepicker>
         Choose date range: {{ date1 }}
       </div>
       <ui-accordion>
@@ -22,13 +19,18 @@
     </div>
 
     <h4>2. 高级选择</h4>
+    <p>
+      <ui-checkbox v-model="reverseSelection">反向选择</ui-checkbox>
+    </p>
     <div class="snippet-group">
       <div class="snippet-demo">
         <ui-rangepicker
           v-model="date2"
           :options="options"
           startPlaceholder="Start date"
-          endPlaceholder="End date"></ui-rangepicker>
+          endPlaceholder="End date"
+          :reverseSelection="reverseSelection"
+        ></ui-rangepicker>
         <p>Choose date range: {{ date2 }}</p>
       </div>
       <ui-accordion>
@@ -71,7 +73,8 @@ export default {
           key: 29,
           value: '30 Days'
         }
-      ]
+      ],
+      reverseSelection: false
     };
   },
   created() {

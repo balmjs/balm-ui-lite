@@ -1,13 +1,15 @@
 <template>
   <label :class="className">
-    <input type="checkbox"
+    <input
+      type="checkbox"
       class="mdl-checkbox__input"
       :id="id"
       :name="name"
       :value="value"
       :disabled="disabled"
       v-model="currentValue"
-      @change="handleChange">
+      @change="handleChange"
+    >
     <span v-if="!hideLabel" class="mdl-checkbox__label">
       <slot>{{ label }}</slot>
     </span>
@@ -77,9 +79,14 @@ export default {
       };
     },
     isChecked() {
+      let singleChecked =
+        getType(this.value) !== 'boolean'
+          ? this.currentValue == this.value
+          : this.currentValue === true;
+
       return getType(this.currentValue) === 'array'
         ? this.currentValue.indexOf(this.value) > -1
-        : this.currentValue == this.value || this.currentValue === true;
+        : singleChecked;
     }
   },
   watch: {

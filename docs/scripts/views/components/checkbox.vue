@@ -14,12 +14,10 @@
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
-            <ui-checkbox
-              v-model="checked1">Checkbox ({{ checked1 }})</ui-checkbox>
+            <ui-checkbox v-model="checked1">Checkbox ({{ checked1 }})</ui-checkbox>
           </div>
           <div class="snippet-demo">
-            <ui-checkbox filled
-              v-model="checked2">Checkbox ({{ checked2 }})</ui-checkbox>
+            <ui-checkbox filled v-model="checked2">Checkbox ({{ checked2 }})</ui-checkbox>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
@@ -42,9 +40,7 @@
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo" v-for="(num, index) in [1, 2, 3]" :key="index">
-            <ui-checkbox
-              :value="num"
-              v-model="numberOptions">Option {{ num }}</ui-checkbox>
+            <ui-checkbox :value="num" v-model="numberOptions">Option {{ num }}</ui-checkbox>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
@@ -72,9 +68,7 @@
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo" v-for="(str, index) in ['1', '2', '3']" :key="index">
-            <ui-checkbox
-              :value="str"
-              v-model="stringOptions">Option '{{ str }}'</ui-checkbox>
+            <ui-checkbox :value="str" v-model="stringOptions">Option '{{ str }}'</ui-checkbox>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
@@ -96,7 +90,6 @@
         <ui-markdown :code="code[3]"></ui-markdown>
       </ui-accordion>
     </div>
-
     <ui-apidoc name="checkbox"></ui-apidoc>
   </div>
 </template>

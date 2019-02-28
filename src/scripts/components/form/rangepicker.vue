@@ -1,12 +1,8 @@
 <template>
   <div :class="className">
-    <ui-tabs v-if="currentOptions.length"
-      class="mdl-rangepicker__tabs"
-      :active="tab">
+    <ui-tabs v-if="currentOptions.length" class="mdl-rangepicker__tabs" :active="tab">
       <ui-tab-bar @change="handleTabsChange">
-        <ui-tab v-for="(option, index) in currentOptions" :key="index">
-          {{ option.value }}
-        </ui-tab>
+        <ui-tab v-for="(option, index) in currentOptions" :key="index">{{ option.value }}</ui-tab>
       </ui-tab-bar>
     </ui-tabs>
     <div class="mdl-rangepicker__input">
@@ -14,7 +10,8 @@
         :config="config"
         :model="startDate"
         :placeholder="startPlaceholder"
-        @change="handlePickerChange('startDate', $event)"></ui-datepicker>
+        @change="handlePickerChange('startDate', $event)"
+      ></ui-datepicker>
       <slot name="separator">
         <span class="mdl-rangepicker__separator">~</span>
       </slot>
@@ -22,7 +19,8 @@
         :config="config"
         :model="endDate"
         :placeholder="endPlaceholder"
-        @change="handlePickerChange('endDate', $event)"></ui-datepicker>
+        @change="handlePickerChange('endDate', $event)"
+      ></ui-datepicker>
     </div>
   </div>
 </template>
@@ -61,6 +59,10 @@ export default {
       default() {
         return [];
       }
+    },
+    reverseSelection: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -117,11 +119,27 @@ export default {
       let diffOption = this.currentOptions[tab];
       let today = time();
 
-      this.startDate =
-        diffOption.key === 0
-          ? this.endDate
-          : date('Y-m-d', strtotime(`-${diffOption.key} day`, today));
-      this.endDate = date('Y-m-d', today);
+      if (this.reverseSelection) {
+        if (this.endDate) {
+          today = strtotime(this.endDate);
+        } else {
+          this.endDate = date('Y-m-d', today);
+        }
+        this.startDate =
+          diffOption.key === 0
+            ? this.endDate
+            : date('Y-m-d', strtotime(`-${diffOption.key} day`, today));
+      } else {
+        if (this.startDate) {
+          today = strtotime(this.startDate);
+        } else {
+          this.startDate = date('Y-m-d', today);
+        }
+        this.endDate =
+          diffOption.key === 0
+            ? this.startDate
+            : date('Y-m-d', strtotime(`+${diffOption.key} day`, today));
+      }
     },
     // 改变输入框时同步选项卡
     syncTabs(startDate, endDate) {
