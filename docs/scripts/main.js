@@ -1,5 +1,5 @@
 import { isIE, killIE } from './kill-ie';
-import './polyfill';
+import './polyfills';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueMeta from 'vue-meta';
@@ -14,13 +14,12 @@ import UiAccordion from './components/accordion';
 // syntax highlighting
 import prismjs from 'prismjs';
 // ready translated locales
+import { isProd } from './config';
 import { flatpickrLang } from './config/lang';
 
 if (isIE) {
   killIE();
 } else {
-  const DEBUG = process.env.NODE_ENV !== 'production';
-
   Vue.config.productionTip = false;
 
   Vue.use(VueRouter);
@@ -32,7 +31,7 @@ if (isIE) {
   Vue.component(UiApidoc.name, UiApidoc);
   Vue.component(UiAccordion.name, UiAccordion);
 
-  Vue.prototype.$domain = DEBUG ? '' : '//mdl.balmjs.com';
+  Vue.prototype.$domain = isProd ? '//mdl.balmjs.com' : '';
   Vue.prototype.$http = axios;
   Vue.prototype.$prism = prismjs;
   Vue.prototype.$docs = {

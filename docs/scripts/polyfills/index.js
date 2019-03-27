@@ -3,7 +3,7 @@ if (typeof NodeList.prototype.forEach !== typeof alert) {
   NodeList.prototype.forEach = Array.prototype.forEach;
 }
 // for IE
-import 'core-js/shim';
+import 'core-js';
 // for IE9-
 import 'classlist.js';
 import 'matchmedia-polyfill';
