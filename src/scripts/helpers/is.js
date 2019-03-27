@@ -8,7 +8,7 @@ const isNull = _var => getType(_var) === 'null';
 
 const isUndefined = _var => getType(_var) === 'undefined';
 
-const isNumber = num => getType(num) === 'number';
+const isNumber = num => num === +num;
 
 const isString = str => getType(str) === 'string';
 

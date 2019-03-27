@@ -98,7 +98,7 @@ export default {
         fileObj.previewError = e;
       }
     },
-    $_handleChange(event) {
+    async $_handleChange(event) {
       let files = slice.call(event.target.files);
       if (files.length) {
         let arr = [];
