@@ -1,5 +1,14 @@
 # [BalmUI Lite](https://mdl.balmjs.com/)
 
+## 1.5.6 (2019.03.27)
+
+### :beetle: Bug fixes and improvements
+
+- `<ui-file>`: bugfix for preview
+- `helpers.isNumber`: bugfix for `NaN`
+
+---
+
 ## 1.5.5 (2019.02.28)
 
 ### :beetle: Bug fixes and improvements
