@@ -103,11 +103,13 @@ export default {
       if (files.length) {
         let arr = [];
 
-        arr = files.map(file => {
-          let fileObj = _createFileObj(file);
-          this.preview && this.$_handlePreview(fileObj);
-          return fileObj;
-        });
+        arr = await Promise.all(
+          files.map(async file => {
+            let fileObj = _createFileObj(file);
+            this.preview && (await this.$_handlePreview(fileObj));
+            return Promise.resolve(fileObj);
+          })
+        );
 
         this.$emit('change', arr);
 
