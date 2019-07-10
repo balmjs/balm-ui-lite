@@ -421,8 +421,8 @@ Vue.use(BalmUI); // include all plugins
 
 ---
 
-## [0.5](https://github.com/balmjs/ui-vue-lite/blob/0.5/CHANGELOG.md)
+## [0.5](https://github.com/balmjs/balm-ui-lite/blob/0.5/CHANGELOG.md)
 
 ---
 
-## [0.1.x](https://github.com/balmjs/ui-vue-lite/blob/0.1.x/CHANGELOG.md)
+## [0.1.x](https://github.com/balmjs/balm-ui-lite/blob/0.1.x/CHANGELOG.md)
