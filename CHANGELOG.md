@@ -1,5 +1,13 @@
 # [BalmUI Lite](https://mdl.balmjs.com/)
 
+## 1.6.0 (2019.07.11)
+
+### :tada: New features
+
+- upgrade to `balm@1.6.0`
+
+---
+
 ## 1.5.6 (2019.03.27)
 
 ### :beetle: Bug fixes and improvements

@@ -1,8 +1,8 @@
-var balm = require('balm');
-var updateMDL = process.argv.includes('--mdl');
-var useDefault = !updateMDL;
-var buildDocs = process.argv.includes('--docs');
-var useDocs = !balm.config.production || buildDocs;
+const balm = require('balm');
+const updateMDL = process.argv.includes('--mdl');
+const useDefault = !updateMDL;
+const buildDocs = process.argv.includes('--docs');
+const useDocs = !balm.config.isProd || buildDocs;
 
 module.exports = {
   updateMDL,

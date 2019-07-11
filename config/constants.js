@@ -1,6 +1,6 @@
-var DMI_SOURCE = './node_modules/material-design-icons';
-var DML_SOURCE = './node_modules/material-design-lite';
-var DEV_SOURCE = {
+const DMI_SOURCE = './node_modules/material-design-icons';
+const DML_SOURCE = './node_modules/material-design-lite';
+const DEV_SOURCE = {
   mdl: './src/material-design-lite',
   img: './src/images',
   font: './src/fonts'

@@ -1,15 +1,13 @@
-var balm = require('balm');
-var path = require('path');
-var env = require('./env');
-var VueLoaderPlugin = require('vue-loader/lib/plugin');
+const path = require('path');
+const env = require('./env');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
   roots: {
     source: env.useDocs ? 'docs' : 'src'
   },
   styles: {
-    ext: 'scss',
-    autoprefixer: ['> 1%', 'last 2 versions', 'Firefox ESR']
+    ext: 'scss'
   },
   scripts: {
     entry: env.useDocs

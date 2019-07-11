@@ -1,12 +1,12 @@
-var balm = require('balm');
-var balmConfig = require('./config/balmrc');
-var env = require('./config/env');
-var constants = require('./config/constants');
-var individual = require('./config/individual');
+const balm = require('balm');
+const balmConfig = require('./config/balmrc');
+const env = require('./config/env');
+const constants = require('./config/constants');
+const individual = require('./config/individual');
 
 balm.config = balmConfig;
 
-balm.go(function(mix) {
+balm.go(mix => {
   if (env.buildDocs) {
     mix.copy('./docs/data/*', './dist/data');
   } else {
@@ -41,7 +41,7 @@ balm.go(function(mix) {
         constants.DEV_SOURCE.font
       );
     } else {
-      if (balm.config.production) {
+      if (balm.config.isProd) {
         mix.remove('./dist/font/*.css');
 
         // clear individual
