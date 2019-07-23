@@ -1,5 +1,16 @@
 # [BalmUI Lite](https://mdl.balmjs.com/)
 
+## 1.6.1 (2019.07.23)
+
+### :beetle: Bug fixes and improvements
+
+- `<ui-rangepicker>`
+  - update style, `$rangepicker-input-padding` and `$rangepicker-textfield-width` was deprecated
+  - add `error` event
+  - clean code
+
+---
+
 ## 1.6.0 (2019.07.11)
 
 ### :tada: New features

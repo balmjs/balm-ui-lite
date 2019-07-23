@@ -1,11 +1,8 @@
 @import '../../material-design-lite/variables';
 
 $rangepicker-input-width: 300px !default;
-$rangepicker-input-padding: 4px 10px !default;
 $rangepicker-input-border-color: $input-text-bottom-border-color !default;
 $rangepicker-input-hover-border-color: #40a9ff !default;
-
-$rangepicker-textfield-width: 128px !default;
 
 $rangepicker-tabs-border-width: 1px 0 1px 1px !default;
 $rangepicker-tabs-border-color: $input-text-bottom-border-color !default;
@@ -22,15 +19,18 @@ $rangepicker-tab-hover-color: $rangepicker-tab-active-bg-color !default;
 }
 
 .mdl-rangepicker__input {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   width: $rangepicker-input-width;
-  padding: $rangepicker-input-padding;
   border: 1px solid $rangepicker-input-border-color;
   transition: all 0.3s;
   &:hover {
     border-color: $rangepicker-input-hover-border-color;
   }
   .mdl-textfield {
-    width: $rangepicker-textfield-width;
+    width: auto;
+    margin: 0;
     padding: 0;
   }
   .mdl-textfield__input {

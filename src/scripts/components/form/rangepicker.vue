@@ -10,7 +10,7 @@
         :config="config"
         :model="startDate"
         :placeholder="startPlaceholder"
-        @change="handlePickerChange('startDate', $event)"
+        @change="handlePickerChange(DATE_FIELD.START, $event)"
       ></ui-datepicker>
       <slot name="separator">
         <span class="mdl-rangepicker__separator">~</span>
@@ -19,7 +19,7 @@
         :config="config"
         :model="endDate"
         :placeholder="endPlaceholder"
-        @change="handlePickerChange('endDate', $event)"
+        @change="handlePickerChange(DATE_FIELD.END, $event)"
       ></ui-datepicker>
     </div>
   </div>
@@ -31,7 +31,12 @@ import UiDatepicker from './datepicker';
 import { date, strtotime, time } from '../../helpers/datetime';
 
 const ONE_DAY = 86400;
+const DATE_FIELD = {
+  START: 'startDate',
+  END: 'endDate'
+};
 const EVENT_CHANGE = 'change';
+const EVENT_ERROR = 'error';
 
 export default {
   name: 'ui-rangepicker',
@@ -67,6 +72,7 @@ export default {
   },
   data() {
     return {
+      DATE_FIELD,
       tab: 0,
       currentOptions: this.options,
       startDate: '',
@@ -96,23 +102,46 @@ export default {
     init(selectedDates) {
       if (getType(selectedDates) === 'array') {
         if (selectedDates.length === 2) {
-          this.startDate = selectedDates[0];
-          this.endDate = selectedDates[1];
+          this[DATE_FIELD.START] = selectedDates[0];
+          this[DATE_FIELD.END] = selectedDates[1];
         } else {
-          this.startDate = '';
-          this.endDate = '';
+          this[DATE_FIELD.START] = '';
+          this[DATE_FIELD.END] = '';
         }
       }
     },
     handleTabsChange(tab) {
       this.tab = tab;
       this.syncDatepicker(tab);
-      this.$emit(EVENT_CHANGE, [this.startDate, this.endDate]);
+      this.$emit(EVENT_CHANGE, [this[DATE_FIELD.START], this[DATE_FIELD.END]]);
+    },
+    verifyDateRange(field, value) {
+      let curStartDate;
+      let curEndDate;
+
+      if (field === DATE_FIELD.START) {
+        curStartDate = value;
+        curEndDate = this[DATE_FIELD.END];
+      } else {
+        curStartDate = this[DATE_FIELD.START];
+        curEndDate = value;
+      }
+
+      return strtotime(curStartDate) && strtotime(curEndDate)
+        ? strtotime(curStartDate) <= strtotime(curEndDate)
+        : true;
     },
     handlePickerChange(field, value) {
-      this[field] = value;
-      this.syncTabs(this.startDate, this.endDate);
-      this.$emit(EVENT_CHANGE, [this.startDate, this.endDate]);
+      if (this.verifyDateRange(field, value)) {
+        this[field] = value;
+        this.syncTabs(this[DATE_FIELD.START], this[DATE_FIELD.END]);
+        this.$emit(EVENT_CHANGE, [
+          this[DATE_FIELD.START],
+          this[DATE_FIELD.END]
+        ]);
+      } else {
+        this.$emit(EVENT_ERROR, 'Invalid Date');
+      }
     },
     // 切换选项卡时同步输入框
     syncDatepicker(tab) {
@@ -120,31 +149,34 @@ export default {
       let today = time();
 
       if (this.reverseSelection) {
-        if (this.endDate) {
-          today = strtotime(this.endDate);
+        if (this[DATE_FIELD.END]) {
+          today = strtotime(this[DATE_FIELD.END]);
         } else {
-          this.endDate = date('Y-m-d', today);
+          this[DATE_FIELD.END] = date('Y-m-d', today);
         }
-        this.startDate =
+
+        this[DATE_FIELD.START] =
           diffOption.key === 0
-            ? this.endDate
+            ? this[DATE_FIELD.END]
             : date('Y-m-d', strtotime(`-${diffOption.key} day`, today));
       } else {
-        if (this.startDate) {
-          today = strtotime(this.startDate);
+        if (this[DATE_FIELD.START]) {
+          today = strtotime(this[DATE_FIELD.START]);
         } else {
-          this.startDate = date('Y-m-d', today);
+          this[DATE_FIELD.START] = date('Y-m-d', today);
         }
-        this.endDate =
+
+        this[DATE_FIELD.END] =
           diffOption.key === 0
-            ? this.startDate
+            ? this[DATE_FIELD.START]
             : date('Y-m-d', strtotime(`+${diffOption.key} day`, today));
       }
     },
     // 改变输入框时同步选项卡
-    syncTabs(startDate, endDate) {
-      if (startDate && endDate) {
-        let diffDay = (strtotime(endDate) - strtotime(startDate)) / ONE_DAY;
+    syncTabs(curStartDate, curEndDate) {
+      if (curStartDate && curEndDate) {
+        let diffDay =
+          (strtotime(curEndDate) - strtotime(curStartDate)) / ONE_DAY;
 
         this.tab = this.currentOptions.findIndex(
           option => option.key === diffDay

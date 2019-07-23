@@ -1,12 +1,6 @@
 {
   "name": "balm-ui-lite",
-  "version": "1.4.0",
-  "description": "Material Design Lite + Vue",
-  "homepage": "https://mdl.balmjs.com/",
-  "authors": [
-    "Elf-mousE <ifmouz@gmail.com>",
-    "74sharlock <sharlock7788@gmail.com>"
-  ],
+  "description": "Material Design Lite + Vue + Idea",
   "main": "dist/js/balm-ui-lite.js",
   "license": "MIT",
   "ignore": [
@@ -17,6 +11,11 @@
     "test",
     "tests"
   ],
+  "authors": [
+    "Elf-mousE <ifmouz@gmail.com>",
+    "74sharlock <sharlock7788@gmail.com>"
+  ],
+  "homepage": "https://mdl.balmjs.com/",
   "devDependencies": {
     "normalize-css": "^7.0.0",
     "material-design-icons": "^3.0.1",

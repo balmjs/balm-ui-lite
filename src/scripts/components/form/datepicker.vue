@@ -1,10 +1,12 @@
 <template>
-  <ui-textfield ref="text"
+  <ui-textfield
+    ref="text"
     class="mdl-datepicker"
     :model="currentValue"
     :placeholder="placeholder"
     :plus="(toggle || allowInput) || clear"
-    @change="handleChange">
+    @change="handleChange"
+  >
     <template slot="plus">
       <span v-if="toggle || allowInput" class="mdl-datepicker__toggle" data-toggle>
         <slot name="toggle">

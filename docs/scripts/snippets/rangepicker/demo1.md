@@ -1,8 +1,11 @@
 ```html
 <ui-rangepicker
-  v-model="date"
+  :model="date"
   startPlaceholder="Start date"
-  endPlaceholder="End date"></ui-rangepicker>
+  endPlaceholder="End date"
+  @change="balmUI.onChange('date', $event, doSomething)"
+  @error="onError"
+></ui-rangepicker>
 ```
 
 ```js
@@ -11,6 +14,14 @@ export default {
     return {
       date: []
     };
+  },
+  methods: {
+    doSomething() {
+      console.log('gg');
+    },
+    onError(msg) {
+      console.log(msg);
+    }
   }
 };
 ```

@@ -4,13 +4,19 @@
       <h2>RangePicker 日期范围选择</h2>
     </div>
 
-    <h4>0. 使用方式</h4>
-    <ui-markdown :text="code[0]"></ui-markdown>
+    <!-- <h4>0. 使用方式</h4>
+    <ui-markdown :text="code[0]"></ui-markdown>-->
 
     <h4>1. 简单选择</h4>
     <div class="snippet-group">
       <div class="snippet-demo">
-        <ui-rangepicker v-model="date1" startPlaceholder="Start date" endPlaceholder="End date"></ui-rangepicker>
+        <ui-rangepicker
+          :model="date1"
+          startPlaceholder="Start date"
+          endPlaceholder="End date"
+          @change="balmUI.onChange('date1', $event, doSomething)"
+          @error="onError"
+        ></ui-rangepicker>
         Choose date range: {{ date1 }}
       </div>
       <ui-accordion>
@@ -58,6 +64,13 @@ export default {
   data() {
     return {
       docs,
+      // dateConfig: {
+      //   locale: this.flatpickrLang.cn,
+      //   defaultDate: 'today',
+      //   dateFormat: 'Y-m-d H:i',
+      //   enableTime: true,
+      //   maxDate: Date.now()
+      // },
       date1: [],
       date2: [TODAY, TODAY],
       options: [
@@ -79,6 +92,14 @@ export default {
   },
   created() {
     this.showCode('rangepicker', 2);
+  },
+  methods: {
+    doSomething() {
+      console.log('gg');
+    },
+    onError(msg) {
+      console.log(msg);
+    }
   }
 };
 </script>

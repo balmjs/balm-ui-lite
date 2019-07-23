@@ -47,6 +47,11 @@
       "name": "change",
       "type": "Function(value: array)",
       "description": "当日期变化时触发函数"
+    },
+    {
+      "name": "error",
+      "type": "Function(message: string)",
+      "description": "当选择无效日期范围时触发函数"
     }
   ],
   "sass": [
@@ -55,20 +60,12 @@
       "description": "日期范围输入区域width属性"
     },
     {
-      "var": "$rangepicker-input-padding",
-      "description": "日期范围输入区域padding属性"
-    },
-    {
       "var": "$rangepicker-input-border-color",
       "description": "日期范围输入区域边框颜色"
     },
     {
       "var": "$rangepicker-input-hover-border-color",
       "description": "日期范围输入区域hover时的边框颜色"
-    },
-    {
-      "var": "$rangepicker-textfield-width",
-      "description": "日期范围输入框的width属性"
     },
     {
       "var": "$rangepicker-tabs-border-width",

@@ -18,8 +18,8 @@
               toggle
               clear
               :config="config1"
-              v-model="date1">
-            </ui-datepicker>
+              v-model="date1"
+            ></ui-datepicker>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
@@ -40,7 +40,8 @@
               toggle
               clear
               :config="config2"
-              v-model="date2">
+              v-model="date2"
+            >
               <template slot="toggle">
                 <i class="fa fa-calendar"></i>
               </template>
@@ -57,16 +58,16 @@
       </ui-accordion>
     </div>
 
-    <h4>3. 简单时间范围选择（如需定制化时间范围选择推荐使用<router-link to="/components/rangepicker">&lt;ui-rangepicker&gt;</router-link>）</h4>
+    <h4>
+      3. 简单时间范围选择（如需定制化时间范围选择推荐使用
+      <router-link to="/components/rangepicker">&lt;ui-rangepicker&gt;</router-link>）
+    </h4>
     <div class="snippet-group">
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
-            <ui-datepicker
-              placeholder="Select Date Range.."
-              :config="config3"
-              v-model="date3"></ui-datepicker>
+            <ui-datepicker placeholder="Select Date Range.." :config="config3" v-model="date3"></ui-datepicker>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
@@ -82,10 +83,7 @@
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
-            <ui-datepicker
-              placeholder="Select Multi Date.."
-              :config="config4"
-              v-model="date4"></ui-datepicker>
+            <ui-datepicker placeholder="Select Multi Date.." :config="config4" v-model="date4"></ui-datepicker>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
