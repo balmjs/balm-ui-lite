@@ -1,5 +1,13 @@
 # [BalmUI Lite](https://mdl.balmjs.com/)
 
+## 1.7.0 (2019.08.05)
+
+### :tada: New features
+
+- rebuild all for UMD mode
+
+---
+
 ## 1.6.2 (2019.07.23)
 
 ### :beetle: Bug fixes and improvements
