@@ -1,5 +1,11 @@
 # [BalmUI Lite](https://mdl.balmjs.com/)
 
+## 1.7.1 (2019.08.09)
+
+- rebuild all for components' names
+
+---
+
 ## 1.7.0 (2019.08.05)
 
 ### :tada: New features

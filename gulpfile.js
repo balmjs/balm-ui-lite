@@ -65,7 +65,7 @@ balm.go(mix => {
               individual.output[buildName],
               {
                 output: {
-                  library: 'BalmUI_' + item.split('.')[0]
+                  library: 'BalmUILite_' + item.split('.')[0]
                 }
               }
             );

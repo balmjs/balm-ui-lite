@@ -17,8 +17,8 @@ module.exports = {
       : {
           'balm-ui-lite': './src/scripts/index.js'
         },
-    library: 'BalmUILite',
-    libraryTarget: 'umd',
+    library: env.useDocs ? '' : 'BalmUILite',
+    libraryTarget: env.useDocs ? 'var' : 'umd',
     loaders: [
       {
         test: /\.vue$/,

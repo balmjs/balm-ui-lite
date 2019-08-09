@@ -1,33 +1,29 @@
 <template>
-  <div class="page--test" >
+  <div class="page--test">
     <fieldset class="form-test" v-show="false">
       <legend>Form test</legend>
       <div class="form-item">
-        <ui-textfield
-          label="Input..."
-          v-model="formData.name"></ui-textfield>
+        <ui-textfield label="Input..." v-model="formData.name"></ui-textfield>
       </div>
       <div class="form-action">
         <ui-button @click="submit">Submit</ui-button>
       </div>
     </fieldset>
 
-      <div style="width: 50%;" v-show="false">
-        <ui-file multiple preview @change="onChange"></ui-file>
-        <ul>
-          <li v-for="file in files" :key="file.uid">
-            <img :src="file.previewSrc">
-            <span>{{file.name}} -- {{file.size}} b</span>
-            <span>{{file.type}}</span>
-          </li>
-        </ul>
-      </div>
-      <input type="range" v-model="progress">
-      <div style="width: 200px;height: 200px;">
-        <ui-circle :progress="progress" :strokeWidth="30" :animate="true">
-          {{ progress }} %
-        </ui-circle>
-      </div>
+    <div style="width: 50%;" v-show="false">
+      <ui-file multiple preview @change="onChange"></ui-file>
+      <ul>
+        <li v-for="file in files" :key="file.uid">
+          <img :src="file.previewSrc" />
+          <span>{{file.name}} -- {{file.size}} b</span>
+          <span>{{file.type}}</span>
+        </li>
+      </ul>
+    </div>
+    <input type="range" v-model="progress" />
+    <div style="width: 200px;height: 200px;">
+      <ui-circle :progress="progress" :strokeWidth="30" :animate="true">{{ progress }} %</ui-circle>
+    </div>
   </div>
 </template>
 
