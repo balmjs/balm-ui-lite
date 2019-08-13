@@ -35,10 +35,10 @@
     "url": "git+https://github.com/balmjs/balm-ui-lite.git"
   },
   "scripts": {
-    "mdl": "gulp --silent --mdl",
+    "mdl": "gulp --mdl",
     "dev": "gulp",
-    "prod": "gulp --silent --production",
-    "docs": "gulp --silent --production --docs",
+    "prod": "cross-env NODE_ENV=production gulp -p",
+    "docs": "cross-env NODE_ENV=production gulp -p --docs",
     "test": "cross-env NODE_ENV=test mocha-webpack --webpack-config test/webpack-config.test.js --require @babel/register --require test/setup.js"
   },
   "dependencies": {
@@ -55,7 +55,6 @@
     "@babel/plugin-proposal-throw-expressions": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-syntax-import-meta": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
     "@babel/runtime-corejs2": "^7.5.5",
     "@vue/test-utils": "^1.0.0-beta.29",
     "axios": "^0.19.0",
@@ -79,7 +78,7 @@
     "prismjs": "^1.17.1",
     "sinon": "^7.4.1",
     "vue": "^2.6.10",
-    "vue-i18n": "^8.12.0",
+    "vue-i18n": "^8.14.0",
     "vue-loader": "^15.7.1",
     "vue-meta": "^2.2.1",
     "vue-router": "^3.1.2",
