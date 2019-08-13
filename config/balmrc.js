@@ -3,6 +3,9 @@ const env = require('./env');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
+  server: {
+    open: false
+  },
   roots: {
     source: env.useDocs ? 'docs' : 'src'
   },
