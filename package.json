@@ -1,6 +1,6 @@
 {
   "name": "balm-ui-lite",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "description": "Material Design Lite + Vue + Idea",
   "homepage": "https://mdl.balmjs.com/",
   "bugs": {
@@ -84,5 +84,9 @@
     "vue-router": "^3.1.2",
     "vue-template-compiler": "^2.6.10",
     "webpack-node-externals": "^1.7.2"
-  }
+  },
+  "peerDependencies": {
+    "vue": ">=2.1.0"
+  },
+  "private": true
 }

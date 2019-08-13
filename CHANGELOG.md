@@ -1,5 +1,11 @@
 # [BalmUI Lite](https://mdl.balmjs.com/)
 
+## 1.7.2 (2019.08.13)
+
+- rebuild all by `core-js@2`
+
+---
+
 ## 1.7.1 (2019.08.09)
 
 - rebuild all for components' names
