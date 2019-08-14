@@ -1,5 +1,5 @@
-import { isIE, killIE } from './kill-ie';
 import './polyfills';
+import { isIE, killIE } from './kill-ie';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueMeta from 'vue-meta';

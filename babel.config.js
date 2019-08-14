@@ -2,14 +2,7 @@ module.exports = function(api) {
   let envOptions = api.env('production')
     ? {}
     : {
-        modules: false,
-        useBuiltIns: 'entry',
-        corejs: 2
-      };
-  let runtimeOptions = api.env('production')
-    ? {}
-    : {
-        corejs: 2
+        modules: false
       };
 
   return {
@@ -37,7 +30,7 @@ module.exports = function(api) {
       ],
       '@babel/plugin-proposal-json-strings',
       // Runtime
-      ['@babel/plugin-transform-runtime', runtimeOptions]
+      '@babel/plugin-transform-runtime'
     ],
     env: {
       test: {
