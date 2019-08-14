@@ -9,6 +9,7 @@ balm.config = balmConfig;
 balm.go(mix => {
   if (env.buildDocs) {
     mix.copy('./docs/data/*', './dist/data');
+    mix.remove('./dist/rev-manifest.json');
   } else {
     if (env.updateMDL) {
       // clear
