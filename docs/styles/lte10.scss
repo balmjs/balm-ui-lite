@@ -2,6 +2,7 @@
 @import 'ie/checkbox';
 @import 'ie/list';
 @import 'ie/divider';
+@import 'ie/dialog';
 
 /**
  * IE9 and IE10 rule sets go here
@@ -10,4 +11,5 @@
   @include fix-checkbox;
   @include fix-list;
   @include fix-divider;
+  @include fix-dialog;
 }

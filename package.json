@@ -60,7 +60,6 @@
     "babel-eslint": "^10.0.2",
     "balm": "^1.8.0",
     "chai": "^4.2.0",
-    "classlist.js": "^1.1.20150312",
     "core-js": "2",
     "cross-env": "^5.2.0",
     "eslint": "^6.1.0",

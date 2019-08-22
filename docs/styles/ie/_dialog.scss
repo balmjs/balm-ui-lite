@@ -1,0 +1,9 @@
+@mixin fix-dialog {
+  .mdl-dialog__surface {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .mdl-dialog__content {
+    overflow: auto;
+  }
+}

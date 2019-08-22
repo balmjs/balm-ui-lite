@@ -1,7 +1,6 @@
 @mixin fix-checkbox {
-  .mdl-checkbox.is-filled {
-    .mdl-checkbox__tick-outline {
-      margin-top: 3px;
-    }
+  .mdl-checkbox.is-filled .mdl-checkbox__tick-outline {
+    width: 10px;
+    height: 10px;
   }
 }

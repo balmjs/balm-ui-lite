@@ -4,7 +4,30 @@
 @import 'ie/divider';
 @import 'ie/select';
 
+.snippet-demo-padding,
+.snippet-caption-padding,
+.snippet-captions-padding {
+  display: none !important;
+}
+
 // fix layout
+.mdl-layout__header-row {
+  @include clearfix();
+  .mdl-layout__title {
+    float: left;
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+  .welcome-issues,
+  .mdl-navigation {
+    float: right;
+    @include clearfix();
+  }
+  .mdl-navigation__link {
+    float: left;
+  }
+}
+
 .mdl-layout__drawer {
   height: auto;
   max-height: none;
@@ -20,9 +43,29 @@
   padding: 20px 20px 20px 260px !important;
 }
 
-/// fix components
-// badge
+.mdl-layout__tab-bar {
+  display: inline-block;
+  @include clearfix();
+}
+.mdl-layout--fixed-tabs {
+  .mdl-layout__tab-bar {
+    display: block;
+  }
+  .mdl-layout__tab {
+    float: left;
+    width: 33.33%;
+  }
+}
+
+// fix badge
 .mdl-badge[data-badge]:after {
   line-height: 22px;
   text-align: center;
+}
+
+// fix menu page
+.page--menu {
+  .snippet-demo .mdl-button--icon {
+    border: 1px solid;
+  }
 }

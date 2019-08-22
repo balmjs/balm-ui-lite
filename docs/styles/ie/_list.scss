@@ -3,7 +3,8 @@
   .mdl-list__item {
     .mdl-list__item-secondary-content {
       height: 100%;
-      .mdl-list__item-secondary-info {
+      .mdl-list__item-secondary-info,
+      .mdl-list__item-secondary-action {
         display: block;
       }
     }
