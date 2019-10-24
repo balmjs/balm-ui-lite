@@ -7,9 +7,7 @@
     <!-- zero or more <colgroup> elements -->
     <colgroup v-if="colgroup">
       <slot name="colgroup">
-        <col v-for="(colValue, colKey) in currentCol"
-          :key="colKey"
-          :class="`col-${colValue}`">
+        <col v-for="(colValue, colKey) in currentCol" :key="colKey" :class="`col-${colValue}`" />
       </slot>
     </colgroup>
     <!-- an optional <thead> element -->
@@ -19,35 +17,40 @@
           <template v-for="(cell, index) in rowValue">
             <template v-if="cell.isCheckbox">
               <th
-              :key="index"
-              :class="['mdl-data-table__checkbox', cell.class]"
-              :colspan="cell.col"
-              :rowspan="cell.row">
-                <ui-checkbox noRipple
+                :key="index"
+                :class="['mdl-data-table__checkbox', cell.class]"
+                :colspan="cell.col"
+                :rowspan="cell.row"
+              >
+                <ui-checkbox
+                  noRipple
                   :class="[CLASSNAME_SELECT, 'mdl-data-table__check-all']"
                   :value="cell.value"
                   :model="isCheckAll"
-                  @change="onCheckAll"></ui-checkbox>
+                  @change="onCheckAll"
+                ></ui-checkbox>
               </th>
             </template>
             <template v-else>
               <!-- Raw HTML -->
-              <th v-if="cell.raw"
+              <th
+                v-if="cell.raw"
                 :key="index"
                 :class="[cell.class, getSortClass(cell.sort)]"
                 :colspan="cell.col"
                 :rowspan="cell.row"
                 @click="onSort(cell)"
-                v-html="cell.value"></th>
+                v-html="cell.value"
+              ></th>
               <!-- Text -->
-              <th v-else
+              <th
+                v-else
                 :key="index"
                 :class="[cell.class, getSortClass(cell.sort)]"
                 :colspan="cell.col"
                 :rowspan="cell.row"
-                @click="onSort(cell)">
-                {{ cell.value }}
-              </th>
+                @click="onSort(cell)"
+              >{{ cell.value }}</th>
             </template>
           </template>
         </tr>
@@ -62,28 +65,28 @@
       <slot name="tbody" :data="currentData">
         <!-- Has Data -->
         <template v-if="tbodyData.length">
-          <tr v-for="(rowValue, rowKey) in tbodyData"
+          <tr
+            v-for="(rowValue, rowKey) in tbodyData"
             :key="rowKey"
             :class="{
               'is-selected': isSelected(rowValue, rowKey),
               'mdl-data-table__detail-view': isDetailView(rowKey)
-            }">
+            }"
+          >
             <template v-for="(cell, index) in rowValue">
               <!-- Data View -->
               <template v-if="isCellData(rowKey, cell)">
                 <!-- Raw HTML -->
-                <td v-if="cell.raw"
+                <td
+                  v-if="cell.raw"
                   :key="index"
                   :class="cell.class"
                   :colspan="cell.col"
                   :rowspan="cell.row"
-                  v-html="cell.value"></td>
+                  v-html="cell.value"
+                ></td>
                 <!-- Text -->
-                <td v-else
-                  :key="index"
-                  :class="cell.class"
-                  :colspan="cell.col"
-                  :rowspan="cell.row">
+                <td v-else :key="index" :class="cell.class" :colspan="cell.col" :rowspan="cell.row">
                   <template v-if="cell.url">
                     <a :href="cell.url">{{ cell.value }}</a>
                   </template>
@@ -103,27 +106,35 @@
                     cell.class
                   ]"
                   :colspan="cell.col"
-                  :rowspan="cell.row">
+                  :rowspan="cell.row"
+                >
                   <!-- Actions -->
                   <template v-if="cell.isAction">
-                    <ui-button v-for="(actionValue, actionKey) in cell.actions"
+                    <ui-button
+                      v-for="(actionValue, actionKey) in cell.actions"
                       :key="actionKey"
                       :icon="actionValue.icon || actionValue.isIcon"
                       :link="actionValue.isLink"
-                      @click="doAction(actionValue)">
+                      @click="doAction(actionValue)"
+                    >
                       <span v-if="!actionValue.icon" v-html="actionValue.value"></span>
                     </ui-button>
                   </template>
                   <!-- Checkbox -->
-                  <ui-checkbox v-if="cell.isCheckbox" noRipple
+                  <ui-checkbox
+                    v-if="cell.isCheckbox"
+                    noRipple
                     :class="[CLASSNAME_SELECT, 'mdl-data-table__check-one']"
                     :value="selectKeyField ? cell.value : getSelectIndex(rowKey)"
                     :model="currentCheckedList"
-                    @change="onCheckOne"></ui-checkbox>
+                    @change="onCheckOne"
+                  ></ui-checkbox>
                   <!-- Detail View Control -->
-                  <i v-if="cell.isPlus"
+                  <i
+                    v-if="cell.isPlus"
                     class="material-icons md-16"
-                    @click="viewDetail(rowKey, cell)">{{ cell.show ? 'remove' : 'add' }}</i>
+                    @click="viewDetail(rowKey, cell)"
+                  >{{ cell.show ? 'remove' : 'add' }}</i>
                   <!-- Detail View -->
                   <div v-if="isDetailView(rowKey)" class="detail-view">
                     <slot></slot>
@@ -146,19 +157,21 @@
       <slot name="tfoot" :data="tfootData">
         <tr>
           <template v-for="(cell, index) in tfootData">
-            <td v-if="cell.raw"
+            <td
+              v-if="cell.raw"
               :key="index"
               :class="cell.class"
               :colspan="cell.col"
               :rowspan="cell.row"
-              v-html="cell.value"></td>
-            <td v-else
+              v-html="cell.value"
+            ></td>
+            <td
+              v-else
               :key="index"
               :class="cell.class"
               :colspan="cell.col"
-              :rowspan="cell.row">
-              {{ cell.value }}
-            </td>
+              :rowspan="cell.row"
+            >{{ cell.value }}</td>
           </template>
         </tr>
       </slot>
@@ -369,7 +382,7 @@ export default {
     data(val) {
       this.currentData = val;
     },
-    checkboxList(val) {
+    checkedList(val) {
       this.currentCheckedList = val;
     },
     thead(val) {
@@ -748,8 +761,8 @@ export default {
     _getCheckedIds() {
       return this.currentData
         .filter(value => !value[CELL_DETAIL_VIEW])
-        .map(
-          (value, index) => (this.selectKeyField ? value[this.keyField] : index)
+        .map((value, index) =>
+          this.selectKeyField ? value[this.keyField] : index
         );
     },
     _onChecked() {

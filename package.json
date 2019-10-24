@@ -1,6 +1,6 @@
 {
   "name": "balm-ui-lite",
-  "version": "1.7.2",
+  "version": "1.7.3",
   "description": "Material Design Lite + Vue + Idea",
   "homepage": "https://mdl.balmjs.com/",
   "bugs": {
@@ -58,7 +58,7 @@
     "@vue/test-utils": "^1.0.0-beta.29",
     "axios": "^0.19.0",
     "babel-eslint": "^10.0.2",
-    "balm": "^1.8.0",
+    "balm": "^1.9.0",
     "chai": "^4.2.0",
     "core-js": "2",
     "cross-env": "^5.2.0",

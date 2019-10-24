@@ -1,5 +1,11 @@
 # [BalmUI Lite](https://mdl.balmjs.com/)
 
+## 1.7.3 (2019.10.24)
+
+- `<ui-table>`: fix `checkedList` watch bug
+
+---
+
 ## 1.7.2 (2019.08.13)
 
 - rebuild all by `core-js@2`
