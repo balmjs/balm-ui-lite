@@ -18,7 +18,10 @@
             <div class="snippet-demo-container demo-tabs demo-tabs__tabs">
               <ui-tabs v-model="tab">
                 <ui-tab-bar>
-                  <ui-tab v-for="(item, index) in ['Tab1', 'Tab2', 'Tab3']" :key="index">
+                  <ui-tab
+                    v-for="(item, index) in ['Tab1', 'Tab2', 'Tab3']"
+                    :key="index"
+                  >
                     {{ item }}
                   </ui-tab>
                 </ui-tab-bar>
@@ -50,7 +53,7 @@
 </template>
 
 <script>
-import snippets from '../../mixins/snippets';
+import snippets from '@/mixins/snippets';
 
 export default {
   mixins: [snippets],

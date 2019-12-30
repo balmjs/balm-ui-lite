@@ -14,35 +14,34 @@ balm.go(mix => {
     if (env.updateMDL) {
       // clear
       mix.remove([
-        constants.DEV_SOURCE.mdl + '/*',
-        constants.DEV_SOURCE.img + '/*',
-        constants.DEV_SOURCE.font + '/*'
+        `${constants.DEV_SOURCE.mdl}/*`,
+        `${constants.DEV_SOURCE.img}/*`,
+        `${constants.DEV_SOURCE.font}/*`
       ]);
 
       // get material design lite
       mix.copy(
-        constants.DML_SOURCE +
-          '/src/{_*scss,material-design-lite.scss,mdlComponentHandler.js}',
+        `${constants.DML_SOURCE}/src/{_*scss,material-design-lite.scss,mdlComponentHandler.js}`,
         constants.DEV_SOURCE.mdl
       );
       mix.copy(
-        constants.DML_SOURCE + '/src/**/{_*.scss,*.js}',
+        `${constants.DML_SOURCE}/src/**/{_*.scss,*.js}`,
         constants.DEV_SOURCE.mdl
       );
 
       // get material design lite images
       mix.copy(
-        constants.DML_SOURCE + '/src/images/*.svg',
+        `${constants.DML_SOURCE}/src/images/*.svg`,
         constants.DEV_SOURCE.img
       );
 
       // get material design icons
       mix.copy(
-        constants.DMI_SOURCE + '/iconfont/*.{css,eot,svg,ttf,woff,woff2}',
+        `${constants.DMI_SOURCE}/iconfont/*.{css,eot,svg,ttf,woff,woff2}`,
         constants.DEV_SOURCE.font
       );
     } else {
-      if (balm.config.isProd) {
+      if (mix.env.isProd) {
         mix.remove('./dist/font/*.css');
 
         // clear individual

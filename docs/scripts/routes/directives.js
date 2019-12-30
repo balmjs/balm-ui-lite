@@ -1,4 +1,4 @@
-const LazyLoad = () => import('../views/directives/lazy-load');
+const LazyLoad = () => import('@/views/directives/lazy-load');
 
 const directivesRoutes = [
   {

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import docs from '../../docs/plugins.md';
+import docs from '@/docs/plugins.md';
 
 export default {
   metaInfo: {

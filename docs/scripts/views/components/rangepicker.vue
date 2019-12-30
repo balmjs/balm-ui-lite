@@ -50,9 +50,9 @@
 </template>
 
 <script>
-import snippets from '../../mixins/snippets';
-import { date, time } from '../../helpers';
-import docs from '../../docs/components/rangepicker.md';
+import snippets from '@/mixins/snippets';
+import { date, time } from '@/helpers';
+import docs from '@/docs/components/rangepicker.md';
 
 const TODAY = date('Y-m-d', time());
 

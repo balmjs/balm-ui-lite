@@ -3,8 +3,9 @@
     <ui-markdown class="markdown-page" :text="docs"></ui-markdown>
   </div>
 </template>
+
 <script>
-import docs from '../../docs/helpers/detect-ie.md';
+import docs from '@/docs/helpers/detect-ie.md';
 
 export default {
   metaInfo: {

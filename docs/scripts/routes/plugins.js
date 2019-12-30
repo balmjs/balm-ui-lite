@@ -1,10 +1,10 @@
-const Notify = () => import('../views/plugins/notify');
-const Event = () => import('../views/plugins/event');
-const Validator = () => import('../views/plugins/validator');
-const Alert = () => import('../views/plugins/alert');
-const Confirm = () => import('../views/plugins/confirm');
-const Prompt = () => import('../views/plugins/prompt');
-const Toast = () => import('../views/plugins/toast');
+const Notify = () => import('@/views/plugins/notify');
+const Event = () => import('@/views/plugins/event');
+const Validator = () => import('@/views/plugins/validator');
+const Alert = () => import('@/views/plugins/alert');
+const Confirm = () => import('@/views/plugins/confirm');
+const Prompt = () => import('@/views/plugins/prompt');
+const Toast = () => import('@/views/plugins/toast');
 
 const pluginsRoutes = [
   {

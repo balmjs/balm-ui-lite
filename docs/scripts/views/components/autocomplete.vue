@@ -19,7 +19,8 @@
               placeholder="try to type"
               v-model="keywords1"
               :source="source1"
-              @selected="balmUI.onChange('keywords1', $event.value)">
+              @selected="balmUI.onChange('keywords1', $event.value)"
+            >
             </ui-autocomplete>
           </div>
           <div class="snippet-demo-padding"></div>
@@ -45,7 +46,8 @@
               remote
               autoFocus
               @search="onSearch"
-              @selected="balmUI.onChange('keywords2', $event.value)">
+              @selected="balmUI.onChange('keywords2', $event.value)"
+            >
             </ui-autocomplete>
           </div>
           <div class="snippet-demo-padding"></div>
@@ -62,8 +64,8 @@
 </template>
 
 <script>
-import snippets from '../../mixins/snippets';
-import docs from '../../docs/components/autocomplete.md';
+import snippets from '@/mixins/snippets';
+import docs from '@/docs/components/autocomplete.md';
 
 export default {
   mixins: [snippets],

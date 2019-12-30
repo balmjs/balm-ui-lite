@@ -3,16 +3,15 @@ const env = require('./env');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
-  server: {
-    open: false
-  },
+  useDefaults: env.useDefaults,
   roots: {
     source: env.useDocs ? 'docs' : 'src'
   },
   styles: {
-    ext: 'scss'
+    extname: 'scss'
   },
   scripts: {
+    extractAllVendors: env.useDocs,
     entry: env.useDocs
       ? {
           main: './docs/scripts/main.js'
@@ -22,6 +21,7 @@ module.exports = {
         },
     library: env.useDocs ? '' : 'BalmUILite',
     libraryTarget: env.useDocs ? 'var' : 'umd',
+    includeJsResource: env.useDocs ? [path.resolve('./src/scripts')] : [],
     loaders: [
       {
         test: /\.vue$/,
@@ -35,16 +35,15 @@ module.exports = {
     plugins: [new VueLoaderPlugin()],
     alias: {
       vue$: 'vue/dist/vue.esm.js',
-      flatpickrLangZh: 'flatpickr/dist/l10n/zh.js'
+      flatpickrLangZh: 'flatpickr/dist/l10n/zh.js',
+      '@': path.resolve(__dirname, '../docs/scripts')
     },
     eslint: true,
     options: {
       compress: {
         drop_console: false
       }
-    },
-    include: env.useDocs ? [path.resolve('./src/scripts')] : [],
-    extractAllVendors: env.useDocs
+    }
   },
   extras: {
     excludes: ['index.js'],
@@ -52,8 +51,10 @@ module.exports = {
   },
   zip: 'assets.zip',
   assets: {
-    publicUrl: env.buildDocs ? '//mdl.balmjs.com/' : ''
+    publicUrl: env.buildDocs ? '//mdl.balmjs.com/' : '',
+    cache: env.buildDocs
   },
-  cache: env.buildDocs,
-  useDefault: env.useDefault
+  logs: {
+    level: 2
+  }
 };

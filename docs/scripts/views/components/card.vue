@@ -21,7 +21,8 @@
                   <ui-card-title>Welcome</ui-card-title>
                 </ui-card-head>
                 <ui-card-body>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Mauris sagittis pellentesque lacus eleifend lacinia...
                 </ui-card-body>
                 <ui-card-actions border>
                   <ui-button colored>Get Started</ui-button>
@@ -56,7 +57,8 @@
                   <ui-card-title>Update</ui-card-title>
                 </ui-card-head>
                 <ui-card-body>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan
+                  convallis.
                 </ui-card-body>
                 <ui-card-actions border>
                   <ui-button colored>View Updates</ui-button>
@@ -98,8 +100,8 @@
               <ui-card class="demo-card-event">
                 <ui-card-head expand>
                   <h4>
-                    Featured event:<br>
-                    May 24, 2016<br>
+                    Featured event:<br />
+                    May 24, 2016<br />
                     7-11pm
                   </h4>
                 </ui-card-head>
@@ -137,7 +139,7 @@
 </template>
 
 <script>
-import snippets from '../../mixins/snippets';
+import snippets from '@/mixins/snippets';
 
 export default {
   mixins: [snippets],

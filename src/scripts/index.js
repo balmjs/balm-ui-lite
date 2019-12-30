@@ -230,6 +230,4 @@ const BalmUI = {
 autoInstall(BalmUI);
 
 export default BalmUI;
-export {
-  helpers
-};
+export { helpers };

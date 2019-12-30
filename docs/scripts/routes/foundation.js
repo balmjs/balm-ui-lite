@@ -1,7 +1,7 @@
-const Helpers = () => import('../views/foundation/helpers');
-const Mixins = () => import('../views/foundation/mixins');
-const Plugins = () => import('../views/foundation/plugins');
-const Notify = () => import('../views/foundation/notify');
+const Helpers = () => import('@/views/foundation/helpers');
+const Mixins = () => import('@/views/foundation/mixins');
+const Plugins = () => import('@/views/foundation/plugins');
+const Notify = () => import('@/views/foundation/notify');
 
 const foundationRoutes = [
   {

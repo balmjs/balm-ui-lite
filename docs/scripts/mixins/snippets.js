@@ -17,7 +17,9 @@ export default {
 
       if (this.demo.name) {
         for (let i = 0; i <= this.demo.count; i++) {
-          let code = require(`../snippets/${this.demo.name}/demo${i}.md`);
+          let filename = `${this.demo.name}/demo${i}`;
+          let code = require(`@/snippets/${filename}.md`);
+
           this.code.push(code);
         }
       } else {

@@ -2,7 +2,12 @@
   <div class="page--circle">
     <div class="component-title">
       <h2>Circle 环形进度条</h2>
-      <p>另一个用于展示进度的组件。区别于<router-link :to="{name: 'components.progress'}">进度条</router-link>。</p>
+      <p>
+        另一个用于展示进度的组件。区别于<router-link
+          :to="{ name: 'components.progress' }"
+          >进度条</router-link
+        >。
+      </p>
     </div>
 
     <h4>使用方式</h4>
@@ -19,47 +24,53 @@
           :progress="progress"
           :progressWidth="progressWidth"
           :progressColor="progressColor"
-          :strokeLinecap="strokeLinecap">
-          {{progress}} %
+          :strokeLinecap="strokeLinecap"
+        >
+          {{ progress }} %
         </ui-circle>
       </div>
       <div class="operate-panel">
         <p>
           启动过渡 [<strong>animate</strong>]:
-          <br>
+          <br />
           <ui-checkbox v-model="animate"></ui-checkbox>
         </p>
         <p>
           进度条 [<strong>progress</strong>]:
-          <br>
-          <input type="range" min="0" max="100" v-model="progress">
+          <br />
+          <input type="range" min="0" max="100" v-model="progress" />
         </p>
         <p>
           进度条宽度 [<strong>progressWidth</strong>]：
-          <br>
-          <input type="range" min="2" max="50" v-model="progressWidth">
+          <br />
+          <input type="range" min="2" max="50" v-model="progressWidth" />
         </p>
         <p>
           进度条背景宽度 [<strong>strokeWidth</strong>]：
-          <br>
-          <input type="range" min="2" max="50" v-model="strokeWidth">
+          <br />
+          <input type="range" min="2" max="50" v-model="strokeWidth" />
         </p>
         <p>
           进度条边框风格 [<strong>strokeLinecap</strong>]：
-          <br>
+          <br />
           <select v-model="strokeLinecap">
-            <option :value="item.key" v-for="item in strokeLinecaps" :key="item.key">{{item.value}}</option>
+            <option
+              :value="item.key"
+              v-for="item in strokeLinecaps"
+              :key="item.key"
+              >{{ item.value }}</option
+            >
           </select>
         </p>
         <p>
           进度条前景色 [<strong>progressCorlor</strong>]：
-          <br>
-          <input type="color" v-model="progressColor">
+          <br />
+          <input type="color" v-model="progressColor" />
         </p>
         <p>
           进度条背景色 [<strong>stroke</strong>]：
-          <br>
-          <input type="color" v-model="stroke">
+          <br />
+          <input type="color" v-model="stroke" />
         </p>
       </div>
     </div>
@@ -72,7 +83,7 @@
 </template>
 
 <script>
-import snippets from '../../mixins/snippets';
+import snippets from '@/mixins/snippets';
 
 export default {
   mixins: [snippets],

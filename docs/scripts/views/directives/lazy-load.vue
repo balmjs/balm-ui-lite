@@ -14,19 +14,24 @@
     <h4 class="line">使用</h4>
     这里有一个示例：
     <div class="image-list" v-lazy-load>
-      <div class="item" v-for="image in images">
+      <div class="item" v-for="(image, index) in images" :key="index">
         <span :data-src="image"></span>
       </div>
     </div>
     <ui-accordion>
       <ui-markdown :code="code[1]"></ui-markdown>
     </ui-accordion>
-    <p>使用'v-lazy-load'指令在需要滚动的容器上，然后使用data-src自定义属性设置图片路径。</p>
-    <p>如果你使用img标签，则自动设置src属性；其他标签会自动设置css背景图片样式。</p>
+    <p>
+      使用'v-lazy-load'指令在需要滚动的容器上，然后使用data-src自定义属性设置图片路径。
+    </p>
+    <p>
+      如果你使用img标签，则自动设置src属性；其他标签会自动设置css背景图片样式。
+    </p>
   </div>
 </template>
+
 <script>
-import snippets from '../../mixins/snippets';
+import snippets from '@/mixins/snippets';
 
 export default {
   mixins: [snippets],

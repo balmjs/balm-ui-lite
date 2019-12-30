@@ -229,7 +229,9 @@ const date = (format, timestamp) => {
       // Difference to GMT in hour format; e.g. +0200
       var tzo = jsdate.getTimezoneOffset();
       var a = Math.abs(tzo);
-      return (tzo > 0 ? '-' : '+') + _pad(Math.floor(a / 60) * 100 + a % 60, 4);
+      return (
+        (tzo > 0 ? '-' : '+') + _pad(Math.floor(a / 60) * 100 + (a % 60), 4)
+      );
     },
     P: function() {
       // Difference to GMT w/colon; e.g. +02:00
@@ -287,8 +289,8 @@ const date = (format, timestamp) => {
       timestamp === undefined
         ? new Date() // Not provided
         : timestamp instanceof Date
-          ? new Date(timestamp) // JS Date()
-          : new Date(timestamp * 1000); // UNIX timestamp (auto-convert to int)
+        ? new Date(timestamp) // JS Date()
+        : new Date(timestamp * 1000); // UNIX timestamp (auto-convert to int)
     return format.replace(formatChr, formatChrCb);
   };
   return _date(format, timestamp);

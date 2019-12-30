@@ -14,14 +14,10 @@
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
-            <ui-radio name="sex"
-              value="M"
-              v-model="gender">Male</ui-radio>
+            <ui-radio name="sex" value="M" v-model="gender">Male</ui-radio>
           </div>
           <div class="snippet-demo">
-            <ui-radio name="sex"
-              value="F"
-              v-model="gender">Female</ui-radio>
+            <ui-radio name="sex" value="F" v-model="gender">Female</ui-radio>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
@@ -41,7 +37,7 @@
 </template>
 
 <script>
-import snippets from '../../mixins/snippets';
+import snippets from '@/mixins/snippets';
 
 export default {
   mixins: [snippets],

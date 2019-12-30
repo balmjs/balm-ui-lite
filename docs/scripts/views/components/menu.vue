@@ -15,9 +15,11 @@
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
             <ui-button id="demo-menu-1" icon="more_vert"></ui-button>
-            <ui-menu dropdownId="demo-menu-1"
+            <ui-menu
+              dropdownId="demo-menu-1"
               :menu="data"
-              @selected="onMenu"></ui-menu>
+              @selected="onMenu"
+            ></ui-menu>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
@@ -35,10 +37,13 @@
           <div class="snippet-demo">
             <ui-button id="demo-menu-2" icon="settings"></ui-button>
             <ui-menu dropdownId="demo-menu-2">
-              <ui-menuitem v-for="(item, index) in data" :key="index"
+              <ui-menuitem
+                v-for="(item, index) in data"
+                :key="index"
                 :disabled="item.disabled"
                 :divider="item.divider"
-                @click="onMenu(item)">
+                @click="onMenu(item)"
+              >
                 <span v-if="item.disabled">{{ item.label }}</span>
                 <a v-else :href="item.url">{{ item.label }}</a>
               </ui-menuitem>
@@ -59,8 +64,8 @@
 </template>
 
 <script>
-import snippets from '../../mixins/snippets';
-import docs from '../../docs/components/menu.md';
+import snippets from '@/mixins/snippets';
+import docs from '@/docs/components/menu.md';
 
 export default {
   mixins: [snippets],

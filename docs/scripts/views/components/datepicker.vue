@@ -60,14 +60,20 @@
 
     <h4>
       3. 简单时间范围选择（如需定制化时间范围选择推荐使用
-      <router-link to="/components/rangepicker">&lt;ui-rangepicker&gt;</router-link>）
+      <router-link to="/components/rangepicker"
+        >&lt;ui-rangepicker&gt;</router-link
+      >）
     </h4>
     <div class="snippet-group">
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
-            <ui-datepicker placeholder="Select Date Range.." :config="config3" v-model="date3"></ui-datepicker>
+            <ui-datepicker
+              placeholder="Select Date Range.."
+              :config="config3"
+              v-model="date3"
+            ></ui-datepicker>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
@@ -83,7 +89,11 @@
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
-            <ui-datepicker placeholder="Select Multi Date.." :config="config4" v-model="date4"></ui-datepicker>
+            <ui-datepicker
+              placeholder="Select Multi Date.."
+              :config="config4"
+              v-model="date4"
+            ></ui-datepicker>
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
@@ -99,8 +109,8 @@
 </template>
 
 <script>
-import snippets from '../../mixins/snippets';
-import docs from '../../docs/components/datepicker.md';
+import snippets from '@/mixins/snippets';
+import docs from '@/docs/components/datepicker.md';
 
 export default {
   mixins: [snippets],

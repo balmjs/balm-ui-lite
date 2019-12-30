@@ -42,14 +42,17 @@
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
             <ui-chip contact>
-              <ui-chip-contact :class="['mdl-color--teal', 'mdl-color-text--white']">A</ui-chip-contact>
+              <ui-chip-contact
+                :class="['mdl-color--teal', 'mdl-color-text--white']"
+                >A</ui-chip-contact
+              >
               <ui-chip-text>Contact Chip</ui-chip-text>
             </ui-chip>
           </div>
           <div class="snippet-demo">
             <ui-chip v-show="show2" contact action>
               <ui-chip-contact>
-                <img :src="avatar" alt="">
+                <img :src="avatar" alt="" />
               </ui-chip-contact>
               <ui-chip-text>Deletable Contact Chip</ui-chip-text>
               <ui-chip-action @click="balmUI.onHide('show2')">
@@ -73,7 +76,7 @@
 </template>
 
 <script>
-import snippets from '../../mixins/snippets';
+import snippets from '@/mixins/snippets';
 
 export default {
   mixins: [snippets],

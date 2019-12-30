@@ -1,6 +1,6 @@
-const Layout = () => import('../../views/components/layout');
-const Grid = () => import('../../views/components/grid');
-const Tabs = () => import('../../views/components/tabs');
+const Layout = () => import('@/views/components/layout');
+const Grid = () => import('@/views/components/grid');
+const Tabs = () => import('@/views/components/tabs');
 
 const layoutRoutes = [
   {

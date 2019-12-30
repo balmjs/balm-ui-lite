@@ -2,24 +2,23 @@
   <div class="apidoc">
     <h4 v-if="showTitle">{{ T_CN.components[name] }} API</h4>
     <ui-tabs :active="tab">
-      <ui-tab-bar effect position="left" @change="balmUI.onChange('tab', $event)">
-        <ui-tab
-          v-for="(item, index) in TYPES"
-          v-show="docs[item]"
-          :key="index">
+      <ui-tab-bar
+        effect
+        position="left"
+        @change="balmUI.onChange('tab', $event)"
+      >
+        <ui-tab v-for="(item, index) in TYPES" v-show="docs[item]" :key="index">
           {{ item }}
         </ui-tab>
       </ui-tab-bar>
-      <ui-panel
-        v-for="(item, index) in TYPES"
-        v-show="docs[item]"
-        :key="index">
+      <ui-panel v-for="(item, index) in TYPES" v-show="docs[item]" :key="index">
         <ui-table
           v-if="docs[item]"
           class="docs-table"
           :data="docs[item].data"
           :thead="docs[item].thead"
-          :tbody="docs[item].tbody">
+          :tbody="docs[item].tbody"
+        >
         </ui-table>
       </ui-panel>
     </ui-tabs>
@@ -27,7 +26,7 @@
 </template>
 
 <script>
-import T_CN from '../lang/cn';
+import T_CN from '@/lang/cn';
 const TYPES = ['props', 'slots', 'events', 'sass'];
 
 export default {

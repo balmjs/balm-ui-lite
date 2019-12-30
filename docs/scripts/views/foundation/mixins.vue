@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import docs from '../../docs/mixins.md';
+import docs from '@/docs/mixins.md';
 
 export default {
   metaInfo: {

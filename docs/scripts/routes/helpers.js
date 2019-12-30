@@ -1,6 +1,6 @@
-const Typeof = () => import('../views/helpers/typeof');
-const DetectIE = () => import('../views/helpers/detect-ie');
-const Utils = () => import('../views/helpers/utils');
+const Typeof = () => import('@/views/helpers/typeof');
+const DetectIE = () => import('@/views/helpers/detect-ie');
+const Utils = () => import('@/views/helpers/utils');
 
 const helpersRoutes = [
   {

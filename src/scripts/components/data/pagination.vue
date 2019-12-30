@@ -1,39 +1,55 @@
 <template>
   <div v-if="recordCount" :class="className">
     <div v-if="showRecord && !mini" class="mdl-pagination--record">
-      <slot :recordCount="recordCount"
-            :pageSize="pageSize"
-            :pageCount="pageCount"></slot>
+      <slot
+        :recordCount="recordCount"
+        :pageSize="pageSize"
+        :pageCount="pageCount"
+      ></slot>
     </div>
     <div class="mdl-pagination--paging">
       <a class="mdl-pagination--paging-previous">
-        <span v-html="currentPrev"
-              @click="handleClick(currentPage === 1 ? 1 : currentPage - 1)"></span>
+        <span
+          v-html="currentPrev"
+          @click="handleClick(currentPage === 1 ? 1 : currentPage - 1)"
+        ></span>
       </a>
-      <a v-for="(page, index) in pageCount"
-         v-if="!mini && isShow(page)"
-         :key="index"
-         :class="{active: page === currentPage}">
-         <span v-if="showPage(page)" @click="handleClick(page)">{{ page }}</span>
-         <span v-else class="ellipsis">...</span>
-      </a>
+      <template v-for="(page, index) in pageCount">
+        <a
+          v-if="!mini && isShow(page)"
+          :key="index"
+          :class="{ active: page === currentPage }"
+        >
+          <span v-if="showPage(page)" @click="handleClick(page)">{{
+            page
+          }}</span>
+          <span v-else class="ellipsis">...</span>
+        </a>
+      </template>
       <template v-if="mini && !showRecord">
         <slot></slot>
       </template>
       <a class="mdl-pagination--paging-next">
-        <span v-html="currentNext"
-              @click="handleClick(currentPage === pageCount ? pageCount : currentPage + 1)"></span>
+        <span
+          v-html="currentNext"
+          @click="
+            handleClick(currentPage === pageCount ? pageCount : currentPage + 1)
+          "
+        ></span>
       </a>
       <div v-if="!mini && showJumper" class="mdl-pagination--jumper">
         <span>{{ jumperBefore }}</span>
-        <input type="number"
-               min="1"
-               :max="pageCount"
-               v-model="pager"
-               @keydown.prevent.enter="handleClick($event.target.value)">
+        <input
+          type="number"
+          min="1"
+          :max="pageCount"
+          v-model="pager"
+          @keydown.prevent.enter="handleClick($event.target.value)"
+        />
         <span>{{ jumperAfter }}</span>
-        <ui-button v-if="jumperButton"
-                   @click="handleClick(pager)">{{ jumperButton }}</ui-button>
+        <ui-button v-if="jumperButton" @click="handleClick(pager)">{{
+          jumperButton
+        }}</ui-button>
       </div>
     </div>
   </div>

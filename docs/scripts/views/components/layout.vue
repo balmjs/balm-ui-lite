@@ -14,7 +14,9 @@
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo">
-            <div class="snippet-demo-container demo-layout demo-layout__transparent">
+            <div
+              class="snippet-demo-container demo-layout demo-layout__transparent"
+            >
               <!-- Uses a transparent header that draws on top of the layout's background -->
               <ui-layout class="demo-layout-transparent">
                 <ui-layout-header transparent>
@@ -56,7 +58,9 @@
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo">
-            <div class="snippet-demo-container demo-layout demo-layout__fixed-drawer">
+            <div
+              class="snippet-demo-container demo-layout demo-layout__fixed-drawer"
+            >
               <!-- No header, and the drawer stays open on larger screens (fixed drawer). -->
               <ui-layout fixedDrawer>
                 <ui-layout-drawer>
@@ -69,7 +73,9 @@
                   </ui-nav>
                 </ui-layout-drawer>
                 <ui-layout-content>
-                  <div class="page-content"><!-- Your content goes here --></div>
+                  <div class="page-content">
+                    <!-- Your content goes here -->
+                  </div>
                 </ui-layout-content>
               </ui-layout>
             </div>
@@ -88,7 +94,9 @@
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo">
-            <div class="snippet-demo-container demo-layout demo-layout__fixed-header">
+            <div
+              class="snippet-demo-container demo-layout demo-layout__fixed-header"
+            >
               <!-- Always shows a header, even in smaller screens. -->
               <ui-layout fixedHeader>
                 <ui-layout-header>
@@ -113,7 +121,9 @@
                   </ui-nav>
                 </ui-layout-drawer>
                 <ui-layout-content>
-                  <div class="page-content"><!-- Your content goes here --></div>
+                  <div class="page-content">
+                    <!-- Your content goes here -->
+                  </div>
                 </ui-layout-content>
               </ui-layout>
             </div>
@@ -132,7 +142,9 @@
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo">
-            <div class="snippet-demo-container demo-layout demo-layout__fixed-header-drawer">
+            <div
+              class="snippet-demo-container demo-layout demo-layout__fixed-header-drawer"
+            >
               <!-- The drawer is always open in large screens. The header is always shown, even in small screens. -->
               <ui-layout fixedDrawer fixedHeader>
                 <ui-layout-header>
@@ -142,7 +154,8 @@
                       expandable
                       floatingLabel
                       alignRight
-                      id="fixed-header-drawer-exp"></ui-textfield>
+                      id="fixed-header-drawer-exp"
+                    ></ui-textfield>
                   </ui-layout-header-row>
                 </ui-layout-header>
                 <ui-layout-drawer>
@@ -155,7 +168,9 @@
                   </ui-nav>
                 </ui-layout-drawer>
                 <ui-layout-content>
-                  <div class="page-content"><!-- Your content goes here --></div>
+                  <div class="page-content">
+                    <!-- Your content goes here -->
+                  </div>
                 </ui-layout-content>
               </ui-layout>
             </div>
@@ -176,7 +191,9 @@
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo">
-            <div class="snippet-demo-container demo-layout demo-layout__scrolling-header">
+            <div
+              class="snippet-demo-container demo-layout demo-layout__scrolling-header"
+            >
               <!-- Uses a header that scrolls with the text, rather than staying locked at the top -->
               <ui-layout>
                 <ui-layout-header scroll>
@@ -201,7 +218,9 @@
                   </ui-nav>
                 </ui-layout-drawer>
                 <ui-layout-content>
-                  <div class="page-content"><!-- Your content goes here --></div>
+                  <div class="page-content">
+                    <!-- Your content goes here -->
+                  </div>
                 </ui-layout-content>
               </ui-layout>
             </div>
@@ -220,7 +239,9 @@
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo">
-            <div class="snippet-demo-container demo-layout demo-layout__waterfall-header">
+            <div
+              class="snippet-demo-container demo-layout demo-layout__waterfall-header"
+            >
               <!-- Uses a header that contracts as the page scrolls down. -->
               <ui-layout class="demo-layout-waterfall">
                 <ui-layout-header waterfall>
@@ -232,7 +253,8 @@
                       expandable
                       floatingLabel
                       alignRight
-                      id="waterfall-exp"></ui-textfield>
+                      id="waterfall-exp"
+                    ></ui-textfield>
                   </ui-layout-header-row>
                   <!-- Bottom row, not visible on scroll -->
                   <ui-layout-header-row>
@@ -256,7 +278,9 @@
                   </ui-nav>
                 </ui-layout-drawer>
                 <ui-layout-content>
-                  <div class="page-content"><!-- Your content goes here --></div>
+                  <div class="page-content">
+                    <!-- Your content goes here -->
+                  </div>
                 </ui-layout-content>
               </ui-layout>
             </div>
@@ -277,7 +301,9 @@
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo">
-            <div class="snippet-demo-container demo-layout demo-layout__scrollable-tabs">
+            <div
+              class="snippet-demo-container demo-layout demo-layout__scrollable-tabs"
+            >
               <!-- Simple header with scrollable tabs. -->
               <ui-layout fixedHeader :active="tab">
                 <ui-layout-header>
@@ -322,7 +348,9 @@
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo">
-            <div class="snippet-demo-container demo-layout demo-layout__fixed-tabs">
+            <div
+              class="snippet-demo-container demo-layout demo-layout__fixed-tabs"
+            >
               <!-- Simple header with fixed tabs. -->
               <ui-layout fixedHeader fixedTabs :active="tab">
                 <ui-layout-header>
@@ -379,7 +407,7 @@
 </template>
 
 <script>
-import snippets from '../../mixins/snippets';
+import snippets from '@/mixins/snippets';
 
 export default {
   mixins: [snippets],

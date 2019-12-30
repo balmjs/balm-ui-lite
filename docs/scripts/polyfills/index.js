@@ -1,9 +1,5 @@
-import 'core-js/es6';
-
-// fuck IE
-if (typeof NodeList.prototype.forEach !== typeof alert) {
-  NodeList.prototype.forEach = Array.prototype.forEach;
-}
+// For IE11 and below
+import 'core-js/features/promise';
 
 // for IE9-
 import 'matchmedia-polyfill';

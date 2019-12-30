@@ -1,10 +1,10 @@
-const Badge = () => import('../../views/components/badge');
-const Button = () => import('../../views/components/button');
-const Chip = () => import('../../views/components/chip');
-const Menu = () => import('../../views/components/menu');
-const Tooltip = () => import('../../views/components/tooltip');
-const Divider = () => import('../../views/components/divider');
-const Circle = () => import('../../views/components/circle');
+const Badge = () => import('@/views/components/badge');
+const Button = () => import('@/views/components/button');
+const Chip = () => import('@/views/components/chip');
+const Menu = () => import('@/views/components/menu');
+const Tooltip = () => import('@/views/components/tooltip');
+const Divider = () => import('@/views/components/divider');
+const Circle = () => import('@/views/components/circle');
 
 const commonRoutes = [
   {

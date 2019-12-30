@@ -1,5 +1,5 @@
-const Progress = () => import('../../views/components/progress');
-const Spinner = () => import('../../views/components/spinner');
+const Progress = () => import('@/views/components/progress');
+const Spinner = () => import('@/views/components/spinner');
 
 const dataviewRoutes = [
   {

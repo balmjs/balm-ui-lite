@@ -5,15 +5,26 @@
     </div>
 
     <h4>概述</h4>
-    <p>这个组件最开始叫做file-upload，因为我们把上传功能包含了进去。我们还根据常用的业务分为普通文件上传，头像上传、是否需要预览等几种情况，但是随着配置属性个数（20+）、抛出的事件（8种）和界面特性（1个默认插槽 + 3个具名插槽）的不断增加，我们开始反思：<strong>组件的意义是什么？</strong>业务是不可能全部涵盖的，尤其是界面，只需要产品经理一句话就能全盘否定，那么为什么我们要开发一个几百行代码又没什么扩展性的组件？难道有谁愿意在一堆配置参数中翻来覆去思考它们的用法，或者为满足需求重写几十行样式？</p>
-    <p>在弄清楚整个组件的实际作用之后，我们删除了大部分功能，只把最核心的部分保留了下来，配置参数减少到了3个，而且只有一个事件和一个默认插槽，我们觉得整个组件变得非常灵活。</p>
+    <p>
+      这个组件最开始叫做file-upload，因为我们把上传功能包含了进去。我们还根据常用的业务分为普通文件上传，头像上传、是否需要预览等几种情况，但是随着配置属性个数（20+）、抛出的事件（8种）和界面特性（1个默认插槽
+      +
+      3个具名插槽）的不断增加，我们开始反思：<strong>组件的意义是什么？</strong>业务是不可能全部涵盖的，尤其是界面，只需要产品经理一句话就能全盘否定，那么为什么我们要开发一个几百行代码又没什么扩展性的组件？难道有谁愿意在一堆配置参数中翻来覆去思考它们的用法，或者为满足需求重写几十行样式？
+    </p>
+    <p>
+      在弄清楚整个组件的实际作用之后，我们删除了大部分功能，只把最核心的部分保留了下来，配置参数减少到了3个，而且只有一个事件和一个默认插槽，我们觉得整个组件变得非常灵活。
+    </p>
 
     <h4>引入</h4>
     <ui-markdown :text="code[0]"></ui-markdown>
 
     <h4>用法</h4>
     <h6>1.基本用法(单选 + 文件类型限定)</h6>
-    <p><ui-file accept="image/*" @change="balmUI.onChange('files1', $event)"></ui-file></p>
+    <p>
+      <ui-file
+        accept="image/*"
+        @change="balmUI.onChange('files1', $event)"
+      ></ui-file>
+    </p>
     <p>你选择的文件:</p>
     <div v-if="files1.length">
       {{ files1 }}
@@ -23,12 +34,19 @@
     </ui-accordion>
 
     <h6>2.多选 + 文件类型限定 + 图片预览</h6>
-    <p><ui-file preview multiple accept="image/*" @change="balmUI.onChange('files2', $event)"></ui-file></p>
+    <p>
+      <ui-file
+        preview
+        multiple
+        accept="image/*"
+        @change="balmUI.onChange('files2', $event)"
+      ></ui-file>
+    </p>
     <transition-group class="preview-list" name="list" tag="ul">
       <li class="item" v-for="(file, index) in files2" :key="file.uid">
         <div class="inner">
           <span class="preview" :style="setBg(file)"></span>
-          <span class="name">{{file.name}}</span>
+          <span class="name">{{ file.name }}</span>
         </div>
       </li>
     </transition-group>
@@ -47,10 +65,13 @@
               raised
               colored
               @click="upload(file)"
-              icon="file_upload"></ui-button>
+              icon="file_upload"
+            ></ui-button>
             <ui-button
               raised
-              @click="remove('files3', index)" icon="delete"></ui-button>
+              @click="remove('files3', index)"
+              icon="delete"
+            ></ui-button>
           </span>
         </div>
       </li>
@@ -77,7 +98,7 @@
       <ui-file preview multiple @change="onChange4"></ui-file>
     </p>
     <ul class="file-list">
-      <li class="item" v-for="(file, index) in files4">
+      <li class="item" v-for="(file, index) in files4" :key="index">
         <transition name="flip">
           <div v-if="file.state === 'progress'" class="progress" key="progress">
             <ui-progress :progress="file.progress"></ui-progress>
@@ -94,10 +115,13 @@
                 raised
                 colored
                 @click="uploadWithProgress(file)"
-                icon="file_upload"></ui-button>
+                icon="file_upload"
+              ></ui-button>
               <ui-button
                 raised
-                @click="remove('files4', index)" icon="delete"></ui-button>
+                @click="remove('files4', index)"
+                icon="delete"
+              ></ui-button>
             </div>
           </div>
         </transition>
@@ -114,15 +138,22 @@
     </ui-accordion>
 
     <h4>补充说明</h4>
-    <p>上面的例子表明，你可以从组件的change事件处理方法的参数中获得一个文件数组，这是对原生FileList对象的包装。数组的每项都是一个对象，包含以下属性：</p>
+    <p>
+      上面的例子表明，你可以从组件的change事件处理方法的参数中获得一个文件数组，这是对原生FileList对象的包装。数组的每项都是一个对象，包含以下属性：
+    </p>
     <ui-apidoc name="file-arguments-props" :show-title="false"></ui-apidoc>
-    <h6>当组件设置preview时，组件内部优先使用URL.createObjectURL方法生成Blob url，如果不支持则使用FileReader对象的readAsDataURL方法获取base64。如果你的浏览器支持Blob url，当你不再需要某个预览的文件时，可以使用URL.revokeObjectURL方法取消浏览器对该文件的引用。</h6>
+    <h6>
+      当组件设置preview时，组件内部优先使用URL.createObjectURL方法生成Blob
+      url，如果不支持则使用FileReader对象的readAsDataURL方法获取base64。如果你的浏览器支持Blob
+      url，当你不再需要某个预览的文件时，可以使用URL.revokeObjectURL方法取消浏览器对该文件的引用。
+    </h6>
     <p>下面是组件的api说明：</p>
     <ui-apidoc name="file"></ui-apidoc>
   </div>
 </template>
+
 <script>
-import snippets from '../../mixins/snippets';
+import snippets from '@/mixins/snippets';
 
 export default {
   mixins: [snippets],
@@ -205,7 +236,7 @@ export default {
 
         file.request.upload.onprogress = e => {
           if (e.total > 0) {
-            file.progress = e.loaded / e.total * 100;
+            file.progress = (e.loaded / e.total) * 100;
           }
         };
 

@@ -14,10 +14,14 @@
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
-            <ui-checkbox v-model="checked1">Checkbox ({{ checked1 }})</ui-checkbox>
+            <ui-checkbox v-model="checked1"
+              >Checkbox ({{ checked1 }})</ui-checkbox
+            >
           </div>
           <div class="snippet-demo">
-            <ui-checkbox filled v-model="checked2">Checkbox ({{ checked2 }})</ui-checkbox>
+            <ui-checkbox filled v-model="checked2"
+              >Checkbox ({{ checked2 }})</ui-checkbox
+            >
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
@@ -39,21 +43,33 @@
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
-          <div class="snippet-demo" v-for="(num, index) in [1, 2, 3]" :key="index">
-            <ui-checkbox :value="num" v-model="numberOptions">Option {{ num }}</ui-checkbox>
+          <div
+            class="snippet-demo"
+            v-for="(num, index) in [1, 2, 3]"
+            :key="index"
+          >
+            <ui-checkbox :value="num" v-model="numberOptions"
+              >Option {{ num }}</ui-checkbox
+            >
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
         <div class="snippet-captions">
           <div class="snippet-captions-padding"></div>
           <div class="snippet-caption">
-            <ui-button @click="balmUI.onChange('numberOptions', [1, 2])">choose 1,2</ui-button>
+            <ui-button @click="balmUI.onChange('numberOptions', [1, 2])"
+              >choose 1,2</ui-button
+            >
           </div>
           <div class="snippet-caption">
-            <ui-button @click="balmUI.onChange('numberOptions', [1, 3])">choose 1,3</ui-button>
+            <ui-button @click="balmUI.onChange('numberOptions', [1, 3])"
+              >choose 1,3</ui-button
+            >
           </div>
           <div class="snippet-caption">
-            <ui-button @click="balmUI.onChange('numberOptions', [2, 3])">choose 2,3</ui-button>
+            <ui-button @click="balmUI.onChange('numberOptions', [2, 3])"
+              >choose 2,3</ui-button
+            >
           </div>
           <div class="snippet-captions-padding"></div>
         </div>
@@ -67,21 +83,33 @@
       <div class="snippet-header">
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
-          <div class="snippet-demo" v-for="(str, index) in ['1', '2', '3']" :key="index">
-            <ui-checkbox :value="str" v-model="stringOptions">Option '{{ str }}'</ui-checkbox>
+          <div
+            class="snippet-demo"
+            v-for="(str, index) in ['1', '2', '3']"
+            :key="index"
+          >
+            <ui-checkbox :value="str" v-model="stringOptions"
+              >Option '{{ str }}'</ui-checkbox
+            >
           </div>
           <div class="snippet-demo-padding"></div>
         </div>
         <div class="snippet-captions">
           <div class="snippet-captions-padding"></div>
           <div class="snippet-caption">
-            <ui-button @click="balmUI.onChange('stringOptions', ['1', '2'])">choose '1','2'</ui-button>
+            <ui-button @click="balmUI.onChange('stringOptions', ['1', '2'])"
+              >choose '1','2'</ui-button
+            >
           </div>
           <div class="snippet-caption">
-            <ui-button @click="balmUI.onChange('stringOptions', ['1', '3'])">choose '1','3'</ui-button>
+            <ui-button @click="balmUI.onChange('stringOptions', ['1', '3'])"
+              >choose '1','3'</ui-button
+            >
           </div>
           <div class="snippet-caption">
-            <ui-button @click="balmUI.onChange('stringOptions', ['2', '3'])">choose '2','3'</ui-button>
+            <ui-button @click="balmUI.onChange('stringOptions', ['2', '3'])"
+              >choose '2','3'</ui-button
+            >
           </div>
           <div class="snippet-captions-padding"></div>
         </div>
@@ -95,7 +123,7 @@
 </template>
 
 <script>
-import snippets from '../../mixins/snippets';
+import snippets from '@/mixins/snippets';
 
 export default {
   mixins: [snippets],

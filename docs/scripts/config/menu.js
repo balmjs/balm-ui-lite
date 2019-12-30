@@ -1,4 +1,4 @@
-import helpers from '../helpers';
+import helpers from '@/helpers';
 
 const components = {
   layout: ['layout', 'grid', 'tabs'],

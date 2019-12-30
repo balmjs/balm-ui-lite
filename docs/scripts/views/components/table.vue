@@ -16,7 +16,8 @@
       :action="table.action"
       @view="onView"
       @edit="onEdit"
-      @delete="onDelete">
+      @delete="onDelete"
+    >
     </ui-table>
     <ui-accordion>
       <ui-markdown :code="code[1]"></ui-markdown>
@@ -33,7 +34,8 @@
       v-model="table.checkedList"
       @view="onView"
       @edit="onEdit"
-      @delete="onDelete">
+      @delete="onDelete"
+    >
     </ui-table>
     <p>选中索引: {{ table.checkedList }}</p>
     <ui-accordion>
@@ -54,7 +56,8 @@
       keyField="name"
       @view="onView"
       @edit="onEdit"
-      @delete="onDelete">
+      @delete="onDelete"
+    >
     </ui-table>
     <p>选中姓名: {{ table2.checkedList }}</p>
     <ui-accordion>
@@ -72,7 +75,8 @@
       @view-detail="balmUI.onChange('table.currentData', $event)"
       @view="onView"
       @edit="onEdit"
-      @delete="onDelete">
+      @delete="onDelete"
+    >
       {{ table.currentData }}
     </ui-table>
     <ui-accordion>
@@ -90,9 +94,11 @@
         </tr>
       </template>
       <template slot="tbody">
-        <tr v-for="item in table.data">
+        <tr v-for="(item, index) in table.data" :key="index">
           <td>{{ item.id }}</td>
-          <td><a :href="`/#/components/table/${item.id}`">{{ item.name }}</a></td>
+          <td>
+            <a :href="`/#/components/table/${item.id}`">{{ item.name }}</a>
+          </td>
           <td>{{ item.quantity }}</td>
           <td>{{ item.price }}</td>
         </tr>
@@ -108,8 +114,8 @@
 </template>
 
 <script>
-import snippets from '../../mixins/snippets';
-import docs from '../../docs/components/table.md';
+import snippets from '@/mixins/snippets';
+import docs from '@/docs/components/table.md';
 
 export default {
   mixins: [snippets],

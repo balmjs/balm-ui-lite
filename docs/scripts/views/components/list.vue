@@ -96,7 +96,9 @@
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
-            <div class="snippet-demo-container demo-list demo-list__list-control">
+            <div
+              class="snippet-demo-container demo-list demo-list__list-control"
+            >
               <!-- List with avatar and controls -->
               <ui-list class="demo-list-control">
                 <ui-item v-for="(item, index) in items2" :key="index">
@@ -105,9 +107,21 @@
                     {{ item.name }}
                   </ui-item-primary>
                   <ui-item-action>
-                    <ui-checkbox v-if="index === 0" :value="item.id" :model="item.value"></ui-checkbox>
-                    <ui-radio v-if="index === 1" :value="item.id" :model="item.value"></ui-radio>
-                    <ui-switch v-if="index === 2" :value="true" :model="item.value"></ui-switch>
+                    <ui-checkbox
+                      v-if="index === 0"
+                      :value="item.id"
+                      :model="item.value"
+                    ></ui-checkbox>
+                    <ui-radio
+                      v-if="index === 1"
+                      :value="item.id"
+                      :model="item.value"
+                    ></ui-radio>
+                    <ui-switch
+                      v-if="index === 2"
+                      :value="true"
+                      :model="item.value"
+                    ></ui-switch>
                   </ui-item-action>
                 </ui-item>
               </ui-list>
@@ -206,7 +220,7 @@
 </template>
 
 <script>
-import snippets from '../../mixins/snippets';
+import snippets from '@/mixins/snippets';
 
 export default {
   mixins: [snippets],

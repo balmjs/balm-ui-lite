@@ -1,5 +1,18 @@
 # [BalmUI Lite](https://mdl.balmjs.com/)
 
+## 1.8.0 (2019.12.30)
+
+### :beetle: Bug fixes and improvements
+
+- update `detectIE()`
+
+### Features
+
+- update `balm@2.2.1`
+- rebuild all components
+
+---
+
 ## 1.7.3 (2019.10.24)
 
 - `<ui-table>`: fix `checkedList` watch bug

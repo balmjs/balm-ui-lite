@@ -1,21 +1,21 @@
-import './polyfills';
-import { isIE, killIE } from './kill-ie';
+import '@/polyfills';
+import { isIE, killIE } from '@/kill-ie';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueMeta from 'vue-meta';
 // import VueI18n from 'vue-i18n';
 import axios from 'axios';
 import BalmUI from '../../src/scripts/index'; // 'balm-ui-lite'
-import App from './views/layouts/app';
-import routes from './routes/index';
-import UiMarkdown from './components/markdown';
-import UiApidoc from './components/apidoc';
-import UiAccordion from './components/accordion';
+import App from '@/views/layouts/app';
+import routes from '@/routes/index';
+import UiMarkdown from '@/components/markdown';
+import UiApidoc from '@/components/apidoc';
+import UiAccordion from '@/components/accordion';
 // syntax highlighting
 import prismjs from 'prismjs';
 // ready translated locales
-import { isProd } from './config';
-import { flatpickrLang } from './config/lang';
+import { isProd } from '@/config';
+import { flatpickrLang } from '@/config/lang';
 
 if (isIE) {
   killIE();

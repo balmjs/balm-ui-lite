@@ -3,8 +3,9 @@
     <ui-markdown class="markdown-page" :text="docs"></ui-markdown>
   </div>
 </template>
+
 <script>
-import docs from '../../docs/helpers/typeof.md';
+import docs from '@/docs/helpers/typeof.md';
 
 export default {
   metaInfo: {

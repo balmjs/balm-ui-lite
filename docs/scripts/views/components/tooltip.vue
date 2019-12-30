@@ -50,7 +50,7 @@
             <ui-tooltip>
               <ui-icon>share</ui-icon>
               <template slot="title">
-                Share your content<br>via social media
+                Share your content<br />via social media
               </template>
             </ui-tooltip>
           </div>
@@ -67,7 +67,7 @@
 </template>
 
 <script>
-import snippets from '../../mixins/snippets';
+import snippets from '@/mixins/snippets';
 
 export default {
   mixins: [snippets],

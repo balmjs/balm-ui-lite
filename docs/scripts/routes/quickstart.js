@@ -1,7 +1,7 @@
-const Requirement = () => import('../views/quickstart/requirement');
-const Installation = () => import('../views/quickstart/installation');
-const Advanced = () => import('../views/quickstart/advanced');
-const KillIE = () => import('../views/quickstart/kill-ie');
+const Requirement = () => import('@/views/quickstart/requirement');
+const Installation = () => import('@/views/quickstart/installation');
+const Advanced = () => import('@/views/quickstart/advanced');
+const KillIE = () => import('@/views/quickstart/kill-ie');
 
 const foundationRoutes = [
   {

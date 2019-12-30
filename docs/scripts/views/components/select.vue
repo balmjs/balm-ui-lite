@@ -1,7 +1,12 @@
 <template>
   <div class="page--select">
     <div class="component-title">
-      <h2>Select 下拉框 (Desktop端 更推荐使用<router-link to="/components/selectmenu">Selectmenu</router-link>)</h2>
+      <h2>
+        Select 下拉框 (Desktop端 更推荐使用<router-link
+          to="/components/selectmenu"
+          >Selectmenu</router-link
+        >)
+      </h2>
     </div>
 
     <h4>0. 使用方式</h4>
@@ -12,16 +17,20 @@
       <div class="snippet-demos">
         <div class="snippet-demo-padding"></div>
         <div class="snippet-demo">
-          <ui-select :options="options" v-model="formData.selected"
-            optionKey="key" optionValue="value"
-            @selected="balmUI.onChange('currentOption', $event)"></ui-select>
+          <ui-select
+            :options="options"
+            v-model="formData.selected"
+            optionKey="key"
+            optionValue="value"
+            @selected="balmUI.onChange('currentOption', $event)"
+          ></ui-select>
         </div>
         <div class="snippet-demo-padding"></div>
       </div>
       <div class="snippet-captions">
         <div class="snippet-caption-padding"></div>
         <div class="snippet-caption">
-          @change: {{ formData.selected }}<br>
+          @change: {{ formData.selected }}<br />
           @selected: {{ currentOption }}
         </div>
         <div class="snippet-caption-padding"></div>
@@ -36,15 +45,31 @@
       <div class="snippet-demos">
         <div class="snippet-demo-padding"></div>
         <div class="snippet-demo">
-          <ui-select :options="provinces" :model="formData.province"
-            optionKey="key" optionValue="value"
-            defaultKey="0" defaultValue="Select province..."
-            @change="balmUI.onChange('formData.province', $event, initCitySelectd($event))"></ui-select>
+          <ui-select
+            :options="provinces"
+            :model="formData.province"
+            optionKey="key"
+            optionValue="value"
+            defaultKey="0"
+            defaultValue="Select province..."
+            @change="
+              balmUI.onChange(
+                'formData.province',
+                $event,
+                initCitySelectd($event)
+              )
+            "
+          ></ui-select>
         </div>
         <div class="snippet-demo">
-          <ui-select :options="cities" v-model="formData.city"
-            optionKey="key" optionValue="value"
-            defaultKey="0" defaultValue="Select city..."></ui-select>
+          <ui-select
+            :options="cities"
+            v-model="formData.city"
+            optionKey="key"
+            optionValue="value"
+            defaultKey="0"
+            defaultValue="Select city..."
+          ></ui-select>
         </div>
         <div class="snippet-demo-padding"></div>
       </div>
@@ -65,8 +90,8 @@
 </template>
 
 <script>
-import snippets from '../../mixins/snippets';
-import docs from '../../docs/components/select.md';
+import snippets from '@/mixins/snippets';
+import docs from '@/docs/components/select.md';
 
 const OPTIONS = [
   {

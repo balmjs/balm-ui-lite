@@ -1,5 +1,5 @@
-const Dialog = () => import('../../views/components/dialog');
-const Snackbar = () => import('../../views/components/snackbar');
+const Dialog = () => import('@/views/components/dialog');
+const Snackbar = () => import('@/views/components/snackbar');
 
 const feedbackRoutes = [
   {

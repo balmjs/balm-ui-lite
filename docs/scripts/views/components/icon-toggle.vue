@@ -14,17 +14,11 @@
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
-            <ui-icon-toggle
-              icon="format_bold"
-              value="b"
-              v-model="checked1">
+            <ui-icon-toggle icon="format_bold" value="b" v-model="checked1">
             </ui-icon-toggle>
           </div>
           <div class="snippet-demo">
-            <ui-icon-toggle
-              icon="format_italic"
-              value="i"
-              v-model="checked2">
+            <ui-icon-toggle icon="format_italic" value="i" v-model="checked2">
             </ui-icon-toggle>
           </div>
           <div class="snippet-demo-padding"></div>
@@ -48,16 +42,12 @@
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
-            <ui-icon-toggle
-              value="qr"
-              v-model="checked3">
+            <ui-icon-toggle value="qr" v-model="checked3">
               <i class="fa fa-qrcode"></i>
             </ui-icon-toggle>
           </div>
           <div class="snippet-demo">
-            <ui-icon-toggle
-              value="tv"
-              v-model="checked3">
+            <ui-icon-toggle value="tv" v-model="checked3">
               <i class="fa fa-tv"></i>
             </ui-icon-toggle>
           </div>
@@ -79,7 +69,7 @@
 </template>
 
 <script>
-import snippets from '../../mixins/snippets';
+import snippets from '@/mixins/snippets';
 
 export default {
   mixins: [snippets],

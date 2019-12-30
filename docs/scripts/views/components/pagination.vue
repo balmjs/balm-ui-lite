@@ -14,7 +14,8 @@
         :record-count="list1.recordCount"
         :page-size="list1.pageSize"
         v-model="list1.page"
-        show-jumper>
+        show-jumper
+      >
       </ui-pagination>
     </div>
     <ui-accordion>
@@ -32,17 +33,19 @@
         show-jumper
         jumper-before="Goto"
         jumper-after="page"
-        jumper-button="Go">
+        jumper-button="Go"
+      >
         <template slot-scope="props">
           Showing {{ props.recordCount }} records,
           <ui-selectmenu
             :options="pageSizeList"
             optionValue="value"
             optionKey="key"
-            v-model="list2.pageSize">
+            v-model="list2.pageSize"
+          >
             {{ props.pageSize }}
-          </ui-selectmenu> records / page,
-          {{ props.pageCount }} total pages
+          </ui-selectmenu>
+          records / page, {{ props.pageCount }} total pages
         </template>
       </ui-pagination>
     </div>
@@ -53,12 +56,14 @@
     <h4>3. 极简分页</h4>
 
     <div class="snippet-demo">
-      <ui-pagination mini
+      <ui-pagination
+        mini
         :record-count="list3.recordCount"
         :page-size="list3.pageSize"
         v-model="list3.page"
         prev="Prev"
-        next="Next">
+        next="Next"
+      >
         <span>{{ list3.page }}</span>
       </ui-pagination>
     </div>
@@ -71,7 +76,7 @@
 </template>
 
 <script>
-import snippets from '../../mixins/snippets';
+import snippets from '@/mixins/snippets';
 
 export default {
   mixins: [snippets],

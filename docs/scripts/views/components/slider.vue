@@ -15,12 +15,16 @@
         <div class="snippet-demos">
           <div class="snippet-demo-padding"></div>
           <div class="snippet-demo">
-            <div class="snippet-demo-container demo-slider demo-slider__slider-default">
+            <div
+              class="snippet-demo-container demo-slider demo-slider__slider-default"
+            >
               <ui-slider min="0" max="100" v-model="value1"></ui-slider>
             </div>
           </div>
           <div class="snippet-demo">
-            <div class="snippet-demo-container demo-slider demo-slider__slider-starting-value">
+            <div
+              class="snippet-demo-container demo-slider demo-slider__slider-starting-value"
+            >
               <ui-slider min="0" max="100" v-model="value2"></ui-slider>
             </div>
           </div>
@@ -43,7 +47,7 @@
 </template>
 
 <script>
-import snippets from '../../mixins/snippets';
+import snippets from '@/mixins/snippets';
 
 export default {
   mixins: [snippets],

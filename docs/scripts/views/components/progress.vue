@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import snippets from '../../mixins/snippets';
+import snippets from '@/mixins/snippets';
 
 export default {
   mixins: [snippets],
@@ -72,4 +72,3 @@ export default {
   }
 };
 </script>
-
