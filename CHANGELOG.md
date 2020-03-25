@@ -1,5 +1,11 @@
 # [BalmUI Lite](https://mdl.balmjs.com/)
 
+## 1.8.1 (2020.03.25)
+
+### :beetle: Bug fixes and improvements
+
+- `$alert`, `$confirm`, `$prompt`: add `noRipple` prop for the Safari bug
+
 ## 1.8.0 (2019.12.30)
 
 ### :beetle: Bug fixes and improvements

@@ -15,7 +15,8 @@ const DEFAULT_OPTIONS = {
   acceptText: 'OK',
   cancelText: 'Cancel',
   callback: false,
-  unlocked: false
+  unlocked: false,
+  noRipple: false
 };
 
 const template = `<ui-dialog
@@ -32,10 +33,10 @@ const template = `<ui-dialog
     <ui-textfield v-model="formData.value"></ui-textfield>
   </ui-dialog-content>
   <ui-dialog-actions>
-    <ui-button primary @click="$_handleConfirm">
+    <ui-button noRipple="options.noRipple" primary @click="$_handleConfirm">
       {{ options.acceptText }}
     </ui-button>
-    <ui-button accent @click="$_handleClose">
+    <ui-button noRipple="options.noRipple" accent @click="$_handleClose">
       {{ options.cancelText }}
     </ui-button>
   </ui-dialog-actions>
