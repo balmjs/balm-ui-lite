@@ -36,7 +36,7 @@ balm -V
 运行下列命令来生成一个新项目以及应用的骨架代码：
 
 ```sh
-balm init vue my-project
+balm init vue#legacy my-project
 ```
 
 ## 3. 安装
@@ -89,7 +89,7 @@ Vue.use(BalmUI); // 安装
 new Vue({
   el: '#app',
   components: { App },
-  template: '<app/>'
+  template: '<app/>',
 });
 ```
 

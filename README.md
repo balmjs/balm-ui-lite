@@ -20,7 +20,7 @@
 ```sh
 npm install -g balm-cli
 
-balm init vue my-project
+balm init vue#legacy my-project
 ```
 
 ### 2. 安装 BalmUI Lite
